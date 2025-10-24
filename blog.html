@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Nomik.ai - Insights on Autonomous Finance</title>
+  <meta name="description" content="Latest insights, updates, and thought leadership on autonomous financial operations, AI agents, and the future of banking infrastructure.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Blog | Nomik.ai - Insights on Autonomous Finance">
+  <meta property="og:description" content="Expert insights on autonomous finance, AI agents, and financial infrastructure innovation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomik.ai/blog">
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="nomik-framework.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header-main" role="banner">
+    <nav class="nav-primary container" role="navigation" aria-label="Main navigation">
+      <!-- Logo & Brand -->
+      <div class="nav-brand">
+        <a href="index.html" class="nav-brand-link" aria-label="Nomik.ai homepage">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+              <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+              <circle cx="16" cy="16" r="3" fill="white"/>
+              <defs>
+                <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3B82F6"/>
+                  <stop offset="1" stop-color="#8B5CF6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">Nomik.ai</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" role="menubar">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="documentation.html" class="nav-link">Docs</a></li>
+        <li class="nav-item"><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link nav-link-active">Blog</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <!-- CTA Buttons -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="ph ph-sun theme-icon light-icon"></i>
+          <i class="ph ph-moon theme-icon dark-icon"></i>
+          <i class="ph ph-circle-half theme-icon auto-icon"></i>
+        </button>
+        <a href="sandbox.html" class="button button-secondary button-sm">Try Sandbox</a>
+        <a href="#contact" class="button button-primary button-sm">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero-section blog-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="section-overline">Nomik.ai Blog</div>
+          <h1 class="hero-title">
+            Insights on <span class="text-gradient">Autonomous Finance</span>
+          </h1>
+          <p class="hero-description">
+            Expert perspectives on the future of financial infrastructure, AI agents, and autonomous banking operations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="featured-article">
+          <div class="article-content">
+            <div class="article-meta">
+              <span class="article-category">Technical Deep Dive</span>
+              <span class="article-date">October 20, 2025</span>
+            </div>
+            <h2 class="article-title">
+              Building Policy Engines for Sub-100ms Financial Decisions
+            </h2>
+            <p class="article-excerpt">
+              How we architected Nomik's policy evaluation engine to make compliance decisions in under 100 milliseconds while maintaining enterprise-grade security.
+            </p>
+            <div class="article-author">
+              <div class="author-avatar">
+                <img src="/images/team/gabriel-klein.jpg" alt="Gabriel Klein" loading="lazy">
+              </div>
+              <div class="author-info">
+                <span class="author-name">Gabriel Klein</span>
+                <span class="author-title">CTO</span>
+              </div>
+            </div>
+            <a href="#article-1" class="article-read-more">Read full article</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Articles -->
+    <section class="section-padding bg-surface">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Recent Articles</h2>
+          <p class="section-description">
+            Stay updated with the latest developments in autonomous finance and AI agent technology.
+          </p>
+        </header>
+
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Industry Analysis</span>
+                <span class="article-date">October 15, 2025</span>
+              </div>
+              <h3 class="article-title">
+                The European Instant Payments Mandate: What It Means for AI Agents
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              With the EU's instant payments mandate coming into effect, we explore how this regulation creates new opportunities for autonomous financial operations.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Martin Perreau</span>
+                <span class="author-title">Product Strategy</span>
+              </div>
+              <a href="#article-2" class="article-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Technical Guide</span>
+                <span class="article-date">October 10, 2025</span>
+              </div>
+              <h3 class="article-title">
+                Know-Your-Agent (KYA): Cryptographic Identity for AI Systems
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              Deep dive into Nomik's KYA framework and how cryptographic agent identities enable compliant autonomous financial operations.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Gabriel Klein</span>
+                <span class="author-title">CTO</span>
+              </div>
+              <a href="#article-3" class="article-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Market Insights</span>
+                <span class="article-date">October 5, 2025</span>
+              </div>
+              <h3 class="article-title">
+                FedNow and SEPA Instant: The Real-Time Payments Revolution
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              How real-time payment networks are creating the foundation for next-generation autonomous financial services.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Research Team</span>
+                <span class="author-title">Nomik.ai</span>
+              </div>
+              <a href="#article-4" class="article-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Product Update</span>
+                <span class="article-date">September 30, 2025</span>
+              </div>
+              <h3 class="article-title">
+                Introducing Multi-Currency Agent Wallets
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              New features enabling AI agents to manage multiple currencies with automatic compliance checking and optimal exchange routing.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Product Team</span>
+                <span class="author-title">Nomik.ai</span>
+              </div>
+              <a href="#article-5" class="article-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Compliance</span>
+                <span class="article-date">September 25, 2025</span>
+              </div>
+              <h3 class="article-title">
+                MiCA Stablecoins and AI Agents: Regulatory Compliance in Practice
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              Navigating the new MiCA stablecoin regulations with AI agents: practical implementation strategies and compliance frameworks.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Legal Team</span>
+                <span class="author-title">Nomik.ai</span>
+              </div>
+              <a href="#article-6" class="article-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <div class="article-meta">
+                <span class="article-category">Partnership</span>
+                <span class="article-date">September 20, 2025</span>
+              </div>
+              <h3 class="article-title">
+                Banking Partnerships: Building the Agent Economy Infrastructure
+              </h3>
+            </div>
+            <p class="article-excerpt">
+              How we're partnering with tier-1 banks and EMIs to create comprehensive coverage for autonomous financial operations.
+            </p>
+            <div class="article-footer">
+              <div class="article-author">
+                <span class="author-name">Business Development</span>
+                <span class="author-title">Nomik.ai</span>
+              </div>
+              <a href="#article-7" class="article-link">Read more</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="articles-pagination">
+          <button class="pagination-btn pagination-prev" disabled>
+            <i class="ph ph-arrow-left"></i>
+            Previous
+          </button>
+          <div class="pagination-numbers">
+            <button class="pagination-number active">1</button>
+            <button class="pagination-number">2</button>
+            <button class="pagination-number">3</button>
+          </div>
+          <button class="pagination-btn pagination-next">
+            Next
+            <i class="ph ph-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="section-padding newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="newsletter-header">
+            <h2 class="section-title">Stay Updated</h2>
+            <p class="section-description">
+              Get the latest insights on autonomous finance and AI agent technology delivered to your inbox.
+            </p>
+          </div>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input type="email" class="form-input" placeholder="Enter your email" required>
+              <button type="submit" class="button button-primary">
+                Subscribe
+                <i class="ph ph-paper-plane-right"></i>
+              </button>
+            </div>
+            <p class="form-note">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+                <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+                <circle cx="16" cy="16" r="3" fill="white"/>
+                <defs>
+                  <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3B82F6"/>
+                    <stop offset="1" stop-color="#8B5CF6"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">Nomik.ai</span>
+          </div>
+          <p class="footer-description">
+            Leading the future of autonomous finance with AI-powered payment infrastructure.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-section">
+            <h4 class="footer-title">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/documentation">Documentation</a></li>
+              <li><a href="/case-studies">Case Studies</a></li>
+              <li><a href="/research">Research Papers</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4 class="footer-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="/about">About</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/press">Press</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4 class="footer-title">Connect</h4>
+            <ul class="footer-links">
+              <li><a href="https://twitter.com/nomik_ai" target="_blank">Twitter</a></li>
+              <li><a href="https://linkedin.com/company/nomik-ai" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/nomik-ai" target="_blank">GitHub</a></li>
+              <li><a href="/newsletter">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            © 2025 Nomik.ai. All rights reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/security">Security</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="nomik-app.js"></script>
+</body>
+</html>
+
+<!-- CTA Buttons -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="ph ph-sun theme-icon light-icon"></i>
+          <i class="ph ph-moon theme-icon dark-icon"></i>
+          <i class="ph ph-circle-half theme-icon auto-icon"></i>
+        </button>
+        <a href="sandbox.html" class="button button-secondary button-sm">Try Sandbox</a>
+        <a href="#contact" class="button button-primary button-sm">Contact</a>
+      </div>
+            </div>
+            <h2 class="article-title">Building Autonomous Financial Agents: A Technical Framework</h2>
+            <p class="article-excerpt">
+              Explore the technical architecture behind autonomous financial agents, including decision-making algorithms, real-time compliance checking, and secure transaction processing at scale.
+            </p>
+            <div class="article-author">
+              <div class="author-info">
+                <span class="author-name">Sarah Rodriguez, CTO</span>
+                <span class="read-time">12 min read</span>
+              </div>
+            </div>
+            <a href="#" class="article-link">Read Full Article →</a>
+          </div>
+          <div class="article-image">
+            <div class="article-placeholder">
+              <i class="ph ph-robot"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Recent Articles</h2>
+
+        <div class="blog-grid">
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-shield-check"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Security</span>
+                <span class="post-date">October 18, 2025</span>
+              </div>
+              <h3 class="post-title">Zero-Trust Architecture in Financial AI Systems</h3>
+              <p class="post-excerpt">
+                How we implement zero-trust security principles in autonomous financial operations, ensuring every transaction is verified and authenticated.
+              </p>
+              <div class="post-author">
+                <span class="author-name">David Kim, CFO</span>
+                <span class="read-time">8 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-globe"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Infrastructure</span>
+                <span class="post-date">October 15, 2025</span>
+              </div>
+              <h3 class="post-title">Global Payment Rails: Connecting 200+ Countries</h3>
+              <p class="post-excerpt">
+                Behind the scenes of our global payment infrastructure: how we connect to SWIFT, SEPA, FedNow, and regional payment networks worldwide.
+              </p>
+              <div class="post-author">
+                <span class="author-name">Alex Chen, CEO</span>
+                <span class="read-time">10 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-chart-line"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Industry Insights</span>
+                <span class="post-date">October 12, 2025</span>
+              </div>
+              <h3 class="post-title">The Economics of Autonomous Finance</h3>
+              <p class="post-excerpt">
+                Analyzing the economic impact of autonomous financial agents: cost reduction, efficiency gains, and new business models emerging in the market.
+              </p>
+              <div class="post-author">
+                <span class="author-name">Research Team</span>
+                <span class="read-time">15 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-code"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Developer Guide</span>
+                <span class="post-date">October 10, 2025</span>
+              </div>
+              <h3 class="post-title">Getting Started with Agent Identity APIs</h3>
+              <p class="post-excerpt">
+                A comprehensive guide to implementing Know Your Agent (KYA) verification in your applications, with code examples and best practices.
+              </p>
+              <div class="post-author">
+                <span class="author-name">Developer Relations</span>
+                <span class="read-time">12 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-scales"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Compliance</span>
+                <span class="post-date">October 8, 2025</span>
+              </div>
+              <h3 class="post-title">Regulatory Compliance in Autonomous Banking</h3>
+              <p class="post-excerpt">
+                Navigating the regulatory landscape for autonomous financial operations: current frameworks, emerging standards, and compliance automation.
+              </p>
+              <div class="post-author">
+                <span class="author-name">Legal & Compliance</span>
+                <span class="read-time">14 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="post-image">
+              <div class="post-placeholder">
+                <i class="ph ph-trends-up"></i>
+              </div>
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-category">Market Analysis</span>
+                <span class="post-date">October 5, 2025</span>
+              </div>
+              <h3 class="post-title">The Rise of Agent-to-Agent Commerce</h3>
+              <p class="post-excerpt">
+                Exploring the emerging ecosystem of autonomous economic agents and how they're reshaping commerce, payments, and financial services.
+              </p>
+              <div class="post-author">
+                <span class="author-name">Strategy Team</span>
+                <span class="read-time">11 min read</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="articles-pagination">
+          <button class="button button-outline" disabled>
+            <i class="ph ph-arrow-left"></i>
+            Previous
+          </button>
+          <div class="pagination-numbers">
+            <button class="pagination-number active">1</button>
+            <button class="pagination-number">2</button>
+            <button class="pagination-number">3</button>
+          </div>
+          <button class="button button-outline">
+            Next
+            <i class="ph ph-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="section-padding cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Stay Updated on Autonomous Finance</h2>
+          <p>Get the latest insights, technical deep dives, and industry analysis delivered to your inbox.</p>
+          <div class="cta-actions">
+            <a href="mailto:newsletter@nomik.ai?subject=Newsletter Subscription" class="button button-primary button-lg">Subscribe to Newsletter</a>
+            <a href="documentation.html" class="button button-secondary button-lg">Explore Documentation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+                <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+                <circle cx="16" cy="16" r="3" fill="white"/>
+                <defs>
+                  <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3B82F6"/>
+                    <stop offset="1" stop-color="#8B5CF6"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">Nomik.ai</span>
+          </div>
+          <p class="footer-description">
+            Expert insights on autonomous financial operations and AI-powered banking infrastructure.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-section">
+            <h4 class="footer-title">Content</h4>
+            <ul class="footer-links">
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="mailto:newsletter@nomik.ai">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            © 2025 Nomik.ai. All rights reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="status.html">System Status</a>
+            <a href="infrastructure.html">Infrastructure</a>
+            <a href="mailto:editorial@nomik.ai">Editorial Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <!-- Nomik App JavaScript -->
+  <script src="nomik-app.js"></script>
+</body>
+</html>

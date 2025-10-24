@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Meta -->
+    <title>Nomik.ai — Programmable, Compliant Payments for AI Agents</title>
+    <meta name="description" content="Let AI agents pay safely through your existing banks. Non-custodial, policy-controlled payments with audit, KYA identity, and instant rails (SEPA, FedNow, SWIFT, stablecoins).">
+    <meta name="keywords" content="agent payments, policy engine, non-custodial fintech, KYA, delegated payments, SEPA Instant, FedNow, autonomous agents, agentic infrastructure, AI compliance, policy-as-code">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Nomik.ai — Programmable, Compliant Payments for AI Agents">
+    <meta property="og:description" content="Let AI agents pay safely through your existing banks. Non-custodial, policy-controlled payments with audit, KYA identity, and instant rails.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nomik.ai">
+    <meta property="og:image" content="https://nomik.ai/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nomik.ai — Programmable, Compliant Payments for AI Agents">
+    <meta name="twitter:description" content="Let AI agents pay safely through your existing banks. Non-custodial, policy-controlled payments with audit, KYA identity, and instant rails.">
+    <meta name="twitter:image" content="https://nomik.ai/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%238b5cf6'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='url(%23g)'/><text x='16' y='22' text-anchor='middle' fill='white' font-family='system-ui' font-size='18' font-weight='600'>N</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="nomik-framework.css">
+
+    <style>
+        /* Page-specific styles */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            border-bottom: 1px solid var(--border-primary);
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.375rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 24px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .trust-badge i {
+            color: var(--success-500);
+        }
+
+        .email-form {
+            display: flex;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto 16px;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 2px solid var(--border-primary);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px var(--primary-100);
+        }
+
+        .email-submit {
+            padding: 14px 24px;
+            background: var(--primary-600);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .email-submit:hover {
+            background: var(--primary-700);
+            transform: translateY(-1px);
+        }
+
+        .microcopy {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            margin-bottom: 40px;
+        }
+
+        .hero-visual {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .code-block {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .credibility-strip {
+            padding: 60px 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+            opacity: 0.6;
+        }
+
+        .logo-placeholder {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        .security-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--success-50);
+            border: 1px solid var(--success-200);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--success-700);
+        }
+
+        .testimonial {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .ecosystem-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .ecosystem-logo {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .ecosystem-logo:hover {
+            border-color: var(--primary-300);
+            transform: translateY(-2px);
+        }
+
+        .agentic-shift {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .shift-diagram {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .use-cases-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .use-case-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.2s ease;
+        }
+
+        .use-case-card:hover {
+            border-color: var(--primary-300);
+            transform: translateY(-4px);
+        }
+
+        .use-case-category {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-600);
+            margin-bottom: 12px;
+        }
+
+        .use-case-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .use-case-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .architecture-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .arch-diagram {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 2;
+            overflow-x: auto;
+        }
+
+        .kya-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .kya-code {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 24px;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 32px 0;
+        }
+
+        .policy-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .policy-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .policy-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .policy-tab.active {
+            color: var(--primary-600);
+            border-bottom-color: var(--primary-600);
+        }
+
+        .policy-content {
+            display: none;
+        }
+
+        .policy-content.active {
+            display: block;
+        }
+
+        .api-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .api-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .api-method {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--success-100);
+            color: var(--success-700);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .api-endpoint {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .security-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .security-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+        }
+
+        .security-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--success-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success-600);
+            flex-shrink: 0;
+        }
+
+        .pricing-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-300);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-500);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--primary-50) 100%);
+        }
+
+        .pricing-plan {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .pricing-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-600);
+            margin-bottom: 16px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features li i {
+            color: var(--success-500);
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: var(--bg-primary);
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-secondary);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            background: var(--bg-secondary);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.open {
+            padding: 20px 24px;
+            max-height: 500px;
+        }
+
+        .footer-section {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 60px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-form {
+            background: var(--gray-800);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .footer-form h4 {
+            margin-bottom: 16px;
+        }
+
+        .footer-form .email-form {
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-legal {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+
+            .email-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .trust-badges {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .trust-badge {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Copy button styles */
+        .copy-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--gray-700);
+            border: 1px solid var(--gray-600);
+            color: var(--gray-300);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background: var(--gray-600);
+            color: white;
+        }
+
+        .code-container {
+            position: relative;
+        }
+
+        /* Animation utilities */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Status indicator */
+        .status-indicator {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            background: var(--success-500);
+            border-radius: 50%;
+            margin: 0 12px;
+        }
+
+        /* Additional utility classes for inline styles */
+        .mt-40 {
+            margin-top: 40px;
+        }
+
+        .mb-24 {
+            margin-bottom: 24px;
+        }
+
+        .text-secondary-ol {
+            margin: 24px 0;
+            color: var(--text-secondary);
+        }
+
+        .pricing-month-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-form {
+            margin: 40px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .footer-brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-text {
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-description {
+            color: var(--gray-300);
+            margin-bottom: 24px;
+        }
+
+        .footer-microcopy {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header-main">
+        <nav class="nav-primary container" aria-label="Main navigation">
+            <!-- Logo & Brand -->
+            <div class="nav-brand">
+                <a href="index.html" class="nav-brand-link" aria-label="Nomik.ai homepage">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6366f1"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+                            <text x="16" y="22" text-anchor="middle" fill="white" font-family="system-ui" font-size="18" font-weight="600">N</text>
+                        </svg>
+                    </div>
+                    <span class="brand-text">Nomik.ai</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#how-it-works" role="menuitem">How it works</a></li>
+                <li role="none"><a href="#docs" role="menuitem">Docs</a></li>
+                <li role="none"><a href="#security" role="menuitem">Security</a></li>
+                <li role="none"><a href="#pricing" role="menuitem">Pricing</a></li>
+                <li role="none"><a href="#ecosystem" role="menuitem">Ecosystem</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <a href="#get-early-access" class="btn-primary">Get Early Access</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Programmable, Compliant Payments for Autonomous Agents</h1>
+                    <p class="hero-subtitle">Let your AI agents pay — under human policy control, on real‑world rails.</p>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Non-custodial</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="ph ph-check-circle"></i>
+                            <span>EU/US rails</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Audit-ready</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Policy-as-Code</span>
+                        </div>
+                    </div>
+
+                    <form class="email-form" id="hero-email-form">
+                        <input type="email" class="email-input" placeholder="your.email@company.com" required>
+                        <button type="submit" class="email-submit">Get Early Access</button>
+                    </form>
+
+                    <p class="microcopy">No spam. Early design‑partner invites only.</p>
+
+                    <div class="hero-visual">
+                        <div class="code-container">
+                            <div class="code-block">
+<pre><code class="language-typescript">const res = await nomik.executePayment({
+  agentId: "inventory_bot",
+  amount: 12000,
+  currency: "EUR",
+  recipient: "supplier_001",
+  rail: "sepa_instant",
+  purpose: "restock_trigger"
+});</code></pre>
+                            <button type="button" class="copy-button" onclick="copyCode('hero-code')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- 2. Credibility Strip -->
+        <section class="credibility-strip">
+            <div class="container">
+                <div class="logos-grid">
+                    <div class="logo-placeholder">Design Partner</div>
+                    <div class="logo-placeholder">Advisory Board</div>
+                    <div class="logo-placeholder">Backer</div>
+                    <div class="logo-placeholder">Design Partner</div>
+                    <div class="logo-placeholder">Advisory Board</div>
+                    <div class="logo-placeholder">Backer</div>
+                </div>
+
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <i class="ph ph-shield-check"></i>
+                        <span>Non-custodial</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="ph ph-lock"></i>
+                        <span>GDPR controls</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="ph ph-certificate"></i>
+                        <span>PCI-DSS</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="ph ph-file-text"></i>
+                        <span>Audit exports</span>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"Nomik turned our agent prototypes into revenue‑moving systems."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2A. Supported Providers Showcase -->
+        <section class="ecosystem-section" id="ecosystem">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Works where you build</h2>
+                    <p class="section-subtitle">Rails, agents, clouds, ERPs, PSPs, CRM, SIEM.</p>
+                </div>
+
+                <div class="ecosystem-grid">
+                    <!-- Payment Rails -->
+                    <div class="ecosystem-logo">SEPA Instant</div>
+                    <div class="ecosystem-logo">FedNow</div>
+                    <div class="ecosystem-logo">SWIFT</div>
+                    <div class="ecosystem-logo">Stablecoins</div>
+
+                    <!-- Agent Frameworks -->
+                    <div class="ecosystem-logo">LangGraph</div>
+                    <div class="ecosystem-logo">CrewAI</div>
+                    <div class="ecosystem-logo">OpenAI Agents</div>
+                    <div class="ecosystem-logo">AutoGen</div>
+
+                    <!-- Banking Aggregation -->
+                    <div class="ecosystem-logo">Plaid</div>
+                    <div class="ecosystem-logo">Tink</div>
+                    <div class="ecosystem-logo">TrueLayer</div>
+                    <div class="ecosystem-logo">Token.io</div>
+
+                    <!-- Workflow & RPA -->
+                    <div class="ecosystem-logo">Zapier</div>
+                    <div class="ecosystem-logo">Power Platform</div>
+                    <div class="ecosystem-logo">n8n</div>
+                    <div class="ecosystem-logo">UiPath</div>
+
+                    <!-- Cloud Platforms -->
+                    <div class="ecosystem-logo">Azure</div>
+                    <div class="ecosystem-logo">AWS</div>
+                    <div class="ecosystem-logo">GCP</div>
+                    <div class="ecosystem-logo">Salesforce</div>
+
+                    <!-- ERP & Finance -->
+                    <div class="ecosystem-logo">SAP</div>
+                    <div class="ecosystem-logo">Oracle ERP</div>
+                    <div class="ecosystem-logo">NetSuite</div>
+                    <div class="ecosystem-logo">Dynamics</div>
+
+                    <!-- PSPs -->
+                    <div class="ecosystem-logo">Stripe</div>
+                    <div class="ecosystem-logo">Adyen</div>
+                    <div class="ecosystem-logo">Checkout.com</div>
+                    <div class="ecosystem-logo">Rapyd</div>
+                </div>
+
+                <div class="text-center mt-40">
+                    <a href="#get-early-access" class="btn-primary">Get Early Access</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Agentic Shift -->
+        <section class="agentic-shift">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">The Agentic Shift</h2>
+                    <p class="section-subtitle">Agents moved from chat → action. The last mile is money. Finance expects a human click. Nomik adds delegation, policy, and audit so agents can pay safely.</p>
+                </div>
+
+                <div class="shift-diagram">
+                    <pre>Agent → Nomik SDK → Policy Engine (≤100ms) → Rail Router → Bank/PSP
+                                   ↘ Audit Log &amp; Alerts ↙</pre>
+                </div>
+
+                <div class="text-center">
+                    <p class="lead">Stripe was for human checkout; <strong>Nomik is for agent execution</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Use Cases -->
+        <section class="use-cases-section" id="use-cases">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Use Cases by Segment</h2>
+                    <p class="section-subtitle">Safe autonomous payments across industries</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-category">Enterprise Ops</div>
+                        <h3 class="use-case-title">Procurement Agent</h3>
+                        <p class="use-case-description">Auto-reorders within €10k/day cap, vendor allowlist, 2-person override for exceptions.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Enterprise Ops</div>
+                        <h3 class="use-case-title">Support Refunds</h3>
+                        <p class="use-case-description">Agent refunds ≤€200 instantly; escalates above threshold.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Fintech &amp; Platforms</div>
+                        <h3 class="use-case-title">Creator Payouts</h3>
+                        <p class="use-case-description">Automated partner payouts with sanctions screen + daily aggregate limits.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Fintech &amp; Platforms</div>
+                        <h3 class="use-case-title">Marketplace Settlement</h3>
+                        <p class="use-case-description">Automated settlement with dispute holds and policy controls.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Trading / Treasury</div>
+                        <h3 class="use-case-title">Signal Bot Execution</h3>
+                        <p class="use-case-description">Executes fiat/crypto under risk model; throttling + time-of-day rules.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Web3 / DAO</div>
+                        <h3 class="use-case-title">Proposal Agents</h3>
+                        <p class="use-case-description">Execute with policy guards; multi-sig fallback; on-chain attestations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Product Overview -->
+        <section class="product-overview-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Product Overview</h2>
+                    <p class="section-subtitle">Non-custodial, policy-controlled execution across rails with first-class agent identity (KYA) and complete auditability.</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">Agent Registry (KYA)</h3>
+                        <p class="use-case-description">Identity, purpose, scopes, revocation</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">Policy Engine</h3>
+                        <p class="use-case-description">Deterministic rules (limits, allow/deny lists, temporal, geofence, sanctions, velocity)</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">Rail Router</h3>
+                        <p class="use-case-description">SEPA Instant / SEPA SCT / FedNow / ACH / SWIFT / on-chain stablecoins</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">Audit &amp; Observer</h3>
+                        <p class="use-case-description">Immutable logs, webhooks, SIEM export</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">Admin Console</h3>
+                        <p class="use-case-description">Policies, approvals, alerts, kill-switch</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-category">Core Component</div>
+                        <h3 class="use-case-title">SDKs</h3>
+                        <p class="use-case-description">TypeScript / Python; LangGraph, CrewAI, AutoGen helpers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Architecture Deep-Dive -->
+        <section class="architecture-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Architecture Deep-Dive</h2>
+                    <p class="section-subtitle">Decision p50 ≤100ms; rail latency per scheme</p>
+                </div>
+
+                <div>
+                    <h3>Runtime Path:</h3>
+                    <ol class="text-secondary-ol">
+                        <li>Agent → <strong>/payments.intent</strong> (idempotent)</li>
+                        <li>Policy Engine → evaluate (context, identity, history)</li>
+                        <li>Decision: allow | require-approval | deny</li>
+                        <li>If allow → Router selects rail → partner executes</li>
+                        <li>Events: <code>payment.approved</code>, <code>payment.settled</code>, <code>policy.triggered</code></li>
+                    </ol>
+                </div>
+
+                <div class="arch-diagram">
+                    <pre>SDK → API → AuthN/Z → Policy Eval → Router → Partner PSP/Bank → Callback/Webhook
+                      ↘ Logs (WORM store) ↙ Alerts (Slack/Email/SIEM)</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. KYA - Know Your Agent -->
+        <section class="kya-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">KYA — Know Your Agent™</h2>
+                    <p class="section-subtitle">First-class agent identity and delegation framework</p>
+                </div>
+
+                <div class="kya-code code-container">
+                    <button type="button" class="copy-button" onclick="copyCode('kya-code')">Copy</button>
+                    <pre id="kya-code"><code class="language-json">{
+  "agent_id": "did:ai:inventory_bot",
+  "principal": "kyb:acme_inc",
+  "scopes": ["payments:send", "payments:simulate"],
+  "limits": {"daily_eur": 10000, "per_txn_eur": 2500},
+  "allowlist": ["iban:DE89370400440532013000"],
+  "revocation": {"mode": "immediate"},
+  "credentials": [{"type": "VerifiableCredential", "issuer": "acme"}]
+}</code></pre>
+                </div>
+
+                <div class="text-center">
+                    <p class="lead"><strong>Lifecycle:</strong> register → attest → monitor → revoke → re-issue</p>
+                    <p><strong>Signals:</strong> velocity, purpose match, recipient history, geofence, time windows</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Policy-as-Code -->
+        <section class="policy-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Policy-as-Code</h2>
+                    <p class="section-subtitle">Express compliance as executable rules</p>
+                </div>
+
+                <div class="policy-tabs">
+                    <button type="button" class="policy-tab active" data-tab="yaml">YAML Policy</button>
+                    <button type="button" class="policy-tab" data-tab="json">JSON Policy</button>
+                </div>
+
+                <div class="policy-content active" id="yaml-content">
+                    <div class="kya-code code-container">
+                        <button type="button" class="copy-button" onclick="copyCode('yaml-policy')">Copy</button>
+                        <pre id="yaml-policy"><code class="language-yaml">version: 1
+policy:
+  name: procurement_daily_cap
+  applies_to: did:ai:inventory_bot
+  limits:
+    per_txn: { amount: 2500, currency: EUR }
+    daily:   { amount: 10000, currency: EUR }
+  recipients:
+    allow: ["iban:DE89...3000", "iban:FR76...0000"]
+  approvals:
+    required_if:
+      - condition: amount &gt; 2000 EUR
+        approvers: ["role:cfo", "role:ops_manager"]
+  sanctions_check: true
+  alerts:
+    channels: ["slack:#payments", "email:finops@acme.com"]</code></pre>
+                    </div>
+                </div>
+
+                <div class="policy-content" id="json-content">
+                    <div class="kya-code code-container">
+                        <button type="button" class="copy-button" onclick="copyCode('json-policy')">Copy</button>
+                        <pre id="json-policy"><code class="language-json">{"limits":{"per_txn":2500,"daily":10000},"currency":"EUR","approvals":{"threshold":2000}}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. API Endpoints -->
+        <section class="api-section" id="docs">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">API Endpoints (v1)</h2>
+                    <p class="section-subtitle">RESTful API with idempotency and webhooks</p>
+                </div>
+
+                <div class="api-grid">
+                    <div class="api-card">
+                        <div class="api-method">POST</div>
+                        <div class="api-endpoint">/v1/agents</div>
+                        <p>Create/register agent (KYA)</p>
+                    </div>
+
+                    <div class="api-card">
+                        <div class="api-method">GET</div>
+                        <div class="api-endpoint">/v1/agents/{id}</div>
+                        <p>Fetch agent details</p>
+                    </div>
+
+                    <div class="api-card">
+                        <div class="api-method">POST</div>
+                        <div class="api-endpoint">/v1/policies</div>
+                        <p>Create/update policy</p>
+                    </div>
+
+                    <div class="api-card">
+                        <div class="api-method">POST</div>
+                        <div class="api-endpoint">/v1/payments</div>
+                        <p>Execute payment (idempotent)</p>
+                    </div>
+
+                    <div class="api-card">
+                        <div class="api-method">POST</div>
+                        <div class="api-endpoint">/v1/payments/{id}/cancel</div>
+                        <p>Cancel payment (if reversible)</p>
+                    </div>
+
+                    <div class="api-card">
+                        <div class="api-method">GET</div>
+                        <div class="api-endpoint">/v1/payments/{id}</div>
+                        <p>Get payment status</p>
+                    </div>
+                </div>
+
+                <div class="mt-40">
+                    <h3>Request Example:</h3>
+                    <div class="kya-code code-container">
+                        <button type="button" class="copy-button" onclick="copyCode('api-request')">Copy</button>
+                        <pre id="api-request"><code class="language-json">{
+  "agent_id":"did:ai:inventory_bot",
+  "amount":12000,
+  "currency":"EUR",
+  "recipient":"iban:FR76...",
+  "rail":"sepa_instant",
+  "purpose":"restock_trigger",
+  "idempotency_key":"uuid"
+}</code></pre>
+                    </div>
+
+                    <h3>Response Example:</h3>
+                    <div class="kya-code code-container">
+                        <button type="button" class="copy-button" onclick="copyCode('api-response')">Copy</button>
+                        <pre id="api-response"><code class="language-json">{
+  "status":"approved",
+  "transaction_id":"txn_01H...",
+  "rail":"sepa_instant",
+  "policy_decision":"auto_approved",
+  "eta":"instant"
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="text-center mt-40">
+                    <p><strong>Errors:</strong> <code>POLICY_DENIED</code>, <code>APPROVAL_REQUIRED</code>, <code>RAIL_UNAVAILABLE</code>, <code>SANCTIONS_MATCH</code>, <code>LIMIT_EXCEEDED</code></p>
+                    <p><strong>Webhooks:</strong> <code>policy.alert</code>, <code>payment.approved</code>, <code>payment.failed</code>, <code>payment.settled</code> (HMAC-signed)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Security & Compliance -->
+        <section class="security-section" id="security">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Security, Privacy &amp; Compliance</h2>
+                    <p class="section-subtitle">Enterprise-grade security with non-custodial architecture</p>
+                </div>
+
+                <div class="security-grid">
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-shield-check"></i>
+                        </div>
+                        <div>
+                            <h3>Non-custodial</h3>
+                            <p>Funds stay at bank/PSP; Nomik routes &amp; enforces policy.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-lock"></i>
+                        </div>
+                        <div>
+                            <h3>Encryption</h3>
+                            <p>TLS1.2+ in transit; AES-256 at rest; KMS-managed keys.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-key"></i>
+                        </div>
+                        <div>
+                            <h3>Secrets Management</h3>
+                            <p>Rotated, short-lived tokens; scoped API keys.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-users"></i>
+                        </div>
+                        <div>
+                            <h3>Access Control</h3>
+                            <p>RBAC; SSO/SAML; least privilege; admin audit.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Data Residency</h3>
+                            <p>EU/US partitioning; configurable retention.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="ph ph-certificate"></i>
+                        </div>
+                        <div>
+                            <h3>Compliance</h3>
+                            <p>GDPR controls; SOC2 Type II roadmap; PCI responsibilities delegated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-40">
+                    <p class="lead"><strong>Threat model:</strong> agent compromise, prompt injection → scope limits, second-factor approvals, velocity caps, kill-switch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Pricing & ROI -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Pricing &amp; ROI</h2>
+                    <p class="section-subtitle">Transparent pricing with clear ROI (1€ ≈ Rs 50)</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-plan">Free</div>
+                        <div class="pricing-amount">€0<span class="pricing-month-label">/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="ph ph-check"></i> 3 agents</li>
+                            <li><i class="ph ph-check"></i> Sandbox environment</li>
+                            <li><i class="ph ph-check"></i> 5 policies</li>
+                            <li><i class="ph ph-check"></i> Basic logs</li>
+                        </ul>
+                        <button type="button" class="btn-secondary">Start Free</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-plan">Growth</div>
+                        <div class="pricing-amount">€499<span class="pricing-month-label">/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="ph ph-check"></i> 50 agents</li>
+                            <li><i class="ph ph-check"></i> Production rails</li>
+                            <li><i class="ph ph-check"></i> Alerts &amp; monitoring</li>
+                            <li><i class="ph ph-check"></i> SIEM export</li>
+                            <li><i class="ph ph-check"></i> SSO integration</li>
+                        </ul>
+                        <button type="button" class="btn-primary">Get Early Access</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-plan">Enterprise</div>
+                        <div class="pricing-amount">Custom</div>
+                        <ul class="pricing-features">
+                            <li><i class="ph ph-check"></i> Unlimited agents</li>
+                            <li><i class="ph ph-check"></i> Private/VPC deployment</li>
+                            <li><i class="ph ph-check"></i> Custom SLAs</li>
+                            <li><i class="ph ph-check"></i> Bespoke rails</li>
+                            <li><i class="ph ph-check"></i> Dedicated support</li>
+                        </ul>
+                        <button type="button" class="btn-secondary">Contact Sales</button>
+                    </div>
+                </div>
+
+                <div class="text-center mt-40">
+                    <p class="lead"><strong>ROI levers:</strong> deflection of manual approvals, latency → conversion, fraud loss avoidance, opex reduction.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about Nomik</p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            Is Nomik a bank?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, Nomik is a non-custodial policy &amp; routing layer. We don't hold customer funds.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            Which rails are supported?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>SEPA (Instant/SCT), FedNow/ACH, SWIFT, select stablecoins. Availability varies by region and partner participation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            How do you prevent abuse?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>KYA scopes, limits, approvals, anomaly alerts, and real-time policy enforcement with human override capabilities.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            Can we host it privately?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, Enterprise plan includes VPC/on-prem deployment options with dedicated compliance support.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            What is KYA vs KYC?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>KYA = agent identity &amp; delegation framework; complements traditional KYC/KYB for human principals.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            What happens if a policy blocks a critical payment?
+                            <i class="ph ph-caret-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Human override with full audit trail. Emergency approvers can override policies while maintaining complete compliance records.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Final CTA -->
+        <section class="cta-section" id="get-early-access">
+            <div class="container text-center">
+                <h2 class="section-title">Launch your policy-controlled payments pilot today</h2>
+                <p class="section-subtitle">Connect a test agent in 5 minutes</p>
+
+                <form class="email-form cta-form" id="cta-email-form">
+                    <input type="email" class="email-input" placeholder="your.email@company.com" required>
+                    <button type="submit" class="email-submit">Get Early Access</button>
+                </form>
+
+                <div class="cta-buttons">
+                    <button type="button" class="btn-secondary">Talk to Compliance</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-brand-container">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#6366f1"/>
+                                        <stop offset="100%" stop-color="#8b5cf6"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="32" height="32" rx="8" fill="url(#footerLogoGradient)"/>
+                                <text x="16" y="22" text-anchor="middle" fill="white" font-family="system-ui" font-size="18" font-weight="600">N</text>
+                            </svg>
+                        </div>
+                        <span class="footer-brand-text">Nomik.ai</span>
+                    </div>
+                    <p class="footer-description">Programmable, compliant payments for autonomous agents.</p>
+
+                    <div class="footer-form">
+                        <h4>Get Early Access</h4>
+                        <form class="email-form" id="footer-email-form">
+                            <input type="email" class="email-input" placeholder="your.email@company.com" required>
+                            <button type="submit" class="email-submit">Subscribe</button>
+                        </form>
+                        <p class="footer-microcopy">No spam. Early design‑partner invites only.</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#ecosystem">Sandbox</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#status">Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#cookies">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>© 2025 Nomik Ltd. All rights reserved. Nomik Ltd is an EU-based non-custodial software provider. Funds settle through licensed bank or EMI partners.</p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Update icon based on current theme
+        if (currentTheme === 'dark') {
+            themeIcon.className = 'ph ph-sun';
+        } else {
+            themeIcon.className = 'ph ph-moon';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Update icon
+            if (newTheme === 'dark') {
+                themeIcon.className = 'ph ph-sun';
+            } else {
+                themeIcon.className = 'ph ph-moon';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.className = navLinks.classList.contains('active') ? 'ph ph-x' : 'ph ph-list';
+        });
+
+        // Email form submissions
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+
+            // Here you would typically send the email to your backend
+            console.log('Email submitted:', email);
+
+            // Show success message
+            alert('Thank you! We\'ll be in touch soon.');
+            event.target.reset();
+        }
+
+        document.getElementById('hero-email-form').addEventListener('submit', handleEmailSubmit);
+        document.getElementById('cta-email-form').addEventListener('submit', handleEmailSubmit);
+        document.getElementById('footer-email-form').addEventListener('submit', handleEmailSubmit);
+
+        // Policy tabs functionality
+        const policyTabs = document.querySelectorAll('.policy-tab');
+        const policyContents = document.querySelectorAll('.policy-content');
+
+        policyTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                policyTabs.forEach(t => t.classList.remove('active'));
+                policyContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding content
+                const tabName = tab.getAttribute('data-tab');
+                document.getElementById(tabName + '-content').classList.add('active');
+            });
+        });
+
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                // Close all other FAQ items
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        const otherItem = otherQuestion.parentElement;
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherQuestion.querySelector('i');
+
+                        otherAnswer.classList.remove('open');
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current FAQ item
+                answer.classList.toggle('open');
+                const isOpen = answer.classList.contains('open');
+                icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+
+        // Copy code functionality
+        function copyCode(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Find the copy button for this code block
+                const copyButton = element.parentElement.querySelector('.copy-button');
+                const originalText = copyButton.textContent;
+
+                copyButton.textContent = 'Copied!';
+                copyButton.style.background = 'var(--success-600)';
+
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                    copyButton.style.background = 'var(--gray-700)';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomik.ai - The First Agent-Native Payment Infrastructure | Non-Custodial Financial Autonomy</title>
+  <meta name="description" content="Enable autonomous financial operations for AI agents with policy-controlled payments across global rails. Non-custodial, MiCA-aligned, PSD3-ready infrastructure built for the agent economy.">
+  <meta name="keywords" content="agent payments, autonomous finance, policy engine, KYA, non-custodial payments, AI compliance, MiCA stablecoins, PSD3 ready, agent economy">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://nomik.ai/">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Nomik.ai - The First Agent-Native Payment Infrastructure">
+  <meta property="og:description" content="Non-custodial payment infrastructure enabling AI agents to transact autonomously with policy control across SEPA Instant, FedNow, SWIFT, and MiCA stablecoins.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomik.ai">
+  <meta property="og:image" content="https://nomik.ai/images/og-agent-payments.png">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nomik.ai - Agent-Native Payment Infrastructure">
+  <meta name="twitter:description" content="The first infrastructure built for autonomous financial operations. Non-custodial, policy-controlled, globally connected.">
+  <meta name="twitter:image" content="https://nomik.ai/images/twitter-agent-infrastructure.png">
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons - Professional Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Phosphor Icons - Alternative Modern Icon Library -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+  <!-- Nomik Framework CSS -->
+  <link rel="stylesheet" href="nomik-framework.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nomik.ai",
+    "description": "Agent-native payment infrastructure enabling autonomous financial operations with enterprise compliance and global rail connectivity",
+    "applicationCategory": "Financial Infrastructure",
+    "operatingSystem": "Web, API",
+    "provider": {
+      "@type": "Organization",
+      "name": "Nomik.ai Ltd",
+      "foundingDate": "2024",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Gabriel Klein",
+          "jobTitle": "Chief Technology Officer",
+          "alumniOf": "Qonto"
+        },
+        {
+          "@type": "Person",
+          "name": "Martin Perreau",
+          "jobTitle": "Product Strategy Lead",
+          "alumniOf": "Mergify"
+        }
+      ]
+    },
+    "areaServed": ["EU", "US", "Global"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "Free 60-day pilot with €10K transaction volume included",
+      "url": "https://nomik.ai/pilot",
+      "trialOfferType": "FreeTrial"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is Nomik a bank or payment service provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Nomik is a non-custodial policy and routing infrastructure. All funds remain with your existing bank or EMI partners. We provide the network access, identity verification, and policy enforcement layer."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What is Know-Your-Agent (KYA)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KYA is cryptographic identity verification for AI agents, binding them to verified principals with revocable scopes and delegation chains for autonomous financial operations."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How fast are policy evaluations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sub-100ms policy evaluation under load (internal benchmarks with cached KYA artifacts). Settlement time depends on your chosen payment rail (≤10s for SEPA Instant, real-time for FedNow)."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Which payment rails does Nomik support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEPA Instant, FedNow, SWIFT, ACH, and MiCA-aligned stablecoins (EURC) through licensed partners. Coverage varies by region and partner network."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How does Nomik handle regulatory compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Policy-as-code integrates with accredited AML/sanctions providers. All decisions are auditable with full trail export capabilities for PSD2, MiCA, and AI Act compliance."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header-main" role="banner">
+    <nav class="nav-primary container" role="navigation" aria-label="Main navigation">
+      <!-- Logo & Brand -->
+      <div class="nav-brand">
+        <a href="index.html" class="nav-brand-link" aria-label="Nomik.ai homepage">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+              <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+              <circle cx="16" cy="16" r="3" fill="white"/>
+              <defs>
+                <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3B82F6"/>
+                  <stop offset="1" stop-color="#8B5CF6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">Nomik.ai</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" role="menubar">
+        <li class="nav-item"><a href="documentation.html" class="nav-link">Docs</a></li>
+        <li class="nav-item"><a href="case-studies.html" class="nav-link">Use Cases</a></li>
+        <li class="nav-item"><a href="infrastructure.html" class="nav-link">Security</a></li>
+        <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="sandbox.html" class="nav-link">Sandbox</a></li>
+      </ul>
+
+      <!-- CTA Buttons -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="ph ph-sun theme-icon light-icon"></i>
+          <i class="ph ph-moon theme-icon dark-icon"></i>
+          <i class="ph ph-circle-half theme-icon auto-icon"></i>
+        </button>
+        <a href="documentation.html" class="button button-secondary button-sm">Documentation</a>
+        <a href="#contact" class="button button-primary button-sm">Get API Key</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <!-- Hero: 3-Second Comprehension -->
+        <div class="hero-main">
+          <div class="section-overline">Agent-Native Infrastructure</div>
+          <h1 class="hero-title">
+            Non-custodial, Policy-Controlled <span class="text-gradient">Payments for AI Agents</span>
+          </h1>
+          <p class="hero-description">
+            Nomik lets your autonomous systems execute payments through your existing banks — instantly, under compliance rules you define.
+          </p>
+
+          <!-- Primary CTAs -->
+          <div class="hero-cta-primary">
+            <a href="sandbox.html" class="btn btn-primary btn-lg">
+              Start a Pilot
+              <span class="btn-subtext">Connect a test agent in 5 minutes</span>
+            </a>
+            <a href="infrastructure.html" class="btn btn-secondary btn-lg">
+              View Architecture
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Metrics -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-value"><100ms</span>
+            <span class="metric-label">Policy decision p50</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">99.97%</span>
+            <span class="metric-label">Uptime target</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">EU/US/Global</span>
+            <span class="metric-label">Coverage</span>
+          </div>
+        </div>
+
+        <!-- Hero Demo -->
+        <div class="hero-demo">
+          <div class="demo-window">
+            <div class="demo-header">
+              <span class="demo-title">Agent Payment Execution</span>
+              <span class="demo-status">Live policy evaluation (~67ms)</span>
+            </div>
+            <div class="demo-content">
+              <pre><code class="language-javascript">
+// AI Agent initiates autonomous payment
+const payment = await nomik.executePayment({
+  agentId: 'supply_chain_optimizer',
+  amount: 15000,
+  currency: 'EUR',
+  recipient: 'supplier_vendor_001',
+  purpose: 'inventory_restock',
+  rail: 'sepa_instant'
+});
+
+// Real-time policy evaluation
+✓ KYA identity verified (12ms)
+✓ Compliance rules checked (23ms)
+✓ Policy approved: within_limits (32ms)
+✓ Payment routed: SEPA Instant (≤10s)
+
+Response: {
+  status: 'approved',
+  transaction_id: 'txn_agent_001234',
+  policy_decision: 'auto_approved',
+  estimated_settlement: '8s'
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works - Architecture -->
+  <section class="section-padding" id="how-it-works">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">
+          Every transaction passes through a verified identity, a programmable policy, and a regulated rail.
+        </p>
+      </header>
+
+      <div class="architecture-flow">
+        <div class="arch-step">
+          <div class="arch-icon">
+            <i class="ph ph-shield-check"></i>
+          </div>
+          <div class="arch-content">
+            <h3>Agent Identity (KYA)</h3>
+            <p>Cryptographically verified identity with revocation. Bind each agent to verified principals with scoped delegation chains.</p>
+          </div>
+        </div>
+
+        <div class="arch-arrow">
+          <i class="ph ph-arrow-right"></i>
+        </div>
+
+        <div class="arch-step">
+          <div class="arch-icon">
+            <i class="ph ph-code"></i>
+          </div>
+          <div class="arch-content">
+            <h3>Policy Engine</h3>
+            <p>Codified compliance: limits, sanctions, velocity rules, and approvals. Express your risk controls as executable code (JSON/YAML).</p>
+          </div>
+        </div>
+
+        <div class="arch-arrow">
+          <i class="ph ph-arrow-right"></i>
+        </div>
+
+        <div class="arch-step">
+          <div class="arch-icon">
+            <i class="ph ph-globe"></i>
+          </div>
+          <div class="arch-content">
+            <h3>Multi-Rail Routing</h3>
+            <p>Connect to SEPA Instant, FedNow, SWIFT, ACH via partner PSPs. Non-custodial routing through your existing bank accounts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Now - Regulatory Timing -->
+  <section class="section-padding bg-surface" id="why-now">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Why Now</h2>
+        <p class="section-description">
+          The rails are instant; compliance is codified; autonomy needs control.
+        </p>
+      </header>
+
+      <div class="timing-drivers">
+        <div class="driver-item">
+          <div class="driver-icon">
+            <i class="ph ph-lightning"></i>
+          </div>
+          <div class="driver-content">
+            <h3>Regulation</h3>
+            <p>EU Instant Payments Regulation → ≤10s settlement required by <strong>Oct 2025</strong></p>
+            <a href="https://www.ecb.europa.eu/paym/integration/retail/instant_payments/html/instant_payments_regulation.en.html" class="driver-source" target="_blank" rel="noopener">ECB Source</a>
+          </div>
+        </div>
+
+        <div class="driver-item">
+          <div class="driver-icon">
+            <i class="ph ph-bank"></i>
+          </div>
+          <div class="driver-content">
+            <h3>Market</h3>
+            <p>>1,400 banks live on FedNow (2025). Real-time payments reaching critical mass.</p>
+            <a href="https://www.frbservices.org/financial-services/fednow" class="driver-source" target="_blank" rel="noopener">Fed Source</a>
+          </div>
+        </div>
+
+        <div class="driver-item">
+          <div class="driver-icon">
+            <i class="ph ph-gavel"></i>
+          </div>
+          <div class="driver-content">
+            <h3>Technology</h3>
+            <p>MiCA + AI Act establish legal boundaries for agentic execution starting <strong>Aug 2025</strong></p>
+            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="driver-source" target="_blank" rel="noopener">EU Source</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Capabilities -->
+  <section class="section-padding" id="capabilities">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Product Capabilities</h2>
+        <p class="section-description">
+          Real numbers from internal benchmarks and pilot programs
+        </p>
+      </header>
+
+      <div class="capabilities-grid">
+        <div class="capability-card">
+          <div class="capability-icon">
+            <i class="ph ph-code"></i>
+          </div>
+          <div class="capability-content">
+            <h3>Policy-as-Code</h3>
+            <p>Express compliance as executable rules (JSON/YAML). Real-time evaluation with full audit trail.</p>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon">
+            <i class="ph ph-fingerprint"></i>
+          </div>
+          <div class="capability-content">
+            <h3>KYA Framework</h3>
+            <p>Issue & revoke agent credentials; tie to enterprise identity. Cryptographic delegation chains.</p>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon">
+            <i class="ph ph-arrows-left-right"></i>
+          </div>
+          <div class="capability-content">
+            <h3>Multi-Rail Access</h3>
+            <p>SEPA Instant ≤10s • FedNow ≈15s • SWIFT same-day. Coverage varies by partner network.</p>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <div class="capability-icon">
+            <i class="ph ph-file-text"></i>
+          </div>
+          <div class="capability-content">
+            <h3>Full Audit Trail</h3>
+            <p>Immutable, exportable logs for regulators (JSON/CSV <5s lag). Complete policy decision history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="performance-note">
+        <p><strong>Performance Note:</strong> Values are internal benchmarks under load; settlement times depend on PSPs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Preview -->
+  <section class="section-padding bg-surface" id="use-cases-preview">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Use Cases in Action</h2>
+        <p class="section-description">
+          Results from pilot programs across industries
+        </p>
+      </header>
+
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-content">
+            <h3>Procurement</h3>
+            <p class="use-case-metric">3-day approvals → 30 min</p>
+            <p class="use-case-desc">Automated supplier payments with policy compliance</p>
+          </div>
+          <a href="case-studies.html#supply-chain" class="use-case-link">View Details</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-content">
+            <h3>Marketing Payouts</h3>
+            <p class="use-case-metric">24h budget shift → 15 min</p>
+            <p class="use-case-desc">Real-time campaign optimization with instant reallocation</p>
+          </div>
+          <a href="case-studies.html#performance-marketing" class="use-case-link">View Details</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-content">
+            <h3>Insurance Claims</h3>
+            <p class="use-case-metric">Payouts in days → minutes</p>
+            <p class="use-case-desc">Automated claims processing with fraud detection</p>
+          </div>
+          <a href="case-studies.html#insurance" class="use-case-link">View Details</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-content">
+            <h3>Treasury Ops</h3>
+            <p class="use-case-metric">Cross-border delays → same-day</p>
+            <p class="use-case-desc">Multi-currency routing with optimal exchange rates</p>
+          </div>
+          <a href="case-studies.html#trading" class="use-case-link">View Details</a>
+        </div>
+      </div>
+
+      <div class="use-cases-cta">
+        <a href="case-studies.html" class="btn btn-outline">See Full Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section-padding" id="problem">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Why AI Agents Can't Pay Today</h2>
+        <p class="section-description">
+          As AI shifts from reasoning to execution, payments become the bottleneck. Today's rails were built for humans, not software.
+        </p>
+      </header>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="ph ph-user-x"></i>
+          </div>
+          <div class="problem-content">
+            <h3>No Digital Identity</h3>
+            <p>Banks require human KYC, but agents need programmatic identity verification</p>
+            <div class="problem-impact">→ Without programmatic identity, agents can't access accounts or pass bank onboarding.</div>
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="ph ph-clock-countdown"></i>
+          </div>
+          <div class="problem-content">
+            <h3>Manual Approval Delays</h3>
+            <p>Batch reviews add days of latency. Agents need real-time, pre-approved rules</p>
+            <div class="problem-impact">→ Manual workflows can't keep pace with autonomous systems requiring instant decisions.</div>
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="ph ph-vault"></i>
+          </div>
+          <div class="problem-content">
+            <h3>Custodial Risk</h3>
+            <p>Traditional fintech requires funds custody, creating liability and control issues</p>
+            <div class="problem-impact">→ Custody brings licensing and liability; teams want control to remain with their bank accounts.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-conclusion">
+        <p>This is why Nomik was built: to let software act financially as fast as it thinks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section-padding section-featured" id="solution">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">How Nomik Enables Autonomous Payments</h2>
+        <p class="section-description">
+          Core architecture powering agent financial operations
+        </p>
+        <div class="section-actions">
+          <a href="infrastructure.html" class="button button-secondary">See Full Architecture</a>
+        </div>
+      </header>
+
+      <div class="solution-intro">
+        <p class="intro-text">
+          Nomik is a non-custodial network that connects AI agents, policy rules, and regulated banking rails. Each transaction passes through a verified identity (KYA), a programmable policy engine, and a secure routing layer connected to your existing financial institutions.
+        </p>
+      </div>
+
+      <div class="architecture-steps">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Non-Custodial Architecture</h3>
+            <p>
+              Funds stay in your accounts. Nomik enforces policy and routes payments via your regulated partners. No custody, no lock-in.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Agent Identity (KYA)</h3>
+            <p>
+              Bind each agent to a verified principal. Set revocable scopes and cryptographic delegation so software can act on behalf of humans or entities.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Policy Engine</h3>
+            <p>
+              Define limits, approvals, sanctions/AML and velocity rules as code. Policies evaluate in real-time with full audit logs and human overrides.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer-box">
+        <p class="disclaimer-text">
+          <strong>Note:</strong> Nomik is not a bank, wallet, or custodian. It routes payments through your existing financial partners.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding" id="features">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-overline">Key Capabilities</div>
+        <h2 class="section-title">
+          Complete Infrastructure for <span class="text-gradient">Autonomous Finance</span>
+        </h2>
+        <p class="section-description">
+          Production-ready capabilities for deploying autonomous payment systems. Through Nomik's partner network, clients access SEPA Instant, FedNow, SWIFT, and regulated stablecoin rails under a unified policy layer.
+        </p>
+      </header>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ph ph-currency-dollar"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Multi-Rail Payment Execution</h3>
+            <p>
+              Execute payments across SEPA Instant, FedNow, SWIFT, and stablecoins. Policy-aware routing optimizes for cost, speed, and compliance.
+            </p>
+            <a href="/documentation.html#payment-infrastructure" class="feature-link">
+              Learn more about Payment Execution <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ph ph-shield-check"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Agent Identity (KYA)</h3>
+            <p>
+              Cryptographic identity, delegation chains, instant revocation, behavioral risk signals.
+            </p>
+            <a href="/documentation.html#agent-identity" class="feature-link">
+              Learn more about Agent Identity <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ph ph-code"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Policy Engine</h3>
+            <p>
+              Policy-as-code; sanctions/AML providers; dynamic limits; approvals; full audit.
+            </p>
+            <a href="/documentation.html#policy-engine" class="feature-link">
+              Learn more about the Policy Engine <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ph ph-globe"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Global Partner Network Access</h3>
+            <p>
+              Connect through verified banking and EMI partners to send and receive payments across Europe, North America, and selected international corridors.
+            </p>
+            <a href="/partners.html#network" class="feature-link">
+              Learn more about Network Access <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="coverage-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Rail</th>
+                <th>Region</th>
+                <th>Availability</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SEPA Instant</td>
+                <td>EU/EEA</td>
+                <td><span class="status-live">Live</span></td>
+                <td>EU Instant Payments Regulation deadlines phase-in 2025–2027. Coverage via partner banks/EMIs.</td>
+              </tr>
+              <tr>
+                <td>FedNow</td>
+                <td>US</td>
+                <td><span class="status-live">Live</span></td>
+                <td>1,400+ participating institutions; coverage growing. Routing via participating bank partners.</td>
+              </tr>
+              <tr>
+                <td>SWIFT</td>
+                <td>Global</td>
+                <td><span class="status-live">Live</span></td>
+                <td>Cross-border credit transfers via partner FIs; settlement times vary by corridor.</td>
+              </tr>
+              <tr>
+                <td>Stablecoins (EURC)</td>
+                <td>EU</td>
+                <td><span class="status-pilot">Pilot</span></td>
+                <td>MiCA-aligned on-chain rail; fiat on/off-ramp via licensed partners.</td>
+              </tr>
+              <tr>
+                <td>ACH (US)</td>
+                <td>US</td>
+                <td><span class="status-live">Live</span></td>
+                <td>Next-day batch settlement; low-cost rail for non-urgent flows.</td>
+              </tr>
+              <tr>
+                <td>SWIFT gpi</td>
+                <td>Global</td>
+                <td><span class="status-live">Live</span></td>
+                <td>Same-day cross-border transfers via verified partners; full tracking ID.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note">Coverage varies by corridor and partner. Contact us for a live coverage map for your accounts.</p>
+          <div class="table-actions">
+            <a href="/contact/partnerships" class="button button-outline">Become a Partner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="commitments-grid">
+        <div class="commitment-card">
+          <div class="commitment-metric">Sub-100ms</div>
+          <div class="commitment-label">Policy evaluation latency</div>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-metric">99.97%</div>
+          <div class="commitment-label">API availability (90d rolling)</div>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-metric">≥99.9%</div>
+          <div class="commitment-label">Webhook delivery success</div>
+        </div>
+      </div>
+
+      <div class="section-actions">
+        <a href="/documentation.html" class="button button-secondary">
+          View Complete Technical Specifications
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer Quick Start Section -->
+  <section class="section-standard" id="developers">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title">Developer Quick Start</h3>
+        <p class="section-subtitle">Drop-in SDKs for your agent framework. Pilot in hours, not months.</p>
+      </div>
+
+      <div class="developer-content">
+        <div class="sdk-demo">
+          <pre><code class="language-javascript">
+import { Nomik } from '@nomik/sdk';
+const nomik = new Nomik({ apiKey: process.env.NOMIK_API_KEY });
+
+// Policy-controlled payment
+await nomik.executePayment({
+  agentId: 'supply_chain_ai',
+  amount: 1000,
+  currency: 'EUR',
+  recipient: 'vendor_001',
+  purpose: 'inventory_purchase'
+});
+          </code></pre>
+        </div>
+        <div class="sdk-explanation">
+          <p class="explanation-text">
+            The SDK automatically authenticates your agent, applies your policy engine, and routes the transaction through your chosen rail (e.g. SEPA Instant). Responses include policy ID, risk score, and audit log URL.
+          </p>
+        </div>
+
+        <div class="curl-example">
+          <h4>Or use cURL directly:</h4>
+          <pre><code class="language-bash">
+curl https://api.nomik.ai/v1/payments \
+  -H "Authorization: Bearer $NOMIK_API_KEY" \
+  -H "Idempotency-Key: $(uuidgen)" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "agent_id": "supply_chain_ai",
+    "amount": 1000,
+    "currency": "EUR",
+    "recipient": "vendor_001",
+    "purpose": "inventory_purchase"
+  }'
+          </code></pre>
+          <p>See the <a href="/openapi.json">OpenAPI spec</a> • <a href="/postman">Postman collection</a> • <a href="/docs/webhooks#signatures">Webhook signatures</a> • <a href="https://github.com/nomik-ai" class="github-badge">View on GitHub</a></p>
+        </div>
+
+        <div class="sdk-links">
+          <a href="documentation.html" class="btn btn-outline">Docs</a>
+          <a href="sandbox.html" class="btn btn-primary">Try Sandbox</a>
+          <a href="/sdk/js" class="btn btn-outline">JavaScript SDK</a>
+          <a href="/sdk/python" class="btn btn-outline">Python SDK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="section-standard" id="results">
+    <div class="container">
+      <div class="section-header" id="business-value">
+        <h2 class="section-title">Proven Results Across Industries</h2>
+        <p class="section-subtitle">
+          Leading companies achieve measurable ROI with autonomous payment automation
+        </p>
+      </div>
+
+      <!-- Case Studies with KPI Tables -->
+      <div class="case-studies">
+        <div class="case-card" id="supply-chain">
+          <h4>Supply Chain Automation (EU)</h4>
+          <table class="case-metrics">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Improvement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Approval time</td><td>1–3 days</td><td>≤30 min</td><td>–90%</td></tr>
+              <tr><td>Auto-approval rate</td><td>10–20%</td><td>70–90%</td><td>+4×</td></tr>
+              <tr><td>Discount capture</td><td>1%</td><td>2–3%</td><td>+100%</td></tr>
+              <tr><td>Settlement speed</td><td>T+3 days</td><td>≤10s (SEPA Instant)</td><td>Real-time</td></tr>
+            </tbody>
+          </table>
+          <p class="case-testimonial">"Eliminated manual bottlenecks in our procurement workflow and improved supplier relationships." <cite>— Pilot with EU Top-3 Manufacturing OEM</cite></p>
+        </div>
+
+        <div class="case-card" id="performance-marketing">
+          <h4>Performance Marketing (Global)</h4>
+          <table class="case-metrics">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Improvement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Budget reallocation</td><td>T+1 day</td><td>≤15 min</td><td>–96%</td></tr>
+              <tr><td>ROAS optimization</td><td>Manual daily</td><td>Real-time policy</td><td>+8–20%</td></tr>
+              <tr><td>Cross-geo payments</td><td>2–5 days</td><td>Same-day (SWIFT gpi)</td><td>–80%</td></tr>
+              <tr><td>Compliance checks</td><td>Manual review</td><td>Automated ML</td><td>99.8% accuracy</td></tr>
+            </tbody>
+          </table>
+          <p class="case-testimonial">"Real-time budget optimization based on performance data transformed our channel management." <cite>— Head of Growth, EU E-commerce Platform</cite></p>
+        </div>
+
+        <div class="case-card" id="trading">
+          <h4>Trading Desk (EU)</h4>
+          <table class="case-metrics">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Improvement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Risk approval latency</td><td>5–30 min</td><td>≤100ms</td><td>–99.7%</td></tr>
+              <tr><td>Policy consistency</td><td>Manual variance</td><td>Automated uniform</td><td>100% consistent</td></tr>
+              <tr><td>Audit trail</td><td>Post-trade rebuild</td><td>Real-time capture</td><td>Full transparency</td></tr>
+              <tr><td>Cross-venue support</td><td>Per-venue rules</td><td>Unified policy</td><td>Operational efficiency</td></tr>
+            </tbody>
+          </table>
+          <p class="case-testimonial">"Sub-100ms policy checks under load gave us the execution edge we needed." <cite>— Head of Technology, European Trading Firm</cite></p>
+        </div>
+
+        <div class="case-card" id="insurance">
+          <h4>Insurance Claims (EU)</h4>
+          <table class="case-metrics">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Improvement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Payout time</td><td>3–7 days</td><td>10–20 min</td><td>–99%</td></tr>
+              <tr><td>Manual review rate</td><td>80–90%</td><td>10–25%</td><td>–75%</td></tr>
+              <tr><td>Fraud detection</td><td>Post-payment</td><td>Pre-payment ML</td><td>Proactive blocking</td></tr>
+              <tr><td>Rule compliance</td><td>95–98%</td><td>>99%</td><td>Regulatory confidence</td></tr>
+            </tbody>
+          </table>
+          <p class="case-testimonial">"Non-custodial architecture satisfied our risk team while enabling automation." <cite>— Chief Risk Officer, Tier-1 Insurer (EU)</cite></p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="results-cta">
+        <p class="cta-text">Ready to see similar results in your industry?</p>
+        <div class="cta-buttons">
+          <a href="case-studies.html" class="btn btn-outline">
+            View Detailed Case Studies
+          </a>
+          <a href="#pilot" class="btn btn-primary">
+            Start Your Pilot
+          </a>
+        </div>
+      </div>
+
+      <div class="rail-context">
+        <h4>Why Now?</h4>
+        <p><strong>EU:</strong> Instant payments become mandatory in phases from 2025, with 10-second/24×7 availability requirements driving automation at banks and PSPs.</p>
+        <p><strong>US:</strong> FedNow adoption has surpassed 1,400 participating institutions in 2025, expanding instant payment reach nationwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Built by Financial Infrastructure Veterans</h2>
+        <p class="section-subtitle">
+          Experienced team from leading fintech companies, scaling payment systems and regulatory compliance at global scale
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="photo-placeholder">
+              <i class="ph ph-user"></i>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4 class="member-name">Gabriel Klein</h4>
+            <div class="member-title">Chief Technology Officer</div>
+            <div class="member-background">
+              <p>Previously VP Engineering at <strong>Qonto</strong> (5+ years), where he scaled engineering teams to 70+ and built payment infrastructure serving 500K+ businesses.</p>
+              <p>Currently CTO at <strong>INFINIT</strong>, focused on fintech infrastructure and regulatory technology.</p>
+            </div>
+            <div class="member-expertise">
+              <span class="expertise-tag">Payment Systems</span>
+              <span class="expertise-tag">Regulatory Compliance</span>
+              <span class="expertise-tag">Team Scaling</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="photo-placeholder">
+              <i class="ph ph-user"></i>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4 class="member-name">Martin Perreau</h4>
+            <div class="member-title">Product Strategy Lead</div>
+            <div class="member-background">
+              <p>Product Strategy at <strong>Mergify</strong>, former CEO at <strong>Munity</strong>, and co-founder of <strong>MyRole</strong> (used by Warner Bros, Netflix, Canal+).</p>
+              <p>Deep experience in product-market fit, go-to-market strategy, and enterprise product development.</p>
+            </div>
+            <div class="member-expertise">
+              <span class="expertise-tag">Product Strategy</span>
+              <span class="expertise-tag">Enterprise Sales</span>
+              <span class="expertise-tag">Go-to-Market</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-investors">
+        <h3>Backed by Industry Leaders</h3>
+        <p>Supported by leading fintech investors and advisors with deep expertise in payment infrastructure, regulatory compliance, and AI systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="section-featured" id="trust">
+    <div class="container">
+      <div class="section-header" id="compliance">
+        <h2 class="section-title">Enterprise-Grade Security & Compliance</h2>
+        <p class="section-subtitle">
+          Built for regulated industries with comprehensive security framework
+        </p>
+      </div>
+
+      <div class="trust-framework">
+        <div class="trust-visual">
+          <div class="trust-diagram">
+            <div class="trust-layer">
+              <h4>Your Infrastructure</h4>
+              <span>Funds never leave your control</span>
+            </div>
+            <div class="trust-arrow">↓</div>
+            <div class="trust-layer">
+              <h4>Nomik Policy Engine</h4>
+              <span>Real-time policy evaluation (< 100ms benchmark)</span>
+            </div>
+            <div class="trust-arrow">↓</div>
+            <div class="trust-layer">
+              <h4>Banking Partners</h4>
+              <span>Regulated execution rails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-features">
+          <div class="trust-feature">
+            <i class="ph ph-shield-check"></i>
+            <h4>SOC 2 Type II Audited</h4>
+            <p>SOC 2 + ISO 27001 certified data centers. Security, availability, confidentiality controls independently verified</p>
+          </div>
+          <div class="trust-feature">
+            <i class="ph ph-bank"></i>
+            <h4>MiCA 2024 & PSD2/PSR Aligned</h4>
+            <p>EU crypto-asset regulation ready; works via your EMI/bank partners</p>
+          </div>
+          <div class="trust-feature">
+            <i class="ph ph-lock"></i>
+            <h4>PCI DSS & FinCEN Travel Rule</h4>
+            <p>Payment data protection & sanctions/AML through accredited providers</p>
+          </div>
+          <div class="trust-feature">
+            <i class="ph ph-eye-slash"></i>
+            <h4>Non-Custodial by Design</h4>
+            <p>Nomik never stores your private keys or holds client funds</p>
+          </div>
+        </div>
+
+        <!-- What Nomik Is/Isn't -->
+        <div class="trust-clarification">
+          <div class="clarification-column">
+            <h4>What Nomik Is</h4>
+            <ul>
+              <li>Policy & routing layer</li>
+              <li>Non-custodial by design</li>
+              <li>Integrates with your bank/EMI/rails</li>
+            </ul>
+          </div>
+          <div class="clarification-column">
+            <h4>What Nomik Isn't</h4>
+            <ul>
+              <li>A bank or EMI</li>
+              <li>A funds custodian</li>
+              <li>A wallet provider</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="compliance-summary">
+        <p class="compliance-text">
+          Nomik's compliance engine aligns with global standards including PSD2, MiCA, FinCEN, and PCI DSS, ensuring every policy-approved transaction remains verifiable and auditable.
+        </p>
+      </div>
+
+      <div class="reg-timeline">
+        <h4>Verified Regulatory Timeline (EU/US)</h4>
+        <ul>
+          <li><strong>SEPA Instant (EU):</strong> Euro-area PSPs must support instant credit transfers by <em>Oct 9, 2025</em>; further obligations for EMIs/PIs and non-euro members phase in through 2027–2028. <a href="https://www.ecb.europa.eu/paym/integration/retail/instant_payments/html/instant_payments_regulation.en.html" target="_blank" rel="noopener">ECB Source</a></li>
+          <li><strong>MiCA (EU):</strong> Stablecoin (ART/EMT) regime in force <em>Jun 30, 2024</em>; CASP licensing active <em>Dec 30, 2024</em>; national transition ends <em>Jul 1, 2026</em>. <a href="https://www.amf-france.org/en/news-publications/depth/mica" target="_blank" rel="noopener">AMF Source</a></li>
+          <li><strong>EU AI Act:</strong> GPAI obligations start <em>Aug 2, 2025</em>; full application by 2027. <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU Source</a></li>
+          <li><strong>FedNow (US):</strong> 1,400+ participating institutions as of 2025; real-time payments infrastructure reaching critical mass. <a href="https://www.frbservices.org/financial-services/fednow" target="_blank" rel="noopener">Fed Source</a></li>
+        </ul>
+      </div>
+
+      <ul class="compliance-clarifiers">
+        <li><strong>Data residency:</strong> EU and US regions available; customer-controlled selection.</li>
+        <li><strong>PCI scope:</strong> Only if card data is processed; by default Nomik does not handle primary account numbers.</li>
+        <li><strong>MiCA & payments:</strong> When stablecoin rails are used for payments, settlement occurs via licensed partners; separate payment/EMI licensing may be required by the operator depending on the model.</li>
+        <li><strong>AI Act readiness:</strong> Nomik operates as a General-Purpose AI system component provider (GPAI) under Article 52 (2024/1689), offering transparency and human oversight controls.</li>
+        <li><strong>Audit exports:</strong> All policy decisions exportable in JSON/CSV for regulatory filing (PSD2 RTS on SCA & CSC).</li>
+      </ul>
+
+      <div class="regulatory-disclaimer">
+        <p class="disclaimer-text">
+          <strong>Regulatory Note:</strong> Requirements vary by jurisdiction; Nomik operates as a non-custodial software provider. Settlement occurs through your existing bank or EMI partner.
+        </p>
+      </div>
+
+      <div class="trust-cta">
+        <a href="infrastructure.html" class="btn btn-outline">View Complete Security Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & ROI -->
+  <section class="section-standard" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Pricing & ROI</h2>
+        <p class="section-subtitle">
+          What's included: SDK • Policy Engine • Audit Dashboard • Partner Rails Integration
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Sandbox</h3>
+            <div class="pricing-audience">For Developers</div>
+            <div class="pricing-key-elements">
+              <ul>
+                <li>Free</li>
+                <li>Simulated rails</li>
+                <li>Public docs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="sandbox.html" class="button button-outline w-full">
+              Try Sandbox
+            </a>
+          </div>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Pilot</h3>
+            <div class="pricing-audience">For Proof-of-concept teams</div>
+            <div class="pricing-key-elements">
+              <ul>
+                <li>€5,000 setup</li>
+                <li>60-day pilot</li>
+                <li>Up to €250K policy volume</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#pilot-signup" class="button button-primary w-full">
+              Start Pilot
+            </a>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Enterprise</h3>
+            <div class="pricing-audience">For Regulated institutions</div>
+            <div class="pricing-key-elements">
+              <ul>
+                <li>Custom SLAs</li>
+                <li>Dedicated compliance support</li>
+                <li>Volume pricing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="button button-outline w-full">
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Onboarding Support -->
+      <div class="onboarding-support">
+        <h3 class="onboarding-title">Onboarding Support</h3>
+        <p class="onboarding-description">
+          Nomik's technical and compliance teams assist you from sandbox setup to production go-live, ensuring seamless integration with your internal systems and banking partners.
+        </p>
+      </div>
+
+      <!-- ROI Calculator -->
+      <div class="roi-calculator">
+        <header class="calculator-header">
+          <h3 class="calculator-title">Calculate Your ROI</h3>
+          <p class="calculator-description">See potential savings from autonomous payment automation</p>
+          <p class="calculator-note">Estimate your potential savings based on current manual approval costs. Values are illustrative and customizable.</p>
+        </header>
+
+        <div class="calculator-content">
+          <div class="calculator-inputs">
+            <div class="input-group">
+              <label for="monthly-volume">Monthly Payment Volume (EUR)</label>
+              <input type="number" id="monthly-volume" value="2000000" min="0">
+            </div>
+            <div class="input-group">
+              <label for="manual-approvals">Manual Approvals per Day</label>
+              <input type="number" id="manual-approvals" value="12" min="0">
+              <small class="input-help">Includes reviewer time, context switching, error handling</small>
+            </div>
+            <div class="input-group">
+              <label for="cost-per-approval">Cost per Manual Approval (EUR)</label>
+              <input type="number" id="cost-per-approval" value="12" min="0">
+              <small class="input-help">Total cost including overhead</small>
+            </div>
+          </div>
+
+          <div class="calculator-disclaimer">
+            <small class="disclaimer-text">
+              <strong>Example only:</strong> Actual ROI varies by volume and policy complexity. Calculation assumes 260 business days per year.
+            </small>
+          </div>
+
+          <div class="calculator-results">
+            <div class="result-row">
+              <span class="result-label">Annual Manual Cost:</span>
+              <span class="result-value" id="annual-cost">€31,200</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Nomik Annual Cost:</span>
+              <span class="result-value" id="nomik-cost">€24,000</span>
+            </div>
+            <div class="result-row highlight">
+              <span class="result-label">Annual Savings Range:</span>
+              <span class="result-value" id="annual-savings">€7,200 - €14,400</span>
+            </div>
+            <div class="result-row highlight">
+              <span class="result-label">Payback Period:</span>
+              <span class="result-value" id="payback-period">6-12 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="trust-indicators">
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <span class="stat-value">Pilot ready</span>
+            <span class="stat-label">Benchmarked throughput</span>
+          </div>
+          <div class="trust-stat">
+            <span class="stat-value">Enterprise-grade</span>
+            <span class="stat-label">Security controls</span>
+          </div>
+          <div class="trust-stat">
+            <span class="stat-value">99.97%</span>
+            <span class="stat-label">Target uptime SLA</span>
+          </div>
+          <div class="trust-stat">
+            <span class="stat-value">Non-custodial</span>
+            <span class="stat-label">Zero fund custody</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta-section" id="pilot">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-banner">
+          <h2 class="cta-title">
+            Launch your policy-controlled payments pilot today.
+          </h2>
+          <p class="cta-subtitle">
+            Connect a test agent in 5 minutes.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="sandbox.html" class="button button-primary button-xl">
+              Start Pilot
+            </a>
+            <a href="/contact/compliance" class="button button-secondary button-xl">
+              Talk to Compliance
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-standard" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4 class="faq-question">Is Nomik a bank or EMI?</h4>
+          <p class="faq-answer">No. Nomik is a non-custodial policy and routing layer. Funds remain with your bank/EMI partners.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">What is KYA?</h4>
+          <p class="faq-answer">Know-Your-Agent: verifying and binding agents to a principal with revocable scopes.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">How fast are policy checks?</h4>
+          <p class="faq-answer">Sub-100ms under load (internal benchmarks); details in documentation.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Which payment rails are supported?</h4>
+          <p class="faq-answer">SEPA Instant, FedNow, SWIFT; optional stablecoins where regulation permits.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">How do you handle AML/sanctions?</h4>
+          <p class="faq-answer">Policy-as-code integrates with accredited providers; all decisions are auditable.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">What does non-custodial mean?</h4>
+          <p class="faq-answer">Funds stay with your bank/EMI; Nomik does not custody. We route and enforce policy only.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Which licenses cover settlement?</h4>
+          <p class="faq-answer">Settlement occurs through your existing bank or EMI partner; Nomik does not hold client funds.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Do I need my own banking partner to use Nomik?</h4>
+          <p class="faq-answer">Yes. Nomik connects your agents to payments through your existing bank or any EMI within our partner network. If you don't have one, we'll match you with a licensed provider.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Can Nomik be white-labeled?</h4>
+          <p class="faq-answer">Yes. Enterprise clients can integrate Nomik's policy engine and network access under their own brand with full API control.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Do you store private keys?</h4>
+          <p class="faq-answer">No; we do not store client private keys. Keys remain with you or your HSM provider.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Do you act as custodian?</h4>
+          <p class="faq-answer">No; funds remain with your bank/EMI partner.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Do you support MiCA stablecoins?</h4>
+          <p class="faq-answer">Yes, via pilot programs with MiCA-aligned stablecoins (e.g., EURC) through licensed partners for on/off-ramp settlement.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">What is your AI Act obligation scope?</h4>
+          <p class="faq-answer">Nomik operates as a General-Purpose AI component provider under Article 52, providing transparency tools and human oversight controls for compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <div class="footer-brand">
+            <div class="brand-icon gradient-elegant">
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+                <circle cx="16" cy="16" r="3" fill="white"/>
+              </svg>
+            </div>
+            <span class="brand-text">Nomik.ai</span>
+          </div>
+          <p class="footer-desc">
+            The first agent-native payment infrastructure. Enable autonomous financial operations with enterprise compliance.
+          </p>
+        </div>
+
+        <!-- Product Links -->
+        <div class="footer-section">
+          <h4 class="footer-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="sandbox.html">Sandbox</a></li>
+            <li><a href="case-studies.html">Use Cases</a></li>
+            <li><a href="infrastructure.html">Security</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div class="footer-section">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Developers -->
+        <div class="footer-section">
+          <h4 class="footer-title">Developers</h4>
+          <ul class="footer-links">
+            <li><a href="documentation.html">Docs</a></li>
+            <li><a href="case-studies.html">Use Cases</a></li>
+            <li><a href="/status">Status</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer-section">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/compliance">Compliance Timeline</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          Nomik Ltd is an EU-based non-custodial software provider. Funds settle through licensed bank or EMI partners.
+        </p>
+        <p class="footer-copyright">
+          © 2025 Nomik Ltd. All rights reserved.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="#" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  <!-- ROI Calculator Script -->
+  <script>
+    function calculateROI() {
+      const monthlyVolume = parseFloat(document.getElementById('monthly-volume').value) || 0;
+      const manualApprovals = parseFloat(document.getElementById('manual-approvals').value) || 0;
+      const costPerApproval = parseFloat(document.getElementById('cost-per-approval').value) || 0;
+
+      // Use 260 business days per year
+      const annualManualCost = manualApprovals * costPerApproval * 260;
+      const nomikAnnualCost = monthlyVolume * 12 * 0.001; // 0.1% fee
+      const annualSavings = Math.max(0, annualManualCost - nomikAnnualCost);
+
+      // Show savings as a range (±25%)
+      const savingsLow = Math.round(annualSavings * 0.75);
+      const savingsHigh = Math.round(annualSavings * 1.25);
+      const savingsRange = `€${savingsLow.toLocaleString()} - €${savingsHigh.toLocaleString()}`;
+
+      // Calculate payback period
+      const monthlyNomikCost = nomikAnnualCost / 12;
+      const monthlySavings = annualSavings / 12;
+      const paybackMonths = monthlyNomikCost > 0 && monthlySavings > 0 ? Math.ceil(monthlyNomikCost / monthlySavings) : 0;
+
+      let paybackText = "6-12 months";
+      if (paybackMonths <= 3) paybackText = "1-3 months";
+      else if (paybackMonths <= 6) paybackText = "3-6 months";
+      else if (paybackMonths <= 12) paybackText = "6-12 months";
+      else paybackText = `${paybackMonths}+ months`;
+
+      // Round large numbers for readability
+      const roundToThousand = (val) => Math.round(val / 1000) * 1000;
+
+      document.getElementById('annual-cost').textContent = `€${roundToThousand(annualManualCost).toLocaleString()}`;
+      document.getElementById('nomik-cost').textContent = `€${roundToThousand(nomikAnnualCost).toLocaleString()}`;
+      document.getElementById('annual-savings').textContent = savingsRange;
+      document.getElementById('payback-period').textContent = paybackText;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = ['monthly-volume', 'manual-approvals', 'cost-per-approval'];
+      inputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', calculateROI);
+      });
+      calculateROI();
+    });
+
+  </script>
+
+  <!-- Nomik App JavaScript -->
+  <script src="nomik-app.js"></script>
+</body>
+</html>
