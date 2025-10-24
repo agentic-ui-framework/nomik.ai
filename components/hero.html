@@ -1,0 +1,129 @@
+<!-- Hero Section -->
+<section class="pt-24 pb-16 px-6 lg:px-8 relative overflow-hidden" id="main">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-gradient-to-br from-nomik-900/20 via-purple-900/10 to-gray-950 -z-10"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.1),transparent)] -z-10"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-nomik-500/5 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10"></div>
+
+    <div class="max-w-7xl mx-auto">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <!-- Left Column: Content -->
+            <div class="mb-12 lg:mb-0 animate-slide-up">
+                <!-- Main Headline -->
+                <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <span class="bg-gradient-to-r from-white via-nomik-200 to-purple-200 bg-clip-text text-transparent">
+                        Programmable, Compliant Payments
+                    </span>
+                    <br>
+                    <span class="text-white">for Autonomous Agents</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
+                    Let your AI agents pay — under human policy control, on real‑world rails.
+                </p>
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap gap-4 mb-8" role="list" aria-label="Trust badges">
+                    <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2" role="listitem">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" aria-hidden="true"></span>
+                        Non‑custodial
+                    </span>
+                    <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2" role="listitem">
+                        <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse-slow" aria-hidden="true"></span>
+                        EU/US rails
+                    </span>
+                    <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2" role="listitem">
+                        <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse-slow" aria-hidden="true"></span>
+                        Audit‑ready
+                    </span>
+                    <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2" role="listitem">
+                        <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse-slow" aria-hidden="true"></span>
+                        Policy‑as‑Code
+                    </span>
+                </div>
+
+                <!-- CTA Form -->
+                <div class="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-6 mb-4">
+                    <form id="hero-form" class="flex flex-col sm:flex-row gap-3" novalidate>
+                        <div class="flex-1">
+                            <label for="hero-email" class="sr-only">Email address</label>
+                            <input
+                                type="email"
+                                id="hero-email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                                autocomplete="email"
+                                class="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:border-transparent transition-colors duration-200"
+                                aria-describedby="hero-email-help"
+                            >
+                        </div>
+                        <button
+                            type="submit"
+                            class="bg-gradient-to-r from-nomik-600 to-purple-600 hover:from-nomik-700 hover:to-purple-700 text-white font-medium px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                            aria-describedby="hero-submit-help"
+                        >
+                            Get Early Access
+                        </button>
+                    </form>
+                    <p id="hero-email-help" class="text-sm text-gray-400 mt-3">No spam. Early design‑partner invites only.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Code Example -->
+            <div class="animate-fade-in">
+                <div class="relative">
+                    <!-- Code Block -->
+                    <div class="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
+                        <!-- Terminal Header -->
+                        <div class="flex items-center gap-2 px-6 py-4 bg-gray-800/50 border-b border-gray-700">
+                            <div class="w-3 h-3 bg-red-500 rounded-full" aria-hidden="true"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full" aria-hidden="true"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full" aria-hidden="true"></div>
+                            <span class="text-gray-400 ml-4 text-sm">nomik-agent.ts</span>
+                        </div>
+
+                        <!-- Code Content -->
+                        <div class="p-6 font-mono text-sm overflow-x-auto">
+                            <pre class="text-gray-300" aria-label="Code example showing Nomik payment execution"><code id="code-content"><span class="text-purple-400">const</span> <span class="text-blue-300">res</span> <span class="text-gray-500">=</span> <span class="text-purple-400">await</span> <span class="text-blue-300">nomik</span><span class="text-gray-500">.</span><span class="text-yellow-300">executePayment</span><span class="text-gray-500">({</span>
+  <span class="text-green-300">agentId</span><span class="text-gray-500">:</span> <span class="text-orange-300">"inventory_bot"</span><span class="text-gray-500">,</span>
+  <span class="text-green-300">amount</span><span class="text-gray-500">:</span> <span class="text-blue-300">12000</span><span class="text-gray-500">,</span>
+  <span class="text-green-300">currency</span><span class="text-gray-500">:</span> <span class="text-orange-300">"EUR"</span><span class="text-gray-500">,</span>
+  <span class="text-green-300">recipient</span><span class="text-gray-500">:</span> <span class="text-orange-300">"supplier_001"</span><span class="text-gray-500">,</span>
+  <span class="text-green-300">rail</span><span class="text-gray-500">:</span> <span class="text-orange-300">"sepa_instant"</span><span class="text-gray-500">,</span>
+  <span class="text-green-300">purpose</span><span class="text-gray-500">:</span> <span class="text-orange-300">"restock_trigger"</span>
+<span class="text-gray-500">});</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Policy Decision Status -->
+                    <div class="mt-6 bg-gray-800/50 backdrop-blur-sm border border-gray-600 rounded-lg p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" aria-hidden="true"></div>
+                            <span class="text-green-400 text-sm font-medium">Policy: APPROVED</span>
+                            <span class="text-gray-400 text-sm">• Under €10k daily limit • Vendor allowlisted</span>
+                        </div>
+
+                        <!-- Progress bar animation -->
+                        <div class="mt-3 bg-gray-700 rounded-full h-1 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Copy Code Button -->
+                    <button
+                        id="copy-code-btn"
+                        class="absolute top-16 right-4 bg-gray-700/80 hover:bg-gray-600/80 text-gray-300 hover:text-white p-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500"
+                        aria-label="Copy code to clipboard"
+                        title="Copy code">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

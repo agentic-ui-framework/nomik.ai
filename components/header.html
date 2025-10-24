@@ -1,0 +1,58 @@
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded-lg p-1">
+                    <div class="w-8 h-8 bg-gradient-to-br from-nomik-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white text-lg">
+                        N
+                    </div>
+                    <span class="text-xl font-semibold text-white">Nomik</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded px-2 py-1">How it works</a>
+                <a href="#docs" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded px-2 py-1">Docs</a>
+                <a href="#security" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded px-2 py-1">Security</a>
+                <a href="#pricing" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded px-2 py-1">Pricing</a>
+                <a href="#ecosystem" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded px-2 py-1">Ecosystem</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="flex items-center">
+                <button
+                    id="nav-cta"
+                    class="bg-gradient-to-r from-nomik-600 to-purple-600 hover:from-nomik-700 hover:to-purple-700 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950"
+                    aria-label="Get early access to Nomik">
+                    Get Early Access
+                </button>
+
+                <!-- Mobile menu button -->
+                <button
+                    class="md:hidden ml-4 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded p-1"
+                    id="mobile-menu-button"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu" role="menu" aria-orientation="vertical">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 border border-gray-700">
+                <a href="#how-it-works" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500" role="menuitem">How it works</a>
+                <a href="#docs" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500" role="menuitem">Docs</a>
+                <a href="#security" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500" role="menuitem">Security</a>
+                <a href="#pricing" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500" role="menuitem">Pricing</a>
+                <a href="#ecosystem" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-nomik-500" role="menuitem">Ecosystem</a>
+            </div>
+        </div>
+    </nav>
+</header>
