@@ -33,7 +33,6 @@
     <meta property="twitter:image" content="https://nomik.ai/assets/og-image.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 
     <!-- Fonts -->
@@ -41,8 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Premium Icon Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Tailwind CSS -->
@@ -212,16 +210,16 @@
                     <!-- Tagline Chips -->
                     <div class="flex flex-wrap justify-center gap-3 mb-12">
                         <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
-                            ✅ Non-custodial
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Non-custodial
                         </span>
                         <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
-                            ✅ Multi-rail
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Multi-rail
                         </span>
                         <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
-                            ✅ Instant audit
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Instant audit
                         </span>
                         <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
-                            ✅ Human override
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Human override
                         </span>
                     </div>
 
@@ -269,7 +267,7 @@
                         </div>
 
                         <a href="#learn-more" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
-                            Learn why policy-controlled payments matter →
+                            Learn why policy-controlled payments matter <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
                         </a>
                     </div>
                 </div>
@@ -375,7 +373,7 @@
                         </div>
                         <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
                             <div class="w-10 h-10 bg-purple-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="text-yellow-400 text-lg font-bold">₿</div>
+                                <i data-lucide="bitcoin" class="text-yellow-400 w-5 h-5"></i>
                             </div>
                             <h4 class="text-xs font-medium text-white mb-1">Stablecoins</h4>
                             <p class="text-xs text-gray-500">On-chain</p>
@@ -703,39 +701,24 @@
                     </div>
                 </div>
 
-                <!-- Live Examples -->
-                <div class="max-w-6xl mx-auto mb-16">
-                    <div class="grid lg:grid-cols-2 gap-8">
-                        <!-- SEPA Example -->
-                        <div class="bg-gray-900/50 border border-gray-800/50 rounded-2xl p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold font-sans text-white">SEPA Example</h3>
-                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-1 rounded-full">TypeScript</span>
-                            </div>
-                            <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-purple-400">await</span> <span class="text-blue-400">nomik</span><span class="text-gray-500">.</span><span class="text-yellow-400">payments</span><span class="text-gray-500">.</span><span class="text-yellow-400">send</span><span class="text-gray-500">({</span>
-  <span class="text-blue-400">agentId</span><span class="text-gray-500">:</span> <span class="text-green-400">"inventory_bot"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">rail</span><span class="text-gray-500">:</span> <span class="text-green-400">"sepa_instant"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">amount</span><span class="text-gray-500">:</span> <span class="text-orange-400">12000</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">currency</span><span class="text-gray-500">:</span> <span class="text-green-400">"EUR"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">recipient</span><span class="text-gray-500">:</span> <span class="text-green-400">"supplier_001"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">purpose</span><span class="text-gray-500">:</span> <span class="text-green-400">"restock_trigger"</span>
-<span class="text-gray-500">});</span></code></pre>
-                        </div>
-
+                <!-- Live Example -->
+                <div class="max-w-6xl mx-auto mb-16 px-4">
+                    <div class="flex justify-center">
                         <!-- Stablecoin Example -->
-                        <div class="bg-gray-900/50 border border-gray-800/50 rounded-2xl p-6">
+                        <div class="bg-gray-900/50 border border-gray-800/50 rounded-2xl p-4 sm:p-6 max-w-xl w-full min-w-0">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold font-sans text-white">Stablecoin Example</h3>
+                                <h3 class="text-lg font-semibold font-sans text-white">Cross-Border Payment</h3>
                                 <span class="text-xs text-green-400 bg-green-500/10 px-2 py-1 rounded-full">Python</span>
                             </div>
-                            <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-600"># MiCA-compliant stablecoin rail</span>
-<span class="text-blue-400">nomik</span><span class="text-gray-500">.</span><span class="text-yellow-400">payments</span><span class="text-gray-500">.</span><span class="text-yellow-400">send</span><span class="text-gray-500">(</span>
-  <span class="text-blue-400">from_</span><span class="text-gray-500">=</span><span class="text-green-400">wallet_id</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">to</span><span class="text-gray-500">=</span><span class="text-green-400">"0xSupplierABC"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">amount</span><span class="text-gray-500">=</span><span class="text-orange-400">50</span><span class="text-gray-500">,</span>
+                            <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-600"># Cross-border supplier payment with compliance</span>
+<span class="text-blue-400">result</span> <span class="text-gray-500">=</span> <span class="text-blue-400">nomik</span><span class="text-gray-500">.</span><span class="text-yellow-400">payments</span><span class="text-gray-500">.</span><span class="text-yellow-400">send</span><span class="text-gray-500">(</span>
+  <span class="text-blue-400">from_</span><span class="text-gray-500">=</span><span class="text-green-400">corporate_treasury</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">to</span><span class="text-gray-500">=</span><span class="text-green-400">"0x892f...A4D2"</span><span class="text-gray-500">,</span>  <span class="text-gray-600"># Verified supplier</span>
+  <span class="text-blue-400">amount</span><span class="text-gray-500">=</span><span class="text-orange-400">12500</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">currency</span><span class="text-gray-500">=</span><span class="text-green-400">"USDC"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">network</span><span class="text-gray-500">=</span><span class="text-green-400">"Polygon"</span><span class="text-gray-500">,</span>
-  <span class="text-blue-400">purpose</span><span class="text-gray-500">=</span><span class="text-green-400">"api_subscription"</span>
+  <span class="text-blue-400">compliance_policy</span><span class="text-gray-500">=</span><span class="text-green-400">"eu_b2b_payments"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">metadata</span><span class="text-gray-500">=</span><span class="text-gray-500">{</span><span class="text-green-400">"invoice_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"INV-2025-0847"</span><span class="text-gray-500">}</span>
 <span class="text-gray-500">)</span></code></pre>
                         </div>
                     </div>
@@ -781,13 +764,13 @@
                                 <h4 class="text-lg font-semibold font-sans text-white mb-6">SEPA Path</h4>
                                 <div class="space-y-4">
                                     <div class="bg-blue-500/20 px-4 py-2 rounded-lg">
-                                        <span class="text-blue-400 font-mono text-sm">Agent → Policy Engine</span>
+                                        <span class="text-blue-400 font-mono text-sm">Agent <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> Policy Engine</span>
                                     </div>
-                                    <div class="text-gray-400">↓</div>
+                                    <div class="text-gray-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
                                     <div class="bg-green-500/20 px-4 py-2 rounded-lg">
-                                        <span class="text-green-400 font-mono text-sm">SEPA → Bank Partner</span>
+                                        <span class="text-green-400 font-mono text-sm">SEPA <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> Bank Partner</span>
                                     </div>
-                                    <div class="text-gray-400">↓</div>
+                                    <div class="text-gray-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
                                     <div class="bg-purple-500/20 px-4 py-2 rounded-lg">
                                         <span class="text-purple-400 font-mono text-sm">Settlement &lt;10s</span>
                                     </div>
@@ -799,13 +782,13 @@
                                 <h4 class="text-lg font-semibold font-sans text-white mb-6">Stablecoin Path</h4>
                                 <div class="space-y-4">
                                     <div class="bg-blue-500/20 px-4 py-2 rounded-lg">
-                                        <span class="text-blue-400 font-mono text-sm">Agent → Policy Engine</span>
+                                        <span class="text-blue-400 font-mono text-sm">Agent <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> Policy Engine</span>
                                     </div>
-                                    <div class="text-gray-400">↓</div>
+                                    <div class="text-gray-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
                                     <div class="bg-green-500/20 px-4 py-2 rounded-lg">
-                                        <span class="text-green-400 font-mono text-sm">USDC → Fireblocks</span>
+                                        <span class="text-green-400 font-mono text-sm">USDC <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> Fireblocks</span>
                                     </div>
-                                    <div class="text-gray-400">↓</div>
+                                    <div class="text-gray-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
                                     <div class="bg-purple-500/20 px-4 py-2 rounded-lg">
                                         <span class="text-purple-400 font-mono text-sm">Settlement &lt;5s</span>
                                     </div>
@@ -847,8 +830,8 @@
                             <tbody class="divide-y divide-gray-800/50">
                                 <tr>
                                     <td class="p-6 text-gray-300 font-medium">Settlement time</td>
-                                    <td class="p-6 text-gray-400">≤10s</td>
-                                    <td class="p-6 text-gray-400">≤5s</td>
+                                    <td class="p-6 text-gray-400"><span class="text-xs">&le;</span>10s</td>
+                                    <td class="p-6 text-gray-400"><span class="text-xs">&le;</span>5s</td>
                                 </tr>
                                 <tr>
                                     <td class="p-6 text-gray-300 font-medium">Custody</td>
@@ -857,8 +840,8 @@
                                 </tr>
                                 <tr>
                                     <td class="p-6 text-gray-300 font-medium">Policy enforcement</td>
-                                    <td class="p-6 text-green-400">✅ Yes</td>
-                                    <td class="p-6 text-green-400">✅ Yes</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i> Yes</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i> Yes</td>
                                 </tr>
                                 <tr>
                                     <td class="p-6 text-gray-300 font-medium">Compliance scope</td>
@@ -867,8 +850,8 @@
                                 </tr>
                                 <tr>
                                     <td class="p-6 text-gray-300 font-medium">Common SDK</td>
-                                    <td class="p-6 text-green-400">✅</td>
-                                    <td class="p-6 text-green-400">✅</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i></td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -915,7 +898,7 @@
                             Go live in under 30 minutes, no licenses required.
                         </p>
                         <a href="/docs/engineering" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
-                            View docs →
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
                         </a>
                     </div>
 
@@ -932,7 +915,7 @@
                             Every transaction is logged, verified, and auditable.
                         </p>
                         <a href="/docs/treasury" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
-                            View docs →
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
                         </a>
                     </div>
 
@@ -949,7 +932,7 @@
                             Use our library of AML, KYA, and KYB policy templates.
                         </p>
                         <a href="/docs/compliance" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
-                            View docs →
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
                         </a>
                     </div>
 
@@ -962,11 +945,11 @@
                         </div>
                         <h3 class="text-xl font-semibold font-sans text-white mb-4">CEO / COO</h3>
                         <p class="text-gray-400 mb-6">
-                            Scale your operations 10× without losing control.
+                            Scale your operations 10x without losing control.
                             Enable autonomy under supervision.
                         </p>
                         <a href="/docs/leadership" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
-                            View docs →
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
                         </a>
                     </div>
                 </div>
@@ -1039,11 +1022,11 @@
                         <div class="font-mono text-sm text-gray-300 leading-relaxed">
                             <div class="flex items-center justify-center mb-4">
                                 <span class="bg-nomik-500/20 px-3 py-1 rounded text-nomik-400">Agent</span>
-                                <span class="mx-4">→</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline"></i></span>
                                 <span class="bg-blue-500/20 px-3 py-1 rounded text-blue-400">Nomik</span>
-                                <span class="mx-4">→</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline"></i></span>
                                 <span class="bg-green-500/20 px-3 py-1 rounded text-green-400">Rail Provider</span>
-                                <span class="mx-4">→</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline"></i></span>
                                 <span class="bg-purple-500/20 px-3 py-1 rounded text-purple-400">Counterparty</span>
                             </div>
                             <p class="text-gray-400 text-xs">Every transaction flows through policy evaluation and audit logging</p>
@@ -1065,78 +1048,135 @@
                     </p>
                 </div>
 
-                <!-- Logo Grid: 3 rows × 4 logos -->
-                <div class="grid grid-cols-3 gap-8 mb-12">
-                    <!-- Banks & Rails -->
-                    <div class="text-center">
-                        <h3 class="text-lg font-semibold font-sans text-white mb-6">Banks & Rails</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">SEPA</span>
+                <!-- Banks & Rails -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold font-sans text-white mb-4">Banks & Rails</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">SEPA</span>
                             </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">FedNow</span>
-                            </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">Wise</span>
-                            </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">JPM API</span>
-                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">SEPA Instant</h4>
+                            <p class="text-xs text-gray-500">EU instant</p>
                         </div>
-                    </div>
-
-                    <!-- Stablecoins & Partners -->
-                    <div class="text-center">
-                        <h3 class="text-lg font-semibold font-sans text-white mb-6">Stablecoins & Partners</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">Circle</span>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">FED</span>
                             </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">EURC</span>
-                            </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">Fireblocks</span>
-                            </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">Chainalysis</span>
-                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">FedNow</h4>
+                            <p class="text-xs text-gray-500">US instant</p>
                         </div>
-                    </div>
-
-                    <!-- AI / Agent Tools -->
-                    <div class="text-center">
-                        <h3 class="text-lg font-semibold font-sans text-white mb-6">AI / Agent Tools</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">LangGraph</span>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-teal-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/wise.com" alt="Wise" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">WISE</span>
                             </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">CrewAI</span>
+                            <h4 class="text-xs font-medium text-white mb-1">Wise</h4>
+                            <p class="text-xs text-gray-500">Global transfers</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-indigo-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/jpmorgan.com" alt="JPMorgan" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">JPM</span>
                             </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">OpenDevin</span>
-                            </div>
-                            <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16">
-                                <span class="text-white font-semibold text-sm">HuggingFace</span>
-                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">JPM API</h4>
+                            <p class="text-xs text-gray-500">Banking API</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Infrastructure Row -->
-                <div class="text-center">
-                    <h3 class="text-lg font-semibold font-sans text-white mb-6">Infrastructure</h3>
-                    <div class="flex justify-center gap-8 max-w-md mx-auto">
-                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16 flex-1">
-                            <span class="text-white font-semibold text-sm">Azure</span>
+                <!-- Stablecoins & Partners -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold font-sans text-white mb-4">Stablecoins & Partners</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/circle.com" alt="Circle" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">CIRCLE</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">Circle</h4>
+                            <p class="text-xs text-gray-500">USDC/EURC</p>
                         </div>
-                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16 flex-1">
-                            <span class="text-white font-semibold text-sm">GCP</span>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-purple-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">EURC</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">Euro Coin</h4>
+                            <p class="text-xs text-gray-500">EU stablecoin</p>
                         </div>
-                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-4 flex items-center justify-center h-16 flex-1">
-                            <span class="text-white font-semibold text-sm">AWS</span>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-orange-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/fireblocks.com" alt="Fireblocks" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">FIRE</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">Fireblocks</h4>
+                            <p class="text-xs text-gray-500">Custody</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/chainalysis.com" alt="Chainalysis" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">CHAIN</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">Chainalysis</h4>
+                            <p class="text-xs text-gray-500">Compliance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI / Agent Tools -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold font-sans text-white mb-4">AI / Agent Tools</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-purple-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">LANG</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">LangGraph</h4>
+                            <p class="text-xs text-gray-500">Workflows</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-orange-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">CREW</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">CrewAI</h4>
+                            <p class="text-xs text-gray-500">Multi-agent</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <span class="text-white font-bold text-xs">OPEN</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">OpenDevin</h4>
+                            <p class="text-xs text-gray-500">Coding agents</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-yellow-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/huggingface.co" alt="HuggingFace" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">HF</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">HuggingFace</h4>
+                            <p class="text-xs text-gray-500">Models</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold font-sans text-white mb-4">Infrastructure</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">MS</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">Azure</h4>
+                            <p class="text-xs text-gray-500">Cloud</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/google.com" alt="Google" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">GCP</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">GCP</h4>
+                            <p class="text-xs text-gray-500">Cloud</p>
+                        </div>
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 bg-orange-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white font-bold text-xs" style="display:none;">AWS</span>
+                            </div>
+                            <h4 class="text-xs font-medium text-white mb-1">AWS</h4>
+                            <p class="text-xs text-gray-500">Cloud</p>
                         </div>
                     </div>
                 </div>
@@ -1159,7 +1199,7 @@
                     <!-- Enterprise Ops -->
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-blue-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-building text-blue-400 text-lg"></i>
+                            <i data-lucide="building-2" class="text-blue-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-3">Procurement Automation</h3>
                         <div class="space-y-3 text-gray-400">
@@ -1170,7 +1210,7 @@
                     <!-- Fintech & Platforms -->
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-green-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-credit-card text-green-400 text-lg"></i>
+                            <i data-lucide="credit-card" class="text-green-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-3">Fintech Payouts</h3>
                         <div class="space-y-3 text-gray-400">
@@ -1181,7 +1221,7 @@
                     <!-- Trading / Treasury -->
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-purple-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-chart-line text-purple-400 text-lg"></i>
+                            <i data-lucide="trending-up" class="text-purple-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-3">Treasury Bots</h3>
                         <div class="space-y-3 text-gray-400">
@@ -1255,19 +1295,19 @@
                     <div class="space-y-4 text-gray-300">
                         <div class="flex items-center">
                             <span class="w-6 h-6 bg-nomik-600 text-white rounded-full flex items-center justify-center text-sm mr-4">1</span>
-                            <span>Agent → <code class="bg-gray-800 px-2 py-1 rounded text-nomik-400">/payments.intent</code> (idempotent)</span>
+                            <span>Agent <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> <code class="bg-gray-800 px-2 py-1 rounded text-nomik-400">/payments.intent</code> (idempotent)</span>
                         </div>
                         <div class="flex items-center">
                             <span class="w-6 h-6 bg-nomik-600 text-white rounded-full flex items-center justify-center text-sm mr-4">2</span>
-                            <span>Policy Engine → evaluate (context, identity, history)</span>
+                            <span>Policy Engine <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> evaluate (context, identity, history)</span>
                         </div>
                         <div class="flex items-center">
                             <span class="w-6 h-6 bg-nomik-600 text-white rounded-full flex items-center justify-center text-sm mr-4">3</span>
-                            <span>Decision: <code class="bg-gray-800 px-2 py-1 rounded text-green-400">allow</code> | <code class="bg-gray-800 px-2 py-1 rounded text-yellow-400">require‑approval</code> | <code class="bg-gray-800 px-2 py-1 rounded text-red-400">deny</code></span>
+                            <span>Decision: <code class="bg-gray-800 px-2 py-1 rounded text-green-400">allow</code> | <code class="bg-gray-800 px-2 py-1 rounded text-yellow-400">require-approval</code> | <code class="bg-gray-800 px-2 py-1 rounded text-red-400">deny</code></span>
                         </div>
                         <div class="flex items-center">
                             <span class="w-6 h-6 bg-nomik-600 text-white rounded-full flex items-center justify-center text-sm mr-4">4</span>
-                            <span>If allow → Router selects rail → partner executes</span>
+                            <span>If allow <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> Router selects rail <i data-lucide="arrow-right" class="w-3 h-3 inline mx-1"></i> partner executes</span>
                         </div>
                         <div class="flex items-center">
                             <span class="w-6 h-6 bg-nomik-600 text-white rounded-full flex items-center justify-center text-sm mr-4">5</span>
@@ -1283,7 +1323,7 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
-                        KYA - Know Your Agent™
+                        KYA - Know Your Agent<sup class="text-xs text-gray-400">TM</sup>
                     </h2>
                     <p class="text-lg font-body text-gray-300 max-w-3xl mx-auto">
                         Agent identity and delegation model with verifiable credentials.
@@ -1293,7 +1333,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-xl font-semibold font-sans text-white mb-4">Identity Model</h3>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-500">{</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
   <span class="text-blue-400">"agent_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"principal"</span><span class="text-gray-500">:</span> <span class="text-green-400">"kyb:acme_inc"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"scopes"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"payments:send"</span><span class="text-gray-500">,</span> <span class="text-green-400">"payments:simulate"</span><span class="text-gray-500">],</span>
@@ -1315,18 +1355,18 @@
                                 <div>2. Attest</div>
                                 <div>3. Monitor</div>
                                 <div>4. Revoke</div>
-                                <div>5. Re‑issue</div>
+                                <div>5. Re-issue</div>
                             </div>
                         </div>
 
                         <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                             <h3 class="text-lg font-semibold font-sans text-white mb-3">Signals</h3>
                             <div class="space-y-2 text-gray-400">
-                                <div>• Velocity patterns</div>
-                                <div>• Purpose matching</div>
-                                <div>• Recipient history</div>
-                                <div>• Geofence compliance</div>
-                                <div>• Time windows</div>
+                                <div><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-blue-400"></i>Velocity patterns</div>
+                                <div><i data-lucide="target" class="w-3 h-3 inline mr-2 text-blue-400"></i>Purpose matching</div>
+                                <div><i data-lucide="history" class="w-3 h-3 inline mr-2 text-blue-400"></i>Recipient history</div>
+                                <div><i data-lucide="map-pin" class="w-3 h-3 inline mr-2 text-blue-400"></i>Geofence compliance</div>
+                                <div><i data-lucide="clock" class="w-3 h-3 inline mr-2 text-blue-400"></i>Time windows</div>
                             </div>
                         </div>
                     </div>
@@ -1339,7 +1379,7 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
-                        Policy‑as‑Code
+                        Policy-as-Code
                     </h2>
                     <p class="text-lg font-body text-gray-300 max-w-3xl mx-auto">
                         Deterministic rules you can version, test, and deploy.
@@ -1349,7 +1389,7 @@
                 <div class="grid lg:grid-cols-2 gap-8">
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">YAML Policy</h3>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-blue-400">version</span><span class="text-gray-500">:</span> <span class="text-orange-400">1</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-blue-400">version</span><span class="text-gray-500">:</span> <span class="text-orange-400">1</span>
 <span class="text-blue-400">policy</span><span class="text-gray-500">:</span>
   <span class="text-blue-400">name</span><span class="text-gray-500">:</span> <span class="text-green-400">procurement_daily_cap</span>
   <span class="text-blue-400">applies_to</span><span class="text-gray-500">:</span> <span class="text-green-400">did:ai:inventory_bot</span>
@@ -1369,7 +1409,7 @@
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">JSON Policy (Compact)</h3>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-500">{</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
   <span class="text-blue-400">"limits"</span><span class="text-gray-500">:</span> <span class="text-gray-500">{</span>
     <span class="text-blue-400">"per_txn"</span><span class="text-gray-500">:</span> <span class="text-orange-400">2500</span><span class="text-gray-500">,</span>
     <span class="text-blue-400">"daily"</span><span class="text-gray-500">:</span> <span class="text-orange-400">10000</span>
@@ -1383,11 +1423,11 @@
                         <div class="mt-6">
                             <h4 class="text-md font-semibold text-white mb-3">Features</h4>
                             <div class="space-y-2 text-gray-400 text-sm">
-                                <div>• Version control & rollbacks</div>
-                                <div>• Testing & simulation</div>
-                                <div>• Real-time validation</div>
-                                <div>• Audit trail</div>
-                                <div>• Template library</div>
+                                <div><i data-lucide="git-branch" class="w-3 h-3 inline mr-2 text-green-400"></i>Version control & rollbacks</div>
+                                <div><i data-lucide="beaker" class="w-3 h-3 inline mr-2 text-green-400"></i>Testing & simulation</div>
+                                <div><i data-lucide="check-circle" class="w-3 h-3 inline mr-2 text-green-400"></i>Real-time validation</div>
+                                <div><i data-lucide="file-text" class="w-3 h-3 inline mr-2 text-green-400"></i>Audit trail</div>
+                                <div><i data-lucide="book" class="w-3 h-3 inline mr-2 text-green-400"></i>Template library</div>
                             </div>
                         </div>
                     </div>
@@ -1414,7 +1454,7 @@
                             <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">POST</span>
                             <code class="text-gray-300 ml-2">/v1/payments</code>
                         </div>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-500">{</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
   <span class="text-blue-400">"agent_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"amount"</span><span class="text-gray-500">:</span> <span class="text-orange-400">12000</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"currency"</span><span class="text-gray-500">:</span> <span class="text-green-400">"EUR"</span><span class="text-gray-500">,</span>
@@ -1427,7 +1467,7 @@
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">Response (Approved)</h3>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-500">{</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
   <span class="text-blue-400">"status"</span><span class="text-gray-500">:</span> <span class="text-green-400">"approved"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"transaction_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"txn_01H..."</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"rail"</span><span class="text-gray-500">:</span> <span class="text-green-400">"sepa_instant"</span><span class="text-gray-500">,</span>
@@ -1483,7 +1523,7 @@
                 <div class="grid lg:grid-cols-2 gap-8 mb-12">
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">Event Schema</h3>
-                        <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-500">{</span>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
   <span class="text-blue-400">"event"</span><span class="text-gray-500">:</span> <span class="text-green-400">"policy.decision"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"ts"</span><span class="text-gray-500">:</span> <span class="text-green-400">"2025-10-24T06:00:00Z"</span><span class="text-gray-500">,</span>
   <span class="text-blue-400">"agent"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
@@ -1504,25 +1544,25 @@
                             <div>
                                 <h4 class="text-white font-medium mb-2">Cloud Storage</h4>
                                 <div class="text-gray-400 text-sm space-y-1">
-                                    <div>• S3, GCS, Azure Blob</div>
-                                    <div>• Configurable retention</div>
-                                    <div>• Field-level encryption</div>
+                                    <div><i data-lucide="cloud" class="w-3 h-3 inline mr-2 text-purple-400"></i>S3, GCS, Azure Blob</div>
+                                    <div><i data-lucide="settings" class="w-3 h-3 inline mr-2 text-purple-400"></i>Configurable retention</div>
+                                    <div><i data-lucide="lock" class="w-3 h-3 inline mr-2 text-purple-400"></i>Field-level encryption</div>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-white font-medium mb-2">SIEM Integration</h4>
                                 <div class="text-gray-400 text-sm space-y-1">
-                                    <div>• Datadog, Splunk</div>
-                                    <div>• OpenTelemetry traces</div>
-                                    <div>• Real-time streaming</div>
+                                    <div><i data-lucide="bar-chart-3" class="w-3 h-3 inline mr-2 text-orange-400"></i>Datadog, Splunk</div>
+                                    <div><i data-lucide="activity" class="w-3 h-3 inline mr-2 text-orange-400"></i>OpenTelemetry traces</div>
+                                    <div><i data-lucide="wifi" class="w-3 h-3 inline mr-2 text-orange-400"></i>Real-time streaming</div>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-white font-medium mb-2">Privacy Controls</h4>
                                 <div class="text-gray-400 text-sm space-y-1">
-                                    <div>• PII redaction strategies</div>
-                                    <div>• GDPR compliance</div>
-                                    <div>• Data residency controls</div>
+                                    <div><i data-lucide="eye-off" class="w-3 h-3 inline mr-2 text-red-400"></i>PII redaction strategies</div>
+                                    <div><i data-lucide="shield-check" class="w-3 h-3 inline mr-2 text-red-400"></i>GDPR compliance</div>
+                                    <div><i data-lucide="globe" class="w-3 h-3 inline mr-2 text-red-400"></i>Data residency controls</div>
                                 </div>
                             </div>
                         </div>
@@ -1547,37 +1587,37 @@
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-3">SDKs & Languages</h3>
                         <div class="space-y-2 text-gray-400">
-                            <div>• TypeScript/Node.js</div>
-                            <div>• Python</div>
-                            <div>• OpenAPI spec</div>
-                            <div>• Postman collection</div>
+                            <div><i data-lucide="code" class="w-3 h-3 inline mr-2 text-blue-400"></i>TypeScript/Node.js</div>
+                            <div><i data-lucide="code" class="w-3 h-3 inline mr-2 text-blue-400"></i>Python</div>
+                            <div><i data-lucide="file-code" class="w-3 h-3 inline mr-2 text-blue-400"></i>OpenAPI spec</div>
+                            <div><i data-lucide="send" class="w-3 h-3 inline mr-2 text-blue-400"></i>Postman collection</div>
                         </div>
                     </div>
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-3">Agent Framework Helpers</h3>
                         <div class="space-y-2 text-gray-400">
-                            <div>• LangGraph payment nodes</div>
-                            <div>• CrewAI tool integration</div>
-                            <div>• AutoGen function calls</div>
-                            <div>• Semantic Kernel connectors</div>
+                            <div><i data-lucide="workflow" class="w-3 h-3 inline mr-2 text-green-400"></i>LangGraph payment nodes</div>
+                            <div><i data-lucide="puzzle" class="w-3 h-3 inline mr-2 text-green-400"></i>CrewAI tool integration</div>
+                            <div><i data-lucide="square" class="w-3 h-3 inline mr-2 text-green-400"></i>AutoGen function calls</div>
+                            <div><i data-lucide="link" class="w-3 h-3 inline mr-2 text-green-400"></i>Semantic Kernel connectors</div>
                         </div>
                     </div>
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-3">Sandbox Environment</h3>
                         <div class="space-y-2 text-gray-400">
-                            <div>• Mock IBANs & rail simulators</div>
-                            <div>• Policy testing & validation</div>
-                            <div>• Example apps: refund agent, procurement bot, payout worker</div>
-                            <div>• Test scenarios library</div>
+                            <div><i data-lucide="beaker" class="w-3 h-3 inline mr-2 text-purple-400"></i>Mock IBANs & rail simulators</div>
+                            <div><i data-lucide="check-circle" class="w-3 h-3 inline mr-2 text-purple-400"></i>Policy testing & validation</div>
+                            <div><i data-lucide="cpu" class="w-3 h-3 inline mr-2 text-purple-400"></i>Example apps: refund agent, procurement bot, payout worker</div>
+                            <div><i data-lucide="book" class="w-3 h-3 inline mr-2 text-purple-400"></i>Test scenarios library</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                     <h3 class="text-lg font-semibold text-white mb-4">LangGraph Integration Example</h3>
-                    <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-purple-400">from</span> <span class="text-blue-400">langgraph</span> <span class="text-purple-400">import</span> <span class="text-blue-400">StateGraph</span>
+                    <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-purple-400">from</span> <span class="text-blue-400">langgraph</span> <span class="text-purple-400">import</span> <span class="text-blue-400">StateGraph</span>
 <span class="text-purple-400">from</span> <span class="text-blue-400">nomik_langgraph</span> <span class="text-purple-400">import</span> <span class="text-blue-400">PaymentNode</span><span class="text-gray-500">,</span> <span class="text-blue-400">PolicyGuardNode</span>
 
 <span class="text-gray-600"># Define payment workflow</span>
@@ -1647,7 +1687,7 @@
 
                 <div class="mt-12 bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                     <h3 class="text-lg font-semibold text-white mb-4">SIEM Integration Example</h3>
-                    <pre class="text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto"><code><span class="text-gray-600"># Datadog integration</span>
+                    <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-600"># Datadog integration</span>
 <span class="text-purple-400">POST</span> <span class="text-cyan-400">/v1/webhooks/siem</span>
 <span class="text-gray-500">{</span>
   <span class="text-blue-400">"endpoint"</span><span class="text-gray-500">:</span> <span class="text-green-400">"https://app.datadoghq.com/intake/webhook/nomik"</span><span class="text-gray-500">,</span>
@@ -1682,7 +1722,7 @@
                     </div>
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6 text-center">
-                        <div class="text-3xl font-bold text-green-400 mb-2">≤100ms</div>
+                        <div class="text-3xl font-bold text-green-400 mb-2">&le;100ms</div>
                         <div class="text-white font-medium mb-1">Policy Decision</div>
                         <div class="text-gray-500 text-sm">p50 latency target</div>
                     </div>
@@ -1704,22 +1744,22 @@
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">Operational Excellence</h3>
                         <div class="space-y-3 text-gray-400">
-                            <div>• Exponential backoff retries</div>
-                            <div>• Circuit breaker patterns</div>
-                            <div>• Graceful degradation</div>
-                            <div>• Status page transparency</div>
-                            <div>• Incident communication</div>
+                            <div><i data-lucide="rotate-ccw" class="w-3 h-3 inline mr-2 text-red-400"></i>Exponential backoff retries</div>
+                            <div><i data-lucide="zap-off" class="w-3 h-3 inline mr-2 text-red-400"></i>Circuit breaker patterns</div>
+                            <div><i data-lucide="trending-down" class="w-3 h-3 inline mr-2 text-red-400"></i>Graceful degradation</div>
+                            <div><i data-lucide="monitor" class="w-3 h-3 inline mr-2 text-red-400"></i>Status page transparency</div>
+                            <div><i data-lucide="message-circle" class="w-3 h-3 inline mr-2 text-red-400"></i>Incident communication</div>
                         </div>
                     </div>
 
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <h3 class="text-lg font-semibold text-white mb-4">Monitoring & Alerts</h3>
                         <div class="space-y-3 text-gray-400">
-                            <div>• Real-time metrics dashboard</div>
-                            <div>• Rail-specific latency tracking</div>
-                            <div>• Policy evaluation performance</div>
-                            <div>• Webhook delivery monitoring</div>
-                            <div>• Partner integration health</div>
+                            <div><i data-lucide="bar-chart-3" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Real-time metrics dashboard</div>
+                            <div><i data-lucide="timer" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Rail-specific latency tracking</div>
+                            <div><i data-lucide="activity" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Policy evaluation performance</div>
+                            <div><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Webhook delivery monitoring</div>
+                            <div><i data-lucide="heart" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Partner integration health</div>
                         </div>
                     </div>
                 </div>
@@ -1745,11 +1785,11 @@
                             <h3 class="text-lg font-semibold text-white">Foundation</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400">
-                            <li>• Sandbox GA</li>
-                            <li>• TypeScript & Python SDKs</li>
-                            <li>• Policy editor UI</li>
-                            <li>• SEPA Instant pilot</li>
-                            <li>• Basic audit logging</li>
+                            <li><i data-lucide="play" class="w-3 h-3 inline mr-2 text-green-400"></i>Sandbox GA</li>
+                            <li><i data-lucide="code" class="w-3 h-3 inline mr-2 text-green-400"></i>TypeScript & Python SDKs</li>
+                            <li><i data-lucide="edit" class="w-3 h-3 inline mr-2 text-green-400"></i>Policy editor UI</li>
+                            <li><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-green-400"></i>SEPA Instant pilot</li>
+                            <li><i data-lucide="file-text" class="w-3 h-3 inline mr-2 text-green-400"></i>Basic audit logging</li>
                         </ul>
                     </div>
 
@@ -1759,11 +1799,11 @@
                             <h3 class="text-lg font-semibold text-white">Scale</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400">
-                            <li>• FedNow integration</li>
-                            <li>• SIEM export connectors</li>
-                            <li>• Approval workflows</li>
-                            <li>• LangGraph helpers</li>
-                            <li>• Trust scoring beta</li>
+                            <li><i data-lucide="link" class="w-3 h-3 inline mr-2 text-blue-400"></i>FedNow integration</li>
+                            <li><i data-lucide="download" class="w-3 h-3 inline mr-2 text-blue-400"></i>SIEM export connectors</li>
+                            <li><i data-lucide="workflow" class="w-3 h-3 inline mr-2 text-blue-400"></i>Approval workflows</li>
+                            <li><i data-lucide="git-branch" class="w-3 h-3 inline mr-2 text-blue-400"></i>LangGraph helpers</li>
+                            <li><i data-lucide="star" class="w-3 h-3 inline mr-2 text-blue-400"></i>Trust scoring beta</li>
                         </ul>
                     </div>
 
@@ -1773,11 +1813,11 @@
                             <h3 class="text-lg font-semibold text-white">Enterprise</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400">
-                            <li>• Private cloud deployment</li>
-                            <li>• Advanced trust scoring</li>
-                            <li>• Stablecoin rails</li>
-                            <li>• Multi-region compliance</li>
-                            <li>• White-label options</li>
+                            <li><i data-lucide="cloud" class="w-3 h-3 inline mr-2 text-purple-400"></i>Private cloud deployment</li>
+                            <li><i data-lucide="award" class="w-3 h-3 inline mr-2 text-purple-400"></i>Advanced trust scoring</li>
+                            <li><i data-lucide="coins" class="w-3 h-3 inline mr-2 text-purple-400"></i>Stablecoin rails</li>
+                            <li><i data-lucide="globe" class="w-3 h-3 inline mr-2 text-purple-400"></i>Multi-region compliance</li>
+                            <li><i data-lucide="tag" class="w-3 h-3 inline mr-2 text-purple-400"></i>White-label options</li>
                         </ul>
                     </div>
                 </div>
@@ -1806,7 +1846,7 @@
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <h4 class="text-green-400 font-medium mb-1"><i class="fas fa-check"></i> Nomik.ai Advantage</h4>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
                                 <p class="text-gray-400 text-sm">Agent-native identity (KYA) + deterministic policy engine + non-custodial agent delegation</p>
                             </div>
                             <div>
@@ -1822,13 +1862,13 @@
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-university text-purple-400 text-lg"></i>
+                                <i data-lucide="landmark" class="text-purple-400 w-5 h-5"></i>
                             </div>
                             <h3 class="text-xl font-semibold text-white">vs. Modern Treasury</h3>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <h4 class="text-green-400 font-medium mb-1"><i class="fas fa-check"></i> Nomik.ai Advantage</h4>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
                                 <p class="text-gray-400 text-sm">Agent-native identity (KYA) + deterministic policy runtime designed for autonomous execution</p>
                             </div>
                             <div>
@@ -1844,13 +1884,13 @@
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-shield-alt text-red-400 text-lg"></i>
+                                <i data-lucide="shield-check" class="text-red-400 w-5 h-5"></i>
                             </div>
                             <h3 class="text-xl font-semibold text-white">vs. Risk/Fraud Platforms</h3>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <h4 class="text-green-400 font-medium mb-1"><i class="fas fa-check"></i> Nomik.ai Advantage</h4>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
                                 <p class="text-gray-400 text-sm">Delegated execution + multi-rail policy runtime + KYA trust network</p>
                             </div>
                             <div>
@@ -1866,13 +1906,13 @@
                     <div class="bg-gray-900/50 border border-gray-800/50 rounded-lg p-6">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-random text-orange-400 text-lg"></i>
+                                <i data-lucide="shuffle" class="text-orange-400 w-5 h-5"></i>
                             </div>
                             <h3 class="text-xl font-semibold text-white">vs. Payment Orchestrators</h3>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <h4 class="text-green-400 font-medium mb-1"><i class="fas fa-check"></i> Nomik.ai Advantage</h4>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
                                 <p class="text-gray-400 text-sm">Agent governance, approval workflows, trust scoring built for agents</p>
                             </div>
                             <div>
@@ -1915,7 +1955,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-green-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-green-400 text-lg"></i>
+                            <i data-lucide="shield-check" class="text-green-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Non-custodial</h3>
                         <p class="text-gray-400">Funds stay at bank/PSP; Nomik.ai routes & enforces policy.</p>
@@ -1923,15 +1963,15 @@
 
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-blue-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-lock text-blue-400 text-lg"></i>
+                            <i data-lucide="lock" class="text-blue-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Encryption</h3>
-                        <p class="text-gray-400">TLS1.2+ in transit; AES‑256 at rest; KMS‑managed keys.</p>
+                        <p class="text-gray-400">TLS1.2+ in transit; AES-256 at rest; KMS-managed keys.</p>
                     </div>
 
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-purple-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-key text-purple-400 text-lg"></i>
+                            <i data-lucide="key" class="text-purple-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Access Control</h3>
                         <p class="text-gray-400">RBAC; SSO/SAML; least privilege; admin audit.</p>
@@ -1939,7 +1979,7 @@
 
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-yellow-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-globe text-yellow-400 text-lg"></i>
+                            <i data-lucide="globe" class="text-yellow-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Data Residency</h3>
                         <p class="text-gray-400">EU/US partitioning; configurable retention.</p>
@@ -1947,7 +1987,7 @@
 
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-red-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-clipboard-list text-red-400 text-lg"></i>
+                            <i data-lucide="clipboard-list" class="text-red-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Compliance</h3>
                         <p class="text-gray-400">GDPR controls; SOC2 Type II roadmap; PCI delegation.</p>
@@ -1955,10 +1995,10 @@
 
                     <div class="bg-gray-900/30 border border-gray-800/50 rounded-lg p-6">
                         <div class="w-12 h-12 bg-orange-500/20 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-exclamation-triangle text-orange-400 text-lg"></i>
+                            <i data-lucide="alert-triangle" class="text-orange-400 w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-3">Threat Response</h3>
-                        <p class="text-gray-400">Scope limits, second‑factor approvals, velocity caps, kill‑switch.</p>
+                        <p class="text-gray-400">Scope limits, second-factor approvals, velocity caps, kill-switch.</p>
                     </div>
                 </div>
             </div>
@@ -1986,19 +2026,19 @@
                         </div>
                         <ul class="space-y-3 text-gray-400 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 3 agents
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Sandbox environment
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 5 policies
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Basic logs
                             </li>
                         </ul>
@@ -2021,27 +2061,27 @@
                         </div>
                         <ul class="space-y-3 text-gray-400 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 50 agents
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Production rails
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Unlimited policies
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Alerts & monitoring
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 SIEM export
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 SSO integration
                             </li>
                         </ul>
@@ -2059,23 +2099,23 @@
                         </div>
                         <ul class="space-y-3 text-gray-400 mb-8">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Unlimited agents
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Private cloud/VPC
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Custom SLAs
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Bespoke rails
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
                                 Dedicated support
                             </li>
                         </ul>
@@ -2194,7 +2234,7 @@
 
             <div class="mt-8 pt-8 border-t border-gray-800/50 text-center">
                 <p class="text-gray-500 text-sm mb-4">
-                    © 2025 Nomik.ai. All rights reserved.
+                    &copy; 2025 Nomik.ai. All rights reserved.
                 </p>
                 <div class="text-gray-600 text-xs max-w-4xl mx-auto space-y-2">
                     <p><strong>Important:</strong> Nomik.ai is not a bank and does not hold customer funds. All payment execution occurs via licensed partners (banks/PSPs/EMIs).</p>
@@ -2263,6 +2303,8 @@
             const form = document.getElementById(formId);
             const emailInput = document.getElementById(emailId);
 
+            if (!form || !emailInput) return; // Skip if elements don't exist
+
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = emailInput.value;
@@ -2289,23 +2331,33 @@
         }
 
         // Initialize form handlers
-        handleFormSubmit('hero-form', 'hero-email');
         handleFormSubmit('footer-form', 'footer-email');
 
         // CTA button handlers
-        document.getElementById('nav-cta').addEventListener('click', function() {
-            document.getElementById('hero-email').focus();
-        });
+        const navCta = document.getElementById('nav-cta');
+        const ecosystemCta = document.getElementById('ecosystem-cta');
+        const footerEmail = document.getElementById('footer-email');
 
-        document.getElementById('ecosystem-cta').addEventListener('click', function() {
-            document.getElementById('hero-email').focus();
-        });
+        if (navCta && footerEmail) {
+            navCta.addEventListener('click', function() {
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        if (ecosystemCta && footerEmail) {
+            ecosystemCta.addEventListener('click', function() {
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
 
         // Add competitive landscape CTA handler if it exists
         const competitiveCta = document.querySelector('.bg-gradient-to-r.from-nomik-900\\/50 button');
-        if (competitiveCta) {
+        if (competitiveCta && footerEmail) {
             competitiveCta.addEventListener('click', function() {
-                document.getElementById('hero-email').focus();
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
             });
         }
 
@@ -2382,6 +2434,22 @@
 
         // Repeat animation every 10 seconds
         setInterval(animatePolicyTimeline, 10000);
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        // Initialize Lucide icons
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                setTimeout(initLucideIcons, 100);
+            }
+        }
+
+        // Initialize on DOM ready and after a slight delay
+        document.addEventListener('DOMContentLoaded', initLucideIcons);
+        setTimeout(initLucideIcons, 500);
     </script>
 </body>
 </html>
