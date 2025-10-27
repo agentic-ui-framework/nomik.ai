@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindStudio AI Agent Builder - Payment Infrastructure Case Study | Nomik</title>
-    <!-- Fonts -->
+    <title>MindStudio AI Agent Builder - Nomik Case Study</title>
+
+    <!-- Fonts - Exact match -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -12,719 +13,740 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Comprehensive styling for all content -->
     <style>
-        /* Global base styles */
-        main { @apply text-gray-300 font-inter; }
-        main h1 { @apply text-5xl lg:text-7xl font-black text-white mb-8 leading-tight; }
-        main h2 { @apply text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight; }
-        main h3 { @apply text-2xl lg:text-3xl font-bold text-white mb-6; }
-        main h4 { @apply text-xl lg:text-2xl font-semibold text-white mb-4; }
-        main h5 { @apply text-lg font-semibold text-white mb-3; }
-        main p { @apply text-gray-300 mb-6 leading-relaxed text-lg; }
-        main ul { @apply space-y-3 text-gray-300 mb-6 list-disc list-inside; }
-        main ol { @apply space-y-3 text-gray-300 mb-6 list-decimal list-inside; }
-        main li { @apply text-gray-300 text-lg; }
-        main strong { @apply text-white font-semibold; }
-        main em { @apply text-rose-300 italic; }
-        main blockquote { @apply border-l-4 border-rose-500 pl-6 italic text-gray-300 my-8 text-lg; }
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+        }
 
-        /* Layout */
-        .case-study-section { @apply py-20 lg:py-24; }
-        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
-        .section-grid { @apply grid lg:grid-cols-2 gap-16 items-center; }
-        .section-content { @apply space-y-8; }
-        .section-visual { @apply space-y-8; }
-        .highlight-section { @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-y border-gray-800; }
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
+        }
 
-        /* Enhanced Components */
-        .insight-box { @apply bg-gradient-to-br from-rose-900/30 to-pink-800/20 border border-rose-700/50 rounded-xl p-8 mb-8 shadow-2xl; }
-        .company-card { @apply bg-gradient-to-br from-gray-900/70 to-gray-800/50 border border-gray-700 rounded-xl p-8 shadow-xl; }
-        .company-stat { @apply flex justify-between py-3 border-b border-gray-700/30 last:border-b-0; }
-        .company-stat .label { @apply text-gray-400 font-medium; }
-        .company-stat .value { @apply text-white font-semibold text-lg; }
-        .example-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-10 mb-10 shadow-2xl backdrop-blur-sm; }
-        .example-header { @apply mb-8; }
-        .example-type { @apply text-gray-400 text-base font-medium; }
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Development Journey */
-        .dev-step { @apply bg-gradient-to-br from-rose-900/30 to-pink-800/20 border border-rose-700/50 rounded-xl p-8 mb-8 hover:border-rose-500/50 transition-all duration-300; }
-        .dev-step-number { @apply bg-gradient-to-r from-rose-600 to-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-base font-bold mb-4 shadow-lg; }
-        .dev-step-title { @apply text-white font-bold mb-3 text-xl; }
-        .dev-step-content { @apply text-gray-300 text-lg leading-relaxed; }
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
+        }
 
-        /* Enhanced Metrics */
-        .metrics-grid { @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16; }
-        .metric-card { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-xl p-8 text-center hover:border-rose-500/50 transition-all duration-300; }
-        .metric-value { @apply text-4xl lg:text-5xl font-black text-rose-400 mb-3 bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent; }
-        .metric-label { @apply text-gray-300 text-base font-medium; }
-        .metric-improvement { @apply text-rose-300 text-base mt-2 font-semibold; }
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Features */
-        .features-grid { @apply grid md:grid-cols-2 gap-8 mb-16; }
-        .feature-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8 hover:border-rose-500/50 transition-all duration-300; }
-        .feature-icon { @apply w-16 h-16 bg-gradient-to-r from-rose-600 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-lg; }
-        .feature-title { @apply text-white font-bold mb-3 text-xl; }
-        .feature-description { @apply text-gray-300 text-lg leading-relaxed; }
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
+        }
 
-        /* Enhanced Implementation */
-        .implementation-step { @apply border-l-4 border-rose-500 pl-8 mb-10; }
-        .step-badge { @apply bg-gradient-to-r from-rose-600 to-pink-600 text-white px-4 py-2 rounded-full text-base font-semibold mb-4 inline-block shadow-lg; }
-        .step-title { @apply text-white font-bold mb-3 text-xl; }
-        .step-description { @apply text-gray-300 mb-6 text-lg leading-relaxed; }
-        .step-details { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-6; }
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Results */
-        .results-highlight { @apply bg-gradient-to-br from-rose-900/30 to-pink-900/20 border border-rose-700/50 rounded-xl p-10 mb-10 shadow-2xl; }
-        .results-title { @apply text-white font-bold text-2xl mb-6; }
-        .results-grid { @apply grid md:grid-cols-2 gap-8; }
-        .result-item { @apply flex items-center space-x-4; }
-        .result-icon { @apply w-8 h-8 text-rose-400; }
-        .result-text { @apply text-gray-300 text-lg; }
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
 
-        /* Enhanced Timeline */
-        .timeline { @apply relative; }
-        .timeline-item { @apply relative pl-10 pb-10; }
-        .timeline-item::before { @apply absolute left-0 top-0 w-px h-full bg-gradient-to-b from-rose-600 to-pink-600 content-[''] z-0; }
-        .timeline-item::after { @apply absolute left-0 top-0 w-4 h-4 bg-gradient-to-r from-rose-600 to-pink-600 rounded-full transform -translate-x-1/2 content-[''] z-10 shadow-lg; }
-        .timeline-content { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8; }
-        .timeline-date { @apply text-rose-400 text-base font-semibold mb-3; }
-        .timeline-title { @apply text-white font-bold mb-3 text-xl; }
-        .timeline-description { @apply text-gray-300 text-lg leading-relaxed; }
-
-        /* Animation enhancements */
-        .hover-lift { @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl; }
-        .gradient-text { @apply bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 bg-clip-text text-transparent; }
-        .glow-border { @apply border border-rose-500/30 shadow-lg shadow-rose-500/20; }
-
-        /* AI Agent Builder styles */
-        .agent-builder-card { @apply bg-gradient-to-br from-rose-900/20 to-pink-900/20 border border-rose-700/50 rounded-xl p-6 hover:border-rose-500/50 transition-all duration-300; }
-        .ai-metric { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-lg p-4 text-center; }
-        .mindstudio-badge { @apply bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold; }
+        /* Configure Tailwind with exact colors */
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
 </head>
-<body class="bg-gray-950 text-white font-sans antialiased">
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
-        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
+<body class="bg-nomik-dark text-secondary">
+    <!-- Navigation - Exact match from index -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black p-1">
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
+                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">Case Study</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">AI Agent Monetization</span>
+                </div>
+
+                <h1 class="hero-h1 mb-6">MindStudio AI Agent Builder</h1>
+
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    How Nomik enables 10,000+ MindStudio agents to process payments autonomously and scale from $800 to $4,200 monthly revenue
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">425%</div>
+                    <div class="text-secondary">Revenue Increase</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">99.4%</div>
+                    <div class="text-secondary">Payment Success</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">2.3s</div>
+                    <div class="text-secondary">Settlement Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="heading-h2 mb-6">The Challenge: AI Agents Hit the Payment Wall</h2>
+                    <p class="text-secondary text-lg mb-6">
+                        <strong class="text-primary">MindStudio</strong> (mindstudio.ai) empowers 10,000+ businesses to build custom AI agents without coding. Their platform excels at creating sophisticated customer service, sales, and operations agents.
+                    </p>
+                    <p class="text-secondary text-lg mb-6">
+                        But there was a critical problem: <em class="text-accent">these agents couldn't handle money.</em>
+                    </p>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="heading-h3 mb-4 text-lg">The Payment Infrastructure Gap</h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li>• <strong class="text-primary">No Payment Processing:</strong> Agents couldn't accept customer payments directly</li>
+                            <li>• <strong class="text-primary">Fixed Pricing Only:</strong> No dynamic pricing based on agent performance</li>
+                            <li>• <strong class="text-primary">Manual Revenue Collection:</strong> Creators had to handle all financial transactions manually</li>
+                            <li>• <strong class="text-primary">No Inter-Agent Commerce:</strong> Agents couldn't pay each other for services</li>
+                            <li>• <strong class="text-primary">Value Opacity:</strong> No way to demonstrate ROI to customers</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                        <h4 class="text-accent text-lg font-semibold mb-3">The $19T AI Agent Economy Opportunity</h4>
+                        <p class="text-secondary">The global AI agent market is projected to reach $19T by 2030. MindStudio's 10,000+ agent creators represent the vanguard of this transformation, but without payment capabilities, they're leaving massive value on the table.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-6 text-lg">MindStudio Overview</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Founded</span>
+                                <span class="text-primary">2023</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Users</span>
+                                <span class="text-primary">10,000+ businesses building agents</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Product</span>
+                                <span class="text-primary">No-code AI agent builder</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Market</span>
+                                <span class="text-primary">SMB AI automation solutions</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-muted">Challenge</span>
+                                <span class="text-primary">Agent monetization infrastructure</span>
+                            </div>
                         </div>
-                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
-                    </a>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="case-studies.html" class="text-white font-medium transition-colors duration-200">Case Studies</a>
-                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
-                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
-                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
-                </div>
-
-                <!-- CTA Button -->
-                <div class="flex items-center space-x-3">
-                    <button type="button" class="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
-                        Join Early Access
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="case-study-hero">
-            <div class="container">
-                <div class="hero-breadcrumb">
-                    <a href="case-studies.html">Case Studies</a> > <span>MindStudio Integration</span>
-                </div>
-                <h1>MindStudio AI Agent Builder</h1>
-                <p class="hero-subtitle">How Nomik enables 10,000+ MindStudio agents to process payments autonomously and scale from $800 to $4,200 monthly revenue</p>
-
-                <div class="hero-stats">
-                    <div class="stat hover-lift">
-                        <span class="stat-number">425%</span>
-                        <span class="stat-label">Revenue increase</span>
-                    </div>
-                    <div class="stat hover-lift">
-                        <span class="stat-number">99.4%</span>
-                        <span class="stat-label">Payment success rate</span>
-                    </div>
-                    <div class="stat hover-lift">
-                        <span class="stat-number">2.3s</span>
-                        <span class="stat-label">Average settlement</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Company Overview -->
-        <section class="case-study-section">
-            <div class="container">
-                <div class="section-grid">
-                    <div class="section-content">
-                        <h2>The Challenge: AI Agents Hit the Payment Wall</h2>
-                        <p><strong>MindStudio</strong> (mindstudio.ai) empowers 10,000+ businesses to build custom AI agents without coding. Their platform excels at creating sophisticated customer service, sales, and operations agents.</p>
+            <!-- Real Implementation Example -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Real Implementation: Digital Marketing Agency Transformation</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-8">
+                        <h3 class="heading-h3 mb-2 text-lg">DigitalFlow Marketing</h3>
+                        <p class="text-secondary">15-person agency, $2.4M ARR, using MindStudio to build client AI agents</p>
+                    </div>
 
-                        <p>But there was a critical problem: <em>these agents couldn't handle money.</em></p>
+                    <div class="mb-8">
+                        <h4 class="text-primary font-semibold mb-4">Pre-Nomik Integration Challenges</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Manual Financial Tasks</div>
+                                <div class="text-secondary text-sm">25 hours/week processing payments and invoicing across 50+ clients</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Payment Processing Errors</div>
+                                <div class="text-secondary text-sm">12% error rate causing client disputes and delayed payments</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Collection Delays</div>
+                                <div class="text-secondary text-sm">18-day average payment collection cycle affecting cash flow</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Transaction Failures</div>
+                                <div class="text-secondary text-sm">6.2% failed transaction rate with no automated retry</div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="problem-list">
-                            <h3>The Payment Infrastructure Gap</h3>
-                            <ul>
-                                <li><strong>No Payment Processing:</strong> Agents couldn't accept customer payments directly</li>
-                                <li><strong>Fixed Pricing Only:</strong> No dynamic pricing based on agent performance</li>
-                                <li><strong>Manual Revenue Collection:</strong> Creators had to handle all financial transactions manually</li>
-                                <li><strong>No Inter-Agent Commerce:</strong> Agents couldn't pay each other for services</li>
-                                <li><strong>Value Opacity:</strong> No way to demonstrate ROI to customers</li>
+                    <div class="mb-8">
+                        <h4 class="text-primary font-semibold mb-4">Financial Impact Analysis</h4>
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="bg-green-900/30 rounded-lg p-4 text-center">
+                                <div class="text-green-400 font-bold text-xl mb-1">+$180,000</div>
+                                <div class="text-secondary text-sm">Annual cash flow improvement from faster collection</div>
+                            </div>
+                            <div class="bg-green-900/30 rounded-lg p-4 text-center">
+                                <div class="text-green-400 font-bold text-xl mb-1">+$95,000</div>
+                                <div class="text-secondary text-sm">New automated billing revenue streams</div>
+                            </div>
+                            <div class="bg-green-900/30 rounded-lg p-4 text-center">
+                                <div class="text-green-400 font-bold text-xl mb-1">+$220,000</div>
+                                <div class="text-secondary text-sm">International market expansion revenue</div>
+                            </div>
+                            <div class="bg-green-900/30 rounded-lg p-4 text-center">
+                                <div class="text-green-400 font-bold text-xl mb-1">523%</div>
+                                <div class="text-secondary text-sm">First-year return on investment</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-red-400 font-semibold mb-3">Before Nomik Integration</h4>
+                            <ul class="space-y-2 text-secondary text-sm">
+                                <li>• Fixed hourly billing model limited revenue scaling</li>
+                                <li>• Manual client onboarding taking 3-5 hours per client</li>
+                                <li>• Limited to 5 concurrent high-touch clients</li>
+                                <li>• Payment collection delays averaging 18 days</li>
+                                <li>• No automated billing for recurring services</li>
+                                <li>• $800/month average revenue per agent</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-green-400 font-semibold mb-3">After Nomik Integration</h4>
+                            <ul class="space-y-2 text-secondary text-sm">
+                                <li>• Performance-based pricing maximizing value capture</li>
+                                <li>• Automated agent deployment and setup</li>
+                                <li>• Managing 50+ concurrent clients efficiently</li>
+                                <li>• Instant payment processing and settlements</li>
+                                <li>• Fully automated subscription and usage billing</li>
+                                <li>• $4,200/month average revenue per agent</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="section-visual">
-                        <div class="company-card hover-lift">
-                            <h3>MindStudio Overview</h3>
-                            <div class="company-stat">
-                                <span class="label">Founded:</span>
-                                <span class="value">2023</span>
+
+                    <div class="mt-8">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-accent mb-2">525%</div>
+                                <div class="text-secondary">Revenue Growth Per Agent</div>
                             </div>
-                            <div class="company-stat">
-                                <span class="label">Users:</span>
-                                <span class="value">10,000+ businesses</span>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-accent mb-2">10x</div>
+                                <div class="text-secondary">Client Capacity Increase</div>
                             </div>
-                            <div class="company-stat">
-                                <span class="label">Product:</span>
-                                <span class="value">No-code AI agent builder</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Challenge:</span>
-                                <span class="value">Agent monetization</span>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-accent mb-2">88%</div>
+                                <div class="text-secondary">Time Savings on Financial Tasks</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Real Example -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Real Implementation: Digital Marketing Agency Transformation</h2>
+            <!-- Technical Implementation -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Technical Implementation: Agent-Native Payments</h2>
 
-                <div class="example-card hover-lift">
-                    <div class="example-header">
-                        <h3 class="gradient-text">DigitalFlow Marketing</h3>
-                        <span class="example-type">15-person agency, $2.4M ARR</span>
-                    </div>
-
-                    <div class="before-after">
-                        <div class="before">
-                            <h4>Before Nomik Integration</h4>
-                            <ul>
-                                <li>25 hours/week manual financial tasks</li>
-                                <li>12% payment processing errors</li>
-                                <li>18-day average payment collection</li>
-                                <li>6.2% failed transaction rate</li>
-                                <li>No automated billing for 50+ clients</li>
-                            </ul>
-                        </div>
-                        <div class="after">
-                            <h4>After Nomik Integration</h4>
-                            <ul>
-                                <li>3 hours/week financial tasks (-88%)</li>
-                                <li>0.3% payment processing errors</li>
-                                <li>2.3-day average collection (-87%)</li>
-                                <li>0.8% failed transaction rate</li>
-                                <li>Fully automated billing & collections</li>
-                            </ul>
+                <div class="space-y-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">1. Agent Identity & Authentication (KYA)</h3>
+                        <p class="text-secondary mb-6">Every MindStudio agent gets a cryptographic identity tied to its creator, enabling autonomous but accountable financial operations.</p>
+                        <div class="bg-gray-800/50 rounded-lg p-6 font-mono text-sm">
+                            <div class="text-green-400 mb-2">// Register agent with financial capabilities</div>
+                            <div class="text-secondary">const agentIdentity = await nomik.kya.registerAgent({</div>
+                            <div class="text-secondary ml-4">identity: `did:ai:mindstudio:${agentId}`,</div>
+                            <div class="text-secondary ml-4">capabilities: [</div>
+                            <div class="text-secondary ml-8">"customer_payment_processing",</div>
+                            <div class="text-secondary ml-8">"subscription_management",</div>
+                            <div class="text-secondary ml-8">"dynamic_pricing_execution"</div>
+                            <div class="text-secondary ml-4">],</div>
+                            <div class="text-secondary ml-4">paymentLimits: {</div>
+                            <div class="text-secondary ml-8">maxSingleTransaction: 10000,</div>
+                            <div class="text-secondary ml-8">maxDailyVolume: 50000</div>
+                            <div class="text-secondary ml-4">}</div>
+                            <div class="text-secondary">});</div>
                         </div>
                     </div>
 
-                    <div class="financial-impact">
-                        <h4>Financial Impact</h4>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <span class="amount">+$180,000</span>
-                                <span class="description">Annual cash flow improvement</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">2. Smart Wallets & Revenue Sharing</h3>
+                        <p class="text-secondary mb-6">Multi-currency wallets with automated revenue distribution between MindStudio (15%), creator (75%), and Nomik (10%).</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <div class="text-primary font-semibold">Customer Payments & Refunds (70%)</div>
+                                <div class="text-secondary text-sm">Direct customer transactions, subscription billing, refund processing</div>
                             </div>
-                            <div class="impact-item">
-                                <span class="amount">+$95,000</span>
-                                <span class="description">New automated billing revenue</span>
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <div class="text-primary font-semibold">Agent-to-Agent Services (20%)</div>
+                                <div class="text-secondary text-sm">Inter-agent payments for specialized services and data processing</div>
                             </div>
-                            <div class="impact-item">
-                                <span class="amount">+$220,000</span>
-                                <span class="description">International market expansion</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="amount">523%</span>
-                                <span class="description">First-year ROI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Implementation -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Technical Implementation: Agent-Native Payments</h2>
-
-                <div class="tech-overview">
-                    <div class="tech-feature">
-                        <h3>1. Agent Identity & Authentication (KYA)</h3>
-                        <p>Every MindStudio agent gets a cryptographic identity tied to its creator, enabling autonomous but accountable financial operations.</p>
-                        <div class="code-snippet">
-                            <pre><code>const agentIdentity = await nomik.kya.registerAgent({
-  identity: `did:ai:mindstudio:${agentId}`,
-  capabilities: [
-    "customer_payment_processing",
-    "subscription_management",
-    "dynamic_pricing_execution"
-  ],
-  paymentLimits: {
-    maxSingleTransaction: 10000,
-    maxDailyVolume: 50000
-  }
-});</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="tech-feature">
-                        <h3>2. Smart Wallets & Revenue Sharing</h3>
-                        <p>Multi-currency wallets with automated revenue distribution between MindStudio (15%), creator (75%), and Nomik (10%).</p>
-                        <div class="wallet-breakdown">
-                            <div class="wallet-item">
-                                <span class="percentage">70%</span>
-                                <span class="description">Customer payments & refunds</span>
-                            </div>
-                            <div class="wallet-item">
-                                <span class="percentage">20%</span>
-                                <span class="description">Agent-to-agent services</span>
-                            </div>
-                            <div class="wallet-item">
-                                <span class="percentage">10%</span>
-                                <span class="description">Operational expenses</span>
+                            <div class="border-l-4 border-green-600 pl-4">
+                                <div class="text-primary font-semibold">Operational Expenses (10%)</div>
+                                <div class="text-secondary text-sm">Platform fees, processing costs, compliance infrastructure</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tech-feature">
-                        <h3>3. Performance-Based Dynamic Pricing</h3>
-                        <p>AI agents automatically adjust pricing based on performance metrics, market conditions, and customer value delivered.</p>
-                        <div class="pricing-formula">
-                            <div class="formula-item">
-                                <span class="factor">Performance Score</span>
-                                <span class="weight">× 40%</span>
-                            </div>
-                            <div class="formula-item">
-                                <span class="factor">Market Demand</span>
-                                <span class="weight">× 30%</span>
-                            </div>
-                            <div class="formula-item">
-                                <span class="factor">Customer Value</span>
-                                <span class="weight">× 20%</span>
-                            </div>
-                            <div class="formula-item">
-                                <span class="factor">Competition</span>
-                                <span class="weight">× 10%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Live Example -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Live Transaction Example</h2>
-
-                <div class="transaction-flow">
-                    <h3>Customer Service Agent - Real Transaction</h3>
-                    <p>A MindStudio customer service agent handling a premium support request with dynamic pricing.</p>
-
-                    <div class="flow-steps">
-                        <div class="flow-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Customer Request</h4>
-                                <p>Premium support for urgent issue</p>
-                                <div class="step-details">
-                                    <span>Base Price: $50</span>
-                                    <span>Urgency: High</span>
-                                    <span>Agent Rating: 4.8/5</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">3. Performance-Based Dynamic Pricing</h3>
+                        <p class="text-secondary mb-6">AI agents automatically adjust pricing based on performance metrics, market conditions, and customer value delivered.</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-primary font-semibold mb-3">Pricing Formula Components</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-secondary">Performance Score</span>
+                                        <span class="text-accent font-semibold">× 40%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-secondary">Market Demand</span>
+                                        <span class="text-accent font-semibold">× 30%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-secondary">Customer Value</span>
+                                        <span class="text-accent font-semibold">× 20%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-secondary">Competition Analysis</span>
+                                        <span class="text-accent font-semibold">× 10%</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="flow-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Dynamic Pricing Calculation</h4>
-                                <p>Agent calculates optimal price in real-time</p>
-                                <div class="step-details">
-                                    <span>Performance Multiplier: 1.8x</span>
-                                    <span>Demand Multiplier: 1.4x</span>
-                                    <span>Final Price: $126</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flow-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Autonomous Payment Processing</h4>
-                                <p>Customer approves, payment processed instantly</p>
-                                <div class="step-details">
-                                    <span>Settlement: 2.1 seconds</span>
-                                    <span>Creator Share: $94.50</span>
-                                    <span>Platform Fee: $18.90</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flow-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Performance Tracking</h4>
-                                <p>Service completed, metrics updated</p>
-                                <div class="step-details">
-                                    <span>Resolution Time: 12 minutes</span>
-                                    <span>Customer Rating: 5/5</span>
-                                    <span>Revenue/Hour: $630</span>
+                            <div>
+                                <h4 class="text-primary font-semibold mb-3">Real-Time Price Adjustments</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-gray-800/50 rounded p-2">
+                                        <strong class="text-primary">Customer Service Agent:</strong> Base $50 → $126 (high urgency + 4.8 rating)
+                                    </div>
+                                    <div class="bg-gray-800/50 rounded p-2">
+                                        <strong class="text-primary">Data Analysis Agent:</strong> Base $25 → $18 (low complexity + competitive market)
+                                    </div>
+                                    <div class="bg-gray-800/50 rounded p-2">
+                                        <strong class="text-primary">Content Creation Agent:</strong> Base $100 → $175 (premium quality + high demand)
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Measured Results -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Measured Results: 12-Month Analysis</h2>
+            <!-- Live Transaction Example -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Live Transaction Example</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-6">
+                        <h3 class="heading-h3 mb-2 text-lg">Customer Service Agent - Real Transaction</h3>
+                        <p class="text-secondary">A MindStudio customer service agent handling a premium support request with dynamic pricing.</p>
+                    </div>
 
-                <div class="results-grid">
-                    <div class="result-category">
-                        <h3>Platform Growth</h3>
-                        <div class="metrics">
-                            <div class="metric">
-                                <span class="metric-value">340%</span>
-                                <span class="metric-label">Agent revenue growth</span>
+                    <div class="grid gap-6">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-blue-900/50 border border-blue-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <div class="text-blue-300 font-semibold mb-1">Customer Request</div>
+                                <div class="text-secondary text-sm">Premium support for urgent issue</div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">85%</span>
-                                <span class="metric-label">Agents now payment-enabled</span>
+                        </div>
+
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Request Analysis</h4>
+                                <p class="text-secondary text-xs mb-2">Agent analyzes request complexity and urgency</p>
+                                <div class="text-accent text-xs mb-1">Base Price: $50</div>
+                                <div class="text-accent text-xs mb-1">Urgency: High</div>
+                                <div class="text-accent text-xs">Agent Rating: 4.8/5</div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">$2.4M</span>
-                                <span class="metric-label">Additional platform revenue</span>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Dynamic Pricing Calculation</h4>
+                                <p class="text-secondary text-xs mb-2">Agent calculates optimal price in real-time</p>
+                                <div class="text-accent text-xs mb-1">Performance Multiplier: 1.8x</div>
+                                <div class="text-accent text-xs mb-1">Demand Multiplier: 1.4x</div>
+                                <div class="text-accent text-xs">Final Price: $126</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Autonomous Payment Processing</h4>
+                                <p class="text-secondary text-xs mb-2">Customer approves, payment processed instantly</p>
+                                <div class="text-accent text-xs mb-1">Settlement: 2.1 seconds</div>
+                                <div class="text-accent text-xs mb-1">Creator Share: $94.50</div>
+                                <div class="text-accent text-xs">Platform Fee: $18.90</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Performance Tracking</h4>
+                                <p class="text-secondary text-xs mb-2">Service completed, metrics updated</p>
+                                <div class="text-accent text-xs mb-1">Resolution Time: 12 minutes</div>
+                                <div class="text-accent text-xs mb-1">Customer Rating: 5/5</div>
+                                <div class="text-accent text-xs">Revenue/Hour: $630</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                            <div class="bg-green-900/50 border border-green-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl mb-2">✅</div>
+                                <div class="text-green-300 font-semibold mb-1">Transaction Completed</div>
+                                <div class="text-secondary text-sm">$126 processed autonomously with performance tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monetized AI Agent Examples -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Monetized AI Agent Categories</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h4 class="text-primary font-semibold mb-4">Business Intelligence Agent</h4>
+                        <p class="text-secondary text-sm mb-4">Analyzes company data and provides actionable insights with automatic report generation.</p>
+                        <div class="space-y-2 text-sm">
+                            <div><strong class="text-primary">Revenue Model:</strong> $0.50 per insight</div>
+                            <div><strong class="text-primary">Avg Monthly Revenue:</strong> $1,200 per client</div>
+                            <div><strong class="text-primary">Performance Bonus:</strong> Up to 2.5x for high-accuracy predictions</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h4 class="text-primary font-semibold mb-4">Sales Qualification Agent</h4>
+                        <p class="text-secondary text-sm mb-4">Qualifies leads through conversational AI and schedules appointments automatically.</p>
+                        <div class="space-y-2 text-sm">
+                            <div><strong class="text-primary">Revenue Model:</strong> $25 per qualified lead</div>
+                            <div><strong class="text-primary">Avg Monthly Revenue:</strong> $2,800 per client</div>
+                            <div><strong class="text-primary">Success Bonus:</strong> +50% for leads that convert to sales</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h4 class="text-primary font-semibold mb-4">Email Marketing Agent</h4>
+                        <p class="text-secondary text-sm mb-4">Creates personalized email campaigns and optimizes send times automatically.</p>
+                        <div class="space-y-2 text-sm">
+                            <div><strong class="text-primary">Revenue Model:</strong> 10% of campaign revenue</div>
+                            <div><strong class="text-primary">Avg Monthly Revenue:</strong> $1,850 per client</div>
+                            <div><strong class="text-primary">Performance Scaling:</strong> Up to 15% for campaigns exceeding benchmarks</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h4 class="text-primary font-semibold mb-4">Technical Support Agent</h4>
+                        <p class="text-secondary text-sm mb-4">Provides 24/7 technical support with automatic ticket resolution and escalation.</p>
+                        <div class="space-y-2 text-sm">
+                            <div><strong class="text-primary">Revenue Model:</strong> $500/month subscription</div>
+                            <div><strong class="text-primary">Customer Retention:</strong> 90% annual retention rate</div>
+                            <div><strong class="text-primary">Premium Tier:</strong> $1,200/month for advanced technical agents</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cross-Platform Agent Economy -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Cross-Platform Agent Economy</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <p class="text-secondary text-lg mb-6 text-center">
+                        Nomik's universal payment protocol enables MindStudio agents to transact with agents from other platforms, creating a true AI agent economy.
+                    </p>
+
+                    <div class="grid md:grid-cols-5 gap-4 mb-8">
+                        <div class="bg-purple-900/30 rounded-lg p-4 text-center">
+                            <div class="text-purple-300 font-semibold mb-1">MindStudio</div>
+                            <div class="text-secondary text-sm">Agent Hub</div>
+                        </div>
+                        <div class="bg-blue-900/30 rounded-lg p-4 text-center">
+                            <div class="text-blue-300 font-semibold mb-1">LangChain</div>
+                            <div class="text-secondary text-sm">Data Processing</div>
+                        </div>
+                        <div class="bg-green-900/30 rounded-lg p-4 text-center">
+                            <div class="text-green-300 font-semibold mb-1">Zapier</div>
+                            <div class="text-secondary text-sm">Workflow Automation</div>
+                        </div>
+                        <div class="bg-yellow-900/30 rounded-lg p-4 text-center">
+                            <div class="text-yellow-300 font-semibold mb-1">CrewAI</div>
+                            <div class="text-secondary text-sm">Multi-Agent Tasks</div>
+                        </div>
+                        <div class="bg-red-900/30 rounded-lg p-4 text-center">
+                            <div class="text-red-300 font-semibold mb-1">AutoGen</div>
+                            <div class="text-secondary text-sm">Code Generation</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-3 text-lg">Real Inter-Agent Transaction</h3>
+                        <p class="text-secondary mb-4">MindStudio customer service agent pays a LangChain data analysis agent $25 for processing customer sentiment data, enabling better service recommendations.</p>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm">
+                            <div>
+                                <div><strong class="text-primary">Service:</strong> Sentiment analysis of 1,000 customer reviews</div>
+                                <div><strong class="text-primary">Processing Time:</strong> 3.2 seconds</div>
+                            </div>
+                            <div>
+                                <div><strong class="text-primary">Payment Settlement:</strong> Automatic via Nomik</div>
+                                <div><strong class="text-primary">Customer Benefit:</strong> 34% improvement in recommendation accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Phases -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Implementation Journey: 4-Phase Rollout</h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Phase 1</span>
+                                <span class="text-muted">Weeks 1-4</span>
+                            </div>
+                            <div class="text-green-400 font-semibold">120% revenue increase</div>
+                        </div>
+                        <h3 class="heading-h3 mb-2 text-lg">Foundation</h3>
+                        <p class="text-secondary mb-4">Core payment processing, agent wallets, revenue sharing</p>
+                        <div class="text-secondary text-sm">100 beta agents processing payments</div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Phase 2</span>
+                                <span class="text-muted">Weeks 5-8</span>
+                            </div>
+                            <div class="text-green-400 font-semibold">Additional 85% revenue boost</div>
+                        </div>
+                        <h3 class="heading-h3 mb-2 text-lg">Intelligence</h3>
+                        <p class="text-secondary mb-4">Performance-based pricing, analytics, agent-to-agent payments</p>
+                        <div class="text-secondary text-sm">1,000 agents with dynamic pricing</div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Phase 3</span>
+                                <span class="text-muted">Weeks 9-12</span>
+                            </div>
+                            <div class="text-green-400 font-semibold">Global payment support</div>
+                        </div>
+                        <h3 class="heading-h3 mb-2 text-lg">Ecosystem</h3>
+                        <p class="text-secondary mb-4">Cross-platform integration, global compliance, marketplace</p>
+                        <div class="text-secondary text-sm">5,000 agents across platforms</div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Phase 4</span>
+                                <span class="text-muted">Months 4-12</span>
+                            </div>
+                            <div class="text-green-400 font-semibold">340% total revenue growth</div>
+                        </div>
+                        <h3 class="heading-h3 mb-2 text-lg">Scale</h3>
+                        <p class="text-secondary mb-4">AI financial planning, predictive intelligence, full automation</p>
+                        <div class="text-secondary text-sm">15,000+ agents in marketplace</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measured Results -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Measured Results: 12-Month Analysis</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Platform Growth</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">340%</span>
+                                <span class="text-secondary text-sm">Agent revenue growth</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">85%</span>
+                                <span class="text-secondary text-sm">Agents now payment-enabled</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$2.4M</span>
+                                <span class="text-secondary text-sm">Additional platform revenue</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="result-category">
-                        <h3>Creator Benefits</h3>
-                        <div class="metrics">
-                            <div class="metric">
-                                <span class="metric-value">$4,200</span>
-                                <span class="metric-label">Average monthly revenue (vs $800)</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Creator Benefits</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$4,200</span>
+                                <span class="text-secondary text-sm">Average monthly revenue (vs $800)</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">45%</span>
-                                <span class="metric-label">Price optimization increase</span>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">45%</span>
+                                <span class="text-secondary text-sm">Price optimization increase</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">180%</span>
-                                <span class="metric-label">Customer lifetime value boost</span>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">180%</span>
+                                <span class="text-secondary text-sm">Customer lifetime value boost</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="result-category">
-                        <h3>Technical Performance</h3>
-                        <div class="metrics">
-                            <div class="metric">
-                                <span class="metric-value">99.4%</span>
-                                <span class="metric-label">Transaction success rate</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Technical Performance</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">99.4%</span>
+                                <span class="text-secondary text-sm">Transaction success rate</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">2.3s</span>
-                                <span class="metric-label">Average settlement time</span>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">2.3s</span>
+                                <span class="text-secondary text-sm">Average settlement time</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">99.97%</span>
-                                <span class="metric-label">System uptime</span>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">99.97%</span>
+                                <span class="text-secondary text-sm">System uptime</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial">
-                    <blockquote>
+                <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6 mb-8">
+                    <blockquote class="text-lg text-secondary italic mb-4">
                         "Before Nomik, our agents were just expensive chatbots. Now they're revenue-generating business assets. Our best customer service agent generates more than most human employees, and it never sleeps."
                     </blockquote>
-                    <cite>— Sarah Chen, DigitalFlow Marketing CEO</cite>
+                    <cite class="text-primary font-semibold">— Sarah Chen, DigitalFlow Marketing CEO</cite>
                 </div>
-            </div>
-        </section>
 
-        <!-- Cross-Platform Ecosystem -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Cross-Platform Agent Economy</h2>
-
-                <div class="ecosystem-overview">
-                    <p>Nomik's universal payment protocol enables MindStudio agents to transact with agents from other platforms, creating a true AI agent economy.</p>
-
-                    <div class="platform-connections">
-                        <div class="platform-hub">
-                            <div class="hub-center">MindStudio Agent</div>
-                            <div class="hub-connections">
-                                <div class="connection">
-                                    <span class="platform">LangChain</span>
-                                    <span class="connection-type">Data Processing</span>
-                                </div>
-                                <div class="connection">
-                                    <span class="platform">Zapier</span>
-                                    <span class="connection-type">Workflow Automation</span>
-                                </div>
-                                <div class="connection">
-                                    <span class="platform">CrewAI</span>
-                                    <span class="connection-type">Multi-Agent Tasks</span>
-                                </div>
-                                <div class="connection">
-                                    <span class="platform">AutoGen</span>
-                                    <span class="connection-type">Code Generation</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">15,000+</div>
+                        <div class="text-secondary">Agents in global marketplace</div>
                     </div>
-
-                    <div class="ecosystem-example">
-                        <h3>Real Inter-Agent Transaction</h3>
-                        <p>MindStudio customer service agent pays a LangChain data analysis agent $25 for processing customer sentiment data, enabling better service recommendations.</p>
-                        <div class="transaction-details">
-                            <span><strong>Service:</strong> Sentiment analysis of 1,000 customer reviews</span>
-                            <span><strong>Processing Time:</strong> 3.2 seconds</span>
-                            <span><strong>Payment Settlement:</strong> Automatic via Nomik</span>
-                            <span><strong>Customer Benefit:</strong> 34% improvement in recommendation accuracy</span>
-                        </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">$23M</div>
+                        <div class="text-secondary">Total agent revenue processed</div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">Zero</div>
+                        <div class="text-secondary">Payment fraud incidents</div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">$19T</div>
+                        <div class="text-secondary">Total addressable AI agent economy</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Implementation Phases -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Implementation Journey: 4-Phase Rollout</h2>
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-900/20 via-purple-800/20 to-purple-900/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="heading-h2 mb-4">Ready to Enable Your Agents?</h2>
+            <p class="text-xl text-secondary mb-8">Transform your AI agents from tools into revenue-generating business assets with autonomous payment capabilities.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Try in Sandbox
+                </button>
+                <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    View Documentation
+                </button>
+            </div>
+        </div>
+    </section>
 
-                <div class="implementation-timeline">
-                    <div class="phase">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 1</span>
-                            <span class="phase-duration">Weeks 1-4</span>
-                        </div>
-                        <h3>Foundation</h3>
-                        <p>Core payment processing, agent wallets, revenue sharing</p>
-                        <div class="phase-results">
-                            <span>100 beta agents processing payments</span>
-                            <span>120% revenue increase</span>
-                        </div>
-                    </div>
-
-                    <div class="phase">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 2</span>
-                            <span class="phase-duration">Weeks 5-8</span>
-                        </div>
-                        <h3>Intelligence</h3>
-                        <p>Performance-based pricing, analytics, agent-to-agent payments</p>
-                        <div class="phase-results">
-                            <span>1,000 agents with dynamic pricing</span>
-                            <span>Additional 85% revenue boost</span>
-                        </div>
-                    </div>
-
-                    <div class="phase">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 3</span>
-                            <span class="phase-duration">Weeks 9-12</span>
-                        </div>
-                        <h3>Ecosystem</h3>
-                        <p>Cross-platform integration, global compliance, marketplace</p>
-                        <div class="phase-results">
-                            <span>5,000 agents across platforms</span>
-                            <span>Global payment method support</span>
-                        </div>
-                    </div>
-
-                    <div class="phase">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 4</span>
-                            <span class="phase-duration">Months 4-12</span>
-                        </div>
-                        <h3>Scale</h3>
-                        <p>AI financial planning, predictive intelligence, full automation</p>
-                        <div class="phase-results">
-                            <span>15,000+ agents in marketplace</span>
-                            <span>340% total revenue growth</span>
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Technical Architecture -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Architecture: Zero-Setup Integration</h2>
-
-                <div class="architecture-diagram">
-                    <div class="arch-layer">
-                        <h4>MindStudio Layer</h4>
-                        <div class="arch-components">
-                            <span>Agent Builder UI</span>
-                            <span>Agent Runtime</span>
-                            <span>Performance Analytics</span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">↓</div>
-                    <div class="arch-layer">
-                        <h4>Nomik Payment Layer</h4>
-                        <div class="arch-components">
-                            <span>KYA Identity</span>
-                            <span>Smart Wallets</span>
-                            <span>Dynamic Pricing</span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">↓</div>
-                    <div class="arch-layer">
-                        <h4>Financial Infrastructure</h4>
-                        <div class="arch-components">
-                            <span>Banking Networks</span>
-                            <span>Crypto Networks</span>
-                            <span>Compliance Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="integration-steps">
-                    <h3>Integration Process</h3>
-                    <ol>
-                        <li><strong>5 minutes:</strong> Add Nomik SDK to MindStudio agent builder</li>
-                        <li><strong>1 click:</strong> Agent creator enables payments in dashboard</li>
-                        <li><strong>Automatic:</strong> KYA identity created and wallet provisioned</li>
-                        <li><strong>Instant:</strong> Agent can accept payments and adjust pricing</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <!-- Business Impact -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Bottom Line: Real Business Impact</h2>
-
-                <div class="impact-summary">
-                    <div class="impact-section">
-                        <h3>For Platform Builders</h3>
-                        <ul>
-                            <li><strong>New Revenue Stream:</strong> Transaction fees generate $2.4M additional ARR</li>
-                            <li><strong>Competitive Advantage:</strong> Only major platform with autonomous payment agents</li>
-                            <li><strong>User Retention:</strong> Payment-enabled creators stay 67% longer</li>
-                            <li><strong>Market Leadership:</strong> First-mover advantage in agent monetization</li>
-                        </ul>
-                    </div>
-
-                    <div class="impact-section">
-                        <h3>For Agent Creators</h3>
-                        <ul>
-                            <li><strong>Revenue Multiplication:</strong> Average monthly revenue up 425%</li>
-                            <li><strong>Operational Efficiency:</strong> 78% reduction in manual payment tasks</li>
-                            <li><strong>Global Market Access:</strong> Serve customers in 23+ countries</li>
-                            <li><strong>Performance Incentives:</strong> Better agents earn more automatically</li>
-                        </ul>
-                    </div>
-
-                    <div class="impact-section">
-                        <h3>For End Customers</h3>
-                        <ul>
-                            <li><strong>Better Service:</strong> 34% improvement in agent performance</li>
-                            <li><strong>Transparent Value:</strong> Real-time ROI tracking and reporting</li>
-                            <li><strong>Fair Pricing:</strong> Pay based on actual value delivered</li>
-                            <li><strong>Global Accessibility:</strong> Local payment methods worldwide</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="final-stats">
-                    <div class="final-stat">
-                        <span class="big-number">$19T</span>
-                        <span class="stat-description">Total addressable AI agent economy</span>
-                    </div>
-                    <div class="final-stat">
-                        <span class="big-number">15,000+</span>
-                        <span class="stat-description">Agents in global marketplace</span>
-                    </div>
-                    <div class="final-stat">
-                        <span class="big-number">Zero</span>
-                        <span class="stat-description">Payment fraud incidents</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="case-study-cta">
-            <div class="container">
-                <h2>Ready to Enable Your Agents?</h2>
-                <p>Transform your AI agents from tools into revenue-generating business assets.</p>
-                <div class="cta-buttons">
-                    <a href="sandbox.html" class="btn btn-primary">Try in Sandbox</a>
-                    <a href="documentation.html" class="btn btn-secondary">View Documentation</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Product</h3>
-                    <a href="sandbox.html">Sandbox</a>
-                    <a href="documentation.html">Documentation</a>
-                    <a href="infrastructure.html">Infrastructure</a>
-                    <a href="status.html">Status</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="#about">About</a>
-                    <a href="#careers">Careers</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <a href="#api">API Reference</a>
-                    <a href="#guides">Guides</a>
-                    <a href="#support">Support</a>
-                    <a href="#security">Security</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="#twitter">Twitter</a>
-                    <a href="#linkedin">LinkedIn</a>
-                    <a href="#github">GitHub</a>
-                    <a href="#discord">Discord</a>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make.com Workflow Automation - Financial Infrastructure Case Study | Nomik</title>
-    <!-- Fonts -->
+    <title>Make.com Workflow Automation - Nomik Case Study</title>
+
+    <!-- Fonts - Exact match -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -12,894 +13,724 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Comprehensive styling for all content -->
     <style>
-        /* Global base styles */
-        main { @apply text-gray-300 font-inter; }
-        main h1 { @apply text-5xl lg:text-7xl font-black text-white mb-8 leading-tight; }
-        main h2 { @apply text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight; }
-        main h3 { @apply text-2xl lg:text-3xl font-bold text-white mb-6; }
-        main h4 { @apply text-xl lg:text-2xl font-semibold text-white mb-4; }
-        main h5 { @apply text-lg font-semibold text-white mb-3; }
-        main p { @apply text-gray-300 mb-6 leading-relaxed text-lg; }
-        main ul { @apply space-y-3 text-gray-300 mb-6 list-disc list-inside; }
-        main ol { @apply space-y-3 text-gray-300 mb-6 list-decimal list-inside; }
-        main li { @apply text-gray-300 text-lg; }
-        main strong { @apply text-white font-semibold; }
-        main em { @apply text-purple-300 italic; }
-        main blockquote { @apply border-l-4 border-purple-500 pl-6 italic text-gray-300 my-8 text-lg; }
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+        }
 
-        /* Layout */
-        .case-study-section { @apply py-20 lg:py-24; }
-        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
-        .section-grid { @apply grid lg:grid-cols-2 gap-16 items-center; }
-        .section-content { @apply space-y-8; }
-        .section-visual { @apply space-y-8; }
-        .highlight-section { @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-y border-gray-800; }
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
+        }
 
-        /* Enhanced Components */
-        .insight-box { @apply bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-xl p-8 mb-8 shadow-2xl; }
-        .company-card { @apply bg-gradient-to-br from-gray-900/70 to-gray-800/50 border border-gray-700 rounded-xl p-8 shadow-xl; }
-        .company-stat { @apply flex justify-between py-3 border-b border-gray-700/30 last:border-b-0; }
-        .company-stat .label { @apply text-gray-400 font-medium; }
-        .company-stat .value { @apply text-white font-semibold text-lg; }
-        .example-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-10 mb-10 shadow-2xl backdrop-blur-sm; }
-        .example-header { @apply mb-8; }
-        .example-type { @apply text-gray-400 text-base font-medium; }
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Development Journey */
-        .dev-step { @apply bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-xl p-8 mb-8 hover:border-purple-500/50 transition-all duration-300; }
-        .dev-step-number { @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-base font-bold mb-4 shadow-lg; }
-        .dev-step-title { @apply text-white font-bold mb-3 text-xl; }
-        .dev-step-content { @apply text-gray-300 text-lg leading-relaxed; }
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
+        }
 
-        /* Enhanced Metrics */
-        .metrics-grid { @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16; }
-        .metric-card { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-xl p-8 text-center hover:border-purple-500/50 transition-all duration-300; }
-        .metric-value { @apply text-4xl lg:text-5xl font-black text-purple-400 mb-3 bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent; }
-        .metric-label { @apply text-gray-300 text-base font-medium; }
-        .metric-improvement { @apply text-purple-300 text-base mt-2 font-semibold; }
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Features */
-        .features-grid { @apply grid md:grid-cols-2 gap-8 mb-16; }
-        .feature-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8 hover:border-purple-500/50 transition-all duration-300; }
-        .feature-icon { @apply w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg; }
-        .feature-title { @apply text-white font-bold mb-3 text-xl; }
-        .feature-description { @apply text-gray-300 text-lg leading-relaxed; }
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
+        }
 
-        /* Enhanced Implementation */
-        .implementation-step { @apply border-l-4 border-purple-500 pl-8 mb-10; }
-        .step-badge { @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-full text-base font-semibold mb-4 inline-block shadow-lg; }
-        .step-title { @apply text-white font-bold mb-3 text-xl; }
-        .step-description { @apply text-gray-300 mb-6 text-lg leading-relaxed; }
-        .step-details { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-6; }
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Results */
-        .results-highlight { @apply bg-gradient-to-br from-purple-900/30 to-indigo-900/20 border border-purple-700/50 rounded-xl p-10 mb-10 shadow-2xl; }
-        .results-title { @apply text-white font-bold text-2xl mb-6; }
-        .results-grid { @apply grid md:grid-cols-2 gap-8; }
-        .result-item { @apply flex items-center space-x-4; }
-        .result-icon { @apply w-8 h-8 text-purple-400; }
-        .result-text { @apply text-gray-300 text-lg; }
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
 
-        /* Enhanced Timeline */
-        .timeline { @apply relative; }
-        .timeline-item { @apply relative pl-10 pb-10; }
-        .timeline-item::before { @apply absolute left-0 top-0 w-px h-full bg-gradient-to-b from-purple-600 to-indigo-600 content-[''] z-0; }
-        .timeline-item::after { @apply absolute left-0 top-0 w-4 h-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transform -translate-x-1/2 content-[''] z-10 shadow-lg; }
-        .timeline-content { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8; }
-        .timeline-date { @apply text-purple-400 text-base font-semibold mb-3; }
-        .timeline-title { @apply text-white font-bold mb-3 text-xl; }
-        .timeline-description { @apply text-gray-300 text-lg leading-relaxed; }
-
-        /* Animation enhancements */
-        .hover-lift { @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl; }
-        .gradient-text { @apply bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent; }
-        .glow-border { @apply border border-purple-500/30 shadow-lg shadow-purple-500/20; }
-
-        /* Workflow automation styles */
-        .workflow-node { @apply bg-gradient-to-br from-purple-900/20 to-indigo-900/20 border border-purple-700/50 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300; }
-        .automation-metric { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-lg p-4 text-center; }
-        .workflow-badge { @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full text-sm font-semibold; }
+        /* Configure Tailwind with exact colors */
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
 </head>
-<body class="bg-gray-950 text-white font-sans antialiased">
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
-        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
+<body class="bg-nomik-dark text-secondary">
+    <!-- Navigation - Exact match from index -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black p-1">
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
-                        </div>
-                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
-                    </a>
+                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
+                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">Case Study</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">Make.com Integration</span>
                 </div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="case-studies.html" class="text-white font-medium transition-colors duration-200">Case Studies</a>
-                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
-                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
-                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
-                </div>
+                <h1 class="hero-h1 mb-6">Make.com Workflow Monetization</h1>
 
-                <!-- CTA Button -->
-                <div class="flex items-center space-x-3">
-                    <button type="button" class="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
-                        Join Early Access
-                    </button>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    How Nomik transforms 500K+ Make.com users from data movers to revenue generators with workflow monetization
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">523%</div>
+                    <div class="text-secondary">ROI Increase</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">$200K+</div>
+                    <div class="text-secondary">User Revenue Potential</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">15M+</div>
+                    <div class="text-secondary">Monthly Workflows</div>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="case-study-hero">
-            <div class="container">
-                <div class="hero-breadcrumb">
-                    <a href="case-studies.html">Case Studies</a> > <span>Make.com Integration</span>
-                </div>
-                <h1>Make.com Workflow Automation</h1>
-                <p class="hero-subtitle">How Nomik transforms 500,000+ Make.com users from data movers to revenue generators with agent-native payment processing</p>
+    <!-- Main Content -->
+    <section class="py-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="heading-h2 mb-6">The Reality: Workflow Automation Without Monetization</h2>
+                    <p class="text-secondary text-lg mb-6">
+                        <strong class="text-primary">Make.com</strong> (formerly Integromat) serves 500,000+ users with visual workflow automation. They excel at connecting 2,000+ applications and processing 15+ million automated workflows monthly.
+                    </p>
+                    <p class="text-secondary text-lg mb-6">
+                        But here's the $200K problem: <em class="text-accent">Users are generating massive value but can't monetize their workflows.</em>
+                    </p>
 
-                <div class="hero-stats">
-                    <div class="stat hover-lift">
-                        <span class="stat-number">523%</span>
-                        <span class="stat-label">ROI in first year</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="heading-h3 mb-4 text-lg">The Critical Revenue Gap</h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li>• <strong class="text-primary">Data Movement Only:</strong> Workflows move data but can't process payments</li>
+                            <li>• <strong class="text-primary">Service Monetization Barriers:</strong> No way to charge for automated services</li>
+                            <li>• <strong class="text-primary">Manual Payment Processing:</strong> All financial transactions require human intervention</li>
+                            <li>• <strong class="text-primary">Compliance Complexity:</strong> No built-in financial regulatory framework</li>
+                            <li>• <strong class="text-primary">Cross-Border Limitations:</strong> International payment processing impossible</li>
+                        </ul>
                     </div>
-                    <div class="stat hover-lift">
-                        <span class="stat-number">$200K+</span>
-                        <span class="stat-label">User revenue potential</span>
-                    </div>
-                    <div class="stat hover-lift">
-                        <span class="stat-number">15M+</span>
-                        <span class="stat-label">Automated workflows</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Company Overview -->
-        <section class="case-study-section">
-            <div class="container">
-                <div class="section-grid">
-                    <div class="section-content">
-                        <h2>The Reality: Workflow Automation Without Monetization</h2>
-                        <p><strong>Make.com</strong> (formerly Integromat) serves 500,000+ users with visual workflow automation. They excel at connecting 2,000+ applications and processing 15+ million automated workflows monthly.</p>
-
-                        <p>But here's the $200K problem: <em>Users are generating massive value but can't monetize their workflows.</em></p>
-
-                        <div>
-                            <h3>The Critical Revenue Gap</h3>
-                            <ul>
-                                <li><strong>Data Movement Only:</strong> Workflows move data but can't process payments</li>
-                                <li><strong>Service Monetization Barriers:</strong> No way to charge for automated services</li>
-                                <li><strong>Manual Payment Processing:</strong> All financial transactions require human intervention</li>
-                                <li><strong>Compliance Complexity:</strong> No built-in financial regulatory framework</li>
-                                <li><strong>Cross-Border Limitations:</strong> International payment processing impossible</li>
-                            </ul>
-                        </div>
-
-                        <div class="insight-box hover-lift glow-border">
-                            <h4 class="gradient-text">The $200K Opportunity</h4>
-                            <p>Case studies show individual Make.com users generating $200,000+ annually through automation services. These entrepreneurs discovered workflow automation as a service business model but hit the payment infrastructure wall.</p>
-                        </div>
-                    </div>
-                    <div class="section-visual">
-                        <div class="company-card hover-lift">
-                            <h3>Make.com Overview</h3>
-                            <div class="company-stat">
-                                <span class="label">Founded:</span>
-                                <span class="value">2012 (rebranded 2021)</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Users:</span>
-                                <span class="value">500,000+ active automation builders</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Workflows:</span>
-                                <span class="value">15M+ monthly scenarios</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Revenue:</span>
-                                <span class="value">$50M+ ARR (est. 2024)</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Challenge:</span>
-                                <span class="value">Payment infrastructure gap</span>
-                            </div>
-                        </div>
+                    <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                        <h4 class="text-accent text-lg font-semibold mb-3">The $200K Opportunity</h4>
+                        <p class="text-secondary">Case studies show individual Make.com users generating $200,000+ annually through automation services. These entrepreneurs discovered workflow automation as a service business model but hit the payment infrastructure wall.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Real Implementation -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Real Implementation: Marketing Agency Transformation</h2>
-
-                <div class="example-card">
-                    <div class="example-header">
-                        <h3>DigitalFlow Marketing</h3>
-                        <span class="example-type">15-person agency with 47 active Make.com scenarios</span>
-                    </div>
-
-                    <div class="workflow-challenge">
-                        <h4>Pre-Nomik Workflow Challenges</h4>
-                        <div class="challenge-list">
-                            <div class="challenge-item">
-                                <span class="challenge-title">Client Billing Complexity</span>
-                                <span class="challenge-detail">Manual invoice generation for 50+ monthly retainer clients</span>
+                <div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-6 text-lg">Make.com Overview</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Founded</span>
+                                <span class="text-primary">2012 (rebranded 2021)</span>
                             </div>
-                            <div class="challenge-item">
-                                <span class="challenge-title">Project Payment Delays</span>
-                                <span class="challenge-detail">No automated milestone payment processing</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Users</span>
+                                <span class="text-primary">500,000+ active automation builders</span>
                             </div>
-                            <div class="challenge-item">
-                                <span class="challenge-title">Subscription Revenue Leakage</span>
-                                <span class="challenge-detail">8% monthly churn due to failed payment processing</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Workflows</span>
+                                <span class="text-primary">15M+ monthly scenarios</span>
                             </div>
-                            <div class="challenge-item">
-                                <span class="challenge-title">Cross-Border Friction</span>
-                                <span class="challenge-detail">30% revenue from international clients with complex requirements</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Revenue</span>
+                                <span class="text-primary">$50M+ ARR (est. 2024)</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="baseline-metrics">
-                        <h4>Pre-Integration Baseline</h4>
-                        <div class="metric-grid">
-                            <div class="metric-item">
-                                <span class="metric-value">25 hours/week</span>
-                                <span class="metric-label">Manual financial tasks</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">12%</span>
-                                <span class="metric-label">Payment processing errors</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">18 days</span>
-                                <span class="metric-label">Average payment delay</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">6.2%</span>
-                                <span class="metric-label">Failed transaction rate</span>
+                            <div class="flex justify-between py-2">
+                                <span class="text-muted">Challenge</span>
+                                <span class="text-primary">Payment infrastructure gap</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Technical Implementation -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Technical Solution: Workflow-Native Payment Modules</h2>
-
-                <div class="tech-overview">
-                    <div class="tech-feature">
-                        <h3>1. KYA Framework for Workflow Agents</h3>
-                        <p>Every Make.com scenario can register as a financial agent with autonomous payment capabilities.</p>
-                        <div class="code-snippet">
-                            <pre><code>const workflowAgent = await nomik.kya.registerWorkflowAgent({
-  identity: `did:ai:make:workflow:${scenarioId}`,
-  platform: "make.com",
-  owner: userConfig.makeUserId,
-  capabilities: [
-    "automated_payment_processing",
-    "recurring_billing_management",
-    "cross_platform_financial_operations"
-  ]
-});</code></pre>
-                        </div>
+            <!-- Real Implementation Example -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Real Implementation: Marketing Agency Transformation</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-8">
+                        <h3 class="heading-h3 mb-2 text-lg">DigitalFlow Marketing</h3>
+                        <p class="text-secondary">15-person agency with 47 active Make.com scenarios</p>
                     </div>
 
-                    <div class="tech-feature">
-                        <h3>2. Financial Modules for Make.com</h3>
-                        <p>Native payment processing modules integrate seamlessly into Make.com's visual workflow builder.</p>
-                        <div class="module-list">
-                            <div class="module-item">
-                                <span class="module-name">Nomik Payment Processor</span>
-                                <span class="module-type">Action Module</span>
-                                <span class="module-desc">Process customer payments with fraud detection</span>
+                    <div class="mb-8">
+                        <h4 class="text-primary font-semibold mb-4">Pre-Nomik Workflow Challenges</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Client Billing Complexity</div>
+                                <div class="text-secondary text-sm">Manual invoice generation for 50+ monthly retainer clients</div>
                             </div>
-                            <div class="module-item">
-                                <span class="module-name">Nomik Subscription Manager</span>
-                                <span class="module-type">Action Module</span>
-                                <span class="module-desc">Create and manage recurring billing cycles</span>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Project Payment Delays</div>
+                                <div class="text-secondary text-sm">No automated milestone payment processing</div>
                             </div>
-                            <div class="module-item">
-                                <span class="module-name">Nomik Financial Reporter</span>
-                                <span class="module-type">Action Module</span>
-                                <span class="module-desc">Generate compliance and revenue reports</span>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Subscription Revenue Leakage</div>
+                                <div class="text-secondary text-sm">8% monthly churn due to failed payment processing</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-red-400 font-semibold mb-2">Cross-Border Friction</div>
+                                <div class="text-secondary text-sm">30% revenue from international clients with complex requirements</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tech-feature">
-                        <h3>3. Agent-to-Agent Financial Operations</h3>
-                        <p>Make.com workflows can automatically pay other agents for services across platforms.</p>
-                        <div class="workflow-example">
-                            <div class="workflow-step">
-                                <span class="step-platform">Make.com</span>
-                                <span class="step-action">Client project completion</span>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-400 mb-2">25 hrs/week</div>
+                            <div class="text-secondary text-sm">Manual financial tasks</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-400 mb-2">12%</div>
+                            <div class="text-secondary text-sm">Payment processing errors</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-400 mb-2">18 days</div>
+                            <div class="text-secondary text-sm">Average payment delay</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-400 mb-2">6.2%</div>
+                            <div class="text-secondary text-sm">Failed transaction rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solution -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Technical Solution: Workflow-Native Payment Modules</h2>
+
+                <div class="grid gap-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">1. KYA Framework for Workflow Agents</h3>
+                        <p class="text-secondary mb-6">Every Make.com scenario can register as a financial agent with autonomous payment capabilities.</p>
+                        <div class="bg-gray-800/50 rounded-lg p-6 font-mono text-sm">
+                            <div class="text-green-400 mb-2">// Register workflow as financial agent</div>
+                            <div class="text-secondary">const workflowAgent = await nomik.kya.registerWorkflowAgent({</div>
+                            <div class="text-secondary ml-4">identity: `did:ai:make:workflow:${scenarioId}`,</div>
+                            <div class="text-secondary ml-4">platform: "make.com",</div>
+                            <div class="text-secondary ml-4">owner: userConfig.makeUserId,</div>
+                            <div class="text-secondary ml-4">capabilities: [</div>
+                            <div class="text-secondary ml-8">"automated_payment_processing",</div>
+                            <div class="text-secondary ml-8">"recurring_billing_management",</div>
+                            <div class="text-secondary ml-8">"cross_platform_financial_operations"</div>
+                            <div class="text-secondary ml-4">]</div>
+                            <div class="text-secondary">});</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">2. Financial Modules for Make.com</h3>
+                        <p class="text-secondary mb-6">Native payment processing modules integrate seamlessly into Make.com's visual workflow builder.</p>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-purple-400 font-semibold mb-2">Nomik Payment Processor</div>
+                                <div class="text-muted text-sm mb-1">Action Module</div>
+                                <div class="text-secondary text-sm">Process customer payments with fraud detection</div>
                             </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <span class="step-platform">Stripe</span>
-                                <span class="step-action">Payment processing</span>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-purple-400 font-semibold mb-2">Nomik Subscription Manager</div>
+                                <div class="text-muted text-sm mb-1">Action Module</div>
+                                <div class="text-secondary text-sm">Create and manage recurring billing cycles</div>
                             </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <span class="step-platform">QuickBooks</span>
-                                <span class="step-action">Automated invoicing</span>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-purple-400 font-semibold mb-2">Nomik Financial Reporter</div>
+                                <div class="text-muted text-sm mb-1">Action Module</div>
+                                <div class="text-secondary text-sm">Generate compliance and revenue reports</div>
                             </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <span class="step-platform">Nomik</span>
-                                <span class="step-action">Compliance verification</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">3. Agent-to-Agent Financial Operations</h3>
+                        <p class="text-secondary mb-6">Make.com workflows can automatically pay other agents for services across platforms.</p>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="bg-blue-900/50 border border-blue-700 rounded-lg p-3 text-center">
+                                <div class="text-blue-300 font-semibold">Make.com</div>
+                                <div class="text-secondary text-sm">Client project completion</div>
+                            </div>
+                            <div class="text-purple-400">→</div>
+                            <div class="bg-green-900/50 border border-green-700 rounded-lg p-3 text-center">
+                                <div class="text-green-300 font-semibold">Stripe</div>
+                                <div class="text-secondary text-sm">Payment processing</div>
+                            </div>
+                            <div class="text-purple-400">→</div>
+                            <div class="bg-yellow-900/50 border border-yellow-700 rounded-lg p-3 text-center">
+                                <div class="text-yellow-300 font-semibold">QuickBooks</div>
+                                <div class="text-secondary text-sm">Automated invoicing</div>
+                            </div>
+                            <div class="text-purple-400">→</div>
+                            <div class="bg-purple-900/50 border border-purple-700 rounded-lg p-3 text-center">
+                                <div class="text-purple-300 font-semibold">Nomik</div>
+                                <div class="text-secondary text-sm">Compliance verification</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Live Workflow Example -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Live Workflow: Automated Client Onboarding & Billing</h2>
+            <!-- Live Workflow Example -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Live Workflow: Automated Client Onboarding & Billing</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-6">
+                        <h3 class="heading-h3 mb-2 text-lg">Scenario: New Client Payment Setup</h3>
+                        <p class="text-secondary">A Make.com workflow automatically sets up payment processing when a new client signs up in HubSpot.</p>
+                    </div>
 
-                <div class="workflow-scenario">
-                    <h3>Scenario: New Client Payment Setup</h3>
-                    <p>A Make.com workflow automatically sets up payment processing when a new client signs up in HubSpot.</p>
-
-                    <div class="workflow-visual">
-                        <div class="workflow-trigger">
-                            <div class="trigger-icon">⚡</div>
-                            <div class="trigger-content">
-                                <h4>Trigger</h4>
-                                <p>New client signup in HubSpot</p>
+                    <div class="grid gap-6">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-yellow-900/50 border border-yellow-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl mb-2">⚡</div>
+                                <div class="text-yellow-300 font-semibold mb-1">Trigger</div>
+                                <div class="text-secondary text-sm">New client signup in HubSpot</div>
                             </div>
                         </div>
 
-                        <div class="workflow-steps">
-                            <div class="workflow-step-detail">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>KYC Verification</h4>
-                                    <p>Automated identity verification and compliance checks</p>
-                                    <div class="step-time">Processing: 45 seconds</div>
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">KYC Verification</h4>
+                                <p class="text-secondary text-xs mb-2">Automated identity verification and compliance checks</p>
+                                <div class="text-accent text-xs">Processing: 45 seconds</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Payment Method Setup</h4>
+                                <p class="text-secondary text-xs mb-2">Multiple payment options: card, ACH, wire, crypto</p>
+                                <div class="text-accent text-xs">Setup: Real-time verification</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Billing Schedule Creation</h4>
+                                <p class="text-secondary text-xs mb-2">Monthly retainer + project milestone billing</p>
+                                <div class="text-accent text-xs">Configuration: Automatic</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </div>
+                                <h4 class="text-primary font-semibold mb-2 text-sm">Compliance Documentation</h4>
+                                <p class="text-secondary text-xs mb-2">Automated tax reporting and audit trail creation</p>
+                                <div class="text-accent text-xs">Documentation: Immutable blockchain</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                            <div class="bg-green-900/50 border border-green-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl mb-2">✅</div>
+                                <div class="text-green-300 font-semibold mb-1">Result</div>
+                                <div class="text-secondary text-sm">Client fully onboarded with automated billing ready in under 3 minutes</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-primary font-semibold mb-4">Workflow Impact</h4>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h5 class="text-red-400 font-semibold mb-3">Before Nomik</h5>
+                                <ul class="space-y-2 text-secondary text-sm">
+                                    <li>• 3-5 hours manual setup per client</li>
+                                    <li>• Multiple systems requiring coordination</li>
+                                    <li>• High error rate in payment setup</li>
+                                    <li>• Delayed billing and cash flow</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="text-green-400 font-semibold mb-3">After Nomik</h5>
+                                <ul class="space-y-2 text-secondary text-sm">
+                                    <li>• 3-minute automated setup</li>
+                                    <li>• Single workflow handling everything</li>
+                                    <li>• Zero setup errors</li>
+                                    <li>• Immediate billing capability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measured Results -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Measured Results: 12-Month Analysis</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Operational Efficiency Gains</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                                <span class="text-secondary text-sm">Manual financial tasks</span>
+                                <div class="text-right">
+                                    <div class="text-red-400">25 hrs/week → <span class="text-green-400">3 hrs/week</span></div>
+                                    <div class="text-accent text-xs">-88%</div>
                                 </div>
                             </div>
-
-                            <div class="workflow-step-detail">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Payment Method Setup</h4>
-                                    <p>Multiple payment options: card, ACH, wire, crypto</p>
-                                    <div class="step-time">Setup: Real-time verification</div>
+                            <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                                <span class="text-secondary text-sm">Payment processing errors</span>
+                                <div class="text-right">
+                                    <div class="text-red-400">12% → <span class="text-green-400">0.3%</span></div>
+                                    <div class="text-accent text-xs">-97.5%</div>
                                 </div>
                             </div>
-
-                            <div class="workflow-step-detail">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Billing Schedule Creation</h4>
-                                    <p>Monthly retainer + project milestone billing</p>
-                                    <div class="step-time">Configuration: Automatic</div>
+                            <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                                <span class="text-secondary text-sm">Average payment cycle</span>
+                                <div class="text-right">
+                                    <div class="text-red-400">18 days → <span class="text-green-400">2.3 days</span></div>
+                                    <div class="text-accent text-xs">-87%</div>
                                 </div>
                             </div>
-
-                            <div class="workflow-step-detail">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Compliance Documentation</h4>
-                                    <p>Automated tax reporting and audit trail creation</p>
-                                    <div class="step-time">Documentation: Immutable blockchain</div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary text-sm">Failed transaction rate</span>
+                                <div class="text-right">
+                                    <div class="text-red-400">6.2% → <span class="text-green-400">0.8%</span></div>
+                                    <div class="text-accent text-xs">-87%</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="workflow-result">
-                            <div class="result-icon">✅</div>
-                            <div class="result-content">
-                                <h4>Result</h4>
-                                <p>Client fully onboarded with automated billing ready in under 3 minutes</p>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Revenue Impact</h3>
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-700 pb-2">
+                                <div class="text-green-400 font-semibold">+$180,000</div>
+                                <div class="text-secondary text-sm">Annual cash flow improvement from faster collection</div>
+                            </div>
+                            <div class="border-b border-gray-700 pb-2">
+                                <div class="text-green-400 font-semibold">+$95,000</div>
+                                <div class="text-secondary text-sm">New revenue from premium automated billing services</div>
+                            </div>
+                            <div class="border-b border-gray-700 pb-2">
+                                <div class="text-green-400 font-semibold">+$220,000</div>
+                                <div class="text-secondary text-sm">International expansion revenue</div>
+                            </div>
+                            <div class="border-b border-gray-700 pb-2">
+                                <div class="text-green-400 font-semibold">-$24,000</div>
+                                <div class="text-secondary text-sm">Reduced payment processing costs (2.1% to 0.7%)</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-3 mt-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-semibold">Total Annual Impact:</span>
+                                    <div class="text-right">
+                                        <div class="text-green-400 font-bold text-lg">$519,000</div>
+                                        <div class="text-accent text-sm">523% ROI</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="workflow-impact">
-                    <h4>Workflow Impact</h4>
-                    <div class="impact-comparison">
-                        <div class="before-workflow">
-                            <h5>Before Nomik</h5>
-                            <ul>
-                                <li>3-5 hours manual setup per client</li>
-                                <li>Multiple systems requiring coordination</li>
-                                <li>High error rate in payment setup</li>
-                                <li>Delayed billing and cash flow</li>
-                            </ul>
-                        </div>
-                        <div class="after-workflow">
-                            <h5>After Nomik</h5>
-                            <ul>
-                                <li>3-minute automated setup</li>
-                                <li>Single workflow handling everything</li>
-                                <li>Zero setup errors</li>
-                                <li>Immediate billing capability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Real Results -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Measured Results: 12-Month Analysis</h2>
-
-                <div class="results-breakdown">
-                    <div class="result-section">
-                        <h3>Operational Efficiency Gains</h3>
-                        <div class="efficiency-metrics">
-                            <div class="efficiency-item">
-                                <span class="metric-before">25 hours/week</span>
-                                <span class="metric-arrow">→</span>
-                                <span class="metric-after">3 hours/week</span>
-                                <span class="metric-improvement">-88%</span>
-                                <span class="metric-label">Manual financial tasks</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="metric-before">12%</span>
-                                <span class="metric-arrow">→</span>
-                                <span class="metric-after">0.3%</span>
-                                <span class="metric-improvement">-97.5%</span>
-                                <span class="metric-label">Payment processing errors</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="metric-before">18 days</span>
-                                <span class="metric-arrow">→</span>
-                                <span class="metric-after">2.3 days</span>
-                                <span class="metric-improvement">-87%</span>
-                                <span class="metric-label">Average payment cycle</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="metric-before">6.2%</span>
-                                <span class="metric-arrow">→</span>
-                                <span class="metric-after">0.8%</span>
-                                <span class="metric-improvement">-87%</span>
-                                <span class="metric-label">Failed transaction rate</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="result-section">
-                        <h3>Revenue Impact</h3>
-                        <div class="revenue-breakdown">
-                            <div class="revenue-item">
-                                <span class="revenue-amount">+$180,000</span>
-                                <span class="revenue-desc">Annual cash flow improvement from faster collection</span>
-                            </div>
-                            <div class="revenue-item">
-                                <span class="revenue-amount">+$95,000</span>
-                                <span class="revenue-desc">New revenue from premium automated billing services</span>
-                            </div>
-                            <div class="revenue-item">
-                                <span class="revenue-amount">+$220,000</span>
-                                <span class="revenue-desc">International expansion revenue</span>
-                            </div>
-                            <div class="revenue-item">
-                                <span class="revenue-amount">-$24,000</span>
-                                <span class="revenue-desc">Reduced payment processing costs (2.1% to 0.7%)</span>
-                            </div>
-                        </div>
-
-                        <div class="total-impact">
-                            <span class="total-label">Total Annual Impact:</span>
-                            <span class="total-amount">$519,000</span>
-                            <span class="total-roi">523% ROI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <blockquote>
+                <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                    <blockquote class="text-lg text-secondary italic mb-4">
                         "Nomik didn't just add payments to our workflows - it transformed our entire business model. We went from being a service provider to a revenue-generating automation platform. Our clients now pay us automatically based on the value we deliver."
                     </blockquote>
-                    <cite>— Marcus Rodriguez, DigitalFlow Marketing Founder</cite>
+                    <cite class="text-primary font-semibold">— Marcus Rodriguez, DigitalFlow Marketing Founder</cite>
                 </div>
             </div>
-        </section>
 
-        <!-- Business Model Transformation -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Business Model Evolution: From Subscriptions to Transactions</h2>
+            <!-- Business Model Transformation -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Business Model Evolution: From Subscriptions to Transactions</h2>
 
-                <div class="model-comparison">
-                    <div class="model-before">
-                        <h3>Traditional Make.com Model</h3>
-                        <div class="model-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">💰</span>
-                                <span class="feature-text">Subscription-only revenue</span>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Traditional Make.com Model</h3>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">💰</span>
+                                <span class="text-secondary">Subscription-only revenue</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🔒</span>
-                                <span class="feature-text">Platform lock-in challenges</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🔒</span>
+                                <span class="text-secondary">Platform lock-in challenges</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">📊</span>
-                                <span class="feature-text">Fixed fees regardless of value</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">📊</span>
+                                <span class="text-secondary">Fixed fees regardless of value</span>
                             </div>
                         </div>
-                        <div class="model-limitation">
-                            <strong>Limitation:</strong> No transaction revenue despite processing billions in business value
+                        <div class="bg-red-900/20 border border-red-700/50 rounded-lg p-3">
+                            <div class="text-red-300 font-semibold text-sm">Limitation:</div>
+                            <div class="text-secondary text-sm">No transaction revenue despite processing billions in business value</div>
                         </div>
                     </div>
 
-                    <div class="model-after">
-                        <h3>Enhanced Model with Nomik</h3>
-                        <div class="model-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">🔄</span>
-                                <span class="feature-text">Transaction-based revenue sharing</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Enhanced Model with Nomik</h3>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🔄</span>
+                                <span class="text-secondary">Transaction-based revenue sharing</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🎯</span>
-                                <span class="feature-text">Premium financial services</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🎯</span>
+                                <span class="text-secondary">Premium financial services</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🏪</span>
-                                <span class="feature-text">Marketplace monetization</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🏪</span>
+                                <span class="text-secondary">Marketplace monetization</span>
                             </div>
                         </div>
-                        <div class="model-opportunity">
-                            <strong>Opportunity:</strong> 0.15% of payment volume = $19M+ potential annual revenue
+                        <div class="bg-green-900/20 border border-green-700/50 rounded-lg p-3">
+                            <div class="text-green-300 font-semibold text-sm">Opportunity:</div>
+                            <div class="text-secondary text-sm">0.15% of payment volume = $19M+ potential annual revenue</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="revenue-projections">
-                    <h3>Revenue Enhancement Projections</h3>
-                    <div class="projection-items">
-                        <div class="projection-item">
-                            <span class="projection-source">Transaction Revenue Sharing</span>
-                            <span class="projection-rate">0.15% of gross payment volume</span>
-                            <span class="projection-amount">$2.3M additional ARR</span>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <h3 class="heading-h3 mb-4 text-lg">Revenue Enhancement Projections</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-purple-400 font-semibold mb-1">Transaction Revenue Sharing</div>
+                            <div class="text-secondary text-sm mb-2">0.15% of gross payment volume</div>
+                            <div class="text-accent font-bold">$2.3M additional ARR</div>
                         </div>
-                        <div class="projection-item">
-                            <span class="projection-source">Premium Financial Services</span>
-                            <span class="projection-rate">$50-200/month per enterprise account</span>
-                            <span class="projection-amount">$1.8M additional ARR</span>
+                        <div class="text-center">
+                            <div class="text-purple-400 font-semibold mb-1">Premium Financial Services</div>
+                            <div class="text-secondary text-sm mb-2">$50-200/month per enterprise account</div>
+                            <div class="text-accent font-bold">$1.8M additional ARR</div>
                         </div>
-                        <div class="projection-item">
-                            <span class="projection-source">Marketplace Monetization</span>
-                            <span class="projection-rate">15% revenue share with creators</span>
-                            <span class="projection-amount">$900K additional ARR</span>
+                        <div class="text-center">
+                            <div class="text-purple-400 font-semibold mb-1">Marketplace Monetization</div>
+                            <div class="text-secondary text-sm mb-2">15% revenue share with creators</div>
+                            <div class="text-accent font-bold">$900K additional ARR</div>
                         </div>
                     </div>
-                    <div class="total-projection">
-                        <strong>Total Potential Revenue Increase: 40%</strong>
+                    <div class="text-center mt-6">
+                        <div class="text-green-400 font-bold text-xl">Total Potential Revenue Increase: 40%</div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Global Market Opportunity -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Market Opportunity: The $47B Automation Economy</h2>
+            <!-- Market Opportunity -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Market Opportunity: The $47B Automation Economy</h2>
 
-                <div class="market-stats">
-                    <div class="market-stat">
-                        <span class="stat-number">$47.8B</span>
-                        <span class="stat-label">Workflow automation market size</span>
-                        <span class="stat-growth">Growing 23% annually</span>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">$47.8B</div>
+                        <div class="text-secondary mb-1">Workflow automation market size</div>
+                        <div class="text-green-400 text-sm">Growing 23% annually</div>
                     </div>
-                    <div class="market-stat">
-                        <span class="stat-number">$5.2T</span>
-                        <span class="stat-label">Global payment processing volume</span>
-                        <span class="stat-growth">Addressable transaction market</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">$5.2T</div>
+                        <div class="text-secondary mb-1">Global payment processing volume</div>
+                        <div class="text-green-400 text-sm">Addressable transaction market</div>
                     </div>
-                    <div class="market-stat">
-                        <span class="stat-number">8.3%</span>
-                        <span class="stat-label">Make.com market share</span>
-                        <span class="stat-growth">Leading visual automation platform</span>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">8.3%</div>
+                        <div class="text-secondary mb-1">Make.com market share</div>
+                        <div class="text-green-400 text-sm">Leading visual automation platform</div>
                     </div>
                 </div>
 
-                <div class="opportunity-breakdown">
-                    <h3>Nomik Integration Opportunity</h3>
-                    <div class="opportunity-segments">
-                        <div class="segment">
-                            <h4>Immediate Market</h4>
-                            <span class="segment-size">$2.1B</span>
-                            <span class="segment-desc">Make.com user base requiring payment features</span>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <h3 class="heading-h3 mb-4 text-lg">Nomik Integration Opportunity</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <h4 class="text-primary font-semibold mb-2">Immediate Market</h4>
+                            <div class="text-3xl font-bold text-accent mb-2">$2.1B</div>
+                            <div class="text-secondary text-sm">Make.com user base requiring payment features</div>
                         </div>
-                        <div class="segment">
-                            <h4>5-Year Potential</h4>
-                            <span class="segment-size">$12.7B</span>
-                            <span class="segment-desc">Expanded capabilities + new use cases</span>
+                        <div class="text-center">
+                            <h4 class="text-primary font-semibold mb-2">5-Year Potential</h4>
+                            <div class="text-3xl font-bold text-accent mb-2">$12.7B</div>
+                            <div class="text-secondary text-sm">Expanded capabilities + new use cases</div>
                         </div>
-                        <div class="segment">
-                            <h4>Transaction Revenue</h4>
-                            <span class="segment-size">$19M</span>
-                            <span class="segment-desc">Annual potential at current scale (0.15% fee)</span>
+                        <div class="text-center">
+                            <h4 class="text-primary font-semibold mb-2">Transaction Revenue</h4>
+                            <div class="text-3xl font-bold text-accent mb-2">$19M</div>
+                            <div class="text-secondary text-sm">Annual potential at current scale (0.15% fee)</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Technical Architecture -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Integration Architecture: Seamless & Secure</h2>
+            <!-- Bottom Line Impact -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Bottom Line: Transform Your Platform Economics</h2>
 
-                <div class="architecture-overview">
-                    <div class="arch-layer">
-                        <h4>Make.com Platform</h4>
-                        <div class="arch-components">
-                            <span>Visual Workflow Builder</span>
-                            <span>2,000+ App Integrations</span>
-                            <span>Scenario Engine</span>
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">For Make.com Platform</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">40%</span>
+                                <span class="text-secondary text-sm">Potential revenue increase</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$19M+</span>
+                                <span class="text-secondary text-sm">Transaction revenue opportunity</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">First</span>
+                                <span class="text-secondary text-sm">Payment-native automation platform</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="arch-connection">
-                        <span>Nomik Financial Modules</span>
-                    </div>
-                    <div class="arch-layer">
-                        <h4>Nomik Infrastructure</h4>
-                        <div class="arch-components">
-                            <span>KYA Agent Identity</span>
-                            <span>Multi-Currency Wallets</span>
-                            <span>Compliance Engine</span>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">For Make.com Users</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$200K+</span>
+                                <span class="text-secondary text-sm">Annual revenue potential per user</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">523%</span>
+                                <span class="text-secondary text-sm">Average ROI in first year</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">88%</span>
+                                <span class="text-secondary text-sm">Reduction in manual work</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="arch-connection">
-                        <span>Global Financial Networks</span>
-                    </div>
-                    <div class="arch-layer">
-                        <h4>Financial Ecosystem</h4>
-                        <div class="arch-components">
-                            <span>Banking Networks</span>
-                            <span>Payment Processors</span>
-                            <span>Regulatory Systems</span>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">For the Industry</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$47B</span>
+                                <span class="text-secondary text-sm">Addressable automation market</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">New</span>
+                                <span class="text-secondary text-sm">Business models enabled</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">Global</span>
+                                <span class="text-secondary text-sm">Economic impact potential</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="security-features">
-                    <h3>Enterprise Security & Compliance</h3>
-                    <div class="security-grid">
-                        <div class="security-item">
-                            <span class="security-title">Agent Authentication</span>
-                            <span class="security-desc">Cryptographic identity for every workflow</span>
-                        </div>
-                        <div class="security-item">
-                            <span class="security-title">Payment Security</span>
-                            <span class="security-desc">Bank-grade encryption & fraud detection</span>
-                        </div>
-                        <div class="security-item">
-                            <span class="security-title">Compliance Automation</span>
-                            <span class="security-desc">Real-time AML/KYC verification</span>
-                        </div>
-                        <div class="security-item">
-                            <span class="security-title">Audit Trails</span>
-                            <span class="security-desc">Immutable blockchain-based logging</span>
-                        </div>
-                    </div>
+                <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                    <h3 class="heading-h3 mb-3 text-lg">The Future of Workflow Automation is Financial</h3>
+                    <p class="text-secondary">Make.com's 500,000+ users represent the world's largest untapped automation economy. With Nomik's agent-native payment infrastructure, every workflow becomes a potential revenue stream, transforming Make.com from a productivity tool into a comprehensive business automation platform.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Implementation Roadmap -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Implementation Phases: 18-Month Rollout</h2>
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-900/20 via-purple-800/20 to-purple-900/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="heading-h2 mb-4">Ready to Monetize Your Workflows?</h2>
+            <p class="text-xl text-secondary mb-8">Transform your automation platform with agent-native payment processing.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Try in Sandbox
+                </button>
+                <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Integration Guide
+                </button>
+            </div>
+        </div>
+    </section>
 
-                <div class="roadmap-timeline">
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 1</span>
-                            <span class="phase-duration">Months 1-3</span>
-                        </div>
-                        <h3>Foundation</h3>
-                        <div class="phase-deliverables">
-                            <ul>
-                                <li>Nomik API integration with Make.com</li>
-                                <li>Basic payment processing modules</li>
-                                <li>Beta testing with 50 enterprise users</li>
-                                <li>Developer documentation & sandbox</li>
-                            </ul>
-                        </div>
-                        <div class="phase-success">
-                            <strong>Success Metric:</strong> 100 workflows processing payments
-                        </div>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 2</span>
-                            <span class="phase-duration">Months 4-6</span>
-                        </div>
-                        <h3>Core Features</h3>
-                        <div class="phase-deliverables">
-                            <ul>
-                                <li>Advanced financial workflow templates</li>
-                                <li>Cross-border payment optimization</li>
-                                <li>Accounting platform integrations</li>
-                                <li>Automated compliance reporting</li>
-                            </ul>
-                        </div>
-                        <div class="phase-success">
-                            <strong>Success Metric:</strong> 1,000 active payment workflows
-                        </div>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 3</span>
-                            <span class="phase-duration">Months 7-12</span>
-                        </div>
-                        <h3>Advanced Capabilities</h3>
-                        <div class="phase-deliverables">
-                            <ul>
-                                <li>Agent-to-agent financial orchestration</li>
-                                <li>Advanced fraud detection & prevention</li>
-                                <li>Custom financial instrument creation</li>
-                                <li>Enterprise security & audit features</li>
-                            </ul>
-                        </div>
-                        <div class="phase-success">
-                            <strong>Success Metric:</strong> 5,000 workflows, $10M+ processed
-                        </div>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <span class="phase-number">Phase 4</span>
-                            <span class="phase-duration">Months 13-18</span>
-                        </div>
-                        <h3>Market Expansion</h3>
-                        <div class="phase-deliverables">
-                            <ul>
-                                <li>Financial workflow marketplace</li>
-                                <li>Advanced analytics & BI</li>
-                                <li>White-label solutions</li>
-                                <li>Additional currencies & methods</li>
-                            </ul>
-                        </div>
-                        <div class="phase-success">
-                            <strong>Success Metric:</strong> 15,000+ workflows, global coverage
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Bottom Line Impact -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Bottom Line: Transform Your Platform Economics</h2>
-
-                <div class="final-impact">
-                    <div class="impact-category">
-                        <h3>For Make.com Platform</h3>
-                        <div class="impact-metrics">
-                            <div class="impact-metric">
-                                <span class="metric-value">40%</span>
-                                <span class="metric-label">Potential revenue increase</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">$19M+</span>
-                                <span class="metric-label">Transaction revenue opportunity</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">First</span>
-                                <span class="metric-label">Payment-native automation platform</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="impact-category">
-                        <h3>For Make.com Users</h3>
-                        <div class="impact-metrics">
-                            <div class="impact-metric">
-                                <span class="metric-value">$200K+</span>
-                                <span class="metric-label">Annual revenue potential per user</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">523%</span>
-                                <span class="metric-label">Average ROI in first year</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">88%</span>
-                                <span class="metric-label">Reduction in manual work</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="impact-category">
-                        <h3>For the Industry</h3>
-                        <div class="impact-metrics">
-                            <div class="impact-metric">
-                                <span class="metric-value">$47B</span>
-                                <span class="metric-label">Addressable automation market</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">New</span>
-                                <span class="metric-label">Business models enabled</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="metric-value">Global</span>
-                                <span class="metric-label">Economic impact potential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="conclusion-statement">
-                    <h3>The Future of Workflow Automation is Financial</h3>
-                    <p>Make.com's 500,000+ users represent the world's largest untapped automation economy. With Nomik's agent-native payment infrastructure, every workflow becomes a potential revenue stream, transforming Make.com from a productivity tool into a comprehensive business automation platform.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="case-study-cta">
-            <div class="container">
-                <h2>Ready to Monetize Your Workflows?</h2>
-                <p>Transform your automation platform with agent-native payment processing.</p>
-                <div class="cta-buttons">
-                    <a href="sandbox.html" class="btn btn-primary">Try in Sandbox</a>
-                    <a href="documentation.html" class="btn btn-secondary">Integration Guide</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Product</h3>
-                    <a href="sandbox.html">Sandbox</a>
-                    <a href="documentation.html">Documentation</a>
-                    <a href="infrastructure.html">Infrastructure</a>
-                    <a href="status.html">Status</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="#about">About</a>
-                    <a href="#careers">Careers</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <a href="#api">API Reference</a>
-                    <a href="#guides">Guides</a>
-                    <a href="#support">Support</a>
-                    <a href="#security">Security</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="#twitter">Twitter</a>
-                    <a href="#linkedin">LinkedIn</a>
-                    <a href="#github">GitHub</a>
-                    <a href="#discord">Discord</a>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
             </div>
         </div>
     </footer>

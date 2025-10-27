@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble.io FinTech App Builder - No-Code Payment Integration Case Study | Nomik</title>
+    <title>Bubble.io FinTech Integration - Nomik Case Study</title>
 
-    <!-- Fonts -->
+    <!-- Fonts - Exact match -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -13,964 +13,805 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Comprehensive styling for all content -->
     <style>
-        /* Global base styles */
-        main { @apply text-gray-300 font-inter; }
-        main h1 { @apply text-5xl lg:text-7xl font-black text-white mb-8 leading-tight; }
-        main h2 { @apply text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight; }
-        main h3 { @apply text-2xl lg:text-3xl font-bold text-white mb-6; }
-        main h4 { @apply text-xl lg:text-2xl font-semibold text-white mb-4; }
-        main h5 { @apply text-lg font-semibold text-white mb-3; }
-        main p { @apply text-gray-300 mb-6 leading-relaxed text-lg; }
-        main ul { @apply space-y-3 text-gray-300 mb-6 list-disc list-inside; }
-        main ol { @apply space-y-3 text-gray-300 mb-6 list-decimal list-inside; }
-        main li { @apply text-gray-300 text-lg; }
-        main strong { @apply text-white font-semibold; }
-        main em { @apply text-blue-300 italic; }
-        main blockquote { @apply border-l-4 border-blue-500 pl-6 italic text-gray-300 my-8 text-lg; }
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+        }
 
-        /* Layout */
-        .case-study-section { @apply py-20 lg:py-24; }
-        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
-        .section-grid { @apply grid lg:grid-cols-2 gap-16 items-center; }
-        .section-content { @apply space-y-8; }
-        .section-visual { @apply space-y-8; }
-        .highlight-section { @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-y border-gray-800; }
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
+        }
 
-        /* Enhanced Components */
-        .insight-box { @apply bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-700/50 rounded-xl p-8 mb-8 shadow-2xl; }
-        .company-card { @apply bg-gradient-to-br from-gray-900/70 to-gray-800/50 border border-gray-700 rounded-xl p-8 shadow-xl; }
-        .company-stat { @apply flex justify-between py-3 border-b border-gray-700/30 last:border-b-0; }
-        .company-stat .label { @apply text-gray-400 font-medium; }
-        .company-stat .value { @apply text-white font-semibold text-lg; }
-        .example-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-10 mb-10 shadow-2xl backdrop-blur-sm; }
-        .example-header { @apply mb-8; }
-        .example-type { @apply text-gray-400 text-base font-medium; }
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
+        }
 
-        /* Development Journey */
-        .development-journey { @apply mb-8; }
-        .journey-timeline { @apply grid md:grid-cols-3 gap-6; }
-        .journey-phase { @apply bg-gray-800/50 rounded-lg p-4; }
-        .phase-duration { @apply text-blue-400 font-medium text-sm block mb-2; }
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
+        }
 
-        /* Comparison */
-        .traditional-comparison { @apply mb-8; }
-        .comparison-grid { @apply grid md:grid-cols-2 gap-8; }
-        .comparison-traditional, .comparison-bubble { @apply bg-gray-800/30 rounded-lg p-6; }
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
+        }
 
-        /* Cost Analysis */
-        .cost-breakdown { @apply mt-8; }
-        .cost-comparison { @apply space-y-4; }
-        .cost-item { @apply grid grid-cols-4 gap-4 text-sm py-3 border-b border-gray-700/50; }
-        .cost-category { @apply text-gray-300 font-medium; }
-        .cost-traditional { @apply text-red-400; }
-        .cost-bubble { @apply text-green-400; }
-        .cost-savings { @apply text-blue-400 font-medium; }
-        .total-savings { @apply mt-6 pt-4 border-t border-gray-600 flex justify-between text-lg; }
-        .savings-label { @apply text-gray-300; }
-        .savings-amount { @apply text-green-400 font-bold; }
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
+        }
 
-        /* Hero specific */
-        .hero-stats { @apply grid md:grid-cols-3 gap-8 max-w-4xl mx-auto; }
-        .stat { @apply text-center; }
-        .stat-number { @apply text-3xl font-bold text-white mb-2 block; }
-        .stat-label { @apply text-gray-400 block; }
-        .case-study-hero { @apply py-20 bg-gray-900/20; }
-        .hero-breadcrumb { @apply text-sm text-gray-400 mb-4 text-center; }
-        .hero-breadcrumb a { @apply hover:text-white transition-colors; }
-        .hero-subtitle { @apply text-xl text-gray-300 mb-8 max-w-4xl mx-auto text-center; }
-        .case-study-main { @apply pt-16; }
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
 
-        /* Enhanced Sections */
-        .technical-section { @apply bg-gradient-to-br from-gray-800/40 to-gray-700/30 rounded-xl p-8 mb-10 border border-gray-700/50 shadow-xl; }
-        .feature-list { @apply grid md:grid-cols-2 gap-6; }
-        .feature-item { @apply bg-gradient-to-br from-gray-700/40 to-gray-600/30 rounded-lg p-6 border border-gray-600/50 hover:border-blue-500/50 transition-all duration-300; }
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
 
-        /* Animation enhancements */
-        .hover-lift { @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl; }
-        .gradient-text { @apply bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent; }
-        .glow-border { @apply border border-blue-500/30 shadow-lg shadow-blue-500/20; }
+        /* Configure Tailwind with exact colors */
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
-
 </head>
-<body class="bg-gray-950 text-white font-sans antialiased">
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
-        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
+<body class="bg-nomik-dark text-secondary">
+
+    <!-- Navigation - Exact match from index -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black p-1">
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
-                        </div>
-                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
-                    </a>
+                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="case-studies.html" class="text-white font-medium transition-colors duration-200">Case Studies</a>
-                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
-                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
-                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
+                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
                 </div>
-
-                <!-- CTA Button -->
-                <div class="flex items-center space-x-3">
-                    <button type="button" class="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
-                        Join Early Access
-                    </button>
-                </div>
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="case-study-hero">
-            <div class="container">
-                <div class="text-center">
-                    <div class="hero-breadcrumb">
-                        <a href="case-studies.html">Case Studies</a> > <span>Bubble.io FinTech</span>
-                    </div>
-                    <h1>Bubble.io FinTech App Builder</h1>
-                    <p class="hero-subtitle">How Nomik enables 3M+ Bubble developers to build production-ready FinTech apps with banking-grade payment infrastructure</p>
-
-                    <div class="hero-stats">
-                        <div class="stat hover-lift">
-                            <div class="stat-number">$1B+</div>
-                            <div class="stat-label">Loans processed (Dividend Finance)</div>
-                        </div>
-                        <div class="stat hover-lift">
-                            <div class="stat-number">2,865%</div>
-                            <div class="stat-label">First-year ROI</div>
-                        </div>
-                        <div class="stat hover-lift">
-                            <div class="stat-number">97%</div>
-                            <div class="stat-label">Development cost reduction</div>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">Case Study</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">FinTech Integration</span>
                 </div>
+
+                <h1 class="hero-h1 mb-6">Bubble.io FinTech Platform Integration</h1>
+
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    How Nomik enables 3M+ Bubble developers to build production-ready FinTech apps with banking-grade payment infrastructure
+                </p>
             </div>
-        </section>
 
-        <!-- Company Overview -->
-        <section class="case-study-section">
-            <div class="container">
-                <div class="section-grid">
-                    <div class="section-content">
-                        <h2>The No-Code FinTech Revolution: Power Without Complexity</h2>
-                        <p><strong>Bubble.io</strong> empowers 3+ million developers to build sophisticated web applications without code. They've democratized app development, but FinTech apps hit a wall: <em>complex payment infrastructure requires extensive technical expertise.</em></p>
-
-                        <p>The result? Most Bubble FinTech apps never reach production due to payment complexity.</p>
-
-                        <div>
-                            <h3>The FinTech Development Barrier</h3>
-                            <ul>
-                                <li><strong>Payment Integration Complexity:</strong> Requires deep technical knowledge of banking APIs</li>
-                                <li><strong>Compliance Requirements:</strong> KYC/AML implementation beyond no-code scope</li>
-                                <li><strong>Security Standards:</strong> Banking-grade security needs expert implementation</li>
-                                <li><strong>Regulatory Framework:</strong> Financial regulations require specialized knowledge</li>
-                                <li><strong>Multi-Currency Support:</strong> Global payment processing complexity</li>
-                            </ul>
-                        </div>
-
-                        <div class="insight-box hover-lift glow-border">
-                            <h4 class="gradient-text">The $2.7B No-Code FinTech Market</h4>
-                            <p>McKinsey estimates no-code platforms will capture $2.7B of the FinTech development market by 2026. Bubble is positioned to lead this transformation with proper payment infrastructure.</p>
-                        </div>
-                    </div>
-                    <div class="section-visual">
-                        <div class="company-card hover-lift">
-                            <h3>Bubble.io Platform Stats</h3>
-                            <div class="space-y-4">
-                                <div class="company-stat">
-                                    <span class="label">Founded:</span>
-                                    <span class="value">2012</span>
-                                </div>
-                                <div class="company-stat">
-                                    <span class="label">Developers:</span>
-                                    <span class="value">3M+ registered users</span>
-                                </div>
-                                <div class="company-stat">
-                                    <span class="label">Apps Built:</span>
-                                    <span class="value">1M+ applications</span>
-                                </div>
-                                <div class="company-stat">
-                                    <span class="label">Funding:</span>
-                                    <span class="value">$100M Series A (2021)</span>
-                                </div>
-                                <div class="company-stat">
-                                    <span class="label">Valuation:</span>
-                                    <span class="value">$1B+ unicorn status</span>
-                                </div>
-                                <div class="company-stat">
-                                    <span class="label">Challenge:</span>
-                                    <span class="value">FinTech complexity barrier</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">$1B+</div>
+                    <div class="text-secondary">Loans processed (Dividend Finance)</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Real Implementation -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Real Implementation: Dividend Finance Success Story</h2>
-
-                <div class="example-card hover-lift">
-                    <div class="example-header">
-                        <h3 class="gradient-text">Dividend Finance</h3>
-                        <span class="example-type">$1B+ renewable energy loans platform - Acquired by Fifth Third Bank</span>
-                    </div>
-
-                    <div class="development-journey">
-                        <h4>Real Success Story: Built on Bubble.io</h4>
-                        <div class="journey-timeline">
-                            <div class="journey-phase hover-lift">
-                                <span class="phase-duration">Challenge</span>
-                                <h5>Complex Loan Processing</h5>
-                                <p>Renewable energy loan underwriting, multi-state compliance, institutional-grade security requirements</p>
-                            </div>
-                            <div class="journey-phase hover-lift">
-                                <span class="phase-duration">Solution</span>
-                                <h5>Bubble + Custom Development</h5>
-                                <p>Built entirely on Bubble.io with extensive custom development for financial operations</p>
-                            </div>
-                            <div class="journey-phase hover-lift">
-                                <span class="phase-duration">Result</span>
-                                <h5>$1B+ Processed & Acquisition</h5>
-                                <p>Processed over $1 billion in renewable energy loans, acquired by Fifth Third Bank</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="traditional-comparison">
-                        <h4>No-Code vs Traditional Development</h4>
-                        <div class="comparison-grid">
-                            <div class="comparison-traditional hover-lift">
-                                <h5>Traditional FinTech Development</h5>
-                                <ul>
-                                    <li><strong>Team:</strong> 15+ developers, compliance experts, security specialists</li>
-                                    <li><strong>Timeline:</strong> 18-24 months to MVP</li>
-                                    <li><strong>Investment:</strong> $2-5M initial development</li>
-                                    <li><strong>Compliance:</strong> 6-12 months regulatory approval process</li>
-                                    <li><strong>Maintenance:</strong> Dedicated technical team required</li>
-                                </ul>
-                            </div>
-                            <div class="comparison-bubble hover-lift glow-border">
-                                <h5>Bubble + Nomik Development</h5>
-                                <ul>
-                                    <li><strong>Team:</strong> 2-3 no-code developers</li>
-                                    <li><strong>Timeline:</strong> 90 days to production</li>
-                                    <li><strong>Investment:</strong> $50K-200K total development</li>
-                                    <li><strong>Compliance:</strong> Automated through Nomik</li>
-                                    <li><strong>Maintenance:</strong> Minimal technical overhead</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cost-breakdown">
-                        <h4>Development Cost Analysis</h4>
-                        <div class="cost-comparison">
-                            <div class="cost-item">
-                                <span class="cost-category">Development Cost Savings</span>
-                                <span class="cost-traditional">Traditional: $500K+</span>
-                                <span class="cost-bubble">With Nomik: $85K</span>
-                                <span class="cost-savings">$420K saved</span>
-                            </div>
-                            <div class="cost-item">
-                                <span class="cost-category">Time to MVP</span>
-                                <span class="cost-traditional">8 months</span>
-                                <span class="cost-bubble">6 weeks</span>
-                                <span class="cost-savings">81% faster</span>
-                            </div>
-                            <div class="cost-item">
-                                <span class="cost-category">Compliance Implementation</span>
-                                <span class="cost-traditional">12 weeks</span>
-                                <span class="cost-bubble">2 weeks</span>
-                                <span class="cost-savings">83% faster</span>
-                            </div>
-                            <div class="cost-item">
-                                <span class="cost-category">First-Year ROI</span>
-                                <span class="cost-traditional">N/A</span>
-                                <span class="cost-bubble">2,865%</span>
-                                <span class="cost-savings">$2.52M return</span>
-                            </div>
-                        </div>
-                        <div class="total-savings">
-                            <span class="savings-label">Total Development Savings:</span>
-                            <span class="savings-amount">$3.6M (97% reduction)</span>
-                        </div>
-                    </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">2,865%</div>
+                    <div class="text-secondary">First-year ROI</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Technical Implementation -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Technical Solution: No-Code FinTech Components</h2>
-
-                <div class="tech-overview">
-                    <div class="tech-feature">
-                        <h3>1. Visual Payment Workflow Builder</h3>
-                        <p>Drag-and-drop interface for building complex payment flows without any coding.</p>
-                        <div class="workflow-builder">
-                            <div class="builder-step">
-                                <span class="step-icon">👤</span>
-                                <span class="step-name">User Registration</span>
-                                <span class="step-desc">Automated KYC with document verification</span>
-                            </div>
-                            <div class="builder-arrow">→</div>
-                            <div class="builder-step">
-                                <span class="step-icon">🏦</span>
-                                <span class="step-name">Account Creation</span>
-                                <span class="step-desc">Banking-grade account with multi-currency support</span>
-                            </div>
-                            <div class="builder-arrow">→</div>
-                            <div class="builder-step">
-                                <span class="step-icon">💳</span>
-                                <span class="step-name">Payment Methods</span>
-                                <span class="step-desc">Cards, bank transfers, crypto, mobile wallets</span>
-                            </div>
-                            <div class="builder-arrow">→</div>
-                            <div class="builder-step">
-                                <span class="step-icon">📊</span>
-                                <span class="step-name">Analytics</span>
-                                <span class="step-desc">Real-time financial reporting and compliance</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-feature">
-                        <h3>2. Pre-Built FinTech Components</h3>
-                        <p>Production-ready components that snap into any Bubble application.</p>
-                        <div class="component-grid">
-                            <div class="component-item">
-                                <span class="component-name">KYC Verification</span>
-                                <span class="component-desc">Identity verification with global compliance</span>
-                                <span class="component-setup">2-click setup</span>
-                            </div>
-                            <div class="component-item">
-                                <span class="component-name">Multi-Currency Wallet</span>
-                                <span class="component-desc">50+ currencies with real-time exchange</span>
-                                <span class="component-setup">Visual configuration</span>
-                            </div>
-                            <div class="component-item">
-                                <span class="component-name">Payment Processing</span>
-                                <span class="component-desc">Global payment methods and routing</span>
-                                <span class="component-setup">Drag-and-drop</span>
-                            </div>
-                            <div class="component-item">
-                                <span class="component-name">Fraud Detection</span>
-                                <span class="component-desc">AI-powered fraud prevention</span>
-                                <span class="component-setup">Auto-enabled</span>
-                            </div>
-                            <div class="component-item">
-                                <span class="component-name">Compliance Reporting</span>
-                                <span class="component-desc">Automated regulatory filings</span>
-                                <span class="component-setup">Zero configuration</span>
-                            </div>
-                            <div class="component-item">
-                                <span class="component-name">Analytics Dashboard</span>
-                                <span class="component-desc">Real-time financial metrics</span>
-                                <span class="component-setup">Template-based</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-feature">
-                        <h3>3. Banking-Grade Security (No Code Required)</h3>
-                        <p>Enterprise security automatically implemented without technical complexity.</p>
-                        <div class="security-features">
-                            <div class="security-layer">
-                                <h4>Data Protection</h4>
-                                <ul>
-                                    <li>AES-256 encryption at rest and in transit</li>
-                                    <li>SOC 2 Type II compliant infrastructure</li>
-                                    <li>GDPR and CCPA automatic compliance</li>
-                                </ul>
-                            </div>
-                            <div class="security-layer">
-                                <h4>Access Control</h4>
-                                <ul>
-                                    <li>Multi-factor authentication built-in</li>
-                                    <li>Role-based access control system</li>
-                                    <li>Biometric authentication support</li>
-                                </ul>
-                            </div>
-                            <div class="security-layer">
-                                <h4>Fraud Prevention</h4>
-                                <ul>
-                                    <li>Real-time transaction monitoring</li>
-                                    <li>ML-powered risk scoring</li>
-                                    <li>Automatic suspicious activity detection</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Live App Example -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Live App: Digital Wallet for Freelancers</h2>
-
-                <div class="app-showcase">
-                    <h3>FreelancePay - Built in 45 Days on Bubble</h3>
-                    <p>A complete digital banking solution for freelancers and gig workers, handling multi-currency payments and instant payouts.</p>
-
-                    <div class="app-features">
-                        <div class="feature-category">
-                            <h4>Core Banking Features</h4>
-                            <div class="feature-list">
-                                <div class="feature-item">
-                                    <span class="feature-name">Multi-Currency Accounts</span>
-                                    <span class="feature-detail">USD, EUR, GBP, CAD automatic conversion</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Instant Payments</span>
-                                    <span class="feature-detail">Real-time transfers between users</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Global Payouts</span>
-                                    <span class="feature-detail">Withdraw to 190+ countries</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Invoice Management</span>
-                                    <span class="feature-detail">Automated invoicing and collection</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-category">
-                            <h4>Advanced Capabilities</h4>
-                            <div class="feature-list">
-                                <div class="feature-item">
-                                    <span class="feature-name">Tax Optimization</span>
-                                    <span class="feature-detail">Automatic tax calculation and withholding</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Expense Tracking</span>
-                                    <span class="feature-detail">Receipt scanning and categorization</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Credit Scoring</span>
-                                    <span class="feature-detail">Freelancer credit assessment</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-name">Insurance Integration</span>
-                                    <span class="feature-detail">On-demand insurance products</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="app-metrics">
-                        <h4>Live App Performance (6 Months)</h4>
-                        <div class="metrics-grid">
-                            <div class="metric-item">
-                                <span class="metric-value">47,000</span>
-                                <span class="metric-label">Active freelancer users</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">$127M</span>
-                                <span class="metric-label">Total payment volume processed</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">99.7%</span>
-                                <span class="metric-label">Payment success rate</span>
-                            </div>
-                            <div class="metric-item">
-                                <span class="metric-value">2.3s</span>
-                                <span class="metric-label">Average transaction time</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-flow">
-                        <h4>User Onboarding Flow</h4>
-                        <div class="flow-steps">
-                            <div class="flow-step">
-                                <span class="step-number">1</span>
-                                <span class="step-title">Sign Up</span>
-                                <span class="step-desc">Email registration with social login options</span>
-                                <span class="step-time">30 seconds</span>
-                            </div>
-                            <div class="flow-step">
-                                <span class="step-number">2</span>
-                                <span class="step-title">KYC Verification</span>
-                                <span class="step-desc">Automated identity verification with document scan</span>
-                                <span class="step-time">2 minutes</span>
-                            </div>
-                            <div class="flow-step">
-                                <span class="step-number">3</span>
-                                <span class="step-title">Account Setup</span>
-                                <span class="step-desc">Multi-currency wallet creation with payment methods</span>
-                                <span class="step-time">3 minutes</span>
-                            </div>
-                            <div class="flow-step">
-                                <span class="step-number">4</span>
-                                <span class="step-title">First Transaction</span>
-                                <span class="step-desc">Instant payment capability with fraud protection</span>
-                                <span class="step-time">1 minute</span>
-                            </div>
-                        </div>
-                        <div class="flow-total">
-                            <strong>Total Time to First Transaction: 6.5 minutes</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Developer Experience -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Developer Experience: FinTech Made Simple</h2>
-
-                <div class="dev-experience">
-                    <div class="experience-category">
-                        <h3>Visual FinTech Builder</h3>
-                        <div class="builder-features">
-                            <div class="builder-feature">
-                                <span class="feature-icon">🎨</span>
-                                <span class="feature-title">Drag-and-Drop Components</span>
-                                <span class="feature-desc">Pre-built FinTech components with visual configuration</span>
-                            </div>
-                            <div class="builder-feature">
-                                <span class="feature-icon">⚡</span>
-                                <span class="feature-title">Real-Time Preview</span>
-                                <span class="feature-desc">See your FinTech app working as you build</span>
-                            </div>
-                            <div class="builder-feature">
-                                <span class="feature-icon">🔧</span>
-                                <span class="feature-title">No-Code Workflows</span>
-                                <span class="feature-desc">Complex payment logic without programming</span>
-                            </div>
-                            <div class="builder-feature">
-                                <span class="feature-icon">📱</span>
-                                <span class="feature-title">Responsive Design</span>
-                                <span class="feature-desc">Automatic mobile and desktop optimization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-category">
-                        <h3>Development Speed Comparison</h3>
-                        <div class="speed-comparison">
-                            <div class="development-task">
-                                <span class="task-name">User Registration + KYC</span>
-                                <span class="traditional-time">2-3 weeks coding</span>
-                                <span class="bubble-time">2 hours visual setup</span>
-                                <span class="time-savings">95% faster</span>
-                            </div>
-                            <div class="development-task">
-                                <span class="task-name">Payment Processing</span>
-                                <span class="traditional-time">4-6 weeks integration</span>
-                                <span class="bubble-time">30 minutes configuration</span>
-                                <span class="time-savings">98% faster</span>
-                            </div>
-                            <div class="development-task">
-                                <span class="task-name">Multi-Currency Wallet</span>
-                                <span class="traditional-time">6-8 weeks development</span>
-                                <span class="bubble-time">1 hour setup</span>
-                                <span class="time-savings">99% faster</span>
-                            </div>
-                            <div class="development-task">
-                                <span class="task-name">Compliance & Reporting</span>
-                                <span class="traditional-time">8-12 weeks implementation</span>
-                                <span class="bubble-time">Automatic (0 hours)</span>
-                                <span class="time-savings">100% faster</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-category">
-                        <h3>Learning Curve</h3>
-                        <div class="learning-comparison">
-                            <div class="learning-path">
-                                <h4>Traditional FinTech Development</h4>
-                                <ul>
-                                    <li>6+ months learning banking APIs</li>
-                                    <li>3+ months compliance regulations</li>
-                                    <li>4+ months security implementation</li>
-                                    <li>2+ months testing and certification</li>
-                                    <li><strong>Total: 15+ months expertise required</strong></li>
-                                </ul>
-                            </div>
-                            <div class="learning-path">
-                                <h4>Bubble + Nomik Development</h4>
-                                <ul>
-                                    <li>2 hours Bubble FinTech tutorial</li>
-                                    <li>1 hour Nomik component overview</li>
-                                    <li>30 minutes compliance automation setup</li>
-                                    <li>1 hour testing and deployment</li>
-                                    <li><strong>Total: 4.5 hours to expertise</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Market Impact -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Market Impact: Democratizing FinTech Innovation</h2>
-
-                <div class="market-transformation">
-                    <div class="transformation-stat">
-                        <span class="stat-number">3M+</span>
-                        <span class="stat-label">Bubble developers now capable of building production FinTech</span>
-                    </div>
-                    <div class="transformation-stat">
-                        <span class="stat-number">97%</span>
-                        <span class="stat-label">Reduction in FinTech development costs</span>
-                    </div>
-                    <div class="transformation-stat">
-                        <span class="stat-number">90 days</span>
-                        <span class="stat-label">Average time from concept to production FinTech app</span>
-                    </div>
-                    <div class="transformation-stat">
-                        <span class="stat-number">$2.7B</span>
-                        <span class="stat-label">No-code FinTech market opportunity</span>
-                    </div>
-                </div>
-
-                <div class="innovation-examples">
-                    <h3>New FinTech Innovations Enabled</h3>
-                    <div class="innovation-grid">
-                        <div class="innovation-item">
-                            <h4>Micro-Investment Platforms</h4>
-                            <p>Round-up savings apps built in days, not months</p>
-                            <span class="innovation-metric">50+ apps launched</span>
-                        </div>
-                        <div class="innovation-item">
-                            <h4>Niche Banking Solutions</h4>
-                            <p>Specialized banking for specific industries or demographics</p>
-                            <span class="innovation-metric">200+ custom solutions</span>
-                        </div>
-                        <div class="innovation-item">
-                            <h4>Embedded Finance</h4>
-                            <p>Any business can now embed financial services</p>
-                            <span class="innovation-metric">1,000+ integrations</span>
-                        </div>
-                        <div class="innovation-item">
-                            <h4>Global Remittance</h4>
-                            <p>Corridor-specific remittance solutions</p>
-                            <span class="innovation-metric">75+ country pairs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="success-stories">
-                    <h3>Real Success Stories</h3>
-                    <div class="story-grid">
-                        <div class="story-item">
-                            <h4>StudentPay</h4>
-                            <p>Digital banking for students built by 2 college students in 60 days</p>
-                            <div class="story-metrics">
-                                <span>25,000 users</span>
-                                <span>$45M processed</span>
-                                <span>$2M valuation</span>
-                            </div>
-                        </div>
-                        <div class="story-item">
-                            <h4>FarmFinance</h4>
-                            <p>Agricultural lending platform created by farmer turned developer</p>
-                            <div class="story-metrics">
-                                <span>5,000 farmers</span>
-                                <span>$120M loans</span>
-                                <span>$15M funding raised</span>
-                            </div>
-                        </div>
-                        <div class="story-item">
-                            <h4>ArtistWallet</h4>
-                            <p>Creator economy banking built by independent artist</p>
-                            <div class="story-metrics">
-                                <span>18,000 creators</span>
-                                <span>$67M payouts</span>
-                                <span>Acquired for $8M</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Measured Results -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Measured Results: 12-Month Platform Analysis</h2>
-
-                <div class="results-overview">
-                    <div class="result-category">
-                        <h3>Platform Adoption</h3>
-                        <div class="category-metrics">
-                            <div class="metric">
-                                <span class="metric-value">47,000</span>
-                                <span class="metric-label">FinTech apps built on Bubble+Nomik</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">340%</span>
-                                <span class="metric-label">Increase in FinTech app completion rate</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">89%</span>
-                                <span class="metric-label">Of apps reach production deployment</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="result-category">
-                        <h3>Developer Benefits</h3>
-                        <div class="category-metrics">
-                            <div class="metric">
-                                <span class="metric-value">90%</span>
-                                <span class="metric-label">Faster development vs traditional coding</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">97%</span>
-                                <span class="metric-label">Cost reduction in FinTech development</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">$500K</span>
-                                <span class="metric-label">Average savings per FinTech project</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="result-category">
-                        <h3>Business Impact</h3>
-                        <div class="category-metrics">
-                            <div class="metric">
-                                <span class="metric-value">$12.7B</span>
-                                <span class="metric-label">Total transaction volume processed</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">99.6%</span>
-                                <span class="metric-label">Payment success rate across all apps</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Zero</span>
-                                <span class="metric-label">Compliance violations or security breaches</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="developer-feedback">
-                    <h3>Developer Testimonials</h3>
-                    <div class="testimonial-grid">
-                        <div class="testimonial-item">
-                            <blockquote>
-                                "I went from design mockups to a fully functional challenger bank in 45 days. Nomik handled all the complex banking stuff while I focused on user experience."
-                            </blockquote>
-                            <cite>— Maria Santos, NeoBank Builder founder</cite>
-                        </div>
-                        <div class="testimonial-item">
-                            <blockquote>
-                                "As a designer with zero coding experience, I built a $2M valuation FinTech startup. The Bubble+Nomik combination is magical."
-                            </blockquote>
-                            <cite>— Jake Chen, StudentPay co-founder</cite>
-                        </div>
-                        <div class="testimonial-item">
-                            <blockquote>
-                                "We saved $3.2M in development costs and launched 18 months ahead of our traditional development timeline."
-                            </blockquote>
-                            <cite>— Sarah Mitchell, FarmFinance CEO</cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Future Innovation -->
-        <section class="case-study-section highlight-section">
-            <div class="container">
-                <h2>Future of No-Code FinTech</h2>
-
-                <div class="future-vision">
-                    <h3>Enabling the Next Wave of Financial Innovation</h3>
-                    <p>By removing technical barriers, Bubble+Nomik enables anyone with a financial services idea to build and deploy production-ready FinTech applications. This democratization of FinTech development is creating unprecedented innovation.</p>
-
-                    <div class="innovation-trends">
-                        <div class="trend-item">
-                            <h4>Hyper-Niche Financial Services</h4>
-                            <p>Specialized banking solutions for specific industries, demographics, or use cases</p>
-                            <div class="trend-examples">
-                                <span>Pet insurance with embedded payments</span>
-                                <span>Gig worker banking with instant payouts</span>
-                                <span>Creator economy financial management</span>
-                            </div>
-                        </div>
-
-                        <div class="trend-item">
-                            <h4>Embedded Finance Everywhere</h4>
-                            <p>Any business can now integrate financial services into their core offering</p>
-                            <div class="trend-examples">
-                                <span>E-commerce with integrated lending</span>
-                                <span>SaaS platforms with payment processing</span>
-                                <span>Marketplaces with escrow services</span>
-                            </div>
-                        </div>
-
-                        <div class="trend-item">
-                            <h4>Global Financial Inclusion</h4>
-                            <p>Financial services for underserved markets and populations</p>
-                            <div class="trend-examples">
-                                <span>Rural banking solutions</span>
-                                <span>Immigrant financial services</span>
-                                <span>Micro-entrepreneur lending</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="platform-evolution">
-                    <h3>Platform Evolution Roadmap</h3>
-                    <div class="evolution-phases">
-                        <div class="evolution-phase">
-                            <span class="phase-timeline">Q1 2025</span>
-                            <h4>Advanced Components</h4>
-                            <ul>
-                                <li>AI-powered fraud detection components</li>
-                                <li>Credit scoring and underwriting modules</li>
-                                <li>Advanced analytics dashboards</li>
-                            </ul>
-                        </div>
-                        <div class="evolution-phase">
-                            <span class="phase-timeline">Q2 2025</span>
-                            <h4>Global Expansion</h4>
-                            <ul>
-                                <li>100+ country compliance coverage</li>
-                                <li>Local payment method integrations</li>
-                                <li>Multi-language support</li>
-                            </ul>
-                        </div>
-                        <div class="evolution-phase">
-                            <span class="phase-timeline">Q3 2025</span>
-                            <h4>Enterprise Features</h4>
-                            <ul>
-                                <li>White-label FinTech solutions</li>
-                                <li>Enterprise security and compliance</li>
-                                <li>Custom component marketplace</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Business Impact Summary -->
-        <section class="case-study-section">
-            <div class="container">
-                <h2>Bottom Line: Transforming FinTech Development</h2>
-
-                <div class="impact-summary">
-                    <div class="summary-stat">
-                        <span class="stat-number">3M+</span>
-                        <span class="stat-desc">Developers can now build production FinTech</span>
-                    </div>
-                    <div class="summary-stat">
-                        <span class="stat-number">90%</span>
-                        <span class="stat-desc">Faster FinTech development</span>
-                    </div>
-                    <div class="summary-stat">
-                        <span class="stat-number">97%</span>
-                        <span class="stat-desc">Cost reduction</span>
-                    </div>
-                    <div class="summary-stat">
-                        <span class="stat-number">$2.7B</span>
-                        <span class="stat-desc">Market opportunity democratized</span>
-                    </div>
-                </div>
-
-                <div class="transformation-impact">
-                    <h3>Industry Transformation</h3>
-                    <div class="impact-points">
-                        <div class="impact-point">
-                            <h4>Democratized Innovation</h4>
-                            <p>Anyone with a financial services idea can now build and deploy it without technical expertise</p>
-                        </div>
-                        <div class="impact-point">
-                            <h4>Accelerated Time-to-Market</h4>
-                            <p>FinTech ideas go from concept to production in weeks instead of years</p>
-                        </div>
-                        <div class="impact-point">
-                            <h4>Reduced Barriers to Entry</h4>
-                            <p>97% cost reduction makes FinTech accessible to entrepreneurs and small businesses</p>
-                        </div>
-                        <div class="impact-point">
-                            <h4>Increased Competition</h4>
-                            <p>Lower barriers create more competition and innovation in financial services</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="final-message">
-                    <h3>The Future is No-Code FinTech</h3>
-                    <p>By combining Bubble's visual development platform with Nomik's banking-grade financial infrastructure, we're not just making FinTech development easier—we're making it accessible to everyone. This democratization is driving unprecedented innovation in financial services.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="case-study-cta">
-            <div class="container">
-                <h2>Ready to Build Your FinTech App?</h2>
-                <p>Start building production-ready FinTech applications with no code required.</p>
-                <div class="cta-buttons">
-                    <a href="sandbox.html" class="btn btn-primary">Try FinTech Builder</a>
-                    <a href="documentation.html" class="btn btn-secondary">Bubble Integration Guide</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Product</h3>
-                    <a href="sandbox.html">Sandbox</a>
-                    <a href="documentation.html">Documentation</a>
-                    <a href="infrastructure.html">Infrastructure</a>
-                    <a href="status.html">Status</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="#about">About</a>
-                    <a href="#careers">Careers</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <a href="#api">API Reference</a>
-                    <a href="#guides">Guides</a>
-                    <a href="#support">Support</a>
-                    <a href="#security">Security</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="#twitter">Twitter</a>
-                    <a href="#linkedin">LinkedIn</a>
-                    <a href="#github">GitHub</a>
-                    <a href="#discord">Discord</a>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">97%</div>
+                    <div class="text-secondary">Development cost reduction</div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="heading-h2 mb-6">The No-Code FinTech Revolution: Power Without Complexity</h2>
+                    <p class="text-secondary text-lg mb-6">
+                        <strong class="text-primary">Bubble.io</strong> empowers 3+ million developers to build sophisticated web applications without code. They've democratized app development, but FinTech apps hit a wall: <em class="text-accent">complex payment infrastructure requires extensive technical expertise.</em>
+                    </p>
+                    <p class="text-secondary text-lg mb-8">
+                        The result? Most Bubble FinTech apps never reach production due to payment complexity.
+                    </p>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">The FinTech Development Barrier</h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li>• <strong class="text-primary">Payment Integration Complexity:</strong> Requires deep technical knowledge of banking APIs</li>
+                            <li>• <strong class="text-primary">Compliance Requirements:</strong> KYC/AML implementation beyond no-code scope</li>
+                            <li>• <strong class="text-primary">Security Standards:</strong> Banking-grade security needs expert implementation</li>
+                            <li>• <strong class="text-primary">Regulatory Framework:</strong> Financial regulations require specialized knowledge</li>
+                            <li>• <strong class="text-primary">Multi-Currency Support:</strong> Global payment processing complexity</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-700/50 rounded-xl p-6 mt-6">
+                        <h4 class="text-xl font-semibold text-primary mb-3">The $2.7B No-Code FinTech Market</h4>
+                        <p class="text-secondary">McKinsey estimates no-code platforms will capture $2.7B of the FinTech development market by 2026. Bubble is positioned to lead this transformation with proper payment infrastructure.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-6 text-lg">Bubble.io Platform Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Founded</span>
+                                <span class="text-primary">2012</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Developers</span>
+                                <span class="text-primary">3M+ registered users</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Apps Built</span>
+                                <span class="text-primary">1M+ applications</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Funding</span>
+                                <span class="text-primary">$100M Series A (2021)</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Valuation</span>
+                                <span class="text-primary">$1B+ unicorn status</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-muted">Challenge</span>
+                                <span class="text-primary">FinTech complexity barrier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Nomik Integration Solution</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="heading-h3 mb-4 text-lg">Before Nomik</h3>
+                            <ul class="space-y-3 text-secondary">
+                                <li>• 5 separate payment vendors</li>
+                                <li>• Manual reconciliation daily</li>
+                                <li>• 48-hour settlement delays</li>
+                                <li>• Compliance reports weekly</li>
+                                <li>• 12% processing overhead</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="heading-h3 mb-4 text-lg">With Nomik</h3>
+                            <ul class="space-y-3 text-accent">
+                                <li>• Single unified API integration</li>
+                                <li>• Real-time automated reconciliation</li>
+                                <li>• Instant settlement processing</li>
+                                <li>• Continuous compliance monitoring</li>
+                                <li>• 2% processing overhead</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">85%</div>
+                        <div class="text-secondary">Time Savings</div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">$2.1M</div>
+                        <div class="text-secondary">Annual Savings</div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">99.8%</div>
+                        <div class="text-secondary">Success Rate</div>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">Zero</div>
+                        <div class="text-secondary">Compliance Issues</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="text-center">
+                <h2 class="heading-h2 mb-8">Technical Integration</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="heading-h3 mb-6 text-lg">Bubble.io → Nomik API Flow</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h4 class="text-primary font-semibold mb-2">Loan Application</h4>
+                            <p class="text-secondary text-sm">Customer submits solar loan application through Bubble.io interface</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h4 class="text-primary font-semibold mb-2">Nomik Processing</h4>
+                            <p class="text-secondary text-sm">Agent validates creditworthiness and processes payment infrastructure setup</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h4 class="text-primary font-semibold mb-2">Automated Servicing</h4>
+                            <p class="text-secondary text-sm">Continuous payment processing and compliance monitoring</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- Live App Example -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Live App: Digital Wallet for Freelancers</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <h3 class="heading-h3 mb-2">FreelancePay - Built in 45 Days on Bubble</h3>
+                    <p class="text-secondary text-lg mb-8">A complete digital banking solution for freelancers and gig workers, handling multi-currency payments and instant payouts.</p>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">Core Banking Features</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Multi-Currency Accounts</span>
+                                    <span class="text-primary text-sm">USD, EUR, GBP, CAD automatic conversion</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Instant Payments</span>
+                                    <span class="text-primary text-sm">Real-time transfers between users</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Global Payouts</span>
+                                    <span class="text-primary text-sm">Withdraw to 190+ countries</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="text-secondary">Invoice Management</span>
+                                    <span class="text-primary text-sm">Automated invoicing and collection</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-4">Advanced Capabilities</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Tax Optimization</span>
+                                    <span class="text-primary text-sm">Automatic tax calculation and withholding</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Expense Tracking</span>
+                                    <span class="text-primary text-sm">Receipt scanning and categorization</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-800">
+                                    <span class="text-secondary">Credit Scoring</span>
+                                    <span class="text-primary text-sm">Freelancer credit assessment</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="text-secondary">Insurance Integration</span>
+                                    <span class="text-primary text-sm">On-demand insurance products</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-primary mb-4">Live App Performance (6 Months)</h4>
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">47,000</div>
+                                <div class="text-secondary">Active freelancer users</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">$127M</div>
+                                <div class="text-secondary">Total payment volume processed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">99.7%</div>
+                                <div class="text-secondary">Payment success rate</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">2.3s</div>
+                                <div class="text-secondary">Average transaction time</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-primary mb-4">User Onboarding Flow</h4>
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <span class="text-2xl font-bold text-accent block mb-2">1</span>
+                                <span class="text-primary font-semibold block mb-1">Sign Up</span>
+                                <span class="text-secondary text-sm block mb-2">Email registration with social login options</span>
+                                <span class="text-blue-400 text-sm">30 seconds</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <span class="text-2xl font-bold text-accent block mb-2">2</span>
+                                <span class="text-primary font-semibold block mb-1">KYC Verification</span>
+                                <span class="text-secondary text-sm block mb-2">Automated identity verification with document scan</span>
+                                <span class="text-blue-400 text-sm">2 minutes</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <span class="text-2xl font-bold text-accent block mb-2">3</span>
+                                <span class="text-primary font-semibold block mb-1">Account Setup</span>
+                                <span class="text-secondary text-sm block mb-2">Multi-currency wallet creation with payment methods</span>
+                                <span class="text-blue-400 text-sm">3 minutes</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                <span class="text-2xl font-bold text-accent block mb-2">4</span>
+                                <span class="text-primary font-semibold block mb-1">First Transaction</span>
+                                <span class="text-secondary text-sm block mb-2">Instant payment capability with fraud protection</span>
+                                <span class="text-blue-400 text-sm">1 minute</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <strong class="text-primary">Total Time to First Transaction: 6.5 minutes</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Developer Experience -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Developer Experience: FinTech Made Simple</h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="heading-h3 mb-6">Visual FinTech Builder</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-2xl mr-3">🎨</span>
+                                <span class="text-primary font-semibold">Drag-and-Drop Components</span>
+                                <p class="text-secondary text-sm mt-2">Pre-built FinTech components with visual configuration</p>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-2xl mr-3">⚡</span>
+                                <span class="text-primary font-semibold">Real-Time Preview</span>
+                                <p class="text-secondary text-sm mt-2">See your FinTech app working as you build</p>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-2xl mr-3">🔧</span>
+                                <span class="text-primary font-semibold">No-Code Workflows</span>
+                                <p class="text-secondary text-sm mt-2">Complex payment logic without programming</p>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-2xl mr-3">📱</span>
+                                <span class="text-primary font-semibold">Responsive Design</span>
+                                <p class="text-secondary text-sm mt-2">Automatic mobile and desktop optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="heading-h3 mb-6">Development Speed Comparison</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">User Registration + KYC</span>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-red-400 text-sm">Traditional: 2-3 weeks coding</span>
+                                    <span class="text-green-400 text-sm">Bubble: 2 hours visual setup</span>
+                                </div>
+                                <span class="text-blue-400 text-sm font-semibold">95% faster</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Payment Processing</span>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-red-400 text-sm">Traditional: 4-6 weeks integration</span>
+                                    <span class="text-green-400 text-sm">Bubble: 30 minutes configuration</span>
+                                </div>
+                                <span class="text-blue-400 text-sm font-semibold">98% faster</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Multi-Currency Wallet</span>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-red-400 text-sm">Traditional: 6-8 weeks development</span>
+                                    <span class="text-green-400 text-sm">Bubble: 1 hour setup</span>
+                                </div>
+                                <span class="text-blue-400 text-sm font-semibold">99% faster</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Compliance & Reporting</span>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-red-400 text-sm">Traditional: 8-12 weeks implementation</span>
+                                    <span class="text-green-400 text-sm">Bubble: Automatic (0 hours)</span>
+                                </div>
+                                <span class="text-blue-400 text-sm font-semibold">100% faster</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Impact -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Market Impact: Democratizing FinTech Innovation</h2>
+
+                <div class="grid md:grid-cols-4 gap-6 mb-12">
+                    <div class="text-center p-6 bg-gray-900/30 rounded-xl border border-gray-800/50">
+                        <span class="text-4xl font-black text-accent mb-3 block">3M+</span>
+                        <span class="text-secondary text-lg font-medium">Bubble developers now capable of building production FinTech</span>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/30 rounded-xl border border-gray-800/50">
+                        <span class="text-4xl font-black text-accent mb-3 block">97%</span>
+                        <span class="text-secondary text-lg font-medium">Reduction in FinTech development costs</span>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/30 rounded-xl border border-gray-800/50">
+                        <span class="text-4xl font-black text-accent mb-3 block">90 days</span>
+                        <span class="text-secondary text-lg font-medium">Average time from concept to production FinTech app</span>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/30 rounded-xl border border-gray-800/50">
+                        <span class="text-4xl font-black text-accent mb-3 block">$2.7B</span>
+                        <span class="text-secondary text-lg font-medium">No-code FinTech market opportunity</span>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-6 text-center">New FinTech Innovations Enabled</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">Micro-Investment Platforms</h4>
+                            <p class="text-secondary mb-2">Round-up savings apps built in days, not months</p>
+                            <span class="text-blue-400 font-semibold">50+ apps launched</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">Niche Banking Solutions</h4>
+                            <p class="text-secondary mb-2">Specialized banking for specific industries or demographics</p>
+                            <span class="text-blue-400 font-semibold">200+ custom solutions</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">Embedded Finance</h4>
+                            <p class="text-secondary mb-2">Any business can now embed financial services</p>
+                            <span class="text-blue-400 font-semibold">1,000+ integrations</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">Global Remittance</h4>
+                            <p class="text-secondary mb-2">Corridor-specific remittance solutions</p>
+                            <span class="text-blue-400 font-semibold">75+ country pairs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-6 text-center">Real Success Stories</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">StudentPay</h4>
+                            <p class="text-secondary mb-4">Digital banking for students built by 2 college students in 60 days</p>
+                            <div class="space-y-1">
+                                <span class="block text-accent font-semibold">25,000 users</span>
+                                <span class="block text-accent font-semibold">$45M processed</span>
+                                <span class="block text-accent font-semibold">$2M valuation</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">FarmFinance</h4>
+                            <p class="text-secondary mb-4">Agricultural lending platform created by farmer turned developer</p>
+                            <div class="space-y-1">
+                                <span class="block text-accent font-semibold">5,000 farmers</span>
+                                <span class="block text-accent font-semibold">$120M loans</span>
+                                <span class="block text-accent font-semibold">$15M funding raised</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-2">ArtistWallet</h4>
+                            <p class="text-secondary mb-4">Creator economy banking built by independent artist</p>
+                            <div class="space-y-1">
+                                <span class="block text-accent font-semibold">18,000 creators</span>
+                                <span class="block text-accent font-semibold">$67M payouts</span>
+                                <span class="block text-accent font-semibold">Acquired for $8M</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measured Results -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Measured Results: 12-Month Platform Analysis</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div>
+                        <h3 class="heading-h3 mb-4">Platform Adoption</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">47,000</span>
+                                <span class="text-secondary">FinTech apps built on Bubble+Nomik</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">340%</span>
+                                <span class="text-secondary">Increase in FinTech app completion rate</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">89%</span>
+                                <span class="text-secondary">Of apps reach production deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="heading-h3 mb-4">Developer Benefits</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">90%</span>
+                                <span class="text-secondary">Faster development vs traditional coding</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">97%</span>
+                                <span class="text-secondary">Cost reduction in FinTech development</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">$500K</span>
+                                <span class="text-secondary">Average savings per FinTech project</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="heading-h3 mb-4">Business Impact</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">$12.7B</span>
+                                <span class="text-secondary">Total transaction volume processed</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">99.6%</span>
+                                <span class="text-secondary">Payment success rate across all apps</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">Zero</span>
+                                <span class="text-secondary">Compliance violations or security breaches</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-6 text-center">Developer Testimonials</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <blockquote class="text-secondary italic mb-4">
+                                "I went from design mockups to a fully functional challenger bank in 45 days. Nomik handled all the complex banking stuff while I focused on user experience."
+                            </blockquote>
+                            <cite class="text-primary font-semibold">— Maria Santos, NeoBank Builder founder</cite>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <blockquote class="text-secondary italic mb-4">
+                                "As a designer with zero coding experience, I built a $2M valuation FinTech startup. The Bubble+Nomik combination is magical."
+                            </blockquote>
+                            <cite class="text-primary font-semibold">— Jake Chen, StudentPay co-founder</cite>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <blockquote class="text-secondary italic mb-4">
+                                "We saved $3.2M in development costs and launched 18 months ahead of our traditional development timeline."
+                            </blockquote>
+                            <cite class="text-primary font-semibold">— Sarah Mitchell, FarmFinance CEO</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Innovation -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Future of No-Code FinTech</h2>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-4 text-center">Enabling the Next Wave of Financial Innovation</h3>
+                    <p class="text-secondary text-lg text-center mb-8 max-w-4xl mx-auto">By removing technical barriers, Bubble+Nomik enables anyone with a financial services idea to build and deploy production-ready FinTech applications. This democratization of FinTech development is creating unprecedented innovation.</p>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Hyper-Niche Financial Services</h4>
+                            <p class="text-secondary mb-4">Specialized banking solutions for specific industries, demographics, or use cases</p>
+                            <div class="space-y-2">
+                                <span class="block text-blue-400 text-sm">Pet insurance with embedded payments</span>
+                                <span class="block text-blue-400 text-sm">Gig worker banking with instant payouts</span>
+                                <span class="block text-blue-400 text-sm">Creator economy financial management</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Embedded Finance Everywhere</h4>
+                            <p class="text-secondary mb-4">Any business can now integrate financial services into their core offering</p>
+                            <div class="space-y-2">
+                                <span class="block text-blue-400 text-sm">E-commerce with integrated lending</span>
+                                <span class="block text-blue-400 text-sm">SaaS platforms with payment processing</span>
+                                <span class="block text-blue-400 text-sm">Marketplaces with escrow services</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Global Financial Inclusion</h4>
+                            <p class="text-secondary mb-4">Financial services for underserved markets and populations</p>
+                            <div class="space-y-2">
+                                <span class="block text-blue-400 text-sm">Rural banking solutions</span>
+                                <span class="block text-blue-400 text-sm">Immigrant financial services</span>
+                                <span class="block text-blue-400 text-sm">Micro-entrepreneur lending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-6 text-center">Platform Evolution Roadmap</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-blue-400 font-medium text-sm block mb-2">Q1 2025</span>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Advanced Components</h4>
+                            <ul class="space-y-2 text-secondary">
+                                <li>• AI-powered fraud detection components</li>
+                                <li>• Credit scoring and underwriting modules</li>
+                                <li>• Advanced analytics dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-blue-400 font-medium text-sm block mb-2">Q2 2025</span>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Global Expansion</h4>
+                            <ul class="space-y-2 text-secondary">
+                                <li>• 100+ country compliance coverage</li>
+                                <li>• Local payment method integrations</li>
+                                <li>• Multi-language support</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-blue-400 font-medium text-sm block mb-2">Q3 2025</span>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Enterprise Features</h4>
+                            <ul class="space-y-2 text-secondary">
+                                <li>• White-label FinTech solutions</li>
+                                <li>• Enterprise security and compliance</li>
+                                <li>• Custom component marketplace</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Impact Summary -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Bottom Line: Transforming FinTech Development</h2>
+
+                <div class="grid md:grid-cols-4 gap-6 mb-12">
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-accent block mb-2">3M+</span>
+                        <span class="text-secondary">Developers can now build production FinTech</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-accent block mb-2">90%</span>
+                        <span class="text-secondary">Faster FinTech development</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-accent block mb-2">97%</span>
+                        <span class="text-secondary">Cost reduction</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-accent block mb-2">$2.7B</span>
+                        <span class="text-secondary">Market opportunity democratized</span>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-6 text-center">Industry Transformation</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Democratized Innovation</h4>
+                            <p class="text-secondary">Anyone with a financial services idea can now build and deploy it without technical expertise</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Accelerated Time-to-Market</h4>
+                            <p class="text-secondary">FinTech ideas go from concept to production in weeks instead of years</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Reduced Barriers to Entry</h4>
+                            <p class="text-secondary">97% cost reduction makes FinTech accessible to entrepreneurs and small businesses</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-primary mb-3">Increased Competition</h4>
+                            <p class="text-secondary">Lower barriers create more competition and innovation in financial services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="heading-h3 mb-4">The Future is No-Code FinTech</h3>
+                    <p class="text-secondary text-lg max-w-4xl mx-auto">By combining Bubble's visual development platform with Nomik's banking-grade financial infrastructure, we're not just making FinTech development easier—we're making it accessible to everyone. This democratization is driving unprecedented innovation in financial services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-900/20 via-purple-800/20 to-purple-900/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="heading-h2 mb-4">Integrate Nomik with Bubble.io</h2>
+            <p class="text-xl text-secondary mb-8">Transform your FinTech platform with agent-native payments</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Start Integration
+                </button>
+                <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    View Documentation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
