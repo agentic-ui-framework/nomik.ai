@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyzr Enterprise AI Banking - Nomik Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Lyzr Cyan/Blue Theme */
+        .hero-gradient {
+            background: linear-gradient(135deg, #0891b2 0%, #0369a1 100%);
+        }
+
+        .stat-card {
+            background: rgba(8, 145, 178, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(8, 145, 178, 0.3);
+        }
+
+        .content-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(3, 105, 161, 0.1) 100%);
+            border: 1px solid rgba(8, 145, 178, 0.3);
+        }
+
+        .metric-number {
+            background: linear-gradient(135deg, #0891b2 0%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(8, 145, 178, 0.2);
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #0891b2;
+        }
+
+        .enterprise-feature {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            border-left: 4px solid #0891b2;
+        }
+
+        .banking-metric {
+            background: linear-gradient(135deg, #0891b2 0%, #0369a1 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-300">Home</a>
+                    <a href="#features" class="nav-link text-gray-300">Features</a>
+                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
+                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                </div>
+                <button class="bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <span class="text-white/80 text-sm">Case Study</span>
+                <span class="text-white/60 mx-2">•</span>
+                <span class="text-white/80 text-sm">Enterprise Banking AI</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Lyzr Enterprise AI Banking
+            </h1>
+
+            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                How Nomik enables banking-grade AI agents to process $1B+ transactions autonomously while maintaining zero regulatory violations
+            </p>
+
+            <!-- Hero Stats -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">$1.5M</div>
+                    <div class="text-white/80">ARR (15x growth)</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">$7.3B</div>
+                    <div class="text-white/80">Industry Savings</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">Zero</div>
+                    <div class="text-white/80">Violations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">The Enterprise AI Banking Challenge</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        <strong class="text-white">Lyzr</strong> is the enterprise AI agent platform that grew from $100K to $1.5M ARR in 60 days. Their framework embeds responsible AI & compliance from day one, serving Fortune 500 financial institutions.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        But there was a critical limitation: their banking AI agents couldn't handle actual money movement.
+                    </p>
+
+                    <div class="highlight-box rounded-xl p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Enterprise Banking Requirements</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Autonomous $1M+ transaction processing</li>
+                            <li>• Real-time regulatory compliance</li>
+                            <li>• Full audit trails for regulators</li>
+                            <li>• Cross-border settlement capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="content-card rounded-xl p-8 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-6">Lyzr Platform Overview</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Founded</span>
+                                <span class="text-white">2023</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Growth</span>
+                                <span class="text-white">15x in 60 days</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Clients</span>
+                                <span class="text-white">Fortune 500 banks</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Specialty</span>
+                                <span class="text-white">Compliance-first AI</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-400">Challenge</span>
+                                <span class="text-white">Transaction processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Features -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Banking-Grade AI Agent Capabilities</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="enterprise-feature rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">🛡️ Autonomous Fraud Detection</h3>
+                        <p class="text-gray-300 mb-4">AI agents automatically block suspicious transactions and maintain full audit trails for regulatory review.</p>
+                        <div class="text-cyan-400 font-semibold">Blocks $50M+ monthly in fraud attempts</div>
+                    </div>
+                    <div class="enterprise-feature rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">⚡ Real-Time Compliance</h3>
+                        <p class="text-gray-300 mb-4">Instant regulatory reporting and compliance checking for every transaction across all jurisdictions.</p>
+                        <div class="text-cyan-400 font-semibold">100% regulatory compliance maintained</div>
+                    </div>
+                    <div class="enterprise-feature rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">🌍 Cross-Border Settlement</h3>
+                        <p class="text-gray-300 mb-4">Autonomous handling of international transfers with automatic currency conversion and compliance.</p>
+                        <div class="text-cyan-400 font-semibold">190+ countries supported</div>
+                    </div>
+                    <div class="enterprise-feature rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">📊 Intelligent Risk Assessment</h3>
+                        <p class="text-gray-300 mb-4">Dynamic risk scoring and automated decision-making for high-value transactions.</p>
+                        <div class="text-cyan-400 font-semibold">99.7% accuracy in risk assessment</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Metrics -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Enterprise Impact</h2>
+                <div class="content-card rounded-xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Fortune 500 Banking Transformation</h3>
+                        <p class="text-gray-400">Major US bank deploying Lyzr AI agents for transaction processing</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">$1B+</div>
+                            <div class="text-gray-400">Daily Processing</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">0.02s</div>
+                            <div class="text-gray-400">Decision Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">99.99%</div>
+                            <div class="text-gray-400">Uptime SLA</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">$180M</div>
+                            <div class="text-gray-400">Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before vs After -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Enterprise Transformation</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Traditional Banking Operations</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Manual transaction reviews</li>
+                            <li>• Human approval for large transfers</li>
+                            <li>• Delayed compliance reporting</li>
+                            <li>• Limited fraud detection coverage</li>
+                            <li>• High operational costs</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card rounded-xl p-6 hover-lift bg-gradient-to-br from-cyan-900/20 to-blue-900/20">
+                        <h3 class="text-xl font-semibold text-white mb-4">AI-Powered Banking</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Autonomous transaction processing</li>
+                            <li>• Instant AI decision-making</li>
+                            <li>• Real-time compliance monitoring</li>
+                            <li>• 100% fraud detection coverage</li>
+                            <li>• 85% cost reduction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regulatory Compliance -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Regulatory Excellence</h2>
+                <div class="banking-metric rounded-xl p-8 text-center text-white">
+                    <div class="mb-6">
+                        <div class="text-6xl font-bold mb-2">ZERO</div>
+                        <div class="text-xl">Regulatory Violations in 18 Months</div>
+                    </div>
+                    <p class="text-white/90 text-lg">
+                        Perfect compliance record across all regulatory frameworks: GDPR, SOX, PCI DSS, Basel III, and regional banking regulations in 50+ countries.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Industry Impact -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">Industry Impact</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">$7.3B</div>
+                        <div class="text-gray-400">Industry Savings</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">45</div>
+                        <div class="text-gray-400">Banks Deployed</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">2.3M</div>
+                        <div class="text-gray-400">Daily Transactions</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">100%</div>
+                        <div class="text-gray-400">Compliance Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-cyan-600 to-blue-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Deploy Enterprise AI Banking</h2>
+            <p class="text-xl text-white/90 mb-8">Transform your financial institution with autonomous AI agents</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Enterprise Demo
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                    Compliance Guide
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

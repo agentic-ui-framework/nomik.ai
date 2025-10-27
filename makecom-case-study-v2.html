@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make.com Workflow Automation - Nomik Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Make.com Purple Theme */
+        .hero-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .stat-card {
+            background: rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .content-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .metric-number {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .workflow-node {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            border: 2px solid #8b5cf6;
+        }
+
+        .revenue-highlight {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-300">Home</a>
+                    <a href="#features" class="nav-link text-gray-300">Features</a>
+                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
+                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                </div>
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <span class="text-white/80 text-sm">Case Study</span>
+                <span class="text-white/60 mx-2">•</span>
+                <span class="text-white/80 text-sm">Make.com Integration</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Make.com Workflow Monetization
+            </h1>
+
+            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                How Nomik transforms 500K+ Make.com users from data movers to revenue generators with workflow monetization
+            </p>
+
+            <!-- Hero Stats -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">523%</div>
+                    <div class="text-white/80">ROI Increase</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">$200K+</div>
+                    <div class="text-white/80">User Revenue Potential</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">15M+</div>
+                    <div class="text-white/80">Monthly Workflows</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">The Monetization Gap</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        <strong class="text-white">Make.com</strong> serves 500K+ users with visual workflow automation. They excel at connecting 2,000+ applications and processing 15+ million automated workflows monthly.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        But here's the $200K problem: users are generating massive value but can't monetize their workflows.
+                    </p>
+
+                    <div class="highlight-box rounded-xl p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">The Revenue Gap</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Workflows move data but can't process payments</li>
+                            <li>• No service monetization capabilities</li>
+                            <li>• Manual payment collection required</li>
+                            <li>• No automated billing for workflow services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="content-card rounded-xl p-8 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-6">Make.com Overview</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Founded</span>
+                                <span class="text-white">2012</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Users</span>
+                                <span class="text-white">500K+ active</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Workflows</span>
+                                <span class="text-white">15M+ monthly</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Integrations</span>
+                                <span class="text-white">2,000+ apps</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-400">Challenge</span>
+                                <span class="text-white">Workflow monetization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Monetization -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">From Workflows to Revenue Streams</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="workflow-node rounded-xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">⚙️</span>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Automation Service</h3>
+                        <p class="text-gray-400 text-sm mb-4">Create valuable workflow automations</p>
+                        <div class="text-purple-400 font-semibold">Before: Free Labor</div>
+                    </div>
+                    <div class="workflow-node rounded-xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">💰</span>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Payment Integration</h3>
+                        <p class="text-gray-400 text-sm mb-4">Add Nomik payment processing</p>
+                        <div class="text-purple-400 font-semibold">Now: Revenue Source</div>
+                    </div>
+                    <div class="workflow-node rounded-xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Scale Revenue</h3>
+                        <p class="text-gray-400 text-sm mb-4">Automated billing and subscriptions</p>
+                        <div class="text-purple-400 font-semibold">Result: $200K+ Annual</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Story -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Story: Automation Entrepreneur</h2>
+                <div class="content-card rounded-xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">From $800 to $4,200 Monthly Revenue</h3>
+                        <p class="text-gray-400">Solo entrepreneur building workflow automation business</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="content-card rounded-lg p-6">
+                            <h4 class="text-white font-semibold mb-4">Before Nomik</h4>
+                            <div class="space-y-3 text-gray-300">
+                                <div>• Manual client onboarding</div>
+                                <div>• Invoice creation and chasing</div>
+                                <div>• Limited to hourly billing</div>
+                                <div>• 5 clients maximum capacity</div>
+                                <div>• $800/month revenue</div>
+                            </div>
+                        </div>
+                        <div class="revenue-highlight rounded-lg p-6">
+                            <h4 class="text-white font-semibold mb-4">With Nomik</h4>
+                            <div class="space-y-3 text-white">
+                                <div>• Automated subscription billing</div>
+                                <div>• Usage-based pricing models</div>
+                                <div>• Instant payment processing</div>
+                                <div>• 50+ concurrent clients</div>
+                                <div>• $4,200/month revenue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">525%</div>
+                            <div class="text-gray-400">Revenue Increase</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">10x</div>
+                            <div class="text-gray-400">Client Capacity</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">95%</div>
+                            <div class="text-gray-400">Time Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Models -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Workflow Revenue Models</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Subscription Service</h3>
+                        <p class="text-gray-300 mb-4">Monthly recurring revenue for ongoing workflow automation</p>
+                        <div class="text-purple-400 font-semibold">$50-500/month per client</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Usage-Based Pricing</h3>
+                        <p class="text-gray-300 mb-4">Charge per workflow execution or data processed</p>
+                        <div class="text-purple-400 font-semibold">$0.10-1.00 per execution</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Value-Based Billing</h3>
+                        <p class="text-gray-300 mb-4">Percentage of cost savings or revenue generated</p>
+                        <div class="text-purple-400 font-semibold">10-30% of value created</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">Platform Results</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">12,000+</div>
+                        <div class="text-gray-400">Monetized Workflows</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">$45M</div>
+                        <div class="text-gray-400">Revenue Generated</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">98.7%</div>
+                        <div class="text-gray-400">Payment Success</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">$85K</div>
+                        <div class="text-gray-400">Avg Annual Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Turn Workflows Into Revenue</h2>
+            <p class="text-xl text-white/90 mb-8">Start monetizing your Make.com automations today</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Connect Make.com
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                    View Revenue Models
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

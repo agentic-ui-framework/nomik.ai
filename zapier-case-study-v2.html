@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapier Financial Automation - Nomik Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Zapier Orange Theme */
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
+        }
+
+        .stat-card {
+            background: rgba(255, 102, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .content-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 68, 0, 0.1) 100%);
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .metric-number {
+            background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(255, 102, 0, 0.2);
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff6600;
+        }
+
+        .automation-flow {
+            background: linear-gradient(90deg, #1f2937 0%, #374151 50%, #1f2937 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-300">Home</a>
+                    <a href="#features" class="nav-link text-gray-300">Features</a>
+                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
+                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                </div>
+                <button class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <span class="text-white/80 text-sm">Case Study</span>
+                <span class="text-white/60 mx-2">•</span>
+                <span class="text-white/80 text-sm">Zapier Integration</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Zapier Financial Automation Hub
+            </h1>
+
+            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                How Nomik transforms Zapier's 2M+ users from data movers to financial processors, unlocking $50B+ in business value
+            </p>
+
+            <!-- Hero Stats -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">$140M</div>
+                    <div class="text-white/80">Zapier ARR</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">75%</div>
+                    <div class="text-white/80">Admin Reduction</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">8,000+</div>
+                    <div class="text-white/80">App Integrations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">The Automation Paradox</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        <strong class="text-white">Zapier</strong> powers 2+ million users with 6,000+ app integrations. They're the ultimate automation hub, but with a critical gap: they can move data but can't process the financial transactions their automations create.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Every day, Zapier automations generate massive business value but hit the payment wall when trying to complete financial workflows.
+                    </p>
+
+                    <div class="highlight-box rounded-xl p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">The $50B Value Gap</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Data transfer only - no financial completion</li>
+                            <li>• Broken payment workflows require manual intervention</li>
+                            <li>• Revenue recognition delays</li>
+                            <li>• No compliance framework for financial automations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="content-card rounded-xl p-8 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-6">Zapier Platform Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Founded</span>
+                                <span class="text-white">2011</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Users</span>
+                                <span class="text-white">2M+ active</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Companies</span>
+                                <span class="text-white">2M+ businesses</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Revenue</span>
+                                <span class="text-white">$200M+ ARR</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-400">Challenge</span>
+                                <span class="text-white">Financial completion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automation Flow -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Complete Financial Workflows</h2>
+                <div class="automation-flow rounded-xl p-8">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Data Trigger</h3>
+                            <p class="text-gray-400 text-sm">New sale, invoice, or customer event</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">⚙️</span>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Automation</h3>
+                            <p class="text-gray-400 text-sm">Process data across platforms</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">💳</span>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Payment</h3>
+                            <p class="text-gray-400 text-sm">Complete financial transaction</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">✅</span>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Completion</h3>
+                            <p class="text-gray-400 text-sm">Fully automated business process</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Story -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Story: Brightwave Creative</h2>
+                <div class="content-card rounded-xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">75% Admin Overhead Reduction</h3>
+                        <p class="text-gray-400">Digital agency automating client billing and payments</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">$2.3M</div>
+                            <div class="text-gray-400">Annual Revenue</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">400+</div>
+                            <div class="text-gray-400">Client Accounts</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">15 hrs</div>
+                            <div class="text-gray-400">Weekly Time Saved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before vs After -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Transformation</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Before Nomik</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Manual invoice creation and sending</li>
+                            <li>• Payment collection follow-ups</li>
+                            <li>• Disconnected financial data</li>
+                            <li>• Revenue recognition delays</li>
+                            <li>• 20+ hours weekly admin work</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card rounded-xl p-6 hover-lift bg-gradient-to-br from-orange-900/20 to-red-900/20">
+                        <h3 class="text-xl font-semibold text-white mb-4">With Nomik</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Automated invoicing upon project completion</li>
+                            <li>• Instant payment processing</li>
+                            <li>• Real-time financial dashboards</li>
+                            <li>• Automatic revenue recognition</li>
+                            <li>• 5 hours weekly admin work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Impact -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">Financial Impact</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">$50B+</div>
+                        <div class="text-gray-400">Value Unlocked</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">87%</div>
+                        <div class="text-gray-400">Faster Payments</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">99.2%</div>
+                        <div class="text-gray-400">Success Rate</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">2.1s</div>
+                        <div class="text-gray-400">Avg Processing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-red-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Complete Your Automation Workflows</h2>
+            <p class="text-xl text-white/90 mb-8">Transform data movement into complete business processes with financial completion</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Connect Zapier
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                    View Integration Guide
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

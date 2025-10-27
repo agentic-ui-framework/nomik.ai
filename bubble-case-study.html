@@ -4,50 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble.io FinTech App Builder - No-Code Payment Integration Case Study | Nomik</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">nomik</span>
-            </a>
-            <div class="nav-menu">
-                <a href="sandbox.html" class="nav-link">Sandbox</a>
-                <a href="documentation.html" class="nav-link">Docs</a>
-                <a href="case-studies.html" class="nav-link">Case Studies</a>
-                <a href="infrastructure.html" class="nav-link">Infrastructure</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="status.html" class="nav-link">Status</a>
-            </div>
-        </div>
-    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <main class="case-study-main">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Comprehensive styling for all content -->
+    <style>
+        /* Global base styles */
+        main { @apply text-gray-300 font-inter; }
+        main h1 { @apply text-5xl lg:text-7xl font-black text-white mb-8 leading-tight; }
+        main h2 { @apply text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight; }
+        main h3 { @apply text-2xl lg:text-3xl font-bold text-white mb-6; }
+        main h4 { @apply text-xl lg:text-2xl font-semibold text-white mb-4; }
+        main h5 { @apply text-lg font-semibold text-white mb-3; }
+        main p { @apply text-gray-300 mb-6 leading-relaxed text-lg; }
+        main ul { @apply space-y-3 text-gray-300 mb-6 list-disc list-inside; }
+        main ol { @apply space-y-3 text-gray-300 mb-6 list-decimal list-inside; }
+        main li { @apply text-gray-300 text-lg; }
+        main strong { @apply text-white font-semibold; }
+        main em { @apply text-blue-300 italic; }
+        main blockquote { @apply border-l-4 border-blue-500 pl-6 italic text-gray-300 my-8 text-lg; }
+
+        /* Layout */
+        .case-study-section { @apply py-20 lg:py-24; }
+        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
+        .section-grid { @apply grid lg:grid-cols-2 gap-16 items-center; }
+        .section-content { @apply space-y-8; }
+        .section-visual { @apply space-y-8; }
+        .highlight-section { @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-y border-gray-800; }
+
+        /* Enhanced Components */
+        .insight-box { @apply bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-700/50 rounded-xl p-8 mb-8 shadow-2xl; }
+        .company-card { @apply bg-gradient-to-br from-gray-900/70 to-gray-800/50 border border-gray-700 rounded-xl p-8 shadow-xl; }
+        .company-stat { @apply flex justify-between py-3 border-b border-gray-700/30 last:border-b-0; }
+        .company-stat .label { @apply text-gray-400 font-medium; }
+        .company-stat .value { @apply text-white font-semibold text-lg; }
+        .example-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-10 mb-10 shadow-2xl backdrop-blur-sm; }
+        .example-header { @apply mb-8; }
+        .example-type { @apply text-gray-400 text-base font-medium; }
+
+        /* Development Journey */
+        .development-journey { @apply mb-8; }
+        .journey-timeline { @apply grid md:grid-cols-3 gap-6; }
+        .journey-phase { @apply bg-gray-800/50 rounded-lg p-4; }
+        .phase-duration { @apply text-blue-400 font-medium text-sm block mb-2; }
+
+        /* Comparison */
+        .traditional-comparison { @apply mb-8; }
+        .comparison-grid { @apply grid md:grid-cols-2 gap-8; }
+        .comparison-traditional, .comparison-bubble { @apply bg-gray-800/30 rounded-lg p-6; }
+
+        /* Cost Analysis */
+        .cost-breakdown { @apply mt-8; }
+        .cost-comparison { @apply space-y-4; }
+        .cost-item { @apply grid grid-cols-4 gap-4 text-sm py-3 border-b border-gray-700/50; }
+        .cost-category { @apply text-gray-300 font-medium; }
+        .cost-traditional { @apply text-red-400; }
+        .cost-bubble { @apply text-green-400; }
+        .cost-savings { @apply text-blue-400 font-medium; }
+        .total-savings { @apply mt-6 pt-4 border-t border-gray-600 flex justify-between text-lg; }
+        .savings-label { @apply text-gray-300; }
+        .savings-amount { @apply text-green-400 font-bold; }
+
+        /* Hero specific */
+        .hero-stats { @apply grid md:grid-cols-3 gap-8 max-w-4xl mx-auto; }
+        .stat { @apply text-center; }
+        .stat-number { @apply text-3xl font-bold text-white mb-2 block; }
+        .stat-label { @apply text-gray-400 block; }
+        .case-study-hero { @apply py-20 bg-gray-900/20; }
+        .hero-breadcrumb { @apply text-sm text-gray-400 mb-4 text-center; }
+        .hero-breadcrumb a { @apply hover:text-white transition-colors; }
+        .hero-subtitle { @apply text-xl text-gray-300 mb-8 max-w-4xl mx-auto text-center; }
+        .case-study-main { @apply pt-16; }
+
+        /* Enhanced Sections */
+        .technical-section { @apply bg-gradient-to-br from-gray-800/40 to-gray-700/30 rounded-xl p-8 mb-10 border border-gray-700/50 shadow-xl; }
+        .feature-list { @apply grid md:grid-cols-2 gap-6; }
+        .feature-item { @apply bg-gradient-to-br from-gray-700/40 to-gray-600/30 rounded-lg p-6 border border-gray-600/50 hover:border-blue-500/50 transition-all duration-300; }
+
+        /* Animation enhancements */
+        .hover-lift { @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl; }
+        .gradient-text { @apply bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent; }
+        .glow-border { @apply border border-blue-500/30 shadow-lg shadow-blue-500/20; }
+    </style>
+
+</head>
+<body class="bg-gray-950 text-white font-sans antialiased">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black p-1">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                        </div>
+                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="case-studies.html" class="text-white font-medium transition-colors duration-200">Case Studies</a>
+                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
+                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
+                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-3">
+                    <button type="button" class="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
+                        Join Early Access
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
         <!-- Hero Section -->
         <section class="case-study-hero">
             <div class="container">
-                <div class="hero-breadcrumb">
-                    <a href="case-studies.html">Case Studies</a> > <span>Bubble.io FinTech</span>
-                </div>
-                <h1>Bubble.io FinTech App Builder</h1>
-                <p class="hero-subtitle">How Nomik enables 3M+ Bubble developers to build production-ready FinTech apps with banking-grade payment infrastructure</p>
+                <div class="text-center">
+                    <div class="hero-breadcrumb">
+                        <a href="case-studies.html">Case Studies</a> > <span>Bubble.io FinTech</span>
+                    </div>
+                    <h1>Bubble.io FinTech App Builder</h1>
+                    <p class="hero-subtitle">How Nomik enables 3M+ Bubble developers to build production-ready FinTech apps with banking-grade payment infrastructure</p>
 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">$1B+</span>
-                        <span class="stat-label">Loans processed (Dividend Finance)</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2,865%</span>
-                        <span class="stat-label">First-year ROI</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">97%</span>
-                        <span class="stat-label">Development cost reduction</span>
+                    <div class="hero-stats">
+                        <div class="stat hover-lift">
+                            <div class="stat-number">$1B+</div>
+                            <div class="stat-label">Loans processed (Dividend Finance)</div>
+                        </div>
+                        <div class="stat hover-lift">
+                            <div class="stat-number">2,865%</div>
+                            <div class="stat-label">First-year ROI</div>
+                        </div>
+                        <div class="stat hover-lift">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Development cost reduction</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +166,7 @@
 
                         <p>The result? Most Bubble FinTech apps never reach production due to payment complexity.</p>
 
-                        <div class="problem-list">
+                        <div>
                             <h3>The FinTech Development Barrier</h3>
                             <ul>
                                 <li><strong>Payment Integration Complexity:</strong> Requires deep technical knowledge of banking APIs</li>
@@ -74,37 +177,39 @@
                             </ul>
                         </div>
 
-                        <div class="insight-box">
-                            <h4>The $2.7B No-Code FinTech Market</h4>
+                        <div class="insight-box hover-lift glow-border">
+                            <h4 class="gradient-text">The $2.7B No-Code FinTech Market</h4>
                             <p>McKinsey estimates no-code platforms will capture $2.7B of the FinTech development market by 2026. Bubble is positioned to lead this transformation with proper payment infrastructure.</p>
                         </div>
                     </div>
                     <div class="section-visual">
-                        <div class="company-card">
+                        <div class="company-card hover-lift">
                             <h3>Bubble.io Platform Stats</h3>
-                            <div class="company-stat">
-                                <span class="label">Founded:</span>
-                                <span class="value">2012</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Developers:</span>
-                                <span class="value">3M+ registered users</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Apps Built:</span>
-                                <span class="value">1M+ applications</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Funding:</span>
-                                <span class="value">$100M Series A (2021)</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Valuation:</span>
-                                <span class="value">$1B+ unicorn status</span>
-                            </div>
-                            <div class="company-stat">
-                                <span class="label">Challenge:</span>
-                                <span class="value">FinTech complexity barrier</span>
+                            <div class="space-y-4">
+                                <div class="company-stat">
+                                    <span class="label">Founded:</span>
+                                    <span class="value">2012</span>
+                                </div>
+                                <div class="company-stat">
+                                    <span class="label">Developers:</span>
+                                    <span class="value">3M+ registered users</span>
+                                </div>
+                                <div class="company-stat">
+                                    <span class="label">Apps Built:</span>
+                                    <span class="value">1M+ applications</span>
+                                </div>
+                                <div class="company-stat">
+                                    <span class="label">Funding:</span>
+                                    <span class="value">$100M Series A (2021)</span>
+                                </div>
+                                <div class="company-stat">
+                                    <span class="label">Valuation:</span>
+                                    <span class="value">$1B+ unicorn status</span>
+                                </div>
+                                <div class="company-stat">
+                                    <span class="label">Challenge:</span>
+                                    <span class="value">FinTech complexity barrier</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,26 +222,26 @@
             <div class="container">
                 <h2>Real Implementation: Dividend Finance Success Story</h2>
 
-                <div class="example-card">
+                <div class="example-card hover-lift">
                     <div class="example-header">
-                        <h3>Dividend Finance</h3>
+                        <h3 class="gradient-text">Dividend Finance</h3>
                         <span class="example-type">$1B+ renewable energy loans platform - Acquired by Fifth Third Bank</span>
                     </div>
 
                     <div class="development-journey">
                         <h4>Real Success Story: Built on Bubble.io</h4>
                         <div class="journey-timeline">
-                            <div class="journey-phase">
+                            <div class="journey-phase hover-lift">
                                 <span class="phase-duration">Challenge</span>
                                 <h5>Complex Loan Processing</h5>
                                 <p>Renewable energy loan underwriting, multi-state compliance, institutional-grade security requirements</p>
                             </div>
-                            <div class="journey-phase">
+                            <div class="journey-phase hover-lift">
                                 <span class="phase-duration">Solution</span>
                                 <h5>Bubble + Custom Development</h5>
                                 <p>Built entirely on Bubble.io with extensive custom development for financial operations</p>
                             </div>
-                            <div class="journey-phase">
+                            <div class="journey-phase hover-lift">
                                 <span class="phase-duration">Result</span>
                                 <h5>$1B+ Processed & Acquisition</h5>
                                 <p>Processed over $1 billion in renewable energy loans, acquired by Fifth Third Bank</p>
@@ -147,7 +252,7 @@
                     <div class="traditional-comparison">
                         <h4>No-Code vs Traditional Development</h4>
                         <div class="comparison-grid">
-                            <div class="comparison-traditional">
+                            <div class="comparison-traditional hover-lift">
                                 <h5>Traditional FinTech Development</h5>
                                 <ul>
                                     <li><strong>Team:</strong> 15+ developers, compliance experts, security specialists</li>
@@ -157,7 +262,7 @@
                                     <li><strong>Maintenance:</strong> Dedicated technical team required</li>
                                 </ul>
                             </div>
-                            <div class="comparison-bubble">
+                            <div class="comparison-bubble hover-lift glow-border">
                                 <h5>Bubble + Nomik Development</h5>
                                 <ul>
                                     <li><strong>Team:</strong> 2-3 no-code developers</li>

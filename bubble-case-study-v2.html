@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble.io FinTech Integration - Nomik Case Study</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Clean, minimal styles */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .content-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .metric-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-300">Home</a>
+                    <a href="#features" class="nav-link text-gray-300">Features</a>
+                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
+                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                </div>
+                <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <span class="text-white/80 text-sm">Case Study</span>
+                <span class="text-white/60 mx-2">•</span>
+                <span class="text-white/80 text-sm">Bubble.io Integration</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Bubble.io FinTech Revolution
+            </h1>
+
+            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                How Nomik enables 3M+ Bubble developers to build production-ready FinTech apps with banking-grade payment infrastructure
+            </p>
+
+            <!-- Hero Stats -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">$1B+</div>
+                    <div class="text-white/80">Total Processed</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">2,865%</div>
+                    <div class="text-white/80">ROI Increase</div>
+                </div>
+                <div class="stat-card rounded-xl p-6 hover-lift">
+                    <div class="text-3xl font-bold text-white mb-2">97%</div>
+                    <div class="text-white/80">Cost Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Overview -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        <strong class="text-white">Bubble.io</strong> empowers 3+ million developers to build sophisticated web applications without code. They've democratized app development, but FinTech apps hit a wall: complex payment infrastructure requires extensive technical expertise.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        The result? Most Bubble FinTech apps never reach production due to payment complexity.
+                    </p>
+
+                    <div class="highlight-box rounded-xl p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Key Problems</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• Payment integration complexity</li>
+                            <li>• Compliance requirements beyond no-code scope</li>
+                            <li>• Banking-grade security needs</li>
+                            <li>• Multi-currency support challenges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="content-card rounded-xl p-8 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-6">Bubble.io Overview</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Founded</span>
+                                <span class="text-white">2012</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Developers</span>
+                                <span class="text-white">3M+ users</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Apps Built</span>
+                                <span class="text-white">1M+ applications</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-600">
+                                <span class="text-gray-400">Valuation</span>
+                                <span class="text-white">$1B+ unicorn</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-400">Challenge</span>
+                                <span class="text-white">FinTech complexity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Story -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Story: Dividend Finance</h2>
+                <div class="content-card rounded-xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">$1B+ Renewable Energy Loans</h3>
+                        <p class="text-gray-400">Acquired by Fifth Third Bank</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">$1B+</div>
+                            <div class="text-gray-400">Loans Processed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">90 days</div>
+                            <div class="text-gray-400">Build Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="metric-number text-4xl font-bold mb-2">$3.6M</div>
+                            <div class="text-gray-400">Cost Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">How Nomik Solves It</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <h3 class="text-xl font-semibold text-white mb-4">Before Nomik</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• 18-24 months development time</li>
+                            <li>• $2-5M initial investment</li>
+                            <li>• 15+ specialized developers needed</li>
+                            <li>• Complex compliance setup</li>
+                            <li>• High maintenance overhead</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card rounded-xl p-6 hover-lift bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+                        <h3 class="text-xl font-semibold text-white mb-4">With Nomik</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>• 90 days to production</li>
+                            <li>• $50K-200K total cost</li>
+                            <li>• 2-3 no-code developers</li>
+                            <li>• Automated compliance</li>
+                            <li>• Minimal maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">Results</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">47,000</div>
+                        <div class="text-gray-400">Apps Built</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">$12.7B</div>
+                        <div class="text-gray-400">Volume Processed</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">99.6%</div>
+                        <div class="text-gray-400">Success Rate</div>
+                    </div>
+                    <div class="content-card rounded-xl p-6 hover-lift">
+                        <div class="metric-number text-3xl font-bold mb-2">Zero</div>
+                        <div class="text-gray-400">Violations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Build Your FinTech App?</h2>
+            <p class="text-xl text-white/90 mb-8">Join thousands of developers building the future of finance with Nomik</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Start Building
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                    View Documentation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

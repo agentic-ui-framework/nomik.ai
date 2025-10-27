@@ -4,29 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make.com Workflow Automation - Financial Infrastructure Case Study | Nomik</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">nomik</span>
-            </a>
-            <div class="nav-menu">
-                <a href="sandbox.html" class="nav-link">Sandbox</a>
-                <a href="documentation.html" class="nav-link">Docs</a>
-                <a href="case-studies.html" class="nav-link">Case Studies</a>
-                <a href="infrastructure.html" class="nav-link">Infrastructure</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="status.html" class="nav-link">Status</a>
-            </div>
-        </div>
-    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <main class="case-study-main">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Comprehensive styling for all content -->
+    <style>
+        /* Global base styles */
+        main { @apply text-gray-300 font-inter; }
+        main h1 { @apply text-5xl lg:text-7xl font-black text-white mb-8 leading-tight; }
+        main h2 { @apply text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight; }
+        main h3 { @apply text-2xl lg:text-3xl font-bold text-white mb-6; }
+        main h4 { @apply text-xl lg:text-2xl font-semibold text-white mb-4; }
+        main h5 { @apply text-lg font-semibold text-white mb-3; }
+        main p { @apply text-gray-300 mb-6 leading-relaxed text-lg; }
+        main ul { @apply space-y-3 text-gray-300 mb-6 list-disc list-inside; }
+        main ol { @apply space-y-3 text-gray-300 mb-6 list-decimal list-inside; }
+        main li { @apply text-gray-300 text-lg; }
+        main strong { @apply text-white font-semibold; }
+        main em { @apply text-purple-300 italic; }
+        main blockquote { @apply border-l-4 border-purple-500 pl-6 italic text-gray-300 my-8 text-lg; }
+
+        /* Layout */
+        .case-study-section { @apply py-20 lg:py-24; }
+        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
+        .section-grid { @apply grid lg:grid-cols-2 gap-16 items-center; }
+        .section-content { @apply space-y-8; }
+        .section-visual { @apply space-y-8; }
+        .highlight-section { @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-y border-gray-800; }
+
+        /* Enhanced Components */
+        .insight-box { @apply bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-xl p-8 mb-8 shadow-2xl; }
+        .company-card { @apply bg-gradient-to-br from-gray-900/70 to-gray-800/50 border border-gray-700 rounded-xl p-8 shadow-xl; }
+        .company-stat { @apply flex justify-between py-3 border-b border-gray-700/30 last:border-b-0; }
+        .company-stat .label { @apply text-gray-400 font-medium; }
+        .company-stat .value { @apply text-white font-semibold text-lg; }
+        .example-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-10 mb-10 shadow-2xl backdrop-blur-sm; }
+        .example-header { @apply mb-8; }
+        .example-type { @apply text-gray-400 text-base font-medium; }
+
+        /* Enhanced Development Journey */
+        .dev-step { @apply bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-xl p-8 mb-8 hover:border-purple-500/50 transition-all duration-300; }
+        .dev-step-number { @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-base font-bold mb-4 shadow-lg; }
+        .dev-step-title { @apply text-white font-bold mb-3 text-xl; }
+        .dev-step-content { @apply text-gray-300 text-lg leading-relaxed; }
+
+        /* Enhanced Metrics */
+        .metrics-grid { @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16; }
+        .metric-card { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-xl p-8 text-center hover:border-purple-500/50 transition-all duration-300; }
+        .metric-value { @apply text-4xl lg:text-5xl font-black text-purple-400 mb-3 bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent; }
+        .metric-label { @apply text-gray-300 text-base font-medium; }
+        .metric-improvement { @apply text-purple-300 text-base mt-2 font-semibold; }
+
+        /* Enhanced Features */
+        .features-grid { @apply grid md:grid-cols-2 gap-8 mb-16; }
+        .feature-card { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8 hover:border-purple-500/50 transition-all duration-300; }
+        .feature-icon { @apply w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg; }
+        .feature-title { @apply text-white font-bold mb-3 text-xl; }
+        .feature-description { @apply text-gray-300 text-lg leading-relaxed; }
+
+        /* Enhanced Implementation */
+        .implementation-step { @apply border-l-4 border-purple-500 pl-8 mb-10; }
+        .step-badge { @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-full text-base font-semibold mb-4 inline-block shadow-lg; }
+        .step-title { @apply text-white font-bold mb-3 text-xl; }
+        .step-description { @apply text-gray-300 mb-6 text-lg leading-relaxed; }
+        .step-details { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-6; }
+
+        /* Enhanced Results */
+        .results-highlight { @apply bg-gradient-to-br from-purple-900/30 to-indigo-900/20 border border-purple-700/50 rounded-xl p-10 mb-10 shadow-2xl; }
+        .results-title { @apply text-white font-bold text-2xl mb-6; }
+        .results-grid { @apply grid md:grid-cols-2 gap-8; }
+        .result-item { @apply flex items-center space-x-4; }
+        .result-icon { @apply w-8 h-8 text-purple-400; }
+        .result-text { @apply text-gray-300 text-lg; }
+
+        /* Enhanced Timeline */
+        .timeline { @apply relative; }
+        .timeline-item { @apply relative pl-10 pb-10; }
+        .timeline-item::before { @apply absolute left-0 top-0 w-px h-full bg-gradient-to-b from-purple-600 to-indigo-600 content-[''] z-0; }
+        .timeline-item::after { @apply absolute left-0 top-0 w-4 h-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transform -translate-x-1/2 content-[''] z-10 shadow-lg; }
+        .timeline-content { @apply bg-gradient-to-br from-gray-900/40 to-gray-800/30 border border-gray-700/50 rounded-xl p-8; }
+        .timeline-date { @apply text-purple-400 text-base font-semibold mb-3; }
+        .timeline-title { @apply text-white font-bold mb-3 text-xl; }
+        .timeline-description { @apply text-gray-300 text-lg leading-relaxed; }
+
+        /* Animation enhancements */
+        .hover-lift { @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl; }
+        .gradient-text { @apply bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent; }
+        .glow-border { @apply border border-purple-500/30 shadow-lg shadow-purple-500/20; }
+
+        /* Workflow automation styles */
+        .workflow-node { @apply bg-gradient-to-br from-purple-900/20 to-indigo-900/20 border border-purple-700/50 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300; }
+        .automation-metric { @apply bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-gray-700 rounded-lg p-4 text-center; }
+        .workflow-badge { @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full text-sm font-semibold; }
+    </style>
+</head>
+<body class="bg-gray-950 text-white font-sans antialiased">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black p-1">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                        </div>
+                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="case-studies.html" class="text-white font-medium transition-colors duration-200">Case Studies</a>
+                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
+                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
+                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-3">
+                    <button type="button" class="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
+                        Join Early Access
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
         <!-- Hero Section -->
         <section class="case-study-hero">
             <div class="container">
@@ -37,15 +147,15 @@
                 <p class="hero-subtitle">How Nomik transforms 500,000+ Make.com users from data movers to revenue generators with agent-native payment processing</p>
 
                 <div class="hero-stats">
-                    <div class="stat">
+                    <div class="stat hover-lift">
                         <span class="stat-number">523%</span>
                         <span class="stat-label">ROI in first year</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat hover-lift">
                         <span class="stat-number">$200K+</span>
                         <span class="stat-label">User revenue potential</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat hover-lift">
                         <span class="stat-number">15M+</span>
                         <span class="stat-label">Automated workflows</span>
                     </div>
@@ -63,7 +173,7 @@
 
                         <p>But here's the $200K problem: <em>Users are generating massive value but can't monetize their workflows.</em></p>
 
-                        <div class="problem-list">
+                        <div>
                             <h3>The Critical Revenue Gap</h3>
                             <ul>
                                 <li><strong>Data Movement Only:</strong> Workflows move data but can't process payments</li>
@@ -74,13 +184,13 @@
                             </ul>
                         </div>
 
-                        <div class="insight-box">
-                            <h4>The $200K Opportunity</h4>
+                        <div class="insight-box hover-lift glow-border">
+                            <h4 class="gradient-text">The $200K Opportunity</h4>
                             <p>Case studies show individual Make.com users generating $200,000+ annually through automation services. These entrepreneurs discovered workflow automation as a service business model but hit the payment infrastructure wall.</p>
                         </div>
                     </div>
                     <div class="section-visual">
-                        <div class="company-card">
+                        <div class="company-card hover-lift">
                             <h3>Make.com Overview</h3>
                             <div class="company-stat">
                                 <span class="label">Founded:</span>
