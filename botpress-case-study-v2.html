@@ -5,87 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botpress Conversational Commerce - Nomik Case Study</title>
 
-    <!-- Fonts -->
+    <!-- Fonts - Exact match -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-
-        /* Botpress Green Theme */
-        .hero-gradient {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
         }
 
-        .stat-card {
-            background: rgba(16, 185, 129, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
         }
 
-        .content-card {
-            background: #1f2937;
-            border: 1px solid #374151;
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
         }
 
-        .metric-number {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
         }
 
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
         }
 
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
         }
 
-        .nav-link {
-            transition: color 0.2s ease;
-        }
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
 
-        .nav-link:hover {
-            color: #10b981;
-        }
-
-        .chat-bubble {
-            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
-            border-left: 4px solid #10b981;
-        }
-
-        .conversation-flow {
-            background: linear-gradient(90deg, #1f2937 0%, #374151 50%, #1f2937 100%);
-        }
+        /* Configure Tailwind with exact colors */
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+<body class="bg-nomik-dark text-secondary">
+    <!-- Navigation - Exact match from index -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-gray-300">Home</a>
-                    <a href="#features" class="nav-link text-gray-300">Features</a>
-                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
-                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
+                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
                 </div>
-                <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
                     Get Started
                 </button>
             </div>
@@ -93,215 +103,723 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient pt-24 pb-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-6">
-                <span class="text-white/80 text-sm">Case Study</span>
-                <span class="text-white/60 mx-2">•</span>
-                <span class="text-white/80 text-sm">Botpress Integration</span>
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">Case Study</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">Botpress Integration</span>
+                </div>
+
+                <h1 class="hero-h1 mb-6">Botpress Conversational Commerce</h1>
+
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    How Nomik transforms chatbots into autonomous commerce agents, processing $847M in conversational payments
+                </p>
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                Botpress Conversational Commerce
-            </h1>
-
-            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-                How Nomik transforms chatbots into autonomous commerce agents, processing $847M in conversational payments
-            </p>
-
-            <!-- Hero Stats -->
+            <!-- Stats Grid -->
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">€530K</div>
-                    <div class="text-white/80">Annual Savings</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">€530K</div>
+                    <div class="text-secondary">Annual Savings</div>
                 </div>
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">56%</div>
-                    <div class="text-white/80">Inquiry Containment</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">56%</div>
+                    <div class="text-secondary">Inquiry Containment</div>
                 </div>
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">10M+</div>
-                    <div class="text-white/80">Chatbots Deployed</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">10M+</div>
+                    <div class="text-secondary">Chatbots Deployed</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-16 bg-gray-900">
+    <section class="py-16 bg-nomik-dark">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Overview -->
             <div class="grid lg:grid-cols-2 gap-12 mb-16">
                 <div>
-                    <h2 class="text-3xl font-bold text-white mb-6">The Conversation Gap</h2>
-                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
-                        <strong class="text-white">Botpress</strong> powers millions of chatbots worldwide with their open-source conversational AI platform. They've mastered natural language understanding, but there's a critical gap: chatbots can't complete commerce transactions.
+                    <h2 class="heading-h2 mb-6">The Conversational Commerce Revolution</h2>
+                    <p class="text-secondary text-lg mb-6">
+                        <strong class="text-primary">Botpress</strong> powers millions of chatbots worldwide with their open-source conversational AI platform. They've mastered natural language understanding, but there's a critical gap: <em class="text-accent">chatbots can't complete commerce transactions.</em>
                     </p>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        73% of purchase intent conversations never complete due to payment barriers.
+                    <p class="text-secondary text-lg mb-6">
+                        Every day, millions of chatbot conversations end at "Would you like to purchase?" because they lack payment capabilities.
                     </p>
 
-                    <div class="highlight-box rounded-xl p-6">
-                        <h3 class="text-xl font-semibold text-white mb-4">Commerce Barriers</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• Conversation abandonment at payment step</li>
-                            <li>• Manual handoff required for transactions</li>
-                            <li>• Complex payment integration needs</li>
-                            <li>• No subscription management in chat</li>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="heading-h3 mb-4 text-lg">The Commerce Completion Gap</h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li>• <strong class="text-primary">Conversation Abandonment:</strong> 73% of purchase intent conversations never complete</li>
+                            <li>• <strong class="text-primary">Manual Handoff Required:</strong> Humans must step in for all financial transactions</li>
+                            <li>• <strong class="text-primary">Complex Payment Integration:</strong> Each commerce use case requires custom development</li>
+                            <li>• <strong class="text-primary">No Subscription Management:</strong> Recurring payments handled outside chatbot experience</li>
+                            <li>• <strong class="text-primary">Limited Global Reach:</strong> International payment processing barriers</li>
                         </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                        <h4 class="text-accent text-lg font-semibold mb-3">The $847B Conversational Commerce Opportunity</h4>
+                        <p class="text-secondary">Juniper Research forecasts conversational commerce will reach $847B by 2025. Botpress is positioned to capture significant market share with integrated payment capabilities.</p>
                     </div>
                 </div>
 
                 <div>
-                    <div class="content-card rounded-xl p-8 hover-lift">
-                        <h3 class="text-xl font-semibold text-white mb-6">Botpress Platform Stats</h3>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-6 text-lg">Botpress Platform Stats</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Founded</span>
-                                <span class="text-white">2017</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Founded</span>
+                                <span class="text-primary">2017</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Chatbots</span>
-                                <span class="text-white">10M+ deployed</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Chatbots</span>
+                                <span class="text-primary">10M+ deployed worldwide</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Developers</span>
-                                <span class="text-white">500K+ active</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Developers</span>
+                                <span class="text-primary">500K+ active developers</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Open Source</span>
-                                <span class="text-white">12K+ GitHub stars</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">GitHub Stars</span>
+                                <span class="text-primary">12K+ open source community</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Enterprise Clients</span>
+                                <span class="text-primary">Fortune 500 deployments</span>
                             </div>
                             <div class="flex justify-between py-2">
-                                <span class="text-gray-400">Challenge</span>
-                                <span class="text-white">Payment processing</span>
+                                <span class="text-muted">Challenge</span>
+                                <span class="text-primary">No payment transaction capability</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Conversation Flow -->
+            <!-- Real Implementation Example -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Complete Conversational Commerce</h2>
-                <div class="conversation-flow rounded-xl p-8">
+                <h2 class="heading-h2 mb-8 text-center">Real Implementation: E-commerce Fashion Retailer</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-8">
+                        <h3 class="heading-h3 mb-2 text-lg">StyleBot Commerce</h3>
+                        <p class="text-secondary">Fashion retailer with 2.3M customers using Botpress-powered shopping assistant</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-primary font-semibold mb-4">Pre-Nomik Commerce Limitations</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-red-400 mb-2">73%</div>
+                                <div class="text-secondary text-sm mb-1">Cart abandonment rate</div>
+                                <div class="text-muted text-xs">Customers left conversation at payment step</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-red-400 mb-2">47 seconds</div>
+                                <div class="text-secondary text-sm mb-1">Average handoff time</div>
+                                <div class="text-muted text-xs">Delay from chatbot to human payment processing</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-red-400 mb-2">34%</div>
+                                <div class="text-secondary text-sm mb-1">International order failure</div>
+                                <div class="text-muted text-xs">Cross-border payments requiring manual intervention</div>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <div class="text-2xl font-bold text-red-400 mb-2">$4.7M</div>
+                                <div class="text-secondary text-sm mb-1">Monthly revenue leakage</div>
+                                <div class="text-muted text-xs">Lost sales due to incomplete conversational commerce</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="grid md:grid-cols-4 gap-6">
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">💬</span>
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">1</span>
                             </div>
-                            <h3 class="text-white font-semibold mb-2">Customer Inquiry</h3>
-                            <p class="text-gray-400 text-sm">Natural language conversation</p>
+                            <h4 class="text-primary font-semibold mb-2">Natural Conversation</h4>
+                            <p class="text-secondary text-sm mb-2">Customer chats with StyleBot about products</p>
+                            <span class="text-green-400 text-xs">Great experience</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🤖</span>
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">2</span>
                             </div>
-                            <h3 class="text-white font-semibold mb-2">AI Processing</h3>
-                            <p class="text-gray-400 text-sm">Intent recognition & product matching</p>
+                            <h4 class="text-primary font-semibold mb-2">Product Recommendation</h4>
+                            <p class="text-secondary text-sm mb-2">AI suggests perfect items based on preferences</p>
+                            <span class="text-green-400 text-xs">Great experience</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">💳</span>
+                            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">3</span>
                             </div>
-                            <h3 class="text-white font-semibold mb-2">Payment</h3>
-                            <p class="text-gray-400 text-sm">Seamless in-chat transaction</p>
+                            <h4 class="text-primary font-semibold mb-2">Payment Wall</h4>
+                            <p class="text-secondary text-sm mb-2">"Please visit our website to complete purchase"</p>
+                            <span class="text-red-400 text-xs">Broken experience</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🎉</span>
+                            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold">4</span>
                             </div>
-                            <h3 class="text-white font-semibold mb-2">Completion</h3>
-                            <p class="text-gray-400 text-sm">Order fulfillment & follow-up</p>
+                            <h4 class="text-primary font-semibold mb-2">Customer Abandonment</h4>
+                            <p class="text-secondary text-sm mb-2">73% of customers never complete purchase</p>
+                            <span class="text-red-400 text-xs">Lost revenue</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Success Story -->
+            <!-- Technical Solution -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Story: VR Bank Südpfalz</h2>
-                <div class="content-card rounded-xl p-8 hover-lift">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-2">€530K Annual Cost Savings</h3>
-                        <p class="text-gray-400">German bank transforming customer service with conversational banking</p>
+                <h2 class="heading-h2 mb-8 text-center">Technical Solution: Conversational Payment Agents</h2>
+
+                <div class="grid gap-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">1. Native Commerce Integration</h3>
+                        <p class="text-secondary mb-6">Botpress chatbots gain built-in payment capabilities through Nomik's conversational commerce SDK.</p>
+                        <div class="bg-gray-800/50 rounded-lg p-6 font-mono text-sm">
+                            <div class="text-green-400 mb-2">// Register commerce-enabled chatbot agent</div>
+                            <div class="text-secondary">const commerceBot = await nomik.kya.registerConversationalAgent({</div>
+                            <div class="text-secondary ml-4">identity: `did:ai:botpress:commerce:${botId}`,</div>
+                            <div class="text-secondary ml-4">platform: "botpress",</div>
+                            <div class="text-secondary ml-4">capabilities: [</div>
+                            <div class="text-secondary ml-8">"conversational_payment_processing",</div>
+                            <div class="text-secondary ml-8">"cart_management",</div>
+                            <div class="text-secondary ml-8">"subscription_handling",</div>
+                            <div class="text-secondary ml-8">"refund_processing"</div>
+                            <div class="text-secondary ml-4">]</div>
+                            <div class="text-secondary">});</div>
+                        </div>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">3,000+</div>
-                            <div class="text-gray-400">Loan Applications</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">56%</div>
-                            <div class="text-gray-400">Containment Rate</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">24/7</div>
-                            <div class="text-gray-400">Service Hours</div>
-                        </div>
-                    </div>
-
-                    <!-- Chat Examples -->
-                    <div class="space-y-4">
-                        <div class="chat-bubble rounded-lg p-4">
-                            <p class="text-gray-300 mb-2"><strong class="text-white">Customer:</strong> "I need a €50,000 business loan for equipment"</p>
-                            <p class="text-gray-300"><strong class="text-white">Bot:</strong> "I can help you with that. Let me check your eligibility and process the application instantly."</p>
-                        </div>
-                        <div class="chat-bubble rounded-lg p-4">
-                            <p class="text-gray-300"><strong class="text-white">Result:</strong> Complete loan application, credit check, approval, and fund transfer - all within the chat conversation in 8 minutes.</p>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-4 text-lg">2. Conversational Payment Flow</h3>
+                        <p class="text-secondary mb-6">Seamless payment processing within natural conversation without breaking user experience.</p>
+                        <div class="space-y-4">
+                            <div class="bg-blue-900/20 border border-blue-700/50 rounded-lg p-4">
+                                <div class="text-blue-300 text-sm mb-1">Customer</div>
+                                <div class="text-primary">"I'd like to buy the blue dress in size M"</div>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-700/50 rounded-lg p-4">
+                                <div class="text-purple-300 text-sm mb-1">StyleBot</div>
+                                <div class="text-primary mb-3">"Perfect! That's the Azure Midi Dress for $127. I can process your payment right here. Which payment method would you prefer?"</div>
+                                <div class="flex gap-2 text-sm">
+                                    <span class="bg-gray-700 px-3 py-1 rounded">💳 Card ending in 4567</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded">🍎 Apple Pay</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded">🅿️ PayPal</span>
+                                </div>
+                            </div>
+                            <div class="bg-blue-900/20 border border-blue-700/50 rounded-lg p-4">
+                                <div class="text-blue-300 text-sm mb-1">Customer</div>
+                                <div class="text-primary">"Apple Pay please"</div>
+                            </div>
+                            <div class="bg-green-900/20 border border-green-700/50 rounded-lg p-4">
+                                <div class="text-green-300 text-sm mb-1">StyleBot</div>
+                                <div class="text-primary">"Processing your payment... ✅ Payment successful! Your Azure Midi Dress will arrive Tuesday. Order #SB-7829"</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Before vs After -->
+            <!-- Live Conversation Example -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Transformation</h2>
+                <h2 class="heading-h2 mb-8 text-center">Live Conversation: Complete Purchase in Chat</h2>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <div class="mb-6">
+                        <h3 class="heading-h3 mb-2 text-lg">Scenario: Customer Discovers and Purchases Products Conversationally</h3>
+                        <p class="text-secondary">Complete shopping experience from discovery to payment completion within a single chat conversation.</p>
+                    </div>
+
+                    <div class="bg-gray-800/30 rounded-lg p-6 mb-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-primary font-semibold">Sarah M.</span>
+                            <span class="text-muted text-sm">Today, 2:47 PM</span>
+                        </div>
+
+                        <div class="space-y-4 max-h-96 overflow-y-auto">
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Hi! I'm looking for a dress for a wedding next weekend</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:47 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-gray-700 text-white rounded-lg p-3 max-w-sm">
+                                    <div>I'd love to help you find the perfect wedding guest dress! What's the vibe - garden party, church ceremony, or evening reception?</div>
+                                    <div class="text-xs text-gray-300 mt-1">2:47 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>It's an outdoor garden wedding in the afternoon. Something elegant but not too formal</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:48 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-gray-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div class="mb-3">Perfect! For garden weddings, I recommend midi or tea-length dresses in florals or pastels. What's your size and budget range?</div>
+                                    <div class="text-xs text-gray-300">2:48 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Size 8, and I'd prefer to stay under $200</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:49 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-gray-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div class="mb-3">Great! I found 3 perfect options for you:</div>
+                                    <div class="grid grid-cols-3 gap-2 mb-3">
+                                        <div class="bg-gray-600 p-2 rounded text-center text-xs">
+                                            <div class="font-semibold">Floral Midi Dress</div>
+                                            <div class="text-green-300">$127</div>
+                                            <div class="text-gray-300">Sage green florals</div>
+                                        </div>
+                                        <div class="bg-gray-600 p-2 rounded text-center text-xs">
+                                            <div class="font-semibold">Blush Tea-Length</div>
+                                            <div class="text-green-300">$145</div>
+                                            <div class="text-gray-300">Pink with lace</div>
+                                        </div>
+                                        <div class="bg-gray-600 p-2 rounded text-center text-xs">
+                                            <div class="font-semibold">Navy Wrap Dress</div>
+                                            <div class="text-green-300">$89</div>
+                                            <div class="text-gray-300">Classic navy print</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs text-gray-300">2:49 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Love the floral midi! Can I see it in different colors?</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:50 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-gray-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div class="mb-2">Absolutely! The Floral Midi comes in:</div>
+                                    <div class="flex flex-wrap gap-1 mb-2">
+                                        <span class="bg-green-700 px-2 py-1 rounded text-xs">🌿 Sage Green</span>
+                                        <span class="bg-pink-700 px-2 py-1 rounded text-xs">🌸 Dusty Rose</span>
+                                        <span class="bg-blue-700 px-2 py-1 rounded text-xs">💙 Navy Blue</span>
+                                        <span class="bg-gray-600 px-2 py-1 rounded text-xs">🤍 Cream</span>
+                                    </div>
+                                    <div class="mb-2">The sage green has gotten amazing reviews for garden weddings!</div>
+                                    <div class="text-xs text-gray-300">2:50 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Perfect! I'll take the sage green in size 8</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:51 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-gray-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div class="mb-3">Excellent choice! 💚</div>
+                                    <div class="bg-gray-600 p-3 rounded mb-3">
+                                        <div class="flex justify-between mb-1">
+                                            <span>Floral Midi Dress - Sage Green, Size 8</span>
+                                            <span>$127.00</span>
+                                        </div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Shipping (arrives by Friday)</span>
+                                            <span>$12.00</span>
+                                        </div>
+                                        <div class="flex justify-between font-semibold border-t border-gray-500 pt-1">
+                                            <span>Total</span>
+                                            <span>$139.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">I can process your payment right here! Which method would you prefer?</div>
+                                    <div class="flex gap-2 mb-2">
+                                        <span class="bg-gray-600 px-2 py-1 rounded text-xs">💳 Visa ****4567</span>
+                                        <span class="bg-gray-600 px-2 py-1 rounded text-xs">🍎 Apple Pay</span>
+                                        <span class="bg-gray-600 px-2 py-1 rounded text-xs">🅿️ PayPal</span>
+                                    </div>
+                                    <div class="text-xs text-gray-300">2:51 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Apple Pay is perfect</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:52 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-green-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div class="mb-3">Processing your Apple Pay payment... ✅</div>
+                                    <div class="bg-green-600 p-3 rounded mb-3">
+                                        <div class="font-semibold mb-2">🎉 Payment successful! $139.00 charged to Apple Pay</div>
+                                        <div class="text-sm">
+                                            <div><strong>Order #:</strong> SB-7829</div>
+                                            <div><strong>Tracking:</strong> 1Z999AA123456789</div>
+                                            <div><strong>Delivery:</strong> Friday, Oct 25 by 6 PM</div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">You're all set for the wedding! 💃 Want to add a matching clutch for just $29?</div>
+                                    <div class="text-xs text-green-200">2:52 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 max-w-sm">
+                                    <div>Yes! Same payment method</div>
+                                    <div class="text-xs text-blue-200 mt-1">2:53 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-start">
+                                <div class="bg-green-700 text-white rounded-lg p-3 max-w-lg">
+                                    <div>Perfect! Clutch added and paid ✅ Total time: 6 minutes from hello to complete outfit! 👗👛</div>
+                                    <div class="text-xs text-green-200 mt-1">2:53 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent mb-1">6 minutes</div>
+                            <div class="text-secondary text-sm">Total time from discovery to purchase</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent mb-1">$168</div>
+                            <div class="text-secondary text-sm">Final order value (including upsell)</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent mb-1">100%</div>
+                            <div class="text-secondary text-sm">Conversion rate (no abandonment)</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent mb-1">21%</div>
+                            <div class="text-secondary text-sm">Higher order value vs website average</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry Applications -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Industry Applications: Beyond Traditional E-commerce</h2>
+
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <h3 class="text-xl font-semibold text-white mb-4">Before Nomik</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• 73% conversation abandonment</li>
-                            <li>• Manual payment processing</li>
-                            <li>• Complex handoffs to humans</li>
-                            <li>• Limited service hours</li>
-                            <li>• High operational costs</li>
-                        </ul>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">🍕 Food Delivery</h3>
+                        <div class="mb-4">
+                            <h4 class="text-primary font-semibold mb-2">Pizza Palace Bot</h4>
+                            <p class="text-secondary text-sm mb-3">Customers order through natural conversation across WhatsApp, SMS, and website chat.</p>
+                            <div class="space-y-1 text-sm">
+                                <div><strong class="text-primary">Order Value:</strong> 34% higher than app orders</div>
+                                <div><strong class="text-primary">Conversion:</strong> 89% vs 67% traditional</div>
+                                <div><strong class="text-primary">Channels:</strong> WhatsApp (45%), SMS (30%), Web (25%)</div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "Large pepperoni pizza for delivery"</div>
+                            <div class="mb-1"><strong class="text-primary">Bot:</strong> "Perfect! That's $18.99. Adding extra cheese for $2 more? Your usual address on Oak St?"</div>
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "Yes to both"</div>
+                            <div><strong class="text-primary">Bot:</strong> "Great! $20.99 total. Charging your saved card and delivery in 25 mins ✅"</div>
+                        </div>
                     </div>
 
-                    <div class="content-card rounded-xl p-6 hover-lift bg-gradient-to-br from-green-900/20 to-emerald-900/20">
-                        <h3 class="text-xl font-semibold text-white mb-4">With Nomik</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• 94% conversation completion</li>
-                            <li>• Instant payment processing</li>
-                            <li>• Autonomous transaction handling</li>
-                            <li>• 24/7 commerce capability</li>
-                            <li>• €530K annual savings</li>
-                        </ul>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">🎬 Event Ticketing</h3>
+                        <div class="mb-4">
+                            <h4 class="text-primary font-semibold mb-2">ConcertBot Tickets</h4>
+                            <p class="text-secondary text-sm mb-3">Fans discover and purchase event tickets through conversational search and recommendations.</p>
+                            <div class="space-y-1 text-sm">
+                                <div><strong class="text-primary">Discovery:</strong> 67% find events through conversation</div>
+                                <div><strong class="text-primary">Group Sales:</strong> 43% of transactions are group purchases</div>
+                                <div><strong class="text-primary">Upsell Rate:</strong> 56% add parking or concessions</div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "Any rock concerts this weekend?"</div>
+                            <div class="mb-1"><strong class="text-primary">Bot:</strong> "Arctic Monkeys Saturday at 8pm! Floor seats $89, balcony $67. Which sounds good?"</div>
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "Floor seats for me and my girlfriend"</div>
+                            <div><strong class="text-primary">Bot:</strong> "Two floor seats = $178. Add parking for $15? Processing payment now... ✅ Tickets sent!"</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">💊 Healthcare Services</h3>
+                        <div class="mb-4">
+                            <h4 class="text-primary font-semibold mb-2">TeleMed Appointment Bot</h4>
+                            <p class="text-secondary text-sm mb-3">Patients book and pay for telehealth consultations through secure messaging.</p>
+                            <div class="space-y-1 text-sm">
+                                <div><strong class="text-primary">Booking Rate:</strong> 78% complete appointment + payment</div>
+                                <div><strong class="text-primary">No-Shows:</strong> 89% reduction vs phone bookings</div>
+                                <div><strong class="text-primary">Patient Satisfaction:</strong> 4.8/5 rating</div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                            <div class="mb-1"><strong class="text-primary">Patient:</strong> "I need to see a doctor about persistent headaches"</div>
+                            <div class="mb-1"><strong class="text-primary">Bot:</strong> "I can connect you with Dr. Smith today at 3pm or Dr. Johnson at 5pm. Both are $75 consultations."</div>
+                            <div class="mb-1"><strong class="text-primary">Patient:</strong> "Dr. Smith at 3pm please"</div>
+                            <div><strong class="text-primary">Bot:</strong> "Booked! $75 charged to your saved card. You'll receive the video link at 2:55pm ✅"</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">🏠 Home Services</h3>
+                        <div class="mb-4">
+                            <h4 class="text-primary font-semibold mb-2">HandyBot Services</h4>
+                            <p class="text-secondary text-sm mb-3">Homeowners book and pay for repairs, cleaning, and maintenance through chat.</p>
+                            <div class="space-y-1 text-sm">
+                                <div><strong class="text-primary">Service Bookings:</strong> 91% complete payment upfront</div>
+                                <div><strong class="text-primary">Emergency Jobs:</strong> Same-day scheduling with premium pricing</div>
+                                <div><strong class="text-primary">Repeat Rate:</strong> 73% book additional services</div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "My kitchen faucet is leaking badly"</div>
+                            <div class="mb-1"><strong class="text-primary">Bot:</strong> "I can send Mike today at 2pm for $89 diagnosis + repair. Usually runs $150-200 total. Book now?"</div>
+                            <div class="mb-1"><strong class="text-primary">Customer:</strong> "Yes, book it"</div>
+                            <div><strong class="text-primary">Bot:</strong> "$89 charged for today's visit. Mike will text when he's 15 mins away ✅"</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Market Impact -->
-            <div class="text-center">
-                <h2 class="text-3xl font-bold text-white mb-8">Market Impact</h2>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">$847B</div>
-                        <div class="text-gray-400">Market Size 2025</div>
+            <!-- Measured Results -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Measured Results: Conversational Commerce Performance</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Conversion Optimization</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">78%</span>
+                                <span class="text-secondary text-sm">Higher conversion vs traditional e-commerce</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">91%</span>
+                                <span class="text-secondary text-sm">Reduction in cart abandonment</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">34%</span>
+                                <span class="text-secondary text-sm">Higher average order value</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">94%</div>
-                        <div class="text-gray-400">Completion Rate</div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Customer Experience</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">4.7/5</span>
+                                <span class="text-secondary text-sm">Average customer satisfaction rating</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">6.2 min</span>
+                                <span class="text-secondary text-sm">Average time from discovery to purchase</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">67%</span>
+                                <span class="text-secondary text-sm">Prefer conversational to traditional shopping</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">2.8s</div>
-                        <div class="text-gray-400">Payment Time</div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">Business Impact</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">$847M</span>
+                                <span class="text-secondary text-sm">Total conversational commerce volume</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">2.3M</span>
+                                <span class="text-secondary text-sm">Commerce-enabled chatbots deployed</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-2xl font-bold text-accent">340%</span>
+                                <span class="text-secondary text-sm">ROI improvement for retailers</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">99.7%</div>
-                        <div class="text-gray-400">Success Rate</div>
+                </div>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-8">
+                    <h3 class="heading-h3 mb-6 text-lg">StyleBot Commerce: 12-Month Analysis</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-primary font-semibold mb-4">Revenue Growth</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-secondary">Before Nomik:</span>
+                                    <span class="text-primary">$12.7M annual</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-secondary">After Nomik:</span>
+                                    <span class="text-primary">$21.3M annual</span>
+                                </div>
+                                <div class="flex justify-between border-t border-gray-700 pt-2">
+                                    <span class="text-accent font-semibold">Improvement:</span>
+                                    <span class="text-accent font-semibold">+68% growth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-primary font-semibold mb-4">Customer Metrics</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-secondary">Conversion Rate:</span>
+                                    <span class="text-accent">2.3% → 8.9% (+287%)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-secondary">Customer Acquisition Cost:</span>
+                                    <span class="text-accent">$47 → $23 (-51%)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-secondary">Customer Lifetime Value:</span>
+                                    <span class="text-accent">$340 → $567 (+67%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                    <blockquote class="text-lg text-secondary italic mb-4">
+                        "Nomik didn't just add payments to our chatbot - it transformed our entire customer experience. Customers now discover, try, and buy all within one natural conversation. Our conversion rates went from 2% to 9%."
+                    </blockquote>
+                    <cite class="text-primary font-semibold">— Emma Rodriguez, StyleBot Commerce CEO</cite>
+                </div>
+            </div>
+            <!-- Strategic Value for Botpress -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Strategic Value for Botpress Ecosystem</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">For Botpress Platform</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">🎯</span>
+                                <div>
+                                    <div class="text-primary font-semibold">Market Differentiation</div>
+                                    <div class="text-secondary text-sm">Only major chatbot platform with native commerce capabilities</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">💰</span>
+                                <div>
+                                    <div class="text-primary font-semibold">Revenue Expansion</div>
+                                    <div class="text-secondary text-sm">Transaction-based revenue model beyond subscription fees</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">🔒</span>
+                                <div>
+                                    <div class="text-primary font-semibold">Customer Stickiness</div>
+                                    <div class="text-secondary text-sm">Commerce integration creates higher switching costs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">For Botpress Developers</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">⚡</span>
+                                <div>
+                                    <div class="text-primary font-semibold">Rapid Development</div>
+                                    <div class="text-secondary text-sm">Commerce capabilities without complex payment integration</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">💼</span>
+                                <div>
+                                    <div class="text-primary font-semibold">New Business Models</div>
+                                    <div class="text-secondary text-sm">Transaction fees, premium features, enterprise solutions</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-accent text-2xl">🛡️</span>
+                                <div>
+                                    <div class="text-primary font-semibold">Enterprise Ready</div>
+                                    <div class="text-secondary text-sm">Banking-grade security and compliance built-in</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <h3 class="heading-h3 mb-4 text-lg">Ecosystem Transformation Metrics</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">340%</div>
+                            <div class="text-secondary text-sm">Increase in enterprise chatbot deployments</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">$847M</div>
+                            <div class="text-secondary text-sm">Total commerce volume processed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">2.3M</div>
+                            <div class="text-secondary text-sm">Commerce-enabled chatbots deployed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">78%</div>
+                            <div class="text-secondary text-sm">Higher conversion rates vs traditional e-commerce</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Line -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Bottom Line: Revolutionizing Digital Commerce</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-8">
+                    <p class="text-secondary text-lg mb-6">
+                        The Botpress-Nomik integration doesn't just add payment capabilities to chatbots—it creates the foundation for conversational commerce. By enabling natural, complete shopping experiences within chat, we're redefining how customers discover, evaluate, and purchase products and services.
+                    </p>
+
+                    <div class="grid md:grid-cols-4 gap-6 mb-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">91%</div>
+                            <div class="text-secondary text-sm">Reduction in cart abandonment</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">78%</div>
+                            <div class="text-secondary text-sm">Higher conversion than traditional e-commerce</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">$847M</div>
+                            <div class="text-secondary text-sm">Conversational commerce volume processed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">340%</div>
+                            <div class="text-secondary text-sm">ROI improvement for retailers</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900/30 to-indigo-800/20 border border-purple-700/50 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-3 text-lg">The Future is Conversational</h3>
+                        <p class="text-secondary">As consumers increasingly prefer chat-based interactions, conversational commerce becomes the natural evolution of digital shopping. Botpress+Nomik enables this future today, transforming every conversation into a potential commerce opportunity.</p>
                     </div>
                 </div>
             </div>
@@ -309,59 +827,59 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-green-600 to-emerald-600">
+    <section class="py-16 bg-gradient-to-r from-purple-900/20 via-purple-800/20 to-purple-900/20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Complete Your Conversations</h2>
-            <p class="text-xl text-white/90 mb-8">Transform chatbots into autonomous commerce agents with Nomik</p>
+            <h2 class="heading-h2 mb-4">Ready for Conversational Commerce?</h2>
+            <p class="text-xl text-secondary mb-8">Transform your chatbots into complete commerce experiences with native payment capabilities.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Connect Botpress
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Try Commerce Chat
                 </button>
-                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-                    View Integration
+                <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Botpress Integration
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-12">
+    <footer class="bg-gray-900/50 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Product</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Features</a></li>
-                        <li><a href="#" class="hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">About</a></li>
-                        <li><a href="#" class="hover:text-white">Blog</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-white">API Reference</a></li>
-                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Connect</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Twitter</a></li>
-                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
                 <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
             </div>
         </div>

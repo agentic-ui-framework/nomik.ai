@@ -5,82 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapier Financial Automation - Nomik Case Study</title>
 
-    <!-- Fonts -->
+    <!-- Fonts - Exact match -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-
-        /* Zapier Orange Theme */
-        .hero-gradient {
-            background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
         }
 
-        .stat-card {
-            background: rgba(255, 102, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 102, 0, 0.3);
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
         }
 
-        .content-card {
-            background: #1f2937;
-            border: 1px solid #374151;
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 68, 0, 0.1) 100%);
-            border: 1px solid rgba(255, 102, 0, 0.3);
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
         }
 
-        .metric-number {
-            background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
         }
 
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
         }
 
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(255, 102, 0, 0.2);
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
         }
 
-        .nav-link {
-            transition: color 0.2s ease;
-        }
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
 
-        .nav-link:hover {
-            color: #ff6600;
-        }
-
-        .automation-flow {
-            background: linear-gradient(90deg, #1f2937 0%, #374151 50%, #1f2937 100%);
-        }
+        /* Configure Tailwind with exact colors */
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-lg border-b border-gray-700">
+<body class="bg-nomik-dark text-secondary">
+    <!-- Navigation - Exact match from index -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold text-white">Nomik.ai</a>
+                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-gray-300">Home</a>
-                    <a href="#features" class="nav-link text-gray-300">Features</a>
-                    <a href="#docs" class="nav-link text-gray-300">Docs</a>
-                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
+                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
                 </div>
-                <button class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
                     Get Started
                 </button>
             </div>
@@ -88,204 +103,684 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient pt-24 pb-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-6">
-                <span class="text-white/80 text-sm">Case Study</span>
-                <span class="text-white/60 mx-2">•</span>
-                <span class="text-white/80 text-sm">Zapier Integration</span>
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">Case Study</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">Zapier Integration</span>
+                </div>
+
+                <h1 class="hero-h1 mb-6">Zapier Financial Automation Hub</h1>
+
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    How Nomik transforms Zapier's 2M+ users into a central financial automation hub processing $50B+ in business value
+                </p>
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                Zapier Financial Automation Hub
-            </h1>
-
-            <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-                How Nomik transforms Zapier's 2M+ users from data movers to financial processors, unlocking $50B+ in business value
-            </p>
-
-            <!-- Hero Stats -->
+            <!-- Stats Grid -->
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">$140M</div>
-                    <div class="text-white/80">Zapier ARR</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">$140M</div>
+                    <div class="text-secondary">Annual recurring revenue</div>
                 </div>
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">75%</div>
-                    <div class="text-white/80">Admin Reduction</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">75%</div>
+                    <div class="text-secondary">Admin overhead reduction (Brightwave)</div>
                 </div>
-                <div class="stat-card rounded-xl p-6 hover-lift">
-                    <div class="text-3xl font-bold text-white mb-2">8,000+</div>
-                    <div class="text-white/80">App Integrations</div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-bold text-primary mb-2">8,000+</div>
+                    <div class="text-secondary">Platform integrations</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-16 bg-gray-900">
+    <section class="py-16 bg-nomik-dark">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Overview -->
             <div class="grid lg:grid-cols-2 gap-12 mb-16">
                 <div>
-                    <h2 class="text-3xl font-bold text-white mb-6">The Automation Paradox</h2>
-                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
-                        <strong class="text-white">Zapier</strong> powers 2+ million users with 6,000+ app integrations. They're the ultimate automation hub, but with a critical gap: they can move data but can't process the financial transactions their automations create.
+                    <h2 class="heading-h2 mb-6">The Central Hub Challenge: Connecting Everything, Processing Nothing</h2>
+                    <p class="text-secondary text-lg mb-6">
+                        <strong class="text-primary">Zapier</strong> powers 2+ million users across 2+ million companies with 6,000+ app integrations. They're the ultimate automation hub, but with a critical gap: <em class="text-accent">they can't process the financial transactions their automations create.</em>
                     </p>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    <p class="text-secondary text-lg mb-8">
                         Every day, Zapier automations generate massive business value but hit the payment wall when trying to complete financial workflows.
                     </p>
 
-                    <div class="highlight-box rounded-xl p-6">
-                        <h3 class="text-xl font-semibold text-white mb-4">The $50B Value Gap</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• Data transfer only - no financial completion</li>
-                            <li>• Broken payment workflows require manual intervention</li>
-                            <li>• Revenue recognition delays</li>
-                            <li>• No compliance framework for financial automations</li>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4 text-lg">The $50B Value Leakage Problem</h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li>• <strong class="text-primary">Data Transfer Only:</strong> Automations move data but can't complete financial transactions</li>
+                            <li>• <strong class="text-primary">Broken Payment Workflows:</strong> Manual intervention required for every financial completion</li>
+                            <li>• <strong class="text-primary">Revenue Recognition Delays:</strong> No automated invoicing or payment collection</li>
+                            <li>• <strong class="text-primary">Compliance Bottlenecks:</strong> No financial regulatory framework for automations</li>
+                            <li>• <strong class="text-primary">Cross-Border Limitations:</strong> International business workflows incomplete</li>
                         </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900/30 to-red-800/20 border border-orange-700/50 rounded-xl p-6 mt-6">
+                        <h4 class="text-xl font-semibold text-primary mb-3">The Central Hub Opportunity</h4>
+                        <p class="text-secondary">Zapier's position as the central automation hub makes it the perfect financial orchestrator. By adding payment capabilities, every automation becomes a complete business process, not just a data transfer.</p>
                     </div>
                 </div>
 
                 <div>
-                    <div class="content-card rounded-xl p-8 hover-lift">
-                        <h3 class="text-xl font-semibold text-white mb-6">Zapier Platform Stats</h3>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                        <h3 class="heading-h3 mb-6 text-lg">Zapier Platform Stats</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Founded</span>
-                                <span class="text-white">2011</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Founded</span>
+                                <span class="text-primary">2011</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Users</span>
-                                <span class="text-white">2M+ active</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Users</span>
+                                <span class="text-primary">2M+ active automation creators</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Companies</span>
-                                <span class="text-white">2M+ businesses</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Companies</span>
+                                <span class="text-primary">2M+ businesses</span>
                             </div>
-                            <div class="flex justify-between py-2 border-b border-gray-600">
-                                <span class="text-gray-400">Revenue</span>
-                                <span class="text-white">$200M+ ARR</span>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Integrations</span>
+                                <span class="text-primary">6,000+ apps</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-800">
+                                <span class="text-muted">Revenue</span>
+                                <span class="text-primary">$200M+ ARR (2024)</span>
                             </div>
                             <div class="flex justify-between py-2">
-                                <span class="text-gray-400">Challenge</span>
-                                <span class="text-white">Financial completion</span>
+                                <span class="text-muted">Challenge</span>
+                                <span class="text-primary">No financial transaction completion</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Automation Flow -->
+            <!-- Real Implementation: E-commerce Automation Empire -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Complete Financial Workflows</h2>
-                <div class="automation-flow rounded-xl p-8">
+                <h2 class="heading-h2 mb-8 text-center">Real Implementation: E-commerce Automation Empire</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-8">
+                    <div class="text-center mb-8">
+                        <h3 class="heading-h3 mb-2">AutoFlow Commerce</h3>
+                        <p class="text-secondary">E-commerce automation agency managing 500+ client stores</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-primary mb-4">Pre-Nomik Workflow Limitations</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Order Processing</span>
+                                <span class="text-secondary text-sm block mb-2">Zapier moves order data but can't process payments</span>
+                                <span class="text-red-400 text-sm">Manual payment processing for 10,000+ daily orders</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Subscription Management</span>
+                                <span class="text-secondary text-sm block mb-2">Billing cycle triggers but no payment collection</span>
+                                <span class="text-red-400 text-sm">47% revenue leakage from failed collections</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Vendor Payouts</span>
+                                <span class="text-secondary text-sm block mb-2">Sales data flows but vendor payments manual</span>
+                                <span class="text-red-400 text-sm">15-day average payout delays causing vendor churn</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">International Sales</span>
+                                <span class="text-secondary text-sm block mb-2">Global orders trigger but payments fail</span>
+                                <span class="text-red-400 text-sm">62% of international orders abandoned</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-primary mb-4">Pre-Integration Pain Points</h4>
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-red-400 mb-2">18 hours/day</div>
+                                <div class="text-secondary">Manual payment processing across clients</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-red-400 mb-2">$2.3M</div>
+                                <div class="text-secondary">Monthly revenue requiring manual intervention</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-red-400 mb-2">47%</div>
+                                <div class="text-secondary">Subscription revenue leakage</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-red-400 mb-2">73</div>
+                                <div class="text-secondary">Staff hours weekly on payment workflows</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Solution: Central Financial Command Center -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Technical Solution: Central Financial Command Center</h2>
+
+                <div class="space-y-12">
+                    <div class="bg-gray-800/40 rounded-xl p-8 border border-gray-700/50">
+                        <h3 class="heading-h3 mb-4">1. Zapier Financial Agent Registry</h3>
+                        <p class="text-secondary text-lg mb-6">Every Zapier automation can register as a financial agent with autonomous payment capabilities.</p>
+                        <div class="bg-gray-900/50 rounded-lg p-6 font-mono text-sm text-green-400">
+                            <pre>const centralFinancialAgent = await nomik.kya.registerZapierAgent({
+  identity: `did:ai:zapier:central:${hubId}`,
+  platform: "zapier",
+  capabilities: [
+    "multi_platform_payment_orchestration",
+    "automated_vendor_payouts",
+    "cross_border_payment_routing",
+    "subscription_lifecycle_management"
+  ],
+  hubAuthorization: {
+    maxDailyVolume: 50000000, // $50M daily processing limit
+    approvedCurrencies: ["USD", "EUR", "GBP", "CAD", "AUD"],
+    automaticProcessingThreshold: 100000 // $100K automatic approval
+  }
+});</pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/40 rounded-xl p-8 border border-gray-700/50">
+                        <h3 class="heading-h3 mb-4">2. Multi-Platform Payment Orchestration</h3>
+                        <p class="text-secondary text-lg mb-6">Zapier becomes the central hub orchestrating payments across all connected platforms simultaneously.</p>
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-700/40 rounded-lg p-4 text-center">
+                                <span class="text-primary font-semibold block mb-1">Shopify</span>
+                                <span class="text-secondary text-sm">Order Data</span>
+                            </div>
+                            <div class="bg-purple-600 rounded-lg p-4 text-center">
+                                <span class="text-white font-semibold block mb-1">Zapier Hub</span>
+                                <span class="text-white text-sm">Financial Orchestration</span>
+                            </div>
+                            <div class="bg-gray-700/40 rounded-lg p-4 text-center">
+                                <span class="text-primary font-semibold block mb-1">Multiple Endpoints</span>
+                                <span class="text-secondary text-sm">Parallel Payments</span>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-700/40 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-1">Stripe</span>
+                                <span class="text-secondary text-sm">Customer payment collection</span>
+                            </div>
+                            <div class="bg-gray-700/40 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-1">PayPal</span>
+                                <span class="text-secondary text-sm">Vendor marketplace payout</span>
+                            </div>
+                            <div class="bg-gray-700/40 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-1">QuickBooks</span>
+                                <span class="text-secondary text-sm">Automated invoice generation</span>
+                            </div>
+                            <div class="bg-gray-700/40 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-1">Xero</span>
+                                <span class="text-secondary text-sm">Real-time accounting sync</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/40 rounded-xl p-8 border border-gray-700/50">
+                        <h3 class="heading-h3 mb-4">3. Intelligent Financial Routing</h3>
+                        <p class="text-secondary text-lg mb-6">AI-powered decision engine optimizes payment routing across multiple platforms and currencies.</p>
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-2 gap-4 py-3 border-b border-gray-700/50">
+                                <span class="text-secondary">Payment < $1K, Domestic</span>
+                                <span class="text-green-400">→ Stripe (lowest fees)</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 py-3 border-b border-gray-700/50">
+                                <span class="text-secondary">Payment > $10K, International</span>
+                                <span class="text-green-400">→ Wise Business (best rates)</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 py-3 border-b border-gray-700/50">
+                                <span class="text-secondary">Crypto Payment</span>
+                                <span class="text-green-400">→ Circle/Coinbase (compliance)</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 py-3">
+                                <span class="text-secondary">B2B Wire Transfer</span>
+                                <span class="text-green-400">→ Direct banking (security)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Multi-Platform Automation: E-commerce Order Fulfillment -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Live Multi-Platform Automation: E-commerce Order Fulfillment</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+                    <h3 class="heading-h3 mb-2">Scenario: Customer Places $2,847 Order</h3>
+                    <p class="text-secondary text-lg mb-8">Complete automation from order placement to vendor payouts across 8 platforms simultaneously.</p>
+
+                    <div class="space-y-8">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">00:00:00</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary">Order Trigger</h4>
+                                    <p class="text-secondary">Customer places order on Shopify store</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div><strong class="text-primary">Amount:</strong> <span class="text-secondary">$2,847</span></div>
+                                <div><strong class="text-primary">Items:</strong> <span class="text-secondary">3 products from 2 vendors</span></div>
+                                <div><strong class="text-primary">Customer:</strong> <span class="text-secondary">International (UK)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">00:00:03</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary">Zapier Financial Orchestration</h4>
+                                    <p class="text-secondary">Central hub analyzes and routes 7 parallel financial actions</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">Stripe</span>
+                                    <span class="text-secondary text-sm">Collect $2,847 from customer (UK card)</span>
+                                </div>
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">Vendor A</span>
+                                    <span class="text-secondary text-sm">Pay $1,200 (70% of $1,714 product value)</span>
+                                </div>
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">Vendor B</span>
+                                    <span class="text-secondary text-sm">Pay $680 (60% of $1,133 product value)</span>
+                                </div>
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">ShipStation</span>
+                                    <span class="text-secondary text-sm">Pay $47 shipping to DHL</span>
+                                </div>
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">QuickBooks</span>
+                                    <span class="text-secondary text-sm">Generate invoice and update books</span>
+                                </div>
+                                <div class="bg-gray-700/40 rounded-lg p-3">
+                                    <span class="text-blue-400 font-semibold block">Mailchimp</span>
+                                    <span class="text-secondary text-sm">Trigger order confirmation sequence</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">00:00:12</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-primary">All Payments Processed</h4>
+                                    <p class="text-secondary">Complete financial workflow executed across all platforms</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div><strong class="text-primary">Customer Payment:</strong> <span class="text-green-400">Collected successfully</span></div>
+                                <div><strong class="text-primary">Vendor Payouts:</strong> <span class="text-green-400">Processed to 2 vendors</span></div>
+                                <div><strong class="text-primary">Shipping Payment:</strong> <span class="text-green-400">Paid to carrier</span></div>
+                                <div><strong class="text-primary">Total Time:</strong> <span class="text-green-400">12 seconds end-to-end</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-primary mb-4">Automation vs Manual Process</h4>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-red-900/20 rounded-lg p-6">
+                                <h5 class="text-lg font-semibold text-primary mb-4">Manual Process (Pre-Nomik)</h5>
+                                <ul class="space-y-2 text-secondary">
+                                    <li>• Customer payment: Manual processing (2-24 hours)</li>
+                                    <li>• Vendor notifications: Manual emails</li>
+                                    <li>• Vendor payouts: Weekly batch processing</li>
+                                    <li>• Shipping payments: Manual invoice handling</li>
+                                    <li>• Accounting: Manual data entry (24-48 hours)</li>
+                                    <li><strong class="text-red-400">Total: 3-7 business days</strong></li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-900/20 rounded-lg p-6">
+                                <h5 class="text-lg font-semibold text-primary mb-4">Automated Process (With Nomik)</h5>
+                                <ul class="space-y-2 text-secondary">
+                                    <li>• Customer payment: Instant collection</li>
+                                    <li>• Vendor notifications: Automatic with payment</li>
+                                    <li>• Vendor payouts: Immediate transfer</li>
+                                    <li>• Shipping payments: Auto-payment on label creation</li>
+                                    <li>• Accounting: Real-time sync</li>
+                                    <li><strong class="text-green-400">Total: 12 seconds</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Hub Architecture -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Architecture: Zapier as Central Financial Command</h2>
+
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-8">
+                    <div class="text-center mb-8">
+                        <h3 class="heading-h3 mb-4">Zapier Financial Hub</h3>
+                        <div class="grid md:grid-cols-4 gap-4 mb-8">
+                            <span class="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm">Payment Orchestration</span>
+                            <span class="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm">Multi-Currency Processing</span>
+                            <span class="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm">Compliance Management</span>
+                            <span class="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm">Financial Reporting</span>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3">E-commerce Platforms</h4>
+                            <div class="space-y-2">
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Shopify</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">WooCommerce</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">BigCommerce</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Magento</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Payment Processors</h4>
+                            <div class="space-y-2">
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Stripe</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">PayPal</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Square</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Adyen</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Accounting Systems</h4>
+                            <div class="space-y-2">
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">QuickBooks</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Xero</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Sage</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">NetSuite</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-3">Banking & Finance</h4>
+                            <div class="space-y-2">
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Bank APIs</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Wise Business</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Mercury</span>
+                                <span class="block bg-gray-800/50 p-2 rounded text-secondary text-sm">Brex</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="heading-h3 mb-6">Intelligent Financial Decision Making</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Smart Routing</span>
+                                <span class="text-secondary text-sm">Automatically selects optimal payment method based on cost, speed, and success rate</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Currency Optimization</span>
+                                <span class="text-secondary text-sm">Real-time FX rate comparison and automatic hedging for large transactions</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Compliance Automation</span>
+                                <span class="text-secondary text-sm">Automatic regulatory compliance across all jurisdictions and platforms</span>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-lg p-4">
+                                <span class="text-primary font-semibold block mb-2">Risk Management</span>
+                                <span class="text-secondary text-sm">Real-time fraud detection and automatic payment blocking for suspicious activity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Measured Results: 18-Month Platform Transformation -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Measured Results: 18-Month Platform Transformation</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div>
+                        <h3 class="heading-h3 mb-4">Platform Enhancement</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">$50B+</span>
+                                <span class="text-secondary">Business value now financially completable</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">6,000+</span>
+                                <span class="text-secondary">Apps now payment-enabled</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">47%</span>
+                                <span class="text-secondary">Increase in automation completion rates</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="heading-h3 mb-4">User Benefits</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">94%</span>
+                                <span class="text-secondary">Reduction in manual payment tasks</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">12 seconds</span>
+                                <span class="text-secondary">Average end-to-end automation time</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">78%</span>
+                                <span class="text-secondary">Improvement in cash flow timing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="heading-h3 mb-4">Technical Performance</h3>
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">99.7%</span>
+                                <span class="text-secondary">Multi-platform payment success rate</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">99.99%</span>
+                                <span class="text-secondary">Hub uptime and reliability</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-3xl font-bold text-accent block mb-1">2.3s</span>
+                                <span class="text-secondary">Average payment processing time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-6 text-center">Real Customer Impact: AutoFlow Commerce</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-5 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Daily Payment Processing</span>
+                            <span class="text-red-400">18 hours manual work</span>
+                            <span class="text-center text-gray-500">→</span>
+                            <span class="text-green-400">1 hour monitoring</span>
+                            <span class="text-blue-400 font-medium">94% reduction</span>
+                        </div>
+                        <div class="grid grid-cols-5 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Revenue Completion Rate</span>
+                            <span class="text-red-400">53% (47% leakage)</span>
+                            <span class="text-center text-gray-500">→</span>
+                            <span class="text-green-400">97.3%</span>
+                            <span class="text-blue-400 font-medium">+44.3% revenue capture</span>
+                        </div>
+                        <div class="grid grid-cols-5 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Vendor Payout Speed</span>
+                            <span class="text-red-400">15-day average</span>
+                            <span class="text-center text-gray-500">→</span>
+                            <span class="text-green-400">Same-day automatic</span>
+                            <span class="text-blue-400 font-medium">93% faster payouts</span>
+                        </div>
+                        <div class="grid grid-cols-5 gap-4 py-3">
+                            <span class="text-secondary font-medium">International Order Success</span>
+                            <span class="text-red-400">38% completion</span>
+                            <span class="text-center text-gray-500">→</span>
+                            <span class="text-green-400">89% completion</span>
+                            <span class="text-blue-400 font-medium">+51% international sales</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-primary mb-4">Annual Financial Impact</h4>
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-green-400 mb-2">+$12.7M</div>
+                                <div class="text-secondary">Additional revenue from reduced leakage</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-green-400 mb-2">-$890K</div>
+                                <div class="text-secondary">Reduced operational costs</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-green-400 mb-2">+$3.4M</div>
+                                <div class="text-secondary">International market expansion</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">1,847%</div>
+                                <div class="text-secondary">Return on Nomik investment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800/50 rounded-lg p-6">
+                    <blockquote class="text-secondary italic text-lg mb-4">
+                        "Nomik transformed Zapier from a data connector into our complete business automation system. Every workflow now includes financial completion - we went from 50% revenue leakage to 97% capture rate."
+                    </blockquote>
+                    <cite class="text-primary font-semibold">— David Park, AutoFlow Commerce Founder</cite>
+                </div>
+            </div>
+
+            <!-- Business Model Evolution -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Business Model Evolution: From Connections to Completions</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gray-800/50 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4">Traditional Zapier Model</h3>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🔗</span>
+                                <span class="text-secondary">Data connection and transfer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">⚙️</span>
+                                <span class="text-secondary">Workflow automation triggers</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">📊</span>
+                                <span class="text-secondary">Subscription-based pricing</span>
+                            </div>
+                        </div>
+                        <div class="text-red-400 font-semibold">
+                            <strong>Limitation:</strong> Workflows incomplete without financial transactions
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 rounded-lg p-6 border border-blue-500/30">
+                        <h3 class="heading-h3 mb-4">Financial-Complete Model</h3>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">💰</span>
+                                <span class="text-secondary">End-to-end business process completion</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🏦</span>
+                                <span class="text-secondary">Central financial orchestration hub</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">📈</span>
+                                <span class="text-secondary">Transaction-based revenue sharing</span>
+                            </div>
+                        </div>
+                        <div class="text-green-400 font-semibold">
+                            <strong>Opportunity:</strong> Complete business automation with financial execution
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-6 text-center">New Revenue Streams for Zapier</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-3 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Transaction Processing Fees</span>
+                            <span class="text-blue-400">0.15% of payment volume</span>
+                            <span class="text-green-400 font-semibold">$75M annual potential</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Premium Financial Features</span>
+                            <span class="text-blue-400">$50-500/month per business</span>
+                            <span class="text-green-400 font-semibold">$120M annual potential</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 py-3 border-b border-gray-700/50">
+                            <span class="text-secondary font-medium">Financial Automation Marketplace</span>
+                            <span class="text-blue-400">20% revenue share</span>
+                            <span class="text-green-400 font-semibold">$35M annual potential</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-600 text-center">
+                        <strong class="text-xl text-green-400">Total Revenue Enhancement: $230M annually</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Vision -->
+            <div class="mb-16">
+                <h2 class="heading-h2 mb-8 text-center">Future Vision: The Complete Business Automation Platform</h2>
+
+                <div class="mb-12">
+                    <h3 class="heading-h3 mb-4 text-center">Zapier as Universal Business Operating System</h3>
+                    <p class="text-secondary text-lg text-center mb-8 max-w-4xl mx-auto">With Nomik's financial infrastructure, Zapier evolves from a workflow automation tool into the central operating system for modern businesses. Every business process, from lead generation to revenue collection, becomes a complete, automated workflow.</p>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-primary font-semibold block mb-2">Complete E-commerce Automation</span>
+                            <span class="text-secondary text-sm">From product listing to customer payment to vendor payout, all automated</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-primary font-semibold block mb-2">Autonomous B2B Operations</span>
+                            <span class="text-secondary text-sm">Contract execution to invoicing to payment collection, no human intervention</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-primary font-semibold block mb-2">Global Financial Compliance</span>
+                            <span class="text-secondary text-sm">Automatic compliance across all jurisdictions and business models</span>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <span class="text-primary font-semibold block mb-2">Real-time Financial Intelligence</span>
+                            <span class="text-secondary text-sm">Predictive analytics and optimization across all business workflows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-6 text-center">Industry Transformation Impact</h3>
                     <div class="grid md:grid-cols-4 gap-6">
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">📊</span>
-                            </div>
-                            <h3 class="text-white font-semibold mb-2">Data Trigger</h3>
-                            <p class="text-gray-400 text-sm">New sale, invoice, or customer event</p>
+                            <span class="text-4xl font-bold text-accent block mb-2">$50B+</span>
+                            <span class="text-secondary">Business value unlocked through complete automation</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">⚙️</span>
-                            </div>
-                            <h3 class="text-white font-semibold mb-2">Automation</h3>
-                            <p class="text-gray-400 text-sm">Process data across platforms</p>
+                            <span class="text-4xl font-bold text-accent block mb-2">2M+</span>
+                            <span class="text-secondary">Companies with complete business automation</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">💳</span>
-                            </div>
-                            <h3 class="text-white font-semibold mb-2">Payment</h3>
-                            <p class="text-gray-400 text-sm">Complete financial transaction</p>
+                            <span class="text-4xl font-bold text-accent block mb-2">6,000+</span>
+                            <span class="text-secondary">Apps transformed into complete business tools</span>
                         </div>
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">✅</span>
-                            </div>
-                            <h3 class="text-white font-semibold mb-2">Completion</h3>
-                            <p class="text-gray-400 text-sm">Fully automated business process</p>
+                            <span class="text-4xl font-bold text-accent block mb-2">Universal</span>
+                            <span class="text-secondary">Business operating system for the digital economy</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Success Story -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Story: Brightwave Creative</h2>
-                <div class="content-card rounded-xl p-8 hover-lift">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-2">75% Admin Overhead Reduction</h3>
-                        <p class="text-gray-400">Digital agency automating client billing and payments</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">$2.3M</div>
-                            <div class="text-gray-400">Annual Revenue</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">400+</div>
-                            <div class="text-gray-400">Client Accounts</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="metric-number text-4xl font-bold mb-2">15 hrs</div>
-                            <div class="text-gray-400">Weekly Time Saved</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Before vs After -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Transformation</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <h3 class="text-xl font-semibold text-white mb-4">Before Nomik</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• Manual invoice creation and sending</li>
-                            <li>• Payment collection follow-ups</li>
-                            <li>• Disconnected financial data</li>
-                            <li>• Revenue recognition delays</li>
-                            <li>• 20+ hours weekly admin work</li>
-                        </ul>
-                    </div>
-
-                    <div class="content-card rounded-xl p-6 hover-lift bg-gradient-to-br from-orange-900/20 to-red-900/20">
-                        <h3 class="text-xl font-semibold text-white mb-4">With Nomik</h3>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>• Automated invoicing upon project completion</li>
-                            <li>• Instant payment processing</li>
-                            <li>• Real-time financial dashboards</li>
-                            <li>• Automatic revenue recognition</li>
-                            <li>• 5 hours weekly admin work</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Financial Impact -->
-            <div class="text-center">
-                <h2 class="text-3xl font-bold text-white mb-8">Financial Impact</h2>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">$50B+</div>
-                        <div class="text-gray-400">Value Unlocked</div>
-                    </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">87%</div>
-                        <div class="text-gray-400">Faster Payments</div>
-                    </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">99.2%</div>
-                        <div class="text-gray-400">Success Rate</div>
-                    </div>
-                    <div class="content-card rounded-xl p-6 hover-lift">
-                        <div class="metric-number text-3xl font-bold mb-2">2.1s</div>
-                        <div class="text-gray-400">Avg Processing</div>
                     </div>
                 </div>
             </div>
@@ -293,59 +788,59 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-orange-600 to-red-600">
+    <section class="py-16 bg-gradient-to-r from-purple-900/20 via-purple-800/20 to-purple-900/20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Complete Your Automation Workflows</h2>
-            <p class="text-xl text-white/90 mb-8">Transform data movement into complete business processes with financial completion</p>
+            <h2 class="heading-h2 mb-4">Ready to Complete Your Automations?</h2>
+            <p class="text-xl text-secondary mb-8">Transform Zapier from data connector to complete business automation platform.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Connect Zapier
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Try Financial Hub
                 </button>
-                <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-                    View Integration Guide
+                <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Integration Guide
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-12">
+    <footer class="bg-gray-900/50 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Product</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Features</a></li>
-                        <li><a href="#" class="hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">About</a></li>
-                        <li><a href="#" class="hover:text-white">Blog</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-white">API Reference</a></li>
-                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Connect</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Twitter</a></li>
-                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
                 <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
             </div>
         </div>
