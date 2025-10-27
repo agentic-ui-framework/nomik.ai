@@ -319,11 +319,46 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#roi" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">ROI</a>
+                    <!-- Case Studies Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">
+                            <span>Case Studies</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-96 bg-gray-900 border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="bubble-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Bubble.io</div>
+                                <div class="text-sm text-gray-500 mt-1">No-Code FinTech Platform</div>
+                            </a>
+                            <a href="zapier-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Zapier Central</div>
+                                <div class="text-sm text-gray-500 mt-1">Financial Hub Automation</div>
+                            </a>
+                            <a href="botpress-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Botpress</div>
+                                <div class="text-sm text-gray-500 mt-1">Conversational Commerce</div>
+                            </a>
+                            <a href="makecom-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Make.com</div>
+                                <div class="text-sm text-gray-500 mt-1">Workflow Automation</div>
+                            </a>
+                            <a href="lyzr-enterprise-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Lyzr Enterprise</div>
+                                <div class="text-sm text-gray-500 mt-1">Banking AI Agents</div>
+                            </a>
+                            <a href="mindstudio-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                                <div class="font-medium text-base">MindStudio</div>
+                                <div class="text-sm text-gray-500 mt-1">AI Agent Builder Platform</div>
+                            </a>
+                        </div>
+                    </div>
+
                     <a href="#solution" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">How It Works</a>
                     <a href="#integration" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Integration</a>
                     <a href="#compliance" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Compliance</a>
-                    <a href="#implementation" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Getting Started</a>
+                    <a href="#docs" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Docs</a>
                 </div>
 
                 <!-- CTA Button -->
@@ -355,11 +390,11 @@
             <!-- Mobile Navigation -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-800/50 mt-2">
-                    <a href="#roi" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">ROI</a>
+                    <a href="case-studies.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Case Studies</a>
                     <a href="#solution" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
                     <a href="#integration" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
                     <a href="#compliance" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Compliance</a>
-                    <a href="#implementation" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Getting Started</a>
+                    <a href="#docs" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
                 </div>
             </div>
         </nav>
@@ -376,7 +411,7 @@
                         Connected Finance Infrastructure for Real Teams
                     </h1>
                     <p class="text-lg lg:text-xl text-lead text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
-                        Nomik links your banks, accounting systems, and digital wallets to automate finance operations under clear policy rules. It selects the right rail for every payment, enforces compliance automatically, and records each decision for full audit visibility.
+                        Transform your finance operations with intelligent agents that handle AP, treasury, and compliance across traditional banking and digital asset rails. All autonomous, all compliant, all under your policy control.
                     </p>
 
                     <!-- Tagline Chips -->
@@ -393,6 +428,13 @@
                         <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
                             <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i> Human Controlled
                         </span>
+                    </div>
+
+                    <!-- Rails Coverage -->
+                    <div class="text-center mt-4 mb-6">
+                        <p class="text-sm text-gray-400">
+                            Traditional Rails • Stablecoins • Digital Assets • Cross-Border • Real-Time Settlement
+                        </p>
                     </div>
 
                     <!-- CTA Buttons -->
@@ -421,10 +463,10 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="heading-h2 mb-8">
-                        The ROI: What Your Finance Team Actually Saves
+                        Autonomous CFO Operations: The ROI
                     </h2>
                     <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-                        Typical mid-market finance team saves $1.8M–4.5M annually by eliminating manual work and rework.
+                        Deploy intelligent agents for every CFO function. Typical mid-market finance teams save $1.8M–4.5M annually by eliminating manual work and rework.
                     </p>
                 </div>
 
@@ -434,49 +476,49 @@
                         <table class="w-full">
                             <thead>
                                 <tr class="bg-gray-700/50">
-                                    <th class="text-left px-6 py-4 text-white font-semibold">Team Function</th>
-                                    <th class="text-left px-6 py-4 text-white font-semibold">Manual Task</th>
-                                    <th class="text-left px-6 py-4 text-white font-semibold">Nomik Agent</th>
-                                    <th class="text-center px-6 py-4 text-white font-semibold">Time Saved</th>
+                                    <th class="text-left px-6 py-4 text-white font-semibold">CFO Function</th>
+                                    <th class="text-left px-6 py-4 text-white font-semibold">Current Process</th>
+                                    <th class="text-left px-6 py-4 text-white font-semibold">Autonomous Agent</th>
+                                    <th class="text-center px-6 py-4 text-white font-semibold">Efficiency Gain</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-700/50">
                                 <tr class="hover:bg-gray-700/20 transition-colors">
-                                    <td class="px-6 py-4 text-gray-300 font-medium">AP</td>
-                                    <td class="px-6 py-4 text-gray-400">Invoice entry</td>
-                                    <td class="px-6 py-4 text-nomik-400">Invoice Processing Agent</td>
+                                    <td class="px-6 py-4 text-gray-300 font-medium">AP Operations</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual invoice processing</td>
+                                    <td class="px-6 py-4 text-nomik-400">AP Automation Agent</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">95%</span>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-700/20 transition-colors">
-                                    <td class="px-6 py-4 text-gray-300 font-medium">Treasury</td>
-                                    <td class="px-6 py-4 text-gray-400">Daily cash positioning</td>
-                                    <td class="px-6 py-4 text-nomik-400">Treasury Optimization Agent</td>
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Treasury Management</td>
+                                    <td class="px-6 py-4 text-gray-400">Multi-rail cash positioning</td>
+                                    <td class="px-6 py-4 text-nomik-400">Treasury Operations Agent</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">90%</span>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-700/20 transition-colors">
-                                    <td class="px-6 py-4 text-gray-300 font-medium">Accounting</td>
-                                    <td class="px-6 py-4 text-gray-400">Bank reconciliation</td>
-                                    <td class="px-6 py-4 text-nomik-400">Payment Execution Agent</td>
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Financial Reporting</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual reconciliation</td>
+                                    <td class="px-6 py-4 text-nomik-400">Reconciliation Agent</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">90%</span>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-700/20 transition-colors">
-                                    <td class="px-6 py-4 text-gray-300 font-medium">Compliance</td>
-                                    <td class="px-6 py-4 text-gray-400">KYC/AML checks</td>
-                                    <td class="px-6 py-4 text-nomik-400">AML Monitoring Agent</td>
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Risk & Compliance</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual compliance checks</td>
+                                    <td class="px-6 py-4 text-nomik-400">Compliance Monitoring Agent</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">92%</span>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-700/20 transition-colors">
-                                    <td class="px-6 py-4 text-gray-300 font-medium">FP&A</td>
-                                    <td class="px-6 py-4 text-gray-400">Cash-flow forecasting</td>
-                                    <td class="px-6 py-4 text-nomik-400">Forecasting Agent</td>
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Financial Planning</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual forecasting</td>
+                                    <td class="px-6 py-4 text-nomik-400">Strategic Planning Agent</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">85%</span>
                                     </td>
@@ -549,10 +591,10 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="heading-h2 mb-6">
-                        One Platform, Every Rail
+                        Multi-Rail Finance Infrastructure
                     </h2>
                     <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-                        Nomik connects directly to traditional banking rails and digital asset rails. It doesn't move or hold money — it sits above these rails and decides how and when to route transactions, according to your policy.
+                        Autonomous agents operate across traditional banking, stablecoins, and digital assets. Intelligent routing selects the optimal rail for every transaction based on cost, speed, and compliance requirements.
                     </p>
                 </div>
 
@@ -563,15 +605,15 @@
                         <div class="space-y-3 text-gray-300">
                             <div class="flex justify-between">
                                 <span>SEPA, SWIFT, ACH, RTP</span>
-                                <span class="text-gray-400 text-sm">Regulated fiat</span>
+                                <span class="text-gray-400 text-sm">Traditional banking</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Local clearing systems</span>
-                                <span class="text-gray-400 text-sm">Domestic payments</span>
+                                <span>FedNow, Instant Payments</span>
+                                <span class="text-gray-400 text-sm">Real-time settlement</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Visa, Mastercard</span>
-                                <span class="text-gray-400 text-sm">Instant spend</span>
+                                <span>Corporate cards</span>
+                                <span class="text-gray-400 text-sm">Expense automation</span>
                             </div>
                         </div>
                     </div>
@@ -582,15 +624,15 @@
                         <div class="space-y-3 text-gray-300">
                             <div class="flex justify-between">
                                 <span>USDC, EURC, PYUSD</span>
-                                <span class="text-gray-400 text-sm">Cross-border speed</span>
+                                <span class="text-gray-400 text-sm">Instant cross-border</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>24/7 Treasury mobility</span>
-                                <span class="text-gray-400 text-sm">Always available</span>
+                                <span>24/7 Operations</span>
+                                <span class="text-gray-400 text-sm">No banking hours</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Lower FX costs</span>
-                                <span class="text-gray-400 text-sm">Efficient corridors</span>
+                                <span>Lower FX spreads</span>
+                                <span class="text-gray-400 text-sm">Direct conversion</span>
                             </div>
                         </div>
                     </div>
@@ -617,7 +659,7 @@
 
                 <div class="text-center mt-8">
                     <p class="text-nomik-400 font-medium">
-                        Programmable rail selection, not static payments
+                        Intelligent routing across all rails for optimal cost, speed, and compliance
                     </p>
                 </div>
             </div>
@@ -2330,7 +2372,7 @@
                     Getting Started
                 </h2>
                 <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Nomik is launching with select finance teams across Europe and Mauritius. Join the early access program to:
+                    Nomik is launching with select finance teams across Europe. Join the early access program to:
                 </p>
 
                 <!-- Implementation Benefits -->
