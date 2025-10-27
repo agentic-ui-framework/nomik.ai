@@ -81,27 +81,109 @@
         .border-nomik { border-color: rgba(124, 58, 237, 0.3); }
     </style>
 </head>
-<body class="bg-nomik-dark text-secondary">
+<body class="bg-gray-950 text-white font-sans antialiased">
 
-    <!-- Navigation - Exact match from index -->
-    <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold text-primary">Nomik.ai</a>
+                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black  p-1">
+                        <div class="w-8 h-8  flex items-center justify-center">
+                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                        </div>
+                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                    </a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
-                    <a href="#features" class="text-secondary hover:text-primary transition-colors">Features</a>
-                    <a href="#docs" class="text-secondary hover:text-primary transition-colors">Docs</a>
-                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Case Studies Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">
+                            <span>Case Studies</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-96 bg-gray-900 border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="cfo-use-cases.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">CFO Use Cases</div>
+                                <div class="text-sm text-gray-500 mt-1">Treasury, AP & FP&A Operations</div>
+                            </a>
+                            <a href="bubble-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Bubble.io</div>
+                                <div class="text-sm text-gray-500 mt-1">No-Code FinTech Platform</div>
+                            </a>
+                            <a href="zapier-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Zapier Central</div>
+                                <div class="text-sm text-gray-500 mt-1">Financial Hub Automation</div>
+                            </a>
+                            <a href="botpress-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Botpress</div>
+                                <div class="text-sm text-gray-500 mt-1">Conversational Commerce</div>
+                            </a>
+                            <a href="makecom-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Make.com</div>
+                                <div class="text-sm text-gray-500 mt-1">Workflow Automation</div>
+                            </a>
+                            <a href="lyzr-enterprise-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Lyzr Enterprise</div>
+                                <div class="text-sm text-gray-500 mt-1">Banking AI Agents</div>
+                            </a>
+                            <a href="mindstudio-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                                <div class="font-medium text-base">MindStudio</div>
+                                <div class="text-sm text-gray-500 mt-1">AI Agent Builder Platform</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">How It Works</a>
+                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Integration</a>
+                    <a href="index.html#compliance" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Compliance</a>
+                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Docs</a>
                 </div>
-                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-medium transition-colors">
-                    Get Started
-                </button>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-3">
+                    <span class="hidden lg:inline-block text-xs text-blue-400 font-medium px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">Design Partner</span>
+                    <button
+                        type="button"
+                        id="nav-cta"
+                        class="bg-white hover:bg-gray-100 text-black btn-text px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        aria-label="Join early access to Nomik.ai">
+                        Join Early Access
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button
+                        type="button"
+                        class="md:hidden ml-4 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
+                        id="mobile-menu-button"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle mobile menu">
+                        <svg class="h-8 object-contain" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </div>
-    </nav>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-800/50 mt-2">
+                    <a href="cfo-use-cases.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">CFO Use Cases</a>
+                    <a href="case-studies.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Case Studies</a>
+                    <a href="index.html#solution" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
+                    <a href="index.html#integration" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
+                    <a href="index.html#compliance" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Compliance</a>
+                    <a href="index.html#docs" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="pt-24 pb-16 bg-nomik-dark">
@@ -760,7 +842,7 @@
             <h2 class="heading-h2 mb-4">Integrate Nomik with Bubble.io</h2>
             <p class="text-xl text-secondary mb-8">Transform your FinTech platform with agent-native payments</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button class="bg-white hover:bg-gray-100 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black">
                     Start Integration
                 </button>
                 <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -770,45 +852,45 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900/50 py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-primary font-semibold mb-4">Product</h3>
-                    <ul class="space-y-2 text-secondary">
-                        <li><a href="#" class="hover:text-primary transition-colors">Features</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
-                    </ul>
+    <footer class="bg-gray-950 border-t border-gray-800/50 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-8 h-8  flex items-center justify-center mr-3">
+                        <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                    </div>
+                    <span class="text-xl font-semibold text-white">Nomik.ai</span>
                 </div>
-                <div>
-                    <h3 class="text-primary font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2 text-secondary">
-                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-primary font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2 text-secondary">
-                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-primary font-semibold mb-4">Connect</h3>
-                    <ul class="space-y-2 text-secondary">
-                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">GitHub</a></li>
-                    </ul>
-                </div>
+
+                <nav class="flex flex-wrap justify-center md:justify-end gap-8 text-sm">
+                    <a href="index.html#docs" class="text-gray-400 hover:text-white transition-colors duration-200">Docs</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms</a>
+                    <a href="index.html#security" class="text-gray-400 hover:text-white transition-colors duration-200">Security</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Status</a>
+                </nav>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted">
-                <p>&copy; 2024 Nomik.ai. All rights reserved.</p>
+
+            <div class="mt-12 pt-8 border-t border-gray-800/30 text-center">
+                <p class="text-gray-400 text-sm mb-2">
+                    &copy; 2025 Nomik.ai - The Multi-Agent Platform for Modern Finance Teams
+                </p>
+                <p class="text-gray-500 text-xs mb-6">
+                    MiCA-ready • Non-custodial • Audit-ready • Built for humans and their agents.
+                </p>
+                <div class="text-gray-500 text-xs max-w-5xl mx-auto space-y-3 leading-relaxed">
+                    <p class="bg-gray-900/30 border border-gray-800/40  p-4">
+                        <span class="text-yellow-400 font-medium">Important:</span> Nomik.ai is not a bank and does not hold customer funds. All payment execution occurs via licensed partners (banks/PSPs/EMIs).
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-3 text-center md:text-left">
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            Availability of payment rails varies by region and partner participation. Compliance with PSD3/MiCA where applicable.
+                        </p>
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            This website contains forward-looking statements about product features and capabilities. Actual functionality may vary.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

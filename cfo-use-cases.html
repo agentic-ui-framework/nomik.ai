@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFO Use Cases - Nomik.ai</title>
+    <meta name="description" content="Detailed real-world use cases showing how CFOs and finance teams transform operations with Nomik's agent-native platform. Treasury, AP, and FP&A automation examples with ROI.">
+
+    <!-- Fonts - Exact match -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Exact Typography System from index.html */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #C5C7CB;
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
+        }
+
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem;
+            }
+        }
+
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1.2;
+            letter-spacing: -0.0025em;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
+
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
+
+        .bg-nomik-dark { background-color: #0A0A0B; }
+        .use-case-card {
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            transition: all 0.3s ease;
+        }
+        .use-case-card:hover {
+            border-color: rgba(124, 58, 237, 0.5);
+            background: rgba(31, 41, 55, 0.7);
+        }
+        .metric-highlight {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white font-sans antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black  p-1">
+                        <div class="w-8 h-8  flex items-center justify-center">
+                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                        </div>
+                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Case Studies Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">
+                            <span>Case Studies</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-96 bg-gray-900 border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="cfo-use-cases.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">CFO Use Cases</div>
+                                <div class="text-sm text-gray-500 mt-1">Treasury, AP & FP&A Operations</div>
+                            </a>
+                            <a href="bubble-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Bubble.io</div>
+                                <div class="text-sm text-gray-500 mt-1">No-Code FinTech Platform</div>
+                            </a>
+                            <a href="zapier-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Zapier Central</div>
+                                <div class="text-sm text-gray-500 mt-1">Financial Hub Automation</div>
+                            </a>
+                            <a href="botpress-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Botpress</div>
+                                <div class="text-sm text-gray-500 mt-1">Conversational Commerce</div>
+                            </a>
+                            <a href="makecom-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Make.com</div>
+                                <div class="text-sm text-gray-500 mt-1">Workflow Automation</div>
+                            </a>
+                            <a href="lyzr-enterprise-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Lyzr Enterprise</div>
+                                <div class="text-sm text-gray-500 mt-1">Banking AI Agents</div>
+                            </a>
+                            <a href="mindstudio-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                                <div class="font-medium text-base">MindStudio</div>
+                                <div class="text-sm text-gray-500 mt-1">AI Agent Builder Platform</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#solution" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">How It Works</a>
+                    <a href="index.html#integration" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Integration</a>
+                    <a href="index.html#compliance" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Compliance</a>
+                    <a href="index.html#docs" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Docs</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-3">
+                    <span class="hidden lg:inline-block text-xs text-blue-400 font-medium px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">Design Partner</span>
+                    <button
+                        type="button"
+                        id="nav-cta"
+                        class="bg-white hover:bg-gray-100 text-black btn-text px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        aria-label="Join early access to Nomik.ai">
+                        Join Early Access
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button
+                        type="button"
+                        class="md:hidden ml-4 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
+                        id="mobile-menu-button"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle mobile menu">
+                        <svg class="h-8 object-contain" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-800/50 mt-2">
+                    <a href="cfo-use-cases.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">CFO Use Cases</a>
+                    <a href="case-studies.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Case Studies</a>
+                    <a href="index.html#solution" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
+                    <a href="index.html#integration" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
+                    <a href="index.html#compliance" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Compliance</a>
+                    <a href="index.html#docs" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-nomik-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <span class="text-muted text-sm">CFO Operations</span>
+                    <span class="text-muted mx-2">•</span>
+                    <span class="text-muted text-sm">Real-World Use Cases</span>
+                </div>
+
+                <h1 class="hero-h1 mb-6">CFO & Finance Team Use Cases</h1>
+
+                <p class="text-xl text-secondary mb-8 max-w-4xl mx-auto">
+                    Detailed real-world examples showing how CFOs and finance teams transform operations with autonomous agents. See exact processes, timelines, and ROI from Treasury, Accounts Payable, and Financial Planning & Analysis automation.
+                </p>
+            </div>
+
+            <!-- Value Summary -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="metric-highlight rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-accent mb-2">$26.4M</div>
+                    <div class="text-secondary">Annual Value Created</div>
+                    <div class="text-sm text-muted mt-1">Average enterprise client</div>
+                </div>
+                <div class="metric-highlight rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-accent mb-2">95%</div>
+                    <div class="text-secondary">Time Reduction</div>
+                    <div class="text-sm text-muted mt-1">Manual process automation</div>
+                </div>
+                <div class="metric-highlight rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-accent mb-2">872%</div>
+                    <div class="text-secondary">Average ROI</div>
+                    <div class="text-sm text-muted mt-1">First-year return</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Grid -->
+    <section class="py-16 bg-nomik-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Treasury Operations -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-4">Treasury Operations</h2>
+                    <p class="text-lg text-secondary max-w-3xl mx-auto">
+                        Autonomous cash management, FX hedging, cross-border payments, and real-time risk monitoring
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Daily Cash Positioning</h3>
+                                <div class="text-sm text-muted">GlobalManufacturing Corp • $2.3B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">95%</div>
+                                <div class="text-sm text-muted">Time Saved</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Process:</span>
+                                <span class="text-primary">5 hours daily</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">15 minutes daily</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Annual Savings:</span>
+                                <span class="text-accent">$2.3M</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Key Capabilities</h4>
+                            <ul class="space-y-2 text-sm text-secondary">
+                                <li>• Real-time 85 bank account monitoring</li>
+                                <li>• Automated FX netting and optimization</li>
+                                <li>• Intelligent investment routing</li>
+                                <li>• Exception-only management alerts</li>
+                            </ul>
+                        </div>
+
+                        <a href="cfo-treasury-operations-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Automated FX Hedging</h3>
+                                <div class="text-sm text-muted">GlobalTech Solutions • $5.8B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">99.5%</div>
+                                <div class="text-sm text-muted">Faster</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Process:</span>
+                                <span class="text-primary">3 days execution</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">20 minutes</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Rate Improvement:</span>
+                                <span class="text-accent">15 pips better</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Real Example</h4>
+                            <div class="text-sm text-secondary">
+                                <div class="mb-2"><strong>€361.25M hedge needed</strong></div>
+                                <div>• Multi-bank quote in 2 minutes</div>
+                                <div>• Best execution selection: JPM 1.0835</div>
+                                <div>• $54,000 value from speed</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-treasury-operations-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Cross-Border Payments</h3>
+                                <div class="text-sm text-muted">MedDevice Innovations • $890M Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">92%</div>
+                                <div class="text-sm text-muted">Cost Reduction</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Cost:</span>
+                                <span class="text-primary">$78,400/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">$6,200/month</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Settlement:</span>
+                                <span class="text-accent">Same day</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Multi-Rail Optimization</h4>
+                            <ul class="space-y-2 text-sm text-secondary">
+                                <li>• SEPA Instant: €32.70 vs €493</li>
+                                <li>• USDC Rails: $156 vs $1,847</li>
+                                <li>• Stablecoin Settlement: $12 vs $295</li>
+                            </ul>
+                        </div>
+
+                        <a href="cfo-treasury-operations-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Crisis Risk Management</h3>
+                                <div class="text-sm text-muted">FinanceFlow Technologies • $1.4B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">98%</div>
+                                <div class="text-sm text-muted">Faster Response</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Response:</span>
+                                <span class="text-primary">6 hours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">15 minutes</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Loss Prevention:</span>
+                                <span class="text-accent">$8.2M</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">March 2024 Banking Crisis</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• Real-time exposure monitoring</div>
+                                <div>• Automated risk mitigation</div>
+                                <div>• $410M → $85M at-risk exposure</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-treasury-operations-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <div class="inline-flex items-center bg-gray-900/50 border border-gray-800 rounded-lg px-6 py-3">
+                        <span class="text-secondary mr-4">Treasury Operations Total Annual Value:</span>
+                        <span class="text-2xl font-bold text-accent">$13.6M</span>
+                        <span class="text-sm text-muted ml-2">(1,033% ROI)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accounts Payable -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-4">Accounts Payable Operations</h2>
+                    <p class="text-lg text-secondary max-w-3xl mx-auto">
+                        Autonomous invoice processing, payment optimization, dispute resolution, and vendor management
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Invoice Processing</h3>
+                                <div class="text-sm text-muted">SteelTech Industries • $1.8B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">95%</div>
+                                <div class="text-sm text-muted">Labor Reduction</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Monthly Volume:</span>
+                                <span class="text-primary">4,500 invoices</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Processing Time:</span>
+                                <span class="text-accent">5 minutes vs 4.5 hours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Annual Savings:</span>
+                                <span class="text-accent">$1.8M + $2.4M discounts</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Real Example: £48,750 Invoice</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• OCR + 3-way matching: 15 seconds</div>
+                                <div>• Vendor communication: Automated</div>
+                                <div>• Early payment discount: £975 captured</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-accounts-payable-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Payment Optimization</h3>
+                                <div class="text-sm text-muted">TechFlow Logistics • $950M Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">65%</div>
+                                <div class="text-sm text-muted">Cost Reduction</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Payment Run:</span>
+                                <span class="text-primary">287 vendors, $18.7M</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Cost:</span>
+                                <span class="text-primary">$2,850</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Optimized Cost:</span>
+                                <span class="text-accent">$989.95</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Multi-Rail Intelligence</h4>
+                            <ul class="space-y-2 text-sm text-secondary">
+                                <li>• FedNow for critical suppliers</li>
+                                <li>• USDC rails for international</li>
+                                <li>• Early payment discount capture</li>
+                                <li>• Real-time vendor notifications</li>
+                            </ul>
+                        </div>
+
+                        <a href="cfo-accounts-payable-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Dispute Resolution</h3>
+                                <div class="text-sm text-muted">BuildRight Construction • $1.2B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">98%</div>
+                                <div class="text-sm text-muted">Faster</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Time:</span>
+                                <span class="text-primary">45 days average</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">22 hours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Settlement Rate:</span>
+                                <span class="text-accent">85% vs 75%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">$127,500 Change Order Dispute</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• AI evidence analysis: 15 minutes</div>
+                                <div>• Email pattern recognition</div>
+                                <div>• Precedent-based recommendation</div>
+                                <div>• 85% settlement vs 75% manual</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-accounts-payable-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Vendor Onboarding</h3>
+                                <div class="text-sm text-muted">GlobalTech Manufacturing • $4.1B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">99.8%</div>
+                                <div class="text-sm text-muted">Faster</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Process:</span>
+                                <span class="text-primary">45 days</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">2 hours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Cost per Vendor:</span>
+                                <span class="text-accent">$85 vs $3,400</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">NanoComponents Taiwan KYA</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• Business registry validation: 5 minutes</div>
+                                <div>• Global sanctions screening</div>
+                                <div>• Financial stability assessment</div>
+                                <div>• Risk score: 9.2/10 (approved)</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-accounts-payable-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <div class="inline-flex items-center bg-gray-900/50 border border-gray-800 rounded-lg px-6 py-3">
+                        <span class="text-secondary mr-4">Accounts Payable Total Annual Value:</span>
+                        <span class="text-2xl font-bold text-accent">$4.31M</span>
+                        <span class="text-sm text-muted ml-2">(798% ROI)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Planning & Analysis -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-4">Financial Planning & Analysis</h2>
+                    <p class="text-lg text-secondary max-w-3xl mx-auto">
+                        Real-time budget analysis, dynamic forecasting, automated board reporting, and scenario planning
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Budget Variance Analysis</h3>
+                                <div class="text-sm text-muted">CloudTech Solutions • $1.6B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">99.9%</div>
+                                <div class="text-sm text-muted">Faster</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Process:</span>
+                                <span class="text-primary">8 days monthly</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">15 minutes</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Team Efficiency:</span>
+                                <span class="text-accent">97% time savings</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">March 2024 Analysis</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• Revenue: $89.2M (+$1.7M vs budget)</div>
+                                <div>• R&D acceleration: +$1.6M investment</div>
+                                <div>• AI root cause analysis</div>
+                                <div>• ROI recommendation: 440%</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-financial-planning-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Cash Flow Forecasting</h3>
+                                <div class="text-sm text-muted">PrecisionMfg Corp • $2.3B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">±3%</div>
+                                <div class="text-sm text-muted">Variance</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Accuracy:</span>
+                                <span class="text-primary">±15% variance</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Nomik Accuracy:</span>
+                                <span class="text-accent">±3% variance</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Update Frequency:</span>
+                                <span class="text-accent">Hourly vs monthly</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">Q2 2024 Covenant Risk</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• Real-time monitoring: 1,000 scenarios</div>
+                                <div>• Boeing payment risk: 15% probability</div>
+                                <div>• Automated hedging: $140K savings</div>
+                                <div>• Covenant confidence: 99.1%</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-financial-planning-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Board Reporting</h3>
+                                <div class="text-sm text-muted">GrowthTech Ventures • $890M Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">94%</div>
+                                <div class="text-sm text-muted">Time Reduction</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Prep:</span>
+                                <span class="text-primary">80 hours monthly</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">5 hours monthly</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Package Quality:</span>
+                                <span class="text-accent">10x more insights</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">April 2024 Board Package</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• AI-generated narratives</div>
+                                <div>• Real-time competitive analysis</div>
+                                <div>• Predictive scenario modeling</div>
+                                <div>• Interactive live dashboard</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-financial-planning-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="use-case-card rounded-lg p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h3 class="heading-h3 text-xl mb-2">Rolling Forecasts</h3>
+                                <div class="text-sm text-muted">DynamicRetail Inc. • $1.4B Revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-accent">90x</div>
+                                <div class="text-sm text-muted">More Frequent</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Traditional Updates:</span>
+                                <span class="text-primary">Quarterly (3 weeks)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">With Nomik:</span>
+                                <span class="text-accent">Daily (real-time)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-secondary">Scenarios:</span>
+                                <span class="text-accent">1,000 vs 3 static</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                            <h4 class="text-primary font-semibold mb-3">July 2024 Economic Uncertainty</h4>
+                            <div class="text-sm text-secondary">
+                                <div>• Consumer confidence tracking</div>
+                                <div>• Competitive pressure monitoring</div>
+                                <div>• Dynamic probability updates</div>
+                                <div>• Real-time strategy adjustments</div>
+                            </div>
+                        </div>
+
+                        <a href="cfo-financial-planning-use-cases.md" class="inline-flex items-center text-accent hover:text-purple-400 transition-colors">
+                            View Detailed Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <div class="inline-flex items-center bg-gray-900/50 border border-gray-800 rounded-lg px-6 py-3">
+                        <span class="text-secondary mr-4">Financial Planning Total Annual Value:</span>
+                        <span class="text-2xl font-bold text-accent">$8.5M</span>
+                        <span class="text-sm text-muted ml-2">(785% ROI)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation CTA -->
+            <div class="text-center">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-12 max-w-4xl mx-auto">
+                    <h2 class="heading-h2 mb-6">Transform Your CFO Operations</h2>
+                    <p class="text-lg text-secondary mb-8 max-w-2xl mx-auto">
+                        These real-world examples show how autonomous agents can revolutionize every aspect of finance operations. Ready to achieve similar results?
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">2-4 weeks</div>
+                            <div class="text-secondary">Implementation</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">3-6 months</div>
+                            <div class="text-secondary">Full ROI</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">Continuous</div>
+                            <div class="text-secondary">Optimization</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-white hover:bg-gray-100 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black">
+                            Schedule CFO Demo
+                        </button>
+                        <button class="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Download Use Case PDFs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 border-t border-gray-800/50 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-8 h-8  flex items-center justify-center mr-3">
+                        <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                    </div>
+                    <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                </div>
+
+                <nav class="flex flex-wrap justify-center md:justify-end gap-8 text-sm">
+                    <a href="index.html#docs" class="text-gray-400 hover:text-white transition-colors duration-200">Docs</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms</a>
+                    <a href="index.html#security" class="text-gray-400 hover:text-white transition-colors duration-200">Security</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Status</a>
+                </nav>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800/30 text-center">
+                <p class="text-gray-400 text-sm mb-2">
+                    &copy; 2025 Nomik.ai - The Multi-Agent Platform for Modern Finance Teams
+                </p>
+                <p class="text-gray-500 text-xs mb-6">
+                    MiCA-ready • Non-custodial • Audit-ready • Built for humans and their agents.
+                </p>
+                <div class="text-gray-500 text-xs max-w-5xl mx-auto space-y-3 leading-relaxed">
+                    <p class="bg-gray-900/30 border border-gray-800/40  p-4">
+                        <span class="text-yellow-400 font-medium">Important:</span> Nomik.ai is not a bank and does not hold customer funds. All payment execution occurs via licensed partners (banks/PSPs/EMIs).
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-3 text-center md:text-left">
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            Availability of payment rails varies by region and partner participation. Compliance with PSD3/MiCA where applicable.
+                        </p>
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            This website contains forward-looking statements about product features and capabilities. Actual functionality may vary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
