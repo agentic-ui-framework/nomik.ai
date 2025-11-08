@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomik — Programmable Banking Infrastructure</title>
+    <meta name="description" content="Nomik provides secure multi-rail banking infrastructure for next-generation CFOs and AI agents. FSC-regulated financial platform from Mauritius.">
+    <meta name="keywords" content="programmable banking, multi-rail payments, FSC regulated banking, CFO infrastructure, API banking, cross-border payments">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nomik.ai/">
+    <meta name="author" content="Nomik">
+    <meta name="theme-color" content="#0C1E5B">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nomik.ai/">
+    <meta property="og:title" content="Nomik — Programmable Banking Infrastructure">
+    <meta property="og:description" content="Secure multi-rail banking infrastructure for next-generation CFOs and AI agents. FSC-regulated from Mauritius.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0C1E5B;
+            --color-text: #0E0E0E;
+            --color-text-secondary: #666666;
+            --color-background: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-border: #E5E5E5;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        .hero-title {
+            font-weight: 500;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1.4;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-weight: 500;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-title {
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .body-text {
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section:first-of-type {
+            padding-top: 8rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav a {
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #0A1A4F;
+        }
+
+        /* Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .pillar {
+            padding: 2rem;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                padding: 1rem;
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Nomik</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#platform">Platform</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="hero-title">Programmable Banking.<br>Built for the Agentic Economy.</h1>
+            <p class="hero-subtitle">Nomik provides secure multi-rail banking infrastructure for next-generation CFOs and AI agents.</p>
+            <a href="#contact" class="btn btn-primary">Request Early Access</a>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section" id="platform">
+        <div class="container">
+            <h2 class="section-title">Built for operational excellence</h2>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3 class="pillar-title">Programmable Banking</h3>
+                    <p class="body-text">APIs and policy-as-code for CFOs and agents. Execute complex financial workflows with deterministic compliance rules.</p>
+                </div>
+                <div class="pillar">
+                    <h3 class="pillar-title">Cross-Border Ready</h3>
+                    <p class="body-text">Multi-rail payments across EUR, USD, and stablecoins. Integrated FX and liquidity management for global operations.</p>
+                </div>
+                <div class="pillar">
+                    <h3 class="pillar-title">Licensed & Secure</h3>
+                    <p class="body-text">FSC-compliant financial infrastructure from Mauritius. Bank-grade security with regulatory oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Platform capabilities</h2>
+            <ul class="feature-list">
+                <li>Instant account creation via secure API</li>
+                <li>Automated approval workflows with policy engine</li>
+                <li>Integrated compliance and FX layers</li>
+                <li>Real-time settlement across multiple rails</li>
+                <li>Programmable treasury management</li>
+                <li>24/7 operational monitoring and controls</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="section" id="compliance">
+        <div class="container">
+            <h2 class="section-title">Bank-grade compliance by design</h2>
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>KYC / AML Automation</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>MiCA-aligned Stablecoin Support</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>ISO 27001 Infrastructure</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>FSC & FATF Reporting Framework</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>Real-time Transaction Monitoring</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>Regulatory Capital Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Leadership team</h2>
+            <p class="body-text">Led by ex-Qonto & PayFit operators, building the programmable bank for AI agents. Based in Mauritius with FSC regulatory oversight.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="pillar-title">Get in touch</h3>
+                    <p class="body-text">Ready to enable programmable finance for your operations?</p>
+                    <a href="mailto:hello@nomik.ai" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Contact Us</a>
+                </div>
+                <div class="footer-text">
+                    © 2025 Nomik. FSC-regulated financial infrastructure.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

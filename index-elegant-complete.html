@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomik | Agentic Neobank for Autonomous Finance</title>
-    <meta name="description" content="Nomik is an agentic neobank that lets CFOs define financial logic and developers execute it through agents: automated, auditable, and bank-grade.">
-    <meta name="keywords" content="agentic neobank, institutional banking, autonomous finance, multi-rail accounts, policy automation, compliance infrastructure">
+    <title>Nomik — Programmable Banking Infrastructure</title>
+    <meta name="description" content="Secure multi-rail banking infrastructure for next-generation CFOs and AI agents. Eliminate payment approval bottlenecks in autonomous operations.">
+    <meta name="keywords" content="programmable banking, multi-rail payments, CFO infrastructure, API banking, cross-border payments, agent banking, KYA framework">
 
     <!-- SEO -->
     <meta name="robots" content="index, follow">
@@ -28,23 +28,19 @@
 
         :root {
             --color-primary: #0C1E5B;
-            --color-text: #1A1A1A;
-            --color-text-secondary: #525252;
-            --color-text-muted: #737373;
-            --color-background: #FDFDFD;
+            --color-text: #0E0E0E;
+            --color-text-secondary: #666666;
+            --color-background: #FAFAFA;
             --color-white: #FFFFFF;
-            --color-border: #E4E4E7;
-            --color-border-light: #F1F1F3;
+            --color-border: #E5E5E5;
             --color-accent: #2C3E50;
-            --color-success: #059669;
-            --color-surface: #FAFAFA;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         body {
             font-family: var(--font-sans);
             font-weight: 400;
-            font-size: 11.2px;
+            font-size: 16px;
             line-height: 1.5;
             color: var(--color-text);
             background-color: var(--color-background);
@@ -54,7 +50,7 @@
         /* Typography */
         .hero-title {
             font-weight: 500;
-            font-size: 2.45rem;
+            font-size: 3.5rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
             color: var(--color-text);
@@ -63,7 +59,7 @@
 
         .hero-subtitle {
             font-weight: 400;
-            font-size: 0.875rem;
+            font-size: 1.25rem;
             line-height: 1.4;
             color: var(--color-text-secondary);
             margin-bottom: 2.5rem;
@@ -71,24 +67,15 @@
 
         .section-title {
             font-weight: 500;
-            font-size: 1.75rem;
+            font-size: 2.5rem;
             line-height: 1.2;
             color: var(--color-text);
             margin-bottom: 1.5rem;
         }
 
-        .section-subtitle {
-            font-size: 0.525rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-
         .pillar-title {
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1.5rem;
             line-height: 1.3;
             color: var(--color-text);
             margin-bottom: 1rem;
@@ -96,7 +83,7 @@
 
         .body-text {
             font-weight: 400;
-            font-size: 0.7rem;
+            font-size: 1rem;
             line-height: 1.5;
             color: var(--color-text-secondary);
         }
@@ -112,35 +99,12 @@
             padding: 4rem 0;
         }
 
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 0;
-            background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
-            position: relative;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: radial-gradient(circle at 25% 25%, rgba(12, 30, 91, 0.03) 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, rgba(12, 30, 91, 0.02) 0%, transparent 50%);
-            pointer-events: none;
+        .section:first-of-type {
+            padding-top: 8rem;
         }
 
         .section-alt {
             background-color: var(--color-white);
-        }
-
-        .section-divider {
-            height: 1px;
-            background: #EDEDED;
-            margin: 0;
         }
 
         /* Header */
@@ -165,32 +129,10 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.5rem;
             color: var(--color-text);
             text-decoration: none;
-        }
-
-        .logo img {
-            width: 48px;
-            height: 48px;
-            margin-right: 0.75rem;
-            object-fit: contain;
-        }
-
-        .logo-tagline {
-            font-size: 0.455rem;
-            font-weight: 500;
-            color: var(--color-primary);
-            background: rgba(12, 30, 91, 0.1);
-            border: 1px solid rgba(12, 30, 91, 0.2);
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            margin-left: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .nav {
@@ -226,16 +168,12 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #0A1A4F 100%);
+            background-color: var(--color-primary);
             color: var(--color-white);
-            box-shadow: 0 4px 12px rgba(12, 30, 91, 0.15);
-            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #0A1A4F 0%, #081640 100%);
-            box-shadow: 0 6px 16px rgba(12, 30, 91, 0.25);
-            transform: translateY(-1px);
+            background-color: #0A1A4F;
         }
 
         .btn-secondary {
@@ -274,16 +212,8 @@
         .pillar {
             padding: 2rem;
             background: var(--color-white);
-            border: 1px solid var(--color-border-light);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-        }
-
-        .pillar:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
-            border-color: var(--color-border);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
         }
 
         /* Tables */
@@ -306,7 +236,7 @@
 
         .comparison-table td {
             padding: 1rem;
-            border-bottom: 1px solid var(--color-border-light);
+            border-bottom: 1px solid var(--color-border);
             font-size: 0.9rem;
             color: var(--color-text-secondary);
         }
@@ -344,7 +274,7 @@
         .roi-list li {
             padding: 0.5rem 0;
             color: var(--color-text-secondary);
-            border-bottom: 1px solid var(--color-border-light);
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .roi-list li:last-child {
@@ -359,7 +289,7 @@
 
         .feature-list li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid var(--color-border-light);
+            border-bottom: 1px solid var(--color-border);
             font-size: 1rem;
             color: var(--color-text-secondary);
             display: flex;
@@ -408,52 +338,6 @@
             flex-shrink: 0;
         }
 
-        /* Icon system */
-        .icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 16px;
-            height: 16px;
-            margin-right: 0.5rem;
-            flex-shrink: 0;
-        }
-
-        .icon-check {
-            background: #059669;
-            border-radius: 50%;
-            color: white;
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .icon-check::before {
-            content: "✓";
-        }
-
-        .icon-warning {
-            background: #d97706;
-            border-radius: 50%;
-            color: white;
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .icon-warning::before {
-            content: "!";
-        }
-
-        .icon-cross {
-            background: #dc2626;
-            border-radius: 50%;
-            color: white;
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .icon-cross::before {
-            content: "×";
-        }
 
         /* FAQ */
         .faq-grid {
@@ -620,11 +504,11 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 1.75rem;
+                font-size: 2.5rem;
             }
 
             .section-title {
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
 
             .container {
@@ -643,10 +527,6 @@
             .roi-comparison {
                 grid-template-columns: 1fr;
             }
-
-            .logo-tagline {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -654,10 +534,7 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <a href="#" class="logo">
-                <img src="assets/logo.png" alt="Nomik" />
-                Nomik <span class="logo-tagline">Agentic Neobank</span>
-            </a>
+            <a href="#" class="logo">Nomik</a>
             <nav>
                 <ul class="nav">
                     <li><a href="#solution">Platform</a></li>
@@ -670,61 +547,18 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="section">
         <div class="container">
-            <h1 class="hero-title">Agentic Banking for Modern Finance.</h1>
-            <p class="hero-subtitle">Nomik is an agentic neobank providing multi-rail accounts, policy-driven execution, and compliance-grade automation for CFOs and autonomous systems.</p>
-            <a href="#contact" class="btn btn-primary">Talk to Our Team</a>
+            <h1 class="hero-title">Programmable Banking.<br>Built for the Agentic Economy.</h1>
+            <p class="hero-subtitle">Secure multi-rail banking infrastructure for next-generation CFOs and AI agents. Eliminate the payment approval bottleneck that stops autonomous operations.</p>
+            <a href="#contact" class="btn btn-primary">Request Early Access</a>
         </div>
     </section>
-
-    <div class="section-divider"></div>
 
     <!-- ROI Section -->
     <section class="section section-alt" id="roi">
         <div class="container">
-            <div class="section-subtitle">THE PROBLEM</div>
-            <h2 class="section-title">Why CFOs Don't Trust Automation Tools and Why Nomik Fixes It</h2>
-            <p class="body-text" style="text-align: center; margin-bottom: 3rem;">
-                Tools like Make.com, Zapier, and n8n made automation easy but not safe for finance. Nomik embeds automation inside the banking core, where policies, compliance, and audit live.
-            </p>
-
-            <table class="comparison-table" style="margin-bottom: 3rem;">
-                <thead>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Use Case</th>
-                        <th>Trust Level</th>
-                        <th>Compliance</th>
-                        <th>Auditability</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Zapier / Make.com</strong></td>
-                        <td>Generic workflow automation</td>
-                        <td>Low</td>
-                        <td><span class="icon icon-cross"></span>None</td>
-                        <td><span class="icon icon-cross"></span>No audit trail</td>
-                    </tr>
-                    <tr>
-                        <td><strong>n8n</strong></td>
-                        <td>Self-hosted process automation</td>
-                        <td>Medium</td>
-                        <td><span class="icon icon-warning"></span>Partial (manual setup)</td>
-                        <td><span class="icon icon-warning"></span>Local logging only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nomik</strong></td>
-                        <td>Agentic financial execution</td>
-                        <td>Bank-grade</td>
-                        <td><span class="icon icon-check"></span>Built-in KYC, AML, FATF</td>
-                        <td><span class="icon icon-check"></span>Cryptographically signed ledger</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 class="pillar-title" style="margin-bottom: 2rem;">Operational Efficiency Gains</h3>
+            <h2 class="section-title">Autonomous CFO Operations: The ROI</h2>
             <div class="roi-comparison">
                 <div class="roi-box">
                     <h3>Current State</h3>
@@ -740,7 +574,7 @@
                 <div class="roi-box">
                     <h3>With Nomik</h3>
                     <ul class="roi-list">
-                        <li>Autonomous system operations: 24/7</li>
+                        <li>Autonomous agent operations: 24/7</li>
                         <li>Real-time treasury optimization</li>
                         <li>Instant reconciliation and reporting</li>
                         <li>Automated compliance monitoring</li>
@@ -754,7 +588,7 @@
                     <tr>
                         <th>Task</th>
                         <th>Current Manual Process</th>
-                        <th>Autonomous System</th>
+                        <th>Autonomous Agent</th>
                         <th>Time Savings</th>
                     </tr>
                 </thead>
@@ -762,151 +596,77 @@
                     <tr>
                         <td>Vendor Payments</td>
                         <td>Manual approval workflows, 2-4 hour delays</td>
-                        <td>AP Automation System</td>
+                        <td>AP Automation Agent</td>
                         <td>85% reduction</td>
                     </tr>
                     <tr>
                         <td>Treasury Management</td>
                         <td>Daily cash positioning, manual rebalancing</td>
-                        <td>Treasury Operations System</td>
+                        <td>Treasury Operations Agent</td>
                         <td>92% reduction</td>
                     </tr>
                     <tr>
                         <td>Reconciliation</td>
                         <td>End-of-day manual matching, 3-5 day delays</td>
-                        <td>Reconciliation System</td>
+                        <td>Reconciliation Agent</td>
                         <td>95% reduction</td>
                     </tr>
                     <tr>
                         <td>Compliance Monitoring</td>
                         <td>Weekly reports, manual transaction reviews</td>
-                        <td>Compliance Monitoring System</td>
+                        <td>Compliance Monitoring Agent</td>
                         <td>78% reduction</td>
                     </tr>
                 </tbody>
             </table>
-            <p class="body-text" style="text-align:center;margin-top:1rem;font-size:0.875rem;color:var(--color-text-muted);">
-                Results based on pilot CFO workflows using Nomik's programmable execution layer (2025).
-            </p>
         </div>
     </section>
-
-    <div class="section-divider"></div>
 
     <!-- Value Proposition -->
     <section class="section" id="solution">
         <div class="container">
-            <div class="section-subtitle">THE SOLUTION</div>
-            <h2 class="section-title">Agentic Banking Core</h2>
-            <p class="body-text" style="font-size: 1.125rem; margin-bottom: 3rem;">Nomik provides an agentic core where accounts, policies, and agents operate under a single governance layer. CFOs define logic, developers extend it, all under bank-grade compliance.</p>
+            <h2 class="section-title">The Agent Banking Gap</h2>
+            <p class="body-text" style="font-size: 1.125rem; margin-bottom: 3rem;">AI agents can trade stocks, manage portfolios, and optimize treasury operations, but they cannot open bank accounts or hold balances independently. Every financial operation requires human intervention, creating operational bottlenecks.</p>
 
             <div class="pillars-grid">
                 <div class="pillar">
-                    <h3 class="pillar-title">Multi-Rail Accounts</h3>
-                    <p class="body-text">One account, every rail. Multi-currency operations across SEPA, SWIFT, FedNow, and stablecoins under unified policy control.</p>
+                    <h3 class="pillar-title">Agent Accounts</h3>
+                    <p class="body-text">Dedicated banking accounts for AI agents with full KYA (Know Your Agent) compliance framework.</p>
                     <ul class="feature-list">
-                        <li>System-owned account balances</li>
+                        <li>Agent-owned account balances</li>
                         <li>Multi-currency support</li>
                         <li>Segregated fund management</li>
                         <li>Real-time balance monitoring</li>
                     </ul>
                 </div>
                 <div class="pillar">
-                    <h3 class="pillar-title">Policy Engine</h3>
-                    <p class="body-text">Control money with logic, not manual approvals. Define workflows, limits, and compliance rules in natural language.</p>
+                    <h3 class="pillar-title">KYA Framework</h3>
+                    <p class="body-text">Know Your Agent verification system establishing agent identity, purpose, and behavioral patterns.</p>
                     <ul class="feature-list">
-                        <li>No-code policy builder</li>
-                        <li>Natural language rules</li>
-                        <li>Versioned workflow management</li>
-                        <li>Real-time policy testing</li>
-                    </ul>
-                </div>
-                <div class="pillar">
-                    <h3 class="pillar-title">KYA & Delegation</h3>
-                    <p class="body-text">Every system has identity, scope, and audit. Know exactly who executed every transaction, even when it's automated.</p>
-                    <ul class="feature-list">
-                        <li>System identity verification</li>
+                        <li>Agent identity verification</li>
+                        <li>Purpose and behavioral tracking</li>
                         <li>Delegation scope management</li>
-                        <li>Behavioral pattern tracking</li>
-                        <li>Cryptographic audit trails</li>
+                        <li>Compliance reporting</li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- Policy-as-Code Example -->
-            <div style="margin-top: 4rem;">
-                <h3 class="pillar-title">Policy-as-Code</h3>
-                <p class="body-text" style="margin-bottom: 2rem;">Your business rules become executable code. Define policies in plain English, and our system generates the compliance logic.</p>
-                <div class="two-col-grid">
-                    <div>
-                        <h4 style="font-weight: 500; margin-bottom: 1rem; color: var(--color-text);">Your Rule (Plain English)</h4>
-                        <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem;">
-                            <p style="color: var(--color-text-secondary); font-style: italic;">
-                                "Payments to new vendors over €10,000 require CFO approval. Recurring payments to approved vendors under €50,000 can be processed automatically."
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="font-weight: 500; margin-bottom: 1rem; color: var(--color-text);">Nomik Policy (Auto-Generated)</h4>
-                        <div style="background: #f8f9fa; border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem; font-family: monospace; font-size: 0.875rem;">
-                            <pre style="color: var(--color-text-secondary); margin: 0;">vendor_payment_policy:
-  new_vendor:
-    threshold: €10,000
-    approval: cfo_required
-  approved_vendor:
-    threshold: €50,000
-    approval: auto_approve
-  audit: enabled</pre>
-                        </div>
-                    </div>
+                <div class="pillar">
+                    <h3 class="pillar-title">Autonomous Operations</h3>
+                    <p class="body-text">Agents execute payments, manage currencies, and handle cross-border transactions independently.</p>
+                    <ul class="feature-list">
+                        <li>Policy-driven execution</li>
+                        <li>Multi-rail payments</li>
+                        <li>Real-time FX management</li>
+                        <li>24/7 operation monitoring</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="section-divider"></div>
-
-    <!-- FOR CFOs Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-subtitle">FOR CFOS</div>
-            <h2 class="section-title">From CFO Workflows to Autonomous Agents</h2>
-            <p class="body-text" style="font-size: 1.125rem; margin-bottom: 3rem;">
-                Nomik starts with the CFO: every workflow, approval, and rule is created through a no-code policy builder. Developers then extend these policies into agents, bots, or integrations using the Nomik SDKs and APIs. One policy layer, two experiences: CFO-first, developer-second.
-            </p>
-
-            <div class="two-col-grid">
-                <div class="pillar">
-                    <h3 class="pillar-title">CFO Experience</h3>
-                    <ul class="feature-list">
-                        <li>Visual policy builder interface</li>
-                        <li>Natural language rule definition</li>
-                        <li>Real-time workflow simulation</li>
-                        <li>Versioned policy management</li>
-                        <li>Compliance audit dashboards</li>
-                    </ul>
-                </div>
-                <div class="pillar">
-                    <h3 class="pillar-title">Developer Experience</h3>
-                    <ul class="feature-list">
-                        <li>Extend CFO policies via APIs</li>
-                        <li>Build autonomous agents</li>
-                        <li>Connect ERP systems</li>
-                        <li>Inherit governance automatically</li>
-                        <li>Maintain audit compliance</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
 
     <!-- Platform Rails -->
-    <section class="section">
+    <section class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Unified Financial Rails</h2>
+            <h2 class="section-title">Multi-Rail Infrastructure</h2>
             <div class="three-col-grid">
                 <div class="pillar">
                     <h3 class="pillar-title">Bank Rails</h3>
@@ -923,7 +683,7 @@
                         <li>USDC/EURC integration</li>
                         <li>MiCA-compliant stablecoins</li>
                         <li>Cross-chain settlement</li>
-                        <li>Tokenized settlements and liquidity routing</li>
+                        <li>DeFi yield optimization</li>
                     </ul>
                 </div>
                 <div class="pillar">
@@ -939,7 +699,36 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <!-- Policy Engine -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Policy-as-Code</h2>
+            <p class="body-text" style="margin-bottom: 2rem;">Your business rules become executable code. Define policies in plain English, and our system generates the compliance logic.</p>
+            <div class="two-col-grid">
+                <div>
+                    <h4 style="font-weight: 500; margin-bottom: 1rem; color: var(--color-text);">Your Rule (Plain English)</h4>
+                    <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem;">
+                        <p style="color: var(--color-text-secondary); font-style: italic;">
+                            "Payments to new vendors over €10,000 require CFO approval. Recurring payments to approved vendors under €50,000 can be processed automatically."
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-weight: 500; margin-bottom: 1rem; color: var(--color-text);">Nomik Policy (Auto-Generated)</h4>
+                    <div style="background: #f8f9fa; border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem; font-family: monospace; font-size: 0.875rem;">
+                        <pre style="color: var(--color-text-secondary); margin: 0;">vendor_payment_policy:
+  new_vendor:
+    threshold: €10,000
+    approval: cfo_required
+  approved_vendor:
+    threshold: €50,000
+    approval: auto_approve
+  audit: enabled</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Integration Section -->
     <section class="section section-alt" id="integration">
@@ -984,6 +773,41 @@
                 </div>
             </div>
 
+            <!-- Banking & Payments -->
+            <div class="integration-category">
+                <h3>Banking & Payment Rails</h3>
+                <div class="integration-grid">
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/jpmorgan.com" alt="JPMorgan" onerror="this.style.display='none'">
+                        <div class="integration-title">JPMorgan</div>
+                        <div class="integration-subtitle">Banking API</div>
+                    </div>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/plaid.com" alt="Plaid" onerror="this.style.display='none'">
+                        <div class="integration-title">Plaid</div>
+                        <div class="integration-subtitle">Banking data</div>
+                    </div>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/swift.com" alt="SWIFT" onerror="this.style.display='none'">
+                        <div class="integration-title">SWIFT</div>
+                        <div class="integration-subtitle">Wire transfers</div>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-title">SEPA</div>
+                        <div class="integration-subtitle">EU payments</div>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-title">FedNow</div>
+                        <div class="integration-subtitle">US instant</div>
+                    </div>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/circle.com" alt="USDC" onerror="this.style.display='none'">
+                        <div class="integration-title">Stablecoins</div>
+                        <div class="integration-subtitle">24/7 settlement</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Workflow & Automation -->
             <div class="integration-category">
                 <h3>Workflow & Automation</h3>
@@ -1004,95 +828,157 @@
                         <div class="integration-subtitle">Open source</div>
                     </div>
                     <div class="integration-item">
+                        <img src="https://logo.clearbit.com/uipath.com" alt="UiPath" onerror="this.style.display='none'">
+                        <div class="integration-title">UiPath</div>
+                        <div class="integration-subtitle">RPA</div>
+                    </div>
+                    <div class="integration-item">
                         <img src="https://logo.clearbit.com/temporal.io" alt="Temporal" onerror="this.style.display='none'">
                         <div class="integration-title">Temporal</div>
                         <div class="integration-subtitle">Workflows</div>
                     </div>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/appian.com" alt="Appian" onerror="this.style.display='none'">
+                        <div class="integration-title">Appian</div>
+                        <div class="integration-subtitle">Low-code</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Developer Experience Section -->
-            <div style="margin-top: 4rem;">
-                <div class="section-subtitle">FOR DEVELOPERS</div>
-                <h3 class="pillar-title">Developer Experience — Built on Policy</h3>
-                <p class="body-text" style="margin-bottom: 2rem;">Every SDK, every API call inherits the CFO-defined policy layer, ensuring every automation remains compliant and traceable.</p>
-
-                <div class="three-col-grid">
-                    <div class="pillar">
-                        <h3 class="pillar-title">SDKs & Languages</h3>
-                        <ul class="feature-list">
-                            <li>TypeScript/Node.js</li>
-                            <li>Python</li>
-                            <li>OpenAPI spec</li>
-                            <li>Postman collection</li>
-                        </ul>
+            <!-- Observability & SIEM -->
+            <div class="integration-category">
+                <h3>Observability & SIEM</h3>
+                <div class="integration-grid">
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/datadoghq.com" alt="Datadog" onerror="this.style.display='none'">
+                        <div class="integration-title">Datadog</div>
+                        <div class="integration-subtitle">Monitoring</div>
                     </div>
-                    <div class="pillar">
-                        <h3 class="pillar-title">System Framework Helpers</h3>
-                        <ul class="feature-list">
-                            <li>LangGraph payment nodes</li>
-                            <li>CrewAI tool integration</li>
-                            <li>AutoGen function calls</li>
-                            <li>Semantic Kernel connectors</li>
-                        </ul>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/splunk.com" alt="Splunk" onerror="this.style.display='none'">
+                        <div class="integration-title">Splunk</div>
+                        <div class="integration-subtitle">SIEM</div>
                     </div>
-                    <div class="pillar">
-                        <h3 class="pillar-title">Sandbox Environment</h3>
-                        <ul class="feature-list">
-                            <li>Mock IBANs & rail simulators</li>
-                            <li>Policy testing & validation</li>
-                            <li>Example apps: refund system, procurement bot</li>
-                            <li>Test scenarios library</li>
-                        </ul>
+                    <div class="integration-item">
+                        <img src="https://logo.clearbit.com/newrelic.com" alt="New Relic" onerror="this.style.display='none'">
+                        <div class="integration-title">New Relic</div>
+                        <div class="integration-subtitle">APM</div>
+                    </div>
+                    <div class="integration-item">
+                        <div class="integration-title">OpenTelemetry</div>
+                        <div class="integration-subtitle">Observability</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Compliance Section -->
-    <section class="section" id="compliance">
+    <!-- Developer Experience -->
+    <section class="section">
         <div class="container">
-            <div class="section-subtitle">COMPLIANCE</div>
-            <h2 class="section-title">Compliance Engineered by Design</h2>
-            <div class="compliance-grid">
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>Automated KYC / AML</span>
+            <h2 class="section-title">Developer First Experience</h2>
+            <p class="body-text" style="text-align: center; margin-bottom: 3rem;">SDKs, helpers, testing environment, and comprehensive documentation.</p>
+
+            <div class="three-col-grid">
+                <div class="pillar">
+                    <h3 class="pillar-title">SDKs & Languages</h3>
+                    <ul class="feature-list">
+                        <li>TypeScript/Node.js</li>
+                        <li>Python</li>
+                        <li>OpenAPI spec</li>
+                        <li>Postman collection</li>
+                    </ul>
                 </div>
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>MiCA-aligned Digital Assets</span>
+                <div class="pillar">
+                    <h3 class="pillar-title">Agent Framework Helpers</h3>
+                    <ul class="feature-list">
+                        <li>LangGraph payment nodes</li>
+                        <li>CrewAI tool integration</li>
+                        <li>AutoGen function calls</li>
+                        <li>Semantic Kernel connectors</li>
+                    </ul>
                 </div>
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>ISO 27001 Information Security</span>
-                </div>
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>Continuous Transaction Monitoring</span>
-                </div>
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>FATF-Aligned Reporting</span>
-                </div>
-                <div class="compliance-item">
-                    <span class="checkmark">✓</span>
-                    <span>Capital & Liquidity Oversight</span>
+                <div class="pillar">
+                    <h3 class="pillar-title">Sandbox Environment</h3>
+                    <ul class="feature-list">
+                        <li>Mock IBANs & rail simulators</li>
+                        <li>Policy testing & validation</li>
+                        <li>Example apps: refund agent, procurement bot</li>
+                        <li>Test scenarios library</li>
+                    </ul>
                 </div>
             </div>
-            <p class="body-text" style="text-align: center; margin-top: 2rem; font-weight: 500;">
-                Nomik doesn't just follow compliance. It's built on it.
-            </p>
+
+            <!-- LangGraph Integration Example -->
+            <div style="margin-top: 3rem;">
+                <h3 class="pillar-title">LangGraph Integration Example</h3>
+                <div class="code-block">
+<pre><code>from langgraph import StateGraph
+from nomik_langgraph import PaymentNode, PolicyGuardNode
+
+# Define payment workflow
+workflow = StateGraph(AgentState)
+workflow.add_node("policy_check", PolicyGuardNode(nomik_client))
+workflow.add_node("execute_payment", PaymentNode(nomik_client))
+workflow.add_edge("policy_check", "execute_payment")
+
+# Handle approvals
+workflow.add_conditional_edges(
+    "policy_check",
+    lambda state: "require_approval" if state.needs_approval else "approved"
+)</code></pre>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <!-- Integration Guides -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Integration Guides</h2>
+            <p class="body-text" style="text-align: center; margin-bottom: 3rem;">Step-by-step integration with popular platforms and workflows.</p>
+
+            <div class="two-col-grid">
+                <div class="pillar">
+                    <h3 class="pillar-title">Workflow Automation</h3>
+                    <ul class="feature-list">
+                        <li><strong>n8n Workflow Step:</strong> Policy decision node with durable retries and error handling for autonomous payment workflows.</li>
+                        <li><strong>Temporal Activities:</strong> Long-running payment activities with compensation and saga patterns for complex business processes.</li>
+                        <li><strong>Zapier Integration:</strong> Connect payment triggers to 5000+ apps with built-in policy enforcement and audit logging.</li>
+                    </ul>
+                </div>
+                <div class="pillar">
+                    <h3 class="pillar-title">Banking & PSP Partners</h3>
+                    <ul class="feature-list">
+                        <li><strong>SEPA Instant Rails:</strong> Direct integration with European instant payment schemes via partner banks with real-time settlement.</li>
+                        <li><strong>FedNow Implementation:</strong> US instant payments through Federal Reserve rails with 24/7/365 availability and sub-second processing.</li>
+                        <li><strong>Reconciliation APIs:</strong> Automated reconciliation with bank statements and transaction confirmations for complete audit trails.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SIEM Integration Example -->
+            <div style="margin-top: 3rem;">
+                <h3 class="pillar-title">SIEM Integration Example</h3>
+                <div class="code-block">
+<pre><code># Datadog integration
+POST /v1/webhooks/siem
+{
+  "endpoint": "https://app.datadoghq.com/intake/webhook/nomik",
+  "events": ["policy.triggered", "payment.failed", "agent.revoked"],
+  "filters": {
+    "severity": ["high", "critical"],
+    "agent_types": ["trading_bot", "treasury_agent"]
+  },
+  "transform": "datadog_logs_format"
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Enterprise SRE & Performance -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <h2 class="section-title">Enterprise SRE & SLAs</h2>
             <p class="body-text" style="text-align: center; margin-bottom: 3rem;">Production-grade reliability with transparent performance metrics.</p>
@@ -1145,7 +1031,61 @@
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <!-- Compliance Section -->
+    <section class="section section-alt" id="compliance">
+        <div class="container">
+            <h2 class="section-title">Bank-grade compliance by design</h2>
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>KYC / AML Automation</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>MiCA-aligned Stablecoin Support</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>ISO 27001 Infrastructure</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>Real-time Transaction Monitoring</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>FATF Reporting Framework</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="checkmark">✓</span>
+                    <span>Regulatory Capital Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Implementation Timeline -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Getting Started</h2>
+            <p class="body-text" style="text-align: center; margin-bottom: 3rem;">Nomik is launching with select finance teams across Europe. Join the early access program.</p>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <h4>Week 1-2</h4>
+                    <p class="body-text">System integration and policy setup with your existing ERP and banking infrastructure</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Week 3-4</h4>
+                    <p class="body-text">Deploy your first agents for AP, treasury, or reconciliation with pilot transactions</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Month 2+</h4>
+                    <p class="body-text">Scale across all finance operations with full audit trail and compliance reporting</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ -->
     <section class="section">
@@ -1154,69 +1094,79 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3 class="faq-question">What is Nomik?</h3>
-                    <p class="faq-answer">Nomik is an agentic neobank that unifies CFO workflows and developer automation. Finance teams define policies, approvals, and treasury logic, while developers build autonomous agents that execute under those same controls.</p>
+                    <p class="faq-answer">Nomik is a programmable neobank designed for institutional and autonomous finance. It provides multi-rail accounts, treasury automation, and policy-driven execution, allowing finance teams and autonomous systems to move funds securely under defined rules.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">Who defines workflows in Nomik?</h3>
-                    <p class="faq-answer">CFOs and controllers define policies through a visual interface. Developers extend those policies through SDKs and APIs. This ensures all automation remains under financial governance.</p>
+                    <h3 class="faq-question">What does "programmable" mean in banking?</h3>
+                    <p class="faq-answer">It means your financial logic becomes executable. Nomik lets you define approval workflows, payment limits, or FX strategies in policy form, then enforces them automatically across every transaction, account, and rail.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">How is Nomik different from automation tools like Make.com or Zapier?</h3>
-                    <p class="faq-answer">Automation tools can connect apps, but they lack financial identity, policy enforcement, and auditability. Nomik embeds automation inside the banking layer where every workflow runs under policy, compliance, and real-time monitoring. It's the difference between an automation script and a regulated programmable bank.</p>
+                    <h3 class="faq-question">What types of accounts does Nomik offer?</h3>
+                    <p class="faq-answer">Nomik provides multi-currency operating and treasury accounts with full API access. Each account can support SEPA, SWIFT, and stablecoin rails under the same policy layer. Segregated sub-accounts and delegated access are available for subsidiaries, teams, or automated agents.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">Who uses Nomik?</h3>
-                    <p class="faq-answer">CFOs and Controllers use Nomik to automate payments, approvals, and treasury operations safely. Developers and Finance Engineers build agents and integrations that act under CFO-defined policies. Nomik bridges both roles through one unified, compliant execution environment.</p>
+                    <h3 class="faq-question">Is Nomik licensed as a bank?</h3>
+                    <p class="faq-answer">Nomik operates under neobank and electronic-money licensing frameworks in partnership with regulated financial institutions. It provides full KYC, AML, and safeguarding compliance while maintaining the agility of a technology-first infrastructure bank.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">How does the CFO experience work?</h3>
-                    <p class="faq-answer">CFOs create and test workflows in a no-code policy builder. They define thresholds, approvals, and treasury logic in natural language, then simulate and enforce them directly within accounts and rails. Every workflow is versioned, auditable, and compliant by default.</p>
+                    <h3 class="faq-question">How does Nomik ensure compliance?</h3>
+                    <p class="faq-answer">Compliance is built into every operation. Nomik automates onboarding (KYC/KYB), transaction monitoring, anomaly detection, and FATF-aligned reporting. All policies, transactions, and approvals are logged in encrypted, immutable audit trails.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">How does the developer experience work?</h3>
-                    <p class="faq-answer">Developers extend CFO-defined workflows using Nomik's APIs and SDKs. They can build autonomous agents, connect ERPs, or trigger policy-guarded transactions from AI systems, all inheriting the same governance and audit logic.</p>
+                    <h3 class="faq-question">How are funds protected?</h3>
+                    <p class="faq-answer">Client funds are held in segregated safeguarded accounts with top-tier banking partners. Nomik maintains full reconciliation and daily verification under e-money and payment-institution standards.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">Is Nomik a licensed bank?</h3>
-                    <p class="faq-answer">Nomik operates as a regulated neobank under electronic-money and banking-as-a-service frameworks in partnership with licensed financial institutions. It supports full KYC, AML, and safeguarding compliance while maintaining the flexibility of an agentic infrastructure bank.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">What kinds of accounts and payments are supported?</h3>
-                    <p class="faq-answer">Nomik provides multi-currency operating and treasury accounts with support for SEPA Instant, SWIFT, FedNow, and ACH; MiCA-aligned stablecoins and tokenized deposits; and instant internal transfers between Nomik accounts and agents.</p>
+                    <h3 class="faq-question">What payment rails are supported?</h3>
+                    <p class="faq-answer">Nomik connects traditional and digital rails under one architecture: Bank Rails (SEPA, SWIFT, FedNow, ACH), Digital Rails (USDC/EURC, tokenized deposits, MiCA-aligned stablecoins), and Internal Routing (instant transfers between Nomik accounts and agents).</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What is Policy-as-Code?</h3>
-                    <p class="faq-answer">It's how Nomik turns finance rules into executable logic. Example: "Payments above €10,000 require CFO approval." Nomik enforces this automatically across every system, currency, and workflow.</p>
+                    <p class="faq-answer">Policy-as-Code turns your finance rules into enforceable logic. Example: "Payments above €10,000 require CFO approval." Nomik executes that rule automatically with no manual intervention, no missed control.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What is KYA (Know Your Agent)?</h3>
-                    <p class="faq-answer">KYA extends KYC/KYB to autonomous systems. It identifies each agent, defines its permissions, and tracks every action through signed audit events. That means CFOs and auditors always know who executed a transaction, even when it's a bot.</p>
+                    <p class="faq-answer">KYA extends traditional KYC/KYB to autonomous systems. It defines identity, scope, and behavioral parameters for agents or algorithms acting within your organization. Each agent's actions are monitored, audited, and controlled under the same policy layer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can Nomik operate fully autonomously?</h3>
+                    <p class="faq-answer">Yes, within your governance rules. Nomik can automate payments, treasury rebalancing, FX, and reporting. Every automated action remains traceable, reversible, and compliant with human-defined policies.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">How secure is Nomik's infrastructure?</h3>
-                    <p class="faq-answer">Nomik runs on ISO 27001 and SOC 2-aligned environments, encrypts all data in transit and at rest, and logs every transaction in a cryptographically signed ledger. It also integrates directly with enterprise SIEM tools such as Datadog and Splunk for continuous monitoring.</p>
+                    <p class="faq-answer">Nomik is built on ISO 27001 and SOC 2-aligned environments, with full encryption in transit and at rest. All policy and transaction data are isolated per organization. Each action generates a signed ledger event for audit integrity.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">Can Nomik be deployed privately?</h3>
-                    <p class="faq-answer">Yes. Enterprise clients can run Nomik in dedicated cloud or on-premises deployments to ensure data sovereignty and full internal control.</p>
+                    <p class="faq-answer">Yes. Nomik offers dedicated cloud or on-premises deployments for enterprise and regulated institutions requiring data sovereignty and internal control over financial automation.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Who is Nomik designed for?</h3>
+                    <p class="faq-answer">Nomik serves CFOs, controllers, and financial developers managing multi-entity or high-volume operations. It's for organizations seeking bank-grade infrastructure that adapts to autonomous, policy-driven execution.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What regions does Nomik serve?</h3>
-                    <p class="faq-answer">Nomik serves clients across Europe, the United Kingdom, the Middle East, and Asia, with expansion planned to North America. All operations align with FATF, MiCA, and ISO international standards.</p>
+                    <p class="faq-answer">Nomik supports clients across Europe, the United Kingdom, the Middle East, and Asia, with planned expansion to North America. All operations comply with cross-border regulatory frameworks and international data standards.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">How can my team get access?</h3>
-                    <p class="faq-answer">Nomik is onboarding select finance teams and integration partners. Contact hello@nomik.ai or apply to the early-access program.</p>
+                    <h3 class="faq-question">How can I get access?</h3>
+                    <p class="faq-answer">Nomik is currently onboarding select finance teams and partners. To request access, contact hello@nomik.ai or apply via the early-access program.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px;">
                 <h3 class="pillar-title">Summary</h3>
-                <p class="body-text">Nomik bridges automation and trust. CFOs define how money moves. Developers define how intelligence acts. Together they run on one agentic banking core: compliant, auditable, and under full control.</p>
+                <p class="body-text">Nomik bridges automation and trust. Every policy, payment, and approval executes exactly as designed: auditable, compliant, and under your control.</p>
             </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <!-- About Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Leadership team</h2>
+            <p class="body-text">Led by ex-Qonto & PayFit operators, building the programmable bank for AI agents. European-regulated infrastructure designed for enterprise finance operations.</p>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer" id="contact">
@@ -1224,11 +1174,11 @@
             <div class="footer-content">
                 <div>
                     <h3 class="pillar-title">Get in touch</h3>
-                    <p class="body-text">Ready to enable agentic finance for your operations?</p>
+                    <p class="body-text">Ready to enable programmable finance for your operations?</p>
                     <a href="mailto:hello@nomik.ai" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Contact Us</a>
                 </div>
                 <div class="footer-text">
-                    © 2025 Nomik. Agentic Neobank for Autonomous Finance.
+                    © 2025 Nomik. Regulated financial infrastructure.
                 </div>
             </div>
         </div>

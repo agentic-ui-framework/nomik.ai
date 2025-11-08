@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomik.ai – The Bank for Agents</title>
+    <meta name="description" content="Nomik – The Bank for Agents. AI-native programmable finance infrastructure. Eliminate the payment approval bottleneck that stops autonomous operations.">
+    <meta name="keywords" content="bank for agents, AI agent banking, autonomous payment infrastructure, agent-native banking, AI payment automation, autonomous operations, agent payment execution, KYA framework, programmable compliance, AI agent identity, agent payment bottleneck">
+
+    <!-- SEO Enhancements (Section 21) -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nomik.ai/">
+    <meta name="author" content="Nomik.ai">
+    <meta name="theme-color" content="#4f46e5">
+
+    <!-- Accessibility & Localization (Section 24) -->
+    <meta name="language" content="EN">
+    <meta name="accessibility" content="WCAG 2.1 AA">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nomik.ai/">
+    <meta property="og:title" content="Nomik.ai – The Bank for Agents">
+    <meta property="og:description" content="Nomik – The Bank for Agents. AI-native programmable finance infrastructure. Eliminate the payment approval bottleneck that stops autonomous operations.">
+    <meta property="og:image" content="https://nomik.ai/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nomik.ai/">
+    <meta property="twitter:title" content="Nomik.ai – The Bank for Agents">
+    <meta property="twitter:description" content="Nomik – The Bank for Agents. AI-native programmable finance infrastructure. Eliminate the payment approval bottleneck that stops autonomous operations.">
+    <meta property="twitter:image" content="https://nomik.ai/assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Nomik Typography Design System - Inter Variable */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.9rem; /* 14.4px - 10% smaller than default */
+            line-height: 1.5;
+            color: #C5C7CB; /* Secondary Text */
+            background-color: #0A0A0B;
+            font-feature-settings: "liga" 1, "kern" 1;
+            margin: 0;
+        }
+
+        /* Typography Hierarchy - Exact Specifications */
+
+        /* Hero / H1: Weight 800, 72px desktop / 44px mobile, Line Height 1.1, Tracking -0.5% */
+        .hero-h1, h1.hero {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 2.25rem; /* 36px mobile */
+            line-height: 1.1;
+            letter-spacing: -0.005em; /* -0.5% */
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-h1, h1.hero {
+                font-size: 3.5rem; /* 56px desktop */
+            }
+        }
+
+        /* H2: Weight 700, 48px desktop / 36px mobile, Line Height 1.2, Tracking -0.25% */
+        .heading-h2, h2 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.875rem; /* 30px mobile */
+            line-height: 1.2;
+            letter-spacing: -0.0025em; /* -0.25% */
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .heading-h2, h2 {
+                font-size: 2.5rem; /* 40px desktop */
+            }
+        }
+
+        /* H3: Weight 600, 32px desktop / 28px mobile, Line Height 1.3, Tracking 0 */
+        .heading-h3, h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem; /* 24px mobile */
+            line-height: 1.3;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .heading-h3, h3 {
+                font-size: 1.75rem; /* 28px desktop */
+            }
+        }
+
+        /* H4: Weight 500, 24px desktop / 20px mobile, Line Height 1.4, Tracking 0 */
+        .heading-h4, h4 {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 1.25rem; /* 20px mobile */
+            line-height: 1.4;
+            letter-spacing: 0;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 1024px) {
+            .heading-h4, h4 {
+                font-size: 1.5rem; /* 24px desktop */
+            }
+        }
+
+        /* Lead / Intro: Weight 400, 22px desktop / 18px mobile, Line Height 1.7, Tracking 0 */
+        .text-lead, .lead-text {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 1.125rem; /* 18px mobile */
+            line-height: 1.7;
+            letter-spacing: 0;
+            color: #C5C7CB;
+        }
+
+        @media (min-width: 1024px) {
+            .text-lead, .lead-text {
+                font-size: 1.375rem; /* 22px desktop */
+            }
+        }
+
+        /* Body / Paragraph: Weight 400, 18px desktop / 16px mobile, Line Height 1.7, Tracking 0 */
+        .text-body, p, .body-text {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 1rem; /* 16px mobile */
+            line-height: 1.7;
+            letter-spacing: 0;
+            color: #C5C7CB;
+        }
+
+        @media (min-width: 1024px) {
+            .text-body, p, .body-text {
+                font-size: 1.125rem; /* 18px desktop */
+            }
+        }
+
+        /* Caption / Small: Weight 500, 14px desktop / 13px mobile, Line Height 1.4, Tracking +0.25% */
+        .text-caption, .caption-text, small {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.8125rem; /* 13px mobile */
+            line-height: 1.4;
+            letter-spacing: 0.0025em; /* +0.25% */
+            color: #9CA3AF;
+        }
+
+        @media (min-width: 1024px) {
+            .text-caption, .caption-text, small {
+                font-size: 0.875rem; /* 14px desktop */
+            }
+        }
+
+        /* Button / CTA: Weight 600, 16px, Line Height 1.2, Tracking 0 */
+        .btn-text, button, .button-text {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1rem; /* 16px */
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+
+        /* Code / Mono: JetBrains Mono 400, 15px desktop / 14px mobile, Line Height 1.6 */
+        .text-mono, code, pre {
+            font-family: var(--font-mono);
+            font-weight: 400;
+            font-size: 0.875rem; /* 14px mobile */
+            line-height: 1.6;
+            letter-spacing: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .text-mono, code, pre {
+                font-size: 0.9375rem; /* 15px desktop */
+            }
+        }
+
+        /* Utility Classes for Specific Cases */
+        .text-primary { color: #FFFFFF; }
+        .text-secondary { color: #C5C7CB; }
+        .text-muted { color: #9CA3AF; }
+        .text-accent { color: #7C3AED; }
+        .text-accent-blue { color: #0EA5E9; }
+        .text-disabled { color: rgba(255,255,255,0.3); }
+
+        /* Weight Utilities */
+        .font-thin { font-weight: 100; }
+        .font-extralight { font-weight: 200; }
+        .font-light { font-weight: 300; }
+        .font-regular { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
+        .font-black { font-weight: 900; }
+    </style>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'monospace'],
+                    },
+                    colors: {
+                        'nomik': {
+                            50: '#f0f4ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        'purple': {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 3s ease infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        stepActivate: {
+                            '0%': { transform: 'scale(1)', backgroundColor: 'rgb(75 85 99)' },
+                            '50%': { transform: 'scale(1.1)', backgroundColor: 'rgb(99 102 241)' },
+                            '100%': { transform: 'scale(1)', backgroundColor: 'rgb(99 102 241)' },
+                        },
+                        checkAppear: {
+                            '0%': { opacity: '0', transform: 'scale(0)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-950 text-white font-sans antialiased">
+    <!-- Skip to main content -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-nomik-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 lg:px-6" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black  p-1">
+                        <div class="w-8 h-8  flex items-center justify-center">
+                            <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                        </div>
+                        <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Case Studies Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">
+                            <span>Case Studies</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-96 bg-gray-900 border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="cfo-use-cases.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">CFO Use Cases</div>
+                                <div class="text-sm text-gray-500 mt-1">Treasury, AP & FP&A Operations</div>
+                            </a>
+                            <a href="bubble-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Bubble.io</div>
+                                <div class="text-sm text-gray-500 mt-1">No-Code FinTech Platform</div>
+                            </a>
+                            <a href="zapier-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Zapier Central</div>
+                                <div class="text-sm text-gray-500 mt-1">Financial Hub Automation</div>
+                            </a>
+                            <a href="botpress-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Botpress</div>
+                                <div class="text-sm text-gray-500 mt-1">Conversational Commerce</div>
+                            </a>
+                            <a href="makecom-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Make.com</div>
+                                <div class="text-sm text-gray-500 mt-1">Workflow Automation</div>
+                            </a>
+                            <a href="lyzr-enterprise-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-b border-gray-800/50">
+                                <div class="font-medium text-base">Lyzr Enterprise</div>
+                                <div class="text-sm text-gray-500 mt-1">Banking AI Agents</div>
+                            </a>
+                            <a href="mindstudio-case-study.html" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                                <div class="font-medium text-base">MindStudio</div>
+                                <div class="text-sm text-gray-500 mt-1">AI Agent Builder Platform</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#solution" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Agent Banking</a>
+                    <a href="#integration" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">KYA Framework</a>
+                    <a href="#compliance" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Agent Identity</a>
+                    <a href="#docs" class="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">API Docs</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-3">
+                    <span class="hidden lg:inline-block text-xs text-blue-400 font-medium px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">Bank for Agents</span>
+                    <button
+                        type="button"
+                        id="nav-cta"
+                        class="bg-white hover:bg-gray-100 text-black btn-text px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        aria-label="Join early access to Nomik.ai">
+                        Join Early Access
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button
+                        type="button"
+                        class="md:hidden ml-4 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
+                        id="mobile-menu-button"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle mobile menu">
+                        <svg class="h-8 object-contain" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-800/50 mt-2">
+                    <a href="cfo-use-cases.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">CFO Use Cases</a>
+                    <a href="case-studies.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Case Studies</a>
+                    <a href="#solution" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">How It Works</a>
+                    <a href="#integration" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Integration</a>
+                    <a href="#compliance" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Compliance</a>
+                    <a href="#docs" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-white transition-colors duration-200">Docs</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-nomik-900/20 via-purple-900/20 to-gray-900/20"></div>
+            <div class="relative max-w-7xl mx-auto px-4 lg:px-6 w-full">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="hero-h1 mb-4">
+                        The Bank for Agents
+                    </h1>
+                    <p class="text-lg lg:text-xl text-lead text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
+                        AI-native programmable finance infrastructure. Your agents can now open accounts, hold balances, execute payments, and manage multi-currency operations autonomously.
+                    </p>
+
+                    <!-- Tagline Chips -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-8">
+                        <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
+                            <i data-lucide="building-2" class="w-4 h-4 text-green-400"></i> Agent Bank Accounts
+                        </span>
+                        <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
+                            <i data-lucide="user-check" class="w-4 h-4 text-blue-400"></i> KYA (Know Your Agent)
+                        </span>
+                        <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i> Agent Identity Management
+                        </span>
+                        <span class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 px-3 py-1 rounded-full text-sm text-gray-300 flex items-center gap-2">
+                            <i data-lucide="coins" class="w-4 h-4 text-orange-400"></i> Multi-Currency Treasury
+                        </span>
+                    </div>
+
+                    <!-- Rails Coverage -->
+                    <div class="text-center mt-4 mb-6">
+                        <p class="text-sm text-gray-400">
+                            Fully compliant financial services framework • International regulatory standards
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+                        <button
+                            type="button"
+                            class="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        >
+                            Request Early Access
+                        </button>
+                        <a
+                            href="#demo"
+                            class="text-gray-300 hover:text-white font-medium px-6 py-3 rounded-lg border border-gray-600 hover:border-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        >
+                            Watch 1-min demo
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT 1: THE BUSINESS CASE -->
+        <!-- ROI: Agent Task Replacement + Impact Metrics -->
+        <section id="roi" class="py-20 bg-gray-900/20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-8">
+                        Autonomous CFO Operations: The ROI
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Deploy intelligent agents for every CFO function. Typical mid-market finance teams save $1.8M–4.5M annually by eliminating manual work and rework.
+                    </p>
+                </div>
+
+                <!-- Agent Task Replacement Table -->
+                <div class="bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700/50 mb-16">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-gray-700/50">
+                                    <th class="text-left px-6 py-4 text-white font-semibold">CFO Function</th>
+                                    <th class="text-left px-6 py-4 text-white font-semibold">Current Process</th>
+                                    <th class="text-left px-6 py-4 text-white font-semibold">Autonomous Agent</th>
+                                    <th class="text-center px-6 py-4 text-white font-semibold">Efficiency Gain</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700/50">
+                                <tr class="hover:bg-gray-700/20 transition-colors">
+                                    <td class="px-6 py-4 text-gray-300 font-medium">AP Operations</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual invoice processing</td>
+                                    <td class="px-6 py-4 text-nomik-400">AP Automation Agent</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">95%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/20 transition-colors">
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Treasury Management</td>
+                                    <td class="px-6 py-4 text-gray-400">Multi-rail cash positioning</td>
+                                    <td class="px-6 py-4 text-nomik-400">Treasury Operations Agent</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">90%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/20 transition-colors">
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Financial Reporting</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual reconciliation</td>
+                                    <td class="px-6 py-4 text-nomik-400">Reconciliation Agent</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">90%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/20 transition-colors">
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Risk & Compliance</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual compliance checks</td>
+                                    <td class="px-6 py-4 text-nomik-400">Compliance Monitoring Agent</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">92%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/20 transition-colors">
+                                    <td class="px-6 py-4 text-gray-300 font-medium">Financial Planning</td>
+                                    <td class="px-6 py-4 text-gray-400">Manual forecasting</td>
+                                    <td class="px-6 py-4 text-nomik-400">Strategic Planning Agent</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="bg-green-900/30 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">85%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Before/After Impact Metrics -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Before Nomik -->
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white mb-6">Current State</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-red-400 mb-1">18-day</div>
+                                <div class="text-xs text-gray-300">invoice cycle</div>
+                            </div>
+                            <div class="bg-orange-900/20 border border-orange-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-orange-400 mb-1">10%</div>
+                                <div class="text-xs text-gray-300">errors</div>
+                            </div>
+                            <div class="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-yellow-400 mb-1">3-week</div>
+                                <div class="text-xs text-gray-300">close</div>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-purple-400 mb-1">High</div>
+                                <div class="text-xs text-gray-300">audit stress</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- With Nomik -->
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white mb-6">With Nomik</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-green-400 mb-1">2-hour</div>
+                                <div class="text-xs text-gray-300">invoice cycle</div>
+                            </div>
+                            <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-green-400 mb-1">99%</div>
+                                <div class="text-xs text-gray-300">accuracy</div>
+                            </div>
+                            <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-green-400 mb-1">3-day</div>
+                                <div class="text-xs text-gray-300">close</div>
+                            </div>
+                            <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4">
+                                <div class="text-xl font-bold text-green-400 mb-1">Auto</div>
+                                <div class="text-xs text-gray-300">audit trail</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#solution" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
+                        See how it works <i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACT 2: HOW IT ACTUALLY WORKS -->
+        <!-- Financial Rails Layer -->
+        <section id="solution" class="py-16 bg-gray-900/20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-6">
+                        Multi-Rail Finance Infrastructure
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Autonomous agents operate across traditional banking, stablecoins, and digital assets. Intelligent routing selects the optimal rail for every transaction based on cost, speed, and compliance requirements.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Bank Rails -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Bank Rails</h3>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>SEPA, SWIFT, ACH, RTP</span>
+                                <span class="text-gray-400 text-sm">Traditional banking</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>FedNow, Instant Payments</span>
+                                <span class="text-gray-400 text-sm">Real-time settlement</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Corporate cards</span>
+                                <span class="text-gray-400 text-sm">Expense automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stablecoin Rails -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Stablecoin Rails</h3>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>USDC, EURC, PYUSD</span>
+                                <span class="text-gray-400 text-sm">Instant cross-border</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>24/7 Operations</span>
+                                <span class="text-gray-400 text-sm">No banking hours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Lower FX spreads</span>
+                                <span class="text-gray-400 text-sm">Direct conversion</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custody & Liquidity -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Custody & Liquidity</h3>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>Fireblocks, MCB, HSBC</span>
+                                <span class="text-gray-400 text-sm">Secure execution</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Wise, Currencycloud</span>
+                                <span class="text-gray-400 text-sm">FX optimization</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Circle Liquidity</span>
+                                <span class="text-gray-400 text-sm">Digital markets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <p class="text-nomik-400 font-medium">
+                        Intelligent routing across all rails for optimal cost, speed, and compliance
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="py-16 bg-transparent">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-8">
+                        The Agent Banking Gap
+                    </h2>
+                    <div class="max-w-4xl mx-auto">
+                        <p class="text-xl text-lead text-gray-300 leading-relaxed mb-8">
+                            AI agents can trade stocks, manage portfolios, and optimize treasury operations, but they cannot open bank accounts or hold balances independently. Every financial operation requires human intervention, creating operational bottlenecks that cost enterprises €40M annually.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            Nomik is the first bank designed for AI agents. Your agents get their own accounts, digital identities, and autonomous banking capabilities with full KYA (Know Your Agent) compliance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Nomik Works (Simple View) -->
+        <section class="py-20" id="solution">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-8">
+                        How Agent Banking Works
+                    </h2>
+                </div>
+
+                <!-- Three Core Components -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Rails -->
+                    <div class="text-center">
+                        <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8 mb-6">
+                            <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-4">Agent Accounts</h3>
+                            <p class="text-gray-400 text-sm">Each AI agent gets its own bank account with unique identity, balance management, and transaction history</p>
+                        </div>
+                    </div>
+
+                    <!-- Policy Engine -->
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-nomik-900/30 to-purple-900/20 border border-nomik-500/30 p-8 mb-6">
+                            <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-nomik-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-4">KYA Framework</h3>
+                            <p class="text-gray-400 text-sm">Know Your Agent verification system establishing agent identity, purpose, and behavioral patterns for compliance</p>
+                        </div>
+                    </div>
+
+                    <!-- Agents -->
+                    <div class="text-center">
+                        <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8 mb-6">
+                            <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-4">Autonomous Operations</h3>
+                            <p class="text-gray-400 text-sm">Agents execute payments, manage currencies, and handle cross-border transactions independently</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Points -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-6">
+                        All agent accounts are segregated and monitored. Every transaction is verified through KYA protocols and policy compliance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Dual Rails Matter -->
+        <section class="py-16 bg-gray-900/20">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-8">
+                        Why Agents Need Their Own Banking
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Agent Identity</h3>
+                        <p class="text-gray-300 mb-4">Unique digital identity for each agent</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li>• KYA (Know Your Agent) verification</li>
+                            <li>• Agent purpose and behavioral tracking</li>
+                            <li>• Compliance-ready agent profiles</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Autonomous Treasury</h3>
+                        <p class="text-gray-300 mb-4">Independent balance and currency management</p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li>• Agent-owned account balances</li>
+                            <li>• Multi-currency operations</li>
+                            <li>• Cross-border payment execution</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Every agent operates with verified identity and autonomous banking capabilities, enabling true AI financial independence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What the Team Gets -->
+        <section class="py-16 bg-transparent">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-8">
+                        What Your Agents Can Do
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Your AI agents now have full banking capabilities. They can manage their own finances autonomously.
+                    </p>
+                </div>
+                <div class="overflow-hidden rounded-lg border border-gray-700/50">
+                    <table class="w-full">
+                        <thead class="bg-gray-800/50">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-300">Agent Type</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-300">Banking Capabilities</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-300">Autonomous Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700/50">
+                            <tr class="bg-gray-800/20">
+                                <td class="px-6 py-4 text-sm font-medium text-white">Treasury Agent</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Multi-currency accounts, real-time FX execution, liquidity management</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">24/7 cash optimization, autonomous hedging, yield farming</td>
+                            </tr>
+                            <tr class="bg-gray-800/20">
+                                <td class="px-6 py-4 text-sm font-medium text-white">Payment Agent</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Cross-border payments, instant settlement, multi-rail routing</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Smart payment routing, cost optimization, vendor management</td>
+                            </tr>
+                            <tr class="bg-gray-800/20">
+                                <td class="px-6 py-4 text-sm font-medium text-white">Compliance Agent</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">KYA verification, transaction monitoring, regulatory reporting</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Real-time sanctions screening, policy enforcement, audit trails</td>
+                            </tr>
+                            <tr class="bg-gray-800/20">
+                                <td class="px-6 py-4 text-sm font-medium text-white">Trading Agent</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Digital asset custody, DeFi integration, portfolio management</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Automated arbitrage, yield optimization, risk-adjusted returns</td>
+                            </tr>
+                            <tr class="bg-gray-800/20">
+                                <td class="px-6 py-4 text-sm font-medium text-white">Analytics Agent</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Real-time reporting, multi-entity consolidation, performance tracking</td>
+                                <td class="px-6 py-4 text-sm text-gray-300">Predictive modeling, anomaly detection, automated insights</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-gray-400 text-sm">
+                        Your team stays in control. Agents handle the repetitive work under your policies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concrete Policy Example -->
+        <section class="py-16 bg-gray-900/20">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-8">
+                        How Policies Actually Work
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Your business rules become executable code. Here's a real vendor payment policy.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Policy in Plain English -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Your Rule (Plain English)</h3>
+                        <div class="space-y-3 text-gray-300 text-sm">
+                            <p>• All vendor payments over $10,000 require CFO approval</p>
+                            <p>• New vendors must be verified by accounting first</p>
+                            <p>• International payments use SWIFT, domestic use ACH</p>
+                            <p>• Payments to sanctioned countries are blocked</p>
+                            <p>• All actions must be logged for audit</p>
+                        </div>
+                    </div>
+                    <!-- Policy in Code -->
+                    <div class="bg-gray-900/50 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Nomik Policy (Auto-Generated)</h3>
+                        <div class="bg-gray-900/80 rounded p-4 text-xs font-mono">
+                            <div class="text-gray-400 mb-2"># vendor_payment_policy.yml</div>
+                            <div class="text-blue-400">vendor_payment:</div>
+                            <div class="ml-2 text-gray-300">
+                                <div class="text-yellow-400">approval_required:</div>
+                                <div class="ml-2 text-gray-300">- amount > 10000: cfo_approval</div>
+                                <div class="ml-2 text-gray-300">- new_vendor: accounting_verified</div>
+                                <div class="text-yellow-400 mt-2">routing:</div>
+                                <div class="ml-2 text-gray-300">- domestic: ACH</div>
+                                <div class="ml-2 text-gray-300">- international: SWIFT</div>
+                                <div class="text-yellow-400 mt-2">compliance:</div>
+                                <div class="ml-2 text-gray-300">- sanctions_check: required</div>
+                                <div class="ml-2 text-gray-300">- audit_log: all_actions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                        Agents can only act within these constraints. Every action generates a Policy Decision Record for compliance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results You Can Expect -->
+        <section class="py-16 bg-transparent">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="heading-h2 mb-8">
+                        Results You Can Expect
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Based on early customer implementations. Your results depend on current process complexity.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Time Savings -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-green-400 mb-2">20 days → 2 days</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Invoice Processing</h3>
+                        <p class="text-gray-400 text-sm">From receipt to payment, including approvals and reconciliation</p>
+                    </div>
+                    <!-- Error Reduction -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">95%+ accuracy</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Payment Routing</h3>
+                        <p class="text-gray-400 text-sm">Automatic rail selection and compliance checks reduce manual errors</p>
+                    </div>
+                    <!-- Team Focus -->
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-purple-400 mb-2">60-80%</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Time Saved</h3>
+                        <p class="text-gray-400 text-sm">Team time freed up for analysis and strategic work</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                        <em>Early implementation results. Individual outcomes vary based on current process automation and complexity.</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Systems Integration -->
+        <section id="integration" class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Connects to Your Finance Stack
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Plug into your existing ERP, banks, and tools. No disruption to your current workflows.
+                    </p>
+                </div>
+
+                <!-- Finance Systems -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Core Finance Systems</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/quickbooks.intuit.com" alt="QuickBooks" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">QB</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">QuickBooks</h4>
+                            <p class="text-xs text-gray-500">Accounting</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/xero.com" alt="Xero" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">XERO</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Xero</h4>
+                            <p class="text-xs text-gray-500">Accounting</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/netsuite.com" alt="NetSuite" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">NS</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">NetSuite</h4>
+                            <p class="text-xs text-gray-500">ERP</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/sap.com" alt="SAP" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SAP</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">SAP</h4>
+                            <p class="text-xs text-gray-500">ERP</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/bill.com" alt="Bill.com" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">BILL</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Bill.com</h4>
+                            <p class="text-xs text-gray-500">AP/AR</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/coupa.com" alt="Coupa" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">COUPA</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Coupa</h4>
+                            <p class="text-xs text-gray-500">Procurement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banking & Payments -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Banking & Payments</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/jpmorgan.com" alt="JPMorgan" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">JPM</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">JPMorgan</h4>
+                            <p class="text-xs text-gray-500">Banking API</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/plaid.com" alt="Plaid" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">PLAID</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Plaid</h4>
+                            <p class="text-xs text-gray-500">Banking data</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/swift.com" alt="SWIFT" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SWIFT</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">SWIFT</h4>
+                            <p class="text-xs text-gray-500">Wire transfers</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/nacha.org" alt="ACH" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">ACH</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">ACH</h4>
+                            <p class="text-xs text-gray-500">US domestic</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/ecb.europa.eu" alt="SEPA" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SEPA</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">SEPA</h4>
+                            <p class="text-xs text-gray-500">EU payments</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/circle.com" alt="USDC" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">USDC</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Stablecoins</h4>
+                            <p class="text-xs text-gray-500">24/7 settlement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow & Automation -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Workflow & Automation</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/zapier.com" alt="Zapier" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">ZAPIER</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Zapier</h4>
+                            <p class="text-xs text-gray-500">5000+ apps</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">MICROSOFT</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Power Platform</h4>
+                            <p class="text-xs text-gray-500">Microsoft</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/n8n.io" alt="n8n" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">N8N</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">n8n</h4>
+                            <p class="text-xs text-gray-500">Open source</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/uipath.com" alt="UiPath" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">PATH</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">UiPath</h4>
+                            <p class="text-xs text-gray-500">RPA</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/temporal.io" alt="Temporal" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">TEMPORAL</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Temporal</h4>
+                            <p class="text-xs text-gray-500">Workflows</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/appian.com" alt="Appian" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">APP</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Appian</h4>
+                            <p class="text-xs text-gray-500">Low-code</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & Enterprise -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Cloud & Enterprise</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/azure.microsoft.com" alt="Azure" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">AZURE</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Azure</h4>
+                            <p class="text-xs text-gray-500">Microsoft</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">AWS</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">AWS</h4>
+                            <p class="text-xs text-gray-500">Amazon</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/cloud.google.com" alt="Google Cloud" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">GCP</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">GCP</h4>
+                            <p class="text-xs text-gray-500">Google</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/sap.com" alt="SAP" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SAP</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">SAP</h4>
+                            <p class="text-xs text-gray-500">ERP</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SALESFORCE</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Salesforce</h4>
+                            <p class="text-xs text-gray-500">CRM</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">STRIPE</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Stripe</h4>
+                            <p class="text-xs text-gray-500">Payments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banking Aggregation & Pay-by-Bank -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Banking Aggregation & Pay-by-Bank</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/tink.com" alt="Tink" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">TINK</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Tink</h4>
+                            <p class="text-xs text-gray-500">EU banking</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/truelayer.com" alt="TrueLayer" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">TRUE</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">TrueLayer</h4>
+                            <p class="text-xs text-gray-500">Open banking</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/token.io" alt="Token.io" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">TKN</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Token.io</h4>
+                            <p class="text-xs text-gray-500">Pay by bank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Observability & SIEM -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Observability & SIEM</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/opentelemetry.io" alt="OpenTelemetry" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">OTEL</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">OpenTelemetry</h4>
+                            <p class="text-xs text-gray-500">Observability</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/datadoghq.com" alt="Datadog" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">DATADOG</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Datadog</h4>
+                            <p class="text-xs text-gray-500">Monitoring</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/splunk.com" alt="Splunk" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">SPLUNK</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">Splunk</h4>
+                            <p class="text-xs text-gray-500">SIEM</p>
+                        </div>
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/newrelic.com" alt="New Relic" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">NEW RELIC</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">New Relic</h4>
+                            <p class="text-xs text-gray-500">APM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Protocols -->
+                <div class="mb-8">
+                    <h3 class="heading-h3 mb-4">Protocols</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-3 text-center">
+                            <div class="w-10 h-10   mx-auto mb-2 flex items-center justify-center">
+                                <img src="https://logo.clearbit.com/modelcontextprotocol.io" alt="MCP" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">MCP</span>
+                            </div>
+                            <h4 class="text-caption text-primary mb-1">MCP</h4>
+                            <p class="text-xs text-gray-500">Model Context Protocol</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button
+                        type="button"
+                        id="ecosystem-cta"
+                        class="bg-white hover:bg-gray-100 text-black btn-text px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                    >
+                        Join Early Access
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ACT 3: TRUST & IMPLEMENTATION -->
+        <!-- Governance & Compliance -->
+        <section id="compliance" class="py-20 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-6">
+                        The Policy Engine: Compliance-Grade Automation
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Every action through Nomik is checked by the Policy Engine in real time. Each decision generates a Policy Decision Record (PDR) with full traceability - what rule applied, what data it used, and who approved it.
+                    </p>
+                </div>
+
+                <!-- 5 Steps Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-16">
+                    <!-- Step 1: Intent -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-nomik-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">1. Intent</h3>
+                        <p class="text-sm text-gray-400">Agent requests payment</p>
+                    </div>
+
+                    <!-- Step 2: Policy -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">2. Policy</h3>
+                        <p class="text-sm text-gray-400">Rules evaluated in &lt;100 ms</p>
+                    </div>
+
+                    <!-- Step 3: Route -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">3. Route</h3>
+                        <p class="text-sm text-gray-400">Nomik selects the right rail: SEPA, FedNow, or Stablecoin</p>
+                    </div>
+
+                    <!-- Step 4: Execute -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">4. Execute</h3>
+                        <p class="text-sm text-gray-400">Bank/EMI partner settles</p>
+                    </div>
+
+                    <!-- Step 5: Audit -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">5. Audit</h3>
+                        <p class="text-sm text-gray-400">Decision and signature logged immutably</p>
+                    </div>
+                </div>
+
+
+                <!-- Same Policy, Different Rail -->
+                <div class="text-center mb-16">
+                    <div class="bg-gradient-to-r from-nomik-900/20 to-blue-900/20 border border-nomik-500/20  p-8 max-w-4xl mx-auto">
+                        <p class="text-xl font-semibold text-white mb-2">
+                            Same policy, different rail.
+                        </p>
+                        <p class="text-gray-300">
+                            Fiat and stablecoins under one compliance model.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- From Bank to Blockchain -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-6">
+                        From Bank to Blockchain, Seamlessly.
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-4xl mx-auto">
+                        Nomik connects your policy engine to both traditional and decentralized rails.
+                        Every transaction, whether SEPA or USDC, follows the same control flow, approvals, and audit.
+                    </p>
+                </div>
+
+                <!-- Dual Path Diagram -->
+                <div class="max-w-5xl mx-auto">
+                    <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="heading-h3 mb-4">Universal Payment Flow</h3>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <!-- SEPA Path -->
+                            <div class="text-center">
+                                <h4 class="heading-h3 mb-6">SEPA Path</h4>
+                                <div class="space-y-4 flex flex-col items-center">
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-blue-400 font-mono text-sm">Agent <i data-lucide="arrow-right" class="w-3 h-3 inline-block align-middle mx-1"></i> Policy Engine</span>
+                                    </div>
+                                    <div class="text-gray-400 text-center"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-green-400 font-mono text-sm">SEPA <i data-lucide="arrow-right" class="w-3 h-3 inline-block align-middle mx-1"></i> Bank Partner</span>
+                                    </div>
+                                    <div class="text-gray-400 text-center"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-purple-400 font-mono text-sm">Settlement &lt;10s</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stablecoin Path -->
+                            <div class="text-center">
+                                <h4 class="heading-h3 mb-6">Stablecoin Path</h4>
+                                <div class="space-y-4 flex flex-col items-center">
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-blue-400 font-mono text-sm">Agent <i data-lucide="arrow-right" class="w-3 h-3 inline-block align-middle mx-1"></i> Policy Engine</span>
+                                    </div>
+                                    <div class="text-gray-400 text-center"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-green-400 font-mono text-sm">USDC <i data-lucide="arrow-right" class="w-3 h-3 inline-block align-middle mx-1"></i> Fireblocks</span>
+                                    </div>
+                                    <div class="text-gray-400 text-center"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
+                                    <div class="px-4 py-2 text-center">
+                                        <span class="text-purple-400 font-mono text-sm">Settlement &lt;5s</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-8">
+                            <p class="text-gray-400 text-sm font-mono">Same governance model, whether on-chain or on-bank rails.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-Rail Capability -->
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-6">
+                        SEPA and Stablecoins. One policy layer.
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Fiat and Stablecoins, unified under one compliance layer.
+                    </p>
+                </div>
+
+                <!-- Capability Table -->
+                <div class="bg-transparent border border-gray-800/50  overflow-hidden mb-12">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-800/50">
+                                <tr>
+                                    <th class="text-left p-6 text-white font-semibold">Feature</th>
+                                    <th class="text-left p-6 text-white font-semibold">SEPA Instant</th>
+                                    <th class="text-left p-6 text-white font-semibold">USDC / EURC (MiCA)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-800/50">
+                                <tr>
+                                    <td class="p-6 text-gray-300 font-medium">Settlement time</td>
+                                    <td class="p-6 text-gray-400"><span class="text-xs">&le;</span>10s</td>
+                                    <td class="p-6 text-gray-400"><span class="text-xs">&le;</span>5s</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 text-gray-300 font-medium">Custody</td>
+                                    <td class="p-6 text-gray-400">Bank / EMI</td>
+                                    <td class="p-6 text-gray-400">Partner EMI / On-chain</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 text-gray-300 font-medium">Policy enforcement</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i> Yes</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i> Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 text-gray-300 font-medium">Compliance scope</td>
+                                    <td class="p-6 text-gray-400">PSD2</td>
+                                    <td class="p-6 text-gray-400">MiCA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 text-gray-300 font-medium">Common SDK</td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i></td>
+                                    <td class="p-6 text-green-400"><i data-lucide="check-circle" class="w-4 h-4 inline"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Explainer Text -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <p class="text-xl text-lead text-gray-300 leading-relaxed mb-4">
+                        Nomik abstracts fiat and on-chain rails through one policy engine.
+                    </p>
+                    <p class="text-lg text-lead text-gray-400 mb-6">
+                        Funds remain within your partner institutions. Policies enforce compliance, not speculation.
+                    </p>
+                    <div class="text-sm text-gray-500 bg-transparent  p-4">
+                        <p><strong>Supported partners:</strong> Circle (USDC, EURC), Fireblocks, SEPA Instant via partner EMIs.</p>
+                        <p><strong>Compliance:</strong> All stablecoin transactions comply with international standards and are executed through licensed EMIs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nomik for Teams -->
+        <section id="teams" class="py-20 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-6">
+                        Built for every part of the organization.
+                    </h2>
+                </div>
+
+                <!-- 4 Team Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- CTO / Engineering -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">CTO / Engineering</h3>
+                        <p class="text-gray-400 mb-6">
+                            Integrate payments through a single API.
+                            Go live in under 30 minutes, no licenses required.
+                        </p>
+                        <a href="/docs/engineering" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- CFO / Treasury -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">CFO / Treasury</h3>
+                        <p class="text-gray-400 mb-6">
+                            Set limits and guardrails before money moves.
+                            Every transaction is logged, verified, and auditable.
+                        </p>
+                        <a href="/docs/treasury" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Compliance / Risk -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">Compliance / Risk</h3>
+                        <p class="text-gray-400 mb-6">
+                            Maintain full observability across all rails.
+                            Use our library of AML, KYA, and KYB policy templates.
+                        </p>
+                        <a href="/docs/compliance" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- CEO / COO -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">CEO / COO</h3>
+                        <p class="text-gray-400 mb-6">
+                            Scale your operations 10x without losing control.
+                            Enable autonomy under supervision.
+                        </p>
+                        <a href="/docs/leadership" class="text-nomik-400 hover:text-nomik-300 font-medium transition-colors duration-200">
+                            View docs <i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Platform Primitives -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="heading-h2 mb-6">
+                        Platform Components.
+                    </h2>
+                    <div class="inline-flex items-center bg-nomik-500/10 border border-nomik-500/20 rounded-full px-4 py-2 mb-8">
+                        <span class="text-nomik-400 font-medium text-sm">100ms average policy evaluation</span>
+                    </div>
+                </div>
+
+                <!-- 4 Modules Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- KYA Registry -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-nomik-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">KYA Registry</h3>
+                        <p class="text-gray-400 text-sm">Identify and verify every agent's identity and purpose.</p>
+                    </div>
+
+                    <!-- Policy Engine -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Policy Engine</h3>
+                        <p class="text-gray-400 text-sm">Policies defined as code, enforced instantly.</p>
+                    </div>
+
+                    <!-- Rail Router -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Rail Router</h3>
+                        <p class="text-gray-400 text-sm">SEPA, FedNow, USDC/EURC under one API.</p>
+                    </div>
+
+                    <!-- Audit & Observer -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Audit & Observer</h3>
+                        <p class="text-gray-400 text-sm">Complete audit trail available in real time.</p>
+                    </div>
+                </div>
+
+                <!-- Block Diagram -->
+                <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8">
+                    <div class="text-center">
+                        <div class="font-mono text-sm text-gray-300 leading-relaxed">
+                            <div class="flex items-center justify-center mb-4">
+                                <span class=" px-3 py-1 rounded text-nomik-400">Agent</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle"></i></span>
+                                <span class=" px-3 py-1 rounded text-blue-400">Nomik</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle"></i></span>
+                                <span class=" px-3 py-1 rounded text-green-400">Rail Provider</span>
+                                <span class="mx-4"><i data-lucide="arrow-right" class="w-4 h-4 inline-block align-middle"></i></span>
+                                <span class=" px-3 py-1 rounded text-purple-400">Counterparty</span>
+                            </div>
+                            <p class="text-gray-400 text-xs">Every transaction flows through policy evaluation and audit logging</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Use Cases -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Built for Real Business
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        From procurement to payouts, Nomik.ai enables safe autonomous payments across every use case.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Enterprise Ops -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="building-2" class="text-blue-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Procurement Automation</h3>
+                        <div class="space-y-3 text-gray-400">
+                            <p>Auto-reorders within €10k/day cap, vendor allowlist, 2-person override for exceptions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fintech & Platforms -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="credit-card" class="text-green-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Fintech Payouts</h3>
+                        <div class="space-y-3 text-gray-400">
+                            <p>Creator payouts with sanctions screening and daily aggregate limits. Automated settlement with dispute holds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trading / Treasury -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="trending-up" class="text-purple-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Treasury Bots</h3>
+                        <div class="space-y-3 text-gray-400">
+                            <p>Executes fiat/crypto trades under risk model with throttling and time-of-day rules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Components -->
+        <section class="py-12 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Core Components
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-4xl mx-auto">
+                        Full audit logging across rails with agent identity (KYA).
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Agent Registry (KYA)</h3>
+                        <p class="text-gray-400">Identity, purpose, scopes, revocation for every agent.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Policy Engine</h3>
+                        <p class="text-gray-400">Deterministic rules: limits, allow/deny lists, temporal, geofence, sanctions, velocity.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Rail Router</h3>
+                        <p class="text-gray-400">SEPA Instant / SEPA SCT / FedNow / ACH / SWIFT / on-chain stablecoins.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Audit & Observer</h3>
+                        <p class="text-gray-400">Immutable logs, webhooks, SIEM export.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Admin Console</h3>
+                        <p class="text-gray-400">Policy editor (YAML/JSON + forms), approvals queue, live payment feed, kill-switch per agent/org, audit exports.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">SDKs</h3>
+                        <p class="text-gray-400">TypeScript / Python; LangGraph, CrewAI, AutoGen helpers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- KYA Specification -->
+        <section class="py-12 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        KYA - Know Your Agent
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Agent identity and delegation model with verifiable credentials.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="heading-h3 mb-4">Identity Model</h3>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
+  <span class="text-blue-400">"agent_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"principal"</span><span class="text-gray-500">:</span> <span class="text-green-400">"kyb:acme_inc"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"scopes"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"payments:send"</span><span class="text-gray-500">,</span> <span class="text-green-400">"payments:simulate"</span><span class="text-gray-500">],</span>
+  <span class="text-blue-400">"limits"</span><span class="text-gray-500">:</span> <span class="text-gray-500">{</span><span class="text-blue-400">"daily_eur"</span><span class="text-gray-500">:</span> <span class="text-orange-400">10000</span><span class="text-gray-500">,</span> <span class="text-blue-400">"per_txn_eur"</span><span class="text-gray-500">:</span> <span class="text-orange-400">2500</span><span class="text-gray-500">},</span>
+  <span class="text-blue-400">"allowlist"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"iban:DE89370400440532013000"</span><span class="text-gray-500">],</span>
+  <span class="text-blue-400">"revocation"</span><span class="text-gray-500">:</span> <span class="text-gray-500">{</span><span class="text-blue-400">"mode"</span><span class="text-gray-500">:</span> <span class="text-green-400">"immediate"</span><span class="text-gray-500">},</span>
+  <span class="text-blue-400">"credentials"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[{</span>
+    <span class="text-blue-400">"type"</span><span class="text-gray-500">:</span> <span class="text-green-400">"VerifiableCredential"</span><span class="text-gray-500">,</span>
+    <span class="text-blue-400">"issuer"</span><span class="text-gray-500">:</span> <span class="text-green-400">"acme"</span>
+  <span class="text-gray-500">}]</span>
+<span class="text-gray-500">}</span></code></pre>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mt-8">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="heading-h3 mb-3">Lifecycle</h3>
+                            <div class="space-y-2 text-gray-400">
+                                <div>1. Register</div>
+                                <div>2. Attest</div>
+                                <div>3. Monitor</div>
+                                <div>4. Revoke</div>
+                                <div>5. Re-issue</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="heading-h3 mb-3">Signals</h3>
+                            <div class="space-y-2 text-gray-400">
+                                <div><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-blue-400"></i>Velocity patterns</div>
+                                <div><i data-lucide="target" class="w-3 h-3 inline mr-2 text-blue-400"></i>Purpose matching</div>
+                                <div><i data-lucide="history" class="w-3 h-3 inline mr-2 text-blue-400"></i>Recipient history</div>
+                                <div><i data-lucide="map-pin" class="w-3 h-3 inline mr-2 text-blue-400"></i>Geofence compliance</div>
+                                <div><i data-lucide="clock" class="w-3 h-3 inline mr-2 text-blue-400"></i>Time windows</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- API Preview -->
+        <section id="docs" class="py-20 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Developer First API
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        RESTful endpoints with webhooks, idempotency, and comprehensive error handling.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Execute Payment</h3>
+                        <div class="mb-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">POST</span>
+                            <code class="text-gray-300 ml-2">/v1/payments</code>
+                        </div>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
+  <span class="text-blue-400">"agent_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"amount"</span><span class="text-gray-500">:</span> <span class="text-orange-400">12000</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"currency"</span><span class="text-gray-500">:</span> <span class="text-green-400">"EUR"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"recipient"</span><span class="text-gray-500">:</span> <span class="text-green-400">"iban:FR76..."</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"rail"</span><span class="text-gray-500">:</span> <span class="text-green-400">"sepa_instant"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"purpose"</span><span class="text-gray-500">:</span> <span class="text-green-400">"restock_trigger"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"idempotency_key"</span><span class="text-gray-500">:</span> <span class="text-green-400">"uuid"</span>
+<span class="text-gray-500">}</span></code></pre>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Response (Approved)</h3>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
+  <span class="text-blue-400">"status"</span><span class="text-gray-500">:</span> <span class="text-green-400">"approved"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"transaction_id"</span><span class="text-gray-500">:</span> <span class="text-green-400">"txn_01H..."</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"rail"</span><span class="text-gray-500">:</span> <span class="text-green-400">"sepa_instant"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"policy_decision"</span><span class="text-gray-500">:</span> <span class="text-green-400">"auto_approved"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"eta"</span><span class="text-gray-500">:</span> <span class="text-green-400">"instant"</span>
+<span class="text-gray-500">}</span></code></pre>
+
+                        <div class="mt-6">
+                            <h4 class="text-md font-semibold text-white mb-3">Error Codes</h4>
+                            <div class="space-y-1 text-gray-400 text-sm">
+                                <div><code class="text-red-400">POLICY_DENIED</code></div>
+                                <div><code class="text-yellow-400">APPROVAL_REQUIRED</code></div>
+                                <div><code class="text-orange-400">LIMIT_EXCEEDED</code></div>
+                                <div><code class="text-purple-400">SANCTIONS_MATCH</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-transparent border border-gray-800/50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Webhook Events</h3>
+                    <div class="grid md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <code class="bg-purple-600/20 text-purple-400 px-3 py-2 rounded block">policy.alert</code>
+                        </div>
+                        <div class="text-center">
+                            <code class="bg-green-600/20 text-green-400 px-3 py-2 rounded block">payment.approved</code>
+                        </div>
+                        <div class="text-center">
+                            <code class="bg-red-600/20 text-red-400 px-3 py-2 rounded block">payment.failed</code>
+                        </div>
+                        <div class="text-center">
+                            <code class="bg-blue-600/20 text-blue-400 px-3 py-2 rounded block">payment.settled</code>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4">All webhooks are HMAC-signed for security.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observability & Audit -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Complete Observability & Audit
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Immutable logs, real-time monitoring, and comprehensive export capabilities.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Event Schema</h3>
+                        <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-500">{</span>
+  <span class="text-blue-400">"event"</span><span class="text-gray-500">:</span> <span class="text-green-400">"policy.decision"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"ts"</span><span class="text-gray-500">:</span> <span class="text-green-400">"2025-10-24T06:00:00Z"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"agent"</span><span class="text-gray-500">:</span> <span class="text-green-400">"did:ai:inventory_bot"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"decision"</span><span class="text-gray-500">:</span> <span class="text-green-400">"allow"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"rules"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"limits.daily"</span><span class="text-gray-500">,</span> <span class="text-green-400">"recipient.allowlist"</span><span class="text-gray-500">],</span>
+  <span class="text-blue-400">"context"</span><span class="text-gray-500">:</span> <span class="text-gray-500">{</span>
+    <span class="text-blue-400">"amount"</span><span class="text-gray-500">:</span> <span class="text-orange-400">12000</span><span class="text-gray-500">,</span>
+    <span class="text-blue-400">"currency"</span><span class="text-gray-500">:</span> <span class="text-green-400">"EUR"</span><span class="text-gray-500">,</span>
+    <span class="text-blue-400">"recipient"</span><span class="text-gray-500">:</span> <span class="text-green-400">"iban:DE89..."</span><span class="text-gray-500">,</span>
+    <span class="text-blue-400">"geolocation"</span><span class="text-gray-500">:</span> <span class="text-green-400">"EU"</span>
+  <span class="text-gray-500">}</span>
+<span class="text-gray-500">}</span></code></pre>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Export Options</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-white font-medium mb-2">Cloud Storage</h4>
+                                <div class="text-gray-400 text-sm space-y-1">
+                                    <div><i data-lucide="cloud" class="w-3 h-3 inline mr-2 text-purple-400"></i>S3, GCS, Azure Blob</div>
+                                    <div><i data-lucide="settings" class="w-3 h-3 inline mr-2 text-purple-400"></i>Configurable retention</div>
+                                    <div><i data-lucide="lock" class="w-3 h-3 inline mr-2 text-purple-400"></i>Field-level encryption</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">SIEM Integration</h4>
+                                <div class="text-gray-400 text-sm space-y-1">
+                                    <div><i data-lucide="bar-chart-3" class="w-3 h-3 inline mr-2 text-orange-400"></i>Datadog, Splunk</div>
+                                    <div><i data-lucide="activity" class="w-3 h-3 inline mr-2 text-orange-400"></i>OpenTelemetry traces</div>
+                                    <div><i data-lucide="wifi" class="w-3 h-3 inline mr-2 text-orange-400"></i>Real-time streaming</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">Privacy Controls</h4>
+                                <div class="text-gray-400 text-sm space-y-1">
+                                    <div><i data-lucide="eye-off" class="w-3 h-3 inline mr-2 text-red-400"></i>PII redaction strategies</div>
+                                    <div><i data-lucide="shield-check" class="w-3 h-3 inline mr-2 text-red-400"></i>GDPR compliance</div>
+                                    <div><i data-lucide="globe" class="w-3 h-3 inline mr-2 text-red-400"></i>Data residency controls</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Experience -->
+        <section class="py-12 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Developer First Experience
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        SDKs, helpers, testing environment, and comprehensive documentation.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">SDKs & Languages</h3>
+                        <div class="space-y-2 text-gray-400">
+                            <div><i data-lucide="code" class="w-3 h-3 inline mr-2 text-blue-400"></i>TypeScript/Node.js</div>
+                            <div><i data-lucide="code" class="w-3 h-3 inline mr-2 text-blue-400"></i>Python</div>
+                            <div><i data-lucide="file-code" class="w-3 h-3 inline mr-2 text-blue-400"></i>OpenAPI spec</div>
+                            <div><i data-lucide="send" class="w-3 h-3 inline mr-2 text-blue-400"></i>Postman collection</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Agent Framework Helpers</h3>
+                        <div class="space-y-2 text-gray-400">
+                            <div><i data-lucide="workflow" class="w-3 h-3 inline mr-2 text-green-400"></i>LangGraph payment nodes</div>
+                            <div><i data-lucide="puzzle" class="w-3 h-3 inline mr-2 text-green-400"></i>CrewAI tool integration</div>
+                            <div><i data-lucide="square" class="w-3 h-3 inline mr-2 text-green-400"></i>AutoGen function calls</div>
+                            <div><i data-lucide="link" class="w-3 h-3 inline mr-2 text-green-400"></i>Semantic Kernel connectors</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Sandbox Environment</h3>
+                        <div class="space-y-2 text-gray-400">
+                            <div><i data-lucide="beaker" class="w-3 h-3 inline mr-2 text-purple-400"></i>Mock IBANs & rail simulators</div>
+                            <div><i data-lucide="check-circle" class="w-3 h-3 inline mr-2 text-purple-400"></i>Policy testing & validation</div>
+                            <div><i data-lucide="cpu" class="w-3 h-3 inline mr-2 text-purple-400"></i>Example apps: refund agent, procurement bot, payout worker</div>
+                            <div><i data-lucide="book" class="w-3 h-3 inline mr-2 text-purple-400"></i>Test scenarios library</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">LangGraph Integration Example</h3>
+                    <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-purple-400">from</span> <span class="text-blue-400">langgraph</span> <span class="text-purple-400">import</span> <span class="text-blue-400">StateGraph</span>
+<span class="text-purple-400">from</span> <span class="text-blue-400">nomik_langgraph</span> <span class="text-purple-400">import</span> <span class="text-blue-400">PaymentNode</span><span class="text-gray-500">,</span> <span class="text-blue-400">PolicyGuardNode</span>
+
+<span class="text-gray-600"># Define payment workflow</span>
+<span class="text-blue-400">workflow</span> <span class="text-gray-500">=</span> <span class="text-yellow-400">StateGraph</span><span class="text-gray-500">(</span><span class="text-blue-400">AgentState</span><span class="text-gray-500">)</span>
+<span class="text-blue-400">workflow</span><span class="text-gray-500">.</span><span class="text-yellow-400">add_node</span><span class="text-gray-500">(</span><span class="text-green-400">"policy_check"</span><span class="text-gray-500">,</span> <span class="text-yellow-400">PolicyGuardNode</span><span class="text-gray-500">(</span><span class="text-blue-400">nomik_client</span><span class="text-gray-500">))</span>
+<span class="text-blue-400">workflow</span><span class="text-gray-500">.</span><span class="text-yellow-400">add_node</span><span class="text-gray-500">(</span><span class="text-green-400">"execute_payment"</span><span class="text-gray-500">,</span> <span class="text-yellow-400">PaymentNode</span><span class="text-gray-500">(</span><span class="text-blue-400">nomik_client</span><span class="text-gray-500">))</span>
+<span class="text-blue-400">workflow</span><span class="text-gray-500">.</span><span class="text-yellow-400">add_edge</span><span class="text-gray-500">(</span><span class="text-green-400">"policy_check"</span><span class="text-gray-500">,</span> <span class="text-green-400">"execute_payment"</span><span class="text-gray-500">)</span>
+
+<span class="text-gray-600"># Handle approvals</span>
+<span class="text-blue-400">workflow</span><span class="text-gray-500">.</span><span class="text-yellow-400">add_conditional_edges</span><span class="text-gray-500">(</span>
+    <span class="text-green-400">"policy_check"</span><span class="text-gray-500">,</span>
+    <span class="text-purple-400">lambda</span> <span class="text-blue-400">state</span><span class="text-gray-500">:</span> <span class="text-green-400">"require_approval"</span> <span class="text-purple-400">if</span> <span class="text-blue-400">state</span><span class="text-gray-500">.</span><span class="text-blue-400">needs_approval</span> <span class="text-purple-400">else</span> <span class="text-green-400">"approved"</span>
+<span class="text-gray-500">)</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Guides -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Integration Guides
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Step-by-step integration with popular platforms and workflows.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Workflow Automation</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-white font-medium mb-2">n8n Workflow Step</h4>
+                                <p class="text-gray-400 text-sm">Policy decision node with durable retries and error handling for autonomous payment workflows.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">Temporal Activities</h4>
+                                <p class="text-gray-400 text-sm">Long-running payment activities with compensation and saga patterns for complex business processes.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">Zapier Integration</h4>
+                                <p class="text-gray-400 text-sm">Connect payment triggers to 5000+ apps with built-in policy enforcement and audit logging.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-4">Banking & PSP Partners</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-white font-medium mb-2">SEPA Instant Rails</h4>
+                                <p class="text-gray-400 text-sm">Direct integration with European instant payment schemes via partner banks with real-time settlement.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">FedNow Implementation</h4>
+                                <p class="text-gray-400 text-sm">US instant payments through Federal Reserve rails with 24/7/365 availability and sub-second processing.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2">Reconciliation APIs</h4>
+                                <p class="text-gray-400 text-sm">Automated reconciliation with bank statements and transaction confirmations for complete audit trails.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-transparent border border-gray-800/50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">SIEM Integration Example</h3>
+                    <pre class="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap break-all sm:break-normal"><code><span class="text-gray-600"># Datadog integration</span>
+<span class="text-purple-400">POST</span> <span class="text-cyan-400">/v1/webhooks/siem</span>
+<span class="text-gray-500">{</span>
+  <span class="text-blue-400">"endpoint"</span><span class="text-gray-500">:</span> <span class="text-green-400">"https://app.datadoghq.com/intake/webhook/nomik"</span><span class="text-gray-500">,</span>
+  <span class="text-blue-400">"events"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"policy.triggered"</span><span class="text-gray-500">,</span> <span class="text-green-400">"payment.failed"</span><span class="text-gray-500">,</span> <span class="text-green-400">"agent.revoked"</span><span class="text-gray-500">],</span>
+  <span class="text-blue-400">"filters"</span><span class="text-gray-500">:</span> <span class="text-gray-500">{</span>
+    <span class="text-blue-400">"severity"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"high"</span><span class="text-gray-500">,</span> <span class="text-green-400">"critical"</span><span class="text-gray-500">],</span>
+    <span class="text-blue-400">"agent_types"</span><span class="text-gray-500">:</span> <span class="text-gray-500">[</span><span class="text-green-400">"trading_bot"</span><span class="text-gray-500">,</span> <span class="text-green-400">"treasury_agent"</span><span class="text-gray-500">]</span>
+  <span class="text-gray-500">},</span>
+  <span class="text-blue-400">"transform"</span><span class="text-gray-500">:</span> <span class="text-green-400">"datadog_logs_format"</span>
+<span class="text-gray-500">}</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SRE & Performance -->
+        <section class="py-12 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Enterprise SRE & SLAs
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Production-grade reliability with transparent performance metrics.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-nomik-400 mb-2">99.97%</div>
+                        <div class="text-white font-medium mb-1">Availability</div>
+                        <div class="text-gray-500 text-sm">Target uptime SLA</div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-green-400 mb-2">&le;100ms</div>
+                        <div class="text-white font-medium mb-1">Policy Decision</div>
+                        <div class="text-gray-500 text-sm">p50 latency target</div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">100 RPS</div>
+                        <div class="text-white font-medium mb-1">Rate Limit</div>
+                        <div class="text-gray-500 text-sm">Default per org</div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-purple-400 mb-2">24h</div>
+                        <div class="text-white font-medium mb-1">Idempotency</div>
+                        <div class="text-gray-500 text-sm">Key window</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Operational Excellence</h3>
+                        <div class="space-y-3 text-gray-400">
+                            <div><i data-lucide="rotate-ccw" class="w-3 h-3 inline mr-2 text-red-400"></i>Exponential backoff retries</div>
+                            <div><i data-lucide="zap-off" class="w-3 h-3 inline mr-2 text-red-400"></i>Circuit breaker patterns</div>
+                            <div><i data-lucide="trending-down" class="w-3 h-3 inline mr-2 text-red-400"></i>Graceful degradation</div>
+                            <div><i data-lucide="monitor" class="w-3 h-3 inline mr-2 text-red-400"></i>Status page transparency</div>
+                            <div><i data-lucide="message-circle" class="w-3 h-3 inline mr-2 text-red-400"></i>Incident communication</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-4">Monitoring & Alerts</h3>
+                        <div class="space-y-3 text-gray-400">
+                            <div><i data-lucide="bar-chart-3" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Real-time metrics dashboard</div>
+                            <div><i data-lucide="timer" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Rail-specific latency tracking</div>
+                            <div><i data-lucide="activity" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Policy evaluation performance</div>
+                            <div><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Webhook delivery monitoring</div>
+                            <div><i data-lucide="heart" class="w-3 h-3 inline mr-2 text-yellow-400"></i>Partner integration health</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Product Roadmap
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        What's coming next in agent payments infrastructure.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full mr-3">Q4 2025</span>
+                            <h3 class="text-lg font-semibold text-white">Foundation</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><i data-lucide="play" class="w-3 h-3 inline mr-2 text-green-400"></i>Sandbox GA</li>
+                            <li><i data-lucide="code" class="w-3 h-3 inline mr-2 text-green-400"></i>TypeScript & Python SDKs</li>
+                            <li><i data-lucide="edit" class="w-3 h-3 inline mr-2 text-green-400"></i>Policy editor UI</li>
+                            <li><i data-lucide="zap" class="w-3 h-3 inline mr-2 text-green-400"></i>SEPA Instant pilot</li>
+                            <li><i data-lucide="file-text" class="w-3 h-3 inline mr-2 text-green-400"></i>Basic audit logging</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-nomik-500 text-white text-xs px-2 py-1 rounded-full mr-3">Q1 2025</span>
+                            <h3 class="text-lg font-semibold text-white">Scale</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><i data-lucide="link" class="w-3 h-3 inline mr-2 text-blue-400"></i>FedNow integration</li>
+                            <li><i data-lucide="download" class="w-3 h-3 inline mr-2 text-blue-400"></i>SIEM export connectors</li>
+                            <li><i data-lucide="workflow" class="w-3 h-3 inline mr-2 text-blue-400"></i>Approval workflows</li>
+                            <li><i data-lucide="git-branch" class="w-3 h-3 inline mr-2 text-blue-400"></i>LangGraph helpers</li>
+                            <li><i data-lucide="star" class="w-3 h-3 inline mr-2 text-blue-400"></i>Trust scoring beta</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full mr-3">Q2 2025</span>
+                            <h3 class="text-lg font-semibold text-white">Enterprise</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><i data-lucide="cloud" class="w-3 h-3 inline mr-2 text-purple-400"></i>Private cloud deployment</li>
+                            <li><i data-lucide="award" class="w-3 h-3 inline mr-2 text-purple-400"></i>Advanced trust scoring</li>
+                            <li><i data-lucide="coins" class="w-3 h-3 inline mr-2 text-purple-400"></i>Stablecoin rails</li>
+                            <li><i data-lucide="globe" class="w-3 h-3 inline mr-2 text-purple-400"></i>Multi-region compliance</li>
+                            <li><i data-lucide="tag" class="w-3 h-3 inline mr-2 text-purple-400"></i>White-label options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitive Landscape -->
+        <section class="py-12 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Why Nomik.ai vs Alternatives
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Purpose-built for agent payments with KYA + Policy as Code + Non-custodial multi-rail.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12   flex items-center justify-center mr-4">
+                                <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" class="h-8 w-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"><span class="text-white text-caption font-semibold" style="display:none;">STRIPE</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">vs. Stripe Treasury/Issuing</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
+                                <p class="text-gray-400 text-sm">Agent-native identity (KYA) + deterministic policy engine + non-custodial agent delegation</p>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-300 font-medium mb-1">Stripe Strength</h4>
+                                <p class="text-gray-400 text-sm">Global reach, card rails, proven at scale</p>
+                            </div>
+                            <div class="bg-nomik-900/30 border border-nomik-500/30 rounded p-3 mt-4">
+                                <p class="text-nomik-300 text-sm"><strong>Position:</strong> "Keep Stripe; add Nomik.ai for agent trust + policy + multi-rail."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12   flex items-center justify-center mr-4">
+                                <i data-lucide="landmark" class="text-purple-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">vs. Modern Treasury</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
+                                <p class="text-gray-400 text-sm">Agent-native identity (KYA) + deterministic policy runtime designed for autonomous execution</p>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-300 font-medium mb-1">Modern Treasury Strength</h4>
+                                <p class="text-gray-400 text-sm">Payments operations, ledgers, enterprise adoption</p>
+                            </div>
+                            <div class="bg-nomik-900/30 border border-nomik-500/30 rounded p-3 mt-4">
+                                <p class="text-nomik-300 text-sm"><strong>Position:</strong> "Modern Treasury for ops; Nomik.ai for agent governance and policy."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12   flex items-center justify-center mr-4">
+                                <i data-lucide="shield-check" class="text-red-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">vs. Risk/Fraud Platforms</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
+                                <p class="text-gray-400 text-sm">Delegated execution + multi-rail policy runtime + KYA trust network</p>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-300 font-medium mb-1">Risk Platform Strength</h4>
+                                <p class="text-gray-400 text-sm">Advanced fraud detection, ML risk scoring</p>
+                            </div>
+                            <div class="bg-nomik-900/30 border border-nomik-500/30 rounded p-3 mt-4">
+                                <p class="text-nomik-300 text-sm"><strong>Position:</strong> "Risk tools detect; Nomik.ai enables safe autonomous execution."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12   flex items-center justify-center mr-4">
+                                <i data-lucide="shuffle" class="text-orange-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">vs. Payment Orchestrators</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="text-green-400 font-medium mb-1"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i> Nomik.ai Advantage</h4>
+                                <p class="text-gray-400 text-sm">Agent governance, approval workflows, trust scoring built for agents</p>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-300 font-medium mb-1">Orchestrator Strength</h4>
+                                <p class="text-gray-400 text-sm">Gateway aggregation, routing optimization</p>
+                            </div>
+                            <div class="bg-nomik-900/30 border border-nomik-500/30 rounded p-3 mt-4">
+                                <p class="text-nomik-300 text-sm"><strong>Position:</strong> "Orchestrators route payments; Nomik.ai governs agents."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <div class="bg-gradient-to-r from-nomik-900/50 to-purple-900/50 border border-nomik-500/50  p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">The Nomik.ai Edge</h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            First and only platform built specifically for <strong class="text-nomik-400">agent payments</strong> with KYA identity, Policy as Code, and non-custodial multi-rail execution.
+                        </p>
+                        <button type="button" class="bg-white hover:bg-gray-100 text-black btn-text px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105">
+                            Experience the Difference
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Compliance -->
+        <section id="security" class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Security & Compliance
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        SOC2/ISO-ready security with non-custodial architecture and comprehensive audit trails.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="text-green-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Non-custodial</h3>
+                        <p class="text-gray-400">Funds stay at bank/PSP; Nomik.ai routes & enforces policy.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="lock" class="text-blue-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Encryption</h3>
+                        <p class="text-gray-400">TLS1.2+ in transit; AES-256 at rest; KMS-managed keys.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="key" class="text-purple-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Access Control</h3>
+                        <p class="text-gray-400">RBAC; SSO/SAML; least privilege; admin audit.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12 rounded-lg mb-4 flex items-center justify-center">
+                            <i data-lucide="globe" class="text-yellow-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Data Residency</h3>
+                        <p class="text-gray-400">EU/US partitioning; configurable retention.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="clipboard-list" class="text-red-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Compliance</h3>
+                        <p class="text-gray-400">GDPR controls; SOC2 Type II roadmap; PCI delegation.</p>
+                    </div>
+
+                    <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                        <div class="w-12 h-12   mb-4 flex items-center justify-center">
+                            <i data-lucide="alert-triangle" class="text-orange-400 w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Threat Response</h3>
+                        <p class="text-gray-400">Scope limits, second-factor approvals, velocity caps, kill-switch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="py-20 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Simple, Transparent Pricing
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Preview tier available. Production pricing starts at €499/month. Stablecoin and banking fees billed separately.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Free Plan -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Free</h3>
+                            <div class="text-3xl font-bold text-nomik-400 mb-1">€0</div>
+                            <div class="text-sm text-gray-500">Rs 0 / month</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-400 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                3 agents
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Sandbox environment
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                5 policies
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Basic logs
+                            </li>
+                        </ul>
+                        <button type="button" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3  transition-colors duration-200">
+                            Start Free
+                        </button>
+                    </div>
+
+                    <!-- Growth Plan -->
+                    <div class="bg-gradient-to-b from-nomik-900/50 to-purple-900/50 border border-nomik-500/50  p-8 relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-gradient-to-r from-nomik-600 to-purple-600 text-white text-sm font-medium px-4 py-1 rounded-full">
+                                Popular
+                            </span>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Growth</h3>
+                            <div class="text-3xl font-bold text-nomik-400 mb-1">€499</div>
+                            <div class="text-sm text-gray-500">Rs 24,950 / month</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-400 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                50 agents
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Production rails
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Unlimited policies
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Alerts & monitoring
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                SIEM export
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                SSO integration
+                            </li>
+                        </ul>
+                        <button type="button" class="w-full bg-white hover:bg-gray-100 text-black font-medium py-3  transition-all duration-200 transform hover:scale-105">
+                            Join Early Access
+                        </button>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="bg-transparent border border-gray-800/50 rounded-2xl p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                            <div class="text-3xl font-bold text-nomik-400 mb-1">Custom</div>
+                            <div class="text-sm text-gray-500">Contact sales</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-400 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Unlimited agents
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Private cloud/VPC
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Custom SLAs
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Bespoke rails
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="text-green-400 w-4 h-4 mr-3"></i>
+                                Dedicated support
+                            </li>
+                        </ul>
+                        <button type="button" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3  transition-colors duration-200">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <p class="text-gray-500 text-sm">
+                        All plans include core policy engine and audit features. Overage options available.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold font-sans text-white mb-6">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-lg text-lead text-gray-300 max-w-3xl mx-auto">
+                        Everything you need to know about agent payments and Nomik.ai.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">Is Nomik.ai a bank?</h3>
+                            <p class="text-gray-400">No, Nomik.ai is a non-custodial policy & routing layer. We don't hold funds; they stay at your bank or PSP.</p>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">Which payment rails are supported?</h3>
+                            <p class="text-gray-400">SEPA (Instant/SCT), FedNow/ACH, SWIFT, and select stablecoins. Availability varies by region and partner participation.</p>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">How do you prevent agent abuse?</h3>
+                            <p class="text-gray-400">KYA scopes, spending limits, recipient allowlists, approval workflows, and real-time anomaly alerts.</p>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">Can we host Nomik.ai privately?</h3>
+                            <p class="text-gray-400">Yes, Enterprise plans include VPC and on-premises deployment options.</p>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">What is KYA vs KYC?</h3>
+                            <p class="text-gray-400">KYA (Know Your Agent) establishes agent identity & delegation rights, complementing traditional KYC/KYB for the underlying business.</p>
+                        </div>
+
+                        <div class="bg-transparent border border-gray-800/50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-white mb-3">What happens if a policy blocks a critical payment?</h3>
+                            <p class="text-gray-400">Human override capabilities with full audit trail. Critical payments can be approved manually while maintaining compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Human Story -->
+        <section class="py-20 bg-transparent">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="heading-h2 mb-8">
+                    You're Not Just Managing Tasks. You're Leading Teams.
+                </h2>
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    We know the pressure you're under. Month-end closes that stretch into weekends. Manual processes that should have been automated years ago. A growing business that demands more precision, not just more hours.
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                    Nomik isn't about replacing your expertise-it's about amplifying it. Your policies guide the automation. Your team focuses on decisions that matter. Your business scales without the operational chaos.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed font-medium">
+                    Finally, technology that works the way you think.
+                </p>
+            </div>
+        </section>
+
+        <!-- Implementation / Getting Started -->
+        <section id="implementation" class="py-20 bg-gradient-to-r from-nomik-900/50 to-purple-900/50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="heading-h2 mb-6">
+                    Getting Started
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Nomik is launching with select finance teams across Europe. Join the early access program to:
+                </p>
+
+                <!-- Implementation Benefits -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Week 1-2</h3>
+                        <p class="text-gray-300 text-sm">System integration and policy setup with your existing ERP and banking infrastructure</p>
+                    </div>
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Week 3-4</h3>
+                        <p class="text-gray-300 text-sm">Deploy your first agents for AP, treasury, or reconciliation with pilot transactions</p>
+                    </div>
+                    <div class="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-3">Month 2+</h3>
+                        <p class="text-gray-300 text-sm">Scale across all finance operations with full audit trail and compliance reporting</p>
+                    </div>
+                </div>
+
+                <p class="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
+                    Join the early access list to see your first agents in action.
+                </p>
+
+                <div class="max-w-md mx-auto">
+                    <form id="footer-form" class="flex flex-col sm:flex-row gap-4">
+                        <input
+                            type="email"
+                            id="footer-email"
+                            placeholder="Enter your email"
+                            required
+                            class="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700  text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-nomik-500 focus:border-transparent"
+                        >
+                        <button
+                            type="submit"
+                            class="bg-white hover:bg-gray-100 text-black btn-text px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-black"
+                        >
+                            Join Early Access
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800/50 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-8 h-8  flex items-center justify-center mr-3">
+                        <img src="assets/logo.png" alt="Nomik.ai" class="w-8 h-8 object-contain">
+                    </div>
+                    <span class="text-xl font-semibold text-white">Nomik.ai</span>
+                </div>
+
+                <nav class="flex flex-wrap justify-center md:justify-end gap-8 text-sm">
+                    <a href="#docs" class="text-gray-400 hover:text-white transition-colors duration-200">Docs</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms</a>
+                    <a href="#security" class="text-gray-400 hover:text-white transition-colors duration-200">Security</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Status</a>
+                </nav>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800/30 text-center">
+                <p class="text-gray-400 text-sm mb-2">
+                    &copy; 2025 Nomik.ai - The Bank for Agents
+                </p>
+                <p class="text-gray-500 text-xs mb-6">
+                    Nomik Ltd – Incorporated with international compliance framework
+                </p>
+                <div class="text-gray-500 text-xs max-w-5xl mx-auto space-y-3 leading-relaxed">
+                    <p class="bg-gray-900/30 border border-gray-800/40  p-4">
+                        <span class="text-yellow-400 font-medium">Important:</span> Nomik.ai is not a bank and does not hold customer funds. All payment execution occurs via licensed partners (banks/PSPs/EMIs).
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-3 text-center md:text-left">
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            Availability of payment rails varies by region and partner participation. Compliance with PSD3/MiCA where applicable.
+                        </p>
+                        <p class="flex-1 bg-gray-900/20 border border-gray-800/30  p-3">
+                            This website contains forward-looking statements about product features and capabilities. Actual functionality may vary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Analytics & Experimentation -->
+    <script>
+        // Analytics events tracking (Section 22)
+        const trackEvent = (event, properties = {}) => {
+            // Goals: hero submit, doc visits, SDK copy, testing environment launched
+            console.log('Analytics Event:', event, properties);
+            // Integration with analytics platform would go here
+        };
+
+        // Track CTA interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track hero CTA
+            document.getElementById('hero-form').addEventListener('submit', function() {
+                trackEvent('cta.submit', { location: 'hero' });
+            });
+
+            // Track doc visits
+            document.querySelectorAll('a[href="#docs"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    trackEvent('docs.view', { source: 'navigation' });
+                });
+            });
+
+            // Track SDK code copy (when implemented)
+            document.querySelectorAll('pre code').forEach(code => {
+                code.addEventListener('click', function() {
+                    trackEvent('sdk.copy', { language: 'typescript' });
+                });
+            });
+        });
+    </script>
+
+    <!-- Performance Monitoring (Section 25: Next.js 14, Core Web Vitals) -->
+    <script>
+        // Core Web Vitals monitoring
+        // Target: LCP < 2.5s, CLS < 0.1, INP < 200ms
+        if ('web-vital' in window) {
+            // Web Vitals measurement would be implemented here
+            console.log('Web Vitals tracking enabled');
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.classList.contains('hidden');
+
+            menu.classList.toggle('hidden');
+            this.setAttribute('aria-expanded', !isHidden);
+        });
+
+        // Form handling
+        function handleFormSubmit(formId, emailId) {
+            const form = document.getElementById(formId);
+            const emailInput = document.getElementById(emailId);
+
+            if (!form || !emailInput) return; // Skip if elements don't exist
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = emailInput.value;
+
+                if (email) {
+                    // Simulate form submission
+                    const button = form.querySelector('button[type="submit"]');
+                    const originalText = button.textContent;
+
+                    button.textContent = 'Submitting...';
+                    button.disabled = true;
+
+                    setTimeout(() => {
+                        button.textContent = 'Thank you!';
+                        emailInput.value = '';
+
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.disabled = false;
+                        }, 2000);
+                    }, 1000);
+                }
+            });
+        }
+
+        // Initialize form handlers
+        handleFormSubmit('footer-form', 'footer-email');
+
+        // CTA button handlers
+        const navCta = document.getElementById('nav-cta');
+        const ecosystemCta = document.getElementById('ecosystem-cta');
+        const footerEmail = document.getElementById('footer-email');
+
+        if (navCta && footerEmail) {
+            navCta.addEventListener('click', function() {
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        if (ecosystemCta && footerEmail) {
+            ecosystemCta.addEventListener('click', function() {
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Add competitive landscape CTA handler if it exists
+        const competitiveCta = document.querySelector('.bg-gradient-to-r.from-nomik-900\\/50 button');
+        if (competitiveCta && footerEmail) {
+            competitiveCta.addEventListener('click', function() {
+                footerEmail.focus();
+                footerEmail.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animation disabled
+
+        // Policy timeline animation
+        function animatePolicyTimeline() {
+            const steps = document.querySelectorAll('.policy-step');
+            const checks = document.querySelectorAll('.check-mark');
+
+            // Reset animation
+            steps.forEach((step, index) => {
+                const circle = step.querySelector('div[class*="bg-nomik-600"], div[class*="bg-gray-600"]');
+                const check = checks[index];
+
+                circle.className = circle.className.replace('bg-nomik-600', 'bg-gray-600');
+                check.style.opacity = '0';
+                check.style.transform = 'scale(0)';
+            });
+
+            // Animate steps sequentially
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    const circle = step.querySelector('div[class*="bg-gray-600"]');
+                    const check = checks[index];
+
+                    // Activate step
+                    circle.className = circle.className.replace('bg-gray-600', 'bg-nomik-600');
+                    circle.style.animation = 'stepActivate 0.5s ease-out';
+
+                    // Show check mark after step activation
+                    setTimeout(() => {
+                        check.style.opacity = '1';
+                        check.style.transform = 'scale(1)';
+                        check.style.animation = 'checkAppear 0.3s ease-out';
+                    }, 500);
+                }, index * 1000);
+            });
+        }
+
+        // Start animation after page load
+        setTimeout(animatePolicyTimeline, 2000);
+
+        // Repeat animation every 10 seconds
+        setInterval(animatePolicyTimeline, 10000);
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        // Initialize Lucide icons
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                setTimeout(initLucideIcons, 100);
+            }
+        }
+
+        // Initialize on DOM ready and after a slight delay
+        document.addEventListener('DOMContentLoaded', initLucideIcons);
+        setTimeout(initLucideIcons, 500);
+    </script>
+</body>
+</html>
