@@ -292,13 +292,39 @@
         }
 
         /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            background: var(--color-white);
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-border) transparent;
+        }
+
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .table-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 4px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: var(--color-text-muted);
+        }
+
         .comparison-table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
             background: var(--color-white);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--color-border);
         }
 
         .comparison-table th {
@@ -694,40 +720,42 @@
                 Tools like Make.com, Zapier, and n8n made automation easy but not safe for finance. Nomik embeds automation inside the banking core, where policies, compliance, and audit live.
             </p>
 
-            <table class="comparison-table" style="margin-bottom: 3rem;">
-                <thead>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Use Case</th>
-                        <th>Trust Level</th>
-                        <th>Compliance</th>
-                        <th>Auditability</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Zapier / Make.com</strong></td>
-                        <td>Generic workflow automation</td>
-                        <td>Low</td>
-                        <td><span class="icon icon-cross"></span>None</td>
-                        <td><span class="icon icon-cross"></span>No audit trail</td>
-                    </tr>
-                    <tr>
-                        <td><strong>n8n</strong></td>
-                        <td>Self-hosted process automation</td>
-                        <td>Medium</td>
-                        <td><span class="icon icon-warning"></span>Partial (manual setup)</td>
-                        <td><span class="icon icon-warning"></span>Local logging only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nomik</strong></td>
-                        <td>Agentic financial execution</td>
-                        <td>Bank-grade</td>
-                        <td><span class="icon icon-check"></span>Built-in KYC, AML, FATF</td>
-                        <td><span class="icon icon-check"></span>Cryptographically signed ledger</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Use Case</th>
+                            <th>Trust Level</th>
+                            <th>Compliance</th>
+                            <th>Auditability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Zapier / Make.com</strong></td>
+                            <td>Generic workflow automation</td>
+                            <td>Low</td>
+                            <td><span class="icon icon-cross"></span>None</td>
+                            <td><span class="icon icon-cross"></span>No audit trail</td>
+                        </tr>
+                        <tr>
+                            <td><strong>n8n</strong></td>
+                            <td>Self-hosted process automation</td>
+                            <td>Medium</td>
+                            <td><span class="icon icon-warning"></span>Partial (manual setup)</td>
+                            <td><span class="icon icon-warning"></span>Local logging only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nomik</strong></td>
+                            <td>Agentic financial execution</td>
+                            <td>Bank-grade</td>
+                            <td><span class="icon icon-check"></span>Built-in KYC, AML, FATF</td>
+                            <td><span class="icon icon-check"></span>Cryptographically signed ledger</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <h3 class="pillar-title" style="margin-bottom: 2rem;">Operational Efficiency Gains</h3>
             <div class="roi-comparison">
@@ -754,42 +782,44 @@
                     </ul>
                 </div>
             </div>
-            <table class="comparison-table" style="margin-top: 3rem;">
-                <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Current Manual Process</th>
-                        <th>Autonomous System</th>
-                        <th>Time Savings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Vendor Payments</td>
-                        <td>Manual approval workflows, 2-4 hour delays</td>
-                        <td>AP Automation System</td>
-                        <td>85% reduction</td>
-                    </tr>
-                    <tr>
-                        <td>Treasury Management</td>
-                        <td>Daily cash positioning, manual rebalancing</td>
-                        <td>Treasury Operations System</td>
-                        <td>92% reduction</td>
-                    </tr>
-                    <tr>
-                        <td>Reconciliation</td>
-                        <td>End-of-day manual matching, 3-5 day delays</td>
-                        <td>Reconciliation System</td>
-                        <td>95% reduction</td>
-                    </tr>
-                    <tr>
-                        <td>Compliance Monitoring</td>
-                        <td>Weekly reports, manual transaction reviews</td>
-                        <td>Compliance Monitoring System</td>
-                        <td>78% reduction</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Current Manual Process</th>
+                            <th>Autonomous System</th>
+                            <th>Time Savings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vendor Payments</td>
+                            <td>Manual approval workflows, 2-4 hour delays</td>
+                            <td>AP Automation System</td>
+                            <td>85% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Treasury Management</td>
+                            <td>Daily cash positioning, manual rebalancing</td>
+                            <td>Treasury Operations System</td>
+                            <td>92% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Reconciliation</td>
+                            <td>End-of-day manual matching, 3-5 day delays</td>
+                            <td>Reconciliation System</td>
+                            <td>95% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Compliance Monitoring</td>
+                            <td>Weekly reports, manual transaction reviews</td>
+                            <td>Compliance Monitoring System</td>
+                            <td>78% reduction</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p class="body-text" style="text-align:center;margin-top:1rem;font-size:0.875rem;color:var(--color-text-muted);">
                 Results based on pilot CFO workflows using Nomik's programmable execution layer (2025).
             </p>
