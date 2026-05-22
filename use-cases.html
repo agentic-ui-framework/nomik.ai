@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Use cases · Nomik</title>
+  <meta name="description" content="A day in the life with an AI workforce: e-commerce, SaaS, agency, and regulated/EU businesses run their squads, connect their stack, and ship with humans in the loop." />
+  <meta name="theme-color" content="#2b2d31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html" class="active">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <div class="nav-cta"><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Use cases</span>
+        <h1>See your business in it.</h1>
+        <p>The pattern is always the same: you state intent, the fleet does the work in the open, triggers pull in recurring work, and you approve only the consequential calls. Here's a day in the life.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="demo-frame reveal" style="max-width:880px">
+          <div class="carousel" data-carousel="manual" aria-label="Use-case scenarios">
+            <div class="carousel-tabs" role="tablist" aria-label="Choose a business type">
+              <button class="ctab is-active" type="button" role="tab" aria-selected="true">E-commerce</button>
+              <button class="ctab" type="button" role="tab" aria-selected="false">SaaS</button>
+              <button class="ctab" type="button" role="tab" aria-selected="false">Agency</button>
+              <button class="ctab" type="button" role="tab" aria-selected="false">Regulated / EU</button>
+            </div>
+            <div class="carousel-stack">
+
+              <!-- E-commerce -->
+              <div class="slide is-active" role="group" aria-label="E-commerce scenario">
+                <article class="feature">
+                  <div class="dlabel">E-commerce · 6 people · ~$4M/yr on Shopify</div>
+                  <h3>"Lumio", DTC home goods</h3>
+                  <p class="lead">Drowning in support tickets, ad busywork, and manual bookkeeping, no time to grow because they're running to stand still.</p>
+                  <p><b>Squads:</b> Growth · Support · Operations · the Warden</p>
+                  <p><b>Stack:</b> Shopify · Stripe · Klaviyo · Gorgias · Meta &amp; Google Ads · Trustpilot · Xero</p>
+                  <ul class="bullets">
+                    <li><b>Overnight:</b> a <span class="mono">payment_failed → dunning</span> trigger recovers carts; Support drafts every ticket, sends the routine ones, holds refunds for approval.</li>
+                    <li><b>A call comes in:</b> a voice agent answers, looks up the order, offers store credit, escalates the angry one with a transcript ready.</li>
+                    <li><b>"Plan a spring sale":</b> Growth drafts the campaign and budget; the founder approves the spend and they launch.</li>
+                  </ul>
+                  <p class="lead"><b>What changed:</b> support runs around the clock; the founder spends the day on growth, not the inbox.</p>
+                </article>
+              </div>
+
+              <!-- SaaS -->
+              <div class="slide" role="group" aria-label="SaaS scenario">
+                <article class="feature">
+                  <div class="dlabel">SaaS · seed-stage B2B · 12 people</div>
+                  <h3>"Cadence", the most grounded scenario</h3>
+                  <p class="lead">Small eng team, a backlog that never shrinks, support and sales falling on the founders.</p>
+                  <p><b>Squads:</b> Engineering · Product · Growth · Support</p>
+                  <p><b>Stack:</b> GitHub · Linear · Vercel · Sentry · Stripe · HubSpot · Intercom · PostHog · Slack</p>
+                  <ul class="bullets">
+                    <li><b>A goal in chat:</b> the orchestrator triages, the bug routes to an engineer, the feature goes to a principal for a spec.</li>
+                    <li><b>It ships:</b> the engineer patches and tests green inline; QA verifies; the founder approves the deploy in one click.</li>
+                    <li><b>Signals flow in:</b> triggers turn product feedback into tasks and enterprise leads into ready-to-send outreach.</li>
+                  </ul>
+                  <p class="lead"><b>What changed:</b> the founders set direction and approved a handful of things. The team did the rest.</p>
+                </article>
+              </div>
+
+              <!-- Agency -->
+              <div class="slide" role="group" aria-label="Agency scenario">
+                <article class="feature">
+                  <div class="dlabel">Agency · 15 people · 9 client retainers</div>
+                  <h3>"Field &amp; Co", creative + marketing</h3>
+                  <p class="lead">The bottleneck is coordination, every client wants updates, every project runs in parallel, and senior people drown in status admin.</p>
+                  <p><b>Squads:</b> one workspace per client, an account lead (human) + Growth/Content/Design agents + a per-workspace Warden</p>
+                  <p><b>Stack:</b> HubSpot · Google &amp; Meta Ads · Figma · ClickUp · Slack · Harvest · Stripe · Google Analytics</p>
+                  <ul class="bullets">
+                    <li><b>Per client:</b> each workspace's Warden posts a status digest, and agents draft posts and creatives the lead approves in threads.</li>
+                    <li><b>A request lands:</b> an <span class="mono">inbound email → scope + task</span> trigger turns "can we add a landing page?" into an estimate the lead sends.</li>
+                    <li><b>Month-end:</b> a trigger has timesheets and invoices ready; the owner reviews margins per client.</li>
+                  </ul>
+                  <p class="lead"><b>What changed:</b> more clients, no more coordination overhead. Seniors do senior work; agents do the glue.</p>
+                </article>
+              </div>
+
+              <!-- Regulated / EU -->
+              <div class="slide" role="group" aria-label="Regulated EU scenario">
+                <article class="feature">
+                  <div class="dlabel">Regulated · 40-person EU fintech · the on-prem wedge</div>
+                  <h3>"Severn", sovereignty-sensitive</h3>
+                  <p class="lead">Wants an agent workforce but <b>cannot</b> send customer data, code, or secrets to third-party model providers. Most agent platforms are a non-starter.</p>
+                  <p><b>Why Nomik fits:</b> deployed on-prem in Severn's own data center, with agents on local, self-hosted models, nothing leaves the building.</p>
+                  <p><b>Stack (all inside the boundary):</b> GitLab (self-hosted) · internal Postgres · DATEV + EU accounting · PEPPOL e-invoicing · EU-hosted helpdesk · their own SSO</p>
+                  <ul class="bullets">
+                    <li>Identical collaboration to the SaaS scenario, squads, board, inline traces, approvals, <b>but</b> every model call hits a local model on Severn's GPUs.</li>
+                    <li>A <span class="mono">failed-payment → dunning</span> and <span class="mono">month-end → reconcile to DATEV</span> run against EU-resident systems under GDPR controls.</li>
+                    <li>Compliance reviews the glass-box audit (#events + decisions ledger) to confirm exactly what every agent did.</li>
+                  </ul>
+                  <p class="lead"><b>What changed:</b> a regulated business gets the full leverage of an AI workforce <b>without a data-exit risk</b>, the capability competitors can't offer.</p>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-cutting patterns -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">The common thread</span>
+          <h2>Every business runs the same loop.</h2>
+          <p>Intent in, work out, with humans on the calls that matter.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature"><h3>Intent in, work out</h3><p>You state a goal in plain language; the org decomposes and staffs itself.</p></article>
+          <article class="feature"><h3>Triggers do the recurring work</h3><p>Dunning, tickets, reconciliation, alerts, they run automatically and show up as visible, approvable work.</p></article>
+          <article class="feature"><h3>Humans own judgment</h3><p>You approve spend, deploys, and customer messages, and do the creative and relationship work.</p></article>
+          <article class="feature"><h3>One timeline</h3><p>It all happens in shared channels with full traces, nothing is a black box.</p></article>
+          <article class="feature"><h3>The stack comes to you</h3><p>The Warden connects your existing tools. Nomik doesn't replace them, it operates them.</p></article>
+          <article class="feature"><h3>Runs where you allow</h3><p>SaaS, private cloud, or fully on-prem on your own models, your data, your boundary.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <h2>Which one is your business?</h2>
+          <p>Tell us your business type and we'll show you the squads, stack, and triggers to start with.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Get early access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

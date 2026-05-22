@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security &amp; Sovereignty · Nomik</title>
+  <meta name="description" content="Powerful agents, controlled consequences: approvals, autonomy dial, spend caps, kill switch, RBAC, and a glass-box audit, plus on-prem deployment on your own local models so data never leaves your boundary." />
+  <meta name="theme-color" content="#2b2d31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html" class="active">Security</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <div class="nav-cta"><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Security &amp; Sovereignty</span>
+        <h1>Powerful agents. You hold the controls.</h1>
+        <p>Control doesn't come from crippling the agents, it comes from making everything visible and putting a human gate on the consequential steps. And you choose where it all runs.</p>
+      </div>
+    </section>
+
+    <!-- Principle -->
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">The principle</span>
+          <h2>Open hands, gated consequences.</h2>
+          <p class="lead">Inside their own sandbox, agents act freely, that's what makes them useful. The things that touch the outside world or cost real money are proposed by agents and approved by humans.</p>
+          <p class="lead">Capability isn't the risk; <em>unsupervised consequence</em> is. So that's what we gate, and everything is visible while it happens.</p>
+        </div>
+        <div>
+          <div class="chat solo" aria-label="An approval card in chat">
+            <div class="chat-main">
+              <div class="chat-head"><span class="hash">#</span> operations</div>
+              <div class="chat-body">
+                <div class="msg"><span class="avatar" style="background:hsl(160 50% 45%)">I</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Iris <span class="tag tag-agent">agent</span></span><span class="msg-time">08:32</span></div><p class="msg-text">Refund €480 to order #5521 (duplicate charge confirmed).</p>
+                  <div class="connect-card"><span class="ilogo"><img src="logos/stripe.svg" alt="" width="18" height="18"></span><div><div class="cc-name">Approval needed · refund €480</div><div class="cc-sub">Money · gated</div></div><span class="btn btn-primary">Approve</span></div>
+                </div></div>
+              </div>
+              <div class="chat-composer"><span class="cur">›</span> Message #operations…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Control surface -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">The control surface</span>
+          <h2>Everything a human holds.</h2>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature"><h3>Approvals (HITL)</h3><p>Consequential actions are gated, an agent initiates, a human approves. Cards appear inline with full context and Approve / Deny.</p></article>
+          <article class="feature"><h3>Autonomy dial</h3><p>Per workspace and action-class: <b>suggest-only → one-click → auto-with-notify</b>. Keep money on suggest-only while routine drafting runs automatically.</p></article>
+          <article class="feature"><h3>Spend caps &amp; model ceiling</h3><p>Ceilings per task / agent / squad / workspace. A model-tier cap (never Opus; Sonnet ceiling; cheap/local for volume) means cost can't silently balloon.</p></article>
+          <article class="feature"><h3>Stop &amp; rate-limit</h3><p>Stop any turn, session, or the whole fleet, live from chat. Per-thread turn budgets cap runaway loops; pause the workspace at once.</p></article>
+          <article class="feature"><h3>Glass-box audit</h3><p>Every thought, tool, and dollar is a traced event in #events; a decisions ledger records every approval, durable and reviewable.</p></article>
+          <article class="feature"><h3>Roles &amp; permissions</h3><p>Owner / Admin / Member, plus scoped agents. The Warden has operator parity minus the human-only acts (approving gated actions, billing identity).</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gated set -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">What's gated by default</span>
+          <h2>The consequential set always asks first.</h2>
+        </div>
+        <div class="tbl-wrap reveal">
+          <table class="tbl">
+            <thead><tr><th>Class</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td>Money</td><td>Any spend or payment, refunds, plan / billing changes</td></tr>
+              <tr><td>Releases</td><td>Deploys to production, publishing</td></tr>
+              <tr><td>Outbound to customers</td><td>Emails, ticket replies, social posts, WhatsApp / SMS / DM, outbound phone calls</td></tr>
+              <tr><td>Destructive</td><td>Deleting data, dropping resources, removing members, deleting a workspace</td></tr>
+              <tr><td>Access</td><td>Granting credentials, connecting / disconnecting integrations</td></tr>
+              <tr><td>Org changes</td><td>Retiring agents (and, gated, creating them)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sovereignty -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Your workforce, your boundary</span>
+          <h2>Run it where your data is allowed to live.</h2>
+          <p>A capable agent workforce that runs entirely inside your walls is the wedge most agent platforms can't offer. Choose the boundary that fits your risk and compliance.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="dlabel">SaaS</div>
+            <h3>We host it</h3>
+            <p>The fastest start. Nomik-managed, region-pinnable. Cloud models (your keys or managed) or local-via-us.</p>
+          </article>
+          <article class="feature">
+            <div class="dlabel">Private cloud</div>
+            <h3>Your cloud account</h3>
+            <p>Runs inside your VPC and boundary. Your keys or local models in your own infrastructure.</p>
+          </article>
+          <article class="feature">
+            <div class="dlabel">On-prem</div>
+            <h3>Your data center</h3>
+            <p>Never leaves the building. Local / open models on your GPUs, for regulated, public-sector, and air-gapped environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local models + EU -->
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Any model, including your own</span>
+          <h2>No prompt, file, or secret has to leave your boundary.</h2>
+          <p class="lead">Engines are model-agnostic with a configurable endpoint, so an agent can point at a self-hosted, open-weights model instead of a cloud API. Combined with on-prem, your data never reaches a third-party provider.</p>
+          <ul class="bullets">
+            <li><b>Local / open models</b>: run the fleet on your own GPUs; bounded, flat compute cost.</li>
+            <li><b>Best-of-breed where you allow it</b>: frontier cloud model for the hard call, local models for high-volume work.</li>
+            <li><b>Even voice stays in</b>: self-hosted speech-to-text and text-to-speech keep call audio inside the boundary.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">EU &amp; GDPR</span>
+          <h2>Built for the regulated and the sovereign.</h2>
+          <p class="lead">Operate in-region with a compliance posture that auditors accept.</p>
+          <ul class="bullets">
+            <li><b>Data residency</b>: pin processing and storage to the EU or to your own infrastructure.</li>
+            <li><b>GDPR posture</b>: DPA, lawful basis, data-subject requests, retention controls.</li>
+            <li><b>Compliance-aware integrations</b>: respect e-invoicing networks, VAT validation, and the like.</li>
+            <li><b>Isolation &amp; vault</b>: each agent in its own container; secrets scoped to the workspace, granted by you, never held unapproved.</li>
+          </ul>
+          <a class="more-link" href="pricing.html">See deployment tiers &amp; pricing →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <h2>An AI workforce your auditors can live with.</h2>
+          <p>Talk to us about private-cloud and on-prem deployments on your own models.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Get early access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

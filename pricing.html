@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing &amp; Deployment · Nomik</title>
+  <meta name="description" content="Pricing that respects what an agent actually costs: bring your own keys, managed usage, or run local models with no per-token cost. Deploy as SaaS, private cloud, or on-prem." />
+  <meta name="theme-color" content="#2b2d31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html" class="active">Pricing</a>
+      </nav>
+      <div class="nav-cta"><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Pricing &amp; Deployment</span>
+        <h1>Pricing that respects what an agent actually costs.</h1>
+        <p>An agent seat consumes model inference every turn, a real, variable cost. So you choose how to handle it: bring your own keys, let us meter it, or run local models with no per-token cost at all.</p>
+      </div>
+    </section>
+
+    <!-- Model modes -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Three model modes</span>
+          <h2>The inference-cost lever is yours.</h2>
+          <p>Nomik is model-agnostic, so you pick the mode that fits your budget, scale, and sovereignty, and most teams mix them.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="dlabel">BYO-key</div>
+            <h3>Pass-through</h3>
+            <p>Connect your own provider keys (Anthropic / OpenAI / Google) and pay the provider directly. No usage margin. Best for cost-conscious teams who already have keys.</p>
+          </article>
+          <article class="feature">
+            <div class="dlabel">Managed</div>
+            <h3>Metered</h3>
+            <p>We provide model access and bill usage (credits / agent-turns), with spend caps. The simplest path, no key wrangling.</p>
+          </article>
+          <article class="feature">
+            <div class="dlabel">Local</div>
+            <h3>Self-hosted</h3>
+            <p>Run open-weights models on your own compute, <b>no per-token API cost</b>. Best for high-volume and sovereignty; you provide the GPUs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan tiers -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Plans</span>
+          <h2>Start free. Scale into a workforce.</h2>
+          <p>Illustrative shapes for early access, final pricing is being set with our first teams.</p>
+        </div>
+        <div class="price-grid reveal">
+          <article class="price-card">
+            <div class="pname">Free</div>
+            <div class="pwho">Try it solo.</div>
+            <div class="pprice">€0</div>
+            <ul>
+              <li>1 workspace</li>
+              <li>Capped agents &amp; spend</li>
+              <li>BYO-key or small allowance</li>
+              <li>The full glass box</li>
+            </ul>
+            <a class="btn btn-ghost" href="index.html#waitlist">Get early access</a>
+          </article>
+          <article class="price-card featured">
+            <div class="pname">Pro <span class="pill-tag">Popular</span></div>
+            <div class="pwho">Solo founders &amp; small teams.</div>
+            <div class="pprice">Per seat <small>+ your keys</small></div>
+            <ul>
+              <li>Full squads &amp; integrations</li>
+              <li>Triggers &amp; automations</li>
+              <li>Spend caps &amp; model ceiling</li>
+              <li>BYO-key or metered usage</li>
+            </ul>
+            <a class="btn btn-primary" href="index.html#waitlist">Get early access</a>
+          </article>
+          <article class="price-card">
+            <div class="pname">Team</div>
+            <div class="pwho">Growing teams.</div>
+            <div class="pprice">Seats <small>+ usage</small></div>
+            <ul>
+              <li>Roles &amp; RBAC</li>
+              <li>Usage allowance + overage</li>
+              <li>Priority support</li>
+              <li>Region pinning</li>
+            </ul>
+            <a class="btn btn-ghost" href="index.html#waitlist">Get early access</a>
+          </article>
+          <article class="price-card">
+            <div class="pname">Enterprise</div>
+            <div class="pwho">Regulated &amp; sovereignty.</div>
+            <div class="pprice">License <small>+ support</small></div>
+            <ul>
+              <li>Private cloud or on-prem</li>
+              <li>Local / open models</li>
+              <li>SSO/SAML, audit, DPA</li>
+              <li>Dedicated support</li>
+            </ul>
+            <a class="btn btn-ghost" href="index.html#waitlist">Talk to us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment tiers -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Deployment</span>
+          <h2>Where it runs is a feature, not a footnote.</h2>
+        </div>
+        <div class="tbl-wrap reveal">
+          <table class="tbl">
+            <thead><tr><th>Tier</th><th>Hosted in</th><th>Data boundary</th><th>Models</th><th>For</th></tr></thead>
+            <tbody>
+              <tr><td>SaaS</td><td>Nomik's cloud</td><td>Nomik-managed, region-pinnable</td><td>Cloud (BYO-key or managed) or local-via-us</td><td>Most teams, fastest start</td></tr>
+              <tr><td>Private cloud</td><td>Your cloud account</td><td>Your boundary / VPC</td><td>Your keys or local models in your VPC</td><td>Security-conscious, existing cloud</td></tr>
+              <tr><td>On-prem</td><td>Your data center</td><td><b>Never leaves the building</b></td><td>Local / open models on your GPUs</td><td>Regulated, public sector, air-gapped</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost control -->
+    <section class="band">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">No surprises</span>
+          <h2>Cost is controllable by design.</h2>
+          <p class="lead">Pricing only works if cost is visible and bounded. The org's lean design, cheapest capable model per role, just-in-time staffing, idle agents resting, is itself a cost strategy.</p>
+          <ul class="bullets">
+            <li><b>Spend caps</b> per task / agent / squad / workspace / time window.</li>
+            <li><b>Model ceiling</b>: never Opus; Sonnet is the cap; cheap or local models for volume.</li>
+            <li><b>Cost on every turn</b>: rolled up per agent, squad, and workspace.</li>
+            <li><b>Cost scales with work done</b>: not with fleet size sitting idle.</li>
+          </ul>
+          <a class="more-link" href="security.html">See the full control surface →</a>
+        </div>
+        <div class="faq">
+          <details open><summary>How does pricing handle model cost?</summary><p>Three ways: bring your own keys (pay the provider directly), let us meter managed usage, or run local models for no per-token cost. Most teams mix a frontier model for hard calls with cheap/local models for volume.</p></details>
+          <details><summary>Can I use my own models?</summary><p>Yes. Engines take a configurable endpoint, so an agent can point at a self-hosted, OpenAI-compatible model on your own GPUs, no vendor lock-in.</p></details>
+          <details><summary>Can I run it on-prem?</summary><p>Yes, fully on-prem in your data center, on local models, so no prompt, file, or secret leaves your boundary.</p></details>
+          <details><summary>Will my data train anyone's model?</summary><p>No. With local models and on-prem deployment, your data never reaches a third-party provider at all.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <h2>Find the shape that fits your business.</h2>
+          <p>Join the waitlist, we'll help you pick the model mode and deployment that fit.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Get early access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
