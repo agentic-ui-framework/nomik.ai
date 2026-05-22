@@ -26,10 +26,14 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
 
 // Foreground corner "sparkle" logos — in hero areas (and any .has-accents section).
 (function accents() {
-  // AI, voice & agent brands — the most recognizable, used (in order) on hero areas.
-  const HERO_SET = ["claude", "googlegemini", "mistralai", "meta", "x", "deepseek",
-    "perplexity", "huggingface", "elevenlabs", "deepgram", "livekit", "langchain",
-    "ollama", "nvidia"];
+  // Hero pool: AI / voice / agent + notable French & US startup SaaS (real logos).
+  // Shuffled per page so each page's hero shows a different mix.
+  const HERO_POOL = [
+    "claude", "googlegemini", "mistralai", "meta", "x", "deepseek", "perplexity",
+    "huggingface", "elevenlabs", "deepgram", "livekit", "langchain", "nvidia", "replicate",
+    "aircall", "brevo", "prestashop", "dataiku", "deezer", "algolia", "lydia",
+    "stripe", "notion", "figma", "linear", "vercel", "airtable", "webflow", "dropbox",
+    "brex", "retool", "framer", "datadog", "sentry", "posthog", "intercom"];
   // Peripheral placements that stay clear of the centered headline.
   const POS = [
     { top: "8%", left: "5%", s: 48, r: -8 },
@@ -48,7 +52,7 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
   document.querySelectorAll(".hero, .page-hero, .has-accents").forEach((el) => {
     if (el.querySelector(".fg-logo")) return;
     const isHero = el.matches(".hero, .page-hero");
-    const pool = isHero ? HERO_SET : [...LOGO_SET].sort(() => Math.random() - 0.5);
+    const pool = [...(isHero ? HERO_POOL : LOGO_SET)].sort(() => Math.random() - 0.5);
     POS.forEach((p, i) => {
       const d = document.createElement("div");
       d.className = "fg-logo";

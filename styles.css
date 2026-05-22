@@ -334,15 +334,15 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
   .loop-arrow { display: none; }
 }
 
-.integrations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-.int-group { background: var(--background); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem; }
+.integrations-grid { columns: 16rem; column-gap: 1.1rem; }
+.int-group { background: var(--background); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem; break-inside: avoid; margin-bottom: 1.1rem; }
 .int-group h3 {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--muted-foreground); margin-bottom: 0.85rem;
 }
-.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chips { display: flex; flex-direction: column; gap: 0.4rem; align-items: stretch; }
 .intlogo {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
   font-size: 0.85rem; font-weight: 500; color: var(--gray-200);
   background: var(--gray-750); border: 1px solid var(--gray-700); border-radius: 0.55rem;
   padding: 0.3rem 0.65rem 0.3rem 0.3rem; transition: border-color .15s ease;
