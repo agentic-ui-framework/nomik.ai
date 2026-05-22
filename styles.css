@@ -190,7 +190,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .chat-body { padding: 0.6rem 1rem 0.25rem; display: flex; flex-direction: column; gap: 0.95rem; }
 
 .msg { display: grid; grid-template-columns: 36px 1fr; gap: 0.7rem; }
-.avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 0.78rem; font-weight: 700; color: #fff; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 0.78rem; font-weight: 700; color: #fff; flex-shrink: 0; aspect-ratio: 1; overflow: hidden; }
 .msg-body { min-width: 0; }
 .msg-top { display: flex; align-items: baseline; gap: 0.5rem; }
 .msg-name { font-weight: 700; font-size: 0.92rem; }
@@ -260,7 +260,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 
 /* member avatar cluster in the channel header */
 .chat-head .members { display: inline-flex; align-items: center; }
-.mini { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 0.6rem; font-weight: 700; color: #fff; border: 2px solid var(--card); margin-left: -6px; }
+.mini { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 0.6rem; font-weight: 700; color: #fff; border: 2px solid var(--card); margin-left: -6px; flex-shrink: 0; aspect-ratio: 1; }
 .mini:first-child { margin-left: 0; }
 
 /* outcome row — the loop closing (human approved → action taken) */
