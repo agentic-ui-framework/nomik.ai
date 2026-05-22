@@ -26,17 +26,25 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
 
 // Foreground corner "sparkle" logos — in hero areas (and any .has-accents section).
 (function accents() {
+  // The most recognizable, widely-used brands — used (in order) on hero areas.
+  const HERO_SET = ["stripe", "github", "figma", "notion", "shopify", "hubspot", "gmail",
+    "dropbox", "paypal", "cloudflare", "claude", "linear"];
+  // Peripheral placements that stay clear of the centered headline.
   const POS = [
-    { top: "9%", left: "4%", s: 46, r: -8 },
-    { top: "15%", right: "5%", s: 38, r: 9 },
-    { bottom: "15%", left: "7%", s: 42, r: 7 },
-    { bottom: "10%", right: "4.5%", s: 50, r: -7 },
-    { top: "46%", left: "1.5%", s: 34, r: 6 },
-    { bottom: "40%", right: "1.5%", s: 34, r: -5 },
+    { top: "8%", left: "5%", s: 48, r: -8 },
+    { top: "11%", left: "30%", s: 32, r: 6 },
+    { top: "9%", right: "27%", s: 30, r: -5 },
+    { top: "14%", right: "6%", s: 42, r: 9 },
+    { top: "45%", left: "2.5%", s: 34, r: 5 },
+    { top: "50%", right: "2.5%", s: 36, r: -6 },
+    { bottom: "16%", left: "7%", s: 44, r: 7 },
+    { bottom: "11%", left: "32%", s: 30, r: -6 },
+    { bottom: "10%", right: "5%", s: 50, r: -7 },
   ];
   document.querySelectorAll(".hero, .page-hero, .has-accents").forEach((el) => {
     if (el.querySelector(".fg-logo")) return;
-    const pool = [...LOGO_SET].sort(() => Math.random() - 0.5);
+    const isHero = el.matches(".hero, .page-hero");
+    const pool = isHero ? HERO_SET : [...LOGO_SET].sort(() => Math.random() - 0.5);
     POS.forEach((p, i) => {
       const d = document.createElement("div");
       d.className = "fg-logo";
