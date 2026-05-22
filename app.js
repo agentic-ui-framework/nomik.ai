@@ -4,6 +4,24 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Faded logo backdrop — drift behind CTAs + any .has-bg section (skips ones already set).
+(function bgLogos() {
+  const SET = ["stripe","github","notion","shopify","hubspot","zendesk","intercom","linear","jira",
+    "figma","dropbox","adyen","paypal","klarna","wise","asana","trello","confluence","gitlab",
+    "sentry","datadog","cloudflare","mailchimp","snowflake","claude","googlegemini","gmail",
+    "woocommerce","hubspot","notion","slack"].filter((s) => s !== "slack");
+  document.querySelectorAll(".cta, .has-bg").forEach((el) => {
+    el.classList.add("has-bg");
+    if (el.querySelector(".bg-logos")) return;
+    const pick = [...SET].sort(() => Math.random() - 0.5).slice(0, 24);
+    const div = document.createElement("div");
+    div.className = "bg-logos";
+    div.setAttribute("aria-hidden", "true");
+    div.innerHTML = pick.map((s) => `<img src="logos/${s}.svg" alt="">`).join("");
+    el.insertAdjacentElement("afterbegin", div);
+  });
+})();
+
 // Mobile nav — inject a hamburger toggle (so every page gets it without markup changes).
 (function initMobileNav() {
   const nav = document.querySelector(".nav");

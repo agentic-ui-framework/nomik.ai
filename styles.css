@@ -141,8 +141,8 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 /* ── Hero ── */
 .hero { position: relative; min-height: calc(100svh - 4rem); display: flex; align-items: center; padding-block: clamp(2.5rem, 7vh, 5rem); overflow: hidden; }
 .hero::before {
-  content: ""; position: absolute; inset: -20% 0 auto 50%; transform: translateX(-50%);
-  width: 900px; height: 600px; pointer-events: none;
+  content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(900px, 120%); height: 620px; pointer-events: none;
   background: radial-gradient(50% 50% at 50% 50%, hsl(235 86% 65% / 0.22), transparent 70%);
   filter: blur(8px);
 }
@@ -351,7 +351,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .ilogo { width: 26px; height: 26px; border-radius: 0.4rem; background: #fff; display: grid; place-items: center; flex-shrink: 0; }
 .ilogo img { width: 17px; height: 17px; object-fit: contain; display: block; }
 .ilogo .mono { font-family: var(--font-sans); background: none; padding: 0; border-radius: 0; font-size: 0.82rem; font-weight: 800; line-height: 1; }
-.int-foot { margin-top: 1.75rem; color: var(--muted-foreground); font-size: 0.95rem; text-align: center; }
+.int-foot { margin-top: 1.75rem; color: var(--muted-foreground); font-size: 0.95rem; text-align: center; max-width: 60ch; margin-inline: auto; }
 .mono { font-family: var(--font-mono); font-size: 0.86em; color: var(--gray-200); background: var(--gray-800); padding: 0.05rem 0.35rem; border-radius: 0.35rem; }
 
 /* ── Waitlist CTA ── */
@@ -512,3 +512,18 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .marquee-row { animation: none !important; width: auto; flex-wrap: wrap; justify-content: center; }
 }
+
+/* ── Faded logo backdrop (decorative, behind a section) ── */
+.has-bg { position: relative; overflow: hidden; }
+.has-bg > .wrap { position: relative; z-index: 1; }
+.bg-logos {
+  position: absolute; inset: -3%; z-index: 0; pointer-events: none;
+  display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: clamp(1.75rem, 5vw, 4.25rem); padding: clamp(1.5rem, 5vw, 4rem);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent);
+  animation: bg-drift 55s ease-in-out infinite alternate; will-change: transform;
+}
+.bg-logos img { width: 38px; height: 38px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.06; }
+@keyframes bg-drift { from { transform: translate3d(-2%, -1.2%, 0); } to { transform: translate3d(2%, 1.2%, 0); } }
+@media (prefers-reduced-motion: reduce) { .bg-logos { animation: none; } }
