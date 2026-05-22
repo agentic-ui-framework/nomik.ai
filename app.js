@@ -26,14 +26,15 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
 
 // Foreground corner "sparkle" logos — in hero areas (and any .has-accents section).
 (function accents() {
-  // Hero pool: AI / voice / agent + notable French & US startup SaaS (real logos).
+  // Hero pool: mainstream tools a startup actually uses — main AI/voice + popular SaaS.
   // Shuffled per page so each page's hero shows a different mix.
   const HERO_POOL = [
-    "claude", "googlegemini", "mistralai", "meta", "x", "deepseek", "perplexity",
-    "huggingface", "elevenlabs", "deepgram", "livekit", "langchain", "nvidia", "replicate",
-    "aircall", "brevo", "prestashop", "dataiku", "deezer", "algolia", "lydia",
-    "stripe", "notion", "figma", "linear", "vercel", "airtable", "webflow", "dropbox",
-    "brex", "retool", "framer", "datadog", "sentry", "posthog", "intercom"];
+    "claude", "googlegemini", "mistralai", "meta", "perplexity", "huggingface",
+    "elevenlabs", "deepgram", "livekit", "deepseek",
+    "stripe", "github", "gitlab", "notion", "figma", "linear", "vercel", "gmail",
+    "googledrive", "hubspot", "intercom", "zendesk", "shopify", "mailchimp", "brevo",
+    "airtable", "asana", "trello", "dropbox", "sentry", "datadog", "cloudflare",
+    "posthog", "calendly", "webflow", "aircall", "paypal", "confluence"];
   // Peripheral placements that stay clear of the centered headline.
   const POS = [
     { top: "8%", left: "5%", s: 48, r: -8 },
