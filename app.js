@@ -4,21 +4,49 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Shared set of real logos used by the decorative backdrops + accents.
+const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","intercom","linear","jira",
+  "figma","dropbox","adyen","paypal","klarna","wise","asana","trello","confluence","gitlab",
+  "sentry","datadog","cloudflare","mailchimp","snowflake","claude","googlegemini","gmail",
+  "woocommerce","webflow","mongodb","vercel","airtable","calendly","posthog","elevenlabs"];
+
 // Faded logo backdrop — drift behind CTAs + any .has-bg section (skips ones already set).
 (function bgLogos() {
-  const SET = ["stripe","github","notion","shopify","hubspot","zendesk","intercom","linear","jira",
-    "figma","dropbox","adyen","paypal","klarna","wise","asana","trello","confluence","gitlab",
-    "sentry","datadog","cloudflare","mailchimp","snowflake","claude","googlegemini","gmail",
-    "woocommerce","hubspot","notion","slack"].filter((s) => s !== "slack");
   document.querySelectorAll(".cta, .has-bg").forEach((el) => {
     el.classList.add("has-bg");
     if (el.querySelector(".bg-logos")) return;
-    const pick = [...SET].sort(() => Math.random() - 0.5).slice(0, 24);
+    const pick = [...LOGO_SET].sort(() => Math.random() - 0.5).slice(0, 24);
     const div = document.createElement("div");
     div.className = "bg-logos";
     div.setAttribute("aria-hidden", "true");
     div.innerHTML = pick.map((s) => `<img src="logos/${s}.svg" alt="">`).join("");
     el.insertAdjacentElement("afterbegin", div);
+  });
+})();
+
+// Foreground corner "sparkle" logos — in hero areas (and any .has-accents section).
+(function accents() {
+  const POS = [
+    { top: "9%", left: "4%", s: 46, r: -8 },
+    { top: "15%", right: "5%", s: 38, r: 9 },
+    { bottom: "15%", left: "7%", s: 42, r: 7 },
+    { bottom: "10%", right: "4.5%", s: 50, r: -7 },
+    { top: "46%", left: "1.5%", s: 34, r: 6 },
+    { bottom: "40%", right: "1.5%", s: 34, r: -5 },
+  ];
+  document.querySelectorAll(".hero, .page-hero, .has-accents").forEach((el) => {
+    if (el.querySelector(".fg-logo")) return;
+    const pool = [...LOGO_SET].sort(() => Math.random() - 0.5);
+    POS.forEach((p, i) => {
+      const d = document.createElement("div");
+      d.className = "fg-logo";
+      d.setAttribute("aria-hidden", "true");
+      const pos = ["top", "bottom", "left", "right"].map((k) => (p[k] ? `${k}:${p[k]};` : "")).join("");
+      d.style.cssText = `width:${p.s}px;height:${p.s}px;${pos}--r:${p.r}deg;transform:rotate(${p.r}deg);` +
+        `animation:fg-float ${6 + i * 0.6}s ease-in-out ${(i * 0.5).toFixed(1)}s infinite;`;
+      d.innerHTML = `<img src="logos/${pool[i % pool.length]}.svg" alt="" width="${Math.round(p.s * 0.5)}" height="${Math.round(p.s * 0.5)}">`;
+      el.appendChild(d);
+    });
   });
 })();
 

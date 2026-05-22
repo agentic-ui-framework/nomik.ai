@@ -527,3 +527,14 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .bg-logos img { width: 38px; height: 38px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.06; }
 @keyframes bg-drift { from { transform: translate3d(-2%, -1.2%, 0); } to { transform: translate3d(2%, 1.2%, 0); } }
 @media (prefers-reduced-motion: reduce) { .bg-logos { animation: none; } }
+
+/* ── Foreground logo accents (corner sparkle) ── */
+.hero > .wrap, .page-hero > .wrap { z-index: 2; }
+.fg-logo {
+  position: absolute; z-index: 1; border-radius: 0.7rem; background: #fff;
+  display: grid; place-items: center; box-shadow: var(--shadow-lg); pointer-events: none;
+}
+.fg-logo img { object-fit: contain; }
+@keyframes fg-float { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-12px) rotate(var(--r, 0deg)); } }
+@media (prefers-reduced-motion: reduce) { .fg-logo { animation: none !important; } }
+@media (max-width: 760px) { .fg-logo { display: none; } }
