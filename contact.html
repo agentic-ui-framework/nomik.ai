@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact &amp; demo · Nomik</title>
+  <meta name="description" content="Talk to us about Nomik. Tell us about your team, your use case, and where you need it to run, SaaS, private cloud, or on-prem. We'll get back within a business day." />
+  <meta name="theme-color" content="#2b2d31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <div class="nav-cta"><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Contact &amp; demo</span>
+        <h1>Talk to us about your fleet.</h1>
+        <p>Tell us about your team, your use case, and where you need it to run. We'll get back within a business day to set up a demo and a workspace.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">What to expect</span>
+          <h2>A real conversation, then a working demo.</h2>
+          <p class="lead">No deck-only call. We'll spin up a workspace with a squad shaped for your business, wire one of your tools, and walk through a flow you actually care about.</p>
+          <ul class="bullets">
+            <li><b>Demo</b>: a live workspace with a squad picked for your function and stack.</li>
+            <li><b>Deployment</b>: SaaS, private cloud, or on-prem, including local models on your GPUs.</li>
+            <li><b>Pricing</b>: shaped to your team size, seats, and where you want it to run.</li>
+          </ul>
+          <p class="lead">Just looking around? <a href="index.html#waitlist" style="color:var(--blurple-500);font-weight:600">Join the waitlist</a> instead, we'll reach out as spots open.</p>
+        </div>
+        <div>
+          <!-- TODO operator: create Formspree contact form and replace the action URL below -->
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/REPLACE_WITH_CONTACT_FORM_ID" method="POST" novalidate>
+            <div class="field">
+              <label for="cf-name">Your name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Work email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-company">Company</label>
+              <input id="cf-company" name="company" type="text" autocomplete="organization" required />
+            </div>
+            <fieldset class="field">
+              <legend>Team size</legend>
+              <div class="radio-row">
+                <label class="radio"><input type="radio" name="team_size" value="1" required /><span>1</span></label>
+                <label class="radio"><input type="radio" name="team_size" value="2-10" /><span>2&ndash;10</span></label>
+                <label class="radio"><input type="radio" name="team_size" value="11-50" /><span>11&ndash;50</span></label>
+                <label class="radio"><input type="radio" name="team_size" value="50+" /><span>50+</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="cf-usecase">Use case</label>
+              <textarea id="cf-usecase" name="use_case" rows="4" minlength="30" required placeholder="What would you have the fleet do? Which function, which tools, which kind of work?"></textarea>
+              <span class="field-hint">At least 30 characters.</span>
+            </div>
+            <fieldset class="field">
+              <legend>Sovereignty preference</legend>
+              <div class="radio-col">
+                <label class="radio"><input type="radio" name="sovereignty" value="saas" required /><span>SaaS is fine</span></label>
+                <label class="radio"><input type="radio" name="sovereignty" value="on-prem" /><span>On-prem only</span></label>
+                <label class="radio"><input type="radio" name="sovereignty" value="unsure" /><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+            <p class="form-msg" id="contact-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="product.html">Product</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

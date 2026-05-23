@@ -388,6 +388,31 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .waitlist.is-done + .form-msg { display: none; }
 @media (max-width: 480px) { .waitlist { flex-direction: column; } }
 
+/* ── Contact form ── */
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 2.5vw, 1.75rem); }
+.contact-form .field { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+.contact-form label, .contact-form legend { font-size: 0.82rem; font-weight: 600; color: var(--gray-200); padding: 0; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+  width: 100%; padding: 0.75rem 0.9rem; border-radius: calc(var(--radius) - 0.2rem);
+  background: var(--gray-700); border: 1px solid var(--gray-700); color: var(--gray-100);
+  font-family: inherit; font-size: 0.95rem; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.contact-form textarea { resize: vertical; min-height: 6rem; line-height: 1.5; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--gray-500); }
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px hsl(235 86% 65% / 0.2);
+}
+.contact-form fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-form .radio-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.contact-form .radio-col { display: flex; flex-direction: column; gap: 0.4rem; }
+.contact-form .radio { display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.55rem 0.9rem; border: 1px solid var(--gray-700); border-radius: calc(var(--radius) - 0.25rem); background: var(--gray-700); font-size: 0.92rem; color: var(--gray-100); transition: border-color .15s ease, background .15s ease; }
+.contact-form .radio:hover { border-color: var(--gray-650); }
+.contact-form .radio input { accent-color: var(--blurple-500); margin: 0; }
+.contact-form .radio:has(input:checked) { border-color: var(--blurple-500); background: hsl(235 86% 65% / 0.12); }
+.contact-form .field-hint { font-size: 0.8rem; color: var(--muted-foreground); }
+.contact-form .form-actions { display: flex; align-items: center; gap: 0.75rem; }
+.contact-form.is-done > *:not(.form-msg) { display: none; }
+
 /* ── Footer ── */
 .footer { border-top: 1px solid var(--border); padding-block: 2.5rem; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }

@@ -204,3 +204,54 @@ if (form && msg) form.addEventListener("submit", async (ev) => {
     msg.className = "form-msg err";
   }
 });
+
+// Contact form (contact.html). Posts to a Formspree endpoint set on the <form action="">.
+// Validates client-side, swaps to a success message inline (not a toast).
+const contactForm = document.getElementById("contact-form");
+const contactMsg = document.getElementById("contact-msg");
+
+if (contactForm && contactMsg) contactForm.addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const data = new FormData(contactForm);
+  const name = (data.get("name") ?? "").toString().trim();
+  const email = (data.get("email") ?? "").toString().trim();
+  const company = (data.get("company") ?? "").toString().trim();
+  const teamSize = (data.get("team_size") ?? "").toString();
+  const useCase = (data.get("use_case") ?? "").toString().trim();
+  const sovereignty = (data.get("sovereignty") ?? "").toString();
+
+  const fail = (text) => {
+    contactMsg.textContent = text;
+    contactMsg.className = "form-msg err";
+  };
+
+  if (!name) return fail("Please add your name.");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("Please enter a valid work email.");
+  if (!company) return fail("Please add your company.");
+  if (!teamSize) return fail("Pick a team size.");
+  if (useCase.length < 30) return fail("Tell us a bit more about the use case (30+ characters).");
+  if (!sovereignty) return fail("Pick a sovereignty preference.");
+
+  const action = contactForm.getAttribute("action") || "";
+  const btn = contactForm.querySelector('button[type="submit"]');
+  if (btn) btn.disabled = true;
+
+  try {
+    if (action && !action.includes("REPLACE_WITH_")) {
+      const res = await fetch(action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (!res.ok) throw new Error(String(res.status));
+    } else {
+      console.info("[contact] captured (endpoint not yet wired):", { name, email, company, teamSize, sovereignty });
+    }
+    contactForm.classList.add("is-done");
+    contactMsg.textContent = "Thanks, we'll get back within a business day.";
+    contactMsg.className = "form-msg ok";
+  } catch {
+    if (btn) btn.disabled = false;
+    fail("Something went wrong, try again in a moment.");
+  }
+});
