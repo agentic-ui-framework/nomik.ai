@@ -409,6 +409,16 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .waitlist.is-done + .form-msg { display: none; }
 @media (max-width: 480px) { .waitlist { flex-direction: column; } }
 
+/* ── Demo-coming-soon (placeholder for a future Loom / YouTube embed) ── */
+.demo-coming-soon { padding-block: clamp(2rem, 5vw, 4rem); }
+.demo-soon-card {
+  max-width: 720px; margin-inline: auto; text-align: center;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: clamp(1.75rem, 4vw, 2.5rem); box-shadow: var(--shadow-sm);
+}
+.demo-soon-card h2 { font-size: clamp(1.45rem, 3vw, 1.95rem); margin-block: 0.5rem 0.75rem; }
+.demo-soon-card p { color: var(--muted-foreground); margin-bottom: 1.4rem; }
+
 /* ── Contact form ── */
 .contact-form { display: flex; flex-direction: column; gap: 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 2.5vw, 1.75rem); }
 .contact-form .field { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
