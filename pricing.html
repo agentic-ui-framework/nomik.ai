@@ -22,6 +22,46 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles.css" />
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does pricing handle model cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three ways: bring your own keys (pay the provider directly), let us meter managed usage, or run local models for no per-token cost. Most teams mix a frontier model for hard calls with cheap/local models for volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use my own models?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Engines take a configurable endpoint, so an agent can point at a self-hosted, OpenAI-compatible model on your own GPUs, no vendor lock-in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I run it on-prem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully on-prem in your data center, on local models, so no prompt, file, or secret leaves your boundary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my data train anyone's model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. With local models and on-prem deployment, your data never reaches a third-party provider at all."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="nav">
