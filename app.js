@@ -159,10 +159,11 @@ function initCarousel(root) {
 
 // Waitlist form.
 //
-// No backend yet (the app is dev-phase). This validates + confirms client-side.
-// To capture for real, set WAITLIST_ENDPOINT to a POST URL that accepts { email }
-// (e.g. Formspree, or the auth-service once a /v1/waitlist route exists).
-const WAITLIST_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxx"
+// Posts { email } to Formspree (zero-backend), which forwards to the inbox
+// configured on the form and tracks submissions. To switch to the auth-service
+// once a /v1/waitlist route exists, swap WAITLIST_ENDPOINT.
+// TODO operator: create Formspree form at https://formspree.io and replace ID
+const WAITLIST_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID";
 
 const form = document.getElementById("waitlist-form");
 const msg = document.getElementById("form-msg");
@@ -180,8 +181,10 @@ if (form && msg) form.addEventListener("submit", async (ev) => {
   const btn = form.querySelector("button");
   btn.disabled = true;
 
+  const endpointWired = WAITLIST_ENDPOINT && !WAITLIST_ENDPOINT.includes("REPLACE_WITH_");
+
   try {
-    if (WAITLIST_ENDPOINT) {
+    if (endpointWired) {
       const res = await fetch(WAITLIST_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -189,14 +192,15 @@ if (form && msg) form.addEventListener("submit", async (ev) => {
       });
       if (!res.ok) throw new Error(String(res.status));
     } else {
-      console.info("[waitlist] captured (no endpoint wired):", email);
+      // Endpoint not yet wired, capture in console so we don't lose the signal during launch.
+      console.info("[waitlist] captured (endpoint not yet wired):", email);
     }
     form.classList.add("is-done");
     msg.textContent = "You're on the list. We'll be in touch soon.";
     msg.className = "form-msg ok";
   } catch {
     btn.disabled = false;
-    msg.textContent = "Something went wrong — try again in a moment.";
+    msg.textContent = "Something went wrong, try again in a moment.";
     msg.className = "form-msg err";
   }
 });
