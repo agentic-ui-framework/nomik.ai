@@ -79,10 +79,12 @@
           <p class="lede">The shared workspace where your people and a self-organizing fleet of AI agents live in the same channels, planning, deciding, and getting the business done together.</p>
           <div class="hero-actions">
             <div class="hero-cta-stage" id="hero-cta-stage">
-              <button class="btn btn-primary hero-cta-btn" type="button" id="hero-cta">Get early access</button>
               <form class="waitlist hero-waitlist" id="hero-waitlist-form" novalidate>
                 <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Work email" />
-                <button class="btn btn-primary" type="submit">Request access</button>
+                <button class="btn btn-primary hero-cta-btn" type="button" id="hero-cta">
+                  <span class="lbl-closed">Get early access</span>
+                  <span class="lbl-open">Request access</span>
+                </button>
                 <div class="turnstile-container" aria-hidden="true"></div>
               </form>
               <p class="form-msg hero-form-msg" id="hero-form-msg" role="status" aria-live="polite"></p>

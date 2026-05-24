@@ -397,33 +397,55 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .waitlist .turnstile-container:not(:empty) { margin-top: 0.6rem; }
 
 /* Hero inline CTA → form transition.
-   Button disappears, input slides in from the left, submit fades in slightly after. */
+   The button stays put and morphs label; the input grows in beside it, smoothly pushing the button right. */
 .hero-cta-stage { position: relative; max-width: 30rem; }
 .hero-cta-stage.is-open { flex-basis: 100%; }
-.hero-cta-stage .hero-waitlist { display: none; margin-inline: 0; }
-.hero-cta-stage.is-open .hero-cta-btn { display: none; }
-.hero-cta-stage.is-open .hero-waitlist { display: flex; }
+.hero-waitlist { margin-inline: 0; }
+
+/* Input is collapsed by default — width:0 with hidden border/padding so it disappears entirely.
+   When .is-open is added, it grows to fill the row, gently pushing the button right. */
+.hero-waitlist input[type="email"] {
+  flex: 1;
+  max-width: 0;
+  min-width: 0;
+  padding-inline: 0;
+  border-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-width 0.8s cubic-bezier(.22, .68, .14, 1),
+    padding-inline 0.8s cubic-bezier(.22, .68, .14, 1),
+    border-width 0.5s ease,
+    opacity 0.5s 0.25s ease;
+}
 .hero-cta-stage.is-open .hero-waitlist input[type="email"] {
-  animation: heroInputSlideIn 0.85s cubic-bezier(.22, .68, .14, 1) both;
+  max-width: 100%;
+  padding-inline: 1rem;
+  border-width: 1px;
+  opacity: 1;
 }
-.hero-cta-stage.is-open .hero-waitlist button[type="submit"] {
-  animation: heroSubmitFadeIn 0.65s 0.3s cubic-bezier(.22, .68, .14, 1) both;
+
+/* Button label cross-fades from "Get early access" to "Request access" in place. */
+.hero-cta-btn { position: relative; }
+.hero-cta-btn .lbl-closed,
+.hero-cta-btn .lbl-open { transition: opacity 0.3s ease; }
+.hero-cta-btn .lbl-open {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; white-space: nowrap;
 }
+.hero-cta-stage.is-open .hero-cta-btn .lbl-closed { opacity: 0; }
+.hero-cta-stage.is-open .hero-cta-btn .lbl-open { opacity: 1; }
+
 .hero-form-msg { margin-top: 0.6rem; min-height: 1.2em; font-size: 0.9rem; text-align: left; }
 .hero-form-msg.ok { color: var(--success); }
 .hero-form-msg.err { color: var(--status-red); }
 .hero-cta-stage .hero-waitlist.is-done { display: none; }
-@keyframes heroInputSlideIn {
-  from { opacity: 0; transform: translateX(-28px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-@keyframes heroSubmitFadeIn {
-  from { opacity: 0; transform: scale(0.94); }
-  to   { opacity: 1; transform: scale(1); }
-}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta-stage.is-open .hero-waitlist input[type="email"],
-  .hero-cta-stage.is-open .hero-waitlist button[type="submit"] { animation: none; }
+  .hero-waitlist input[type="email"],
+  .hero-cta-btn .lbl-closed,
+  .hero-cta-btn .lbl-open { transition: none; }
 }
 .waitlist input {
   flex: 1; height: 2.875rem; padding-inline: 1rem; border-radius: calc(var(--radius) - 0.1rem);

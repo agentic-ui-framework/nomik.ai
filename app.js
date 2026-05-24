@@ -288,16 +288,21 @@ function wireWaitlist(form, msg) {
 wireWaitlist(document.getElementById("waitlist-form"), document.getElementById("form-msg"));
 wireWaitlist(document.getElementById("hero-waitlist-form"), document.getElementById("hero-form-msg"));
 
-// Hero CTA → inline form reveal + autofocus.
+// Hero CTA → in-place form reveal. First click expands the input alongside the
+// button and converts the button from type=button to type=submit. Subsequent
+// clicks submit the form via the wireWaitlist handler above.
 const heroStage = document.getElementById("hero-cta-stage");
 const heroCta = document.getElementById("hero-cta");
 const heroFormEl = document.getElementById("hero-waitlist-form");
 if (heroStage && heroCta && heroFormEl) {
   heroCta.addEventListener("click", () => {
+    if (heroStage.classList.contains("is-open")) return;
     heroStage.classList.add("is-open");
+    heroCta.type = "submit";
     const input = heroFormEl.querySelector('input[type="email"]');
-    // Wait for the animation start so focus doesn't fight the transform.
-    requestAnimationFrame(() => input?.focus({ preventScroll: true }));
+    // Delay focus until the width transition has begun, otherwise iOS Safari
+    // re-scrolls the page to the (collapsed) input position.
+    setTimeout(() => input?.focus({ preventScroll: true }), 350);
   });
 }
 
