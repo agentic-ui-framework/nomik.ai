@@ -172,49 +172,34 @@ const TURNSTILE_SITEKEY = "0x4AAAAAADVjnrrRgwexBYuo";
 const endpointWired =
   !WAITLIST_ENDPOINT.includes("REPLACE_WITH_") && !TURNSTILE_SITEKEY.includes("REPLACE_WITH_");
 
-let turnstileWidgetId = null;
-let turnstilePending = null;
+// Turnstile loads with ?onload=onTurnstileReady; we just need the callback
+// to exist so the script doesn't error. Rendering happens on submit, not boot.
+window.onTurnstileReady = function () {};
 
-function bootTurnstile() {
-  if (!endpointWired || !window.turnstile || turnstileWidgetId != null) return;
-  const host = document.getElementById("turnstile-container");
-  if (!host) return;
-  turnstileWidgetId = window.turnstile.render(host, {
-    sitekey: TURNSTILE_SITEKEY,
-    execution: "execute",
-    callback: (token) => {
-      if (turnstilePending) {
-        turnstilePending.resolve(token);
-        turnstilePending = null;
-      }
-    },
-    "error-callback": () => {
-      if (turnstilePending) {
-        turnstilePending.resolve(null);
-        turnstilePending = null;
-      }
-    },
-    "expired-callback": () => {
-      if (turnstilePending) {
-        turnstilePending.resolve(null);
-        turnstilePending = null;
-      }
-    },
-  });
-}
-
-// Handle both load orders: if the Turnstile script lost the race and called
-// onTurnstileReady before this file ran, window.turnstile is already there
-// and we render now. If we won the race, the callback below will fire later.
-window.onTurnstileReady = bootTurnstile;
-bootTurnstile();
-
+// Render a fresh widget on each submit — shown only while verifying,
+// removed once done. No widget visible on page load.
 function getTurnstileToken() {
-  if (turnstileWidgetId == null || !window.turnstile) return Promise.resolve(null);
   return new Promise((resolve) => {
-    turnstilePending = { resolve };
-    window.turnstile.reset(turnstileWidgetId);
-    window.turnstile.execute(turnstileWidgetId);
+    if (!window.turnstile) return resolve(null);
+    const host = document.getElementById("turnstile-container");
+    if (!host) return resolve(null);
+
+    host.removeAttribute("hidden");
+    let widgetId = null;
+    const done = (token) => {
+      if (widgetId != null) {
+        try { window.turnstile.remove(widgetId); } catch {}
+      }
+      host.setAttribute("hidden", "");
+      resolve(token);
+    };
+
+    widgetId = window.turnstile.render(host, {
+      sitekey: TURNSTILE_SITEKEY,
+      callback: done,
+      "error-callback": () => done(null),
+      "expired-callback": () => done(null),
+    });
   });
 }
 
