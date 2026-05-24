@@ -412,16 +412,44 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
   opacity: 0;
   overflow: hidden;
   transition:
-    width 0.8s cubic-bezier(.22, .68, .14, 1),
-    padding-inline 0.8s cubic-bezier(.22, .68, .14, 1),
+    width 0.9s cubic-bezier(.16, .84, .44, 1),
+    padding-inline 0.9s cubic-bezier(.16, .84, .44, 1),
     border-width 0.5s ease,
-    opacity 0.5s 0.25s ease;
+    opacity 0.5s 0.3s ease;
 }
 .hero-cta-stage.is-open .hero-waitlist input[type="email"] {
-  width: clamp(9rem, 48vw, 17rem);
+  width: clamp(14rem, 55vw, 18rem);
   padding-inline: 1rem;
   border-width: 1px;
   opacity: 1;
+}
+
+/* Mobile: .waitlist already flips to column at ≤480px, so a width transition
+   doesn't read visually. Switch to a vertical reveal — input slides down into
+   place beneath the button as a full-width row. */
+@media (max-width: 480px) {
+  .hero-waitlist input[type="email"] {
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    border-width: 0;
+    opacity: 0;
+    transition:
+      height 0.5s cubic-bezier(.22, .68, .14, 1),
+      padding-block 0.5s cubic-bezier(.22, .68, .14, 1),
+      padding-inline 0.5s cubic-bezier(.22, .68, .14, 1),
+      border-width 0.4s ease,
+      opacity 0.4s 0.2s ease;
+  }
+  .hero-cta-stage.is-open .hero-waitlist input[type="email"] {
+    width: 100%;
+    height: 2.875rem;
+    padding-inline: 1rem;
+    border-width: 1px;
+    opacity: 1;
+  }
 }
 
 /* Button label cross-fades from "Get early access" to "Request access" in place. */
