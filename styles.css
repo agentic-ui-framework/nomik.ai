@@ -398,7 +398,8 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 
 /* Hero inline CTA → form transition.
    Button disappears, input slides in from the left, submit fades in slightly after. */
-.hero-cta-stage { position: relative; width: 100%; max-width: 30rem; }
+.hero-cta-stage { position: relative; max-width: 30rem; }
+.hero-cta-stage.is-open { flex-basis: 100%; }
 .hero-cta-stage .hero-waitlist { display: none; margin-inline: 0; }
 .hero-cta-stage.is-open .hero-cta-btn { display: none; }
 .hero-cta-stage.is-open .hero-waitlist { display: flex; }
