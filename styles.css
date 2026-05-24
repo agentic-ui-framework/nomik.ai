@@ -393,7 +393,8 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .cta p { color: var(--muted-foreground); font-size: 1.075rem; margin: 1rem auto 2rem; max-width: 48ch; }
 
 .waitlist { display: flex; gap: 0.6rem; max-width: 30rem; margin-inline: auto; }
-.waitlist #turnstile-container { display: none; }
+.waitlist #turnstile-container,
+.waitlist #turnstile-container iframe { display: none !important; }
 .waitlist input {
   flex: 1; height: 2.875rem; padding-inline: 1rem; border-radius: calc(var(--radius) - 0.1rem);
   background: var(--gray-700); border: 1px solid var(--gray-700); color: var(--gray-100);
