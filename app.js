@@ -181,7 +181,6 @@ window.onTurnstileReady = function () {
   if (!host) return;
   turnstileWidgetId = window.turnstile.render(host, {
     sitekey: TURNSTILE_SITEKEY,
-    size: "invisible",
     execution: "execute",
     callback: (token) => {
       if (turnstilePending) {
