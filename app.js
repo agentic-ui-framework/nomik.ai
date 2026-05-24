@@ -289,20 +289,36 @@ wireWaitlist(document.getElementById("waitlist-form"), document.getElementById("
 wireWaitlist(document.getElementById("hero-waitlist-form"), document.getElementById("hero-form-msg"));
 
 // Hero CTA → in-place form reveal. First click expands the input alongside the
-// button and converts the button from type=button to type=submit. Subsequent
-// clicks submit the form via the wireWaitlist handler above.
+// button. Subsequent clicks (or Enter in the input) explicitly submit the form.
+// Button stays type=button so the form never auto-submits on the open click.
 const heroStage = document.getElementById("hero-cta-stage");
 const heroCta = document.getElementById("hero-cta");
 const heroFormEl = document.getElementById("hero-waitlist-form");
+
+function submitForm(form) {
+  if (typeof form.requestSubmit === "function") form.requestSubmit();
+  else form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+}
+
 if (heroStage && heroCta && heroFormEl) {
-  heroCta.addEventListener("click", () => {
-    if (heroStage.classList.contains("is-open")) return;
-    heroStage.classList.add("is-open");
-    heroCta.type = "submit";
-    const input = heroFormEl.querySelector('input[type="email"]');
-    // Delay focus until the width transition has begun, otherwise iOS Safari
-    // re-scrolls the page to the (collapsed) input position.
-    setTimeout(() => input?.focus({ preventScroll: true }), 350);
+  const input = heroFormEl.querySelector('input[type="email"]');
+
+  heroCta.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    if (!heroStage.classList.contains("is-open")) {
+      heroStage.classList.add("is-open");
+      // Delay focus until the width transition has begun (iOS Safari quirk).
+      setTimeout(() => input?.focus({ preventScroll: true }), 350);
+      return;
+    }
+    submitForm(heroFormEl);
+  });
+
+  input?.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" && heroStage.classList.contains("is-open")) {
+      ev.preventDefault();
+      submitForm(heroFormEl);
+    }
   });
 }
 
