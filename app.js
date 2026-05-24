@@ -159,11 +159,59 @@ function initCarousel(root) {
 
 // Waitlist form.
 //
-// Posts { email } to Formspree (zero-backend), which forwards to the inbox
-// configured on the form and tracks submissions. To switch to the auth-service
-// once a /v1/waitlist route exists, swap WAITLIST_ENDPOINT.
-// TODO operator: create Formspree form at https://formspree.io and replace ID
-const WAITLIST_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID";
+// Posts { email, turnstileToken } to a Supabase Edge Function. The function is
+// the only writer to the waitlist table (service role); the browser holds no
+// Supabase key. Cloudflare Turnstile gates submissions before any DB work.
+//
+// Operator: replace both constants with values from the deployed function +
+// the Turnstile site key. Until both are wired, submissions log to console
+// so we don't lose signal during a half-deployed state.
+const WAITLIST_ENDPOINT = "https://qerdbjcmheeuwexmfyam.supabase.co/functions/v1/submit-waitlist";
+const TURNSTILE_SITEKEY = "0x4AAAAAADVjnrrRgwexBYuo";
+
+const endpointWired =
+  !WAITLIST_ENDPOINT.includes("REPLACE_WITH_") && !TURNSTILE_SITEKEY.includes("REPLACE_WITH_");
+
+let turnstileWidgetId = null;
+let turnstilePending = null;
+
+window.onTurnstileReady = function () {
+  if (!endpointWired || !window.turnstile) return;
+  const host = document.getElementById("turnstile-container");
+  if (!host) return;
+  turnstileWidgetId = window.turnstile.render(host, {
+    sitekey: TURNSTILE_SITEKEY,
+    size: "invisible",
+    execution: "execute",
+    callback: (token) => {
+      if (turnstilePending) {
+        turnstilePending.resolve(token);
+        turnstilePending = null;
+      }
+    },
+    "error-callback": () => {
+      if (turnstilePending) {
+        turnstilePending.resolve(null);
+        turnstilePending = null;
+      }
+    },
+    "expired-callback": () => {
+      if (turnstilePending) {
+        turnstilePending.resolve(null);
+        turnstilePending = null;
+      }
+    },
+  });
+};
+
+function getTurnstileToken() {
+  if (turnstileWidgetId == null || !window.turnstile) return Promise.resolve(null);
+  return new Promise((resolve) => {
+    turnstilePending = { resolve };
+    window.turnstile.reset(turnstileWidgetId);
+    window.turnstile.execute(turnstileWidgetId);
+  });
+}
 
 const form = document.getElementById("waitlist-form");
 const msg = document.getElementById("form-msg");
@@ -181,19 +229,29 @@ if (form && msg) form.addEventListener("submit", async (ev) => {
   const btn = form.querySelector("button");
   btn.disabled = true;
 
-  const endpointWired = WAITLIST_ENDPOINT && !WAITLIST_ENDPOINT.includes("REPLACE_WITH_");
-
   try {
-    if (endpointWired) {
+    if (!endpointWired) {
+      console.info("[waitlist] captured (endpoint not yet wired):", email);
+    } else {
+      const token = await getTurnstileToken();
+      if (!token) {
+        btn.disabled = false;
+        msg.textContent = "Couldn't verify the request. Please refresh and try again.";
+        msg.className = "form-msg err";
+        return;
+      }
       const res = await fetch(WAITLIST_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken: token }),
       });
+      if (res.status === 429) {
+        btn.disabled = false;
+        msg.textContent = "Too many requests from your network. Try again in an hour.";
+        msg.className = "form-msg err";
+        return;
+      }
       if (!res.ok) throw new Error(String(res.status));
-    } else {
-      // Endpoint not yet wired, capture in console so we don't lose the signal during launch.
-      console.info("[waitlist] captured (endpoint not yet wired):", email);
     }
     form.classList.add("is-done");
     msg.textContent = "You're on the list. We'll be in touch soon.";
