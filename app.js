@@ -4,6 +4,20 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Any #waitlist anchor (nav + hero CTAs) scrolls AND focuses the email input,
+// so the user can start typing the moment the form is in view.
+document.querySelectorAll('a[href="#waitlist"], a[href$="#waitlist"]').forEach((a) => {
+  a.addEventListener("click", (ev) => {
+    const target = document.getElementById("waitlist");
+    const input = document.querySelector('#waitlist-form input[type="email"]');
+    if (!target || !input) return; // let default anchor behaviour handle it
+    ev.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Wait for smooth-scroll to finish before focusing (otherwise iOS fights it).
+    setTimeout(() => input.focus({ preventScroll: true }), 550);
+  });
+});
+
 // Shared set of real logos used by the decorative backdrops + accents.
 const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","intercom","linear","jira",
   "figma","dropbox","adyen","paypal","klarna","wise","asana","trello","confluence","gitlab",
