@@ -175,8 +175,8 @@ const endpointWired =
 let turnstileWidgetId = null;
 let turnstilePending = null;
 
-window.onTurnstileReady = function () {
-  if (!endpointWired || !window.turnstile) return;
+function bootTurnstile() {
+  if (!endpointWired || !window.turnstile || turnstileWidgetId != null) return;
   const host = document.getElementById("turnstile-container");
   if (!host) return;
   turnstileWidgetId = window.turnstile.render(host, {
@@ -201,7 +201,13 @@ window.onTurnstileReady = function () {
       }
     },
   });
-};
+}
+
+// Handle both load orders: if the Turnstile script lost the race and called
+// onTurnstileReady before this file ran, window.turnstile is already there
+// and we render now. If we won the race, the callback below will fire later.
+window.onTurnstileReady = bootTurnstile;
+bootTurnstile();
 
 function getTurnstileToken() {
   if (turnstileWidgetId == null || !window.turnstile) return Promise.resolve(null);
