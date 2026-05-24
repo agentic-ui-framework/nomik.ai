@@ -396,24 +396,33 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .waitlist .turnstile-container { flex-basis: 100%; display: flex; justify-content: center; }
 .waitlist .turnstile-container:not(:empty) { margin-top: 0.6rem; }
 
-/* Hero inline CTA → form transition */
+/* Hero inline CTA → form transition.
+   Button disappears, input slides in from the left, submit fades in slightly after. */
 .hero-cta-stage { position: relative; width: 100%; max-width: 30rem; }
 .hero-cta-stage .hero-waitlist { display: none; margin-inline: 0; }
 .hero-cta-stage.is-open .hero-cta-btn { display: none; }
-.hero-cta-stage.is-open .hero-waitlist {
-  display: flex;
-  animation: heroFormReveal 0.42s cubic-bezier(.16, .84, .44, 1) both;
+.hero-cta-stage.is-open .hero-waitlist { display: flex; }
+.hero-cta-stage.is-open .hero-waitlist input[type="email"] {
+  animation: heroInputSlideIn 0.85s cubic-bezier(.22, .68, .14, 1) both;
+}
+.hero-cta-stage.is-open .hero-waitlist button[type="submit"] {
+  animation: heroSubmitFadeIn 0.65s 0.3s cubic-bezier(.22, .68, .14, 1) both;
 }
 .hero-form-msg { margin-top: 0.6rem; min-height: 1.2em; font-size: 0.9rem; text-align: left; }
 .hero-form-msg.ok { color: var(--success); }
 .hero-form-msg.err { color: var(--status-red); }
 .hero-cta-stage .hero-waitlist.is-done { display: none; }
-@keyframes heroFormReveal {
-  from { opacity: 0; transform: translateY(-6px) scale(0.985); filter: blur(2px); }
-  to   { opacity: 1; transform: translateY(0)   scale(1);     filter: blur(0); }
+@keyframes heroInputSlideIn {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroSubmitFadeIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta-stage.is-open .hero-waitlist { animation: none; }
+  .hero-cta-stage.is-open .hero-waitlist input[type="email"],
+  .hero-cta-stage.is-open .hero-waitlist button[type="submit"] { animation: none; }
 }
 .waitlist input {
   flex: 1; height: 2.875rem; padding-inline: 1rem; border-radius: calc(var(--radius) - 0.1rem);
