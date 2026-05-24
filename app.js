@@ -177,29 +177,42 @@ const endpointWired =
 window.onTurnstileReady = function () {};
 
 // Render a fresh widget on each submit — shown only while verifying,
-// removed once done. No widget visible on page load.
+// removed once done. Container is empty (no visible widget) on page load.
 function getTurnstileToken() {
   return new Promise((resolve) => {
-    if (!window.turnstile) return resolve(null);
+    if (!window.turnstile) {
+      console.error("[waitlist] turnstile script not loaded");
+      return resolve(null);
+    }
     const host = document.getElementById("turnstile-container");
     if (!host) return resolve(null);
 
-    host.removeAttribute("hidden");
     let widgetId = null;
-    const done = (token) => {
+    const done = (reason, token) => {
+      console.info("[waitlist] turnstile", reason, token ? "(token)" : "(no token)");
       if (widgetId != null) {
         try { window.turnstile.remove(widgetId); } catch {}
       }
-      host.setAttribute("hidden", "");
-      resolve(token);
+      while (host.firstChild) host.removeChild(host.firstChild);
+      resolve(token ?? null);
     };
 
-    widgetId = window.turnstile.render(host, {
-      sitekey: TURNSTILE_SITEKEY,
-      callback: done,
-      "error-callback": () => done(null),
-      "expired-callback": () => done(null),
-    });
+    try {
+      widgetId = window.turnstile.render(host, {
+        sitekey: TURNSTILE_SITEKEY,
+        callback: (t) => done("success", t),
+        "error-callback": (code) => { console.error("[waitlist] turnstile error code", code); done("error", null); },
+        "expired-callback": () => done("expired", null),
+        "timeout-callback": () => done("timeout", null),
+      });
+      if (widgetId == null || widgetId === false) {
+        console.error("[waitlist] turnstile.render returned", widgetId);
+        done("render-failed", null);
+      }
+    } catch (e) {
+      console.error("[waitlist] turnstile.render threw", e);
+      done("threw", null);
+    }
   });
 }
 
