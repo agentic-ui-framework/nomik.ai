@@ -190,15 +190,14 @@ const endpointWired =
 // to exist so the script doesn't error. Rendering happens on submit, not boot.
 window.onTurnstileReady = function () {};
 
-// Render a fresh widget on each submit — shown only while verifying,
-// removed once done. Container is empty (no visible widget) on page load.
-function getTurnstileToken() {
+// Render a fresh Turnstile widget into the given host on each submit —
+// shown only while verifying, removed once done. Container empty on page load.
+function getTurnstileToken(host) {
   return new Promise((resolve) => {
     if (!window.turnstile) {
       console.error("[waitlist] turnstile script not loaded");
       return resolve(null);
     }
-    const host = document.getElementById("turnstile-container");
     if (!host) return resolve(null);
 
     let widgetId = null;
@@ -230,55 +229,77 @@ function getTurnstileToken() {
   });
 }
 
-const form = document.getElementById("waitlist-form");
-const msg = document.getElementById("form-msg");
+// Wire a waitlist form (handles validation, Turnstile, POST, UI states).
+// Reused for the bottom #waitlist section and the inline hero form.
+function wireWaitlist(form, msg) {
+  if (!form || !msg) return;
+  const turnstileHost = form.querySelector(".turnstile-container");
 
-if (form && msg) form.addEventListener("submit", async (ev) => {
-  ev.preventDefault();
-  const email = new FormData(form).get("email")?.toString().trim() ?? "";
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    const email = new FormData(form).get("email")?.toString().trim() ?? "";
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    msg.textContent = "Please enter a valid email.";
-    msg.className = "form-msg err";
-    return;
-  }
-
-  const btn = form.querySelector("button");
-  btn.disabled = true;
-
-  try {
-    if (!endpointWired) {
-      console.info("[waitlist] captured (endpoint not yet wired):", email);
-    } else {
-      const token = await getTurnstileToken();
-      if (!token) {
-        btn.disabled = false;
-        msg.textContent = "Couldn't verify the request. Please refresh and try again.";
-        msg.className = "form-msg err";
-        return;
-      }
-      const res = await fetch(WAITLIST_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email, turnstileToken: token }),
-      });
-      if (res.status === 429) {
-        btn.disabled = false;
-        msg.textContent = "Too many requests from your network. Try again in an hour.";
-        msg.className = "form-msg err";
-        return;
-      }
-      if (!res.ok) throw new Error(String(res.status));
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = "Please enter a valid email.";
+      msg.className = `${msg.classList.contains("hero-form-msg") ? "hero-form-msg form-msg" : "form-msg"} err`;
+      return;
     }
-    form.classList.add("is-done");
-    msg.textContent = "You're on the list. We'll be in touch soon.";
-    msg.className = "form-msg ok";
-  } catch {
-    btn.disabled = false;
-    msg.textContent = "Something went wrong, try again in a moment.";
-    msg.className = "form-msg err";
-  }
-});
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    const okClass = msg.classList.contains("hero-form-msg") ? "hero-form-msg form-msg ok" : "form-msg ok";
+    const errClass = msg.classList.contains("hero-form-msg") ? "hero-form-msg form-msg err" : "form-msg err";
+
+    try {
+      if (!endpointWired) {
+        console.info("[waitlist] captured (endpoint not yet wired):", email);
+      } else {
+        const token = await getTurnstileToken(turnstileHost);
+        if (!token) {
+          btn.disabled = false;
+          msg.textContent = "Couldn't verify the request. Please refresh and try again.";
+          msg.className = errClass;
+          return;
+        }
+        const res = await fetch(WAITLIST_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ email, turnstileToken: token }),
+        });
+        if (res.status === 429) {
+          btn.disabled = false;
+          msg.textContent = "Too many requests from your network. Try again in an hour.";
+          msg.className = errClass;
+          return;
+        }
+        if (!res.ok) throw new Error(String(res.status));
+      }
+      form.classList.add("is-done");
+      msg.textContent = "You're on the list. We'll be in touch soon.";
+      msg.className = okClass;
+    } catch {
+      btn.disabled = false;
+      msg.textContent = "Something went wrong, try again in a moment.";
+      msg.className = errClass;
+    }
+  });
+}
+
+wireWaitlist(document.getElementById("waitlist-form"), document.getElementById("form-msg"));
+wireWaitlist(document.getElementById("hero-waitlist-form"), document.getElementById("hero-form-msg"));
+
+// Hero CTA → inline form reveal + autofocus.
+const heroStage = document.getElementById("hero-cta-stage");
+const heroCta = document.getElementById("hero-cta");
+const heroFormEl = document.getElementById("hero-waitlist-form");
+if (heroStage && heroCta && heroFormEl) {
+  heroCta.addEventListener("click", () => {
+    heroStage.classList.add("is-open");
+    const input = heroFormEl.querySelector('input[type="email"]');
+    // Wait for the animation start so focus doesn't fight the transform.
+    requestAnimationFrame(() => input?.focus({ preventScroll: true }));
+  });
+}
 
 // Contact form (contact.html). Posts to a Formspree endpoint set on the <form action="">.
 // Validates client-side, swaps to a success message inline (not a toast).

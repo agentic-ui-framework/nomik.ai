@@ -78,7 +78,15 @@
           <h1>Your team and your agents, working as one.</h1>
           <p class="lede">The shared workspace where your people and a self-organizing fleet of AI agents live in the same channels, planning, deciding, and getting the business done together.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#waitlist">Get early access</a>
+            <div class="hero-cta-stage" id="hero-cta-stage">
+              <button class="btn btn-primary hero-cta-btn" type="button" id="hero-cta">Get early access</button>
+              <form class="waitlist hero-waitlist" id="hero-waitlist-form" novalidate>
+                <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Work email" />
+                <button class="btn btn-primary" type="submit">Request access</button>
+                <div class="turnstile-container" aria-hidden="true"></div>
+              </form>
+              <p class="form-msg hero-form-msg" id="hero-form-msg" role="status" aria-live="polite"></p>
+            </div>
             <a class="btn btn-ghost" href="#demo">See it work</a>
           </div>
           <p class="hero-note"><span class="dot" aria-hidden="true"></span> Rolling out to early teams now, no credit card.</p>
@@ -677,7 +685,7 @@
           <form class="waitlist" id="waitlist-form" novalidate>
             <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Work email" />
             <button class="btn btn-primary" type="submit">Request access</button>
-            <div id="turnstile-container" aria-hidden="true"></div>
+            <div class="turnstile-container" aria-hidden="true"></div>
           </form>
           <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
           <p class="muted" style="margin-top:1.1rem;font-size:0.85rem">No credit card. Curious about the details? <a href="pricing.html" style="color:var(--blurple-500);font-weight:600">See pricing</a> · <a href="security.html" style="color:var(--blurple-500);font-weight:600">on-prem &amp; security</a>.</p>
