@@ -424,7 +424,8 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 
 .waitlist { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 30rem; margin-inline: auto; }
 .waitlist .turnstile-container { flex-basis: 100%; display: flex; justify-content: center; }
-.waitlist .turnstile-container:not(:empty) { margin-top: 0.6rem; }
+.waitlist .turnstile-container:not(:empty) { margin-top: 0.6rem; min-height: 65px; }
+.waitlist .turnstile-container iframe { max-width: 100%; }
 
 /* Hero inline CTA → form transition.
    The stage stays auto-sized to its contents — no flex-basis snap. The input

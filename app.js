@@ -213,6 +213,11 @@ function getTurnstileToken(host) {
     try {
       widgetId = window.turnstile.render(host, {
         sitekey: TURNSTILE_SITEKEY,
+        // Only surface a visible challenge if Cloudflare actually needs one.
+        // Passive checks succeed silently; suspicious clients see the widget.
+        appearance: "interaction-only",
+        // Responsive width so it never overflows the form on narrow screens.
+        size: "flexible",
         callback: (t) => done("success", t),
         "error-callback": (code) => { console.error("[waitlist] turnstile error code", code); done("error", null); },
         "expired-callback": () => done("expired", null),
