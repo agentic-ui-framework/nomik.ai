@@ -302,23 +302,23 @@ function submitForm(form) {
 
 if (heroStage && heroCta && heroFormEl) {
   const input = heroFormEl.querySelector('input[type="email"]');
+  const isMobile = () => window.matchMedia("(max-width: 480px)").matches;
 
   heroCta.addEventListener("click", (ev) => {
     ev.preventDefault();
-    if (!heroStage.classList.contains("is-open")) {
-      heroStage.classList.add("is-open");
-      // Delay focus until the width transition has begun (iOS Safari quirk).
-      setTimeout(() => input?.focus({ preventScroll: true }), 350);
+    // Mobile shows the input from page load — first tap submits directly.
+    if (isMobile() || heroStage.classList.contains("is-open")) {
+      submitForm(heroFormEl);
       return;
     }
-    submitForm(heroFormEl);
+    heroStage.classList.add("is-open");
+    setTimeout(() => input?.focus({ preventScroll: true }), 350);
   });
 
   input?.addEventListener("keydown", (ev) => {
-    if (ev.key === "Enter" && heroStage.classList.contains("is-open")) {
-      ev.preventDefault();
-      submitForm(heroFormEl);
-    }
+    if (ev.key !== "Enter") return;
+    ev.preventDefault();
+    submitForm(heroFormEl);
   });
 }
 
