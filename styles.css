@@ -504,6 +504,20 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 }
 .waitlist input::placeholder { color: var(--gray-500); }
 .waitlist input:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px hsl(235 86% 65% / 0.2); }
+/* Suppress Chrome/Safari autofill yellow/white background — keep our dark theme. */
+.waitlist input:-webkit-autofill,
+.waitlist input:-webkit-autofill:hover,
+.waitlist input:-webkit-autofill:focus,
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--gray-100);
+  -webkit-box-shadow: 0 0 0 1000px var(--gray-700) inset;
+  box-shadow: 0 0 0 1000px var(--gray-700) inset;
+  caret-color: var(--gray-100);
+  transition: background-color 9999s ease-in-out 0s;
+}
 .waitlist .btn-primary { flex-shrink: 0; }
 .form-msg { margin-top: 1rem; font-size: 0.9rem; min-height: 1.2em; }
 .form-msg.ok { color: var(--success); }
