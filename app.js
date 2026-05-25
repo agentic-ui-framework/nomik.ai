@@ -251,7 +251,12 @@ function wireWaitlist(form, msg) {
     }
 
     const btn = form.querySelector('button[type="submit"], button[type="button"]') || form.querySelector('button');
-    if (btn) btn.disabled = true;
+    const setLoading = (on) => {
+      if (!btn) return;
+      btn.disabled = on;
+      btn.classList.toggle("is-loading", on);
+    };
+    setLoading(true);
     const okClass = msg.classList.contains("hero-form-msg") ? "hero-form-msg form-msg ok" : "form-msg ok";
     const errClass = msg.classList.contains("hero-form-msg") ? "hero-form-msg form-msg err" : "form-msg err";
 
@@ -261,7 +266,7 @@ function wireWaitlist(form, msg) {
       } else {
         const token = await getTurnstileToken(turnstileHost);
         if (!token) {
-          if (btn) btn.disabled = false;
+          setLoading(false);
           msg.textContent = "Couldn't verify the request. Please refresh and try again.";
           msg.className = errClass;
           return;
@@ -272,7 +277,7 @@ function wireWaitlist(form, msg) {
           body: JSON.stringify({ email, turnstileToken: token }),
         });
         if (res.status === 429) {
-          if (btn) btn.disabled = false;
+          setLoading(false);
           msg.textContent = "Too many requests from your network. Try again in an hour.";
           msg.className = errClass;
           return;
@@ -282,8 +287,9 @@ function wireWaitlist(form, msg) {
       form.classList.add("is-done");
       msg.textContent = "You're on the list. We'll be in touch soon.";
       msg.className = okClass;
+      setLoading(false);
     } catch {
-      if (btn) btn.disabled = false;
+      setLoading(false);
       msg.textContent = "Something went wrong, try again in a moment.";
       msg.className = errClass;
     }
