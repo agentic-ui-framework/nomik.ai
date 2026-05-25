@@ -535,6 +535,16 @@ textarea:autofill {
 .success-state { display: none; }
 .waitlist.is-done { display: none; }
 .waitlist.is-done + .form-msg { display: none; }
+/* Tablet + small-desktop bump — the desktop 2.875rem input felt thin in this range. */
+@media (max-width: 768px) {
+  .waitlist input,
+  .waitlist > .btn-primary,
+  .waitlist .hero-cta-btn {
+    height: 3.25rem;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .waitlist { flex-direction: column; max-width: 100%; }
   .waitlist input,
