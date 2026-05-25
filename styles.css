@@ -444,9 +444,9 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .waitlist { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 30rem; margin-inline: auto; }
 .waitlist .turnstile-container { flex-basis: 100%; display: flex; justify-content: center; width: 100%; max-width: 100%; overflow: hidden; }
 .waitlist .turnstile-container:not(:empty) { margin-top: 0.6rem; min-height: 65px; }
+/* Flexible widget (desktop) stretches to container; compact widget (mobile) stays 130px and centers. */
 .waitlist .turnstile-container iframe {
   max-width: 100% !important;
-  width: 100% !important;
   display: block;
 }
 

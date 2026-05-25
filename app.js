@@ -210,14 +210,16 @@ function getTurnstileToken(host) {
       resolve(token ?? null);
     };
 
+    // Compact (130×120) on narrow screens — the default 300px-wide widget
+    // overflows the form on mobile. Flexible (auto-fit) on wider viewports.
+    const narrowViewport = window.matchMedia("(max-width: 480px)").matches;
     try {
       widgetId = window.turnstile.render(host, {
         sitekey: TURNSTILE_SITEKEY,
         // Only surface a visible challenge if Cloudflare actually needs one.
         // Passive checks succeed silently; suspicious clients see the widget.
         appearance: "interaction-only",
-        // Responsive width so it never overflows the form on narrow screens.
-        size: "flexible",
+        size: narrowViewport ? "compact" : "flexible",
         callback: (t) => done("success", t),
         "error-callback": (code) => { console.error("[waitlist] turnstile error code", code); done("error", null); },
         "expired-callback": () => done("expired", null),
