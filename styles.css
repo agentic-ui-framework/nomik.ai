@@ -1,73 +1,295 @@
 /*
   Nomik — landing site.
-  Standalone, zero-build. Tokens mirror the app's Discord-inspired design system
-  (services/frontend-web/src/app/globals.css · DISCORD-UI-DESIGN-SYSTEM.md):
-  Tier-1 primitives → Tier-2 semantic roles. Components reference semantic roles only.
+  Standalone, zero-build. Tokens are the app's T5 "Full Tape Brand" design system
+  (docs/design/t5-package/spec/DESIGN_SYSTEM.md · tokens.css):
+  Tier-1 primitives → Tier-2 semantic roles (dark default + [data-theme="light"]).
+  Components reference semantic roles only — never a hex literal, never a Tier-1.
+  Body = system sans; display (h1/h2/h3, wordmark) = Montserrat ExtraBold.
 */
 
-/* ── Open Sans, self-hosted (latin subset, variable font 400–800 + italic 400) ── */
+/* ── Display font — Montserrat ExtraBold (single static weight, 107KB woff2).
+   Headings fall back to the system stack via --font-display if it fails to load. ── */
 @font-face {
-  font-family: "Open Sans";
+  font-family: "Montserrat";
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"),
+       url("fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
-  font-weight: 400 800;
   font-display: swap;
-  src: url("fonts/open-sans-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Open Sans";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/open-sans-latin-italic.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* =============================================================================
+   TIER 1 — PRIMITIVES (raw ramps; components NEVER read these)
+   ============================================================================= */
 :root {
-  /* ── Tier 1 · primitives (Discord dark) ── */
-  --gray-950: hsl(225 6% 13%);
-  --gray-900: hsl(228 7% 15%);
-  --gray-850: hsl(225 7% 18%);
-  --gray-800: hsl(223 7% 21%);
-  --gray-750: hsl(223 6% 22%);
-  --gray-700: hsl(225 7% 24%);
-  --gray-650: hsl(226 7% 27%);
-  --gray-500: hsl(222 6% 53%);
-  --gray-400: hsl(218 8% 61%);
-  --gray-300: hsl(216 9% 73%);
-  --gray-200: hsl(216 9% 87%);
-  --gray-100: hsl(220 13% 95%);
-  --blurple-500: hsl(235 86% 65%);
-  --blurple-600: hsl(235 76% 58%);
-  --status-green: hsl(144 65% 39%);
-  --status-yellow: hsl(40 86% 57%);
-  --status-red: hsl(359 88% 60%);
+  /* Warm neutral ramp (violet-warm near-black -> warm white) */
+  --gray-950: #0a070d;
+  --gray-900: #0f0d12;   /* dark canvas */
+  --gray-850: #171019;
+  --gray-800: #1c151f;
+  --gray-750: #201823;
+  --gray-700: #251b29;
+  --gray-650: #2e2433;
+  --gray-600: #352a3a;
+  --gray-500: #5a4d61;
+  --gray-400: #8a7e89;
+  --gray-300: #a99fa6;
+  --gray-200: #cabfc6;
+  --gray-100: #f2ebee;
+  --gray-50:  #f7f3f0;
 
-  /* ── Tier 2 · semantic roles ── */
-  --background: var(--gray-800);
-  --foreground: var(--gray-200);
-  --card: var(--gray-900);
-  --primary: var(--blurple-500);
-  --primary-foreground: var(--gray-100);
-  --muted: var(--gray-750);
-  --muted-foreground: var(--gray-400);
-  --accent: var(--gray-750);
-  --border: var(--gray-950);
-  --ring: var(--blurple-500);
-  --success: var(--status-green);
-  --sidebar: var(--gray-850);
-  --sidebar-foreground: var(--gray-300);
+  --cyan-300: #67e8f9;
+  --cyan-400: #38d9ee;
+  --cyan-500: #22d3ee;   /* brand fill — electric */
+  --cyan-600: #0e96ad;
+  --cyan-700: #0c6678;   /* brand-ink — cyan as TEXT on light */
 
-  --radius: 0.75rem;
-  --font-sans: "Open Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;   /* signature fill */
+  --teal-500: #14b8a6;
+  --teal-700: #0b766b;   /* signature-ink */
 
-  --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0 12px 32px -8px hsl(0 0% 0% / 0.45);
-  --shadow-glow: 0 0 0 1px hsl(235 86% 65% / 0.12), 0 24px 60px -20px hsl(235 86% 65% / 0.35);
+  --magenta-400: #ec4faf;
+  --magenta-500: #d61f9c;   /* consequential fill */
+  --magenta-600: #c026d3;
+  --magenta-700: #ad1d7c;   /* consequential-ink */
 
+  --indigo-300: #a5b4fc;
+  --indigo-400: #818cf8;
+  --indigo-600: #4338ca;
+  --indigo-800: #312e81;
+
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;   /* warning fill (dark) */
+  --amber-700: #a5670a;   /* warning fill (light) */
+  --amber-800: #94600c;   /* warning-ink */
+
+  --green-400: #34d399;   /* positive fill (dark) */
+  --green-600: #0c7d4e;   /* positive fill (light) + ink */
+  --green-700: #0a663f;
+
+  --red-400:   #fb7185;
+  --red-500:   #f43f5e;   /* negative (dark) */
+  --red-600:   #cc2929;   /* negative fill (light) */
+  --red-700:   #c52727;   /* negative-ink */
+
+  --blue-400:  #38bdf8;   /* info (dark) */
+  --blue-700:  #0e6f8c;   /* info (light) */
+
+  --purple-400: #c084fc;
+  --purple-700: #7c3aed;
+
+  --paper-100: #fefdfb;   /* floated panel */
+  --paper-150: #faf7f0;
+  --paper-200: #f7f3ec;
+  --paper-300: #f3f0e9;   /* canvas */
+  --paper-400: #ece6da;   /* sidebar chrome */
+  --paper-500: #dcd4c4;   /* border */
+
+  /* Fonts */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+               Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-display: "Montserrat", var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+               "Liberation Mono", monospace;
+
+  /* Radius scale */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 9px;
+  --radius-lg: 12px;
+  --radius-xl: 15px;
+  --radius-2xl: 20px;
+  --radius: var(--radius-lg);
+  --space: 4px;
+
+  /* Site-only layout tokens (kept) */
   --maxw: 1120px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* =============================================================================
+   TIER 2 — SEMANTIC ROLES · DARK (shipped default)
+   ============================================================================= */
+:root {
+  --surface-0: var(--gray-900);
+  --surface-1: var(--gray-850);
+  --surface-2: var(--gray-800);
+  --surface-3: var(--gray-700);
+  --background: var(--gray-900);
+  --foreground: var(--gray-100);
+  --card: var(--gray-850);
+  --card-foreground: var(--gray-100);
+  --popover: var(--gray-800);
+
+  --ink-1: var(--gray-100);
+  --ink-2: var(--gray-200);
+  --ink-3: var(--gray-400);
+  --muted: var(--gray-800);
+  --muted-foreground: var(--gray-400);
+
+  /* white-alpha fill ramp — DARK ONLY (light overrides with black-alpha) */
+  --fill-1: rgb(255 255 255 / 0.04);
+  --fill-2: rgb(255 255 255 / 0.06);
+  --fill-3: rgb(255 255 255 / 0.10);
+  --fill-4: rgb(255 255 255 / 0.14);
+
+  --border: #2e2433;
+  --input:  #2e2433;
+  --border-highlight: rgb(34 211 238 / 0.22);
+
+  /* Brand / workhorse — electric cyan, DARK text on fills */
+  --brand: var(--cyan-500);
+  --brand-ink: var(--cyan-400);
+  --brand-tint: rgb(34 211 238 / 0.14);
+  --primary: var(--cyan-500);
+  --primary-foreground: #04161a;          /* dark text on cyan */
+  --secondary: var(--gray-800);
+  --accent: var(--gray-800);
+  --ring: var(--cyan-500);
+
+  --signature: var(--teal-400);
+  --signature-ink: var(--teal-400);
+
+  /* CONSEQUENTIAL — magenta, irreversible / "a human decides" ONLY */
+  --consequential: var(--magenta-500);
+  --consequential-ink: var(--magenta-500);
+  --consequential-foreground: #ffffff;
+  --consequential-tint: rgb(214 31 156 / 0.14);
+  --consequential-border: rgb(214 31 156 / 0.30);
+
+  --positive: var(--green-400);
+  --positive-ink: var(--green-400);
+  --positive-tint:   rgb(52 211 153 / 0.14);
+  --positive-border: rgb(52 211 153 / 0.30);
+
+  --warning-color: var(--amber-500);
+  --warning-ink: var(--amber-500);
+  --warning-tint:   rgb(245 158 11 / 0.14);
+  --warning-border: rgb(245 158 11 / 0.30);
+
+  --negative: var(--red-500);             /* TRUE RED — errors, NOT irreversible */
+  --negative-ink: var(--red-500);
+  --negative-tint:   rgb(244 63 94 / 0.14);
+
+  --info: var(--blue-400);
+
+  /* Persona 1–7 (agent identity) — bright/electric, mode-stable */
+  --persona-1: var(--cyan-500);     /* Warden */
+  --persona-2: var(--teal-400);
+  --persona-3: var(--indigo-400);
+  --persona-4: var(--magenta-500);
+  --persona-5: var(--amber-400);
+  --persona-6: var(--purple-400);
+  --persona-7: var(--green-400);
+
+  /* Shadows — dark-calibrated, inner top-highlight bevel */
+  --shadow-bevel-highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.40), var(--shadow-bevel-highlight);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.45), var(--shadow-bevel-highlight);
+  --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.50), var(--shadow-bevel-highlight);
+  --shadow-glow: 0 0 18px rgb(34 211 238 / 0.50);                 /* routine (cyan) */
+  --shadow-glow-consequential: 0 0 22px rgb(214 31 156 / 0.55);   /* irreversible (magenta) */
+
+  /* ── Bridge: legacy site token names → T5 semantic roles (so existing rules hold) ── */
+  --success: var(--positive);
+  --sidebar: var(--surface-1);
+  --sidebar-foreground: var(--ink-3);
+  --status-green: var(--positive);
+  --status-yellow: var(--warning-color);
+  --status-red: var(--negative);
+}
+
+/* =============================================================================
+   TIER 2 — SEMANTIC ROLES · LIGHT (electric, WCAG-audited). <html data-theme="light">
+   ============================================================================= */
+[data-theme="light"] {
+  --surface-0: var(--paper-300);
+  --surface-1: var(--paper-400);
+  --surface-2: var(--paper-150);
+  --surface-3: var(--paper-100);
+  --background: var(--paper-300);
+  --foreground: #1a1410;
+  --card: var(--paper-100);
+  --card-foreground: #1a1410;
+  --popover: var(--paper-100);
+
+  --ink-1: #1a1410;
+  --ink-2: #43392f;
+  --ink-3: #675c4e;
+  --muted: var(--paper-400);
+  --muted-foreground: #675c4e;
+
+  /* black-alpha fill ramp — required structural change for light */
+  --fill-1: rgb(26 20 16 / 0.04);
+  --fill-2: rgb(26 20 16 / 0.06);
+  --fill-3: rgb(26 20 16 / 0.09);
+  --fill-4: rgb(26 20 16 / 0.13);
+
+  --border: var(--paper-500);
+  --input:  var(--paper-500);
+  --border-highlight: rgb(34 211 238 / 0.55);
+
+  --brand: var(--cyan-500);              /* fill stays electric */
+  --brand-ink: var(--cyan-700);          /* cyan as TEXT on cream (5.8:1) */
+  --brand-tint: rgb(34 211 238 / 0.16);
+  --primary: var(--cyan-500);
+  --primary-foreground: #04161a;
+  --secondary: var(--paper-400);
+  --accent: var(--paper-400);
+  --ring: var(--cyan-500);
+
+  --signature: var(--teal-400);
+  --signature-ink: var(--teal-700);
+
+  --consequential: var(--magenta-500);
+  --consequential-ink: var(--magenta-700);   /* magenta TEXT/label (5.7:1) */
+  --consequential-foreground: #ffffff;
+  --consequential-tint: rgb(214 31 156 / 0.10);
+  --consequential-border: rgb(214 31 156 / 0.40);
+
+  --positive: var(--green-600);          /* white text 5.2:1 / ink 4.6:1 */
+  --positive-ink: var(--green-600);
+  --positive-tint:   rgb(12 125 78 / 0.12);
+  --positive-border: rgb(12 125 78 / 0.30);
+
+  --warning-color: var(--amber-700);
+  --warning-ink: var(--amber-800);
+  --warning-tint:   rgb(165 103 10 / 0.12);
+  --warning-border: rgb(165 103 10 / 0.30);
+
+  --negative: var(--red-600);            /* TRUE RED #cc2929, white text 5.4:1 */
+  --negative-ink: var(--red-700);
+  --negative-tint:   rgb(204 41 41 / 0.10);
+
+  --info: var(--blue-700);
+
+  /* Personas — pinned to the bright dark-mode hues for stable agent identity. */
+
+  /* ── Legacy gray-ramp bridge for LIGHT: the old stylesheet reads raw --gray-*
+     directly as surfaces (dark) and text (light). Re-point them to cream-side
+     equivalents so every legacy reference themes without touching call sites. ── */
+  --gray-950: #c9bfae;
+  --gray-900: var(--paper-100);   /* bright panel */
+  --gray-850: var(--paper-150);   /* raised surfaces: rail, trace, table head, cards */
+  --gray-800: var(--paper-400);   /* inline-code / mono chip bg */
+  --gray-750: var(--paper-150);
+  --gray-700: #e6dfd0;            /* inputs / borders / chips (bg == border in legacy) */
+  --gray-650: var(--paper-500);   /* hover borders, arrow glyph */
+  --gray-600: #b8ad9a;
+  --gray-500: #8c8174;            /* placeholders / muted meta */
+  --gray-400: var(--ink-3);
+  --gray-300: var(--ink-3);
+  --gray-200: var(--ink-2);
+  --gray-100: var(--ink-1);
+  --gray-50:  var(--ink-1);
+
+  --shadow-bevel-highlight: inset 0 1px 0 rgb(255 255 255 / 0.70);
+  --shadow-sm: 0 1px 2px rgb(40 30 20 / 0.10), var(--shadow-bevel-highlight);
+  --shadow-md: 0 4px 12px rgb(40 30 20 / 0.12), var(--shadow-bevel-highlight);
+  --shadow-lg: 0 8px 24px rgb(40 30 20 / 0.14), var(--shadow-bevel-highlight);
+  --shadow-glow: 0 0 18px rgb(34 211 238 / 0.45);
+  --shadow-glow-consequential: 0 0 20px rgb(214 31 156 / 0.42);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -88,7 +310,7 @@ body {
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; }
 
-::selection { background: hsl(235 86% 65% / 0.3); }
+::selection { background: color-mix(in srgb, var(--brand) 28%, transparent); }
 
 /* ── Layout ── */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
@@ -102,10 +324,10 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .eyebrow::before {
   content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--primary); box-shadow: 0 0 0 4px hsl(235 86% 65% / 0.18);
+  background: var(--primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent);
 }
 
-h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); font-weight: 700; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink-1); font-weight: 800; text-wrap: balance; }
 
 .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 .section-head h2 { font-size: clamp(1.95rem, 4.2vw, 2.9rem); margin-block: 0.75rem; }
@@ -121,7 +343,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 }
 .btn:active { transform: translateY(1px); }
 .btn-primary { background: var(--primary); color: var(--primary-foreground); }
-.btn-primary:hover { background: var(--blurple-600); }
+.btn-primary:hover { background: var(--cyan-600); }
 
 /* Loading state — hide button content, show centered spinner. Used by the
    waitlist forms while Turnstile verifies + while the POST is in flight. */
@@ -147,16 +369,17 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 /* ── Nav ── */
 .nav {
   position: sticky; top: 0; z-index: 100;
-  background: hsl(223 7% 21% / 0.72); backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--background) 78%, transparent); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
-.brand { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 700; color: var(--gray-100); letter-spacing: -0.01em; }
+.brand { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 800; color: var(--ink-1); letter-spacing: -0.02em; font-size: 1.15rem; }
+/* The washi-tape "N" mark renders as inline SVG (the screen-blend magenta needs it).
+   Background-agnostic: reads on warm-black and cream. No tile/gradient chrome. */
 .brand .mark {
-  width: 1.75rem; height: 1.75rem; border-radius: 0.55rem;
-  background: linear-gradient(135deg, var(--blurple-500), var(--blurple-600));
-  display: grid; place-items: center; color: #fff; box-shadow: var(--shadow-sm);
+  width: 1.9rem; height: 1.9rem; display: grid; place-items: center; flex-shrink: 0;
 }
+.brand .mark svg { width: 100%; height: 100%; display: block; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted-foreground); font-size: 0.92rem; font-weight: 500; transition: color .15s ease; }
 .nav-links a:hover { color: var(--gray-100); }
@@ -191,7 +414,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .hero::before {
   content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: min(900px, 120%); height: 620px; pointer-events: none;
-  background: radial-gradient(50% 50% at 50% 50%, hsl(235 86% 65% / 0.22), transparent 70%);
+  background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--brand) 22%, transparent), transparent 70%);
   filter: blur(8px);
 }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
@@ -226,11 +449,11 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 /* ── Chat mock ── */
 .chat {
   border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
-  background: var(--card); box-shadow: var(--shadow-glow); display: grid; grid-template-columns: 56px 1fr;
+  background: var(--card); box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 56px 1fr;
 }
 .chat-rail { background: var(--gray-850); border-right: 1px solid var(--border); padding: 0.75rem 0; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
 .rail-pill { width: 34px; height: 34px; border-radius: 0.7rem; display: grid; place-items: center; font-size: 0.7rem; font-weight: 700; color: var(--gray-300); background: var(--gray-700); }
-.rail-pill.active { background: var(--primary); color: #fff; border-radius: 0.55rem; }
+.rail-pill.active { background: var(--primary); color: var(--primary-foreground); border-radius: 0.55rem; }
 .chat-main { display: flex; flex-direction: column; min-width: 0; }
 .chat-head { display: flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: var(--gray-200); font-weight: 600; }
 .chat-head .hash { color: var(--muted-foreground); font-weight: 700; }
@@ -238,12 +461,12 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .chat-body { padding: 0.6rem 1rem 0.25rem; display: flex; flex-direction: column; gap: 0.95rem; }
 
 .msg { display: grid; grid-template-columns: 36px 1fr; gap: 0.7rem; }
-.avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 0.78rem; font-weight: 700; color: #fff; flex-shrink: 0; aspect-ratio: 1; overflow: hidden; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 0.78rem; font-weight: 700; color: var(--primary-foreground); flex-shrink: 0; aspect-ratio: 1; overflow: hidden; }
 .msg-body { min-width: 0; }
 .msg-top { display: flex; align-items: baseline; gap: 0.5rem; }
 .msg-name { font-weight: 700; font-size: 0.92rem; }
 .msg-name .tag { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.05rem 0.4rem; border-radius: 0.4rem; margin-left: 0.1rem; vertical-align: middle; }
-.tag-agent { background: hsl(235 86% 65% / 0.16); color: var(--blurple-500); }
+.tag-agent { background: var(--brand-tint); color: var(--brand-ink); }
 .tag-human { background: var(--gray-700); color: var(--gray-300); }
 .msg-time { font-size: 0.7rem; color: var(--muted-foreground); }
 .msg-text { font-size: 0.9rem; color: var(--gray-200); margin-top: 0.1rem; }
@@ -254,7 +477,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .trace-row { display: flex; align-items: center; gap: 0.55rem; padding: 0.4rem 0.7rem; font-family: var(--font-mono); font-size: 0.76rem; color: var(--gray-300); border-top: 1px solid var(--border); }
 .trace-row:first-child { border-top: 0; }
 .trace-row .glyph { color: var(--muted-foreground); }
-.trace-row .tool { color: var(--blurple-500); font-weight: 600; }
+.trace-row .tool { color: var(--brand-ink); font-weight: 600; }
 .trace-row .cost { margin-left: auto; color: var(--success); }
 .trace-row.thought { color: var(--muted-foreground); font-style: italic; font-family: var(--font-sans); }
 
@@ -270,19 +493,19 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
   cursor: pointer; transition: color .15s ease, background .15s ease;
 }
 .ctab:hover { color: var(--gray-100); }
-.ctab.is-active { color: var(--blurple-500); background: hsl(235 86% 65% / 0.16); }
+.ctab.is-active { color: var(--brand-ink); background: var(--brand-tint); }
 .carousel-stack { display: grid; }
 .carousel-stack > .slide {
   grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
   transition: opacity .45s ease, transform .45s ease;
 }
 .carousel-stack > .slide.is-active { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
-.carousel .chat { grid-template-columns: clamp(116px, 30%, 162px) 1fr; box-shadow: var(--shadow-glow); }
+.carousel .chat { grid-template-columns: clamp(116px, 30%, 162px) 1fr; box-shadow: var(--shadow-lg); }
 
 /* Slack-style channel sidebar inside the demo chat */
 .chat-sidebar { background: var(--sidebar); border-right: 1px solid var(--border); padding: 0.55rem 0.4rem; min-width: 0; overflow: hidden; }
 .cs-head { display: flex; align-items: center; gap: 0.45rem; font-size: 0.82rem; font-weight: 700; color: var(--gray-100); padding: 0.2rem 0.45rem 0.55rem; border-bottom: 1px solid var(--border); margin-bottom: 0.4rem; white-space: nowrap; }
-.cs-mark { width: 1.15rem; height: 1.15rem; border-radius: 0.35rem; background: linear-gradient(135deg, var(--blurple-500), var(--blurple-600)); color: #fff; display: grid; place-items: center; font-size: 0.6rem; font-weight: 800; flex-shrink: 0; }
+.cs-mark { width: 1.15rem; height: 1.15rem; border-radius: 0.35rem; background: var(--brand); color: var(--primary-foreground); display: grid; place-items: center; font-size: 0.6rem; font-weight: 800; flex-shrink: 0; }
 .cs-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-foreground); padding: 0 0.45rem; margin: 0.55rem 0 0.2rem; }
 .cs-item { display: flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.45rem; border-radius: 0.4rem; font-size: 0.8rem; color: var(--sidebar-foreground); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cs-item .h { color: var(--muted-foreground); }
@@ -333,7 +556,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 
 /* member avatar cluster in the channel header */
 .chat-head .members { display: inline-flex; align-items: center; }
-.mini { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 0.6rem; font-weight: 700; color: #fff; border: 2px solid var(--card); margin-left: -6px; flex-shrink: 0; aspect-ratio: 1; }
+.mini { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 0.6rem; font-weight: 700; color: var(--primary-foreground); border: 2px solid var(--card); margin-left: -6px; flex-shrink: 0; aspect-ratio: 1; }
 .mini:first-child { margin-left: 0; }
 
 /* outcome row — the loop closing (human approved → action taken) */
@@ -358,7 +581,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .step { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
 .step .num {
   counter-increment: step; width: 2.25rem; height: 2.25rem; border-radius: 0.65rem;
-  background: hsl(235 86% 65% / 0.12); color: var(--blurple-500); display: grid; place-items: center;
+  background: var(--brand-tint); color: var(--brand-ink); display: grid; place-items: center;
   font-weight: 800; font-size: 1.05rem; margin-bottom: 1rem;
 }
 .step .num::before { content: counter(step); }
@@ -380,7 +603,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 /* ── Features ── */
 .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 .feature { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.9rem; }
-.feature .ficon { width: 2.5rem; height: 2.5rem; border-radius: 0.7rem; background: hsl(235 86% 65% / 0.12); color: var(--blurple-500); display: grid; place-items: center; margin-bottom: 1.1rem; }
+.feature .ficon { width: 2.5rem; height: 2.5rem; border-radius: 0.7rem; background: var(--brand-tint); color: var(--brand-ink); display: grid; place-items: center; margin-bottom: 1.1rem; }
 .feature h3 { font-size: 1.25rem; margin-bottom: 0.55rem; }
 .feature p { color: var(--muted-foreground); font-size: 0.98rem; }
 @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
@@ -397,7 +620,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 .loop-step { background: var(--background); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
 .loop-ic {
   display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 0.6rem;
-  background: hsl(235 86% 65% / 0.12); color: var(--blurple-500); font-size: 1rem; margin-bottom: 0.8rem;
+  background: var(--brand-tint); color: var(--brand-ink); font-size: 1rem; margin-bottom: 0.8rem;
 }
 .loop-step h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
 .loop-step p { color: var(--muted-foreground); font-size: 0.92rem; }
@@ -435,7 +658,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
 }
 .cta-card::before {
   content: ""; position: absolute; inset: auto 0 -60% 50%; transform: translateX(-50%);
-  width: 700px; height: 400px; background: radial-gradient(50% 50% at 50% 50%, hsl(235 86% 65% / 0.25), transparent 70%); pointer-events: none;
+  width: 700px; height: 400px; background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--brand) 24%, transparent), transparent 70%); pointer-events: none;
 }
 .cta-card > * { position: relative; }
 .cta h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); max-width: 26ch; margin-inline: auto; }
@@ -532,7 +755,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-100); 
   font-family: inherit; font-size: 0.95rem; transition: border-color .15s ease;
 }
 .waitlist input::placeholder { color: var(--gray-500); }
-.waitlist input:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px hsl(235 86% 65% / 0.2); }
+.waitlist input:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 30%, transparent); }
 /* Suppress Chrome/Safari/Firefox autofill yellow/white background — keep our
    dark theme. !important is required to beat the UA-injected styles. */
 input:-webkit-autofill,
@@ -608,15 +831,15 @@ textarea:autofill {
 .contact-form textarea { resize: vertical; min-height: 6rem; line-height: 1.5; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--gray-500); }
 .contact-form input:focus, .contact-form textarea:focus {
-  outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px hsl(235 86% 65% / 0.2);
+  outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 30%, transparent);
 }
 .contact-form fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .contact-form .radio-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .contact-form .radio-col { display: flex; flex-direction: column; gap: 0.4rem; }
 .contact-form .radio { display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.55rem 0.9rem; border: 1px solid var(--gray-700); border-radius: calc(var(--radius) - 0.25rem); background: var(--gray-700); font-size: 0.92rem; color: var(--gray-100); transition: border-color .15s ease, background .15s ease; }
 .contact-form .radio:hover { border-color: var(--gray-650); }
-.contact-form .radio input { accent-color: var(--blurple-500); margin: 0; }
-.contact-form .radio:has(input:checked) { border-color: var(--blurple-500); background: hsl(235 86% 65% / 0.12); }
+.contact-form .radio input { accent-color: var(--brand-ink); margin: 0; }
+.contact-form .radio:has(input:checked) { border-color: var(--brand-ink); background: var(--brand-tint); }
 .contact-form .field-hint { font-size: 0.8rem; color: var(--muted-foreground); }
 .contact-form .form-actions { display: flex; align-items: center; gap: 0.75rem; }
 .contact-form.is-done > *:not(.form-msg) { display: none; }
@@ -653,8 +876,8 @@ textarea:autofill {
 .reveal.in { opacity: 1; transform: none; }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(144 65% 39% / 0.5); }
-  50% { box-shadow: 0 0 0 5px hsl(144 65% 39% / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--positive) 50%, transparent); }
+  50% { box-shadow: 0 0 0 5px transparent; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -667,7 +890,7 @@ textarea:autofill {
 
 /* Inner-page hero */
 .page-hero { position: relative; text-align: center; padding-block: clamp(3.5rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); overflow: hidden; }
-.page-hero::before { content: ""; position: absolute; inset: -30% 0 auto 50%; transform: translateX(-50%); width: 760px; height: 460px; background: radial-gradient(50% 50% at 50% 50%, hsl(235 86% 65% / 0.18), transparent 70%); pointer-events: none; }
+.page-hero::before { content: ""; position: absolute; inset: -30% 0 auto 50%; transform: translateX(-50%); width: 760px; height: 460px; background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 70%); pointer-events: none; }
 .page-hero .wrap { position: relative; }
 .page-hero .eyebrow { justify-content: center; }
 .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0.9rem auto 1rem; max-width: 46rem; }
@@ -680,7 +903,7 @@ textarea:autofill {
 .center-head { text-align: center; max-width: 52rem; margin-inline: auto; }
 .center-head h2 { margin-inline: auto; }
 .center-head p { margin-inline: auto; }
-.more-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--blurple-500); font-weight: 600; font-size: 0.95rem; margin-top: 1.25rem; transition: gap .15s ease; }
+.more-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--brand-ink); font-weight: 600; font-size: 0.95rem; margin-top: 1.25rem; transition: gap .15s ease; }
 .more-link:hover { gap: 0.65rem; }
 
 /* Split (text + visual) */
@@ -697,7 +920,7 @@ textarea:autofill {
 .tiers { display: flex; flex-direction: column; gap: 0.75rem; }
 .tier-row { display: grid; grid-template-columns: 180px 1fr; gap: 1rem; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.4rem; }
 .tier-row .tname { font-weight: 700; color: var(--gray-100); }
-.tier-row .tname span { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blurple-500); margin-top: 0.2rem; }
+.tier-row .tname span { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-ink); margin-top: 0.2rem; }
 .tier-row p { color: var(--muted-foreground); font-size: 0.95rem; }
 @media (max-width: 700px) { .tier-row { grid-template-columns: 1fr; gap: 0.35rem; } }
 
@@ -725,7 +948,7 @@ textarea:autofill {
 .price-card li { position: relative; padding-left: 1.5rem; font-size: 0.9rem; color: var(--gray-200); }
 .price-card li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
 .price-card .btn { margin-top: auto; }
-.pill-tag { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blurple-500); background: hsl(235 86% 65% / 0.16); padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle; }
+.pill-tag { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-ink); background: var(--brand-tint); padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle; }
 
 /* FAQ */
 .faq { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: 0.6rem; }
@@ -740,10 +963,10 @@ textarea:autofill {
 .nav-links a.active { color: var(--gray-100); }
 
 /* small labels for cards */
-.dlabel { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blurple-500); margin-bottom: 0.5rem; }
+.dlabel { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-ink); margin-bottom: 0.5rem; }
 
 /* standalone chat card (no sidebar) — for spotlight visuals */
-.chat.solo { grid-template-columns: 1fr; box-shadow: var(--shadow-glow); }
+.chat.solo { grid-template-columns: 1fr; box-shadow: var(--shadow-lg); }
 .connect-card { display: flex; align-items: center; gap: 0.75rem; margin: 0.6rem 0 0.2rem; padding: 0.7rem 0.85rem; border: 1px solid var(--border); border-radius: 0.6rem; background: var(--gray-850); }
 .connect-card .ilogo { width: 30px; height: 30px; }
 .connect-card .cc-name { font-weight: 600; color: var(--gray-100); font-size: 0.9rem; }
@@ -799,3 +1022,46 @@ textarea:autofill {
 .uc-stack > b { color: var(--gray-100); font-size: 0.85rem; margin-right: 0.15rem; }
 .uc-stack .ilogo { width: 28px; height: 28px; }
 .uc-stack .ilogo .mono { font-size: 0.74rem; }
+
+/* ════════ T5 "Full Tape Brand" additions ════════ */
+
+/* Persona avatar identity. Pinned to the bright/electric hues in BOTH modes so an
+   agent's color is stable; dark ink (--primary-foreground) reads on every fill
+   except magenta (persona-4), which takes white. Applied to .avatar / .mini / .stack. */
+.p1 { background: var(--persona-1); }
+.p2 { background: var(--persona-2); }
+.p3 { background: var(--persona-3); }
+.p4 { background: var(--persona-4); color: #fff; }
+.p5 { background: var(--persona-5); }
+.p6 { background: var(--persona-6); }
+.p7 { background: var(--persona-7); }
+/* Operator / human avatar — neutral, per the T5 operator-message recipe. */
+.avatar.human, .mini.human { background: color-mix(in srgb, var(--ink-2) 24%, transparent); color: var(--ink-1); }
+
+/* Theme toggle (nav) — ghost icon button, mirrors .nav-login. */
+.theme-toggle {
+  display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem;
+  border: 1px solid var(--border); border-radius: calc(var(--radius) - 0.3rem);
+  background: transparent; color: var(--ink-2); cursor: pointer; flex-shrink: 0;
+  transition: color .15s ease, background .15s ease, border-color .15s ease;
+}
+.theme-toggle:hover { color: var(--ink-1); background: var(--accent); }
+.theme-toggle svg { width: 18px; height: 18px; display: block; }
+
+/* Primary button — cyan fill, dark ink, a subtle top bevel (no glow: glow stays scarce). */
+.btn-primary { box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28); }
+
+/* The single magenta "consequential" moment: the human approval in the demo.
+   Magenta = a person must decide. Scarce, so the glow MEANS something. */
+.btn-consequential {
+  background: var(--consequential); color: var(--consequential-foreground);
+  box-shadow: var(--shadow-glow-consequential), inset 0 1px 0 rgb(255 255 255 / 0.22);
+}
+.btn-consequential:hover { background: var(--magenta-600); }
+.connect-card.consequential {
+  border-color: var(--consequential-border);
+  box-shadow: 0 0 0 1px var(--consequential-tint);
+}
+
+/* Light-mode: flip the decorative faded-logo backdrop from white-out to dark ink. */
+[data-theme="light"] .bg-logos img { filter: brightness(0); opacity: 0.05; }

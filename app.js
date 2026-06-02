@@ -385,3 +385,30 @@ if (contactForm && contactMsg) contactForm.addEventListener("submit", async (ev)
     fail("Something went wrong, try again in a moment.");
   }
 });
+
+// ── Theme toggle ──
+// The <head> bootstrap already set the initial theme before first paint (no FOUC).
+// This wires the nav button: flip <html data-theme>, persist, sync browser chrome.
+(function themeToggle() {
+  const root = document.documentElement;
+  function setChrome(theme) {
+    let m = document.getElementById("theme-color-dynamic");
+    if (!m) {
+      m = document.createElement("meta");
+      m.name = "theme-color";
+      m.id = "theme-color-dynamic";
+      document.head.appendChild(m);
+    }
+    m.setAttribute("content", theme === "light" ? "#f3f0e9" : "#0f0d12");
+  }
+  setChrome(root.dataset.theme === "light" ? "light" : "dark");
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      if (next === "light") root.dataset.theme = "light";
+      else root.removeAttribute("data-theme");
+      try { localStorage.setItem("nomik-theme", next); } catch (e) {}
+      setChrome(next);
+    });
+  });
+})();
