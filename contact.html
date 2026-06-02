@@ -5,12 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact &amp; demo · Nomik</title>
   <meta name="description" content="Talk to us about Nomik. Tell us about your team, your use case, and where you need it to run, SaaS, private cloud, or on-prem. We'll get back within a business day." />
+  <meta property="og:title" content="Contact &amp; demo · Nomik" />
+  <meta property="og:description" content="Talk to us about Nomik. Tell us about your team, your use case, and where you need it to run, SaaS, private cloud, or on-prem. We'll get back within a business day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nomik.ai/contact.html" />
+  <meta property="og:image" content="https://www.nomik.ai/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact &amp; demo · Nomik" />
+  <meta name="twitter:description" content="Talk to us about Nomik. Tell us about your team, your use case, and where you need it to run, SaaS, private cloud, or on-prem. We'll get back within a business day." />
+  <meta name="twitter:image" content="https://www.nomik.ai/og-default.png" />
+  <link rel="canonical" href="https://www.nomik.ai/contact.html" />
   <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
   <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
   <link rel="stylesheet" href="styles.css" />
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileReady" async defer></script>
 </head>
 <body>
   <header class="nav">
@@ -50,8 +65,7 @@
           <p class="lead">Just looking around? <a href="index.html#waitlist" style="color:var(--brand-ink);font-weight:600">Join the waitlist</a> instead, we'll reach out as spots open.</p>
         </div>
         <div>
-          <!-- TODO operator: create Formspree contact form and replace the action URL below -->
-          <form class="contact-form" id="contact-form" action="https://formspree.io/f/REPLACE_WITH_CONTACT_FORM_ID" method="POST" novalidate>
+          <form class="contact-form" id="contact-form" novalidate>
             <div class="field">
               <label for="cf-name">Your name</label>
               <input id="cf-name" name="name" type="text" autocomplete="name" required />
@@ -86,6 +100,7 @@
                 <label class="radio"><input type="radio" name="sovereignty" value="unsure" /><span>Not sure yet</span></label>
               </div>
             </fieldset>
+            <div class="turnstile-container" aria-hidden="true"></div>
             <div class="form-actions">
               <button class="btn btn-primary" type="submit">Send</button>
             </div>
@@ -105,6 +120,9 @@
         <a href="use-cases.html">Use cases</a>
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
         <a href="contact.html">Contact</a>
         <a href="index.html#waitlist">Early access</a>
       </nav>

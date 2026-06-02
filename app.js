@@ -186,6 +186,12 @@ const TURNSTILE_SITEKEY = "0x4AAAAAADVjnrrRgwexBYuo";
 const endpointWired =
   !WAITLIST_ENDPOINT.includes("REPLACE_WITH_") && !TURNSTILE_SITEKEY.includes("REPLACE_WITH_");
 
+// Contact / demo-request receiver (contact.html). Same Supabase project + Turnstile
+// site key as the waitlist; see supabase/functions/submit-contact.
+const CONTACT_ENDPOINT = "https://qerdbjcmheeuwexmfyam.supabase.co/functions/v1/submit-contact";
+const contactEndpointWired =
+  !CONTACT_ENDPOINT.includes("REPLACE_WITH_") && !TURNSTILE_SITEKEY.includes("REPLACE_WITH_");
+
 // Turnstile loads with ?onload=onTurnstileReady; we just need the callback
 // to exist so the script doesn't error. Rendering happens on submit, not boot.
 window.onTurnstileReady = function () {};
@@ -335,8 +341,9 @@ if (heroStage && heroCta && heroFormEl) {
   });
 }
 
-// Contact form (contact.html). Posts to a Formspree endpoint set on the <form action="">.
-// Validates client-side, swaps to a success message inline (not a toast).
+// Contact form (contact.html). Validates client-side, then POSTs JSON to the
+// Supabase submit-contact function (Turnstile-gated, like the waitlist).
+// Swaps to a success message inline (not a toast).
 const contactForm = document.getElementById("contact-form");
 const contactMsg = document.getElementById("contact-msg");
 
@@ -362,26 +369,48 @@ if (contactForm && contactMsg) contactForm.addEventListener("submit", async (ev)
   if (useCase.length < 30) return fail("Tell us a bit more about the use case (30+ characters).");
   if (!sovereignty) return fail("Pick a sovereignty preference.");
 
-  const action = contactForm.getAttribute("action") || "";
   const btn = contactForm.querySelector('button[type="submit"]');
-  if (btn) btn.disabled = true;
+  const setLoading = (on) => {
+    if (!btn) return;
+    btn.disabled = on;
+    btn.classList.toggle("is-loading", on);
+  };
+  setLoading(true);
 
   try {
-    if (action && !action.includes("REPLACE_WITH_")) {
-      const res = await fetch(action, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
-      });
-      if (!res.ok) throw new Error(String(res.status));
-    } else {
+    if (!contactEndpointWired) {
       console.info("[contact] captured (endpoint not yet wired):", { name, email, company, teamSize, sovereignty });
+    } else {
+      const token = await getTurnstileToken(contactForm.querySelector(".turnstile-container"));
+      if (!token) {
+        setLoading(false);
+        return fail("Couldn't verify the request. Please refresh and try again.");
+      }
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          team_size: teamSize,
+          use_case: useCase,
+          sovereignty,
+          turnstileToken: token,
+        }),
+      });
+      if (res.status === 429) {
+        setLoading(false);
+        return fail("Too many requests from your network. Try again in an hour.");
+      }
+      if (!res.ok) throw new Error(String(res.status));
     }
     contactForm.classList.add("is-done");
     contactMsg.textContent = "Thanks, we'll get back within a business day.";
     contactMsg.className = "form-msg ok";
+    setLoading(false);
   } catch {
-    if (btn) btn.disabled = false;
+    setLoading(false);
     fail("Something went wrong, try again in a moment.");
   }
 });
