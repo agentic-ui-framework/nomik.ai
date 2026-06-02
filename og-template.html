@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- Source template for og-default / og-cover.png (1200x630). Regenerate with:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+       --disable-gpu --force-device-scale-factor=1 --window-size=1200,630 \
+       --hide-scrollbars --virtual-time-budget=3000 \
+       --screenshot=og-cover.png file://$PWD/og-template.html
+     Tokens mirror styles.css (dark theme); mark is icon.svg; copy mirrors the live hero. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-display: block;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    background:
+      radial-gradient(46% 46% at 50% 44%, rgba(34, 211, 238, 0.16), transparent 70%),
+      radial-gradient(38% 40% at 82% 16%, rgba(129, 140, 248, 0.13), transparent 72%),
+      #0f0d12;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .frame {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    padding: 70px 84px;
+  }
+  /* hairline border to echo the product's framed surfaces */
+  .frame::after {
+    content: ""; position: absolute; inset: 22px; border-radius: 24px;
+    border: 1px solid rgba(242, 235, 238, 0.08);
+  }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand img { width: 76px; height: 76px; display: block; }
+  .brand .word {
+    font-family: "Montserrat", sans-serif; font-weight: 800;
+    font-size: 44px; letter-spacing: -0.02em; color: #f2ebee;
+  }
+  .center {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    gap: 22px; margin-top: -18px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 11px;
+    font-size: 21px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #38d9ee;
+  }
+  .eyebrow::before {
+    content: ""; width: 11px; height: 11px; border-radius: 50%;
+    background: #22d3ee; box-shadow: 0 0 0 5px rgba(34, 211, 238, 0.18);
+  }
+  h1 {
+    font-family: "Montserrat", sans-serif; font-weight: 800;
+    font-size: 78px; line-height: 1.05; letter-spacing: -0.025em;
+    color: #f2ebee; max-width: 1000px;
+  }
+  .sub { font-size: 29px; line-height: 1.35; color: #a99fa6; max-width: 820px; }
+  .url {
+    text-align: center; font-size: 24px; font-weight: 600;
+    letter-spacing: 0.01em; color: #38d9ee;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="brand">
+      <img src="icon.svg" alt="" />
+      <span class="word">Nomik</span>
+    </div>
+    <div class="center">
+      <span class="eyebrow">The agentic workspace</span>
+      <h1>Your team and your agents, working as one.</h1>
+      <p class="sub">Humans and a self-organizing AI fleet, in the same chat — planning, deciding, and running the business together.</p>
+    </div>
+    <div class="url">nomik.ai</div>
+  </div>
+</body>
+</html>
