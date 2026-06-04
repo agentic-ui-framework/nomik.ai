@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developers · Nomik</title>
+  <meta name="description" content="Build on Nomik. A REST API, an MCP tool surface your agents already speak, descriptor-driven custom connectors, and inbound webhooks. Plus what's coming: a typed SDK, API keys, and outbound events." />
+  <meta property="og:title" content="Developers · Nomik" />
+  <meta property="og:description" content="Build on Nomik: a REST API, an MCP tool surface, descriptor-driven custom connectors, and inbound webhooks, plus a typed SDK and outbound events on the roadmap." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nomik.ai/developers.html" />
+  <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Developers · Nomik" />
+  <meta name="twitter:description" content="Build on Nomik: a REST API, an MCP tool surface, descriptor-driven custom connectors, and inbound webhooks, plus a typed SDK and outbound events on the roadmap." />
+  <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
+  <link rel="canonical" href="https://www.nomik.ai/developers.html" />
+  <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+  <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>
+        Nomik
+      </a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="developers.html" class="active">Developers</a>
+      </nav>
+      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Developers</span>
+        <h1>Build on Nomik.</h1>
+        <p>Drive the workforce from your own code, give your agents tools you host, and add integrations we haven't shipped yet. Here's what's live today, and what's coming next, told straight.</p>
+        <p style="margin-top:1rem"><a class="btn btn-primary" href="docs.html">Read the docs</a> <a class="btn btn-ghost" href="index.html#waitlist" style="margin-left:0.5rem">Join the developer preview</a></p>
+      </div>
+    </section>
+
+    <!-- Available now -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Available now</span>
+          <h2>The surface you can build against today.</h2>
+          <p>Everything below is part of the running platform. It powers the app you use, and it's open to your code on the same terms.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Live</span></div>
+            <h3>REST API</h3>
+            <p>Create workspaces, manage agents, kick off runs, read activity. Every response comes back in one envelope, with a request id for tracing.</p>
+            <a class="more-link" href="docs.html#api">API reference →</a>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Live</span></div>
+            <h3>MCP tool surface</h3>
+            <p>Agents speak the Model Context Protocol. Mount your own MCP server and your agents gain its tools, on top of every connected integration.</p>
+            <a class="more-link" href="docs.html#mcp">Bring your own MCP →</a>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Live</span></div>
+            <h3>Custom connectors</h3>
+            <p>An integration is a descriptor, not a fork. Declare the base URL, auth, and risk, and the factory turns it into real, gated actions your agents can take.</p>
+            <a class="more-link" href="docs.html#connectors">Add an integration →</a>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Live</span></div>
+            <h3>Inbound webhooks</h3>
+            <p>Point a provider's webhook at your workspace. Signed events are verified, classified, and turned into work the right squad picks up.</p>
+            <a class="more-link" href="docs.html#webhooks">Wire a webhook →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code samples -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">In practice</span>
+          <h2>A feel for the shape of it.</h2>
+          <p>Clean REST, a familiar MCP config, and a one-row connector. Full details, auth, and error codes live in the docs.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <div class="code-card">
+            <div class="code-head">REST · list a workspace's agents</div>
+            <pre class="codeblock"><code><span class="c"># Authenticated with a bearer token</span>
+curl https://api.nomik.ai/v1/workspaces/$WS/agents \
+  -H <span class="s">"Authorization: Bearer $TOKEN"</span>
+
+<span class="c"># → every response shares one envelope</span>
+{
+  <span class="k">"success"</span>: true,
+  <span class="k">"data"</span>: [
+    { <span class="k">"id"</span>: <span class="s">"agt_8f2"</span>, <span class="k">"name"</span>: <span class="s">"Fin"</span>, <span class="k">"role"</span>: <span class="s">"finance"</span> }
+  ],
+  <span class="k">"metadata"</span>: { <span class="k">"requestId"</span>: <span class="s">"req_3a9"</span> }
+}</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">MCP · give agents a tool you host</div>
+            <pre class="codeblock"><code><span class="c">// Mount any MCP server into the workspace.</span>
+<span class="c">// Its tools join the ones agents already have.</span>
+{
+  <span class="k">"mcpServers"</span>: {
+    <span class="k">"warehouse"</span>: {
+      <span class="k">"command"</span>: <span class="s">"npx"</span>,
+      <span class="k">"args"</span>: [<span class="s">"-y"</span>, <span class="s">"@acme/warehouse-mcp"</span>],
+      <span class="k">"env"</span>: { <span class="k">"REGION"</span>: <span class="s">"eu"</span> }
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="reveal" style="margin-top:1.25rem">
+          <div class="code-card">
+            <div class="code-head">Connector · one row becomes a real integration</div>
+            <pre class="codeblock"><code><span class="c">// No SDK to write. Declare it; the factory builds the actions,</span>
+<span class="c">// the vault holds the credential, and risk gates the writes.</span>
+<span class="k">export const</span> acme = {
+  <span class="k">kind</span>: <span class="s">"acme"</span>,
+  <span class="k">displayName</span>: <span class="s">"Acme"</span>,
+  <span class="k">category</span>: <span class="s">"Operations"</span>,
+  <span class="k">auth</span>: <span class="s">"api_key"</span>,            <span class="c">// or "oauth"</span>
+  <span class="k">baseURL</span>: <span class="s">"https://api.acme.com/v2"</span>,
+  <span class="k">risk</span>: <span class="s">"outbound"</span>,           <span class="c">// reads stay free; writes wait for approval</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- On the roadmap -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">On the roadmap</span>
+          <h2>What we're building next, said honestly.</h2>
+          <p>These aren't shipped yet. We'd rather tell you what's coming than dress up a mock as a product. Join the developer preview to shape it.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Coming</span></div>
+            <h3>A typed SDK</h3>
+            <p>A first-party client for TypeScript and Python, so calling the API and streaming agent activity is one install, not hand-rolled HTTP.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Coming</span></div>
+            <h3>API keys for your apps</h3>
+            <p>Scoped, revocable keys for server-to-server access, so an external app can act as itself, alongside today's session auth.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Coming</span></div>
+            <h3>Outbound event webhooks</h3>
+            <p>Subscribe your own URL to fleet events, an approval resolved, a task done, a run finished, and react in your stack.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Coming</span></div>
+            <h3>Pluggable model endpoints</h3>
+            <p>Point an agent at any OpenAI-compatible endpoint, managed or local, and keep the same coordination layer around it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bring your own MCP highlight -->
+    <section class="band">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Extensibility</span>
+          <h2>Your tools, in your agents' hands.</h2>
+          <p class="lead">The cleanest way to extend Nomik isn't a plugin format we invented, it's the one your agents already use. Mount an MCP server and its tools show up next to every connected integration, gated by the same risk model.</p>
+          <ul class="bullets">
+            <li><b>Standard protocol</b>: any MCP server works, the ones you find and the ones you write.</li>
+            <li><b>Same guardrails</b>: your tools inherit the approval gates and the audit trail.</li>
+            <li><b>No raw secrets</b>: agents act through scoped access, never your credentials in the clear.</li>
+          </ul>
+          <a class="more-link" href="docs.html#mcp">Read the MCP guide →</a>
+        </div>
+        <div class="code-card reveal">
+          <div class="code-head">An agent reaching your MCP tool</div>
+          <pre class="codeblock"><code><span class="c"># In the activity trace, your tool looks</span>
+<span class="c"># exactly like a built-in one</span>
+▸ <span class="k">warehouse.stock_check</span>  sku=AC-12  →  ok
+▸ <span class="k">slack.post</span>  #ops  "AC-12 back in stock"
+
+<span class="c"># reads run free · writes wait for approval</span>
+✓ approved by you · <span class="s">$0.004</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <h2>Building on an agent workforce?</h2>
+          <p>Join the developer preview and tell us what you want to build. We'll get you early access and shape the SDK around real use.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Join the developer preview</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm2)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="product.html">Product</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="skills.html">Skills</a>
+        <a href="agents.html">Agents</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="developers.html">Developers</a>
+        <a href="docs.html">Docs</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <div class="footer-social" aria-label="Social links">
+        <a href="https://twitter.com/nomik_ai" target="_blank" rel="noopener" aria-label="Nomik on X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+      </div>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

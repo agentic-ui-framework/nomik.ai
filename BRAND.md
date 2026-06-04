@@ -62,17 +62,27 @@ Mobile-first collapse (grids → single column, sidebar hides, full-height hero 
 
 ## Surface map
 
-Six pages, one system:
+One system, many surfaces:
 
 | Page | Role |
 |---|---|
 | **Home** (`index.html`) | Narrative + demo + integrations + CTA. |
 | **Product** (`product.html`) | The Warden, the org and tiers, glass box, any-model. |
 | **How it works** (`how-it-works.html`) | Three moves, happy path, surfaces. |
+| **Marketplace** (`marketplace.html`) | Hub for the four catalogs: integrations directory + how connecting works (OAuth/vault/gate). Links to the three below. |
+| **Recipes** (`recipes.html`) | 1,400+ automation briefs, category browser, real recipe cards, runnable-with-your-stack, pick → Warden → runs. |
+| **Skills** (`skills.html`) | The learning loop: agents record + verify + promote procedures. Recipes-vs-skills distinction; `SKILL.md` sample. |
+| **Agents** (`agents.html`) | The workforce deep dive: Nomik orchestrator, org tiers, what an agent can do, coordination, any-model, squads. |
 | **Security & Sovereignty** (`security.html`) | Control surface + on-prem / local models / EU-GDPR. |
 | **Pricing & Deployment** (`pricing.html`) | Model modes, deployment tiers, plan tiers, FAQ. |
 | **Use cases** (`use-cases.html`) | Day-in-the-life by business type, tabbed. |
+| **Developers** (`developers.html`) | SDK overview, reality + roadmap split (live REST/MCP/connectors/webhooks vs coming SDK/keys/events). |
+| **Docs** (`docs.html`) | Developer-preview documentation hub: sticky section index + content (start, auth, API, MCP, connectors, webhooks, deploy). |
+
+Top nav adds **Marketplace** (after Product) and **Developers** (after Pricing); the marketplace hub fans out to recipes/skills/agents, and Developers links to Docs. Catalog counts on the site (1,400+ recipes, hundreds of integrations) must track the live product, never overstate it.
 
 ## File map
 
-`index.html` · `product.html` · `how-it-works.html` · `security.html` · `pricing.html` · `use-cases.html` · `styles.css` · `app.js` · `logos/` · `CNAME` · `BRAND.md` (this file).
+`index.html` · `product.html` · `how-it-works.html` · `marketplace.html` · `recipes.html` · `skills.html` · `agents.html` · `security.html` · `pricing.html` · `use-cases.html` · `developers.html` · `docs.html` · `contact.html` · `privacy.html` · `terms.html` · `cookies.html` · `dpa.html` · `404.html` · `styles.css` · `app.js` · `logos/` · `CNAME` · `BRAND.md` (this file).
+
+New developer pages add a small CSS block at the end of `styles.css`: `.codeblock` / `.code-card` (syntax-tinted code) and `.docs-layout` / `.docs-nav` / `.docs-section` / `.status-pill` (the docs two-column layout + live/coming pills).
