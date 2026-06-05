@@ -109,6 +109,132 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
   });
 })();
 
+// Highlight the active nav item (and its row + parent group) from the current
+// URL, so the grouped nav stays correct on every page without per-page markup.
+// Runs BEFORE the mega-menu builds, so the cloned panels inherit the highlight.
+(function markActiveNav() {
+  const file = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach((a) => {
+    const href = (a.getAttribute("href") || "").split("#")[0].replace(/^\//, "");
+    if (href && href === file) {
+      a.classList.add("active");
+      const row = a.closest(".nav-row");
+      if (row) row.classList.add("active");
+      const grp = a.closest(".nav-group");
+      const label = grp && grp.querySelector(".nav-group-label");
+      if (label) label.classList.add("active");
+    }
+  });
+})();
+
+// Stripe-style morphing mega-menu (desktop > 1080px). A single rounded card
+// slides AND resizes between the Product / Marketplace / Developers triggers,
+// cross-fading the rich panel inside. It's built by cloning each group's
+// .nav-menu, so the page markup stays simple and the mobile drawer keeps using
+// the same inline menus. Hover, click, and keyboard all drive it.
+(function initMegaNav() {
+  const navEl = document.querySelector(".nav");
+  const navLinks = navEl && navEl.querySelector(".nav-links");
+  if (!navEl || !navLinks) return;
+  const groups = Array.from(navLinks.querySelectorAll(".nav-group"));
+  if (!groups.length) return;
+
+  const flyout = document.createElement("div");
+  flyout.className = "nav-flyout";
+  const card = document.createElement("div");
+  card.className = "nav-flyout-card";
+  flyout.appendChild(card);
+  navEl.appendChild(flyout);
+
+  const panels = new Map();
+  for (const g of groups) {
+    const menu = g.querySelector(".nav-menu");
+    if (!menu) continue;
+    const panel = menu.cloneNode(true);
+    panel.classList.add("nav-panel");
+    panel.dataset.panel = g.dataset.menu || "";
+    card.appendChild(panel);
+    panels.set(g, panel);
+  }
+  if (!panels.size) return;
+
+  const isDesktop = () => window.matchMedia("(min-width: 1081px)").matches;
+  let current = null;
+  let closeTimer = null;
+  const cancelClose = () => { if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; } };
+  const setState = (group, open) => {
+    group.classList.toggle("is-open", open);
+    const l = group.querySelector(".nav-group-label");
+    if (l) l.setAttribute("aria-expanded", String(open));
+  };
+
+  function openGroup(group) {
+    cancelClose();
+    const panel = panels.get(group);
+    if (!panel) return;
+    const fresh = !flyout.classList.contains("open");
+    panels.forEach((p) => p.classList.toggle("is-active", p === panel));
+    groups.forEach((g) => setState(g, g === group));
+    const w = panel.offsetWidth;
+    const h = panel.offsetHeight;
+    const r = group.querySelector(".nav-group-label").getBoundingClientRect();
+    const pad = 18;
+    let left = r.left + r.width / 2 - w / 2;
+    left = Math.max(pad, Math.min(left, window.innerWidth - w - pad));
+    const apply = () => { card.style.left = left + "px"; card.style.width = w + "px"; card.style.height = h + "px"; };
+    if (fresh) {
+      card.classList.add("no-anim");
+      apply();
+      void card.offsetWidth;          // reflow, so subsequent moves animate
+      card.classList.remove("no-anim");
+    } else {
+      apply();
+    }
+    flyout.classList.add("open");
+    current = group;
+  }
+
+  function closeMenu() {
+    flyout.classList.remove("open");
+    groups.forEach((g) => setState(g, false));
+    current = null;
+  }
+  const scheduleClose = () => { cancelClose(); closeTimer = setTimeout(closeMenu, 130); };
+
+  for (const g of groups) {
+    const label = g.querySelector(".nav-group-label");
+    g.addEventListener("mouseenter", () => { if (isDesktop()) openGroup(g); });
+    g.addEventListener("mouseleave", () => { if (isDesktop()) scheduleClose(); });
+    if (!label) continue;
+    label.addEventListener("click", (e) => {
+      if (!isDesktop()) return;        // mobile drawer shows the inline rows
+      e.preventDefault();
+      if (current === g) closeMenu(); else openGroup(g);
+    });
+    label.addEventListener("keydown", (e) => {
+      if (!isDesktop()) return;
+      if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+        e.preventDefault();
+        openGroup(g);
+        const first = panels.get(g).querySelector("a");
+        if (first) first.focus();
+      }
+    });
+  }
+  card.addEventListener("mouseenter", cancelClose);
+  card.addEventListener("mouseleave", scheduleClose);
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-group") && !e.target.closest(".nav-flyout")) closeMenu();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && current) { const g = current; closeMenu(); g.querySelector(".nav-group-label")?.focus(); }
+  });
+  navEl.addEventListener("focusout", (e) => {
+    if (isDesktop() && current && !navEl.contains(e.relatedTarget)) closeMenu();
+  });
+  window.addEventListener("resize", () => { if (current) { isDesktop() ? openGroup(current) : closeMenu(); } });
+})();
+
 // Reveal sections on scroll (respects prefers-reduced-motion via CSS).
 const io = new IntersectionObserver(
   (entries) => {

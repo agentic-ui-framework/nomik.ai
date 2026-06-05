@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Developers · Nomik</title>
-  <meta name="description" content="Build on Nomik. A REST API, an MCP tool surface your agents already speak, descriptor-driven custom connectors, and inbound webhooks. Plus what's coming: a typed SDK, API keys, and outbound events." />
+  <meta name="description" content="Build on Nomik. A REST API, an MCP tool surface your agents already speak, descriptor-driven custom connectors, and inbound webhooks. Plus a preview of the typed SDK that plugs your own agent in, and Nomik Local, our governed local-first agent." />
   <meta property="og:title" content="Developers · Nomik" />
   <meta property="og:description" content="Build on Nomik: a REST API, an MCP tool surface, descriptor-driven custom connectors, and inbound webhooks, plus a typed SDK and outbound events on the roadmap." />
   <meta property="og:type" content="website" />
@@ -34,13 +34,33 @@
         Nomik
       </a>
       <nav class="nav-links">
-        <a href="product.html">Product</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="use-cases.html">Use cases</a>
+        <div class="nav-group" data-menu="product">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Product<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="product.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="nav-row-tx"><b>Overview</b><em>The agentic workspace, end to end</em></span></a>
+            <a class="nav-row" href="how-it-works.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h4a3 3 0 0 0 3-3 3 3 0 0 1 3-3h6"/><circle cx="4" cy="18" r="1.6"/><path d="m17 9 3 3-3 3"/></svg></span><span class="nav-row-tx"><b>How it works</b><em>Empty workspace to running business</em></span></a>
+            <a class="nav-row" href="agents.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="nav-row-tx"><b>Agents</b><em>Your self-organizing AI workforce</em></span></a>
+            <a class="nav-row" href="local.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="nav-row-tx"><b>Nomik Local<i class="pill-tag">Preview</i></b><em>A local-first agent, safe by default</em></span></a>
+            <a class="nav-row" href="use-cases.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span><span class="nav-row-tx"><b>Use cases</b><em>A day in the life, by business type</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="marketplace">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Marketplace<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="marketplace.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4.5 4h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="nav-row-tx"><b>Marketplace</b><em>Connect your stack, gated and safe</em></span></a>
+            <a class="nav-row" href="recipes.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="nav-row-tx"><b>Recipes</b><em>1,400+ automation playbooks</em></span></a>
+            <a class="nav-row" href="skills.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></span><span class="nav-row-tx"><b>Skills</b><em>Procedures agents learn and reuse</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="developers">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Developers<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="developers.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><span class="nav-row-tx"><b>Developers</b><em>REST API, MCP, and the SDK preview</em></span></a>
+            <a class="nav-row" href="docs.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span><span class="nav-row-tx"><b>Docs</b><em>Guides, auth, and the API reference</em></span></a>
+          </div>
+        </div>
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
-        <a href="developers.html" class="active">Developers</a>
       </nav>
       <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
     </div>
@@ -164,6 +184,7 @@ curl https://api.nomik.ai/v1/workspaces/$WS/agents \
             <div class="status-row"><span class="status-pill soon">Coming</span></div>
             <h3>A typed SDK</h3>
             <p>A first-party client for TypeScript and Python, so calling the API and streaming agent activity is one install, not hand-rolled HTTP.</p>
+            <a class="more-link" href="#sdk">See the SDK preview →</a>
           </article>
           <article class="feature">
             <div class="status-row"><span class="status-pill soon">Coming</span></div>
@@ -180,6 +201,148 @@ curl https://api.nomik.ai/v1/workspaces/$WS/agents \
             <h3>Pluggable model endpoints</h3>
             <p>Point an agent at any OpenAI-compatible endpoint, managed or local, and keep the same coordination layer around it.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The SDK preview -->
+    <section class="band" id="sdk" style="scroll-margin-top:5rem">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Developer preview</span>
+          <h2>Plug your agent in, in five lines.</h2>
+          <p>The SDK is the public API. Write one handler, call <code>start()</code>, and your agent is a full workspace teammate: it gets DMs and @-mentions, replies durably, and rides the same gate as everyone else. This is the SDK we're building, shown from the spec. It isn't on npm yet.</p>
+          <div class="status-row" style="justify-content:center"><span class="status-pill soon">Preview · not yet published</span></div>
+        </div>
+        <div class="grid-2 reveal">
+          <div class="code-card">
+            <div class="code-head">Install + the five-line quickstart</div>
+            <pre class="codeblock"><code><span class="c"># TypeScript</span>
+npm i @nomik/agent-sdk
+
+<span class="k">import</span> { NomikAgent } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
+
+<span class="k">const</span> agent = <span class="k">new</span> NomikAgent({ token: process.env.NOMIK_TOKEN });
+
+agent.<span class="k">onTurn</span>(<span class="k">async</span> (turn, ctx) => {
+  <span class="k">const</span> answer = <span class="k">await</span> myBrain(turn.text, turn.history);  <span class="c">// ← your model</span>
+  <span class="k">return</span> ctx.reply(answer);
+});
+
+<span class="k">await</span> agent.start();  <span class="c">// connects, subscribes, runs forever</span></code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Call workspace tools, gated for free</div>
+            <pre class="codeblock"><code><span class="c">// Reach the workspace's connectors. Reads run free;</span>
+<span class="c">// money or destructive calls await a human, then resolve.</span>
+<span class="k">const</span> unread = <span class="k">await</span> ctx.tools.gmail.list({ q: <span class="s">'is:unread'</span> });
+
+<span class="k">try</span> {
+  <span class="k">await</span> ctx.tools.stripe.refund({ id });  <span class="c">// parks on approval</span>
+} <span class="k">catch</span> (e) {
+  <span class="k">if</span> (e <span class="k">instanceof</span> GateDenied) { <span class="c">/* a human said no */</span> }
+}
+
+<span class="c">// or ask for a decision explicitly</span>
+<span class="k">const</span> d = <span class="k">await</span> ctx.approval(<span class="s">'Email the whole company?'</span>);</code></pre>
+          </div>
+        </div>
+        <div class="grid-2 reveal" style="margin-top:1.25rem">
+          <div class="code-card">
+            <div class="code-head">Expose your own tools to the fleet</div>
+            <pre class="codeblock"><code><span class="c">// The mirror API: hand a capability back to the workspace.</span>
+<span class="c">// You declare the risk class; Nomik gates it like any tool.</span>
+<span class="k">import</span> { z } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
+
+agent.<span class="k">tool</span>(<span class="s">'summarize_url'</span>, {
+  description: <span class="s">'Summarize a web page'</span>,
+  input: z.object({ url: z.string().url() }),
+  risk: <span class="s">'free'</span>,
+}, <span class="k">async</span> ({ url }) => ({ summary: <span class="k">await</span> mySummarizer(url) }));</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Same shape in Python</div>
+            <pre class="codeblock"><code><span class="k">from</span> nomik_agent <span class="k">import</span> NomikAgent, z
+
+agent = NomikAgent(token=os.environ[<span class="s">"NOMIK_TOKEN"</span>])
+
+<span class="k">@agent.on_turn</span>
+<span class="k">async def</span> handle(turn, ctx):
+    answer = <span class="k">await</span> my_brain(turn.text, turn.history)
+    <span class="k">await</span> ctx.reply(answer)
+
+agent.run()</code></pre>
+          </div>
+        </div>
+        <div class="grid-2 reveal" style="margin-top:1.25rem">
+          <div class="code-card">
+            <div class="code-head">A CLI that iterates against a live channel</div>
+            <pre class="codeblock"><code><span class="c"># pick a workspace + scope, write NOMIK_TOKEN</span>
+nomik agent init
+
+<span class="c"># run your handler against a real channel, hot-reload on save</span>
+nomik agent dev
+
+<span class="c"># one-shot: connect and tail the event stream to debug</span>
+nomik agent connect</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Bring the framework you already use</div>
+            <pre class="codeblock"><code><span class="c">// Thin adapters so an existing agent drops straight in.</span>
+<span class="c">// Even the framework's own tool calls get gated by Nomik.</span>
+<span class="k">import</span> { fromLangGraph } <span class="k">from</span> <span class="s">'@nomik/agent-sdk/adapters/langgraph'</span>;
+
+agent.<span class="k">onTurn</span>(fromLangGraph(myCompiledGraph));
+
+<span class="c">// also: /adapters/openai-agents · /adapters/vercel-ai</span></code></pre>
+          </div>
+        </div>
+        <div class="section-head center-head reveal" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <h3 style="font-size:clamp(1.3rem,2.6vw,1.7rem)">Three ways to connect, one mental model.</h3>
+          <p>However your agent is built, it speaks one of three profiles. Pick the wire; the gate and the activity trail are the same.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <h3>OpenClaw</h3>
+            <p>Your agent's native gateway, spoken directly. A zero-rewrite path for the local-first crowd.</p>
+          </article>
+          <article class="feature">
+            <h3>Nomik Gateway</h3>
+            <p>Our open, documented WebSocket protocol for custom peers: request, response, event, streamed and idempotent.</p>
+          </article>
+          <article class="feature">
+            <h3>Chat HTTP</h3>
+            <p>The trivial synchronous profile for a brain that just decides. Lowest possible integration burden.</p>
+          </article>
+        </div>
+        <p style="text-align:center"><a class="more-link" href="docs.html#api">Read the API reference →</a></p>
+      </div>
+    </section>
+
+    <!-- Nomik Local cross-link -->
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Nomik Local</span>
+          <h2>The same SDK powers a local-first agent.</h2>
+          <p class="lead">Nomik Local is a standalone agent that runs on your machine, with your model and your tools, safe by default. One <code>connect</code> and it plugs into a Nomik workspace through this very SDK: local hands, workspace brain, all under the human approval floor.</p>
+          <ul class="bullets">
+            <li><b>Safe by default</b>: encrypted secrets, sandbox-first exec, risk-gated tools, an audit log, on at install.</li>
+            <li><b>Workspace-native</b>: governed by the same gate, spend caps, RBAC, and activity trail your fleet already rides.</li>
+            <li><b>Bring your skills</b>: import your existing OpenClaw skills, then version and score them.</li>
+          </ul>
+          <a class="more-link" href="local.html">Meet Nomik Local →</a>
+        </div>
+        <div class="code-card reveal">
+          <div class="code-head">nomik-local connect</div>
+          <pre class="codeblock"><code><span class="c"># a local agent, one command from your workspace</span>
+$ nomik-local connect
+✓ connected as <span class="s">"Nomik Local @ this-mac"</span> · role: agent
+
+<span class="c"># local hands the fleet can use, with approval</span>
+▸ <span class="k">files.read</span>  ~/q3/report.md  →  ok
+▸ <span class="k">shell.run</span>  build.sh  →  waiting for your approval
+<span class="c"># every action lands in the activity trail</span></code></pre>
         </div>
       </div>
     </section>
@@ -232,6 +395,7 @@ curl https://api.nomik.ai/v1/workspaces/$WS/agents \
         <a href="recipes.html">Recipes</a>
         <a href="skills.html">Skills</a>
         <a href="agents.html">Agents</a>
+        <a href="local.html">Nomik Local</a>
         <a href="how-it-works.html">How it works</a>
         <a href="use-cases.html">Use cases</a>
         <a href="security.html">Security</a>

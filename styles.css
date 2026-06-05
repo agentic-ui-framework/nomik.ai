@@ -386,6 +386,67 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 .nav-cta { display: flex; align-items: center; gap: 0.6rem; }
 .nav-login { color: var(--muted-foreground); font-size: 0.92rem; font-weight: 500; padding: 0.45rem 0.6rem; border-radius: calc(var(--radius) - 0.3rem); transition: color .15s ease, background .15s ease; }
 .nav-login:hover { color: var(--gray-100); background: var(--accent); }
+/* ── Stripe-style morphing mega-menu (desktop > 1080px) ──
+   The Product/Marketplace/Developers triggers live in the bar; a single rounded
+   card (.nav-flyout-card) slides AND resizes between them as you move across the
+   triggers, cross-fading the panel inside. JS (initMegaNav) builds the card from
+   each group's .nav-menu and sets the geometry; CSS owns all the motion. */
+.nav-group { position: relative; display: inline-flex; align-items: center; }
+.nav-group-label {
+  display: inline-flex; align-items: center; gap: 0.28rem;
+  background: none; border: 0; cursor: pointer; font: inherit;
+  color: var(--muted-foreground); font-size: 0.92rem; font-weight: 500;
+  padding: 0.4rem 0; transition: color .15s ease;
+}
+.nav-group-label .caret { transition: transform .2s ease; opacity: 0.65; }
+.nav-group:hover .nav-group-label,
+.nav-group.is-open .nav-group-label,
+.nav-group-label.active { color: var(--gray-100); }
+.nav-group.is-open .caret { transform: rotate(180deg); }
+
+/* The flyout host spans the header; the card is positioned/sized by JS. */
+.nav-flyout { position: absolute; top: 100%; left: 0; right: 0; z-index: 99; pointer-events: none; display: none; }
+.nav-flyout-card {
+  position: absolute; top: 0.55rem; left: 0; width: 0; height: 0; overflow: hidden;
+  background: var(--card); border: 1px solid var(--border); border-radius: 1rem;
+  box-shadow: 0 1px 0 0 color-mix(in srgb, #fff 6%, transparent) inset,
+              0 22px 50px -24px rgba(0,0,0,.72), var(--shadow-lg);
+  opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.985); transform-origin: top center;
+  transition: left .34s cubic-bezier(.45,.12,.18,1), width .34s cubic-bezier(.45,.12,.18,1),
+              height .34s cubic-bezier(.45,.12,.18,1), opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+}
+.nav-flyout.open .nav-flyout-card {
+  opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto;
+  transition: left .34s cubic-bezier(.45,.12,.18,1), width .34s cubic-bezier(.45,.12,.18,1),
+              height .34s cubic-bezier(.45,.12,.18,1), opacity .2s ease, transform .2s ease;
+}
+/* First open from closed: JS adds .no-anim for one frame so it doesn't slide in from a stale spot. */
+.nav-flyout-card.no-anim { transition: opacity .2s ease, transform .2s ease; }
+
+/* Panels stack inside the card and cross-fade; the active one's size is what JS reads. */
+.nav-panel { position: absolute; inset: 0 auto auto 0; padding: 0.55rem; opacity: 0; pointer-events: none; transition: opacity .18s ease; }
+.nav-panel.is-active { opacity: 1; pointer-events: auto; }
+.nav-panel a { visibility: hidden; }            /* keep inactive/closed panel links out of the tab order */
+.nav-panel.is-active a { visibility: visible; }
+.nav-panel[data-panel="product"]     { width: 33rem; }
+.nav-panel[data-panel="marketplace"] { width: 21rem; }
+.nav-panel[data-panel="developers"]  { width: 20rem; }
+
+/* Rich rows (icon · title · description): the Stripe-style menu content. */
+.nav-menu { display: flex; flex-direction: column; gap: 1px; }
+.nav-menu.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px 0.35rem; }
+.nav-row { display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.6rem 0.7rem; border-radius: 0.7rem; transition: background .14s ease; }
+.nav-row:hover { background: var(--accent); }
+.nav-row-ic { flex: none; width: 2.15rem; height: 2.15rem; border-radius: 0.6rem; display: grid; place-items: center; background: var(--brand-tint); color: var(--brand-ink); transition: background .14s ease, color .14s ease; }
+.nav-row-tx { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.nav-row-tx b { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gray-100); font-size: 0.9rem; font-weight: 600; }
+.nav-row-tx em { color: var(--muted-foreground); font-size: 0.78rem; font-style: normal; line-height: 1.4; }
+.nav-row.active .nav-row-ic { background: var(--brand-ink); color: var(--background); }
+.nav-row.active .nav-row-tx b { color: var(--brand-ink); }
+@media (min-width: 1081px) {
+  .nav-flyout { display: block; }
+  .nav-group > .nav-menu { display: none; }   /* desktop uses the morphing flyout, not the inline menu */
+}
 @media (max-width: 720px) {
   .nav-login { display: none; }
   /* Drop the nav CTA on mobile — the hero's own CTA + the hamburger menu's
@@ -410,6 +471,20 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
   .nav.open .nav-links { transform: none; opacity: 1; pointer-events: auto; }
   .nav-links a { padding: 0.85rem 0.1rem; font-size: 1rem; border-bottom: 1px solid var(--border); }
   .nav-links a:last-child { border-bottom: 0; }
+  /* In the mobile drawer, groups become labelled sections with the rich rows shown. */
+  .nav-group { display: block; }
+  .nav-group-label {
+    width: 100%; justify-content: space-between; cursor: default;
+    padding: 1rem 0.1rem 0.4rem; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground);
+  }
+  .nav-group-label .caret { display: none; }
+  .nav-menu, .nav-menu.cols-2 { display: flex; flex-direction: column; gap: 0; padding: 0; }
+  .nav-menu .nav-row { padding: 0.7rem 0.1rem; border-bottom: 1px solid var(--border); border-radius: 0; }
+  .nav-menu .nav-row:hover { background: none; }
+  .nav-row-ic { width: 1.9rem; height: 1.9rem; }
+  /* Standalone top-level links (Security, Pricing) match the grouped rows' weight. */
+  .nav-links > a { color: var(--card-foreground); }
 }
 
 /* ── Hero ── */
