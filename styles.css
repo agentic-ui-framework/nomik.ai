@@ -407,7 +407,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 /* The flyout host spans the header; the card is positioned/sized by JS. */
 .nav-flyout { position: absolute; top: 100%; left: 0; right: 0; z-index: 99; pointer-events: none; display: none; }
 .nav-flyout-card {
-  position: absolute; top: 0.55rem; left: 0; width: 0; height: 0; overflow: hidden;
+  position: absolute; top: 0.45rem; left: 0; width: 0; height: 0; overflow: hidden;
+  will-change: transform; backface-visibility: hidden;
   background: var(--card); border: 1px solid var(--border); border-radius: 1rem;
   box-shadow: 0 1px 0 0 color-mix(in srgb, #fff 6%, transparent) inset,
               0 22px 50px -24px rgba(0,0,0,.72), var(--shadow-lg);

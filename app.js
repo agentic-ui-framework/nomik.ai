@@ -199,12 +199,14 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
     groups.forEach((g) => setState(g, false));
     current = null;
   }
-  const scheduleClose = () => { cancelClose(); closeTimer = setTimeout(closeMenu, 130); };
+  const scheduleClose = () => { cancelClose(); closeTimer = setTimeout(closeMenu, 150); };
 
   for (const g of groups) {
     const label = g.querySelector(".nav-group-label");
+    // Hovering a trigger opens (or switches to) its menu. We deliberately do NOT
+    // close on per-trigger mouseleave — that caused a flicker when moving between
+    // triggers or dipping into the card. Closing is handled at the header level.
     g.addEventListener("mouseenter", () => { if (isDesktop()) openGroup(g); });
-    g.addEventListener("mouseleave", () => { if (isDesktop()) scheduleClose(); });
     if (!label) continue;
     label.addEventListener("click", (e) => {
       if (!isDesktop()) return;        // mobile drawer shows the inline rows
@@ -221,8 +223,11 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
       }
     });
   }
-  card.addEventListener("mouseenter", cancelClose);
-  card.addEventListener("mouseleave", scheduleClose);
+  // The bar AND the morphing card both live inside .nav, so the menu only closes
+  // when the pointer leaves the whole header. Moving across triggers, the gap, or
+  // into the card all stay "inside" — no flicker. Re-entering cancels a pending close.
+  navEl.addEventListener("mouseenter", cancelClose);
+  navEl.addEventListener("mouseleave", () => { if (isDesktop()) scheduleClose(); });
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".nav-group") && !e.target.closest(".nav-flyout")) closeMenu();
   });
