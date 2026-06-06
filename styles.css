@@ -429,9 +429,10 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 .nav-panel.is-active { opacity: 1; pointer-events: auto; }
 .nav-panel a { visibility: hidden; }            /* keep inactive/closed panel links out of the tab order */
 .nav-panel.is-active a { visibility: visible; }
-.nav-panel[data-panel="product"]     { width: 33rem; }
-.nav-panel[data-panel="marketplace"] { width: 21rem; }
-.nav-panel[data-panel="developers"]  { width: 20rem; }
+.nav-panel[data-panel="product"]    { width: 33rem; }
+.nav-panel[data-panel="platform"]   { width: 24rem; }
+.nav-panel[data-panel="ecosystem"]  { width: 21rem; }
+.nav-panel[data-panel="developers"] { width: 34rem; }
 
 /* Rich rows (icon · title · description): the Stripe-style menu content. */
 .nav-menu { display: flex; flex-direction: column; gap: 1px; }

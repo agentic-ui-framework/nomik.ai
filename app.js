@@ -203,16 +203,16 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
 
   for (const g of groups) {
     const label = g.querySelector(".nav-group-label");
-    // Hovering a trigger opens (or switches to) its menu. We deliberately do NOT
-    // close on per-trigger mouseleave — that caused a flicker when moving between
-    // triggers or dipping into the card. Closing is handled at the header level.
+    // Hover-only model: hovering a trigger opens (or switches to) its menu. We
+    // deliberately do NOT close on per-trigger mouseleave — that caused a flicker
+    // when moving between triggers or dipping into the card. Closing is handled at
+    // the header level. Mouse clicks on triggers are intentionally inert: a click
+    // toggle on top of hover-open meant a click CLOSED the menu you were hovering,
+    // which read as a glitch. Keyboard opens via keydown below (Enter/Space
+    // preventDefault there, so no synthetic click sneaks through); touch taps fire
+    // mouseenter first, so tap still opens on hover-less screens.
     g.addEventListener("mouseenter", () => { if (isDesktop()) openGroup(g); });
     if (!label) continue;
-    label.addEventListener("click", (e) => {
-      if (!isDesktop()) return;        // mobile drawer shows the inline rows
-      e.preventDefault();
-      if (current === g) closeMenu(); else openGroup(g);
-    });
     label.addEventListener("keydown", (e) => {
       if (!isDesktop()) return;
       if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nomik-1, Own the Weights · Nomik</title>
+  <meta name="description" content="Nomik Research memo M-001: the Nomik-1 program. We are post-training an open base model into a governed open-weight agent model that carries our personas and safety gates in its weights, serves the fleet's volume tier, and ships on-prem. Ongoing, published as written." />
+  <meta property="og:title" content="Nomik-1, Own the Weights · Nomik" />
+  <meta property="og:description" content="The Nomik-1 program: a governed open-weight agent model, trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nomik.ai/research.html" />
+  <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nomik-1, Own the Weights · Nomik" />
+  <meta name="twitter:description" content="The Nomik-1 program: a governed open-weight agent model, trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing." />
+  <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
+  <link rel="canonical" href="https://www.nomik.ai/research.html" />
+  <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+  <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
+  <link rel="stylesheet" href="styles.css?v=20260606" />
+  <style>
+    /* Memo-only touches, on top of the site system */
+    .memo-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 880px; margin: 2rem auto 0; text-align: left; }
+    .memo-meta .mm { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
+    .memo-meta .mm b { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted-foreground); margin-bottom: 0.3rem; }
+    .memo-meta .mm span { color: var(--gray-100); font-weight: 600; font-size: 0.92rem; }
+    .memo-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+    .memo-stats .ms { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.4rem; }
+    .memo-stats .ms b { display: block; font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 800; color: var(--gray-100); line-height: 1.1; margin-bottom: 0.45rem; }
+    .memo-stats .ms span { color: var(--muted-foreground); font-size: 0.9rem; }
+    .secno { display: inline-flex; align-items: center; gap: 0.55rem; font-family: ui-monospace, monospace; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; color: var(--brand-ink); }
+    .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; }
+    .flow .fstep { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.05rem; }
+    .flow .fstep i { display: block; font-style: normal; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .flow .fstep i.run { color: var(--success); }
+    .flow .fstep i.build { color: var(--amber-500); }
+    .flow .fstep b { display: block; color: var(--gray-100); font-size: 0.98rem; margin-bottom: 0.25rem; }
+    .flow .fstep span { color: var(--muted-foreground); font-size: 0.82rem; line-height: 1.45; }
+    .flow-loop { margin-top: 1rem; text-align: center; color: var(--muted-foreground); font-size: 0.9rem; }
+    .verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .verdicts ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .verdicts li { position: relative; padding-left: 1.6rem; color: var(--gray-200); font-size: 0.94rem; line-height: 1.55; }
+    .verdicts .measured li::before { content: "●"; position: absolute; left: 0; color: var(--success); }
+    .verdicts .endstate li::before { content: "○"; position: absolute; left: 0; color: var(--brand-ink); }
+    .verdicts h3 { margin-bottom: 0.9rem; }
+    .kill { border-left: 3px solid var(--magenta-500); background: var(--card); border-radius: var(--radius); padding: 1.4rem 1.5rem; }
+    .kill h3 { color: var(--gray-100); margin-bottom: 0.6rem; }
+    .kill p { color: var(--muted-foreground); font-size: 0.94rem; margin-bottom: 0.5rem; }
+    .kill p b { color: var(--gray-100); }
+    .note { margin-top: 0.9rem; font-family: ui-monospace, monospace; font-size: 0.78rem; line-height: 1.5; color: var(--muted-foreground); border-left: 2px solid var(--brand-ink); padding-left: 0.7rem; }
+    .note a { color: var(--brand-ink); font-weight: 600; }
+    .tbl tr.hl td { background: var(--brand-tint); }
+    .tbl tr.hl td:first-child { color: var(--gray-100); }
+  </style>
+  <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>
+        Nomik
+      </a>
+      <nav class="nav-links">
+        <div class="nav-group" data-menu="product">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Product<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="product.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="nav-row-tx"><b>Overview</b><em>The agentic workspace, end to end</em></span></a>
+            <a class="nav-row" href="how-it-works.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h4a3 3 0 0 0 3-3 3 3 0 0 1 3-3h6"/><circle cx="4" cy="18" r="1.6"/><path d="m17 9 3 3-3 3"/></svg></span><span class="nav-row-tx"><b>How it works</b><em>Empty workspace to running business</em></span></a>
+            <a class="nav-row" href="agents.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="nav-row-tx"><b>Agents</b><em>Your self-organizing AI workforce</em></span></a>
+            <a class="nav-row" href="use-cases.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span><span class="nav-row-tx"><b>Use cases</b><em>A day in the life, by business type</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="platform">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Platform<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="cloud.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-8.98A6.5 6.5 0 0 0 5.3 11.6 4.2 4.2 0 0 0 6.7 19z"/></svg></span><span class="nav-row-tx"><b>Nomik Cloud</b><em>One workspace, solo or team, hosted</em></span></a>
+            <a class="nav-row" href="local.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="nav-row-tx"><b>Nomik Local<i class="pill-tag">Preview</i></b><em>A local-first agent, safe by default</em></span></a>
+            <a class="nav-row" href="research.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11 4 6.5M12 11l8-4.5M12 11v9"/></svg></span><span class="nav-row-tx"><b>Nomik-1 open weights<i class="pill-tag">Ongoing</i></b><em>Research: our own agent model</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="ecosystem">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Ecosystem<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="marketplace.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4.5 4h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="nav-row-tx"><b>Connectors</b><em>Connect your stack, gated and safe</em></span></a>
+            <a class="nav-row" href="recipes.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="nav-row-tx"><b>Recipes</b><em>1,400+ automation playbooks</em></span></a>
+            <a class="nav-row" href="skills.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></span><span class="nav-row-tx"><b>Skills &amp; Prompts</b><em>The repository agents learn from</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="developers">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Developers<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="developers.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><span class="nav-row-tx"><b>Build on Nomik</b><em>REST API, webhooks, connectors</em></span></a>
+            <a class="nav-row" href="sdk.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3M15 7V3"/><path d="M7 7h10v4a5 5 0 0 1-10 0z"/><path d="M12 16v5"/></svg></span><span class="nav-row-tx"><b>Agent SDK<i class="pill-tag">Preview</i></b><em>Bring your own agent as a teammate</em></span></a>
+            <a class="nav-row" href="mcp.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="M7 12h5m0 0 5.3-5.4M12 12l5.3 5.4"/></svg></span><span class="nav-row-tx"><b>MCP</b><em>Tools in, tools out, one gate</em></span></a>
+            <a class="nav-row" href="docs.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span><span class="nav-row-tx"><b>Docs</b><em>Guides, auth, and the API reference</em></span></a>
+          </div>
+        </div>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Nomik Research · Memo M-001</span>
+        <h1>Own the weights.</h1>
+        <p>Nomik-1 is our open-weight agent model program: post-train an open base model until it natively speaks our tool calls, carries our personas and safety gates in its own weights, and serves the fleet's volume tier on hardware you can point at. The program is under way. This is the internal memo that started it, published as written.</p>
+        <div class="status-row" style="justify-content:center; margin-top:1.1rem"><span class="status-pill live">Ongoing program</span> <span class="status-pill soon">Release target: open weights, Apache-2.0</span></div>
+        <div class="memo-meta" aria-label="Memo header">
+          <div class="mm"><b>Re</b><span>Nomik-1: vision &amp; trajectory</span></div>
+          <div class="mm"><b>Status</b><span>Ongoing · phase P0</span></div>
+          <div class="mm"><b>Horizon</b><span>2026 → 2028</span></div>
+          <div class="mm"><b>License target</b><span>Apache-2.0 on Hugging Face</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Headline numbers -->
+    <section>
+      <div class="wrap">
+        <div class="memo-stats reveal">
+          <div class="ms"><b>10–30×</b><span>cheaper per million tokens than small-tier APIs at fleet utilization, before prompt-shrink compounding</span></div>
+          <div class="ms"><b>0</b><span>new infrastructure: our QA harness is already the data factory and the eval suite</span></div>
+          <div class="ms"><b>52</b><span>verified scenario environments, running today as the fleet's regression suite</span></div>
+          <div class="ms"><b>14B</b><span>parameters: small enough to serve from one GPU, or a Mac Studio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §01 Vision -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§01 · THE VISION</span>
+          <h2>What Nomik-1 is.</h2>
+          <p>The endpoint of the trajectory: a 14B-parameter agent model, post-trained from an open base, that natively speaks our tool-call format, carries our personas and safety gates in its weights, and serves the fleet's high-volume tier, self-hosted or on a customer's hardware.</p>
+        </div>
+        <div class="reveal">
+          <p style="max-width:760px;margin:0 auto 1.5rem;color:var(--muted-foreground);text-align:center">This is the recipe the strongest open-model labs already proved. None of them pretrained a flagship. They took someone else's open base and made it theirs through data curation and post-training, at roughly 1/1000th the cost of pretraining. The lineage:</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Model</th><th>Base (the baseline)</th><th>Data</th><th>Verification</th></tr></thead>
+              <tbody>
+                <tr><td>Hermes 1 · '23</td><td>Llama-13B</td><td>~300K teacher-distilled samples</td><td>none, trust the teacher</td></tr>
+                <tr><td>OpenHermes · '23</td><td>Llama-2 / Mistral-7B</td><td>242K → 1M, dataset open</td><td>manual curation</td></tr>
+                <tr><td>Hermes 3 · '24</td><td>Llama-3.1 8B–405B</td><td>~390M tokens synthetic</td><td>SFT + DPO</td></tr>
+                <tr><td>Hermes 4 · '25</td><td>Llama-3.1-405B · Qwen3-14B</td><td>5M samples / 60B tokens</td><td>generated + verified environments</td></tr>
+                <tr class="hl"><td><b>Nomik-1 · '26</b></td><td><b>An open 14B base (Apache-2.0)</b></td><td><b>50–100K graded agent trajectories</b></td><td><b>52 verified scenarios + outcome graders, already running</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="max-width:760px;margin:1.5rem auto 0;color:var(--muted-foreground);text-align:center">The base is someone else's hundred-million-dollar pretrain. The product is the data, and our harness already manufactures it.</p>
+        </div>
+        <div class="reveal" style="margin-top:1.5rem;max-width:760px;margin-inline:auto">
+          <div class="code-card">
+            <div class="code-head">One line</div>
+            <pre class="codeblock"><code><span class="k">NOMIK-1</span> = <span class="s">BASE</span> (open 14B)
+        × <span class="s">DATA</span> (graded agent trajectories)
+        × <span class="s">VERIFICATION</span> (our scenario graders)
+
+<span class="c"># the labs that proved this recipe spent years building</span>
+<span class="c"># the third term. our QA program produces it as a byproduct.</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §02 Why -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§02 · WHY OWN IT</span>
+          <h2>Five reasons, three of them already measured.</h2>
+          <p>Three of these we measured in our own harness. Two are structural. The economic case gets its own section below.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Behavior</span></div>
+            <h3>Prompting has hit measurable ceilings</h3>
+            <p>Some agent behaviors are prompt-unreachable: no persona edit moves them, because they live in the model's priors. Fine-tuning is precisely the lever that moves priors.</p>
+            <p class="note">Measured: delegation reach plateaued near 50% across every persona edit we shipped.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Economics</span></div>
+            <h3>The volume tier demands it</h3>
+            <p>Fleet cost policy already reserves frontier models for frontier work. A self-hosted 14B serves the high-volume tier below any API's per-token price, and idles at zero on per-token hosting.</p>
+            <p class="note">One rented GPU serves a quantized 14B at thousands of tokens per second.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Product</span></div>
+            <h3>On-prem needs weights that ship</h3>
+            <p>A sovereign deployment can't ship an API key. An open-weight model that runs on one GPU or a Mac Studio is the on-prem fleet engine, and an open release is the credibility layer.</p>
+            <p class="note">See <a href="security.html">deployment &amp; sovereignty</a>: on-prem is a feature, not a footnote.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Risk</span></div>
+            <h3>A single-vendor fleet is a single point of failure</h3>
+            <p>We lived it: one provider balance error halted every probe in flight. Owning a fleet-grade model converts a hard outage into a failover.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Moat</span></div>
+            <h3>The hard part is already built</h3>
+            <p>Verified environments, graded sampling against a teacher, outcome graders, a locked regression suite: most teams must build that pipeline before they can start. Ours runs every day, because doing QA right built it for us.</p>
+            <p class="note">52 verified scenarios · outcome graders · sampling harness · evidence bundles, all live.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- §03 Economics -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§03 · EFFICIENT &amp; BANKABLE</span>
+          <h2>Efficient to run. Bankable to own.</h2>
+          <p>Two halves of one case. Efficient is the operating story: the same fleet work at a fraction of the unit cost, compounding over time. Bankable is the balance-sheet story: the weights and the dataset that trained them become assets we own, price, and ship.</p>
+        </div>
+        <div class="tbl-wrap reveal">
+          <table class="tbl">
+            <thead><tr><th>Serving</th><th>$ / M tokens in</th><th>$ / M tokens out</th><th>Role</th></tr></thead>
+            <tbody>
+              <tr><td>Frontier-class API</td><td>$3.00</td><td>$15.00</td><td>frontier work; stays, by choice</td></tr>
+              <tr><td>Small-tier API</td><td>$1.00</td><td>$5.00</td><td>the volume-tier ceiling today</td></tr>
+              <tr><td>Discount API</td><td>~$0.30</td><td>~$1.10</td><td>today's fleet engine, rented</td></tr>
+              <tr class="hl"><td><b>Nomik-1 self-hosted</b></td><td colspan="2"><b>~$0.10–0.25 blended, all-in at fleet utilization</b></td><td>one GPU, batched · $0 idle on per-token hosts</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-3 reveal" style="margin-top:1.5rem">
+          <article class="feature">
+            <h3>Specialist beats generalist on bounded work</h3>
+            <p>The fleet's task distribution is narrow and known; 52 scenarios describe it. A 14B specialist serves it from one GPU. Cost per token falls as utilization rises. API prices never do.</p>
+          </article>
+          <article class="feature">
+            <h3>Behavior in weights stops being re-billed</h3>
+            <p>Today every behavior lives in prompt bytes: persona, gates, skills, resent on every turn, fleet-wide. Baked into weights, those tokens disappear from the bill, and the saving compounds because agent turns dominate traffic.</p>
+            <p class="note">Measured: our destructive-op gate costs 4 persona lines today. In weights it costs 0.</p>
+          </article>
+          <article class="feature">
+            <h3>No throttles, no outages, no repricing</h3>
+            <p>Own serving means no per-IP rate limits storming the harness, no provider balance errors halting the fleet, and no upstream price change rewriting unit costs overnight.</p>
+          </article>
+        </div>
+        <div class="section-head center-head reveal" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <h3 style="font-size:clamp(1.3rem,2.6vw,1.7rem)">Efficient is the operating win. Bankable is the asset.</h3>
+          <p>Weights plus the dataset nobody else can collect.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <article class="feature">
+            <h3>Margin: COGS becomes near-fixed</h3>
+            <p>API spend scales 1:1 with every agent seat sold; margin is capped by someone else's price list. Owned weights flip that: serving cost is near-fixed, so gross margin expands with growth.</p>
+          </article>
+          <article class="feature">
+            <h3>A SKU that can't exist on API keys</h3>
+            <p>On-prem and sovereign deployments: regulated customers pay a premium for a fleet that ships as weights inside their own walls. No API vendor can be in that room. There, the model is the SKU.</p>
+          </article>
+          <article class="feature">
+            <h3>Weights + dataset are ownable IP</h3>
+            <p>Graded enterprise-agent trajectories with verified safety outcomes are a rare data class. Dataset plus weights are durable, licensable IP: the opposite of a wrapper.</p>
+          </article>
+          <article class="feature">
+            <h3>The market already prices this playbook</h3>
+            <p>Labs that post-train open bases and release the weights have raised at unicorn valuations on exactly this recipe. Open weights double as go-to-market: distribution, credibility, hiring.</p>
+          </article>
+        </div>
+        <div class="reveal" style="margin-top:1.5rem;max-width:760px;margin-inline:auto;text-align:center">
+          <p class="lead">And the positioning is unclaimed: <b>the governed agent model</b>. The only open agent model shipping with a measured destructive-action gate and approval discipline in its weights. Glass box by default. That is Nomik's brand, exported as a model card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §04 Trajectory -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§04 · TRAJECTORY</span>
+          <h2>How the flywheel runs.</h2>
+          <p>Six stages. Four were already running before the program existed, because they are how we QA the fleet. Only the dataset exporter and the training run are new, and every step is gated and cheap to abandon.</p>
+        </div>
+        <div class="flow reveal" aria-label="The training flywheel">
+          <div class="fstep"><i class="run">1 · running</i><b>Scenarios</b><span>52 verified environments with fixtures and mocks</span></div>
+          <div class="fstep"><i class="run">2 · running</i><b>Sample</b><span>the teacher fleet runs N probes per scenario</span></div>
+          <div class="fstep"><i class="run">3 · running</i><b>Grade</b><span>outcome graders return pass / fail verdicts</span></div>
+          <div class="fstep"><i class="build">4 · in build</i><b>Dataset</b><span>pass → fine-tune data · pass⊕fail → preference pairs</span></div>
+          <div class="fstep"><i class="build">5 · in build</i><b>Train</b><span>post-train an open 14B base on rented GPUs</span></div>
+          <div class="fstep"><i class="run">6 · running</i><b>Eval</b><span>the locked suite, scored against today's baseline</span></div>
+        </div>
+        <p class="flow-loop">↺ weights deploy to the fleet → every future trace comes from a better model → round-2 data improves. The flywheel.</p>
+        <div class="tbl-wrap reveal" style="margin-top:1.5rem">
+          <table class="tbl">
+            <thead><tr><th>Phase</th><th>Work</th><th>Gate to advance</th><th>Compute</th></tr></thead>
+            <tbody>
+              <tr><td><b>P0 · first signal</b> <span class="pill-tag">In progress</span></td><td>Trace exporter from the harness · 50–100K graded trajectories · LoRA fine-tune of an open 14B · eval</td><td>Locked pass-rate within 5 points of the teacher baseline</td><td>1–2 rented GPUs, days</td></tr>
+              <tr><td>P1 · preference + RL</td><td>Preference tuning on pass/fail pairs · graders as verifiable reward on the weakest scenario families</td><td>+10 points on at least 2 prompt-unreachable behaviors</td><td>same node, weeks</td></tr>
+              <tr><td>P2 · full fine-tune</td><td>Full-parameter 14B · personas and gates baked into weights · shrink the prompt budget</td><td>Parity at half the serving cost or better</td><td>one 8-GPU node, days</td></tr>
+              <tr><td>P3 · release</td><td>Weights + the scenario-derived dataset + a tech report on Hugging Face, Apache-2.0 · fleet default for the volume tier · the on-prem bundle</td><td>n/a</td><td>~none</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-2 reveal" style="margin-top:1.5rem">
+          <article class="feature">
+            <h3>Anti-goals, explicit</h3>
+            <ul class="bullets">
+              <li><b>No pretraining</b>: post-training is the entire strategy. The open ecosystem's pretrains are our baseline, not our bill.</li>
+              <li><b>No hardware purchases</b>: rented GPUs only, and serving falls back to per-token hosting at zero idle cost.</li>
+              <li><b>No 70B+ until 14B is exhausted</b>: scale is the last lever, not the first.</li>
+              <li><b>Frontier APIs stay</b>: Nomik-1 targets the volume tier. Frontier models keep the frontier work, by choice.</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h3>Why the harness is the unfair advantage</h3>
+            <p>What the strongest open-model labs spent years building, verified environments, synthetic data generation, rejection sampling, is structurally identical to what our agent training program runs every day: scenarios with fixtures, sampling against a teacher, graders that verify outcomes, and a locked regression suite.</p>
+            <p class="note">Most teams attempting a fine-tune must build the eval and data pipeline first. Ours is operational and adversarially debugged.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- §05 End-state -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§05 · END-STATE</span>
+          <h2>Where the trajectory lands.</h2>
+          <p>An honest split: what the harness has already measured, which is why we believe the thesis, versus what the end-state buys once the flywheel has run.</p>
+        </div>
+        <div class="verdicts reveal">
+          <article class="feature measured">
+            <h3>● Measured today</h3>
+            <ul>
+              <li>A destructive-op gate moved from 56% to 100% compliance with a 4-line persona edit: proof behavior moves with the right lever, and that prompt budget is the current currency.</li>
+              <li>Delegation reach sits near 50%, unchanged across measured persona edits: classified prompt-unreachable, a model-prior ceiling.</li>
+              <li>52 locked scenarios form a regression-grade eval suite, operational and adversarially debugged.</li>
+              <li>Vendor SPOF confirmed in production: one provider error halted all fleet probing.</li>
+            </ul>
+          </article>
+          <article class="feature endstate">
+            <h3>○ What owning the model buys</h3>
+            <ul>
+              <li>The volume tier self-served at half of API cost or less, margin expanding with utilization.</li>
+              <li>Behaviors live in weights: delegation reach 70%+, the destructive gate 95%+ with no prompt bullet at all.</li>
+              <li>On-prem becomes real: the fleet ships as weights on one GPU or a Mac Studio.</li>
+              <li>Weights and dataset public on Hugging Face under Apache-2.0: brand, distribution, and a licensable asset.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="tbl-wrap reveal" style="margin-top:1.5rem">
+          <table class="tbl">
+            <thead><tr><th>Metric</th><th>Today (measured)</th><th>Target (post-P1)</th><th>Verified by</th></tr></thead>
+            <tbody>
+              <tr><td>Locked-suite pass-rate</td><td>teacher baseline</td><td>≥ parity</td><td>the full locked sweep</td></tr>
+              <tr><td>Delegation reach</td><td>~50%, a prior ceiling</td><td>≥ 70%</td><td>sampled fleet scenarios</td></tr>
+              <tr><td>Destructive gate, no prompt bullet</td><td>56%</td><td>≥ 95%</td><td>the destructive-cleanup scenario</td></tr>
+              <tr><td>Volume-tier serving cost</td><td>API per-token</td><td>≤ 50%</td><td>fleet cost telemetry</td></tr>
+              <tr><td>On-prem servable</td><td>no</td><td>one GPU / Mac Studio</td><td>the on-prem demo environment</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kill reveal" style="margin-top:1.5rem">
+          <h3>▲ Kill criteria, pre-committed</h3>
+          <p><b>P0 kill</b>: eval lands more than 10 points below baseline after one data-mix iteration → stop. Total sunk: days of rented compute and a reusable trace exporter.</p>
+          <p><b>P1 kill</b>: no prompt-unreachable metric moves → stay LoRA-only for the cost win, revisit at the next base-model generation.</p>
+          <p>Worst case is bounded and small. Best case is a moat: weights nobody else can train, because nobody else has the harness.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- North star CTA -->
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <span class="eyebrow" style="justify-content:center">North star</span>
+          <h2>Nomik runs on Nomik.</h2>
+          <p>By 2028 the fleet's volume tier runs on weights Nomik owns, on-prem customers receive the model inside their own walls, and the graded-trajectory dataset that trained it is a moat no competitor can scrape together. Frontier APIs stay for frontier work: by choice, not dependency.</p>
+          <p class="mono muted" style="font-size:0.85rem;margin-bottom:1.2rem">fleet.model = nomik-1 · owned weights · governed by design</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Follow the program</a>
+          <p class="muted" style="margin-top:1.1rem;font-size:0.85rem">Want the platform it serves? <a href="cloud.html" style="color:var(--brand-ink);font-weight:600">Nomik Cloud</a> · <a href="local.html" style="color:var(--brand-ink);font-weight:600">Nomik Local</a> · <a href="security.html" style="color:var(--brand-ink);font-weight:600">on-prem &amp; sovereignty</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm2)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="cloud.html">Nomik Cloud</a>
+        <a href="local.html">Nomik Local</a>
+        <a href="research.html">Nomik-1 Research</a>
+        <a href="product.html">Product</a>
+        <a href="agents.html">Agents</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="use-cases.html">Use cases</a>
+        <a href="marketplace.html">Connectors</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="skills.html">Skills &amp; Prompts</a>
+        <a href="developers.html">Developers</a>
+        <a href="sdk.html">Agent SDK</a>
+        <a href="mcp.html">MCP</a>
+        <a href="docs.html">Docs</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="index.html#waitlist">Early access</a>
+      </nav>
+      <div class="footer-social" aria-label="Social links">
+        <a href="https://twitter.com/nomik_ai" target="_blank" rel="noopener" aria-label="Nomik on X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+      </div>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="app.js?v=20260606"></script>
+</body>
+</html>

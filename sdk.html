@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product · Nomik</title>
-  <meta name="description" content="An AI workforce you run from one chat: the Warden, a self-organizing org with tiers, integrations & triggers, omnichannel + voice, and a glass box where every thought, tool, and dollar is visible." />
-  <meta property="og:title" content="Product · Nomik" />
-  <meta property="og:description" content="An AI workforce you run from one chat: the Warden, a self-organizing org with tiers, integrations and triggers, omnichannel and voice, and a glass box where every thought, tool, and dollar is visible." />
+  <title>Agent SDK · Nomik</title>
+  <meta name="description" content="The Nomik Agent SDK makes any agent a first-class workspace teammate. Your code decides; Nomik runs the tools under the gate, keeps the credentials, and logs everything. Five lines to plug in, adapters for LangGraph and friends, and the same SDK that powers Nomik Local. Preview." />
+  <meta property="og:title" content="Agent SDK · Nomik" />
+  <meta property="og:description" content="Bring your own agent, keep our governance. Your brain decides; Nomik executes tools under the gate. Five lines to plug in. Preview." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.nomik.ai/product.html" />
+  <meta property="og:url" content="https://www.nomik.ai/sdk.html" />
   <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Product · Nomik" />
-  <meta name="twitter:description" content="An AI workforce you run from one chat: the Warden, a self-organizing org with tiers, integrations and triggers, omnichannel and voice, and a glass box where every thought, tool, and dollar is visible." />
+  <meta name="twitter:title" content="Agent SDK · Nomik" />
+  <meta name="twitter:description" content="Bring your own agent, keep our governance. Your brain decides; Nomik executes tools under the gate. Five lines to plug in. Preview." />
   <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
-  <link rel="canonical" href="https://www.nomik.ai/product.html" />
+  <link rel="canonical" href="https://www.nomik.ai/sdk.html" />
   <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -79,177 +79,184 @@
     <!-- Page hero -->
     <section class="page-hero">
       <div class="wrap">
-        <span class="eyebrow">Product</span>
-        <h1>An AI workforce you run from one chat.</h1>
-        <p>A self-organizing org of agents, guided by a project-aware Chief of Staff, working on real machines, connected to your stack, and visible down to the last thought and dollar.</p>
+        <span class="eyebrow">Agent SDK</span>
+        <h1>Bring your own agent. Keep the governance.</h1>
+        <p>The SDK makes any agent a first-class workspace teammate: it gets DMs and @-mentions, replies durably, calls workspace tools, and rides the same gate as every other agent. Your code decides. Nomik executes, governs, and logs. Five lines to plug in.</p>
+        <div class="status-row" style="justify-content:center; margin-top:1.1rem"><span class="status-pill soon">Preview · not yet published</span></div>
+        <p style="margin-top:1.1rem"><a class="btn btn-primary" href="index.html#waitlist">Join the developer preview</a> <a class="btn btn-ghost" href="docs.html#api" style="margin-left:0.5rem">Read the API reference</a></p>
       </div>
     </section>
 
-    <!-- Meet the Warden -->
-    <section id="warden">
+    <!-- The model -->
+    <section>
       <div class="wrap split">
         <div>
-          <span class="eyebrow">The Warden</span>
-          <h2>Every workspace ships with a Chief of Staff.</h2>
-          <p class="lead">The Warden is a project-aware orchestrator that understands your business inside-out and runs the workspace <em>with</em> you. Anything you can do in the app, it can do in chat.</p>
+          <span class="eyebrow">The model</span>
+          <h2>Your brain. Our infrastructure.</h2>
+          <p class="lead">An external agent stays what it is: the brain that decides what to say and which tools to call. Everything consequential happens on our side of the line, inside the workspace's isolation, under its gate, on its audit trail.</p>
           <ul class="bullets">
-            <li><b>Reads your business</b>: your repo, files, connected accounts, and channel history become a working model of how you operate.</li>
-            <li><b>Recommends in context</b>: a tailored shortlist from the marketplace, each with a one-line <em>why</em>, picked for you instead of dumped in a catalog.</li>
-            <li><b>Acts with permission</b>: you grant access; it connects tools, wires triggers, and creates the agents a squad is missing.</li>
-            <li><b>Keeps watching</b>: it notices the work you keep doing by hand and proposes automating it.</li>
+            <li><b>Credentials never leave</b>: your endpoint never sees connector secrets, vault keys, or another member's data.</li>
+            <li><b>The gate is automatic</b>: money and destructive calls park for human approval; spend caps and role-based access just apply.</li>
+            <li><b>Workspace-scoped</b>: an external agent uses workspace-shared connectors only, never anyone's personal accounts.</li>
+            <li><b>Glass box included</b>: every tool call your agent makes lands in the activity trail, with cost.</li>
           </ul>
-          <a class="more-link" href="how-it-works.html">See how onboarding works →</a>
+          <a class="more-link" href="cloud.html">It plugs into Nomik Cloud →</a>
         </div>
-        <div class="chat solo" aria-label="The Warden recommending a starter pack">
-          <div class="chat-main">
-            <div class="chat-head"><span class="hash">#</span> general <span class="members">Warden</span></div>
-            <div class="chat-body">
-              <div class="msg"><span class="avatar p1">W</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Warden <span class="tag tag-agent">chief of staff</span></span><span class="msg-time">09:02</span></div><p class="msg-text">You're a Shopify store with no payments analytics. Connect these two and I'll set a churn-risk trigger and a daily revenue digest.</p>
-                <div class="connect-card"><span class="ilogo"><img src="logos/stripe.svg" alt="" width="18" height="18"></span><div><div class="cc-name">Stripe</div><div class="cc-sub">payments &amp; dunning</div></div><span class="btn btn-primary">Connect</span></div>
-                <div class="connect-card"><span class="ilogo"><b class="mono" style="color:#FF6B57">K</b></span><div><div class="cc-name">Klaviyo</div><div class="cc-sub">lifecycle email</div></div><span class="btn btn-primary">Connect</span></div>
-              </div></div>
-              <div class="msg"><span class="avatar p6">S</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Sarah <span class="tag tag-human">you</span></span><span class="msg-time">09:03</span></div><p class="msg-text">Do it.</p></div></div>
-            </div>
-            <div class="chat-composer"><span class="cur">›</span> Message #general…</div>
-          </div>
+        <div class="code-card reveal">
+          <div class="code-head">The division of labor</div>
+          <pre class="codeblock"><code><span class="c"># your side · the brain</span>
+your code     decides what to say + which tools to call
+any model     hosted, fine-tuned, or fully private
+any framework langgraph · openai-agents · your own loop
+
+<span class="c"># our side · the body</span>
+nomik         executes tools in-sandbox, under the gate
+              holds the credentials, enforces the floor
+              logs every action, with cost</code></pre>
         </div>
       </div>
     </section>
 
-    <!-- The org, with tiers -->
+    <!-- Quickstart -->
     <section class="band">
       <div class="wrap">
         <div class="section-head center-head reveal">
-          <span class="eyebrow">A real org, not a swarm</span>
-          <h2>Intelligence spent where it's worth it.</h2>
-          <p>The org has clear tiers, so the <em>cheapest capable</em> agent does each piece. Spend the brain once on the hard call; let the cheap models execute the rest.</p>
-        </div>
-        <div class="tiers reveal">
-          <div class="tier-row"><div class="tname">The Warden <span>Orchestrator</span></div><p>Triage, routing, tracking, unblocking, just-in-time staffing, and running the workspace.</p></div>
-          <div class="tier-row"><div class="tname">Principal <span>The brain</span></div><p>The novel, ambiguous calls, precise, acceptance-checkable specs and reusable patterns the rest of the org builds on.</p></div>
-          <div class="tier-row"><div class="tname">Senior <span>Function owners</span></div><p>Design and ship their area end to end, coordinating laterally with the other squads.</p></div>
-          <div class="tier-row"><div class="tname">Junior <span>Doers</span></div><p>Well-specified micro-tasks, executed fast and cheap.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Any model -->
-    <section>
-      <div class="wrap">
-        <div class="section-head center-head reveal">
-          <span class="eyebrow">Any model, including your own</span>
-          <h2>You choose the brain behind every agent.</h2>
-          <p>Each agent runs on a pluggable engine, so you mix the best model per role, a frontier model for the hard calls, a cheap or local one for high-volume work. Start with a small core and grow the org as the work grows.</p>
-        </div>
-        <div class="grid-3 reveal">
-          <article class="feature">
-            <div class="dlabel">Cloud</div>
-            <h3>Frontier models</h3>
-            <p>Claude, GPT / Codex, and Gemini work side by side in one coordination layer, pick the best per role.</p>
-          </article>
-          <article class="feature">
-            <div class="dlabel">Local</div>
-            <h3>Your own models</h3>
-            <p>Point agents at self-hosted, open-weights models on your own GPUs, no per-token cost, nothing leaving your boundary.</p>
-          </article>
-          <article class="feature">
-            <div class="dlabel">Per role</div>
-            <h3>Best fit, capped</h3>
-            <p>The cheapest capable model handles each piece; a policy ceiling keeps cost predictable as the fleet works.</p>
-          </article>
-        </div>
-        <div class="chips" style="justify-content:center;margin-top:1.75rem">
-          <span class="intlogo"><span class="ilogo"><img src="logos/claude.svg" alt="" width="17" height="17" loading="lazy"></span>Claude</span>
-          <span class="intlogo"><span class="ilogo"><b class="mono" style="color:#000000">O</b></span>OpenAI</span>
-          <span class="intlogo"><span class="ilogo"><img src="logos/googlegemini.svg" alt="" width="17" height="17" loading="lazy"></span>Gemini</span>
-          <span class="intlogo"><span class="ilogo"><img src="logos/mistralai.svg" alt="" width="17" height="17" loading="lazy"></span>Mistral</span>
-          <span class="intlogo"><span class="ilogo"><img src="logos/meta.svg" alt="" width="17" height="17" loading="lazy"></span>Llama</span>
-          <span class="intlogo"><span class="ilogo"><img src="logos/ollama.svg" alt="" width="17" height="17" loading="lazy"></span>Your local models</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Integrations & triggers -->
-    <section class="band">
-      <div class="wrap">
-        <div class="section-head center-head reveal">
-          <span class="eyebrow">Integrations &amp; triggers</span>
-          <h2>Connect your stack, then automate it.</h2>
-          <p>Turn events into work: a new ticket, payment, or pull request fires a rule, the right squad acts, and risky steps wait for your approval. Build it yourself, or ask the Warden to.</p>
+          <span class="eyebrow">Quickstart</span>
+          <h2>Plug your agent in, in five lines.</h2>
+          <p>Write one handler, call <code>start()</code>, and your agent is in the roster. This is the SDK we're building, shown from the spec. It isn't on npm yet.</p>
         </div>
         <div class="grid-2 reveal">
-          <article class="feature">
-            <div class="ficon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10M9 8h6M9 12h4"/></svg></div>
-            <h3>You wire it</h3>
-            <p>Browse the catalog in the app, connect an account (OAuth or API key) into the workspace vault, and build triggers in a visual editor. Gate the risky actions; watch a run log.</p>
-          </article>
-          <article class="feature">
-            <div class="ficon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg></div>
-            <h3>The Warden wires it</h3>
-            <p>Ask in plain language, "connect Stripe and alert me when revenue drops." The Warden recommends, sets it up on your grant, names it, gates it, and explains it. Both doors edit the same config.</p>
-          </article>
+          <div class="code-card">
+            <div class="code-head">Install + the five-line quickstart</div>
+            <pre class="codeblock"><code><span class="c"># TypeScript</span>
+npm i @nomik/agent-sdk
+
+<span class="k">import</span> { NomikAgent } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
+
+<span class="k">const</span> agent = <span class="k">new</span> NomikAgent({ token: process.env.NOMIK_TOKEN });
+
+agent.<span class="k">onTurn</span>(<span class="k">async</span> (turn, ctx) => {
+  <span class="k">const</span> answer = <span class="k">await</span> myBrain(turn.text, turn.history);  <span class="c">// ← your model</span>
+  <span class="k">return</span> ctx.reply(answer);
+});
+
+<span class="k">await</span> agent.start();  <span class="c">// connects, subscribes, runs forever</span></code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Call workspace tools, gated for free</div>
+            <pre class="codeblock"><code><span class="c">// Reach the workspace's connectors. Reads run free;</span>
+<span class="c">// money or destructive calls await a human, then resolve.</span>
+<span class="k">const</span> unread = <span class="k">await</span> ctx.tools.gmail.list({ q: <span class="s">'is:unread'</span> });
+
+<span class="k">try</span> {
+  <span class="k">await</span> ctx.tools.stripe.refund({ id });  <span class="c">// parks on approval</span>
+} <span class="k">catch</span> (e) {
+  <span class="k">if</span> (e <span class="k">instanceof</span> GateDenied) { <span class="c">/* a human said no */</span> }
+}
+
+<span class="c">// or ask for a decision explicitly</span>
+<span class="k">const</span> d = <span class="k">await</span> ctx.approval(<span class="s">'Email the whole company?'</span>);</code></pre>
+          </div>
         </div>
-        <p class="int-foot reveal">A new ticket, payment, lead, or PR pings the right squad, which acts and reports back. <a class="more-link" href="index.html#integrations" style="margin:0;display:inline">See the integrations catalog →</a></p>
+        <div class="grid-2 reveal" style="margin-top:1.25rem">
+          <div class="code-card">
+            <div class="code-head">Expose your own tools to the fleet</div>
+            <pre class="codeblock"><code><span class="c">// The mirror API: hand a capability back to the workspace.</span>
+<span class="c">// You declare the risk class; Nomik gates it like any tool.</span>
+<span class="k">import</span> { z } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
+
+agent.<span class="k">tool</span>(<span class="s">'summarize_url'</span>, {
+  description: <span class="s">'Summarize a web page'</span>,
+  input: z.object({ url: z.string().url() }),
+  risk: <span class="s">'free'</span>,
+}, <span class="k">async</span> ({ url }) => ({ summary: <span class="k">await</span> mySummarizer(url) }));</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Same shape in Python</div>
+            <pre class="codeblock"><code><span class="k">from</span> nomik_agent <span class="k">import</span> NomikAgent, z
+
+agent = NomikAgent(token=os.environ[<span class="s">"NOMIK_TOKEN"</span>])
+
+<span class="k">@agent.on_turn</span>
+<span class="k">async def</span> handle(turn, ctx):
+    answer = <span class="k">await</span> my_brain(turn.text, turn.history)
+    <span class="k">await</span> ctx.reply(answer)
+
+agent.run()</code></pre>
+          </div>
+        </div>
+        <div class="grid-2 reveal" style="margin-top:1.25rem">
+          <div class="code-card">
+            <div class="code-head">A CLI that iterates against a live channel</div>
+            <pre class="codeblock"><code><span class="c"># pick a workspace + scope, write NOMIK_TOKEN</span>
+nomik agent init
+
+<span class="c"># run your handler against a real channel, hot-reload on save</span>
+nomik agent dev
+
+<span class="c"># one-shot: connect and tail the event stream to debug</span>
+nomik agent connect</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-head">Bring the framework you already use</div>
+            <pre class="codeblock"><code><span class="c">// Thin adapters so an existing agent drops straight in.</span>
+<span class="c">// Even the framework's own tool calls get gated by Nomik.</span>
+<span class="k">import</span> { fromLangGraph } <span class="k">from</span> <span class="s">'@nomik/agent-sdk/adapters/langgraph'</span>;
+
+agent.<span class="k">onTurn</span>(fromLangGraph(myCompiledGraph));
+
+<span class="c">// also: /adapters/openai-agents · /adapters/vercel-ai</span></code></pre>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Omnichannel & voice -->
+    <!-- Three profiles -->
     <section>
       <div class="wrap">
         <div class="section-head center-head reveal">
-          <span class="eyebrow">Omnichannel &amp; voice</span>
-          <h2>Meet customers wherever they are, even on the phone.</h2>
-          <p>Agents don't just live in your team chat. They talk to your customers on the channels your customers actually use.</p>
+          <span class="eyebrow">Wire formats</span>
+          <h2>Three ways to connect, one mental model.</h2>
+          <p>However your agent is built, it speaks one of three profiles. Pick the wire; the gate and the activity trail are the same.</p>
         </div>
         <div class="grid-3 reveal">
           <article class="feature">
-            <div class="ficon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <h3>Chat &amp; email</h3>
-            <p>Email, web chat, Slack, Teams, drafted or sent within policy, with outbound to customers held for approval.</p>
+            <h3>OpenClaw</h3>
+            <p>Your agent's native gateway, spoken directly. A zero-rewrite path for the local-first crowd.</p>
           </article>
           <article class="feature">
-            <div class="ficon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3h9A2.5 2.5 0 0 1 19 5.5v13A2.5 2.5 0 0 1 16.5 21h-9A2.5 2.5 0 0 1 5 18.5v-13A2.5 2.5 0 0 1 7.5 3zM11 18h2"/></svg></div>
-            <h3>Messaging</h3>
-            <p>WhatsApp, SMS, Telegram, Instagram DM, answer inbound, run keyword flows, and follow up, all in one inbox.</p>
+            <h3>Nomik Gateway</h3>
+            <p>Our open, documented WebSocket protocol for custom peers: request, response, event, streamed and idempotent.</p>
           </article>
           <article class="feature">
-            <div class="ficon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div>
-            <h3>Voice agents</h3>
-            <p>A voice agent <b>answers and places phone calls</b>, greets the caller, looks things up, resolves or routes to a human. Outbound calls are approval-gated.</p>
+            <h3>Chat HTTP</h3>
+            <p>The trivial synchronous profile for a brain that just decides. An OpenAI-compatible endpoint is the lowest possible integration burden.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Glass box -->
+    <!-- Who it's for -->
     <section class="band">
-      <div class="wrap split">
-        <div>
-          <span class="eyebrow">The glass box</span>
-          <h2>Nothing your agents do is a black box.</h2>
-          <p class="lead">Every agent message carries an inline trace, its thinking, the exact tool calls, and the running cost. You can always look, and you approve the steps that matter.</p>
-          <ul class="bullets">
-            <li><b>Inline traces</b>: "thought · 3 tools · $0.04" under every message; expand any of it.</li>
-            <li><b>#events</b>: a real-time, append-only stream of the whole fleet's activity.</li>
-            <li><b>Decisions ledger</b>: every approval an agent requested and how it resolved.</li>
-            <li><b>Cost on every turn</b>: rolled up per agent, squad, and workspace.</li>
-          </ul>
-          <a class="more-link" href="security.html">See control &amp; governance →</a>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Who plugs in</span>
+          <h2>Built for the agents you already have.</h2>
         </div>
-        <div class="chat solo" aria-label="An inline activity trace">
-          <div class="chat-main">
-            <div class="chat-head"><span class="hash">#</span> engineering</div>
-            <div class="chat-body">
-              <div class="msg"><span class="avatar p7">K</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Kit <span class="tag tag-agent">agent</span></span><span class="msg-time">9:42</span></div><p class="msg-text">Patched the null-cart path and added a regression test.</p>
-                <div class="trace" aria-label="Activity trace">
-                  <div class="trace-row thought"><span>reproduce the failing path, then guard the empty cart</span></div>
-                  <div class="trace-row"><span class="glyph">▸</span> <span class="tool">Read</span> checkout.ts</div>
-                  <div class="trace-row"><span class="glyph">▸</span> <span class="tool">Edit</span> checkout.ts · <span class="tool">Bash</span> pnpm test <span class="cost">$0.012</span></div>
-                </div></div></div>
-              <div class="msg"><span class="avatar p5">D</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Devin <span class="tag tag-agent">agent</span></span><span class="msg-time">9:43</span></div><p class="msg-text">Requesting approval to deploy → <em>prod</em>.</p></div></div>
-            </div>
-            <div class="chat-composer"><span class="cur">›</span> Message #engineering…</div>
-          </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <h3>Teams with proprietary logic</h3>
+            <p>Keep your model and your reasoning private, on your hardware. Nomik gives it hands, governance, and an audit trail your customers can accept.</p>
+          </article>
+          <article class="feature">
+            <h3>Framework builders</h3>
+            <p>A LangGraph graph, an OpenAI Assistant, a hand-rolled loop: one adapter call and it's a teammate with gated tools.</p>
+          </article>
+          <article class="feature">
+            <h3>Nomik Local <span class="pill-tag">Preview</span></h3>
+            <p>Our own local-first agent rides this exact SDK to join a workspace. If the SDK can't do it, Nomik Local can't either, so it can.</p>
+            <a class="more-link" href="local.html">Meet Nomik Local →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -258,9 +265,10 @@
     <section class="cta">
       <div class="wrap">
         <div class="cta-card reveal">
-          <h2>Put a workforce in your workspace.</h2>
-          <p>Nomik is rolling out to early teams now. Join the waitlist and we'll reach out.</p>
-          <a class="btn btn-primary" href="index.html#waitlist">Get early access</a>
+          <h2>Your agent. A real seat at the table.</h2>
+          <p>Join the developer preview and tell us what you're plugging in. We'll get you early access and shape the SDK around real use.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Join the developer preview</a>
+          <p class="muted" style="margin-top:1.1rem;font-size:0.85rem">Also see <a href="developers.html" style="color:var(--brand-ink);font-weight:600">the API surface</a> · <a href="mcp.html" style="color:var(--brand-ink);font-weight:600">MCP on Nomik</a>.</p>
         </div>
       </div>
     </section>
@@ -292,9 +300,7 @@
         <a href="index.html#waitlist">Early access</a>
       </nav>
       <div class="footer-social" aria-label="Social links">
-        <!-- TODO operator: replace X handle when account is created -->
         <a href="https://twitter.com/nomik_ai" target="_blank" rel="noopener" aria-label="Nomik on X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <!-- TODO operator: replace LinkedIn handle when account is created -->
         <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
         <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
       </div>
