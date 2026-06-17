@@ -2,15 +2,25 @@
 
 ## Brand essence
 
-**Nomik** is positioned as *"Slack for a hybrid workforce."* The headline is **"Your team and your agents, working as one."** The identity has to feel like a **product you'd actually run a company on**: confident, modern, technical-but-human, a little premium. The emotional target is *calm command*, "I have a whole company working for me, and I can see all of it."
+**Nomik** is **the system of record for AI employees**, the operating system for AI labor. Every company will employ AI workers; Nomik is where they are **hired, organized, governed, and supervised**, alongside the people you already have. The headline is **"The system of record for AI employees."** (hero eyebrow: *"The operating system for AI labor"*).
 
-**Voice:** confident, concrete, lean. Short declaratives, real specifics (named tools, real workflows), no hype filler.
+This is a **category-creation** position, not a product description. The frame: every new economic entity got its own system of record (customers → CRM, employees → HRIS, money → ERP). AI workers are the next entity, and the row is empty. Nomik owns it. The identity has to feel like the **management layer you'd run a company's AI labor on**: confident, modern, technical-but-human, a little premium. Emotional target: *calm command over a workforce*, "I employ a workforce of AI, and I can see, govern, and account for all of it."
+
+**The five verbs (the proof spine):** Hire · Organize · Govern · Supervise · Scale. Every page should ladder back to at least one.
+
+**Positioning against the field:** ChatGPT/Claude make one person smarter; Copilot/Cursor make one employee faster; Zapier automates workflows; Nomik **manages the workforce**. We are not another AI tool, we are the layer that manages them.
+
+**Defuse the registry risk:** "system of record" must never read as a passive catalog over agents living in other tools. Nomik is where AI employees are **hired and run**, not just registered. Always pair the SoR claim with the fact that they're hired, run, and governed here.
+
+**Lexicon (use consistently):** AI employees / AI workers / AI labor / AI workforce (not "bots"; "agents" only as the technical synonym, not the primary noun); manage · govern · supervise · org chart · departments · roles · budgets · permissions · accountability · "on the record". Keep the warm specifics (the Warden / Chief of Staff, named teammates, real tools, real dollars).
+
+**Voice:** confident, concrete, lean. Short declaratives, real specifics (named tools, real workflows), no hype filler. Antithesis is the house rhetorical move ("Not a chatbot. A workforce.").
 
 **House rules:**
 - No em-dashes anywhere. Use commas, periods, or a colon for bold-label bullets (`<b>Label</b>: detail`).
 - Page-title separator is a middot (`Page · Nomik`).
 - Mainstream startup framing, no enterprise/infra name-dropping.
-- Vision-led but grounded. Don't promise mechanics that contradict the live product.
+- Vision-led but grounded. Don't promise mechanics that contradict the live product. The management layer is real today (roles, autonomy dial, approvals, spend caps, kill switch, glass-box audit), reframe those strengths, don't invent new claims.
 
 ## Logo & mark
 

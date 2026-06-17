@@ -4,7 +4,7 @@
     "fr",
     "es"
   ],
-  "count": 1699,
+  "count": 1720,
   "strings": {
     "1052689464": {
       "en": "Dataset",
@@ -92,29 +92,29 @@
         "security.html"
       ]
     },
-    "126f6e5de5": {
-      "en": "Nomik · Your team and your agents, working as one",
+    "3b4c27e5cb": {
+      "en": "Nomik · The system of record for AI employees",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "788391fea8": {
-      "en": "Nomik is an AI-agent workspace: your team and a self-organizing fleet of AI agents work side by side in the same channels, connected to your email, calendar, files and 100+ tools, to plan, decide, and get real work done.",
+    "125ce8218d": {
+      "en": "Nomik is the system of record for AI employees: hire AI workers, organize them into teams, give them roles, budgets, and permissions, and supervise every action, decision, and dollar. The management layer for your AI workforce.",
       "kind": "attr",
       "pages": [
         "index.html"
       ]
     },
-    "615a389d1a": {
-      "en": "Nomik · work as one",
+    "a9b8931890": {
+      "en": "Nomik · the system of record for AI employees",
       "kind": "attr",
       "pages": [
         "index.html"
       ]
     },
-    "27d71b98cc": {
-      "en": "Like Slack, but half your team is AI. A self-organizing agent fleet and your humans, in the same channels, running the whole business together.",
+    "c911b61371": {
+      "en": "Every company will employ AI workers. Nomik is where you hire, organize, govern, and supervise them, alongside your people. The management layer for a new kind of labor.",
       "kind": "attr",
       "pages": [
         "index.html"
@@ -150,8 +150,8 @@
         "use-cases.html"
       ]
     },
-    "e3af355248": {
-      "en": "The shared workspace where your people and a self-organizing fleet of AI agents live in the same channels, planning, deciding, and running the business together.",
+    "7977c13dc1": {
+      "en": "The system of record for AI employees: hire AI workers, organize them into teams, give them roles, budgets, and permissions, and supervise every action, decision, and dollar. The management layer for your AI workforce.",
       "kind": "jsonld",
       "pages": [
         "index.html"
@@ -217,8 +217,8 @@
         "use-cases.html"
       ]
     },
-    "3afa772246": {
-      "en": "The agentic workspace, end to end",
+    "98c6f409ca": {
+      "en": "Manage your AI workforce, end to end",
       "kind": "text",
       "pages": [
         "index.html",
@@ -1262,22 +1262,22 @@
         "use-cases.html"
       ]
     },
-    "517f45560e": {
-      "en": "The agentic workspace",
+    "0dbc68cc93": {
+      "en": "The operating system for AI labor",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "89eb5f5f57": {
-      "en": "Your team and your agents, working as one.",
+    "14d933580e": {
+      "en": "The system of record for AI employees.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "8422e13854": {
-      "en": "Nomik is an AI-agent workspace: your team and a self-organizing fleet of AI agents work side by side in the same channels — connected to your email, calendar, files and 100+ other tools — to plan, decide, and get real work done.",
+    "e3f360a0f7": {
+      "en": "Every company will employ AI workers. Nomik is where you hire them, organize them into teams, and give them roles, budgets, and permissions, then supervise every action, decision, and dollar. The management layer for a new kind of labor, working right alongside your people.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -1333,8 +1333,8 @@
         "index.html"
       ]
     },
-    "fdca5eccf9": {
-      "en": "Watch how a fleet plans, decides, and ships, together.",
+    "e6219255ac": {
+      "en": "Watch a workforce of AI employees get hired, get to work, and check in for the calls that matter.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -1347,15 +1347,15 @@
         "index.html"
       ]
     },
-    "8390802991": {
-      "en": "One chat. Every team. Humans and agents, together.",
+    "6e6e1b898d": {
+      "en": "Your AI workforce, at work and on the record.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "b1191f15df": {
-      "en": "Pick a workflow. Each one kicks off from a real event in your stack, then the right squad picks it up, does the work, and checks in for the calls that matter.",
+    "408354d644": {
+      "en": "Pick a workflow. Each one kicks off from a real event in your stack, then the right AI employees pick it up, do the work, and check in for the calls that matter.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -1955,30 +1955,29 @@
         "index.html"
       ]
     },
-    "d73ab4904a": {
-      "en": "Every workspace ships with a Chief of Staff.",
-      "kind": "text",
-      "pages": [
-        "index.html",
-        "product.html"
-      ]
-    },
-    "366988e06e": {
-      "en": "A project-aware orchestrator that knows your business inside-out and runs the workspace with you. Anything you can do in the app, it can do in chat, recommend and connect integrations, wire up triggers, even create the agents a squad is missing.",
+    "95e4e522c1": {
+      "en": "Every workspace ships with a manager for your AI workforce.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "f930022179": {
-      "en": "<b>Reads your business</b> and recommends the stack + automations that matter.",
+    "297066bc1b": {
+      "en": "A project-aware Chief of Staff that knows your business inside-out and runs your AI workforce with you. Anything you can do in the app, it can do in chat: hire the AI employees a function is missing, recommend and connect integrations, wire up triggers, set the budgets and approvals.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "bb3be8732e": {
-      "en": "<b>Sets it up on your say-so</b>: you grant access, it does the wiring.",
+    "3eb1567055": {
+      "en": "<b>Reads your business</b> and recommends the AI employees, stack, and automations that matter.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "a053910f9a": {
+      "en": "<b>Sets it up on your say-so</b>: you grant access, it does the hiring and wiring.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2101,22 +2100,22 @@
         "recipes.html"
       ]
     },
-    "a9ee2ebac0": {
-      "en": "AI stopped being a tool you open. It's a teammate you message.",
+    "6af800e75e": {
+      "en": "AI stopped being a tool you use. It's becoming labor you manage.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "a801030b9a": {
-      "en": "One assistant drafts. A team ships. Nomik gives every part of the business its own squad of agents, and keeps your humans in the loop, in the same chat. No tab-hopping, no copy-paste, no black boxes.",
+    "7f70de2271": {
+      "en": "One assistant drafts. A workforce delivers. Nomik gives every function its own AI employees, on the same org chart as your people, with every action, decision, and dollar on the record. No tab-hopping, no copy-paste, no black boxes.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "bbed1e5d14": {
-      "en": "From empty workspace to running business in three moves.",
+    "d587f2ae4e": {
+      "en": "From empty workspace to a managed AI workforce in three moves.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2130,38 +2129,36 @@
         "how-it-works.html"
       ]
     },
-    "1465ff627c": {
-      "en": "Spin up channels for every part of the business, just like Slack. Invite your people and set the goals.",
+    "0688962f12": {
+      "en": "Spin up channels for every function, just like Slack. Invite your people and set the goals.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "a801871770": {
-      "en": "Staff your squads",
-      "kind": "text",
-      "pages": [
-        "index.html",
-        "how-it-works.html"
-      ]
-    },
-    "9faf5f8c9b": {
-      "en": "Hire agents into Product, Engineering, Operations, Growth, and Support. They self-organize, claim work, and pull in specialists when a job needs one.",
+    "feead9fe76": {
+      "en": "Hire your AI workforce",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "fc55376a4f": {
-      "en": "Work as one",
+    "9d3c2137f6": {
+      "en": "Hire AI employees into Product, Engineering, Operations, Growth, and Support. They self-organize, claim work, and pull in specialists when a job needs one.",
       "kind": "text",
       "pages": [
-        "index.html",
-        "how-it-works.html"
+        "index.html"
       ]
     },
-    "66e1e2e163": {
-      "en": "Chat, delegate, and decide together. Watch every agent's thinking, tools, and cost inline, and approve the big calls yourself.",
+    "67773ee0ec": {
+      "en": "Manage and supervise",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "4e6e6c78e5": {
+      "en": "Delegate, decide, and approve together. Watch every AI employee's thinking, tools, and cost inline, and approve the calls that matter.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2181,8 +2178,8 @@
         "index.html"
       ]
     },
-    "861a65ce7e": {
-      "en": "Your team and your agents don't just talk. They share the same files, ship the same product, and plug into the same tools, all from one chat.",
+    "d8695f8ac6": {
+      "en": "Your people and your AI employees don't just talk. They share the same files, ship the same product, and plug into the same tools, all from one chat.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2238,16 +2235,16 @@
         "marketplace.html"
       ]
     },
-    "41ecfee259": {
-      "en": "Connect your stack. Every event wakes the fleet.",
+    "2a8d26b86e": {
+      "en": "Connect your stack. Every event puts an AI employee to work.",
       "kind": "text",
       "pages": [
         "index.html",
         "marketplace.html"
       ]
     },
-    "e6fa2c6a73": {
-      "en": "Plug in the tools you already run on. A new ticket, payment, lead, or pull request doesn't just sync, it pings the right squad, which picks it up, acts, and reports back. You approve the calls that matter.",
+    "6c1e1b7e8e": {
+      "en": "Plug in the tools you already run on. A new ticket, payment, lead, or pull request doesn't just sync, it pings the right AI employee, who picks it up, acts, and reports back. You approve the calls that matter.",
       "kind": "text",
       "pages": [
         "index.html",
@@ -2270,16 +2267,16 @@
         "marketplace.html"
       ]
     },
-    "84745a55d7": {
-      "en": "The fleet acks",
+    "8054fed134": {
+      "en": "Your workforce acks",
       "kind": "text",
       "pages": [
         "index.html",
         "marketplace.html"
       ]
     },
-    "fc816f6a12": {
-      "en": "The right squad claims it in seconds, no routing rules, no automation maze to maintain.",
+    "70a3106ec4": {
+      "en": "The right AI employee claims it in seconds, no routing rules, no automation maze to maintain.",
       "kind": "text",
       "pages": [
         "index.html",
@@ -2294,8 +2291,8 @@
         "marketplace.html"
       ]
     },
-    "36bcaa82b8": {
-      "en": "Agents do the work and post back in chat. You approve refunds, sends, and deploys.",
+    "d074d07013": {
+      "en": "AI employees do the work and post back in chat. You approve refunds, sends, and deploys.",
       "kind": "text",
       "pages": [
         "index.html",
@@ -2704,35 +2701,32 @@
         "marketplace.html"
       ]
     },
-    "e2ba6ae6f2": {
-      "en": "Don't see your tool? Agents connect to any service through <span class=\"mono\">MCP</span> and your own APIs, granted scoped access, never your raw secrets. They also reach customers on WhatsApp, SMS, and the phone, <a class=\"more-link\" href=\"product.html\" style=\"margin:0;display:inline\">voice agents answer &amp; place calls →</a>",
+    "277953929d": {
+      "en": "Don't see your tool? Your AI employees connect to any service through <span class=\"mono\">MCP</span> and your own APIs, granted scoped access, never your raw secrets. They also reach customers on WhatsApp, SMS, and the phone, <a class=\"more-link\" href=\"product.html\" style=\"margin:0;display:inline\">voice agents answer &amp; place calls →</a>",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "8387570e73": {
-      "en": "Squads",
+    "2cd7504a5a": {
+      "en": "Org chart",
       "kind": "text",
       "pages": [
-        "index.html",
-        "agents.html"
+        "index.html"
       ]
     },
-    "61e3f0a8a6": {
-      "en": "Every function gets its own team.",
+    "2718fccc8e": {
+      "en": "Organize them into departments.",
       "kind": "text",
       "pages": [
-        "index.html",
-        "agents.html"
+        "index.html"
       ]
     },
-    "3b662b6c15": {
-      "en": "Each squad mixes humans and agents that own an area end to end, from a Head of Product to a CFO, and hand off to each other without you in the middle.",
+    "6b53688d3f": {
+      "en": "Each department mixes your people and AI employees that own an area end to end, from a Head of Product to a CFO, with a clear reporting line and handoffs that skip you.",
       "kind": "text",
       "pages": [
-        "index.html",
-        "agents.html"
+        "index.html"
       ]
     },
     "592849df89": {
@@ -2995,15 +2989,15 @@
         "index.html"
       ]
     },
-    "dfd48bcdc6": {
-      "en": "Every agent on its own machine",
+    "e234cec31b": {
+      "en": "Every AI employee on its own machine",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "0123dfd25a": {
-      "en": "Each agent gets a full Linux box: a real terminal, files, sudo, and durable memory. They install what they need, run real commands, and remember what they learned.",
+    "2d8cfbfef0": {
+      "en": "Each AI employee gets a full Linux box: a real terminal, files, sudo, and durable memory. They install what they need, run real commands, and remember what they learned.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3033,30 +3027,30 @@
         "index.html"
       ]
     },
-    "3777d4cdb9": {
-      "en": "Every thought, tool call, and dollar shows up inline in the chat. Approve the risky steps yourself, deploys, spend, customer messages, right in the timeline.",
+    "1f082f4f72": {
+      "en": "Every thought, tool call, and dollar from every AI employee is on the record, inline in the chat. Approve the risky steps yourself, deploys, spend, customer messages, right in the timeline.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "ea1d3df298": {
-      "en": "Control",
+    "ab3c22eaa9": {
+      "en": "Govern",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "863ff23515": {
-      "en": "Powerful agents. You hold the controls.",
+    "122c1b504d": {
+      "en": "Powerful AI employees. You hold the controls.",
       "kind": "text",
       "pages": [
         "index.html",
         "security.html"
       ]
     },
-    "210b13bc51": {
-      "en": "Capability isn't the risk, unsupervised consequence is. Spend, deploys, and customer messages are proposed by agents and approved by you, with everything visible while it happens.",
+    "671d4ef6ef": {
+      "en": "Capability isn't the risk, unsupervised consequence is. Spend, deploys, and customer messages are proposed by AI employees and approved by you, with everything visible while it happens.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3099,8 +3093,8 @@
         "product.html"
       ]
     },
-    "e03947cc0c": {
-      "en": "Sovereignty",
+    "4dafd11fe0": {
+      "en": "Supervise &amp; sovereignty",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3113,8 +3107,8 @@
         "index.html"
       ]
     },
-    "5a11d8ae4c": {
-      "en": "Run Nomik as SaaS, in your own cloud, or fully on-prem, on any model, including your own local ones. Your data never has to leave the building.",
+    "afac6a5f90": {
+      "en": "Run Nomik as SaaS, in your own cloud, or fully on-prem, on any model, including your own local ones. Your data, and your AI workforce, never have to leave the building.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3162,8 +3156,8 @@
         "index.html"
       ]
     },
-    "8a86e74a86": {
-      "en": "More than a chatbot. More than automation.",
+    "d07a58b55c": {
+      "en": "Every other AI tool makes one person faster. Nomik manages the workforce.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3190,22 +3184,43 @@
         "index.html"
       ]
     },
-    "ef9387eae4": {
-      "en": "A single AI assistant",
+    "0057d92197": {
+      "en": "ChatGPT / Claude",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "58894a0d34": {
-      "en": "One smart drafter in a tab",
+    "042a4bf054": {
+      "en": "Makes one person smarter",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "f891ecde4c": {
-      "en": "A team that ships, coordinates, and runs functions end to end",
+    "b00e92fdef": {
+      "en": "A workforce that owns whole functions, not a chat in a tab",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "6d5cae9047": {
+      "en": "Copilot / Cursor",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "ac980a2616": {
+      "en": "Makes one employee faster",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "37f8471b3f": {
+      "en": "AI employees with roles, budgets, and accountability",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3225,8 +3240,8 @@
         "index.html"
       ]
     },
-    "7a9652cffe": {
-      "en": "Half the team is AI, in the same channels, doing the work",
+    "4a2e12f1dd": {
+      "en": "Humans and AI employees on one org chart, in the same channels",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3246,29 +3261,29 @@
         "index.html"
       ]
     },
-    "9c3e674508": {
-      "en": "Triggers + a reasoning workforce that acts, not just routes",
+    "5e91bb35b0": {
+      "en": "AI workers that reason and act, gated by approvals and budgets",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "cf0b06ce4f": {
-      "en": "Dev-only agent tools",
+    "3e1ff30ba7": {
+      "en": "Hiring more people",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "399a1fea82": {
-      "en": "Code in one repo",
+    "57e10251ce": {
+      "en": "Headcount, slow and costly",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "11790dc509": {
-      "en": "The whole business, Product, Ops, Growth, Support",
+    "161ae0d8e9": {
+      "en": "AI employees you hire in minutes and scale to thousands",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3385,8 +3400,8 @@
         "index.html"
       ]
     },
-    "29d4415fa0": {
-      "en": "Hosted in the cloud, local-first on your machine, and, where it's all heading, on open weights we train ourselves. The governance is the same everywhere.",
+    "61a3170f77": {
+      "en": "Hosted in the cloud, local-first on your machine, and, where it's all heading, on open weights we train ourselves. The management layer is the same everywhere.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3492,8 +3507,8 @@
         "use-cases.html"
       ]
     },
-    "d2a063203c": {
-      "en": "Be first to run your business with AI teammates.",
+    "21c161d659": {
+      "en": "Be first to manage a workforce of AI employees.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3845,15 +3860,15 @@
         "agents.html"
       ]
     },
-    "0a5376083b": {
-      "en": "Meet your workforce: a self-organizing org of agents with tiers, each on the right model for the job, working on real machines, connected to your tools, and coordinating in your channels. Led by Nomik, your hosted Chief of Staff.",
+    "6eab806d78": {
+      "en": "Meet your workforce: AI employees you hire, organize into departments, and supervise. A self-organizing org with tiers, each on the right model, working on real machines, reaching your tools, and coordinating in your channels. Hired, run, and governed here, led by Nomik, your hosted Chief of Staff.",
       "kind": "attr",
       "pages": [
         "agents.html"
       ]
     },
-    "715707fa84": {
-      "en": "A self-organizing org of agents with tiers, each on the right model, working on real machines and coordinating in your channels, led by Nomik, your hosted Chief of Staff.",
+    "33a1497ca8": {
+      "en": "AI employees you hire, organize into departments, and supervise. A self-organizing org with tiers, each on the right model, working on real machines and coordinating in your channels, led by Nomik, your hosted Chief of Staff.",
       "kind": "attr",
       "pages": [
         "agents.html"
@@ -3866,8 +3881,8 @@
         "agents.html"
       ]
     },
-    "06353fccc7": {
-      "en": "Not a swarm of bots, an org. Agents with clear roles work on real machines, reach for your tools, talk to your customers, and hand off to each other, all in the channels you already live in. You oversee; they do.",
+    "b593b4acf5": {
+      "en": "Not a swarm of bots, a workforce. AI employees with clear roles work on real machines, reach for your tools, talk to your customers, and hand off to each other, all in the channels you already live in. You hire and supervise; they do the work.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -3880,15 +3895,15 @@
         "agents.html"
       ]
     },
-    "1571c5a0ee": {
-      "en": "Every workspace starts with one agent already hired.",
+    "51e78c8cdf": {
+      "en": "Every workspace starts with one AI employee already hired.",
       "kind": "text",
       "pages": [
         "agents.html"
       ]
     },
-    "b1fa1d4368": {
-      "en": "Nomik is the orchestrator that comes with the workspace. It reads your business, recommends what to connect, hires the agents a squad is missing, and runs the place with you. It's hosted and on us, so it works from your very first message, no key required.",
+    "ce4c344d1d": {
+      "en": "Nomik is the orchestrator that comes with the workspace. It reads your business, recommends what to connect, hires the AI employees a department is missing, and runs the place with you. It's hosted and on us, so it works from your very first message, no key required.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -3970,24 +3985,21 @@
       "en": "A real org, not a swarm",
       "kind": "text",
       "pages": [
-        "agents.html",
-        "product.html"
+        "agents.html"
       ]
     },
     "1b804f474b": {
       "en": "Intelligence spent where it's worth it.",
       "kind": "text",
       "pages": [
-        "agents.html",
-        "product.html"
+        "agents.html"
       ]
     },
-    "cce9f1d8ea": {
-      "en": "The org has clear tiers, so the <em>cheapest capable</em> agent does each piece. Spend the brain once on the hard call; let the cheap models execute the rest.",
+    "ab54350dbf": {
+      "en": "The org has clear tiers, so the <em>cheapest capable</em> AI employee does each piece. Spend the brain once on the hard call; let the cheap models execute the rest.",
       "kind": "text",
       "pages": [
-        "agents.html",
-        "product.html"
+        "agents.html"
       ]
     },
     "fae648ff29": {
@@ -4001,8 +4013,7 @@
       "en": "Triage, routing, tracking, unblocking, just-in-time staffing, and running the workspace.",
       "kind": "text",
       "pages": [
-        "agents.html",
-        "product.html"
+        "agents.html"
       ]
     },
     "a2e4a66716": {
@@ -4028,8 +4039,8 @@
         "product.html"
       ]
     },
-    "25a1718d92": {
-      "en": "Design and ship their area end to end, coordinating laterally with the other squads.",
+    "f5dd210d39": {
+      "en": "Design and ship their area end to end, coordinating laterally with the other departments.",
       "kind": "text",
       "pages": [
         "agents.html",
@@ -4052,8 +4063,8 @@
         "product.html"
       ]
     },
-    "98ce7ae7a1": {
-      "en": "What an agent can do",
+    "a70758fd43": {
+      "en": "What an AI employee can do",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4066,8 +4077,8 @@
         "agents.html"
       ]
     },
-    "cb47855354": {
-      "en": "Each agent runs in its own isolated sandbox, a real machine with a terminal and a file system, and reaches out from there to your tools and your customers.",
+    "3cca972d4f": {
+      "en": "Each AI employee runs in its own isolated sandbox, a real machine with a terminal and a file system, and reaches out from there to your tools and your customers.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4080,8 +4091,8 @@
         "agents.html"
       ]
     },
-    "8dcd18ead9": {
-      "en": "A terminal, a file system, the web. Agents write and run code, process documents, and produce real artifacts, not just chat replies.",
+    "087cc898eb": {
+      "en": "A terminal, a file system, the web. AI employees write and run code, process documents, and produce real artifacts, not just chat replies.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4094,8 +4105,8 @@
         "agents.html"
       ]
     },
-    "45207059e6": {
-      "en": "Every connected integration becomes a set of actions an agent can take, on your grant, gated by risk, never holding your raw secret.",
+    "d0a25cf09b": {
+      "en": "Every connected integration becomes a set of actions an AI employee can take, on your grant, gated by risk, never holding your raw secret.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4129,29 +4140,29 @@
         "agents.html"
       ]
     },
-    "243850a813": {
-      "en": "Work flows through a shared board and your channels. An agent claims a task, does its part, and passes it on. You stay out of the middle until a judgment call needs you.",
+    "52f0a3b885": {
+      "en": "Work flows through a shared board and your channels. An AI employee claims a task, does its part, and passes it on. You stay out of the middle until a judgment call needs you.",
       "kind": "text",
       "pages": [
         "agents.html"
       ]
     },
-    "1014f94f66": {
-      "en": "<b>Shared board</b>: tasks are claimed atomically, so two agents never duplicate the same work.",
+    "c6b1a60000": {
+      "en": "<b>Shared board</b>: tasks are claimed atomically, so two AI employees never duplicate the same work.",
       "kind": "text",
       "pages": [
         "agents.html"
       ]
     },
-    "94cc5ae8ad": {
-      "en": "<b>Direct handoff</b>: a finished piece pings the next agent in the chain, with the context attached.",
+    "109b2ce3dd": {
+      "en": "<b>Direct handoff</b>: a finished piece pings the next AI employee in the chain, with the context attached.",
       "kind": "text",
       "pages": [
         "agents.html"
       ]
     },
-    "4f82868103": {
-      "en": "<b>Ask the orchestrator</b>: stuck or out of scope, an agent escalates to Nomik or to you.",
+    "a389d26752": {
+      "en": "<b>Ask the orchestrator</b>: stuck or out of scope, an AI employee escalates to Nomik or to you.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4208,16 +4219,16 @@
         "agents.html"
       ]
     },
-    "610384829d": {
-      "en": "You choose the brain behind every agent.",
+    "77d32cb896": {
+      "en": "You choose the brain behind every AI employee.",
       "kind": "text",
       "pages": [
         "agents.html",
         "product.html"
       ]
     },
-    "bcd1967a5d": {
-      "en": "Each agent runs on a pluggable engine, so you mix the best model per role: a frontier model for the hard calls, a cheap or local one for high-volume work. A policy ceiling keeps cost predictable as the fleet grows.",
+    "bdef43290f": {
+      "en": "Each AI employee runs on a pluggable engine, so you mix the best model per role: a frontier model for the hard calls, a cheap or local one for high-volume work. A policy ceiling keeps cost predictable as the workforce grows.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4268,8 +4279,7 @@
       "en": "Point agents at self-hosted, open-weights models on your own GPUs, no per-token cost, nothing leaving your boundary.",
       "kind": "text",
       "pages": [
-        "agents.html",
-        "product.html"
+        "agents.html"
       ]
     },
     "575acafe3b": {
@@ -4288,8 +4298,8 @@
         "product.html"
       ]
     },
-    "b575b13d7a": {
-      "en": "The cheapest capable model handles each piece; a policy ceiling keeps cost predictable as the fleet works.",
+    "1629bb8caf": {
+      "en": "The cheapest capable model handles each piece; a policy ceiling keeps cost predictable as the workforce works.",
       "kind": "text",
       "pages": [
         "agents.html",
@@ -4302,6 +4312,27 @@
       "pages": [
         "agents.html",
         "product.html"
+      ]
+    },
+    "0c727f1d35": {
+      "en": "Departments",
+      "kind": "text",
+      "pages": [
+        "agents.html"
+      ]
+    },
+    "61e3f0a8a6": {
+      "en": "Every function gets its own team.",
+      "kind": "text",
+      "pages": [
+        "agents.html"
+      ]
+    },
+    "87113af70d": {
+      "en": "Each department mixes your people and AI employees that own an area end to end, from a Head of Product to a CFO, and hand off to each other without you in the middle.",
+      "kind": "text",
+      "pages": [
+        "agents.html"
       ]
     },
     "6f4cd6a9d3": {
@@ -4318,8 +4349,8 @@
         "agents.html"
       ]
     },
-    "07c61210c8": {
-      "en": "Not every agent has to run in the cloud. Nomik Desktop is a standalone, local-first agent: your model, your files, your shell, your browser, safe by default. Run one",
+    "e213de7f22": {
+      "en": "Not every AI employee has to run in the cloud. Nomik Desktop is a standalone, local-first agent: your model, your files, your shell, your browser, safe by default. Run one",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4332,8 +4363,8 @@
         "agents.html"
       ]
     },
-    "e8581543c2": {
-      "en": "<b>Local hands</b>: it reaches in to your machine where the cloud agents reach out to your SaaS.",
+    "8c94408771": {
+      "en": "<b>Local hands</b>: it reaches in to your machine where your cloud AI employees reach out to your SaaS.",
       "kind": "text",
       "pages": [
         "agents.html"
@@ -4585,29 +4616,29 @@
         "cloud.html"
       ]
     },
-    "bfbb4556ac": {
-      "en": "Nomik Cloud is the hosted agentic workspace: one chat where you, your team, and your agents work as one. Start solo with a Chief of Staff and a squad, grow into a team with roles, approvals, shared knowledge, and a full audit trail. Everything else plugs into it: Nomik Desktop, your own agents over the SDK, any MCP server, and hundreds of connectors.",
+    "610b2173e0": {
+      "en": "Nomik Cloud is the hosted home for your AI workforce: hire AI employees, organize them into departments, give them roles, budgets, and permissions, and supervise every action and dollar. They're hired, run, and governed here. Start solo with a Chief of Staff, grow into a team with roles, approvals, shared knowledge, and one audit trail. Everything else plugs into it: Nomik Desktop, your own agents over the SDK, any MCP server, and hundreds of connectors.",
       "kind": "attr",
       "pages": [
         "cloud.html"
       ]
     },
-    "490295c8d6": {
-      "en": "The hosted agentic workspace: start solo, grow into a team, govern everything. Nomik Desktop, external agents, MCP servers, and hundreds of connectors all plug into it.",
+    "5bf64d3a98": {
+      "en": "The hosted home for your AI workforce: hire, organize, govern, and supervise AI employees, alongside your people. Start solo, grow into a team. Hired, run, and governed here. Nomik Desktop, external agents, MCP servers, and hundreds of connectors all plug into it.",
       "kind": "attr",
       "pages": [
         "cloud.html"
       ]
     },
-    "480c374e88": {
-      "en": "One workspace. You, your team, your agents.",
+    "17f8df2eb3": {
+      "en": "The hosted home for your AI workforce.",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "de4d2da70a": {
-      "en": "Nomik Cloud is the hosted agentic workspace: a chat where humans and agents work as one, with every agent on its own machine, every consequential action gated, and every dollar visible. Start solo in minutes. Grow into a team without changing tools. Everything else, Nomik Desktop, your own agents, your stack, plugs into it.",
+    "78dbb15759": {
+      "en": "Nomik Cloud is where you hire AI employees, organize them into departments, and give them roles, budgets, and permissions, then supervise every action, decision, and dollar. They're hired, run, and governed here, on the same org chart as your people, with every consequential action gated and every dollar visible. Start solo in minutes. Grow into a team without changing tools. Everything else, Nomik Desktop, your own agents, your stack, plugs into it.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4634,8 +4665,8 @@
         "cloud.html"
       ]
     },
-    "566d1c57c7": {
-      "en": "You don't need a team to run a team. Open a workspace and it ships with a Chief of Staff who interviews you about the business, proposes the squad, and staffs it. You talk to one agent; the org behind it does the work.",
+    "6c3174d486": {
+      "en": "You don't need a team to run a team. Open a workspace and it ships with a Chief of Staff who interviews you about the business, proposes the first AI employees to hire, and staffs them. You manage one manager; the workforce behind it does the work.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4648,15 +4679,15 @@
         "cloud.html"
       ]
     },
-    "2bb54ed6d6": {
-      "en": "<b>Staffing, not prompting</b>: agents come with roles, models, and procedures, not blank text boxes.",
+    "ed2599c356": {
+      "en": "<b>Hiring, not prompting</b>: AI employees come with roles, models, and procedures, not blank text boxes.",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "08d55646e2": {
-      "en": "<b>1,400+ recipes</b>: proven playbooks your agents pick up and run, from dunning to deploys.",
+    "6f84c20165": {
+      "en": "<b>1,400+ recipes</b>: proven playbooks your AI workforce picks up and runs, from dunning to deploys.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4697,8 +4728,8 @@
         "cloud.html"
       ]
     },
-    "f853d98b4b": {
-      "en": "When you invite people, the workspace becomes the org chart: members with roles, squads per function, approvals routed to the human who owns the call, and one activity trail everyone can read.",
+    "16abd77ddb": {
+      "en": "When you invite people, the workspace becomes the org chart: members with roles, departments per function, approvals routed to the human who owns the call, and one activity trail everyone can read. This is the management layer, and it's real today.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4718,15 +4749,15 @@
         "cloud.html"
       ]
     },
-    "6a3ea781d6": {
-      "en": "Squads per function",
+    "3929825b7d": {
+      "en": "Departments per function",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "7937441bc1": {
-      "en": "Finance, support, engineering, growth: each function gets its own channel, its own agents, and its own humans, working in the same room.",
+    "2e3fa45ed0": {
+      "en": "Finance, support, engineering, growth: each function gets its own channel, its own AI employees, and its own people, working in the same room.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4753,8 +4784,8 @@
         "cloud.html"
       ]
     },
-    "84462c3610": {
-      "en": "What one agent learns about your business, the canon, the gotchas, the procedures, every agent can use. The workspace gets smarter as a unit.",
+    "413f041ad8": {
+      "en": "What one AI employee learns about your business, the canon, the gotchas, the procedures, every other one can use. The workforce gets smarter as a unit.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4767,8 +4798,8 @@
         "cloud.html"
       ]
     },
-    "36129a437a": {
-      "en": "Every thought, tool call, approval, and dollar, in an append-only trail. Glass box for the whole team, not just the admin.",
+    "18cc391079": {
+      "en": "Every thought, tool call, approval, and dollar on the record, in an append-only trail. Glass box for the whole team, not just the admin.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4781,8 +4812,8 @@
         "cloud.html"
       ]
     },
-    "81408f61b0": {
-      "en": "Per-workspace ceilings with auto-pause, cost rolled up per agent, squad, and workspace. The bill can't surprise you.",
+    "2d1da0bad5": {
+      "en": "Per-workspace ceilings with auto-pause, cost rolled up per AI employee, department, and workspace. The bill can't surprise you.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4802,8 +4833,8 @@
         "cloud.html"
       ]
     },
-    "e107bd488f": {
-      "en": "Capability isn't the risk, unsupervised consequence is. You set how much rope each workspace gets, and the platform enforces it in code, not in a prompt an agent could talk its way around.",
+    "e124d1a9df": {
+      "en": "Capability isn't the risk, unsupervised consequence is. You set how much rope each workspace gets, and the platform enforces it in code, not in a prompt an AI worker could talk its way around.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4823,15 +4854,15 @@
         "cloud.html"
       ]
     },
-    "1a1475f630": {
-      "en": "<b>A kill switch</b>: stop any turn, any agent, or the whole fleet, instantly.",
+    "4122927bf9": {
+      "en": "<b>A kill switch</b>: stop any turn, any AI employee, or the whole workforce, instantly.",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "8e2eebadc4": {
-      "en": "<b>Isolation</b>: every workspace is its own walled tenant; every agent runs in its own sandbox.",
+    "dfd06a4f5b": {
+      "en": "<b>Isolation</b>: every workspace is its own walled tenant; every AI worker runs in its own sandbox.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4858,8 +4889,8 @@
         "cloud.html"
       ]
     },
-    "8ba916a7da": {
-      "en": "Nomik Cloud is where the governance lives. Whatever does the work, our agents, your machine, your own code, your tools, it joins the same workspace, rides the same gate, and lands in the same audit trail.",
+    "88c1cdbeb1": {
+      "en": "Nomik Cloud is where the management and governance live. Whatever does the work, our AI employees, your machine, your own code, your tools, it joins the same workspace, rides the same gate, and lands in the same audit trail.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4872,8 +4903,8 @@
         "cloud.html"
       ]
     },
-    "002e1b1e91": {
-      "en": "Gmail, Stripe, GitHub, Slack, and the rest of your stack, each action risk-classed and gated. Webhooks wake the fleet when your business moves.",
+    "f90010222a": {
+      "en": "Gmail, Stripe, GitHub, Slack, and the rest of your stack, each action risk-classed and gated. Webhooks wake the workforce when your business moves.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4924,8 +4955,8 @@
         "cloud.html"
       ]
     },
-    "bccf2ad6f9": {
-      "en": "Mount a Model Context Protocol server and its tools join your agents' hands, next to every connector, behind the same gate.",
+    "4d0f1d53cb": {
+      "en": "Mount a Model Context Protocol server and its tools join your AI employees' hands, next to every connector, behind the same gate.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4946,22 +4977,22 @@
         "cloud.html"
       ]
     },
-    "491dbd7f07": {
-      "en": "You choose the brain. Per agent.",
+    "eb37cc1e9b": {
+      "en": "You choose the brain. Per AI employee.",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "52f4fb6ecd": {
-      "en": "Frontier model for the architect, efficient model for the high-volume work, a local model where the data can't leave. Bring your own keys or use managed inference; the coordination layer stays the same.",
+    "abedfb0673": {
+      "en": "Frontier model for the architect, efficient model for the high-volume work, a local model where the data can't leave. Bring your own keys or use managed inference; the management layer stays the same.",
       "kind": "text",
       "pages": [
         "cloud.html"
       ]
     },
-    "5e0cc4cf7d": {
-      "en": "<b>Per-agent choice</b>: each role gets the intelligence it's worth, with a cost ceiling.",
+    "2363f2cd5f": {
+      "en": "<b>Per-role choice</b>: each AI employee gets the intelligence its work is worth, with a cost ceiling.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -4974,8 +5005,8 @@
         "cloud.html"
       ]
     },
-    "02fdef58b7": {
-      "en": "<b>Local and self-hosted models</b>: point an agent at any OpenAI-compatible endpoint.",
+    "71f678e380": {
+      "en": "<b>Local and self-hosted models</b>: point an AI employee at any OpenAI-compatible endpoint.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -5002,8 +5033,8 @@
         "cloud.html"
       ]
     },
-    "e807768ff7": {
-      "en": "Nomik-1 is our ongoing open-weight model program: a governed agent model, post-trained on graded trajectories from our own verification harness, built to serve the fleet's volume tier and ship on-prem. Open weights, Apache-2.0.",
+    "80bc3bcb92": {
+      "en": "Nomik-1 is our ongoing open-weight model program: a governed agent model, post-trained on graded trajectories from our own verification harness, built to serve the workforce's volume tier and ship on-prem. Open weights, Apache-2.0.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -5023,8 +5054,8 @@
         "cloud.html"
       ]
     },
-    "6b5424b3ab": {
-      "en": "<b>On-prem endgame</b>: the fleet ships as weights inside your walls.",
+    "b92118e16a": {
+      "en": "<b>On-prem endgame</b>: the workforce ships as weights inside your walls.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -5065,8 +5096,8 @@
         "contact.html"
       ]
     },
-    "4a9434aedb": {
-      "en": "Talk to us about your fleet.",
+    "84677336f0": {
+      "en": "Talk to us about your AI workforce.",
       "kind": "text",
       "pages": [
         "contact.html"
@@ -5375,36 +5406,36 @@
         "desktop.html"
       ]
     },
-    "973081e292": {
-      "en": "Nomik Desktop is a local-first agent, safe by default: encrypted secrets, sandbox-first execution, risk-gated tools, and a full audit log. One command plugs it into a Nomik workspace under the human approval floor, spend caps, and a complete activity trail. Preview, coming soon.",
+    "41f564951a": {
+      "en": "Nomik Desktop is a local-first agent, an AI employee that works on your own machine, safe by default: encrypted secrets, sandbox-first execution, risk-gated tools, and a full audit log. One command plugs it into a Nomik workspace, governed under the same human approval floor, spend caps, and activity trail as the rest of your AI workforce. Preview, coming soon.",
       "kind": "attr",
       "pages": [
         "desktop.html"
       ]
     },
-    "57a094a385": {
-      "en": "A local-first agent, safe by default. Local hands, workspace brain: encrypted secrets, sandbox-first execution, risk-gated tools, and one command to plug into a governed Nomik workspace. Preview.",
+    "45b5a57e76": {
+      "en": "A local-first agent, safe by default. An AI employee on your own machine: the governed hands that reach in to your files, shell, and browser, under the same approval floor, spend caps, and audit as your AI workforce. One command plugs it into a Nomik workspace. Preview.",
       "kind": "attr",
       "pages": [
         "desktop.html"
       ]
     },
-    "c3b3423046": {
-      "en": "A local-first agent, safe by default. Local hands, workspace brain: encrypted secrets, sandbox-first exec, risk-gated tools, and one command to plug into a governed Nomik workspace. Preview.",
+    "211e882a8e": {
+      "en": "A local-first agent, safe by default. An AI employee on your own machine: the governed hands that reach in to your files, shell, and browser, under the same approval floor, spend caps, and audit as your AI workforce. Preview.",
       "kind": "attr",
       "pages": [
         "desktop.html"
       ]
     },
-    "99063bc19e": {
-      "en": "A local-first agent you can actually trust.",
+    "dcfe4e1048": {
+      "en": "An AI employee on your machine you can actually trust.",
       "kind": "text",
       "pages": [
         "desktop.html"
       ]
     },
-    "ce1625fc51": {
-      "en": "Your assistant on your machine, with your model and your tools. Safe by default: encrypted secrets, sandbox-first execution, risk-gated tools, a full audit log. And one command plugs it into a Nomik workspace, where every consequential move meets the human approval floor.",
+    "2624e35f7f": {
+      "en": "A local-first AI employee that runs on your own machine, with your model and your tools. Safe by default: encrypted secrets, sandbox-first execution, risk-gated tools, a full audit log. And one command puts it on the same roster as the rest of your AI workforce, where every consequential move meets the human approval floor.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5446,8 +5477,8 @@
         "desktop.html"
       ]
     },
-    "f022f05713": {
-      "en": "Your Nomik workspace already reaches out to your SaaS: Gmail, Stripe, GitHub, hundreds more. Nomik Desktop is the other half. It reaches in, to your files, your shell, your browser, your local apps. The workspace is the team brain and the governance. Nomik Desktop is the governed hands on your machine.",
+    "c2ca31732e": {
+      "en": "Your Nomik workspace already reaches out to your SaaS: Gmail, Stripe, GitHub, hundreds more. Nomik Desktop is the other half. It reaches in, to your files, your shell, your browser, your local apps. The workspace is the brain and the management layer. Nomik Desktop is the governed hands on your machine.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5460,8 +5491,8 @@
         "desktop.html"
       ]
     },
-    "1cbe2b179d": {
-      "en": "<b>Workspace-native</b>: one connect and it's a teammate in the roster, under the same gate, spend caps, and audit trail.",
+    "feaa6c8444": {
+      "en": "<b>Workspace-native</b>: one connect and it's an AI employee on the roster, under the same gate, spend caps, and audit trail.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5502,8 +5533,8 @@
         "desktop.html"
       ]
     },
-    "43e290b488": {
-      "en": "A local agent has the keys to your machine. So Nomik Desktop ships locked down on the first run, not after you read the docs. Everything below is on at install.",
+    "56e56fc360": {
+      "en": "A local AI employee has the keys to your machine. So Nomik Desktop ships locked down on the first run, not after you read the docs. Everything below is on at install.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5615,8 +5646,8 @@
         "docs.html"
       ]
     },
-    "e1c1c3ffcf": {
-      "en": ", pick a workspace and a scope, and your local agent dials in over the Nomik SDK as a first-class teammate. The connect token is stored in your keychain. Nothing else crosses the line.",
+    "52ccb818f0": {
+      "en": ", pick a workspace and a scope, and your local AI employee dials in over the Nomik SDK as a first-class member of the roster. The connect token is stored in your keychain. Nothing else crosses the line.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5629,8 +5660,8 @@
         "desktop.html"
       ]
     },
-    "8a07309e61": {
-      "en": "<b>It uses workspace tools</b>: gated connector calls, the same approval floor every agent rides. It can never touch a teammate's personal accounts.",
+    "89bd5a746f": {
+      "en": "<b>It uses workspace tools</b>: gated connector calls, the same approval floor every AI employee rides. It can never touch a teammate's personal accounts.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5713,8 +5744,8 @@
         "desktop.html"
       ]
     },
-    "75b3d78a5d": {
-      "en": "and it joins a Nomik workspace as a teammate. It uses workspace connectors (gated), exposes its local tools to the fleet, and answers in your channels, all under the human approval floor, spend caps, RBAC, and a complete activity trail.",
+    "3967fc6449": {
+      "en": "and it joins a Nomik workspace as an AI employee. It uses workspace connectors (gated), exposes its local tools to the fleet, and answers in your channels, all under the human approval floor, spend caps, RBAC, and a complete activity trail.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5834,8 +5865,8 @@
         "desktop.html"
       ]
     },
-    "2546e38be8": {
-      "en": "Bring a governed agent to your machine.",
+    "8d0381c3fa": {
+      "en": "Bring a governed AI employee to your machine.",
       "kind": "text",
       "pages": [
         "desktop.html"
@@ -5855,29 +5886,29 @@
         "developers.html"
       ]
     },
-    "25a13340d8": {
-      "en": "Build on Nomik. A REST API, an MCP tool surface your agents already speak, descriptor-driven custom connectors, and inbound webhooks. Plus a preview of the typed SDK that plugs your own agent in, and Nomik Desktop, our governed local-first agent.",
+    "be3b68c0b9": {
+      "en": "Build on the AI workforce platform. A REST API, an MCP tool surface your agents already speak, descriptor-driven custom connectors, and inbound webhooks. Plus a preview of the typed SDK that plugs your own agent in, and Nomik Desktop, our governed local-first agent.",
       "kind": "attr",
       "pages": [
         "developers.html"
       ]
     },
-    "e70f546707": {
-      "en": "Build on Nomik: a REST API, an MCP tool surface, descriptor-driven custom connectors, and inbound webhooks, plus a typed SDK and outbound events on the roadmap.",
+    "bd4bcfc4bf": {
+      "en": "Build on the management layer for AI employees: a REST API, an MCP tool surface, descriptor-driven custom connectors, and inbound webhooks, plus a typed SDK and outbound events on the roadmap.",
       "kind": "attr",
       "pages": [
         "developers.html"
       ]
     },
-    "8662bfaf77": {
-      "en": "Build on Nomik.",
+    "e438eec222": {
+      "en": "Build on the AI workforce platform.",
       "kind": "text",
       "pages": [
         "developers.html"
       ]
     },
-    "0a5b4e5515": {
-      "en": "Drive the workforce from your own code, give your agents tools you host, and add integrations we haven't shipped yet. Here's what's live today, and what's coming next, told straight.",
+    "3db773ce86": {
+      "en": "Drive your AI workforce from your own code, give your agents tools you host, and add integrations we haven't shipped yet. Here's what's live today, and what's coming next, told straight.",
       "kind": "text",
       "pages": [
         "developers.html"
@@ -5936,8 +5967,8 @@
         "developers.html"
       ]
     },
-    "9ab74bb616": {
-      "en": "Create workspaces, manage agents, kick off runs, read activity. Every response comes back in one envelope, with a request id for tracing.",
+    "79b251a1f0": {
+      "en": "Create workspaces, hire and manage AI employees, kick off runs, read activity. Every response comes back in one envelope, with a request id for tracing.",
       "kind": "text",
       "pages": [
         "developers.html"
@@ -6045,8 +6076,7 @@
       "en": "MCP · give agents a tool you host",
       "kind": "text",
       "pages": [
-        "developers.html",
-        "mcp.html"
+        "developers.html"
       ]
     },
     "a0d1db9372": {
@@ -6225,8 +6255,8 @@
         "developers.html"
       ]
     },
-    "dc9737418d": {
-      "en": "Building on an agent workforce?",
+    "9337498bba": {
+      "en": "Building on an AI workforce?",
       "kind": "text",
       "pages": [
         "developers.html"
@@ -6759,8 +6789,8 @@
         "how-it-works.html"
       ]
     },
-    "4c6f85be60": {
-      "en": "From a sentence to shipped: open a workspace, staff your squads (pick roles, not prompts), and work as one. The Warden guides every step; your first ship lands in a day.",
+    "5768502ee3": {
+      "en": "From a sentence to shipped: open your workspace, hire and organize your AI workforce (pick roles, not prompts), then manage and supervise the work. The Warden guides every step; your first ship lands in a day.",
       "kind": "attr",
       "pages": [
         "how-it-works.html"
@@ -6773,8 +6803,8 @@
         "how-it-works.html"
       ]
     },
-    "a430823a02": {
-      "en": "You state a goal in plain language. The org decomposes it, staffs itself, does the work in the open, and asks you to approve only the calls that matter. The Warden guides you the whole way, no blank pages.",
+    "90a8295371": {
+      "en": "You state a goal in plain language. Your AI workforce decomposes it, organizes itself, does the work in the open, and asks you to approve only the calls that matter. The Warden guides you the whole way, no blank pages.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6801,22 +6831,36 @@
         "how-it-works.html"
       ]
     },
-    "fe569a6740": {
-      "en": "The Warden proposes a starter org, squads, agents, and the right model per role. You confirm or adjust. You pick <em>roles on a team</em>, never write a system prompt.",
+    "4bff3f62f0": {
+      "en": "Hire and organize your AI workforce",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "bb7aade143": {
-      "en": "State a goal in a channel. The org gets to work, visibly. You watch the traces and approve the consequential step, and it ships.",
+    "6f99a9553a": {
+      "en": "The Warden proposes a starter org chart, departments, AI employees, and the right model per role. You confirm or adjust. You pick <em>roles on a team</em>, never write a system prompt.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "c46a7792d6": {
-      "en": "Staffing, not prompting",
+    "298832f0eb": {
+      "en": "Manage and supervise the work",
+      "kind": "text",
+      "pages": [
+        "how-it-works.html"
+      ]
+    },
+    "a8fdf19635": {
+      "en": "State a goal in a channel. Your AI workforce gets to work, visibly. You watch the traces and approve the consequential step, and it ships.",
+      "kind": "text",
+      "pages": [
+        "how-it-works.html"
+      ]
+    },
+    "d7aa8fb0ce": {
+      "en": "Hiring, not prompting",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6829,22 +6873,22 @@
         "how-it-works.html"
       ]
     },
-    "a622fbbde1": {
-      "en": "Setup matches how you already think about building a company: pick the functions you need and the teammates who fill them. The unit of setup is a role on a squad.",
+    "675d33c3ab": {
+      "en": "Setup matches how you already think about building a company: pick the departments you need and the AI employees who fill them. The unit of setup is a role on a team.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "28a54a61c0": {
-      "en": "<b>Pick functions</b>: Product, Engineering, Operations, Growth, Support.",
+    "6c470d2614": {
+      "en": "<b>Pick departments</b>: Product, Engineering, Operations, Growth, Support.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "e7d5b1885d": {
-      "en": "<b>Get teammates</b>: each squad appears as a channel with rostered agents you can talk to.",
+    "cd3e8d8eaf": {
+      "en": "<b>Hire AI employees</b>: each department appears as a channel with rostered workers you can talk to.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6857,8 +6901,8 @@
         "how-it-works.html"
       ]
     },
-    "e5a055fb0c": {
-      "en": "<b>Grow anytime</b>: add humans, spin up squads; the org scales without you doing the wiring.",
+    "617ad66273": {
+      "en": "<b>Grow anytime</b>: add people, hire more departments; the org chart scales without you doing the wiring.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6962,8 +7006,8 @@
         "how-it-works.html"
       ]
     },
-    "f08fef2882": {
-      "en": "Agents claim tasks, work on their own machines, post live traces, and share artifacts.",
+    "46969797b3": {
+      "en": "AI employees claim tasks, work on their own machines, post live traces, and share artifacts.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7060,8 +7104,8 @@
         "how-it-works.html"
       ]
     },
-    "b45876c4f5": {
-      "en": "to set up, open, staff, and state your first goal.",
+    "679fef59c9": {
+      "en": "to set up, open, hire, and state your first goal.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7088,8 +7132,8 @@
         "how-it-works.html"
       ]
     },
-    "52ba9dfd14": {
-      "en": "Slack-style channels per squad; @mention humans or agents; focused threads for side-conversations.",
+    "1840b194b0": {
+      "en": "Slack-style channels per department; @mention people or AI employees; focused threads for side-conversations.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7123,29 +7167,29 @@
         "how-it-works.html"
       ]
     },
-    "bd3720d526": {
-      "en": "#events &amp; agent profiles",
+    "197f23584a": {
+      "en": "#events &amp; worker profiles",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "e04f124c18": {
-      "en": "A real-time fleet stream, plus per-agent dashboards: sessions, cost, context, decisions.",
+    "7c9fb07318": {
+      "en": "A real-time fleet stream, plus a profile per AI employee: sessions, cost, context, decisions, all on the record.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "5dbc8d8fe5": {
-      "en": "Agent terminal",
+    "9394b1b84c": {
+      "en": "Worker terminal",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "e36a7d10ac": {
-      "en": "A real PTY into an agent's own Linux box, watch or step in whenever you want.",
+    "a18cb848c8": {
+      "en": "A real PTY into an AI employee's own Linux box, supervise or step in whenever you want.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7158,8 +7202,8 @@
         "how-it-works.html"
       ]
     },
-    "cfc67f7ce1": {
-      "en": "The shared file tree where humans and agents read and edit the same artifacts.",
+    "3b2cd7da02": {
+      "en": "The shared file tree where people and AI employees read and edit the same artifacts.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7186,36 +7230,29 @@
         "marketplace.html"
       ]
     },
-    "9cb3c588ad": {
-      "en": "Everything you can plug into your workforce: hundreds of integrations, 1,400+ ready-to-run recipes, the skills your agents master, and the agents themselves. Curated for you, not dumped in a catalog.",
+    "16a93d3947": {
+      "en": "Everything your AI employees can plug into: hundreds of integrations, gated and safe. Connect a tool with one OAuth grant into the vault, hand over scoped access, and approve the actions that move money. Plus 1,400+ ready-to-run recipes, the skills they master, and the workforce itself.",
       "kind": "attr",
       "pages": [
         "marketplace.html"
       ]
     },
-    "5532033c0e": {
-      "en": "Marketplace · Nomik",
+    "c06ff63134": {
+      "en": "Everything your AI employees can plug into: hundreds of integrations, 1,400+ ready-to-run recipes, the skills they master, and the workforce itself. Gated and safe, never your raw secret.",
       "kind": "attr",
       "pages": [
         "marketplace.html"
       ]
     },
-    "2f7297ea41": {
-      "en": "Everything you can plug into your workforce: hundreds of integrations, 1,400+ ready-to-run recipes, the skills your agents master, and the agents themselves.",
-      "kind": "attr",
-      "pages": [
-        "marketplace.html"
-      ]
-    },
-    "85f3acb7b2": {
-      "en": "Everything you can plug in.",
+    "152febb92b": {
+      "en": "Everything your AI employees plug into.",
       "kind": "text",
       "pages": [
         "marketplace.html"
       ]
     },
-    "003435788a": {
-      "en": "Four building blocks turn an empty workspace into a working company: the tools you connect, the recipes you run, the skills your agents master, and the agents themselves. Browse it all, or let the Warden pick from it for you.",
+    "e76be16610": {
+      "en": "Four building blocks turn an empty workspace into a working company: the tools you connect, the recipes you run, the skills your AI employees master, and the workforce itself. Browse it all, or let the Warden pick from it for you.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7228,8 +7265,8 @@
         "marketplace.html"
       ]
     },
-    "a66a3ae892": {
-      "en": "Connect the apps you already run on. Slack, Stripe, Shopify, GitHub, HubSpot, QuickBooks, and the rest. Each becomes a set of actions your agents can take, on your grant, never your raw secret.",
+    "1299c4c175": {
+      "en": "Connect the apps you already run on. Slack, Stripe, Shopify, GitHub, HubSpot, QuickBooks, and the rest. Each becomes a set of actions your AI employees can take, on your grant, never your raw secret.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7263,8 +7300,8 @@
         "marketplace.html"
       ]
     },
-    "d6059bdd84": {
-      "en": "Procedures agents master",
+    "b62b392201": {
+      "en": "Procedures they master",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7278,8 +7315,8 @@
         "skills.html"
       ]
     },
-    "209320cfbd": {
-      "en": "The know-how your agents build up: a tested procedure for doing one thing well, plus the gotchas learned the hard way. Proven skills get promoted so the whole fleet inherits them.",
+    "3959ce0d95": {
+      "en": "The know-how your AI employees build up: a tested procedure for doing one thing well, plus the gotchas learned the hard way. Proven skills get promoted so the whole workforce inherits them.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7299,23 +7336,29 @@
         "marketplace.html"
       ]
     },
-    "eaa38a19b4": {
-      "en": "The teammates that do the work. A self-organizing org with tiers, each on the right model for the job, coordinating in your channels. Hire the ones a squad is missing.",
+    "718288a5d1": {
+      "en": "AI employees",
       "kind": "text",
       "pages": [
         "marketplace.html"
       ]
     },
-    "b0c0e2b066": {
-      "en": "Meet the agents →",
+    "02c1ba3647": {
+      "en": "The teammates that do the work. A self-organizing org with tiers, each on the right model for the job, coordinating in your channels. Hire the ones a team is missing.",
       "kind": "text",
       "pages": [
-        "marketplace.html",
-        "skills.html"
+        "marketplace.html"
       ]
     },
-    "79bfb8fd47": {
-      "en": "Don't see your tool? Agents connect to any service through <span class=\"mono\">MCP</span> and your own APIs, granted scoped access, never your raw secrets. <a class=\"more-link\" href=\"developers.html\" style=\"margin:0;display:inline\">Bring your own integration →</a>",
+    "9703cf5e30": {
+      "en": "Meet your workforce →",
+      "kind": "text",
+      "pages": [
+        "marketplace.html"
+      ]
+    },
+    "00c96d4f61": {
+      "en": "Don't see your tool? Your AI employees connect to any service through <span class=\"mono\">MCP</span> and your own APIs, granted scoped access, never your raw secrets. <a class=\"more-link\" href=\"developers.html\" style=\"margin:0;display:inline\">Bring your own integration →</a>",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7336,8 +7379,8 @@
         "security.html"
       ]
     },
-    "856e7ea48f": {
-      "en": "Connecting a tool is one grant, not a pile of config. Reads are free so agents can see your business; the actions that move money or can't be undone wait for you.",
+    "b3c897ce38": {
+      "en": "Connecting a tool is one grant, not a pile of config. Reads are free so your AI employees can see your business; the actions that move money or can't be undone wait for you.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7371,8 +7414,8 @@
         "marketplace.html"
       ]
     },
-    "2c9c90de53": {
-      "en": "Credentials are encrypted in a per-workspace vault. Agents get scoped access to take actions; they never see or hold your raw secret.",
+    "313144661d": {
+      "en": "Credentials are encrypted in a per-workspace vault. Your AI employees get scoped access to take actions; they never see or hold your raw secret.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7496,15 +7539,15 @@
         "mcp.html"
       ]
     },
-    "7609437601": {
-      "en": "Nomik agents speak the Model Context Protocol natively. Mount any MCP server and its tools join your agents' hands, behind the same risk gate and audit trail as every connector. Tools in, tools out, one gate.",
+    "7330fa4cd3": {
+      "en": "Your AI employees speak the Model Context Protocol natively. Mount any MCP server and its tools join their hands, behind the same risk gate and audit trail as every connector. The gated tool layer for your AI workforce: tools in, tools out, one gate.",
       "kind": "attr",
       "pages": [
         "mcp.html"
       ]
     },
-    "755ef82668": {
-      "en": "Tools in, tools out, one gate. Mount any MCP server into a Nomik workspace; every tool rides the same risk gate and audit trail.",
+    "17ed767d5e": {
+      "en": "Tools in, tools out, one gate. Mount any MCP server into a Nomik workspace; every tool your AI employees touch rides the same risk gate and audit trail.",
       "kind": "attr",
       "pages": [
         "mcp.html"
@@ -7524,8 +7567,8 @@
         "mcp.html"
       ]
     },
-    "ede24bc882": {
-      "en": "Nomik agents speak MCP natively: it's how they hold their tools internally, so it's also how you extend them. Mount any MCP server and its tools join your agents' hands, next to every connector, behind the same risk gate, on the same audit trail. No plugin format we invented. The standard your agents already use.",
+    "d7be5ea0b4": {
+      "en": "Your AI employees speak MCP natively: it's how they hold their tools internally, so it's also how you extend what your workforce can use. Mount any MCP server and its tools join their hands, next to every connector, behind the same risk gate, on the same audit trail. No plugin format we invented. The standard your AI workforce already uses.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7552,8 +7595,8 @@
         "mcp.html"
       ]
     },
-    "78ccdc7c8a": {
-      "en": "The MCP ecosystem is the biggest tool catalog in AI: databases, warehouses, internal services, the servers you write yourself. Point a workspace at one and its tools show up in the roster's hands, risk-classed like everything else.",
+    "cff353706f": {
+      "en": "The MCP ecosystem is the biggest tool catalog in AI: databases, warehouses, internal services, the servers you write yourself. Point a workspace at one and its tools show up in your AI employees' hands, risk-classed like everything else.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7573,8 +7616,8 @@
         "mcp.html"
       ]
     },
-    "b8594934b1": {
-      "en": "<b>No raw secrets</b>: agents act through scoped access, never your credentials in the clear.",
+    "d1f8f54972": {
+      "en": "<b>No raw secrets</b>: your AI employees act through scoped access, never your credentials in the clear.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7582,6 +7625,13 @@
     },
     "6a19b9dc40": {
       "en": "Read the MCP guide →",
+      "kind": "text",
+      "pages": [
+        "mcp.html"
+      ]
+    },
+    "2389a934bf": {
+      "en": "MCP · give your AI employees a tool you host",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7650,8 +7700,8 @@
         "mcp.html"
       ]
     },
-    "965d7bff4f": {
-      "en": "An agent reaching your MCP tool",
+    "c250b43b48": {
+      "en": "An AI employee reaching your MCP tool",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7748,22 +7798,22 @@
         "mcp.html"
       ]
     },
-    "4938a88eec": {
-      "en": "Agents too, not just tools",
+    "d216755611": {
+      "en": "AI workers too, not just tools",
       "kind": "text",
       "pages": [
         "mcp.html"
       ]
     },
-    "347748eefa": {
-      "en": "Tools plug in over MCP. Whole agents plug in over the SDK. Same workspace, same gate, same trail.",
+    "5d83557abc": {
+      "en": "Tools plug in over MCP. Whole AI employees plug in over the SDK. Same workspace, same gate, same trail.",
       "kind": "text",
       "pages": [
         "mcp.html"
       ]
     },
-    "efcf9da4fe": {
-      "en": "Your tools, in your agents' hands.",
+    "e809ac6ff1": {
+      "en": "Your tools, in your AI employees' hands.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7790,8 +7840,8 @@
         "pricing.html"
       ]
     },
-    "889b34bebf": {
-      "en": "Pricing that respects what an agent actually costs: bring your own keys, managed usage, or run local models with no per-token cost. Deploy as SaaS, private cloud, or on-prem.",
+    "690571a18f": {
+      "en": "Pricing that respects what an AI employee actually costs to run: bring your own keys, managed usage, or run local models with no per-token cost. Deploy as SaaS, private cloud, or on-prem.",
       "kind": "attr",
       "pages": [
         "pricing.html"
@@ -7799,6 +7849,13 @@
     },
     "25cd11d0e4": {
       "en": "Pricing and Deployment · Nomik",
+      "kind": "attr",
+      "pages": [
+        "pricing.html"
+      ]
+    },
+    "3163a54ea1": {
+      "en": "What it costs to employ AI workers, on your terms: bring your own keys, let us meter usage, or run local models with no per-token cost. Deploy as SaaS, private cloud, or on-prem.",
       "kind": "attr",
       "pages": [
         "pricing.html"
@@ -7825,8 +7882,8 @@
         "pricing.html"
       ]
     },
-    "ba3056bdda": {
-      "en": "Yes. Engines take a configurable endpoint, so an agent can point at a self-hosted, OpenAI-compatible model on your own GPUs, no vendor lock-in.",
+    "07c4cc5b3f": {
+      "en": "Yes. Engines take a configurable endpoint, so an AI employee can point at a self-hosted, OpenAI-compatible model on your own GPUs, no vendor lock-in.",
       "kind": "jsonld",
       "pages": [
         "pricing.html"
@@ -7867,15 +7924,15 @@
         "pricing.html"
       ]
     },
-    "b847a408e9": {
-      "en": "Pricing that respects what an agent actually costs.",
+    "9e869c44d7": {
+      "en": "Pricing that respects what an AI employee actually costs.",
       "kind": "text",
       "pages": [
         "pricing.html"
       ]
     },
-    "a41895a820": {
-      "en": "An agent seat consumes model inference every turn, a real, variable cost. So you choose how to handle it: bring your own keys, let us meter it, or run local models with no per-token cost at all.",
+    "48d4283e10": {
+      "en": "An AI worker seat consumes model inference every turn, a real, variable cost. So you choose how to handle it: bring your own keys, let us meter it, or run local models with no per-token cost at all.",
       "kind": "text",
       "pages": [
         "pricing.html"
@@ -8000,8 +8057,8 @@
         "pricing.html"
       ]
     },
-    "780a5542f4": {
-      "en": "Capped agents &amp; spend",
+    "0c6f751c61": {
+      "en": "Capped AI employees &amp; spend",
       "kind": "text",
       "pages": [
         "pricing.html"
@@ -8289,8 +8346,8 @@
         "pricing.html"
       ]
     },
-    "61bfc54929": {
-      "en": "Pricing only works if cost is visible and bounded. The org's lean design, cheapest capable model per role, just-in-time staffing, idle agents resting, is itself a cost strategy.",
+    "c920930fd5": {
+      "en": "Pricing only works if cost is visible and bounded. The workforce's lean design, cheapest capable model per role, just-in-time staffing, idle workers resting, is itself a cost strategy.",
       "kind": "text",
       "pages": [
         "pricing.html"
@@ -8310,12 +8367,11 @@
         "pricing.html"
       ]
     },
-    "27c85f85a7": {
-      "en": "<b>Cost on every turn</b>: rolled up per agent, squad, and workspace.",
+    "f3f6d3744e": {
+      "en": "<b>Cost on every turn</b>: rolled up per AI employee, squad, and workspace.",
       "kind": "text",
       "pages": [
-        "pricing.html",
-        "product.html"
+        "pricing.html"
       ]
     },
     "b15dc38095": {
@@ -8843,29 +8899,43 @@
         "product.html"
       ]
     },
-    "2390cdb221": {
-      "en": "An AI workforce you run from one chat: the Warden, a self-organizing org with tiers, integrations & triggers, omnichannel + voice, and a glass box where every thought, tool, and dollar is visible.",
+    "e0efa348d2": {
+      "en": "The management layer for your AI workforce: the Warden hires and runs your AI employees, a real org chart with tiers organizes them, integrations and triggers put them to work, and a glass box keeps every action, decision, and dollar on the record.",
       "kind": "attr",
       "pages": [
         "product.html"
       ]
     },
-    "46d1642922": {
-      "en": "An AI workforce you run from one chat: the Warden, a self-organizing org with tiers, integrations and triggers, omnichannel and voice, and a glass box where every thought, tool, and dollar is visible.",
+    "414f43a652": {
+      "en": "Product · The management layer for AI labor",
       "kind": "attr",
       "pages": [
         "product.html"
       ]
     },
-    "062f91dc08": {
-      "en": "An AI workforce you run from one chat.",
+    "15588c4749": {
+      "en": "Hire, run, and govern your AI workforce from one chat: the Warden, a real org chart with tiers, any model, integrations and triggers, omnichannel and voice, and a glass box where every action, decision, and dollar is on the record.",
+      "kind": "attr",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "b343dbfddf": {
+      "en": "The management layer for AI labor",
       "kind": "text",
       "pages": [
         "product.html"
       ]
     },
-    "450d59e30f": {
-      "en": "A self-organizing org of agents, guided by a project-aware Chief of Staff, working on real machines, connected to your stack, and visible down to the last thought and dollar.",
+    "04867848b0": {
+      "en": "Hire, run, and govern your AI workforce, from one chat.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "95c03094b3": {
+      "en": "A managed org of AI employees, led by the Warden, your Chief of Staff, working on real machines, connected to your stack, with every action, decision, and dollar on the record. Not registered somewhere else, hired and run here.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8878,8 +8948,15 @@
         "product.html"
       ]
     },
-    "e8dc6759d2": {
-      "en": "The Warden is a project-aware orchestrator that understands your business inside-out and runs the workspace <em>with</em> you. Anything you can do in the app, it can do in chat.",
+    "f384c18aa3": {
+      "en": "The manager who hires and runs your AI workforce.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "5498ead938": {
+      "en": "The Warden is a project-aware Chief of Staff that knows your business inside-out and runs your AI workforce <em>with</em> you. Anything you can do in the app, it can do in chat: hire the AI employees a function is missing, connect tools, wire triggers, and set the budgets and approvals.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8892,15 +8969,15 @@
         "product.html"
       ]
     },
-    "c972271dc4": {
-      "en": "<b>Recommends in context</b>: a tailored shortlist from the marketplace, each with a one-line <em>why</em>, picked for you instead of dumped in a catalog.",
+    "f4a5c54cce": {
+      "en": "<b>Recommends in context</b>: a tailored shortlist of AI employees and connectors, each with a one-line <em>why</em>, picked for you instead of dumped in a catalog.",
       "kind": "text",
       "pages": [
         "product.html"
       ]
     },
-    "04d668efe1": {
-      "en": "<b>Acts with permission</b>: you grant access; it connects tools, wires triggers, and creates the agents a squad is missing.",
+    "0eaf1af0b0": {
+      "en": "<b>Acts with permission</b>: you grant access; it connects tools, wires triggers, and hires the AI employees a department is missing.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8942,8 +9019,36 @@
         "product.html"
       ]
     },
-    "e7f054d674": {
-      "en": "The Warden <span>Orchestrator</span>",
+    "de62c095e4": {
+      "en": "A real org chart, not a swarm",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "8afb043e6f": {
+      "en": "A reporting structure, so intelligence is spent where it's worth it.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "59fa4d376d": {
+      "en": "Your AI workforce has clear tiers, so the <em>cheapest capable</em> AI employee does each piece. Spend the brain once on the hard call; let the cheap models execute the rest.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "40f0a7cb65": {
+      "en": "The Warden <span>Chief of Staff</span>",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "71ef848419": {
+      "en": "Triage, routing, tracking, unblocking, just-in-time hiring, and running the workforce.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8956,8 +9061,15 @@
         "product.html"
       ]
     },
-    "1364b18710": {
-      "en": "Each agent runs on a pluggable engine, so you mix the best model per role, a frontier model for the hard calls, a cheap or local one for high-volume work. Start with a small core and grow the org as the work grows.",
+    "8964cd5042": {
+      "en": "Each AI employee runs on a pluggable engine, so you mix the best model per role, a frontier model for the hard calls, a cheap or local one for high-volume work. Start with a small core and grow the workforce as the work grows.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "b0ebf5966a": {
+      "en": "Point your AI employees at self-hosted, open-weights models on your own GPUs, no per-token cost, nothing leaving your boundary.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8984,8 +9096,8 @@
         "product.html"
       ]
     },
-    "fa1eddfd5a": {
-      "en": "Turn events into work: a new ticket, payment, or pull request fires a rule, the right squad acts, and risky steps wait for your approval. Build it yourself, or ask the Warden to.",
+    "74da484f83": {
+      "en": "Turn events into work: a new ticket, payment, or pull request fires a rule, the right AI employee acts, and risky steps wait for your approval. Build it yourself, or ask the Warden to.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9020,8 +9132,8 @@
         "product.html"
       ]
     },
-    "59761a3e7d": {
-      "en": "A new ticket, payment, lead, or PR pings the right squad, which acts and reports back. <a class=\"more-link\" href=\"index.html#integrations\" style=\"margin:0;display:inline\">See the integrations catalog →</a>",
+    "b412d768b8": {
+      "en": "A new ticket, payment, lead, or PR pings the right AI employee, who acts and reports back. <a class=\"more-link\" href=\"index.html#integrations\" style=\"margin:0;display:inline\">See the integrations catalog →</a>",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9041,8 +9153,8 @@
         "product.html"
       ]
     },
-    "1b32cc7d61": {
-      "en": "Agents don't just live in your team chat. They talk to your customers on the channels your customers actually use.",
+    "bfd8fa1c2a": {
+      "en": "Your AI employees don't just live in your team chat. They talk to your customers on the channels your customers actually use.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9097,15 +9209,15 @@
         "product.html"
       ]
     },
-    "6bb185623a": {
-      "en": "Nothing your agents do is a black box.",
+    "828c33bfc4": {
+      "en": "Nothing your AI employees do is a black box.",
       "kind": "text",
       "pages": [
         "product.html"
       ]
     },
-    "3322964dfa": {
-      "en": "Every agent message carries an inline trace, its thinking, the exact tool calls, and the running cost. You can always look, and you approve the steps that matter.",
+    "3bd56bc699": {
+      "en": "Every AI employee's message carries an inline trace, its thinking, the exact tool calls, and the running cost, all on the record. You can always look, and you approve the steps that matter.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9118,15 +9230,22 @@
         "product.html"
       ]
     },
-    "af3508903b": {
-      "en": "<b>#events</b>: a real-time, append-only stream of the whole fleet's activity.",
+    "ab0bffd4f9": {
+      "en": "<b>#events</b>: a real-time, append-only stream of the whole workforce's activity.",
       "kind": "text",
       "pages": [
         "product.html"
       ]
     },
-    "b8cf67c94b": {
-      "en": "<b>Decisions ledger</b>: every approval an agent requested and how it resolved.",
+    "e57c3a4750": {
+      "en": "<b>Decisions ledger</b>: every approval an AI employee requested and how it resolved.",
+      "kind": "text",
+      "pages": [
+        "product.html"
+      ]
+    },
+    "7dd05753e1": {
+      "en": "<b>Cost on every turn</b>: rolled up per AI employee, department, and workspace.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9174,29 +9293,36 @@
         "recipes.html"
       ]
     },
-    "d514aff95a": {
-      "en": "1,400+ ready-to-run playbooks for real work: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and the Warden sets it up against your connected tools.",
+    "b0a4c7c28f": {
+      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and the Warden sets it up against your connected tools.",
       "kind": "attr",
       "pages": [
         "recipes.html"
       ]
     },
-    "030b5a57de": {
-      "en": "1,400+ ready-to-run playbooks for real work. Pick one and the Warden sets it up against your connected tools.",
+    "aed0a91e3f": {
+      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run. Pick one and the Warden sets it up against your connected tools.",
       "kind": "attr",
       "pages": [
         "recipes.html"
       ]
     },
-    "decd10bc31": {
-      "en": "1,400+ playbooks, ready to run.",
+    "1d17c9ef14": {
+      "en": "Playbooks for your AI workforce",
       "kind": "text",
       "pages": [
         "recipes.html"
       ]
     },
-    "f1df67c183": {
-      "en": "A recipe is a real piece of work, written in plain language: the pain it kills, what the agents do, the tools it needs. Pick one and the Warden sets it up against your stack, asks for anything missing, and runs it. No flowcharts to draw.",
+    "226f7c4ada": {
+      "en": "1,400+ playbooks your AI employees pick up and run.",
+      "kind": "text",
+      "pages": [
+        "recipes.html"
+      ]
+    },
+    "08354a9421": {
+      "en": "A recipe is a real piece of work, written in plain language: the pain it kills, what your AI employees do, the tools it needs. Pick one and the Warden sets it up against your stack, asks for anything missing, and puts your workforce on it. No flowcharts to draw.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9412,8 +9538,8 @@
         "recipes.html"
       ]
     },
-    "95e7628986": {
-      "en": "One agent gathers the order, AVS match, tracking and delivery proof on every new dispute; another drafts the rebuttal and files it before the bank's deadline.",
+    "179c041ab6": {
+      "en": "One AI employee gathers the order, AVS match, tracking and delivery proof on every new dispute; another drafts the rebuttal and files it before the bank's deadline.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9433,8 +9559,8 @@
         "recipes.html"
       ]
     },
-    "4bd178544e": {
-      "en": "A triage agent strips the noise from a 3,000-line log, an explainer reads the real failure and the test file, a notifier posts a human summary on the PR and DMs the author.",
+    "cc3a490ffa": {
+      "en": "A triage worker strips the noise from a 3,000-line log, an explainer reads the real failure and the test file, a notifier posts a human summary on the PR and DMs the author.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9629,15 +9755,15 @@
         "research.html"
       ]
     },
-    "c3007471ca": {
-      "en": "Nomik Research memo M-001: the Nomik-1 program. We are post-training an open base model into a governed open-weight agent model that carries our personas and safety gates in its weights, serves the fleet's volume tier, and ships on-prem. Ongoing, published as written.",
+    "a63c65f6d4": {
+      "en": "Nomik Research memo M-001: the Nomik-1 program, the model layer of Nomik, the system of record for AI employees. We are post-training an open base model into a governed open-weight agent model that carries our personas and safety gates in its weights, powers the AI workforce at its volume tier, and ships on-prem. Ongoing, published as written.",
       "kind": "attr",
       "pages": [
         "research.html"
       ]
     },
-    "156cf76620": {
-      "en": "The Nomik-1 program: a governed open-weight agent model, trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing.",
+    "6dbb1c3ad2": {
+      "en": "The model layer of Nomik, the system of record for AI employees: the Nomik-1 program, a governed open-weight agent model trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing.",
       "kind": "attr",
       "pages": [
         "research.html"
@@ -9657,8 +9783,8 @@
         "research.html"
       ]
     },
-    "b802db9a90": {
-      "en": "Nomik-1 is our open-weight agent model program: post-train an open base model until it natively speaks our tool calls, carries our personas and safety gates in its own weights, and serves the fleet's volume tier on hardware you can point at. The program is under way. This is the internal memo that started it, published as written.",
+    "0894d8a3b3": {
+      "en": "Nomik is the system of record for AI employees. Nomik-1 is the model layer underneath it: our open-weight agent model program, post-train an open base model until it natively speaks our tool calls, carries our personas and safety gates in its own weights, and serves the fleet's volume tier on hardware you can point at. The program is under way. This is the internal memo that started it, published as written.",
       "kind": "text",
       "pages": [
         "research.html"
@@ -9777,8 +9903,8 @@
         "research.html"
       ]
     },
-    "5c1bf50f34": {
-      "en": "The endpoint of the trajectory: a 14B-parameter agent model, post-trained from an open base, that natively speaks our tool-call format, carries our personas and safety gates in its weights, and serves the fleet's high-volume tier, self-hosted or on a customer's hardware.",
+    "5aa7c4c3e7": {
+      "en": "The endpoint of the trajectory: a 14B-parameter agent model, post-trained from an open base, that natively speaks our tool-call format, carries our personas and safety gates in its weights, and serves the fleet's high-volume tier, self-hosted or on a customer's hardware. It is the model layer the AI workforce runs on at volume.",
       "kind": "text",
       "pages": [
         "research.html"
@@ -11010,29 +11136,29 @@
         "research.html"
       ]
     },
-    "b75577273c": {
-      "en": "The Nomik Agent SDK makes any agent a first-class workspace teammate. Your code decides; Nomik runs the tools under the gate, keeps the credentials, and logs everything. Five lines to plug in, adapters for LangGraph and friends, and the same SDK that powers Nomik Desktop. Preview.",
+    "f63514ae4d": {
+      "en": "The Nomik Agent SDK makes any agent a first-class AI employee in your workforce. Your code decides; Nomik runs the tools under the gate, holds the credentials, and logs everything. Five lines to plug in, adapters for LangGraph and friends, and the same SDK that powers Nomik Desktop. Preview.",
       "kind": "attr",
       "pages": [
         "sdk.html"
       ]
     },
-    "0cf863d748": {
-      "en": "Bring your own agent, keep our governance. Your brain decides; Nomik executes tools under the gate. Five lines to plug in. Preview.",
+    "6574530b1b": {
+      "en": "Bring your own agent. It joins the managed workforce. Your brain decides; Nomik runs the tools under the gate, governs them, and keeps the record. Five lines to plug in. Preview.",
       "kind": "attr",
       "pages": [
         "sdk.html"
       ]
     },
-    "049204f30b": {
-      "en": "Bring your own agent. Keep the governance.",
+    "b36b4948eb": {
+      "en": "Bring your own agent. It joins the managed workforce.",
       "kind": "text",
       "pages": [
         "sdk.html"
       ]
     },
-    "db66ac9837": {
-      "en": "The SDK makes any agent a first-class workspace teammate: it gets DMs and @-mentions, replies durably, calls workspace tools, and rides the same gate as every other agent. Your code decides. Nomik executes, governs, and logs. Five lines to plug in.",
+    "8f568645eb": {
+      "en": "The SDK makes any agent a first-class AI employee: it gets DMs and @-mentions, replies durably, calls workspace tools, and rides the same gate as every other worker. Your code decides. Nomik runs it, governs it, and logs every action. Five lines to plug in.",
       "kind": "text",
       "pages": [
         "sdk.html"
@@ -11059,15 +11185,15 @@
         "sdk.html"
       ]
     },
-    "05c45d95e3": {
-      "en": "Your brain. Our infrastructure.",
+    "390721d182": {
+      "en": "Your brain. Our management layer and infrastructure.",
       "kind": "text",
       "pages": [
         "sdk.html"
       ]
     },
-    "f4976d9336": {
-      "en": "An external agent stays what it is: the brain that decides what to say and which tools to call. Everything consequential happens on our side of the line, inside the workspace's isolation, under its gate, on its audit trail.",
+    "fdd79cb764": {
+      "en": "An external agent stays what it is: the brain that decides what to say and which tools to call. Everything consequential happens on our side of the line, inside the workspace's isolation, under its gate, on its audit trail, alongside every other AI employee on the org chart.",
       "kind": "text",
       "pages": [
         "sdk.html"
@@ -11318,15 +11444,15 @@
         "security.html"
       ]
     },
-    "76ac968d32": {
-      "en": "Powerful agents, gated consequences: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation (FORCE row-level security, an AES-256-GCM secrets vault), RS256 auth, and a glass-box audit, plus open-core self-hosting on your own models.",
+    "6ace8128b5": {
+      "en": "Govern and supervise your AI workforce: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation (FORCE row-level security, an AES-256-GCM secrets vault), RS256 auth, and a glass-box audit with a decisions ledger, plus open-core self-hosting on your own models. The accountability layer for AI labor.",
       "kind": "attr",
       "pages": [
         "security.html"
       ]
     },
-    "b51d43ddca": {
-      "en": "Powerful agents, gated consequences: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation, RS256 auth, and a glass-box audit, plus open-core self-hosting on your own models.",
+    "efeef11557": {
+      "en": "Govern and supervise your AI workforce: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation, RS256 auth, and a glass-box audit with a decisions ledger, plus open-core self-hosting on your own models.",
       "kind": "attr",
       "pages": [
         "security.html"
@@ -11339,8 +11465,8 @@
         "security.html"
       ]
     },
-    "453acadd67": {
-      "en": "Control doesn't come from crippling the agents. It comes from making everything visible and putting a human gate on the steps that touch money, data, or the outside world. The boundary, the spend, and the off switch stay in your hands.",
+    "cfb20dd264": {
+      "en": "Control doesn't come from crippling your AI employees. It comes from making everything visible and putting a human gate on the steps that touch money, data, or the outside world. The boundary, the spend, and the off switch stay in your hands. This is the accountability layer for your AI workforce.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11353,8 +11479,8 @@
         "security.html"
       ]
     },
-    "cbc48a73d4": {
-      "en": "Inside their own sandbox, agents act freely, that's what makes them useful. The things that touch the outside world or cost real money are <em>proposed</em> by an agent and <em>approved</em> by a human. The tool call itself is the proposal, so nothing fires until you say yes.",
+    "8a0e95844f": {
+      "en": "Inside their own sandbox, your AI employees act freely, that's what makes them useful. The things that touch the outside world or cost real money are <em>proposed</em> by an AI employee and <em>approved</em> by a human. The tool call itself is the proposal, so nothing fires until you say yes.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11409,8 +11535,8 @@
         "security.html"
       ]
     },
-    "f6d31aa7d6": {
-      "en": "Six controls, each enforced in the backend, not just drawn in the UI.",
+    "48140247c4": {
+      "en": "The management and accountability layer for your AI workforce: six controls, each enforced in the backend, not just drawn in the UI.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11423,8 +11549,8 @@
         "security.html"
       ]
     },
-    "6f187b60c5": {
-      "en": "Consequential actions are held at the gate: an agent proposes, a human approves, and the platform re-runs the approved action server-side, so the agent never re-touches it. Cards appear inline with full context and Approve / Deny.",
+    "c8d604d4c7": {
+      "en": "Consequential actions are held at the gate: an AI employee proposes, a human approves, and the platform re-runs the approved action server-side, so the AI employee never re-touches it. Cards appear inline with full context and Approve / Deny.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11458,8 +11584,8 @@
         "security.html"
       ]
     },
-    "960f3213cc": {
-      "en": "Pause any turn, any agent, or the whole workspace, live from chat. A paused workspace fails closed, returning <span class=\"mono\">423</span> to every agent action, paused means paused. Sliding per-thread turn budgets stop runaway agent-to-agent loops.",
+    "d2fb919eab": {
+      "en": "Pause any turn, any AI employee, or the whole workspace, live from chat. A paused workspace fails closed, returning <span class=\"mono\">423</span> to every AI employee action, paused means paused. Sliding per-thread turn budgets stop runaway agent-to-agent loops.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11479,15 +11605,15 @@
         "security.html"
       ]
     },
-    "c01fddff9d": {
-      "en": "Roles &amp; scoped agents",
+    "afcd3fd05d": {
+      "en": "Roles &amp; scoped AI employees",
       "kind": "text",
       "pages": [
         "security.html"
       ]
     },
-    "acc4031a21": {
-      "en": "Owner / Admin / Member for people. Agents are workspace-pinned principals that can never perform a human-only act, approving a gate, changing billing, or relaxing the dial, and an agent can never approve its own request.",
+    "a0ab07aa05": {
+      "en": "Owner / Admin / Member for people. AI employees are workspace-pinned principals that can never perform a human-only act, approving a gate, changing billing, or relaxing the dial, and an AI employee can never approve its own request.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11598,8 +11724,8 @@
         "security.html"
       ]
     },
-    "c806626fd3": {
-      "en": "Hiring and retiring agents, membership changes",
+    "e6476695e3": {
+      "en": "Hiring and retiring AI employees, membership changes",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11633,8 +11759,8 @@
         "security.html"
       ]
     },
-    "fa19cab6eb": {
-      "en": "An approval is only useful if it reaches you. When an agent raises a gated action, Nomik pushes it to your devices, no open tab required, and lets you resolve it on the spot.",
+    "ea748b7248": {
+      "en": "An approval is only useful if it reaches you. When an AI employee raises a gated action, Nomik pushes it to your devices, no open tab required, and lets you resolve it on the spot.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11689,15 +11815,15 @@
         "security.html"
       ]
     },
-    "0d9520aa67": {
-      "en": "<b>Approver ≠ requester</b>: enforced in code, an agent cannot resolve a gate it raised, and no one can self-approve a hire.",
+    "0062cec0a3": {
+      "en": "<b>Approver ≠ requester</b>: enforced in code, an AI employee cannot resolve a gate it raised, and no one can self-approve a hire.",
       "kind": "text",
       "pages": [
         "security.html"
       ]
     },
-    "a255216803": {
-      "en": "<b>Cost is first-class</b>: each turn carries its own dollar figure, rolled up per agent and per workspace.",
+    "8ada75fa7c": {
+      "en": "<b>Cost is first-class</b>: each turn carries its own dollar figure, rolled up per AI employee and per workspace.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11759,22 +11885,22 @@
         "security.html"
       ]
     },
-    "143926eb08": {
-      "en": "Each workspace is its own isolated account on the agent message bus. An agent's credentials can't even <em>name</em> another workspace's subjects, and the sandbox set is denied the control-plane subjects outright.",
+    "5aca04cf63": {
+      "en": "Each workspace is its own isolated account on the agent message bus. An AI employee's credentials can't even <em>name</em> another workspace's subjects, and the sandbox set is denied the control-plane subjects outright.",
       "kind": "text",
       "pages": [
         "security.html"
       ]
     },
-    "c31e52a86e": {
-      "en": "A container per agent",
+    "837beadc35": {
+      "en": "A container per AI employee",
       "kind": "text",
       "pages": [
         "security.html"
       ]
     },
-    "2f69833e2d": {
-      "en": "Each agent runs in its own Docker container with CPU, memory, and process limits, a no-new-privileges flag, and seccomp + AppArmor profiles. Compute is contained, not shared.",
+    "7ac43b2a7a": {
+      "en": "Each AI employee runs in its own Docker container with CPU, memory, and process limits, a no-new-privileges flag, and seccomp + AppArmor profiles. Compute is contained, not shared.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11801,8 +11927,8 @@
         "security.html"
       ]
     },
-    "f391aa9186": {
-      "en": "Every request carries a principal that is explicitly <em>human</em> or <em>agent</em>. Human-only routes opt in by name, and every refusal returns a machine-readable code, so an agent sees a precise reason, not a generic 403.",
+    "c7ed17a986": {
+      "en": "Every request carries a principal that is explicitly <em>human</em> or <em>agent</em>. Human-only routes opt in by name, and every refusal returns a machine-readable code, so an AI employee sees a precise reason, not a generic 403.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11822,8 +11948,8 @@
         "security.html"
       ]
     },
-    "f1faeacf91": {
-      "en": "A capable agent workforce that can run inside your own walls is what most agent platforms can't offer. We're honest about what's shipped today and what's on the way.",
+    "508f1145bc": {
+      "en": "A capable AI workforce that can run inside your own walls is what most AI platforms can't offer. We're honest about what's shipped today and what's on the way.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11892,15 +12018,15 @@
         "security.html"
       ]
     },
-    "48287cec15": {
-      "en": "Engines are model-agnostic with a configurable endpoint, so an agent can run against a self-hosted, open-weights model instead of a cloud API. Paired with self-hosting, prompts and files stay where you put them.",
+    "a4e0c73a4a": {
+      "en": "Engines are model-agnostic with a configurable endpoint, so an AI employee can run against a self-hosted, open-weights model instead of a cloud API. Paired with self-hosting, prompts and files stay where you put them.",
       "kind": "text",
       "pages": [
         "security.html"
       ]
     },
-    "f68f1a3639": {
-      "en": "<b>Local / open models</b>: run agents against your own GPUs over a standard endpoint (Ollama, vLLM, LM Studio, llama.cpp), at flat, bounded compute cost.",
+    "3220afa1d5": {
+      "en": "<b>Local / open models</b>: run your AI employees against your own GPUs over a standard endpoint (Ollama, vLLM, LM Studio, llama.cpp), at flat, bounded compute cost.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11962,8 +12088,8 @@
         "security.html"
       ]
     },
-    "a942cebffc": {
-      "en": "<b>Isolation &amp; vault</b>: each agent isolated; secrets scoped to the workspace, granted by you, never held unapproved.",
+    "1463031efd": {
+      "en": "<b>Isolation &amp; vault</b>: each AI employee isolated; secrets scoped to the workspace, granted by you, never held unapproved.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -11990,8 +12116,8 @@
         "security.html"
       ]
     },
-    "9404785843": {
-      "en": "The same honesty we hold the agents to, we hold ourselves to. These are in build, not live, and we won't pretend otherwise.",
+    "137cf44c76": {
+      "en": "The same honesty we hold our AI employees to, we hold ourselves to. These are in build, not live, and we won't pretend otherwise.",
       "kind": "text",
       "pages": [
         "security.html"
@@ -12123,36 +12249,29 @@
         "skills.html"
       ]
     },
-    "49327c390a": {
-      "en": "Skills are how your agents get better at your business: a tested procedure for doing one thing well, plus the gotchas learned the hard way. Proven skills get promoted so the whole fleet inherits them.",
+    "929374929e": {
+      "en": "Skills are how your AI workforce gets better and cheaper at your business: a tested procedure for doing one thing well, plus the gotchas learned the hard way. Proven skills get promoted so every AI employee inherits them, and the same work costs less over time.",
       "kind": "attr",
       "pages": [
         "skills.html"
       ]
     },
-    "a5a048af49": {
-      "en": "Skills · Nomik",
+    "d61b40d602": {
+      "en": "Skills are how your AI workforce gets better and cheaper: a tested procedure plus the gotchas learned the hard way, promoted so every AI employee inherits it and the same work costs less over time.",
       "kind": "attr",
       "pages": [
         "skills.html"
       ]
     },
-    "bf43deb61b": {
-      "en": "Skills are how your agents get better at your business: a tested procedure plus the gotchas learned the hard way, promoted so the whole fleet inherits them.",
-      "kind": "attr",
-      "pages": [
-        "skills.html"
-      ]
-    },
-    "137b97c75c": {
-      "en": "Your agents get sharper at your business.",
+    "dcea19b6ac": {
+      "en": "Your AI workforce gets better, and cheaper, at your business.",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "4ef3b3ede1": {
-      "en": "A skill is a procedure your agents can follow: how to do one thing well, written down, with the gotchas learned the hard way. The fleet builds them as it works, and the proven ones spread to everyone.",
+    "c8833026fd": {
+      "en": "A skill is a procedure your AI employees can follow: how to do one thing well, written down, with the gotchas learned the hard way. Your workforce records them as it works, proves them, and promotes the winners, so the same job gets faster and cheaper every time.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12172,8 +12291,8 @@
         "skills.html"
       ]
     },
-    "3e7dbfc480": {
-      "en": "They work together. A recipe is the job; a skill is the craft an agent brings to it, and keeps improving.",
+    "f5bd8f4e91": {
+      "en": "They work together. A recipe is the job; a skill is the craft an AI employee brings to it, and keeps improving.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12200,15 +12319,22 @@
         "skills.html"
       ]
     },
-    "3a0004c015": {
-      "en": "The craft agents apply",
+    "0b09eeecd0": {
+      "en": "The craft your AI employees apply",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "060fa375a1": {
-      "en": "A tested method an agent reads before it acts: how to reconcile two ledgers, write in your voice, file a clean dispute. It gets better every run.",
+    "da1db522ae": {
+      "en": "A tested method an AI employee reads before it acts: how to reconcile two ledgers, write in your voice, file a clean dispute. It gets better, and cheaper to run, every time.",
+      "kind": "text",
+      "pages": [
+        "skills.html"
+      ]
+    },
+    "b8dc0e4e7e": {
+      "en": "Meet your AI workforce →",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12221,15 +12347,15 @@
         "skills.html"
       ]
     },
-    "2a1f466f56": {
-      "en": "Work once, get better forever.",
+    "afa5e47dcd": {
+      "en": "Work once. The same work gets cheaper every time after.",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "66d97d4d55": {
-      "en": "Your fleet doesn't start from zero every morning. It captures what worked, proves it, and shares it, so the second time is always faster than the first.",
+    "c1a52d9318": {
+      "en": "Your AI workforce doesn't start from zero every morning. It records what worked, proves it, and promotes it, so the second time is always faster and cheaper than the first.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12242,8 +12368,8 @@
         "skills.html"
       ]
     },
-    "d0f75be9db": {
-      "en": "An agent does the work",
+    "6654d00cfe": {
+      "en": "An AI employee does the work",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12305,15 +12431,15 @@
         "skills.html"
       ]
     },
-    "74fb54b1fe": {
-      "en": "The team inherits it",
+    "dad4154e31": {
+      "en": "The whole workforce inherits it",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "38e5eebeca": {
-      "en": "Proven skills get promoted to the shared canon, so every agent in the workspace starts the next job already knowing the trick.",
+    "03388b6e88": {
+      "en": "Proven skills get promoted to the shared canon, so every AI employee in the workspace starts the next job already knowing the trick, and bills you less to finish it.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12333,15 +12459,15 @@
         "skills.html"
       ]
     },
-    "a8c568e914": {
-      "en": "A skill is a short, readable file: a name, a one-line \"use this when\", the procedure, and the gotchas. You can read every one your fleet relies on, and so can the next agent.",
+    "e01c66b0b1": {
+      "en": "A skill is a short, readable file: a name, a one-line \"use this when\", the procedure, and the gotchas. You can read every one your AI workforce relies on, and so can the next AI employee.",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "40191a1b96": {
-      "en": "<b>Named and scoped</b>: a sharp description tells an agent exactly when to reach for it.",
+    "7c46bc0de5": {
+      "en": "<b>Named and scoped</b>: a sharp description tells an AI employee exactly when to reach for it.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12382,22 +12508,22 @@
         "skills.html"
       ]
     },
-    "7b0ff308dc": {
-      "en": "Each agent keeps its own working memory. The skills that prove out get raised into a shared canon the whole workspace reads from, so a win on one desk lifts the whole team.",
+    "d507048717": {
+      "en": "Each AI employee keeps its own working memory. The skills that prove out get raised into a shared canon the whole workspace reads from, so a win on one desk lifts the whole workforce.",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "3b0cb912db": {
-      "en": "<b>Private memory</b>: an agent's own notes and drafts, scoped to its work.",
+    "6bc2c205d7": {
+      "en": "<b>Private memory</b>: an AI employee's own notes and drafts, scoped to its work.",
       "kind": "text",
       "pages": [
         "skills.html"
       ]
     },
-    "3ff9aa7e0f": {
-      "en": "<b>Shared canon</b>: the verified skills and standards every agent inherits.",
+    "51858330dc": {
+      "en": "<b>Shared canon</b>: the verified skills and standards every AI employee inherits.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12515,8 +12641,8 @@
         "terms.html"
       ]
     },
-    "ba55038682": {
-      "en": "Nomik is a shared workspace where your team and a fleet of AI agents collaborate. We provide the platform; you bring the workspaces, content, and (if you choose) your own model keys. We may evolve features, surfaces, and limits, with reasonable notice for material changes.",
+    "04cae8256b": {
+      "en": "Nomik is the system of record for AI employees: a platform where your people and a workforce of AI workers collaborate, and where you hire, organize, govern, and supervise them. We provide the platform; you bring the workspaces, content, and (if you choose) your own model keys. We may evolve features, surfaces, and limits, with reasonable notice for material changes.",
       "kind": "text",
       "pages": [
         "terms.html"
@@ -12732,22 +12858,29 @@
         "use-cases.html"
       ]
     },
-    "d82fb48cdd": {
-      "en": "A day in the life with an AI workforce: e-commerce, SaaS, agency, and regulated/EU businesses run their squads, connect their stack, and ship with humans in the loop.",
+    "c20ddc86df": {
+      "en": "A day in the life with an AI workforce: how e-commerce, SaaS, agency, and regulated/EU businesses hire, organize, and supervise the AI employees that run the operation, alongside their people.",
       "kind": "attr",
       "pages": [
         "use-cases.html"
       ]
     },
-    "56560d552e": {
-      "en": "See your business in it.",
+    "40418984ba": {
+      "en": "The AI workforce each business hires and runs · Nomik",
+      "kind": "attr",
+      "pages": [
+        "use-cases.html"
+      ]
+    },
+    "0c68e2cfee": {
+      "en": "The AI workforce your business hires.",
       "kind": "text",
       "pages": [
         "use-cases.html"
       ]
     },
-    "2e50eea026": {
-      "en": "The pattern is always the same: you state intent, the fleet does the work in the open, triggers pull in recurring work, and you approve only the consequential calls. Here's a day in the life.",
+    "7375f5aa39": {
+      "en": "The pattern is the same in every business: you hire AI employees into each function, connect your stack, and supervise the work in the open, approving only the consequential calls. Here's a day in the life, by business type.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -12795,8 +12928,8 @@
         "use-cases.html"
       ]
     },
-    "1e8d8d86bd": {
-      "en": "<b>Squads:</b> Growth · Support · Operations · the Warden",
+    "8c8ed47551": {
+      "en": "<b>Departments:</b> Growth · Support · Operations · the Warden",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -12858,8 +12991,8 @@
         "use-cases.html"
       ]
     },
-    "9f8a7ca94a": {
-      "en": "<b>A call comes in:</b> a voice agent answers, looks up the order, offers store credit, escalates the angry one with a transcript ready.",
+    "7ff5ef65de": {
+      "en": "<b>A call comes in:</b> an AI employee answers by voice, looks up the order, offers store credit, escalates the angry one with a transcript ready.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -12907,8 +13040,8 @@
         "use-cases.html"
       ]
     },
-    "8319fd797f": {
-      "en": "<b>Squads:</b> Engineering · Product · Growth · Support",
+    "3a53f769b5": {
+      "en": "<b>Departments:</b> Engineering · Product · Growth · Support",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -12942,8 +13075,8 @@
         "use-cases.html"
       ]
     },
-    "2367ea638a": {
-      "en": "<b>What changed:</b> the founders set direction and approved a handful of things. The team did the rest.",
+    "e155bae778": {
+      "en": "<b>What changed:</b> the founders set direction and approved a handful of things. Their AI workforce did the rest.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -12977,8 +13110,8 @@
         "use-cases.html"
       ]
     },
-    "b6dd191d18": {
-      "en": "<b>Squads:</b> one workspace per client, an account lead (human) + Growth/Content/Design agents + a per-workspace Warden",
+    "1ce236d16c": {
+      "en": "<b>Workforce:</b> one workspace per client, an account lead (human) + Growth/Content/Design AI employees + a per-workspace Warden",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13012,8 +13145,8 @@
         "use-cases.html"
       ]
     },
-    "156e35820f": {
-      "en": "<b>Per client:</b> each workspace's Warden posts a status digest, and agents draft posts and creatives the lead approves in threads.",
+    "406ac5f675": {
+      "en": "<b>Per client:</b> each workspace's Warden posts a status digest, and AI employees draft posts and creatives the lead approves in threads.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13033,8 +13166,8 @@
         "use-cases.html"
       ]
     },
-    "05cc266fcf": {
-      "en": "<b>What changed:</b> more clients, no more coordination overhead. Seniors do senior work; agents do the glue.",
+    "5226ed11ec": {
+      "en": "<b>What changed:</b> more clients, no more coordination overhead. Seniors do senior work; their AI employees do the glue.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13061,15 +13194,15 @@
         "use-cases.html"
       ]
     },
-    "9288d870c4": {
-      "en": "Wants an agent workforce but <b>cannot</b> send customer data, code, or secrets to third-party model providers. Most agent platforms are a non-starter.",
+    "fdcb09f747": {
+      "en": "Wants an AI workforce but <b>cannot</b> send customer data, code, or secrets to third-party model providers. Most AI platforms are a non-starter.",
       "kind": "text",
       "pages": [
         "use-cases.html"
       ]
     },
-    "31ca884d24": {
-      "en": "<b>Why Nomik fits:</b> deployed on-prem in Severn's own data center, with agents on local, self-hosted models, nothing leaves the building.",
+    "55bfe38cc4": {
+      "en": "<b>Why Nomik fits:</b> deployed on-prem in Severn's own data center, with AI employees on local, self-hosted models, nothing leaves the building.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13145,8 +13278,8 @@
         "use-cases.html"
       ]
     },
-    "1d0ca72eee": {
-      "en": "Identical collaboration to the SaaS scenario, squads, board, inline traces, approvals, <b>but</b> every model call hits a local model on Severn's GPUs.",
+    "bf409777c3": {
+      "en": "Identical collaboration to the SaaS scenario, departments, board, inline traces, approvals, <b>but</b> every model call hits a local model on Severn's GPUs.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13159,8 +13292,8 @@
         "use-cases.html"
       ]
     },
-    "f6904b5776": {
-      "en": "Compliance reviews the glass-box audit (#events + decisions ledger) to confirm exactly what every agent did.",
+    "f5096c3610": {
+      "en": "Compliance reviews the glass-box audit (#events + decisions ledger) to confirm exactly what every AI employee did.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13285,8 +13418,8 @@
         "use-cases.html"
       ]
     },
-    "c3bb51c65c": {
-      "en": "Tell us your business type and we'll show you the squads, stack, and triggers to start with.",
+    "aa9f4fb906": {
+      "en": "Tell us your business type and we'll show you the AI employees, stack, and triggers to start with.",
       "kind": "text",
       "pages": [
         "use-cases.html"
