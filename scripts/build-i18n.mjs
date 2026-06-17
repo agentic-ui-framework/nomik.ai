@@ -142,10 +142,11 @@ function analyze(html) {
           if (META_CONTENT.has(key)) translate = true;
         }
         if (!translate) continue;
-        const v = a.value;
-        if (!v || !hasLetter(v) || isExternalUrl(v)) continue;
-        const span = valueSpan(html, L?.attrs?.[a.name], v);
-        if (span) units.push({ start: span.start, end: span.end, msgid: v, kind: 'attr' });
+        const span = valueSpan(html, L?.attrs?.[a.name]);
+        if (!span) continue;
+        const raw = html.slice(span.start, span.end); // raw source value (entities preserved), keyed like text units
+        if (!hasLetter(raw) || isExternalUrl(raw)) continue;
+        units.push({ start: span.start, end: span.end, msgid: raw, kind: 'attr' });
       }
       // JSON-LD structured data: translate the human-readable string values in place.
       if (t === 'script' && /application\/ld\+json/.test(attrOf(node, 'type') || '') && L?.startTag && L?.endTag) {
@@ -184,14 +185,16 @@ function analyze(html) {
   return { units: kept, anchors };
 }
 
-// Resolve the byte range of an attribute *value* from parse5's `name="value"` span.
-function valueSpan(html, attrLoc, value) {
+// Resolve the byte range of an attribute *value* (raw source bytes, entities intact)
+// from parse5's `name="value"` span. We key off the raw slice — never parse5's
+// entity-decoded a.value — so attributes containing &amp; etc. are handled correctly.
+function valueSpan(html, attrLoc) {
   if (!attrLoc) return null;
   const sub = html.slice(attrLoc.startOffset, attrLoc.endOffset);
-  const m = sub.match(/^([^=]*?)(\s*=\s*)(['"]?)([\s\S]*)\3\s*$/);
-  if (!m || m[4] !== value) return null;
+  const m = sub.match(/^([^=]*?)(\s*=\s*)(['"]?)([\s\S]*?)\3\s*$/);
+  if (!m) return null;
   const start = attrLoc.startOffset + m[1].length + m[2].length + m[3].length;
-  return { start, end: start + value.length };
+  return { start, end: start + m[4].length };
 }
 
 // ---- asset-path rewrite (for /fr, /es) ----------------------------------
@@ -202,21 +205,36 @@ function valueSpan(html, attrLoc, value) {
 const isRewritableAsset = (v) =>
   !!v && !isExternalUrl(v) && !v.startsWith('/') && !v.startsWith('#') && ASSET_RE.test(v);
 
-function rewriteAssets(html) {
+// A root-absolute internal page link that must be moved into the current locale
+// (e.g. `/agents.html` → `/fr/agents.html`). Already-localized and asset URLs are left alone.
+const isLocalizablePageLink = (v) => {
+  if (!v || isExternalUrl(v) || !v.startsWith('/')) return false;
+  if (v.startsWith('/fr/') || v.startsWith('/es/')) return false;
+  return v === '/' || /^\/[^/][^?#]*\.html([?#]|$)/.test(v);
+};
+
+// Second pass over already-translated locale HTML: relative asset URLs → root-absolute,
+// and root-absolute internal page links → locale-prefixed. Parse5-based, and it skips the
+// language switcher's subtree so its intentional cross-locale links are never rewritten.
+function localizeUrls(html, locale) {
   const doc = parse(html, { sourceCodeLocationInfo: true });
   const ops = [];
   const walk = (node) => {
     if (isElement(node)) {
+      if (/\blang-switch\b/.test(attrOf(node, 'class') || '')) return; // leave the switcher's links alone
       const L = loc(node);
       for (const a of node.attrs || []) {
         if (a.name !== 'href' && a.name !== 'src' && a.name !== 'srcset') continue;
-        const span = valueSpan(html, L?.attrs?.[a.name], a.value);
+        const span = valueSpan(html, L?.attrs?.[a.name]);
         if (!span) continue;
+        const raw = html.slice(span.start, span.end); // raw value, keeps &amp; in query strings intact
         if (a.name === 'srcset') {
-          const next = a.value.replace(/(^|,\s*)([^\s,]+)/g, (_m, p, u) => p + (isRewritableAsset(u) ? '/' + u : u));
-          if (next !== a.value) ops.push({ start: span.start, end: span.end, text: next });
-        } else if (isRewritableAsset(a.value)) {
-          ops.push({ start: span.start, end: span.end, text: '/' + a.value });
+          const next = raw.replace(/(^|,\s*)([^\s,]+)/g, (_m, p, u) => p + (isRewritableAsset(u) ? '/' + u : u));
+          if (next !== raw) ops.push({ start: span.start, end: span.end, text: next });
+        } else if (isRewritableAsset(raw)) {
+          ops.push({ start: span.start, end: span.end, text: '/' + raw });
+        } else if (a.name === 'href' && isLocalizablePageLink(raw)) {
+          ops.push({ start: span.start, end: span.end, text: '/' + locale + raw });
         }
       }
       if (OPAQUE.has(tag(node))) return; // never rewrite inside <script>/<svg>/…
@@ -233,12 +251,22 @@ function applyOps(html, ops) {
   let out = html;
   let lastStart = Infinity;
   for (const op of sorted) {
-    if (op.end > lastStart) continue; // skip overlaps defensively
+    if (op.end > lastStart) {
+      // With correctly-constructed ops this never fires; if it does, a translation is being lost.
+      if (op.kind) console.error(`  ⚠ applyOps dropped an overlapping ${op.kind} op at ${op.start}-${op.end} — possible lost translation`);
+      continue;
+    }
     out = out.slice(0, op.start) + op.text + out.slice(op.end);
     lastStart = op.start;
   }
   return out;
 }
+
+// Escape a translation for a double-quoted HTML attribute: bare & → &amp; (existing
+// entities left intact), " → &quot;.
+const escapeAttr = (s) => s
+  .replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);)/g, '&amp;')
+  .replace(/"/g, '&quot;');
 
 // Remove previously-injected i18n chrome so re-runs are idempotent.
 function stripChrome(html) {
@@ -282,8 +310,12 @@ function render(html, file, locale, catalog, stats) {
       stats.total++;
       if (t == null || t === '') { stats.missing.push({ id, msgid: u.msgid, file }); continue; }
       stats.done++;
-      // JSON-LD values must be re-escaped for the JSON string they sit in.
-      ops.push({ start: u.start, end: u.end, text: u.kind === 'jsonld' ? JSON.stringify(t).slice(1, -1) : t });
+      // Re-encode per context: JSON-LD → JSON string escaping (+ << so a stray
+      // </script> can't break out); attribute → escape bare & and "; text → raw (it's HTML).
+      const text = u.kind === 'jsonld' ? JSON.stringify(t).slice(1, -1).replace(/</g, '\\u003c')
+        : u.kind === 'attr' ? escapeAttr(t)
+          : t;
+      ops.push({ start: u.start, end: u.end, text, kind: u.kind });
     }
   }
 
@@ -300,7 +332,7 @@ function render(html, file, locale, catalog, stats) {
     ops.push({ start: anchors.main, end: anchors.main, text: legalNote(locale) });
   }
   let out = applyOps(html, ops);
-  if (locale !== 'en') out = rewriteAssets(out); // second pass: in-locale asset paths → root-absolute
+  if (locale !== 'en') out = localizeUrls(out, locale); // assets → root-absolute, internal links → in-locale
   return out;
 }
 
@@ -378,6 +410,7 @@ function emitSitemap() {
   let xml;
   try { xml = readFileSync(join(ROOT, 'sitemap.xml'), 'utf8'); } catch { return; }
   const entries = [];
+  const seen = new Set();
   for (const m of xml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
     const block = m[1];
     const locM = block.match(/<loc>\s*([^<]+?)\s*<\/loc>/);
@@ -385,9 +418,12 @@ function emitSitemap() {
     const loc = locM[1];
     if (!loc.startsWith(BASE)) continue;
     let rel = loc.slice(BASE.length).replace(/^\//, '');           // '' for home
+    if (rel.startsWith('fr/') || rel.startsWith('es/')) continue;   // skip our own prior locale output (idempotent)
     if (rel === '' ) rel = 'index.html';
     rel = rel.split(/[?#]/)[0];
     const file = rel === 'index.html' ? 'index.html' : rel;
+    if (seen.has(file)) continue;                                   // dedup defensively
+    seen.add(file);
     const grab = (t) => (block.match(new RegExp(`<${t}>\\s*([^<]+?)\\s*</${t}>`)) || [])[1];
     entries.push({ file, lastmod: grab('lastmod'), changefreq: grab('changefreq'), priority: grab('priority') });
   }
