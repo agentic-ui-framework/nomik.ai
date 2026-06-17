@@ -221,7 +221,7 @@ function localizeUrls(html, locale) {
   const ops = [];
   const walk = (node) => {
     if (isElement(node)) {
-      if (/\blang-switch\b/.test(attrOf(node, 'class') || '')) return; // leave the switcher's links alone
+      if (/\blang-menu\b/.test(attrOf(node, 'class') || '')) return; // leave the switcher's cross-locale links alone
       const L = loc(node);
       for (const a of node.attrs || []) {
         if (a.name !== 'href' && a.name !== 'src' && a.name !== 'srcset') continue;
@@ -286,11 +286,14 @@ function headI18nBlock(file, locale) {
 }
 
 function switcher(file, current) {
-  const links = ALL_LOCALES.map((l) => {
-    const active = l === current ? ' class="is-active" aria-current="page"' : '';
-    return `<a href="${localeHref(l, file)}" hreflang="${l}" lang="${l}"${active}>${LOCALE_SHORT[l]}</a>`;
+  const globe = '<svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>';
+  const chev = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  const check = '<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+  const items = ALL_LOCALES.map((l) => {
+    const active = l === current ? ' aria-current="true"' : '';
+    return `<a href="${localeHref(l, file)}" hreflang="${l}" lang="${l}"${active}><span>${LOCALE_NAME[l]}</span>${check}</a>`;
   }).join('');
-  return `<!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language">${links}</div><!--/i18n:switch-->`;
+  return `<!--i18n:switch--><details class="lang-menu"><summary aria-label="Language: ${LOCALE_NAME[current]}">${globe}<span class="cur">${LOCALE_SHORT[current]}</span>${chev}</summary><div class="lang-menu-panel" role="menu">${items}</div></details><!--/i18n:switch-->`;
 }
 
 function legalNote(locale) {

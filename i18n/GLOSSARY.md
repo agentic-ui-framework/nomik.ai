@@ -24,7 +24,7 @@ B2B-SaaS — think Stripe / Linear / Vercel, not corporate boilerplate. Translat
    - Keep entities verbatim: `&amp;` `&nbsp;` `&rarr;` `&times;` stay as written.
    - Keep symbols verbatim: `·` `→` `✓` `—` `«` `»`.
 2. **Do NOT translate**: the Nomik brand and product names (Nomik, Nomik Cloud, Nomik
-   Desktop, Nomik Bridge, Nomik-1, Warden), integration/vendor names (Slack, Stripe,
+   Desktop, Nomik Bridge, Nomik-1), integration/vendor names (Slack, Stripe,
    Notion, GitHub, WhatsApp, LiveKit, Deepgram, Cartesia, Ollama, …), model names (Opus,
    Sonnet, Haiku, Claude, Qwen, …), and technical tokens / acronyms / standards:
    MCP, ACP, SDK, API, REST, OAuth, JWT, RS256, AES-256-GCM, TLS, RLS, NATS, VPC, GDPR,

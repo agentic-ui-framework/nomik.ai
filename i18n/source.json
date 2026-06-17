@@ -92,29 +92,29 @@
         "security.html"
       ]
     },
-    "3b4c27e5cb": {
-      "en": "Nomik · The system of record for AI employees",
+    "b4db28970b": {
+      "en": "Nomik · The operating system for AI labor",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "125ce8218d": {
-      "en": "Nomik is the system of record for AI employees: hire AI workers, organize them into teams, give them roles, budgets, and permissions, and supervise every action, decision, and dollar. The management layer for your AI workforce.",
+    "91f717068e": {
+      "en": "Nomik is AI Labor Infrastructure: the operating system for AI labor. Create, organize, govern, and allocate a workforce of AI workers across your company, with every action, decision, and dollar on the record. Every company will run on AI labor.",
       "kind": "attr",
       "pages": [
         "index.html"
       ]
     },
-    "a9b8931890": {
-      "en": "Nomik · the system of record for AI employees",
+    "f91c965280": {
+      "en": "Nomik · the operating system for AI labor",
       "kind": "attr",
       "pages": [
         "index.html"
       ]
     },
-    "c911b61371": {
-      "en": "Every company will employ AI workers. Nomik is where you hire, organize, govern, and supervise them, alongside your people. The management layer for a new kind of labor.",
+    "3d78007177": {
+      "en": "Every company will run on AI labor. Nomik is the operating system that creates, organizes, governs, and allocates it across your company, alongside your people. AI Labor Infrastructure.",
       "kind": "attr",
       "pages": [
         "index.html"
@@ -150,8 +150,8 @@
         "use-cases.html"
       ]
     },
-    "7977c13dc1": {
-      "en": "The system of record for AI employees: hire AI workers, organize them into teams, give them roles, budgets, and permissions, and supervise every action, decision, and dollar. The management layer for your AI workforce.",
+    "8f112cfd8c": {
+      "en": "AI Labor Infrastructure: the operating system for AI labor. Create, organize, govern, and allocate a workforce of AI workers across your company, with every action, decision, and dollar on the record. Every company will run on AI labor.",
       "kind": "jsonld",
       "pages": [
         "index.html"
@@ -1262,22 +1262,22 @@
         "use-cases.html"
       ]
     },
-    "0dbc68cc93": {
-      "en": "The operating system for AI labor",
+    "0b2285b037": {
+      "en": "AI Labor Infrastructure",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "14d933580e": {
-      "en": "The system of record for AI employees.",
+    "7afcc3bd68": {
+      "en": "Every company will run on AI labor.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "e3f360a0f7": {
-      "en": "Every company will employ AI workers. Nomik is where you hire them, organize them into teams, and give them roles, budgets, and permissions, then supervise every action, decision, and dollar. The management layer for a new kind of labor, working right alongside your people.",
+    "acb0f424e9": {
+      "en": "AI labor is becoming as fundamental as human labor. Nomik is the operating system that creates, organizes, governs, and allocates it across your company, so every function runs on AI workers you can see, direct, and account for, right alongside your people.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -1645,9 +1645,7 @@
       "en": "W",
       "kind": "text",
       "pages": [
-        "index.html",
-        "product.html",
-        "recipes.html"
+        "index.html"
       ]
     },
     "a010a8854b": {
@@ -1759,8 +1757,7 @@
       "en": "N",
       "kind": "text",
       "pages": [
-        "index.html",
-        "agents.html"
+        "index.html"
       ]
     },
     "107dccc7e5": {
@@ -1948,8 +1945,8 @@
         "security.html"
       ]
     },
-    "e8e2a6843a": {
-      "en": "Meet the Warden",
+    "dd8f357a15": {
+      "en": "Meet Nomik",
       "kind": "text",
       "pages": [
         "index.html"
@@ -1990,34 +1987,36 @@
         "index.html"
       ]
     },
-    "ecef618ebd": {
-      "en": "Meet the Warden →",
+    "f166514d07": {
+      "en": "Meet Nomik →",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "feff9bfaf9": {
-      "en": "The Warden recommending integrations",
+    "cf4aba92fc": {
+      "en": "Nomik recommending integrations",
       "kind": "attr",
       "pages": [
         "index.html"
       ]
     },
-    "2ca6679d1c": {
-      "en": "<span class=\"hash\">#</span> general <span class=\"members\">Warden</span>",
+    "8f0aeb28c0": {
+      "en": "<span class=\"hash\">#</span> general <span class=\"members\">Nomik</span>",
       "kind": "text",
       "pages": [
         "index.html",
+        "agents.html",
         "product.html",
         "recipes.html"
       ]
     },
-    "ca5a387018": {
-      "en": "Warden <span class=\"tag tag-agent\">chief of staff</span>",
+    "308df2bc91": {
+      "en": "Nomik <span class=\"tag tag-agent\">chief of staff</span>",
       "kind": "text",
       "pages": [
         "index.html",
+        "agents.html",
         "product.html",
         "recipes.html"
       ]
@@ -2100,22 +2099,22 @@
         "recipes.html"
       ]
     },
-    "6af800e75e": {
-      "en": "AI stopped being a tool you use. It's becoming labor you manage.",
+    "b2c0083dea": {
+      "en": "AI stopped being software you buy. It's becoming labor you run.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "7f70de2271": {
-      "en": "One assistant drafts. A workforce delivers. Nomik gives every function its own AI employees, on the same org chart as your people, with every action, decision, and dollar on the record. No tab-hopping, no copy-paste, no black boxes.",
+    "dc0116846d": {
+      "en": "Every company runs on a handful of resources: capital, people, software. AI labor is the fourth, not automation, not another tool, but labor itself, the first workforce that scales without limit. Nomik is the operating system for it: every function runs on the AI labor it needs, on the same org chart as your people, with every action, decision, and dollar on the record.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "d587f2ae4e": {
-      "en": "From empty workspace to a managed AI workforce in three moves.",
+    "706b05edc7": {
+      "en": "From empty workspace to a running AI workforce in three moves.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2136,29 +2135,29 @@
         "index.html"
       ]
     },
-    "feead9fe76": {
-      "en": "Hire your AI workforce",
+    "ba2b76072a": {
+      "en": "Deploy your AI workforce",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "9d3c2137f6": {
-      "en": "Hire AI employees into Product, Engineering, Operations, Growth, and Support. They self-organize, claim work, and pull in specialists when a job needs one.",
+    "80c943634a": {
+      "en": "Deploy AI employees into Product, Engineering, Operations, Growth, and Support. They self-organize, claim work, and pull in specialists when a job needs one.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "67773ee0ec": {
-      "en": "Manage and supervise",
+    "90bda66153": {
+      "en": "Govern and allocate",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "4e6e6c78e5": {
-      "en": "Delegate, decide, and approve together. Watch every AI employee's thinking, tools, and cost inline, and approve the calls that matter.",
+    "a737b681d6": {
+      "en": "Point your AI labor at the work that matters, then approve the calls that count. Every AI employee's thinking, tools, and cost stay inline and on the record.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2192,8 +2191,8 @@
         "index.html"
       ]
     },
-    "a82d74d955": {
-      "en": "Browse, edit, search, and drop a file into chat, you and your agents work the very same files, with every change in plain sight.",
+    "b2dd4109bd": {
+      "en": "Browse, edit, search, and drop a file into chat, you and your AI employees work the very same files, with every change in plain sight.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2206,8 +2205,8 @@
         "index.html"
       ]
     },
-    "aa106cab07": {
-      "en": "From idea to live. Agents build it, test it, and deploy it to production, your customers get the product, not a pile of scaffolding.",
+    "853c8dea8b": {
+      "en": "From idea to live. AI employees build it, test it, and deploy it to production, your customers get the product, not a pile of scaffolding.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2220,8 +2219,8 @@
         "index.html"
       ]
     },
-    "799a72bad9": {
-      "en": "Plug in your tools, Gmail, Stripe, GitHub, your own APIs. Agents get scoped access to do the real work, and never touch your raw secrets.",
+    "6609aaff99": {
+      "en": "Plug in your tools, Gmail, Stripe, GitHub, your own APIs. AI employees get scoped access to do the real work, and never touch your raw secrets.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2235,12 +2234,11 @@
         "marketplace.html"
       ]
     },
-    "2a8d26b86e": {
-      "en": "Connect your stack. Every event puts an AI employee to work.",
+    "abdd39f04a": {
+      "en": "Connect your stack. Every event puts AI labor to work.",
       "kind": "text",
       "pages": [
-        "index.html",
-        "marketplace.html"
+        "index.html"
       ]
     },
     "6c1e1b7e8e": {
@@ -2982,8 +2980,8 @@
         "index.html"
       ]
     },
-    "249eb77617": {
-      "en": "Agents decompose the work, claim tasks, ask each other for help by skill, and even hire new teammates when a squad is short-handed. No prompt-by-prompt babysitting.",
+    "01e6d8dd80": {
+      "en": "AI employees decompose the work, claim tasks, ask each other for help by skill, and even hire new teammates when a department is short-handed. No prompt-by-prompt babysitting.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3013,8 +3011,8 @@
         "security.html"
       ]
     },
-    "256687fd77": {
-      "en": "Claude, Codex, and Gemini work side by side, and you can point agents at your own local, self-hosted models. Best-of-breed per role, cost tracked every turn, no vendor lock-in.",
+    "c98e6ff21f": {
+      "en": "Claude, GPT, and Gemini work side by side, and you can point AI employees at your own local, self-hosted models. Best-of-breed per role, cost tracked every turn, no vendor lock-in.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3070,8 +3068,8 @@
         "index.html"
       ]
     },
-    "5d61a6fa03": {
-      "en": "<b>A kill switch</b>: stop any turn, agent, or the whole fleet.",
+    "6ff2d58486": {
+      "en": "<b>A kill switch</b>: stop any turn, AI employee, or the whole workforce.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3135,8 +3133,8 @@
         "index.html"
       ]
     },
-    "5febe0e6a0": {
-      "en": "<b>Isolation &amp; vault</b>: each agent boxed; secrets you grant.",
+    "17f9c1c77c": {
+      "en": "<b>Isolation &amp; vault</b>: each AI employee boxed; secrets you grant.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3156,8 +3154,8 @@
         "index.html"
       ]
     },
-    "d07a58b55c": {
-      "en": "Every other AI tool makes one person faster. Nomik manages the workforce.",
+    "9a4cf4e485": {
+      "en": "Every other AI tool makes one person faster. Nomik runs the workforce.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3268,6 +3266,27 @@
         "index.html"
       ]
     },
+    "641906a3b2": {
+      "en": "Agent builders",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "2195e2afe3": {
+      "en": "One agent at a time, wired by hand",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "9edbf954c7": {
+      "en": "The infrastructure that creates, governs, and allocates your whole workforce",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
     "3e1ff30ba7": {
       "en": "Hiring more people",
       "kind": "text",
@@ -3317,8 +3336,8 @@
         "index.html"
       ]
     },
-    "394b13a085": {
-      "en": "Pick the business closest to yours and see the squads, the stack, and the triggers it runs on.",
+    "fa6acdfccc": {
+      "en": "Pick the business closest to yours and see the departments, the stack, and the triggers it runs on.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3407,8 +3426,8 @@
         "index.html"
       ]
     },
-    "4915c56d38": {
-      "en": "The hosted workspace: start solo with a Chief of Staff and a squad, grow into a team with roles, approvals, and one audit trail.",
+    "aa634777e7": {
+      "en": "The hosted workspace: start solo with a Chief of Staff and your first AI employees, grow into a team with roles, approvals, and one audit trail.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3507,8 +3526,8 @@
         "use-cases.html"
       ]
     },
-    "21c161d659": {
-      "en": "Be first to manage a workforce of AI employees.",
+    "2078935e2b": {
+      "en": "Deploy your AI workforce.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3942,20 +3961,6 @@
     "f230ff56d1": {
       "en": "Nomik staffing the org",
       "kind": "attr",
-      "pages": [
-        "agents.html"
-      ]
-    },
-    "8f0aeb28c0": {
-      "en": "<span class=\"hash\">#</span> general <span class=\"members\">Nomik</span>",
-      "kind": "text",
-      "pages": [
-        "agents.html"
-      ]
-    },
-    "308df2bc91": {
-      "en": "Nomik <span class=\"tag tag-agent\">chief of staff</span>",
-      "kind": "text",
       "pages": [
         "agents.html"
       ]
@@ -4955,8 +4960,8 @@
         "cloud.html"
       ]
     },
-    "4d0f1d53cb": {
-      "en": "Mount a Model Context Protocol server and its tools join your AI employees' hands, next to every connector, behind the same gate.",
+    "c9b4136018": {
+      "en": "Mount a Model Context Protocol server and its tools become actions your AI employees can take, next to every connector, behind the same gate.",
       "kind": "text",
       "pages": [
         "cloud.html"
@@ -5124,15 +5129,15 @@
         "contact.html"
       ]
     },
-    "739d8f154f": {
-      "en": "No deck-only call. We'll spin up a workspace with a squad shaped for your business, wire one of your tools, and walk through a flow you actually care about.",
+    "69056c51c1": {
+      "en": "No deck-only call. We'll spin up a workspace with a team of AI employees shaped for your business, wire one of your tools, and walk through a flow you actually care about.",
       "kind": "text",
       "pages": [
         "contact.html"
       ]
     },
-    "011f4e990d": {
-      "en": "<b>Demo</b>: a live workspace with a squad picked for your function and stack.",
+    "48ea7b5b0e": {
+      "en": "<b>Demo</b>: a live workspace with AI employees picked for your function and stack.",
       "kind": "text",
       "pages": [
         "contact.html"
@@ -6030,8 +6035,8 @@
         "developers.html"
       ]
     },
-    "50252d0853": {
-      "en": "Point a provider's webhook at your workspace. Signed events are verified, classified, and turned into work the right squad picks up.",
+    "8c91a8a930": {
+      "en": "Point a provider's webhook at your workspace. Signed events are verified, classified, and turned into work the right AI employees pick up.",
       "kind": "text",
       "pages": [
         "developers.html"
@@ -6487,8 +6492,8 @@
         "docs.html"
       ]
     },
-    "29d8978414": {
-      "en": "Point a provider's webhook at your workspace and inbound events become work. Each delivery is signature-verified, classified by kind, and routed to the squad that handles it.",
+    "edaa3ce676": {
+      "en": "Point a provider's webhook at your workspace and inbound events become work. Each delivery is signature-verified, classified by kind, and routed to the AI employees that handle it.",
       "kind": "text",
       "pages": [
         "docs.html"
@@ -6789,8 +6794,8 @@
         "how-it-works.html"
       ]
     },
-    "5768502ee3": {
-      "en": "From a sentence to shipped: open your workspace, hire and organize your AI workforce (pick roles, not prompts), then manage and supervise the work. The Warden guides every step; your first ship lands in a day.",
+    "d97b57babd": {
+      "en": "From a sentence to shipped: open your workspace, hire and organize your AI workforce (pick roles, not prompts), then manage and supervise the work. Nomik guides every step; your first ship lands in a day.",
       "kind": "attr",
       "pages": [
         "how-it-works.html"
@@ -6803,8 +6808,8 @@
         "how-it-works.html"
       ]
     },
-    "90a8295371": {
-      "en": "You state a goal in plain language. Your AI workforce decomposes it, organizes itself, does the work in the open, and asks you to approve only the calls that matter. The Warden guides you the whole way, no blank pages.",
+    "7f1c5b039b": {
+      "en": "You state a goal in plain language. Your AI workforce decomposes it, organizes itself, does the work in the open, and asks you to approve only the calls that matter. Nomik guides you the whole way, no blank pages.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6824,29 +6829,29 @@
         "how-it-works.html"
       ]
     },
-    "596995929b": {
-      "en": "Name it and answer a question or two. The Warden introduces itself, reads what context it can, and the workspace already feels staffed, not empty.",
+    "984d033e68": {
+      "en": "Name it and answer a question or two. Nomik introduces itself, reads what context it can, and the workspace already feels staffed, not empty.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "4bff3f62f0": {
-      "en": "Hire and organize your AI workforce",
+    "d52d64bc0f": {
+      "en": "Deploy and organize your AI workforce",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "6f99a9553a": {
-      "en": "The Warden proposes a starter org chart, departments, AI employees, and the right model per role. You confirm or adjust. You pick <em>roles on a team</em>, never write a system prompt.",
+    "60caf40344": {
+      "en": "Nomik proposes a starter org chart, departments, AI employees, and the right model per role. You confirm or adjust. You pick <em>roles on a team</em>, never write a system prompt.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "298832f0eb": {
-      "en": "Manage and supervise the work",
+    "c27ffef671": {
+      "en": "Govern and allocate the work",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6859,15 +6864,15 @@
         "how-it-works.html"
       ]
     },
-    "d7aa8fb0ce": {
-      "en": "Hiring, not prompting",
+    "93796ae500": {
+      "en": "Deploying, not prompting",
       "kind": "text",
       "pages": [
         "how-it-works.html"
       ]
     },
-    "d7c07f7a6d": {
-      "en": "Hire a team, don't engineer a prompt.",
+    "0237fcfd9f": {
+      "en": "Deploy a team, don't engineer a prompt.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -6964,8 +6969,8 @@
         "how-it-works.html"
       ]
     },
-    "6d0f73a1e9": {
-      "en": "You (or the Warden) drop a goal in a channel, in plain language.",
+    "a3e0587a13": {
+      "en": "You (or Nomik) drop a goal in a channel, in plain language.",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7167,8 +7172,8 @@
         "how-it-works.html"
       ]
     },
-    "197f23584a": {
-      "en": "#events &amp; worker profiles",
+    "bd3720d526": {
+      "en": "#events &amp; agent profiles",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7181,8 +7186,8 @@
         "how-it-works.html"
       ]
     },
-    "9394b1b84c": {
-      "en": "Worker terminal",
+    "5dbc8d8fe5": {
+      "en": "Agent terminal",
       "kind": "text",
       "pages": [
         "how-it-works.html"
@@ -7251,8 +7256,8 @@
         "marketplace.html"
       ]
     },
-    "e76be16610": {
-      "en": "Four building blocks turn an empty workspace into a working company: the tools you connect, the recipes you run, the skills your AI employees master, and the workforce itself. Browse it all, or let the Warden pick from it for you.",
+    "8d9e204849": {
+      "en": "Four building blocks turn an empty workspace into a working company: the tools you connect, the recipes you run, the skills your AI employees master, and the workforce itself. Browse it all, or let Nomik pick from it for you.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7286,8 +7291,8 @@
         "marketplace.html"
       ]
     },
-    "172849e0c2": {
-      "en": "Ready-to-run automations for real work: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and the Warden sets it up against your connected tools.",
+    "f02eb6ef81": {
+      "en": "Ready-to-run automations for real work: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and Nomik sets it up against your connected tools.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7357,6 +7362,13 @@
         "marketplace.html"
       ]
     },
+    "2a8d26b86e": {
+      "en": "Connect your stack. Every event puts an AI employee to work.",
+      "kind": "text",
+      "pages": [
+        "marketplace.html"
+      ]
+    },
     "00c96d4f61": {
       "en": "Don't see your tool? Your AI employees connect to any service through <span class=\"mono\">MCP</span> and your own APIs, granted scoped access, never your raw secrets. <a class=\"more-link\" href=\"developers.html\" style=\"margin:0;display:inline\">Bring your own integration →</a>",
       "kind": "text",
@@ -7393,8 +7405,8 @@
         "marketplace.html"
       ]
     },
-    "a27ab8a6f7": {
-      "en": "Sign in through the provider, or paste an API key. The Warden can recommend exactly which tools to connect for the work you described.",
+    "b4f1e32b42": {
+      "en": "Sign in through the provider, or paste an API key. Nomik can recommend exactly which tools to connect for the work you described.",
       "kind": "text",
       "pages": [
         "marketplace.html"
@@ -7539,8 +7551,8 @@
         "mcp.html"
       ]
     },
-    "7330fa4cd3": {
-      "en": "Your AI employees speak the Model Context Protocol natively. Mount any MCP server and its tools join their hands, behind the same risk gate and audit trail as every connector. The gated tool layer for your AI workforce: tools in, tools out, one gate.",
+    "9dd251592c": {
+      "en": "Your AI employees speak the Model Context Protocol natively. Mount any MCP server and its tools become actions they can take, behind the same risk gate and audit trail as every connector. The gated tool layer for your AI workforce: tools in, tools out, one gate.",
       "kind": "attr",
       "pages": [
         "mcp.html"
@@ -7567,8 +7579,8 @@
         "mcp.html"
       ]
     },
-    "d7be5ea0b4": {
-      "en": "Your AI employees speak MCP natively: it's how they hold their tools internally, so it's also how you extend what your workforce can use. Mount any MCP server and its tools join their hands, next to every connector, behind the same risk gate, on the same audit trail. No plugin format we invented. The standard your AI workforce already uses.",
+    "1f8c57335a": {
+      "en": "Your AI employees speak MCP natively: it's how they hold their tools internally, so it's also how you extend what your workforce can use. Mount any MCP server and its tools become actions your workforce can take, next to every connector, behind the same risk gate, on the same audit trail. No plugin format we invented. The standard your AI workforce already uses.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7595,8 +7607,8 @@
         "mcp.html"
       ]
     },
-    "cff353706f": {
-      "en": "The MCP ecosystem is the biggest tool catalog in AI: databases, warehouses, internal services, the servers you write yourself. Point a workspace at one and its tools show up in your AI employees' hands, risk-classed like everything else.",
+    "a2297e8a2d": {
+      "en": "The MCP ecosystem is the biggest tool catalog in AI: databases, warehouses, internal services, the servers you write yourself. Point a workspace at one and its tools show up as actions your AI employees can take, risk-classed like everything else.",
       "kind": "text",
       "pages": [
         "mcp.html"
@@ -7931,8 +7943,8 @@
         "pricing.html"
       ]
     },
-    "48d4283e10": {
-      "en": "An AI worker seat consumes model inference every turn, a real, variable cost. So you choose how to handle it: bring your own keys, let us meter it, or run local models with no per-token cost at all.",
+    "5b33e18cc4": {
+      "en": "Every AI employee consumes model inference every turn, a real, variable cost. So you choose how to handle it: bring your own keys, let us meter it, or run local models with no per-token cost at all.",
       "kind": "text",
       "pages": [
         "pricing.html"
@@ -8099,8 +8111,8 @@
         "pricing.html"
       ]
     },
-    "7deda32c88": {
-      "en": "Full squads &amp; integrations",
+    "0544ec761a": {
+      "en": "Full departments &amp; integrations",
       "kind": "text",
       "pages": [
         "pricing.html"
@@ -8367,11 +8379,12 @@
         "pricing.html"
       ]
     },
-    "f3f6d3744e": {
-      "en": "<b>Cost on every turn</b>: rolled up per AI employee, squad, and workspace.",
+    "7dd05753e1": {
+      "en": "<b>Cost on every turn</b>: rolled up per AI employee, department, and workspace.",
       "kind": "text",
       "pages": [
-        "pricing.html"
+        "pricing.html",
+        "product.html"
       ]
     },
     "b15dc38095": {
@@ -8899,8 +8912,8 @@
         "product.html"
       ]
     },
-    "e0efa348d2": {
-      "en": "The management layer for your AI workforce: the Warden hires and runs your AI employees, a real org chart with tiers organizes them, integrations and triggers put them to work, and a glass box keeps every action, decision, and dollar on the record.",
+    "b0421c0437": {
+      "en": "The management layer for your AI workforce: Nomik hires and runs your AI employees, a real org chart with tiers organizes them, integrations and triggers put them to work, and a glass box keeps every action, decision, and dollar on the record.",
       "kind": "attr",
       "pages": [
         "product.html"
@@ -8913,8 +8926,8 @@
         "product.html"
       ]
     },
-    "15588c4749": {
-      "en": "Hire, run, and govern your AI workforce from one chat: the Warden, a real org chart with tiers, any model, integrations and triggers, omnichannel and voice, and a glass box where every action, decision, and dollar is on the record.",
+    "257a9d316c": {
+      "en": "Hire, run, and govern your AI workforce from one chat: Nomik, a real org chart with tiers, any model, integrations and triggers, omnichannel and voice, and a glass box where every action, decision, and dollar is on the record.",
       "kind": "attr",
       "pages": [
         "product.html"
@@ -8934,15 +8947,8 @@
         "product.html"
       ]
     },
-    "95c03094b3": {
-      "en": "A managed org of AI employees, led by the Warden, your Chief of Staff, working on real machines, connected to your stack, with every action, decision, and dollar on the record. Not registered somewhere else, hired and run here.",
-      "kind": "text",
-      "pages": [
-        "product.html"
-      ]
-    },
-    "e85d1a7daf": {
-      "en": "The Warden",
+    "adbd328a74": {
+      "en": "A managed org of AI employees, led by Nomik, your Chief of Staff, working on real machines, connected to your stack, with every action, decision, and dollar on the record. Not registered somewhere else, hired and run here.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8955,8 +8961,8 @@
         "product.html"
       ]
     },
-    "5498ead938": {
-      "en": "The Warden is a project-aware Chief of Staff that knows your business inside-out and runs your AI workforce <em>with</em> you. Anything you can do in the app, it can do in chat: hire the AI employees a function is missing, connect tools, wire triggers, and set the budgets and approvals.",
+    "16cab8a4c8": {
+      "en": "Nomik is a project-aware Chief of Staff that knows your business inside-out and runs your AI workforce <em>with</em> you. Anything you can do in the app, it can do in chat: hire the AI employees a function is missing, connect tools, wire triggers, and set the budgets and approvals.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -8990,8 +8996,8 @@
         "product.html"
       ]
     },
-    "dcccaa266f": {
-      "en": "The Warden recommending a starter pack",
+    "26ca2d8146": {
+      "en": "Nomik recommending a starter pack",
       "kind": "attr",
       "pages": [
         "product.html"
@@ -9040,8 +9046,8 @@
         "product.html"
       ]
     },
-    "40f0a7cb65": {
-      "en": "The Warden <span>Chief of Staff</span>",
+    "ceb3b0f0b5": {
+      "en": "Nomik <span>Chief of Staff</span>",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9096,8 +9102,8 @@
         "product.html"
       ]
     },
-    "74da484f83": {
-      "en": "Turn events into work: a new ticket, payment, or pull request fires a rule, the right AI employee acts, and risky steps wait for your approval. Build it yourself, or ask the Warden to.",
+    "7b22ca5b8c": {
+      "en": "Turn events into work: a new ticket, payment, or pull request fires a rule, the right AI employee acts, and risky steps wait for your approval. Build it yourself, or ask Nomik to.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9117,16 +9123,16 @@
         "product.html"
       ]
     },
-    "130970b71a": {
-      "en": "The Warden wires it",
+    "e2dcd99914": {
+      "en": "Nomik wires it",
       "kind": "text",
       "pages": [
         "product.html",
         "recipes.html"
       ]
     },
-    "5d833e3804": {
-      "en": "Ask in plain language, \"connect Stripe and alert me when revenue drops.\" The Warden recommends, sets it up on your grant, names it, gates it, and explains it. Both doors edit the same config.",
+    "c1b0372361": {
+      "en": "Ask in plain language, \"connect Stripe and alert me when revenue drops.\" Nomik recommends, sets it up on your grant, names it, gates it, and explains it. Both doors edit the same config.",
       "kind": "text",
       "pages": [
         "product.html"
@@ -9244,13 +9250,6 @@
         "product.html"
       ]
     },
-    "7dd05753e1": {
-      "en": "<b>Cost on every turn</b>: rolled up per AI employee, department, and workspace.",
-      "kind": "text",
-      "pages": [
-        "product.html"
-      ]
-    },
     "0a1b529fc6": {
       "en": "An inline activity trace",
       "kind": "attr",
@@ -9293,15 +9292,15 @@
         "recipes.html"
       ]
     },
-    "b0a4c7c28f": {
-      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and the Warden sets it up against your connected tools.",
+    "1ba4357e3a": {
+      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run: chase unpaid invoices, reply to leads in 60 seconds, triage support, win back chargebacks. Pick one and Nomik sets it up against your connected tools.",
       "kind": "attr",
       "pages": [
         "recipes.html"
       ]
     },
-    "aed0a91e3f": {
-      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run. Pick one and the Warden sets it up against your connected tools.",
+    "76ddfa7fcb": {
+      "en": "1,400+ ready-to-run playbooks your AI employees pick up and run. Pick one and Nomik sets it up against your connected tools.",
       "kind": "attr",
       "pages": [
         "recipes.html"
@@ -9321,8 +9320,8 @@
         "recipes.html"
       ]
     },
-    "08354a9421": {
-      "en": "A recipe is a real piece of work, written in plain language: the pain it kills, what your AI employees do, the tools it needs. Pick one and the Warden sets it up against your stack, asks for anything missing, and puts your workforce on it. No flowcharts to draw.",
+    "88075931f8": {
+      "en": "A recipe is a real piece of work, written in plain language: the pain it kills, what your AI employees do, the tools it needs. Pick one and Nomik sets it up against your stack, asks for anything missing, and puts your workforce on it. No flowcharts to draw.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9559,8 +9558,8 @@
         "recipes.html"
       ]
     },
-    "cc3a490ffa": {
-      "en": "A triage worker strips the noise from a 3,000-line log, an explainer reads the real failure and the test file, a notifier posts a human summary on the PR and DMs the author.",
+    "f43c6a3460": {
+      "en": "One AI employee strips the noise from a 3,000-line log, another reads the real failure and the test file, a third posts a human summary on the PR and DMs the author.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9622,15 +9621,15 @@
         "recipes.html"
       ]
     },
-    "b02de4ad91": {
-      "en": "<b>One step away</b>: connect the missing tool and it lights up, the Warden walks you through it.",
+    "e18e8c3850": {
+      "en": "<b>One step away</b>: connect the missing tool and it lights up, Nomik walks you through it.",
       "kind": "text",
       "pages": [
         "recipes.html"
       ]
     },
-    "46a6592809": {
-      "en": "<b>Tuned to you</b>: the Warden adapts the recipe to your business before it runs, not a rigid template.",
+    "353da0c4b5": {
+      "en": "<b>Tuned to you</b>: Nomik adapts the recipe to your business before it runs, not a rigid template.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9678,8 +9677,8 @@
         "recipes.html"
       ]
     },
-    "016a0a2355": {
-      "en": "Three steps, mostly the Warden's.",
+    "d7d77c9c21": {
+      "en": "Three steps, mostly Nomik's.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9734,8 +9733,8 @@
         "recipes.html"
       ]
     },
-    "0b2cc52f0f": {
-      "en": "The squad runs it on schedule or on a trigger, posts a short recap in chat, and brings only the judgment calls to you.",
+    "fcc1f5abea": {
+      "en": "Your AI employees run it on schedule or on a trigger, post a short recap in chat, and bring only the judgment calls to you.",
       "kind": "text",
       "pages": [
         "recipes.html"
@@ -9755,15 +9754,15 @@
         "research.html"
       ]
     },
-    "a63c65f6d4": {
-      "en": "Nomik Research memo M-001: the Nomik-1 program, the model layer of Nomik, the system of record for AI employees. We are post-training an open base model into a governed open-weight agent model that carries our personas and safety gates in its weights, powers the AI workforce at its volume tier, and ships on-prem. Ongoing, published as written.",
+    "c8d9c74a94": {
+      "en": "Nomik Research memo M-001: the Nomik-1 program, the model layer of Nomik, the operating system for AI labor. We are post-training an open base model into a governed open-weight agent model that carries our personas and safety gates in its weights, powers the AI workforce at its volume tier, and ships on-prem. Ongoing, published as written.",
       "kind": "attr",
       "pages": [
         "research.html"
       ]
     },
-    "6dbb1c3ad2": {
-      "en": "The model layer of Nomik, the system of record for AI employees: the Nomik-1 program, a governed open-weight agent model trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing.",
+    "dfa189bfd7": {
+      "en": "The model layer of Nomik, the operating system for AI labor: the Nomik-1 program, a governed open-weight agent model trained on graded trajectories from our own verification harness. Apache-2.0 release target. Ongoing.",
       "kind": "attr",
       "pages": [
         "research.html"
@@ -9783,8 +9782,8 @@
         "research.html"
       ]
     },
-    "0894d8a3b3": {
-      "en": "Nomik is the system of record for AI employees. Nomik-1 is the model layer underneath it: our open-weight agent model program, post-train an open base model until it natively speaks our tool calls, carries our personas and safety gates in its own weights, and serves the fleet's volume tier on hardware you can point at. The program is under way. This is the internal memo that started it, published as written.",
+    "063737a01a": {
+      "en": "Nomik is the operating system for AI labor. Nomik-1 is the model layer underneath it: our open-weight agent model program, post-train an open base model until it natively speaks our tool calls, carries our personas and safety gates in its own weights, and serves the fleet's volume tier on hardware you can point at. The program is under way. This is the internal memo that started it, published as written.",
       "kind": "text",
       "pages": [
         "research.html"
@@ -12305,8 +12304,8 @@
         "skills.html"
       ]
     },
-    "b29489f4ef": {
-      "en": "A plain-language brief you pick from the library: chase invoices, reply to leads, triage tickets. You choose it; the Warden sets it up.",
+    "60809072c0": {
+      "en": "A plain-language brief you pick from the library: chase invoices, reply to leads, triage tickets. You choose it; Nomik sets it up.",
       "kind": "text",
       "pages": [
         "skills.html"
@@ -12641,8 +12640,8 @@
         "terms.html"
       ]
     },
-    "04cae8256b": {
-      "en": "Nomik is the system of record for AI employees: a platform where your people and a workforce of AI workers collaborate, and where you hire, organize, govern, and supervise them. We provide the platform; you bring the workspaces, content, and (if you choose) your own model keys. We may evolve features, surfaces, and limits, with reasonable notice for material changes.",
+    "c92f415c2d": {
+      "en": "Nomik is the operating system for AI labor: a platform where your people and a workforce of AI workers collaborate, and where that labor is created, organized, governed, and allocated. We provide the platform; you bring the workspaces, content, and (if you choose) your own model keys. We may evolve features, surfaces, and limits, with reasonable notice for material changes.",
       "kind": "text",
       "pages": [
         "terms.html"
@@ -12928,8 +12927,8 @@
         "use-cases.html"
       ]
     },
-    "8c8ed47551": {
-      "en": "<b>Departments:</b> Growth · Support · Operations · the Warden",
+    "3914fbf347": {
+      "en": "<b>Departments:</b> Growth · Support · Operations · Nomik",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13110,8 +13109,8 @@
         "use-cases.html"
       ]
     },
-    "1ce236d16c": {
-      "en": "<b>Workforce:</b> one workspace per client, an account lead (human) + Growth/Content/Design AI employees + a per-workspace Warden",
+    "d407dedfb9": {
+      "en": "<b>Workforce:</b> one workspace per client, an account lead (human) + Growth/Content/Design AI employees + a per-workspace Nomik",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13145,8 +13144,8 @@
         "use-cases.html"
       ]
     },
-    "406ac5f675": {
-      "en": "<b>Per client:</b> each workspace's Warden posts a status digest, and AI employees draft posts and creatives the lead approves in threads.",
+    "0a81d5ce68": {
+      "en": "<b>Per client:</b> each workspace's Nomik posts a status digest, and AI employees draft posts and creatives the lead approves in threads.",
       "kind": "text",
       "pages": [
         "use-cases.html"
@@ -13390,8 +13389,8 @@
         "use-cases.html"
       ]
     },
-    "bbc6ba5229": {
-      "en": "The Warden connects your existing tools. Nomik doesn't replace them, it operates them.",
+    "cbd3f084b4": {
+      "en": "Nomik connects your existing tools and operates them. It doesn't replace your stack, it runs it.",
       "kind": "text",
       "pages": [
         "use-cases.html"

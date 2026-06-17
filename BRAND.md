@@ -2,17 +2,15 @@
 
 ## Brand essence
 
-**Nomik** is **the system of record for AI employees**, the operating system for AI labor. Every company will employ AI workers; Nomik is where they are **hired, organized, governed, and supervised**, alongside the people you already have. The headline is **"The system of record for AI employees."** (hero eyebrow: *"The operating system for AI labor"*).
+**Nomik** is **AI Labor Infrastructure**: the operating system for AI labor. The headline is **"Every company will run on AI labor."** (hero eyebrow: *"AI Labor Infrastructure"*). Nomik is the operating system that **creates, organizes, governs, and allocates** that labor across a company.
 
-This is a **category-creation** position, not a product description. The frame: every new economic entity got its own system of record (customers → CRM, employees → HRIS, money → ERP). AI workers are the next entity, and the row is empty. Nomik owns it. The identity has to feel like the **management layer you'd run a company's AI labor on**: confident, modern, technical-but-human, a little premium. Emotional target: *calm command over a workforce*, "I employ a workforce of AI, and I can see, govern, and account for all of it."
+This is a **category-creation** position, not a product description. The frame is a new economic primitive, not a new tool. Every company runs on a few resources, historically **capital, people, and software**. **AI labor is the fourth**: not automation, not another app, but labor itself, the first workforce that scales without limit. Just as managers allocate human labor, Nomik is where a company **allocates AI labor**. The endgame: labor becomes software, and Nomik powers the AI labor economy. The identity has to feel like the **infrastructure layer every company will run on once AI workers outnumber humans**: confident, modern, technical-but-human, a little premium. Emotional target: *calm command over a new resource*, "my company runs on AI labor, and I can see, govern, and account for all of it."
 
-**The five verbs (the proof spine):** Hire · Organize · Govern · Supervise · Scale. Every page should ladder back to at least one.
+**The five verbs (the proof spine):** Deploy · Organize · Govern · Allocate · Scale. **Allocate** is the strategic core (allocation is what every manager, founder, and exec actually does). "Deploy" not "hire": AI labor is created and deployed, it isn't recruited, interviewed, or onboarded. Every page should ladder back to at least one.
 
-**Positioning against the field:** ChatGPT/Claude make one person smarter; Copilot/Cursor make one employee faster; Zapier automates workflows; Nomik **manages the workforce**. We are not another AI tool, we are the layer that manages them.
+**Positioning against the field (two tiers):** *Tools* (ChatGPT/Claude make one person smarter; Copilot/Cursor make one employee faster; Zapier automates workflows) and *agent builders* (Lindy, CrewAI, Manus, Devin, … give you one agent at a time, wired by hand). Nomik is **the layer above both**: the infrastructure that creates, governs, and allocates a company's entire AI labor pool. Agents are an implementation detail underneath it.
 
-**Defuse the registry risk:** "system of record" must never read as a passive catalog over agents living in other tools. Nomik is where AI employees are **hired and run**, not just registered. Always pair the SoR claim with the fact that they're hired, run, and governed here.
-
-**Lexicon (use consistently):** AI employees / AI workers / AI labor / AI workforce (not "bots"; "agents" only as the technical synonym, not the primary noun); manage · govern · supervise · org chart · departments · roles · budgets · permissions · accountability · "on the record". Keep the warm specifics (the Warden / Chief of Staff, named teammates, real tools, real dollars).
+**Lexicon, three tiers (use deliberately):** (1) **AI labor** is the top frame, the resource and the economy, lead the hero/thesis/category with it. (2) **AI workforce** is a company's allocation of that labor. (3) **AI employees / agents** are the concrete units, the proof layer, kept warm and demoable (named teammates, real tools, real dollars), never the top-level claim. Not "bots". Verbs: deploy · organize · govern · allocate · scale · "on the record". Keep the Chief of Staff (Nomik) and the demo concrete so the big frame never floats into vapor. Investor shorthand: **"Workday, Active Directory, and AWS for AI labor."**
 
 **Voice:** confident, concrete, lean. Short declaratives, real specifics (named tools, real workflows), no hype filler. Antithesis is the house rhetorical move ("Not a chatbot. A workforce.").
 
@@ -77,13 +75,13 @@ One system, many surfaces:
 | Page | Role |
 |---|---|
 | **Home** (`index.html`) | Narrative + demo + integrations + the platform trio (Cloud · Local · Nomik-1) + CTA. |
-| **Product** (`product.html`) | The Warden, the org and tiers, omnichannel + voice, glass box, any-model. |
+| **Product** (`product.html`) | Nomik (the Chief of Staff), the org and tiers, omnichannel + voice, glass box, any-model. |
 | **How it works** (`how-it-works.html`) | Three moves, happy path, surfaces. |
 | **Nomik Cloud** (`cloud.html`) | The hosted workspace product page: start solo (Chief of Staff + squad), grow into a team (members/roles/squads/approvals/audit), governance dial, "everything plugs into it" hub (connectors · Local · SDK · MCP), any-model + Nomik-1 pointer. |
 | **Nomik Desktop** (`desktop.html`) | Standalone local-first agent, "the governed OpenClaw," positioned as local hands + workspace brain: safe-by-default cards, the `nomik-desktop connect` moment, two run modes, OpenClaw skill-import wedge, honest preview/roadmap framing. Renamed from "Nomik Local" 2026-06-06; `local.html` is a noindex meta-refresh stub redirecting here (GitHub Pages has no server redirects), keep it. |
 | **Nomik-1 Research** (`research.html`) | Memo M-001 "Own the weights," published as written: the ongoing open-weight agent model program. §01 vision + Hermes-style lineage table, §02 five whys, §03 unit economics + bankable asset, §04 flywheel + phased route + anti-goals, §05 measured-vs-endstate + scorecard + pre-committed kill criteria. Internal paths and vendor names genericized; status pills mark running/in-build honestly. Memo-only CSS lives in a scoped `<style>` block on the page. |
 | **Connectors** (`marketplace.html`) | The connector catalog: integrations directory + how connecting works (OAuth/vault/gate). Nav/footer label is "Connectors"; the file keeps its `marketplace.html` URL. |
-| **Recipes** (`recipes.html`) | 1,400+ automation briefs, category browser, real recipe cards, runnable-with-your-stack, pick → Warden → runs. |
+| **Recipes** (`recipes.html`) | 1,400+ automation briefs, category browser, real recipe cards, runnable-with-your-stack, pick → Nomik → runs. |
 | **Skills & Prompts** (`skills.html`) | The learning loop: agents record + verify + promote procedures. Recipes-vs-skills distinction; `SKILL.md` sample. |
 | **Agents** (`agents.html`) | The workforce deep dive: Nomik orchestrator, org tiers, what an agent can do, coordination, any-model, squads. |
 | **Security & Sovereignty** (`security.html`) | Control surface + on-prem / local models / EU-GDPR + the "Open & sovereign" block (open-core self-host coming; Nomik-1 weights-inside-your-walls, ongoing). |
