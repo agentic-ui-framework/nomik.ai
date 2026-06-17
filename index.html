@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nomik · Your team and your agents, working as one</title>
-  <meta name="description" content="The shared workspace where your people and a self-organizing fleet of AI agents live in the same channels, planning, deciding, and running the business together." />
+  <meta name="description" content="Nomik is an AI-agent workspace: your team and a self-organizing fleet of AI agents work side by side in the same channels, connected to your email, calendar, files and 100+ tools, to plan, decide, and get real work done." />
   <meta property="og:title" content="Nomik · work as one" />
   <meta property="og:description" content="Like Slack, but half your team is AI. A self-organizing agent fleet and your humans, in the same channels, running the whole business together." />
   <meta property="og:type" content="website" />
@@ -47,6 +47,15 @@
     }]
   }
   </script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <!--/i18n:alt-->
 </head>
 <body>
   <!-- ── Nav ── -->
@@ -94,7 +103,7 @@
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
       </nav>
-      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/" hreflang="en" lang="en" class="is-active" aria-current="page">EN</a><a href="/fr/" hreflang="fr" lang="fr">FR</a><a href="/es/" hreflang="es" lang="es">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button>
         <a class="nav-login" href="https://app.nomik.ai">Log in</a>
         <a class="btn btn-primary" href="#waitlist">Get early access</a>
       </div>
@@ -108,7 +117,7 @@
         <div class="hero-copy">
           <span class="eyebrow">The agentic workspace</span>
           <h1>Your team and your agents, working as one.</h1>
-          <p class="lede">The shared workspace where your people and a self-organizing fleet of AI agents live in the same channels, planning, deciding, and getting the business done together.</p>
+          <p class="lede">Nomik is an AI-agent workspace: your team and a self-organizing fleet of AI agents work side by side in the same channels — connected to your email, calendar, files and 100+ other tools — to plan, decide, and get real work done.</p>
           <div class="hero-actions">
             <div class="hero-cta-stage" id="hero-cta-stage">
               <form class="waitlist hero-waitlist" id="hero-waitlist-form" novalidate>
@@ -649,7 +658,7 @@
           <p class="lead">Capability isn't the risk, unsupervised consequence is. Spend, deploys, and customer messages are proposed by agents and approved by you, with everything visible while it happens.</p>
           <ul class="bullets">
             <li><b>Approvals inline</b> in chat for the consequential set.</li>
-            <li><b>Spend caps &amp; a model ceiling</b> so cost can't balloon.</li>
+            <li><b>Spend caps that pause the fleet</b> so cost can't balloon.</li>
             <li><b>A kill switch</b>: stop any turn, agent, or the whole fleet.</li>
             <li><b>Glass-box audit</b>: every thought, tool, and dollar, logged.</li>
           </ul>

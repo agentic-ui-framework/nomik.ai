@@ -1016,6 +1016,12 @@ textarea:autofill {
 .tbl .yes { color: var(--success); font-weight: 700; }
 .tbl .no { color: var(--gray-500); }
 
+/* Callout — a highlighted statement box (e.g. the Google API Limited Use affirmation). */
+.callout { display: flex; gap: 0.85rem; align-items: flex-start; padding: 1.1rem 1.25rem; margin: 1.5rem 0; background: var(--brand-tint); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: var(--radius); }
+.callout > svg { flex: 0 0 auto; color: var(--brand-ink); margin-top: 0.1rem; }
+.callout p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--foreground); }
+.callout strong, .callout b { color: var(--brand-ink); font-weight: 700; }
+
 /* Pricing */
 .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
 .price-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; display: flex; flex-direction: column; }
@@ -1193,3 +1199,11 @@ textarea:autofill {
   .docs-nav { position: static; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .docs-nav h4 { width: 100%; margin: 0.5rem 0 0.25rem; }
 }
+
+/* ── i18n language switcher + legal note ─────────────────────────────── */
+.lang-switch { display: inline-flex; align-items: center; gap: 0.1rem; margin-right: 0.5rem; padding: 0.15rem; border: 1px solid var(--border); border-radius: 999px; }
+.lang-switch a { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; color: var(--gray-300); padding: 0.25rem 0.45rem; border-radius: 999px; text-decoration: none; transition: color .15s ease, background .15s ease; }
+.lang-switch a:hover { color: var(--brand-ink); }
+.lang-switch a.is-active { background: var(--brand-tint); color: var(--brand-ink); }
+.legal-i18n-note { max-width: var(--wrap, 72rem); margin: 1.25rem auto 0; padding: 0.6rem 0.9rem; border-left: 3px solid var(--brand-ink); background: var(--brand-tint); border-radius: 0.4rem; font-size: 0.85rem; color: var(--gray-200); }
+@media (max-width: 860px) { .lang-switch { margin-right: 0.25rem; } .lang-switch a { padding: 0.25rem 0.35rem; } }

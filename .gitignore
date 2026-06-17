@@ -5,3 +5,9 @@ supabase/.temp/
 supabase/.branches/
 .env
 .env.local
+
+# Node build tooling
+node_modules/
+
+# i18n intermediate batches (derived from source.json; catalogs are i18n/fr.json + es.json)
+i18n/batches/

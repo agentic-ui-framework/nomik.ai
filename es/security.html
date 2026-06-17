@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seguridad &amp; confianza · Nomik</title>
+  <meta name="description" content="Agentes potentes, consecuencias sujetas a aprobación: aprobaciones humanas, un control de autonomía con un piso para el dinero y las acciones destructivas, límites de gasto que pausan la flota, un interruptor de emergencia fail-closed, aislamiento por inquilino (FORCE row-level security, un baúl de secretos AES-256-GCM), autenticación RS256 y una auditoría transparente, además de autoalojamiento open-core en tus propios modelos." />
+  <meta property="og:title" content="Security &amp; Trust · Nomik" />
+  <meta property="og:description" content="Agentes potentes, consecuencias sujetas a aprobación: aprobaciones humanas, un control de autonomía con un piso para el dinero y las acciones destructivas, límites de gasto que pausan la flota, un interruptor de emergencia fail-closed, aislamiento por inquilino, autenticación RS256 y una auditoría transparente, además de autoalojamiento open-core en tus propios modelos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nomik.ai/security.html" />
+  <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Security &amp; Trust · Nomik" />
+  <meta name="twitter:description" content="Agentes potentes, consecuencias sujetas a aprobación: aprobaciones humanas, un control de autonomía con un piso para el dinero y las acciones destructivas, límites de gasto que pausan la flota, un interruptor de emergencia fail-closed, aislamiento por inquilino, autenticación RS256 y una auditoría transparente, además de autoalojamiento open-core en tus propios modelos." />
+  <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
+  <link rel="canonical" href="https://www.nomik.ai/es/security.html" />
+  <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+  <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
+  <link rel="stylesheet" href="/styles.css?v=20260606" />
+  <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/security.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/security.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/security.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/security.html" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <!--/i18n:alt-->
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
+      <nav class="nav-links">
+        <div class="nav-group" data-menu="product">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Producto<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="product.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="nav-row-tx"><b>Resumen</b><em>El espacio de trabajo agéntico, de principio a fin</em></span></a>
+            <a class="nav-row" href="how-it-works.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h4a3 3 0 0 0 3-3 3 3 0 0 1 3-3h6"/><circle cx="4" cy="18" r="1.6"/><path d="m17 9 3 3-3 3"/></svg></span><span class="nav-row-tx"><b>Cómo funciona</b><em>Del espacio de trabajo vacío al negocio en marcha</em></span></a>
+            <a class="nav-row" href="agents.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="nav-row-tx"><b>Agentes</b><em>Tu equipo de agentes de IA autoorganizado</em></span></a>
+            <a class="nav-row" href="use-cases.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span><span class="nav-row-tx"><b>Casos de uso</b><em>Un día típico, según el tipo de empresa</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="platform">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Plataforma<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="cloud.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-8.98A6.5 6.5 0 0 0 5.3 11.6 4.2 4.2 0 0 0 6.7 19z"/></svg></span><span class="nav-row-tx"><b>Nomik Cloud</b><em>Un espacio de trabajo, en solitario o en equipo, alojado</em></span></a>
+            <a class="nav-row" href="desktop.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="nav-row-tx"><b>Nomik Desktop<i class="pill-tag">Vista previa</i></b><em>Un agente local-first, seguro por defecto</em></span></a>
+            <a class="nav-row" href="research.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11 4 6.5M12 11l8-4.5M12 11v9"/></svg></span><span class="nav-row-tx"><b>Nomik-1 pesos abiertos<i class="pill-tag">En curso</i></b><em>Investigación: nuestro propio modelo de agente</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="ecosystem">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Ecosistema<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="marketplace.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4.5 4h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="nav-row-tx"><b>Conectores</b><em>Conecta tu stack, con aprobación y seguro</em></span></a>
+            <a class="nav-row" href="recipes.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="nav-row-tx"><b>Recetas</b><em>1,400+ playbooks de automatización</em></span></a>
+            <a class="nav-row" href="skills.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></span><span class="nav-row-tx"><b>Habilidades &amp; prompts</b><em>El repositorio del que aprenden los agentes</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="developers">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Desarrolladores<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="developers.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><span class="nav-row-tx"><b>Construye sobre Nomik</b><em>REST API, webhooks, conectores</em></span></a>
+            <a class="nav-row" href="sdk.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3M15 7V3"/><path d="M7 7h10v4a5 5 0 0 1-10 0z"/><path d="M12 16v5"/></svg></span><span class="nav-row-tx"><b>Agent SDK<i class="pill-tag">Vista previa</i></b><em>Trae tu propio agente como compañero de equipo</em></span></a>
+            <a class="nav-row" href="mcp.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="M7 12h5m0 0 5.3-5.4M12 12l5.3 5.4"/></svg></span><span class="nav-row-tx"><b>MCP</b><em>Herramientas que entran, herramientas que salen, un solo control</em></span></a>
+            <a class="nav-row" href="docs.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span><span class="nav-row-tx"><b>Docs</b><em>Guías, autenticación y la referencia de la API</em></span></a>
+          </div>
+        </div>
+        <a href="security.html">Seguridad</a>
+        <a href="pricing.html">Precios</a>
+      </nav>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/security.html" hreflang="en" lang="en">EN</a><a href="/fr/security.html" hreflang="fr" lang="fr">FR</a><a href="/es/security.html" hreflang="es" lang="es" class="is-active" aria-current="page">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Cambiar entre tema claro u oscuro" title="Cambiar tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Iniciar sesión</a><a class="btn btn-primary" href="index.html#waitlist">Consigue acceso anticipado</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Seguridad &amp; confianza</span>
+        <h1>Agentes potentes. Tú tienes el control.</h1>
+        <p>El control no surge de paralizar a los agentes. Surge de hacer todo visible y de poner un control humano en los pasos que tocan el dinero, los datos o el mundo exterior. El perímetro, el gasto y el botón de apagado permanecen en tus manos.</p>
+      </div>
+    </section>
+
+    <!-- Principle -->
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">El principio</span>
+          <h2>Manos libres, consecuencias sujetas a aprobación.</h2>
+          <p class="lead">Dentro de su propio sandbox, los agentes actúan con libertad, eso es lo que los hace útiles. Las cosas que tocan el mundo exterior o cuestan dinero real las <em>propone</em> un agente y las <em>aprueba</em> un humano. La propia llamada a la herramienta es la propuesta, así que nada se ejecuta hasta que dices que sí.</p>
+          <p class="lead">El riesgo no es la capacidad; es la <em>consecuencia sin supervisión</em>. Por eso es lo que sometemos a aprobación, en el código, en el único punto por el que pasa cada acción, y todo permanece visible mientras sucede.</p>
+        </div>
+        <div>
+          <div class="chat solo" aria-label="Una tarjeta de aprobación en el chat">
+            <div class="chat-main">
+              <div class="chat-head"><span class="hash">#</span> operaciones</div>
+              <div class="chat-body">
+                <div class="msg"><span class="avatar p2">I</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Iris <span class="tag tag-agent">agente</span></span><span class="msg-time">08:32</span></div><p class="msg-text">Reembolsar €480 al pedido #5521 (cargo duplicado confirmado).</p>
+                  <div class="connect-card consequential"><span class="ilogo"><img src="/logos/stripe.svg" alt="" width="18" height="18"></span><div><div class="cc-name">Aprobación necesaria · reembolso €480</div><div class="cc-sub">Dinero · piso solo para humanos</div></div><span class="btn btn-consequential">Aprobar</span></div>
+                </div></div>
+              </div>
+              <div class="chat-composer"><span class="cur">›</span> Mensaje #operaciones…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Control surface -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">La superficie de control</span>
+          <h2>Todo lo que el humano mantiene en sus manos.</h2>
+          <p>Seis controles, cada uno aplicado en el backend, no solo dibujado en la interfaz.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature"><h3>Aprobaciones (validación humana)</h3><p>Las acciones con consecuencias se retienen en el control: un agente propone, un humano aprueba y la plataforma vuelve a ejecutar la acción aprobada en el servidor, de modo que el agente nunca la vuelve a tocar. Las tarjetas aparecen en línea con todo el contexto y Aprobar / Denegar.</p></article>
+          <article class="feature"><h3>Control de autonomía</h3><p>Por espacio de trabajo, por clase de acción, tres niveles: <b>solo sugerir → aprobar con un clic → auto&nbsp;+&nbsp;notificar</b>. Deja que la redacción rutinaria se ejecute sola mientras el dinero se mantiene en solo sugerir. Las acciones monetarias y destructivas siguen sujetas a aprobación <em>incluso con autonomía total</em>, un piso que el control no puede cruzar.</p></article>
+          <article class="feature"><h3>Límites de gasto que pausan la flota</h3><p>Establece un límite diario, mensual o de por vida en un espacio de trabajo. Supéralo y el equipo de agentes de IA se pausa, y luego se reanuda automáticamente cuando se abre la siguiente ventana de presupuesto. <b>Se permite cualquier modelo, incluido Opus</b>, Sonnet es el valor predeterminado sensato, así que lo que está limitado es el <em>gasto</em>, no un bloqueo de modelo.</p></article>
+          <article class="feature"><h3>Interruptor de emergencia &amp; límites de tasa</h3><p>Pausa cualquier turno, cualquier agente o todo el espacio de trabajo, en directo desde el chat. Un espacio de trabajo en pausa falla en modo cerrado, devolviendo <span class="mono">423</span> a cada acción de agente, en pausa significa en pausa. Los presupuestos de turnos deslizantes por hilo detienen los bucles agente-a-agente descontrolados.</p></article>
+          <article class="feature"><h3>Auditoría transparente</h3><p>Cada pensamiento, llamada a herramienta y dólar es un evento duradero y trazado que puedes reproducir. Un registro de decisiones registra cada aprobación, quién la planteó, quién la resolvió, con las credenciales de quién y qué hizo.</p></article>
+          <article class="feature"><h3>Roles &amp; agentes acotados</h3><p>Owner / Admin / Member para las personas. Los agentes son principales fijados al espacio de trabajo que nunca pueden realizar un acto reservado a humanos, aprobar un control, cambiar la facturación o relajar el control de autonomía, y un agente nunca puede aprobar su propia solicitud.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gated set -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Qué está sujeto a aprobación por defecto</span>
+          <h2>Siete clases de riesgo, cada una pregunta primero.</h2>
+          <p>Cada acción de conector se clasifica en una de las siete categorías de riesgo antes de poder ejecutarse. Los verbos de solo lectura pasan directamente; las categorías de abajo se retienen.</p>
+        </div>
+        <div class="tbl-wrap reveal">
+          <table class="tbl">
+            <thead><tr><th>Clase</th><th>Ejemplos</th></tr></thead>
+            <tbody>
+              <tr><td>Dinero <span class="pill-tag">Piso</span></td><td>Cualquier gasto o pago, reembolsos, cambios de plan / facturación</td></tr>
+              <tr><td>Destructivo <span class="pill-tag">Piso</span></td><td>Eliminar datos, descartar recursos, eliminar miembros, eliminar un espacio de trabajo</td></tr>
+              <tr><td>Saliente</td><td>Correos a clientes, respuestas a tickets, publicaciones en redes sociales y mensajes de chat</td></tr>
+              <tr><td>Lanzamientos</td><td>Despliegues a producción, publicación, activación de un flujo de trabajo</td></tr>
+              <tr><td>Acceso</td><td>Otorgar credenciales, conectar / desconectar integraciones, relajar el control de autonomía</td></tr>
+              <tr><td>Cambios de organización</td><td>Contratar y retirar agentes, cambios de membresía</td></tr>
+              <tr><td>Datos</td><td>Leer o exportar datos regulados / personales</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="reveal" style="text-align:center;margin-top:1.25rem;color:var(--gray-300);font-size:0.95rem;">Las dos clases <span class="pill-tag">Piso</span>, dinero y destrucción, siguen requiriendo aprobación humana incluso cuando el control está al máximo.</p>
+      </div>
+    </section>
+
+    <!-- Approve from anywhere -->
+    <section class="band">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Aprueba desde cualquier lugar</span>
+          <h2>El control te encuentra, incluso con la pestaña cerrada.</h2>
+          <p class="lead">Una aprobación solo es útil si te llega. Cuando un agente plantea una acción sujeta a aprobación, Nomik la envía a tus dispositivos, sin necesidad de una pestaña abierta, y te permite resolverla al instante.</p>
+          <ul class="bullets">
+            <li><b>El Web push despierta una pestaña cerrada</b>: la misma notificación que llega a tu teléfono hace instantáneo un escritorio ya abierto.</li>
+            <li><b>Respaldo por correo para las urgentes</b>: si una interrupción de alta prioridad no alcanza ningún dispositivo activo, recurre al correo, de modo que una aprobación nunca se pierde en silencio.</li>
+            <li><b>Un toque para resolver</b>: tocar Aprobar abre Nomik y resuelve la acción al instante, autorizado por un token de un solo uso que se consume en el primer clic.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">El registro de decisiones</span>
+          <h2>Un registro que un auditor puede leer de verdad.</h2>
+          <p class="lead">Cada decisión sujeta a aprobación se convierte en una fila duradera, no en una línea de registro que se desvanece al desplazarse. El rastro se muestra en lenguaje claro, <em>en nombre de Alice Martin · usando el Gmail de Alice</em>, y sobrevive a recargas y reinicios.</p>
+          <ul class="bullets">
+            <li><b>Ciclo de vida completo</b>: pendiente → aprobado o denegado → ejecutado o fallido, con el aprobador y la marca de tiempo en cada transición.</li>
+            <li><b>Aprobador ≠ solicitante</b>: aplicado en el código, un agente no puede resolver un control que él planteó, y nadie puede autoaprobar una contratación.</li>
+            <li><b>El costo es de primer nivel</b>: cada turno lleva su propia cifra en dólares, agregada por agente y por espacio de trabajo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Isolation & secrets -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Aislamiento &amp; secretos</span>
+          <h2>Los inquilinos no se filtran. Aplicado por debajo de la aplicación.</h2>
+          <p>Las garantías más sólidas son las que no dependen de que el código de la aplicación se acuerde de comprobar. Las nuestras viven en la base de datos, el cifrado y el bus de mensajes.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature"><h3>Una barrera por inquilino en la base de datos</h3><p>Cada tabla de inquilino ejecuta la seguridad a nivel de fila <span class="mono">FORCE</span> de Postgres. La aplicación se conecta con un rol degradado que <em>no</em> es superusuario y que <em>no puede</em> eludir la RLS; de lo contrario, el servicio se niega a arrancar, y un canario de CI demuestra que un espacio de trabajo no puede leer las filas de otro.</p></article>
+          <article class="feature"><h3>Un baúl, sellado a tu espacio de trabajo</h3><p>Las credenciales de conector se cifran con <span class="mono">AES-256-GCM</span> y se vinculan criptográficamente al ID de tu espacio de trabajo. Una credencial trasladada a otro inquilino no logra descifrarse, cerrada. Los secretos nunca están en texto plano y nunca salen del baúl sin aprobación.</p></article>
+          <article class="feature"><h3>Un bus de mensajes por espacio de trabajo</h3><p>Cada espacio de trabajo es su propia cuenta aislada en el bus de mensajes de los agentes. Las credenciales de un agente ni siquiera pueden <em>nombrar</em> los temas de otro espacio de trabajo, y al conjunto de sandbox se le niegan por completo los temas del plano de control.</p></article>
+          <article class="feature"><h3>Un contenedor por agente</h3><p>Cada agente se ejecuta en su propio contenedor Docker con límites de CPU, memoria y procesos, una bandera no-new-privileges y perfiles seccomp + AppArmor. El cómputo está contenido, no compartido.</p></article>
+          <article class="feature"><h3>Sesiones asimétricas y revocables</h3><p>Los tokens de acceso se firman con <span class="mono">RS256</span> y se verifican contra un JWKS publicado. Los tokens de actualización rotan, con hash en reposo, y reutilizar uno invalida toda la familia. Una lista de bloqueo de Redis impone el cierre de sesión en todas partes entre los servicios, fail-closed.</p></article>
+          <article class="feature"><h3>Un contrato de identidad tipado</h3><p>Cada solicitud lleva un principal que es explícitamente <em>humano</em> o <em>agente</em>. Las rutas solo para humanos se inscriben por nombre, y cada rechazo devuelve un código legible por máquina, de modo que un agente ve una razón precisa, no un 403 genérico.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sovereignty -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Tu equipo de agentes de IA, tu perímetro</span>
+          <h2>Ejecútalo donde tus datos tienen permitido residir.</h2>
+          <p>Un equipo de agentes de IA capaz que pueda funcionar dentro de tus propios muros es algo que la mayoría de las plataformas de agentes no pueden ofrecer. Somos honestos sobre lo que se entrega hoy y lo que está por llegar.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Activo</span></div>
+            <div class="dlabel">SaaS</div>
+            <h3>Lo alojamos nosotros</h3>
+            <p>El inicio más rápido. Gestionado por Nomik, fijable a una región. Modelos en la nube con tus claves o gestionados por ti, además de una vía de embeddings locales sin clave por defecto.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Próximamente</span></div>
+            <div class="dlabel">Open-core</div>
+            <h3>Autoaloja el núcleo</h3>
+            <p>El núcleo de la plataforma, espacios de trabajo, agentes, conectores, el control, la auditoría, es open-core bajo una licencia FSL. El mismo código se ejecuta en tu perímetro; la edición en la nube añade facturación, SSO y asientos por encima.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">En la hoja de ruta</span></div>
+            <div class="dlabel">Nube privada · en local (on-prem)</div>
+            <h3>Tu VPC o centro de datos</h3>
+            <p>Un paquete llave en mano para nube privada y entorno aislado, con servicio de modelos locales en tus GPU, para entornos regulados, del sector público y sin conexión. En diseño activo, aún no disponible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local models + EU -->
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Cualquier modelo, incluido el tuyo</span>
+          <h2>Apunta la flota hacia un modelo que tú controlas.</h2>
+          <p class="lead">Los motores son agnósticos al modelo con un endpoint configurable, de modo que un agente puede ejecutarse contra un modelo autoalojado de pesos abiertos en lugar de una API en la nube. Combinados con el autoalojamiento, los prompts y los archivos permanecen donde los pusiste.</p>
+          <ul class="bullets">
+            <li><b>Modelos locales / abiertos</b>: ejecuta agentes contra tus propios GPU a través de un endpoint estándar (Ollama, vLLM, LM Studio, llama.cpp), con un costo de cómputo fijo y acotado.</li>
+            <li><b>Lo mejor de cada categoría donde tú lo permitas</b>: un modelo de frontera en la nube para las decisiones difíciles, modelos locales para el trabajo de alto volumen, tu elección según el rol.</li>
+            <li><b>Conocimiento local por defecto</b>: la base de conocimiento del espacio de trabajo se vectoriza con un modelo local gratuito y sin clave, de modo que los vectores de tus documentos permanecen dentro por defecto, sin clave requerida.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">UE &amp; RGPD</span>
+          <h2>Diseñado para los regulados y los soberanos.</h2>
+          <p class="lead">Una postura de privacidad y residencia de datos diseñada desde el principio. (Somos transparentes sobre las certificaciones, mira abajo lo que es real.)</p>
+          <ul class="bullets">
+            <li><b>Residencia de datos</b>: fija el procesamiento y el almacenamiento en la UE, o en tu propia infraestructura mediante el autoalojamiento.</li>
+            <li><b>Postura RGPD</b>: un anexo de tratamiento de datos, base jurídica, solicitudes de los interesados y controles de retención.</li>
+            <li><b>Borrado &amp; exportación</b>: rutas de eliminación de cuenta y exportación de datos diseñadas en torno a los derechos del interesado.</li>
+            <li><b>Aislamiento &amp; bóveda</b>: cada agente aislado; secretos acotados al espacio de trabajo, concedidos por ti, nunca retenidos sin aprobación.</li>
+          </ul>
+          <a class="more-link" href="dpa.html">Lee el anexo de tratamiento de datos →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Told straight -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Sin rodeos</span>
+          <h2>Lo que es real hoy, y lo que aún no lo es.</h2>
+          <p>La misma honestidad que exigimos a los agentes nos la exigimos a nosotros mismos. Esto está en construcción, no en producción, y no vamos a fingir lo contrario.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">En la hoja de ruta</span></div>
+            <h3>En local (on-prem) &amp; aislado de la red</h3>
+            <p>La separación open-core está disponible y protegida por CI. Un paquete llave en mano en local (on-prem) / aislado de la red con servicio de modelos local está especificado y en diseño, aún no descargable.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">En desarrollo</span></div>
+            <h3>Privacidad de voz</h3>
+            <p>La voz funciona hoy con proveedores de voz en la nube y no se ha probado de extremo a extremo. Mantener el audio de las llamadas completamente dentro de tu perímetro es un objetivo, no una afirmación actual.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Previsto</span></div>
+            <h3>Certificación independiente</h3>
+            <p>Los controles de la capa de aplicación anteriores son reales y se aplican. Aún no tenemos SOC&nbsp;2 ni ISO&nbsp;27001, y no vamos a insinuar una auditoría que no hemos superado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open & sovereign -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Abierto &amp; soberano</span>
+          <h2>El objetivo final: los pesos dentro de tus paredes.</h2>
+          <p>La soberanía no es un diagrama de despliegue, es quién posee las piezas móviles. Estamos abriendo las dos más importantes: el núcleo de la plataforma y el propio modelo.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Próximamente</span></div>
+            <h3>Open-core, autoalojable</h3>
+            <p>El núcleo de la plataforma, espacios de trabajo, agentes, conectores, el control, el registro de auditoría, se está empaquetando como una edición abierta autoalojable. La edición en la nube añade facturación, SSO y asientos. Mismo código, tu perímetro.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Programa en curso</span></div>
+            <h3>Nomik-1, el modelo gobernado de pesos abiertos</h3>
+            <p>Estamos haciendo post-entrenamiento de nuestro propio modelo de agente de pesos abiertos para que la flota pueda distribuirse como pesos en una sola GPU o un Mac Studio: ninguna clave de API sale del edificio, y las barreras de seguridad van dentro del modelo. Objetivo de publicación bajo Apache-2.0.</p>
+            <a class="more-link" href="research.html">Lee el informe de investigación →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <h2>Un equipo de agentes de IA con el que tus auditores pueden convivir.</h2>
+          <p>Habla con nosotros sobre autoalojamiento, residencia de datos y la ejecución de tus propios modelos.</p>
+          <a class="btn btn-primary" href="contact.html">Habla con nosotros</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm2)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="cloud.html">Nomik Cloud</a>
+        <a href="desktop.html">Nomik Desktop</a>
+        <a href="research.html">Nomik-1 Research</a>
+        <a href="product.html">Producto</a>
+        <a href="agents.html">Agentes</a>
+        <a href="how-it-works.html">Cómo funciona</a>
+        <a href="use-cases.html">Casos de uso</a>
+        <a href="marketplace.html">Conectores</a>
+        <a href="recipes.html">Recetas</a>
+        <a href="skills.html">Habilidades &amp; prompts</a>
+        <a href="developers.html">Desarrolladores</a>
+        <a href="sdk.html">Agent SDK</a>
+        <a href="mcp.html">MCP</a>
+        <a href="docs.html">Docs</a>
+        <a href="security.html">Seguridad</a>
+        <a href="pricing.html">Precios</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="terms.html">Términos</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="index.html#waitlist">Acceso anticipado</a>
+      </nav>
+      <div class="footer-social" aria-label="Redes sociales">
+        <!-- TODO operator: replace X handle when account is created -->
+        <a href="https://twitter.com/nomik_ai" target="_blank" rel="noopener" aria-label="Nomik en X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <!-- TODO operator: replace LinkedIn handle when account is created -->
+        <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik en LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik en GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+      </div>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="/app.js?v=20260606"></script>
+</body>
+</html>

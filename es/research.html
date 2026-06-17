@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nomik-1, controla los pesos · Nomik</title>
+  <meta name="description" content="Memo M-001 de Nomik Research: el programa Nomik-1. Estamos haciendo post-entrenamiento de un modelo base abierto para convertirlo en un modelo de agente de pesos abiertos gobernado que lleva nuestras personas y controles de seguridad en sus pesos, sirve el nivel de volumen de la flota y se despliega en local (on-prem). En curso, publicado tal cual." />
+  <meta property="og:title" content="Nomik-1, controla los pesos · Nomik" />
+  <meta property="og:description" content="El programa Nomik-1: un modelo de agente de pesos abiertos gobernado, entrenado con trayectorias graduadas de nuestro propio arnés de verificación. Objetivo de publicación: Apache-2.0. En curso." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nomik.ai/research.html" />
+  <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nomik-1, controla los pesos · Nomik" />
+  <meta name="twitter:description" content="El programa Nomik-1: un modelo de agente de pesos abiertos gobernado, entrenado con trayectorias graduadas de nuestro propio arnés de verificación. Objetivo de publicación: Apache-2.0. En curso." />
+  <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
+  <link rel="canonical" href="https://www.nomik.ai/es/research.html" />
+  <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+  <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
+  <link rel="stylesheet" href="/styles.css?v=20260606" />
+  <style>
+    /* Memo-only touches, on top of the site system */
+    .memo-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 880px; margin: 2rem auto 0; text-align: left; }
+    .memo-meta .mm { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
+    .memo-meta .mm b { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted-foreground); margin-bottom: 0.3rem; }
+    .memo-meta .mm span { color: var(--gray-100); font-weight: 600; font-size: 0.92rem; }
+    .memo-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+    .memo-stats .ms { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.4rem; }
+    .memo-stats .ms b { display: block; font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 800; color: var(--gray-100); line-height: 1.1; margin-bottom: 0.45rem; }
+    .memo-stats .ms span { color: var(--muted-foreground); font-size: 0.9rem; }
+    .secno { display: inline-flex; align-items: center; gap: 0.55rem; font-family: ui-monospace, monospace; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; color: var(--brand-ink); }
+    .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; }
+    .flow .fstep { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.05rem; }
+    .flow .fstep i { display: block; font-style: normal; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .flow .fstep i.run { color: var(--success); }
+    .flow .fstep i.build { color: var(--amber-500); }
+    .flow .fstep b { display: block; color: var(--gray-100); font-size: 0.98rem; margin-bottom: 0.25rem; }
+    .flow .fstep span { color: var(--muted-foreground); font-size: 0.82rem; line-height: 1.45; }
+    .flow-loop { margin-top: 1rem; text-align: center; color: var(--muted-foreground); font-size: 0.9rem; }
+    .verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .verdicts ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .verdicts li { position: relative; padding-left: 1.6rem; color: var(--gray-200); font-size: 0.94rem; line-height: 1.55; }
+    .verdicts .measured li::before { content: "●"; position: absolute; left: 0; color: var(--success); }
+    .verdicts .endstate li::before { content: "○"; position: absolute; left: 0; color: var(--brand-ink); }
+    .verdicts h3 { margin-bottom: 0.9rem; }
+    .kill { border-left: 3px solid var(--magenta-500); background: var(--card); border-radius: var(--radius); padding: 1.4rem 1.5rem; }
+    .kill h3 { color: var(--gray-100); margin-bottom: 0.6rem; }
+    .kill p { color: var(--muted-foreground); font-size: 0.94rem; margin-bottom: 0.5rem; }
+    .kill p b { color: var(--gray-100); }
+    .note { margin-top: 0.9rem; font-family: ui-monospace, monospace; font-size: 0.78rem; line-height: 1.5; color: var(--muted-foreground); border-left: 2px solid var(--brand-ink); padding-left: 0.7rem; }
+    .note a { color: var(--brand-ink); font-weight: 600; }
+    .tbl tr.hl td { background: var(--brand-tint); }
+    .tbl tr.hl td:first-child { color: var(--gray-100); }
+  </style>
+  <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/research.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/research.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/research.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/research.html" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <!--/i18n:alt-->
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>
+        Nomik
+      </a>
+      <nav class="nav-links">
+        <div class="nav-group" data-menu="product">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Producto<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="product.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="nav-row-tx"><b>Resumen</b><em>El espacio de trabajo agéntico, de principio a fin</em></span></a>
+            <a class="nav-row" href="how-it-works.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h4a3 3 0 0 0 3-3 3 3 0 0 1 3-3h6"/><circle cx="4" cy="18" r="1.6"/><path d="m17 9 3 3-3 3"/></svg></span><span class="nav-row-tx"><b>Cómo funciona</b><em>Del espacio de trabajo vacío al negocio en marcha</em></span></a>
+            <a class="nav-row" href="agents.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="nav-row-tx"><b>Agentes</b><em>Tu equipo de agentes de IA autoorganizado</em></span></a>
+            <a class="nav-row" href="use-cases.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span><span class="nav-row-tx"><b>Casos de uso</b><em>Un día típico, según el tipo de empresa</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="platform">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Plataforma<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="cloud.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-8.98A6.5 6.5 0 0 0 5.3 11.6 4.2 4.2 0 0 0 6.7 19z"/></svg></span><span class="nav-row-tx"><b>Nomik Cloud</b><em>Un espacio de trabajo, en solitario o en equipo, alojado</em></span></a>
+            <a class="nav-row" href="desktop.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span><span class="nav-row-tx"><b>Nomik Desktop<i class="pill-tag">Vista previa</i></b><em>Un agente local-first, seguro por defecto</em></span></a>
+            <a class="nav-row" href="research.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11 4 6.5M12 11l8-4.5M12 11v9"/></svg></span><span class="nav-row-tx"><b>Nomik-1 pesos abiertos<i class="pill-tag">En curso</i></b><em>Investigación: nuestro propio modelo de agente</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="ecosystem">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Ecosistema<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu ">
+            <a class="nav-row" href="marketplace.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4.5 4h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="nav-row-tx"><b>Conectores</b><em>Conecta tu stack, con aprobación y seguro</em></span></a>
+            <a class="nav-row" href="recipes.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="nav-row-tx"><b>Recetas</b><em>1,400+ playbooks de automatización</em></span></a>
+            <a class="nav-row" href="skills.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></span><span class="nav-row-tx"><b>Habilidades &amp; prompts</b><em>El repositorio del que aprenden los agentes</em></span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-menu="developers">
+          <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Desarrolladores<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-menu cols-2">
+            <a class="nav-row" href="developers.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><span class="nav-row-tx"><b>Construye sobre Nomik</b><em>REST API, webhooks, conectores</em></span></a>
+            <a class="nav-row" href="sdk.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3M15 7V3"/><path d="M7 7h10v4a5 5 0 0 1-10 0z"/><path d="M12 16v5"/></svg></span><span class="nav-row-tx"><b>Agent SDK<i class="pill-tag">Vista previa</i></b><em>Trae tu propio agente como compañero de equipo</em></span></a>
+            <a class="nav-row" href="mcp.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="M7 12h5m0 0 5.3-5.4M12 12l5.3 5.4"/></svg></span><span class="nav-row-tx"><b>MCP</b><em>Herramientas que entran, herramientas que salen, un solo control</em></span></a>
+            <a class="nav-row" href="docs.html"><span class="nav-row-ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span><span class="nav-row-tx"><b>Docs</b><em>Guías, autenticación y la referencia de la API</em></span></a>
+          </div>
+        </div>
+        <a href="security.html">Seguridad</a>
+        <a href="pricing.html">Precios</a>
+      </nav>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/research.html" hreflang="en" lang="en">EN</a><a href="/fr/research.html" hreflang="fr" lang="fr">FR</a><a href="/es/research.html" hreflang="es" lang="es" class="is-active" aria-current="page">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Cambiar entre tema claro u oscuro" title="Cambiar tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Iniciar sesión</a><a class="btn btn-primary" href="index.html#waitlist">Consigue acceso anticipado</a></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Nomik Research · Memo M-001</span>
+        <h1>Controla los pesos.</h1>
+        <p>Nomik-1 es nuestro programa de modelo de agente de pesos abiertos: hacer post-entrenamiento de un modelo base abierto hasta que hable de forma nativa nuestras llamadas a herramientas, lleve nuestras personas y controles de seguridad en sus propios pesos y sirva el nivel de volumen de la flota en hardware que tú elijas. El programa está en marcha. Este es el memo interno que lo inició, publicado tal cual.</p>
+        <div class="status-row" style="justify-content:center; margin-top:1.1rem"><span class="status-pill live">Programa en curso</span> <span class="status-pill soon">Objetivo de publicación: pesos abiertos, Apache-2.0</span></div>
+        <div class="memo-meta" aria-label="Encabezado del memo">
+          <div class="mm"><b>Re</b><span>Nomik-1: visión &amp; trayectoria</span></div>
+          <div class="mm"><b>Estado</b><span>En curso · fase P0</span></div>
+          <div class="mm"><b>Horizonte</b><span>2026 → 2028</span></div>
+          <div class="mm"><b>Licencia objetivo</b><span>Apache-2.0 en Hugging Face</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Headline numbers -->
+    <section>
+      <div class="wrap">
+        <div class="memo-stats reveal">
+          <div class="ms"><b>10–30×</b><span>más barato por millón de tokens que las API de gama básica al nivel de uso de la flota, antes del efecto compuesto de la reducción de prompts</span></div>
+          <div class="ms"><b>0</b><span>nueva infraestructura: nuestro arnés de QA ya es la fábrica de datos y el conjunto de evaluación</span></div>
+          <div class="ms"><b>52</b><span>entornos de escenarios verificados, en funcionamiento hoy como el conjunto de regresión de la flota</span></div>
+          <div class="ms"><b>14B</b><span>parámetros: lo bastante pequeño para servirse desde una sola GPU, o un Mac Studio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §01 Vision -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§01 · LA VISIÓN</span>
+          <h2>Qué es Nomik-1.</h2>
+          <p>El punto final de la trayectoria: un modelo de agente de 14B parámetros, post-entrenado a partir de una base abierta, que habla de forma nativa nuestro formato de llamada a herramientas, lleva nuestras personas y controles de seguridad en sus pesos y sirve el nivel de alto volumen de la flota, autoalojado o en el hardware de un cliente.</p>
+        </div>
+        <div class="reveal">
+          <p style="max-width:760px;margin:0 auto 1.5rem;color:var(--muted-foreground);text-align:center">Esta es la receta que los mejores laboratorios de modelos abiertos ya demostraron. Ninguno preentrenó un modelo insignia. Tomaron la base abierta de otro y la hicieron suya mediante la curación de datos y el post-entrenamiento, a aproximadamente 1/1000th del coste del preentrenamiento. El linaje:</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Modelo</th><th>Base (la referencia)</th><th>Datos</th><th>Verificación</th></tr></thead>
+              <tbody>
+                <tr><td>Hermes 1 · '23</td><td>Llama-13B</td><td>~300K muestras destiladas del teacher</td><td>ninguna, se confía en el teacher</td></tr>
+                <tr><td>OpenHermes · '23</td><td>Llama-2 / Mistral-7B</td><td>242K → 1M, conjunto de datos abierto</td><td>curación manual</td></tr>
+                <tr><td>Hermes 3 · '24</td><td>Llama-3.1 8B–405B</td><td>~390M tokens sintéticos</td><td>SFT + DPO</td></tr>
+                <tr><td>Hermes 4 · '25</td><td>Llama-3.1-405B · Qwen3-14B</td><td>5M muestras / 60B tokens</td><td>entornos generados + verificados</td></tr>
+                <tr class="hl"><td><b>Nomik-1 · '26</b></td><td><b>Una base 14B abierta (Apache-2.0)</b></td><td><b>50–100K trayectorias de agentes evaluadas</b></td><td><b>52 escenarios verificados + evaluadores de resultados, ya en funcionamiento</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="max-width:760px;margin:1.5rem auto 0;color:var(--muted-foreground);text-align:center">La base es el preentrenamiento de cien millones de dólares de otro. El producto son los datos, y nuestro arnés ya los fabrica.</p>
+        </div>
+        <div class="reveal" style="margin-top:1.5rem;max-width:760px;margin-inline:auto">
+          <div class="code-card">
+            <div class="code-head">En una línea</div>
+            <pre class="codeblock"><code><span class="k">NOMIK-1</span> = <span class="s">BASE</span> (open 14B)
+        × <span class="s">DATA</span> (graded agent trajectories)
+        × <span class="s">VERIFICATION</span> (our scenario graders)
+
+<span class="c"># the labs that proved this recipe spent years building</span>
+<span class="c"># the third term. our QA program produces it as a byproduct.</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §02 Why -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§02 · POR QUÉ POSEERLO</span>
+          <h2>Cinco razones, tres de ellas ya medidas.</h2>
+          <p>Tres de ellas las medimos en nuestro propio arnés. Dos son estructurales. El caso económico tiene su propia sección más abajo.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Comportamiento</span></div>
+            <h3>El prompting ha alcanzado techos medibles</h3>
+            <p>Algunos comportamientos de los agentes son inalcanzables con prompts: ninguna edición de persona los mueve, porque viven en los priors del modelo. El fine-tuning es precisamente la palanca que mueve los priors.</p>
+            <p class="note">Medido: el alcance de la delegación se estancó cerca del 50% en cada edición de persona que lanzamos.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Economía</span></div>
+            <h3>El nivel de volumen lo exige</h3>
+            <p>La política de costes de la flota ya reserva los modelos de vanguardia para el trabajo de vanguardia. Un 14B autoalojado cubre el nivel de alto volumen por debajo del precio por token de cualquier API, y se queda a cero en reposo en un hosting facturado por token.</p>
+            <p class="note">Una sola GPU alquilada sirve un 14B cuantizado a miles de tokens por segundo.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Producto</span></div>
+            <h3>El on-prem necesita pesos distribuibles</h3>
+            <p>Un despliegue soberano no puede entregar una clave de API. Un modelo de pesos abiertos que se ejecuta en una sola GPU o en un Mac Studio es el motor de flota en local, y un lanzamiento abierto es la capa de credibilidad.</p>
+            <p class="note">Consulta <a href="security.html">despliegue &amp; soberanía</a>: el on-prem es una función, no una nota al pie.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Riesgo</span></div>
+            <h3>Una flota de un solo proveedor es un punto único de fallo</h3>
+            <p>Lo vivimos: un solo error de saldo de un proveedor detuvo todas las sondas en curso. Tener un modelo de nivel de flota convierte una caída total en un failover.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill live">Foso</span></div>
+            <h3>La parte difícil ya está construida</h3>
+            <p>Entornos verificados, muestreo evaluado frente a un teacher, evaluadores de resultados, una suite de regresión bloqueada: la mayoría de los equipos deben construir ese pipeline antes de poder empezar. El nuestro se ejecuta todos los días, porque hacer bien el QA lo construyó para nosotros.</p>
+            <p class="note">52 escenarios verificados · evaluadores de resultados · arnés de muestreo · paquetes de evidencias, todo en funcionamiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- §03 Economics -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§03 · EFICIENTE &amp; CAPITALIZABLE</span>
+          <h2>Eficiente de operar. Capitalizable de poseer.</h2>
+          <p>Dos mitades de un mismo argumento. Lo eficiente es la historia operativa: el mismo trabajo de flota a una fracción del coste unitario, que se acumula con el tiempo. Lo capitalizable es la historia del balance: los pesos y el conjunto de datos que los entrenó se convierten en activos que poseemos, valoramos y distribuimos.</p>
+        </div>
+        <div class="tbl-wrap reveal">
+          <table class="tbl">
+            <thead><tr><th>Servicio</th><th>$ / M tokens de entrada</th><th>$ / M tokens de salida</th><th>Rol</th></tr></thead>
+            <tbody>
+              <tr><td>API de vanguardia</td><td>$3.00</td><td>$15.00</td><td>trabajo de vanguardia; se queda, por elección</td></tr>
+              <tr><td>API de nivel pequeño</td><td>$1.00</td><td>$5.00</td><td>el techo del nivel de volumen hoy</td></tr>
+              <tr><td>API económica</td><td>~$0.30</td><td>~$1.10</td><td>el motor de flota actual, alquilado</td></tr>
+              <tr class="hl"><td><b>Nomik-1 autoalojado</b></td><td colspan="2"><b>~$0.10–0.25 combinado, todo incluido con la flota en uso</b></td><td>una GPU, por lotes · $0 en reposo en hosts por token</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-3 reveal" style="margin-top:1.5rem">
+          <article class="feature">
+            <h3>El especialista gana al generalista en trabajo acotado</h3>
+            <p>La distribución de tareas de la flota es estrecha y conocida; 52 escenarios la describen. Un especialista 14B la cubre desde una sola GPU. El coste por token baja a medida que sube la utilización. Los precios de las API, nunca.</p>
+          </article>
+          <article class="feature">
+            <h3>El comportamiento en los pesos deja de refacturarse</h3>
+            <p>Hoy cada comportamiento vive en bytes de prompt: persona, controles, habilidades, reenviados en cada turno, en toda la flota. Integrados en los pesos, esos tokens desaparecen de la factura, y el ahorro se acumula porque los turnos de agentes dominan el tráfico.</p>
+            <p class="note">Medido: nuestro control de operaciones destructivas cuesta hoy 4 líneas de persona. En los pesos cuesta 0.</p>
+          </article>
+          <article class="feature">
+            <h3>Sin límites de tasa, sin caídas, sin cambios de precio</h3>
+            <p>Servir por cuenta propia significa que ningún límite de tasa por IP asalta el arnés, ningún error de saldo del proveedor detiene la flota, y ningún cambio de precio aguas arriba reescribe los costes unitarios de la noche a la mañana.</p>
+          </article>
+        </div>
+        <div class="section-head center-head reveal" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <h3 style="font-size:clamp(1.3rem,2.6vw,1.7rem)">Lo eficiente es la victoria operativa. Lo capitalizable es el activo.</h3>
+          <p>Los pesos, más el conjunto de datos que nadie más puede recopilar.</p>
+        </div>
+        <div class="grid-2 reveal">
+          <article class="feature">
+            <h3>Margen: el COGS se vuelve casi fijo</h3>
+            <p>El gasto en API escala 1:1 con cada puesto de agente vendido; el margen está limitado por la lista de precios de otro. Tener los pesos le da la vuelta a eso: el coste de servicio es casi fijo, así que el margen bruto se expande con el crecimiento.</p>
+          </article>
+          <article class="feature">
+            <h3>Un SKU que no puede existir con claves de API</h3>
+            <p>Despliegues on-prem y soberanos: los clientes regulados pagan una prima por una flota que se distribuye como pesos dentro de sus propios muros. Ningún proveedor de API puede estar en esa sala. Allí, el modelo es el SKU.</p>
+          </article>
+          <article class="feature">
+            <h3>Los pesos + el conjunto de datos son IP apropiable</h3>
+            <p>Las trayectorias de agentes empresariales evaluadas, con resultados de seguridad verificados, son una clase de datos poco común. El conjunto de datos más los pesos constituyen una IP duradera y licenciable: lo opuesto a un wrapper.</p>
+          </article>
+          <article class="feature">
+            <h3>El mercado ya valora esta estrategia</h3>
+            <p>Los laboratorios que post-entrenan bases abiertas y publican los pesos han captado capital con valoraciones de unicornio siguiendo exactamente esta receta. Los pesos abiertos funcionan además como go-to-market: distribución, credibilidad, contratación.</p>
+          </article>
+        </div>
+        <div class="reveal" style="margin-top:1.5rem;max-width:760px;margin-inline:auto;text-align:center">
+          <p class="lead">Y el posicionamiento está libre: <b>el modelo de agente gobernado</b>. El único modelo de agente abierto que se distribuye con un control de acciones destructivas medido y disciplina de aprobación en sus pesos. Auditoría transparente por defecto. Esa es la marca de Nomik, exportada como model card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §04 Trajectory -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§04 · TRAYECTORIA</span>
+          <h2>Cómo gira el volante de inercia.</h2>
+          <p>Seis etapas. Cuatro ya estaban en funcionamiento antes de que existiera el programa, porque así es como hacemos el QA de la flota. Solo el exportador del conjunto de datos y la ejecución de entrenamiento son nuevos, y cada paso está sujeto a aprobación y es barato de abandonar.</p>
+        </div>
+        <div class="flow reveal" aria-label="El volante de inercia de entrenamiento">
+          <div class="fstep"><i class="run">1 · activo</i><b>Escenarios</b><span>52 entornos verificados con fixtures y mocks</span></div>
+          <div class="fstep"><i class="run">2 · activo</i><b>Muestrear</b><span>la flota teacher lanza N sondas por escenario</span></div>
+          <div class="fstep"><i class="run">3 · activo</i><b>Evaluar</b><span>los evaluadores de resultados devuelven veredictos de aprobado / fallo</span></div>
+          <div class="fstep"><i class="build">4 · en construcción</i><b>Conjunto de datos</b><span>aprobado → datos de fine-tuning · aprobado⊕fallo → pares de preferencia</span></div>
+          <div class="fstep"><i class="build">5 · en construcción</i><b>Entrenar</b><span>post-entrenar una base 14B abierta en GPU alquiladas</span></div>
+          <div class="fstep"><i class="run">6 · activo</i><b>Evaluación</b><span>la suite bloqueada, puntuada frente a la base de referencia actual</span></div>
+        </div>
+        <p class="flow-loop">↺ los pesos se despliegan en la flota → cada traza futura proviene de un mejor modelo → los datos de la ronda 2 mejoran. El círculo virtuoso.</p>
+        <div class="tbl-wrap reveal" style="margin-top:1.5rem">
+          <table class="tbl">
+            <thead><tr><th>Fase</th><th>Trabajo</th><th>Criterio para avanzar</th><th>Cómputo</th></tr></thead>
+            <tbody>
+              <tr><td><b>P0 · primera señal</b> <span class="pill-tag">En curso</span></td><td>Exportador de trazas del banco de pruebas · 50–100K trayectorias evaluadas · ajuste fino LoRA de un 14B abierto · eval</td><td>Tasa de aprobación bloqueada a menos de 5 puntos de la referencia del modelo profesor</td><td>1–2 GPU alquilados, días</td></tr>
+              <tr><td>P1 · preferencia + RL</td><td>Ajuste por preferencias sobre pares de éxito/fallo · los evaluadores como recompensa verificable en las familias de escenarios más débiles</td><td>+10 puntos en al menos 2 comportamientos inalcanzables mediante prompt</td><td>mismo nodo, semanas</td></tr>
+              <tr><td>P2 · fine-tune completo</td><td>14B de parámetros completos · personas y controles grabados en los pesos · reducir el presupuesto de prompt</td><td>Paridad a la mitad del coste de servicio o mejor</td><td>un nodo de 8 GPU, días</td></tr>
+              <tr><td>P3 · lanzamiento</td><td>Pesos + el conjunto de datos derivado de los escenarios + un informe técnico en Hugging Face, Apache-2.0 · predeterminado de la flota para el nivel de volumen · el paquete on-prem</td><td>n/a</td><td>~ninguno</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-2 reveal" style="margin-top:1.5rem">
+          <article class="feature">
+            <h3>Anti-objetivos, explícitos</h3>
+            <ul class="bullets">
+              <li><b>Sin preentrenamiento</b>: el postentrenamiento es toda la estrategia. Los preentrenamientos del ecosistema abierto son nuestra base de partida, no nuestra factura.</li>
+              <li><b>Sin compras de hardware</b>: solo GPU alquilados, y el servicio recurre a un alojamiento por token sin coste de inactividad.</li>
+              <li><b>Nada de 70B+ hasta agotar el 14B</b>: la escala es la última palanca, no la primera.</li>
+              <li><b>Las API de vanguardia se quedan</b>: Nomik-1 apunta al nivel de volumen. Los modelos de vanguardia conservan el trabajo de vanguardia, por elección.</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h3>Por qué el banco de pruebas es la ventaja decisiva</h3>
+            <p>Lo que los mejores laboratorios de modelos abiertos tardaron años en construir, entornos verificados, generación de datos sintéticos, muestreo por rechazo, es estructuralmente idéntico a lo que nuestro programa de entrenamiento de agentes ejecuta cada día: escenarios con fixtures, muestreo frente a un modelo profesor, evaluadores que verifican los resultados y un conjunto de regresión bloqueado.</p>
+            <p class="note">La mayoría de los equipos que intentan un ajuste fino deben construir primero el pipeline de evaluación y datos. El nuestro está operativo y depurado de forma adversaria.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- §05 End-state -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="secno">§05 · ESTADO FINAL</span>
+          <h2>A dónde llega la trayectoria.</h2>
+          <p>Una división honesta: lo que el banco de pruebas ya ha medido, que es la razón por la que creemos en la tesis, frente a lo que el estado final aporta una vez que el círculo virtuoso ha funcionado.</p>
+        </div>
+        <div class="verdicts reveal">
+          <article class="feature measured">
+            <h3>● Medido hoy</h3>
+            <ul>
+              <li>Un control de operación destructiva pasó del 56% al 100% de cumplimiento con una edición de persona de 4 líneas: prueba de que el comportamiento se mueve con la palanca adecuada, y de que el presupuesto de prompt es la moneda actual.</li>
+              <li>El alcance de delegación se sitúa cerca del 50%, sin cambios a lo largo de las ediciones de persona medidas: clasificado como inalcanzable mediante prompt, un techo del sesgo previo del modelo.</li>
+              <li>52 escenarios bloqueados forman un conjunto de evaluación de nivel de regresión, operativo y depurado de forma adversaria.</li>
+              <li>SPOF de proveedor confirmado en producción: un único error de proveedor detuvo todo el sondeo de la flota.</li>
+            </ul>
+          </article>
+          <article class="feature endstate">
+            <h3>○ Lo que aporta ser dueño del modelo</h3>
+            <ul>
+              <li>El nivel de volumen autoservido a la mitad del coste de API o menos, con un margen que crece con la utilización.</li>
+              <li>Los comportamientos viven en los pesos: alcance de delegación del 70%+, el control destructivo del 95%+ sin ninguna viñeta de prompt.</li>
+              <li>El on-prem se hace realidad: la flota se entrega como pesos en un solo GPU o un Mac Studio.</li>
+              <li>Pesos y conjunto de datos públicos en Hugging Face bajo Apache-2.0: marca, distribución y un activo licenciable.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="tbl-wrap reveal" style="margin-top:1.5rem">
+          <table class="tbl">
+            <thead><tr><th>Métrica</th><th>Hoy (medido)</th><th>Objetivo (post-P1)</th><th>Verificado por</th></tr></thead>
+            <tbody>
+              <tr><td>Tasa de aprobación del conjunto bloqueado</td><td>referencia del modelo profesor</td><td>≥ paridad</td><td>el barrido bloqueado completo</td></tr>
+              <tr><td>Alcance de delegación</td><td>~50%, un techo de sesgo previo</td><td>≥ 70%</td><td>escenarios de flota muestreados</td></tr>
+              <tr><td>Control destructivo, sin viñeta de prompt</td><td>56%</td><td>≥ 95%</td><td>el escenario de limpieza destructiva</td></tr>
+              <tr><td>Coste de servicio del nivel de volumen</td><td>API por token</td><td>≤ 50%</td><td>telemetría de costes de la flota</td></tr>
+              <tr><td>Servible on-prem</td><td>no</td><td>un GPU / Mac Studio</td><td>el entorno de demostración on-prem</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kill reveal" style="margin-top:1.5rem">
+          <h3>▲ Criterios de abandono, comprometidos de antemano</h3>
+          <p><b>Abandono P0</b>: la eval cae más de 10 puntos por debajo de la referencia tras una iteración de mezcla de datos → parar. Total perdido: días de cómputo alquilado y un exportador de trazas reutilizable.</p>
+          <p><b>Abandono P1</b>: ninguna métrica inalcanzable mediante prompt se mueve → quedarse solo con LoRA por el ahorro de coste, revisar en la siguiente generación de modelo base.</p>
+          <p>El peor caso está acotado y es pequeño. El mejor caso es un foso defensivo: pesos que nadie más puede entrenar, porque nadie más tiene el banco de pruebas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- North star CTA -->
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <span class="eyebrow" style="justify-content:center">Estrella polar</span>
+          <h2>Nomik funciona con Nomik.</h2>
+          <p>Para 2028, el nivel de volumen de la flota funcionará con pesos que Nomik posee, los clientes on-prem recibirán el modelo dentro de sus propios muros, y el conjunto de datos de trayectorias evaluadas que lo entrenó será un foso que ningún competidor podrá reunir. Las API de vanguardia se quedan para el trabajo de vanguardia: por elección, no por dependencia.</p>
+          <p class="mono muted" style="font-size:0.85rem;margin-bottom:1.2rem">fleet.model = nomik-1 · pesos en propiedad · gobernado por diseño</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Sigue el programa</a>
+          <p class="muted" style="margin-top:1.1rem;font-size:0.85rem">¿Quieres la plataforma que impulsa? <a href="cloud.html" style="color:var(--brand-ink);font-weight:600">Nomik Cloud</a> · <a href="desktop.html" style="color:var(--brand-ink);font-weight:600">Nomik Desktop</a> · <a href="security.html" style="color:var(--brand-ink);font-weight:600">on-prem &amp; soberanía</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm2)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm2)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
+      <nav class="footer-links">
+        <a href="cloud.html">Nomik Cloud</a>
+        <a href="desktop.html">Nomik Desktop</a>
+        <a href="research.html">Nomik-1 Research</a>
+        <a href="product.html">Producto</a>
+        <a href="agents.html">Agentes</a>
+        <a href="how-it-works.html">Cómo funciona</a>
+        <a href="use-cases.html">Casos de uso</a>
+        <a href="marketplace.html">Conectores</a>
+        <a href="recipes.html">Recetas</a>
+        <a href="skills.html">Habilidades &amp; prompts</a>
+        <a href="developers.html">Desarrolladores</a>
+        <a href="sdk.html">Agent SDK</a>
+        <a href="mcp.html">MCP</a>
+        <a href="docs.html">Docs</a>
+        <a href="security.html">Seguridad</a>
+        <a href="pricing.html">Precios</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="terms.html">Términos</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="index.html#waitlist">Acceso anticipado</a>
+      </nav>
+      <div class="footer-social" aria-label="Redes sociales">
+        <a href="https://twitter.com/nomik_ai" target="_blank" rel="noopener" aria-label="Nomik en X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik en LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik en GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+      </div>
+      <span class="muted">© <span id="year"></span> Nomik</span>
+    </div>
+  </footer>
+
+  <script src="/app.js?v=20260606"></script>
+</body>
+</html>

@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Security &amp; Sovereignty · Nomik</title>
-  <meta name="description" content="Powerful agents, controlled consequences: approvals, autonomy dial, spend caps, kill switch, RBAC, and a glass-box audit, plus on-prem deployment on your own local models so data never leaves your boundary." />
-  <meta property="og:title" content="Security and Sovereignty · Nomik" />
-  <meta property="og:description" content="Powerful agents, controlled consequences: approvals, autonomy dial, spend caps, kill switch, RBAC, and a glass-box audit, plus on-prem deployment on your own local models so data never leaves your boundary." />
+  <title>Security &amp; Trust · Nomik</title>
+  <meta name="description" content="Powerful agents, gated consequences: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation (FORCE row-level security, an AES-256-GCM secrets vault), RS256 auth, and a glass-box audit, plus open-core self-hosting on your own models." />
+  <meta property="og:title" content="Security &amp; Trust · Nomik" />
+  <meta property="og:description" content="Powerful agents, gated consequences: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation, RS256 auth, and a glass-box audit, plus open-core self-hosting on your own models." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.nomik.ai/security.html" />
   <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Security and Sovereignty · Nomik" />
-  <meta name="twitter:description" content="Powerful agents, controlled consequences: approvals, autonomy dial, spend caps, kill switch, RBAC, and a glass-box audit, plus on-prem deployment on your own local models so data never leaves your boundary." />
+  <meta name="twitter:title" content="Security &amp; Trust · Nomik" />
+  <meta name="twitter:description" content="Powerful agents, gated consequences: human approvals, an autonomy dial with a money-and-destructive floor, spend caps that pause the fleet, a fail-closed kill switch, per-tenant isolation, RS256 auth, and a glass-box audit, plus open-core self-hosting on your own models." />
   <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
   <link rel="canonical" href="https://www.nomik.ai/security.html" />
   <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
@@ -25,6 +25,15 @@
   <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
   <link rel="stylesheet" href="styles.css?v=20260606" />
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/security.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/security.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/security.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/security.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <!--/i18n:alt-->
 </head>
 <body>
   <header class="nav">
@@ -68,16 +77,16 @@
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
       </nav>
-      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/security.html" hreflang="en" lang="en" class="is-active" aria-current="page">EN</a><a href="/fr/security.html" hreflang="fr" lang="fr">FR</a><a href="/es/security.html" hreflang="es" lang="es">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
     </div>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <span class="eyebrow">Security &amp; Sovereignty</span>
+        <span class="eyebrow">Security &amp; Trust</span>
         <h1>Powerful agents. You hold the controls.</h1>
-        <p>Control doesn't come from crippling the agents, it comes from making everything visible and putting a human gate on the consequential steps. And you choose where it all runs.</p>
+        <p>Control doesn't come from crippling the agents. It comes from making everything visible and putting a human gate on the steps that touch money, data, or the outside world. The boundary, the spend, and the off switch stay in your hands.</p>
       </div>
     </section>
 
@@ -87,8 +96,8 @@
         <div>
           <span class="eyebrow">The principle</span>
           <h2>Open hands, gated consequences.</h2>
-          <p class="lead">Inside their own sandbox, agents act freely, that's what makes them useful. The things that touch the outside world or cost real money are proposed by agents and approved by humans.</p>
-          <p class="lead">Capability isn't the risk; <em>unsupervised consequence</em> is. So that's what we gate, and everything is visible while it happens.</p>
+          <p class="lead">Inside their own sandbox, agents act freely, that's what makes them useful. The things that touch the outside world or cost real money are <em>proposed</em> by an agent and <em>approved</em> by a human. The tool call itself is the proposal, so nothing fires until you say yes.</p>
+          <p class="lead">Capability isn't the risk; <em>unsupervised consequence</em> is. So that's what we gate, in code, at the one place every action passes through, and everything stays visible while it happens.</p>
         </div>
         <div>
           <div class="chat solo" aria-label="An approval card in chat">
@@ -96,7 +105,7 @@
               <div class="chat-head"><span class="hash">#</span> operations</div>
               <div class="chat-body">
                 <div class="msg"><span class="avatar p2">I</span><div class="msg-body"><div class="msg-top"><span class="msg-name">Iris <span class="tag tag-agent">agent</span></span><span class="msg-time">08:32</span></div><p class="msg-text">Refund €480 to order #5521 (duplicate charge confirmed).</p>
-                  <div class="connect-card consequential"><span class="ilogo"><img src="logos/stripe.svg" alt="" width="18" height="18"></span><div><div class="cc-name">Approval needed · refund €480</div><div class="cc-sub">Money · gated</div></div><span class="btn btn-consequential">Approve</span></div>
+                  <div class="connect-card consequential"><span class="ilogo"><img src="logos/stripe.svg" alt="" width="18" height="18"></span><div><div class="cc-name">Approval needed · refund €480</div><div class="cc-sub">Money · human-only floor</div></div><span class="btn btn-consequential">Approve</span></div>
                 </div></div>
               </div>
               <div class="chat-composer"><span class="cur">›</span> Message #operations…</div>
@@ -112,14 +121,15 @@
         <div class="section-head center-head reveal">
           <span class="eyebrow">The control surface</span>
           <h2>Everything a human holds.</h2>
+          <p>Six controls, each enforced in the backend, not just drawn in the UI.</p>
         </div>
         <div class="grid-3 reveal">
-          <article class="feature"><h3>Approvals (HITL)</h3><p>Consequential actions are gated, an agent initiates, a human approves. Cards appear inline with full context and Approve / Deny.</p></article>
-          <article class="feature"><h3>Autonomy dial</h3><p>Per workspace and action-class: <b>suggest-only → one-click → auto-with-notify</b>. Keep money on suggest-only while routine drafting runs automatically.</p></article>
-          <article class="feature"><h3>Spend caps &amp; model ceiling</h3><p>Ceilings per task / agent / squad / workspace. A model-tier cap (never Opus; Sonnet ceiling; cheap/local for volume) means cost can't silently balloon.</p></article>
-          <article class="feature"><h3>Stop &amp; rate-limit</h3><p>Stop any turn, session, or the whole fleet, live from chat. Per-thread turn budgets cap runaway loops; pause the workspace at once.</p></article>
-          <article class="feature"><h3>Glass-box audit</h3><p>Every thought, tool, and dollar is a traced event in #events; a decisions ledger records every approval, durable and reviewable.</p></article>
-          <article class="feature"><h3>Roles &amp; permissions</h3><p>Owner / Admin / Member, plus scoped agents. The Warden has operator parity minus the human-only acts (approving gated actions, billing identity).</p></article>
+          <article class="feature"><h3>Approvals (HITL)</h3><p>Consequential actions are held at the gate: an agent proposes, a human approves, and the platform re-runs the approved action server-side, so the agent never re-touches it. Cards appear inline with full context and Approve / Deny.</p></article>
+          <article class="feature"><h3>Autonomy dial</h3><p>Per workspace, per action-class, three stops: <b>suggest-only → one-click approve → auto&nbsp;+&nbsp;notify</b>. Let routine drafting run on its own while money stays on suggest-only. Money and destructive actions stay gated <em>even at full autonomy</em>, a floor the dial can't cross.</p></article>
+          <article class="feature"><h3>Spend caps that pause the fleet</h3><p>Set a daily, monthly, or lifetime cap on a workspace. Cross it and the workforce pauses, then auto-resumes when the next budget window opens. <b>Any model is allowed, including Opus</b>, Sonnet is the sensible default, so it's <em>spend</em>, not a model gate, that's bounded.</p></article>
+          <article class="feature"><h3>Kill switch &amp; rate limits</h3><p>Pause any turn, any agent, or the whole workspace, live from chat. A paused workspace fails closed, returning <span class="mono">423</span> to every agent action, paused means paused. Sliding per-thread turn budgets stop runaway agent-to-agent loops.</p></article>
+          <article class="feature"><h3>Glass-box audit</h3><p>Every thought, tool call, and dollar is a durable, traced event you can replay. A decisions ledger records every approval, who raised it, who resolved it, on whose credentials, and what it did.</p></article>
+          <article class="feature"><h3>Roles &amp; scoped agents</h3><p>Owner / Admin / Member for people. Agents are workspace-pinned principals that can never perform a human-only act, approving a gate, changing billing, or relaxing the dial, and an agent can never approve its own request.</p></article>
         </div>
       </div>
     </section>
@@ -129,20 +139,68 @@
       <div class="wrap">
         <div class="section-head center-head reveal">
           <span class="eyebrow">What's gated by default</span>
-          <h2>The consequential set always asks first.</h2>
+          <h2>Seven risk classes, each one asks first.</h2>
+          <p>Every connector action is classified into one of seven risk categories before it can run. Read-only verbs pass straight through; the categories below hold.</p>
         </div>
         <div class="tbl-wrap reveal">
           <table class="tbl">
             <thead><tr><th>Class</th><th>Examples</th></tr></thead>
             <tbody>
-              <tr><td>Money</td><td>Any spend or payment, refunds, plan / billing changes</td></tr>
-              <tr><td>Releases</td><td>Deploys to production, publishing</td></tr>
-              <tr><td>Outbound to customers</td><td>Emails, ticket replies, social posts, WhatsApp / SMS / DM, outbound phone calls</td></tr>
-              <tr><td>Destructive</td><td>Deleting data, dropping resources, removing members, deleting a workspace</td></tr>
-              <tr><td>Access</td><td>Granting credentials, connecting / disconnecting integrations</td></tr>
-              <tr><td>Org changes</td><td>Retiring agents (and, gated, creating them)</td></tr>
+              <tr><td>Money <span class="pill-tag">Floor</span></td><td>Any spend or payment, refunds, plan / billing changes</td></tr>
+              <tr><td>Destructive <span class="pill-tag">Floor</span></td><td>Deleting data, dropping resources, removing members, deleting a workspace</td></tr>
+              <tr><td>Outbound</td><td>Customer email, ticket replies, social posts, and chat messages</td></tr>
+              <tr><td>Releases</td><td>Deploys to production, publishing, activating a workflow</td></tr>
+              <tr><td>Access</td><td>Granting credentials, connecting / disconnecting integrations, relaxing the autonomy dial</td></tr>
+              <tr><td>Org changes</td><td>Hiring and retiring agents, membership changes</td></tr>
+              <tr><td>Data</td><td>Reading or exporting regulated / personal data</td></tr>
             </tbody>
           </table>
+        </div>
+        <p class="reveal" style="text-align:center;margin-top:1.25rem;color:var(--gray-300);font-size:0.95rem;">The two <span class="pill-tag">Floor</span> classes, money and destructive, stay human-approved even when the dial is turned all the way up.</p>
+      </div>
+    </section>
+
+    <!-- Approve from anywhere -->
+    <section class="band">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Approve from anywhere</span>
+          <h2>The gate finds you, even with the tab closed.</h2>
+          <p class="lead">An approval is only useful if it reaches you. When an agent raises a gated action, Nomik pushes it to your devices, no open tab required, and lets you resolve it on the spot.</p>
+          <ul class="bullets">
+            <li><b>Web push wakes a closed tab</b>: the same notification that reaches your phone makes an open desktop instant.</li>
+            <li><b>Email fallback for the urgent ones</b>: if a high-priority interrupt reaches zero live devices, it falls back to email, so an approval is never silently lost.</li>
+            <li><b>One tap to resolve</b>: tapping Approve opens Nomik and resolves the action on the spot, authorized by a single-use token that's spent on first click.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">The decisions ledger</span>
+          <h2>A record an auditor can actually read.</h2>
+          <p class="lead">Every gated decision becomes a durable row, not a log line that scrolls away. The trail renders in plain language, <em>on behalf of Alice Martin · using Alice's Gmail</em>, and survives reloads and restarts.</p>
+          <ul class="bullets">
+            <li><b>Full lifecycle</b>: pending → approved or denied → executed or failed, with the approver and timestamp on every transition.</li>
+            <li><b>Approver ≠ requester</b>: enforced in code, an agent cannot resolve a gate it raised, and no one can self-approve a hire.</li>
+            <li><b>Cost is first-class</b>: each turn carries its own dollar figure, rolled up per agent and per workspace.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Isolation & secrets -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Isolation &amp; secrets</span>
+          <h2>Tenants don't leak. Enforced below the app.</h2>
+          <p>The strongest guarantees are the ones that don't depend on application code remembering to check. Ours live in the database, the cipher, and the message bus.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature"><h3>A tenant fence in the database</h3><p>Every tenant table runs Postgres <span class="mono">FORCE</span> row-level security. The app connects as a demoted role that is <em>not</em> a superuser and <em>cannot</em> bypass RLS, the service refuses to boot otherwise, and a CI canary proves one workspace can't read another's rows.</p></article>
+          <article class="feature"><h3>A vault, sealed to your workspace</h3><p>Connector credentials are encrypted with <span class="mono">AES-256-GCM</span> and cryptographically bound to your workspace ID. A credential moved to another tenant fails to decrypt, closed. Secrets never sit in plaintext and never leave the vault unapproved.</p></article>
+          <article class="feature"><h3>A message bus per workspace</h3><p>Each workspace is its own isolated account on the agent message bus. An agent's credentials can't even <em>name</em> another workspace's subjects, and the sandbox set is denied the control-plane subjects outright.</p></article>
+          <article class="feature"><h3>A container per agent</h3><p>Each agent runs in its own Docker container with CPU, memory, and process limits, a no-new-privileges flag, and seccomp + AppArmor profiles. Compute is contained, not shared.</p></article>
+          <article class="feature"><h3>Asymmetric, revocable sessions</h3><p>Access tokens are <span class="mono">RS256</span>-signed and verified against a published JWKS. Refresh tokens rotate, hashed at rest, and a reused one kills the whole family. A Redis denylist enforces logout-everywhere across services, fail-closed.</p></article>
+          <article class="feature"><h3>A typed identity contract</h3><p>Every request carries a principal that is explicitly <em>human</em> or <em>agent</em>. Human-only routes opt in by name, and every refusal returns a machine-readable code, so an agent sees a precise reason, not a generic 403.</p></article>
         </div>
       </div>
     </section>
@@ -153,23 +211,26 @@
         <div class="section-head center-head reveal">
           <span class="eyebrow">Your workforce, your boundary</span>
           <h2>Run it where your data is allowed to live.</h2>
-          <p>A capable agent workforce that runs entirely inside your walls is what most agent platforms can't offer. Choose the boundary that fits your risk and compliance.</p>
+          <p>A capable agent workforce that can run inside your own walls is what most agent platforms can't offer. We're honest about what's shipped today and what's on the way.</p>
         </div>
         <div class="grid-3 reveal">
           <article class="feature">
+            <div class="status-row"><span class="status-pill live">Live</span></div>
             <div class="dlabel">SaaS</div>
             <h3>We host it</h3>
-            <p>The fastest start. Nomik-managed, region-pinnable. Cloud models (your keys or managed) or local-via-us.</p>
+            <p>The fastest start. Nomik-managed, region-pinnable. Cloud models on your keys or managed for you, plus a key-less local embedding leg by default.</p>
           </article>
           <article class="feature">
-            <div class="dlabel">Private cloud</div>
-            <h3>Your cloud account</h3>
-            <p>Runs inside your VPC and boundary. Your keys or local models in your own infrastructure.</p>
+            <div class="status-row"><span class="status-pill soon">Coming</span></div>
+            <div class="dlabel">Open-core</div>
+            <h3>Self-host the core</h3>
+            <p>The platform core, workspaces, agents, connectors, the gate, the audit, is open-core under an FSL license. The same code runs in your boundary; the cloud edition adds billing, SSO, and seats on top.</p>
           </article>
           <article class="feature">
-            <div class="dlabel">On-prem</div>
-            <h3>Your data center</h3>
-            <p>Never leaves the building. Local / open models on your GPUs, for regulated, public-sector, and air-gapped environments.</p>
+            <div class="status-row"><span class="status-pill soon">On the roadmap</span></div>
+            <div class="dlabel">Private cloud · on-prem</div>
+            <h3>Your VPC or data center</h3>
+            <p>A turnkey private-cloud and air-gapped bundle, local model serving on your GPUs, for regulated, public-sector, and offline environments. In active design, not yet shipped.</p>
           </article>
         </div>
       </div>
@@ -180,31 +241,59 @@
       <div class="wrap split">
         <div>
           <span class="eyebrow">Any model, including your own</span>
-          <h2>No prompt, file, or secret has to leave your boundary.</h2>
-          <p class="lead">Engines are model-agnostic with a configurable endpoint, so an agent can point at a self-hosted, open-weights model instead of a cloud API. Combined with on-prem, your data never reaches a third-party provider.</p>
+          <h2>Point the fleet at a model you control.</h2>
+          <p class="lead">Engines are model-agnostic with a configurable endpoint, so an agent can run against a self-hosted, open-weights model instead of a cloud API. Paired with self-hosting, prompts and files stay where you put them.</p>
           <ul class="bullets">
-            <li><b>Local / open models</b>: run the fleet on your own GPUs; bounded, flat compute cost.</li>
-            <li><b>Best-of-breed where you allow it</b>: frontier cloud model for the hard call, local models for high-volume work.</li>
-            <li><b>Even voice stays in</b>: self-hosted speech-to-text and text-to-speech keep call audio inside the boundary.</li>
+            <li><b>Local / open models</b>: run agents against your own GPUs over a standard endpoint (Ollama, vLLM, LM Studio, llama.cpp), at flat, bounded compute cost.</li>
+            <li><b>Best-of-breed where you allow it</b>: a frontier cloud model for the hard call, local models for high-volume work, your choice per role.</li>
+            <li><b>Local knowledge by default</b>: the workspace knowledge base embeds on a free, key-less local model, so your documents' vectors stay in by default, no key required.</li>
           </ul>
         </div>
         <div>
           <span class="eyebrow">EU &amp; GDPR</span>
           <h2>Built for the regulated and the sovereign.</h2>
-          <p class="lead">Operate in-region with a compliance posture that auditors accept.</p>
+          <p class="lead">A privacy-and-residency posture designed in from the start. (We're candid about certifications, see what's real below.)</p>
           <ul class="bullets">
-            <li><b>Data residency</b>: pin processing and storage to the EU or to your own infrastructure.</li>
-            <li><b>GDPR posture</b>: DPA, lawful basis, data-subject requests, retention controls.</li>
-            <li><b>Compliance-aware integrations</b>: respect e-invoicing networks, VAT validation, and the like.</li>
-            <li><b>Isolation &amp; vault</b>: each agent in its own container; secrets scoped to the workspace, granted by you, never held unapproved.</li>
+            <li><b>Data residency</b>: pin processing and storage to the EU, or to your own infrastructure with self-hosting.</li>
+            <li><b>GDPR posture</b>: a Data Processing Addendum, lawful basis, data-subject requests, and retention controls.</li>
+            <li><b>Erase &amp; export</b>: account deletion and data export paths built around the data-subject's rights.</li>
+            <li><b>Isolation &amp; vault</b>: each agent isolated; secrets scoped to the workspace, granted by you, never held unapproved.</li>
           </ul>
-          <a class="more-link" href="pricing.html">See deployment tiers &amp; pricing →</a>
+          <a class="more-link" href="dpa.html">Read the Data Processing Addendum →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Told straight -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Told straight</span>
+          <h2>What's real today, and what isn't yet.</h2>
+          <p>The same honesty we hold the agents to, we hold ourselves to. These are in build, not live, and we won't pretend otherwise.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">On the roadmap</span></div>
+            <h3>On-prem &amp; air-gapped</h3>
+            <p>The open-core split is shipped and CI-gated. A turnkey on-prem / air-gapped bundle with local model serving is specced and in design, not yet a download.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">In development</span></div>
+            <h3>Voice privacy</h3>
+            <p>Voice runs on cloud speech providers today and hasn't been exercised end to end. Keeping call audio fully inside your boundary is a goal, not a current claim.</p>
+          </article>
+          <article class="feature">
+            <div class="status-row"><span class="status-pill soon">Planned</span></div>
+            <h3>Independent certification</h3>
+            <p>The app-layer controls above are real and enforced. We don't yet hold SOC&nbsp;2 or ISO&nbsp;27001, and we won't imply an audit we haven't passed.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Open & sovereign -->
-    <section class="band">
+    <section>
       <div class="wrap">
         <div class="section-head center-head reveal">
           <span class="eyebrow">Open &amp; sovereign</span>
@@ -231,7 +320,7 @@
       <div class="wrap">
         <div class="cta-card reveal">
           <h2>An AI workforce your auditors can live with.</h2>
-          <p>Talk to us about private-cloud and on-prem deployments on your own models.</p>
+          <p>Talk to us about self-hosting, data residency, and running on your own models.</p>
           <a class="btn btn-primary" href="contact.html">Talk to us</a>
         </div>
       </div>

@@ -1,127 +1,1135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nomik.ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/product.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/product.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/product.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/product.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/product.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/product.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/product.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/product.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/product.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/product.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/product.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/product.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/product.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/product.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/product.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/product.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/product.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/product.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/product.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/cloud.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cloud.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cloud.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cloud.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cloud.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cloud.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cloud.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cloud.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cloud.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cloud.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cloud.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/research.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/research.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/research.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/research.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/research.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/research.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/research.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/research.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/research.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/research.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/research.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/research.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/research.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/research.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/research.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/research.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/sdk.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/sdk.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/sdk.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/sdk.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/sdk.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/sdk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/sdk.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/sdk.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/sdk.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/sdk.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/sdk.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/mcp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/mcp.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/mcp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/mcp.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/mcp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/mcp.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/mcp.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/mcp.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/mcp.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/mcp.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/mcp.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/marketplace.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/marketplace.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/marketplace.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/marketplace.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/marketplace.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/marketplace.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/marketplace.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/marketplace.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/marketplace.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/marketplace.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/marketplace.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/recipes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/recipes.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/recipes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/recipes.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/recipes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/recipes.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/recipes.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/recipes.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/recipes.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/recipes.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/skills.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/skills.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/skills.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/skills.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/skills.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/skills.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/skills.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/skills.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/skills.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/skills.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/skills.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/skills.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/skills.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/skills.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/skills.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/skills.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/skills.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/skills.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/skills.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/agents.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/agents.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/agents.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/agents.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/agents.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/agents.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/agents.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/agents.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/agents.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/agents.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/agents.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/agents.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/agents.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/agents.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/agents.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/agents.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/agents.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/agents.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/agents.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/desktop.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/desktop.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/desktop.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/desktop.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/desktop.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/desktop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/desktop.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/desktop.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/desktop.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/desktop.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/desktop.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/developers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/developers.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/developers.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/developers.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/developers.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/developers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/developers.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/developers.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/developers.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/developers.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/developers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/developers.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/developers.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/developers.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/developers.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/developers.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/developers.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/developers.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/developers.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/docs.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/docs.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/docs.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/docs.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/docs.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/docs.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/docs.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/docs.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/docs.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/docs.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/docs.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/docs.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/docs.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/docs.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/docs.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/docs.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/docs.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/docs.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/docs.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/how-it-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/how-it-works.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/how-it-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/how-it-works.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/how-it-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/how-it-works.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/how-it-works.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/how-it-works.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/how-it-works.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/how-it-works.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/how-it-works.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/use-cases.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/use-cases.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/use-cases.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/use-cases.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/use-cases.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/use-cases.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/use-cases.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/use-cases.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/use-cases.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/use-cases.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/use-cases.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/security.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/security.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/security.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/security.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/security.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/security.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/security.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/pricing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/pricing.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/pricing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/pricing.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/pricing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/pricing.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/pricing.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/pricing.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/pricing.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/pricing.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/privacy.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/privacy.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/privacy.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/privacy.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/privacy.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/privacy.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/privacy.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/terms.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/terms.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/terms.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/terms.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/terms.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/terms.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/terms.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/dpa.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/dpa.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/dpa.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/dpa.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/dpa.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/dpa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/dpa.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/dpa.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/dpa.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/dpa.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/dpa.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.nomik.ai/cookies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cookies.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cookies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cookies.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cookies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nomik.ai/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/cookies.html" />
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cookies.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cookies.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/fr/cookies.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nomik.ai/es/cookies.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

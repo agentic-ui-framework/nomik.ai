@@ -25,6 +25,15 @@
   <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
   <link rel="stylesheet" href="styles.css?v=20260606" />
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/terms.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/terms.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/terms.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/terms.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <!--/i18n:alt-->
 </head>
 <body>
   <header class="nav">
@@ -68,7 +77,7 @@
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
       </nav>
-      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/terms.html" hreflang="en" lang="en" class="is-active" aria-current="page">EN</a><a href="/fr/terms.html" hreflang="fr" lang="fr">FR</a><a href="/es/terms.html" hreflang="es" lang="es">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
     </div>
   </header>
 
@@ -77,7 +86,7 @@
       <div class="wrap">
         <span class="eyebrow">Legal</span>
         <h1>Terms of service.</h1>
-        <p>The agreement between Nomik and the people and teams that use the service. Plain language, no surprises. Last updated: 23 May 2026.</p>
+        <p>The agreement between Nomik and the people and teams that use the service. Plain language, no surprises. Last updated: 17 June 2026.</p>
       </div>
     </section>
 
@@ -108,6 +117,7 @@
 
         <h2>Third-party services and models</h2>
         <p class="lead">If you connect third-party integrations or model providers (OpenAI, Anthropic, Google, ElevenLabs, and others), your use of those services is governed by their terms. Charges from model providers under your own keys are between you and the provider.</p>
+        <p class="lead">When you connect an app over OAuth or with an API key, you authorize Nomik and your agents to access and act within that app on your behalf, limited to the permissions (scopes) you approve. We store those credentials encrypted and use them only to provide the features you request. You can revoke this access at any time by disconnecting the app in Nomik or from the provider directly. Our handling of data obtained through connected apps — including Google user data — is described in our <a href="privacy.html" style="color:var(--brand-ink);font-weight:600">Privacy Policy</a>.</p>
 
         <h2>Fees, refunds, and trials</h2>
         <p class="lead">Paid plans bill in advance on a monthly or annual cycle. Usage-based charges (where applicable) bill in arrears. You can cancel at any time; we don't refund partial periods unless required by law. Free trials end automatically.</p>

@@ -33,7 +33,7 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
     const div = document.createElement("div");
     div.className = "bg-logos";
     div.setAttribute("aria-hidden", "true");
-    div.innerHTML = pick.map((s) => `<img src="logos/${s}.svg" alt="">`).join("");
+    div.innerHTML = pick.map((s) => `<img src="/logos/${s}.svg" alt="">`).join("");
     el.insertAdjacentElement("afterbegin", div);
   });
 })();
@@ -75,7 +75,7 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
       const pos = ["top", "bottom", "left", "right"].map((k) => (p[k] ? `${k}:${p[k]};` : "")).join("");
       d.style.cssText = `width:${p.s}px;height:${p.s}px;${pos}--r:${p.r}deg;transform:rotate(${p.r}deg);` +
         `animation:fg-float ${6 + i * 0.6}s ease-in-out ${(i * 0.5).toFixed(1)}s infinite;`;
-      d.innerHTML = `<img src="logos/${pool[i % pool.length]}.svg" alt="" width="${Math.round(p.s * 0.5)}" height="${Math.round(p.s * 0.5)}">`;
+      d.innerHTML = `<img src="/logos/${pool[i % pool.length]}.svg" alt="" width="${Math.round(p.s * 0.5)}" height="${Math.round(p.s * 0.5)}">`;
       el.appendChild(d);
     });
   });

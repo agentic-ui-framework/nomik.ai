@@ -25,6 +25,15 @@
   <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
   <link rel="stylesheet" href="styles.css?v=20260606" />
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/privacy.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/privacy.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <!--/i18n:alt-->
 </head>
 <body>
   <header class="nav">
@@ -68,7 +77,7 @@
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
       </nav>
-      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/privacy.html" hreflang="en" lang="en" class="is-active" aria-current="page">EN</a><a href="/fr/privacy.html" hreflang="fr" lang="fr">FR</a><a href="/es/privacy.html" hreflang="es" lang="es">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
     </div>
   </header>
 
@@ -77,7 +86,7 @@
       <div class="wrap">
         <span class="eyebrow">Legal</span>
         <h1>Privacy.</h1>
-        <p>How Nomik handles personal data, the lawful bases we rely on, how long we keep it, and how to exercise your rights. Last updated: 23 May 2026.</p>
+        <p>How Nomik handles personal data, the lawful bases we rely on, how long we keep it, and how to exercise your rights. Last updated: 17 June 2026.</p>
       </div>
     </section>
 
@@ -126,6 +135,41 @@
 
         <h2>Sharing and processors</h2>
         <p class="lead">We use a small set of processors to run the service (hosting, payments, email, support). Each one is bound by a data processing agreement and processes data only on our instructions. On request we can share the current sub-processor list. For Enterprise customers we sign a Data Processing Agreement (see <a href="dpa.html" style="color:var(--brand-ink);font-weight:600">DPA</a>).</p>
+
+        <h2 id="connected-apps">Connected apps and provider data</h2>
+        <p class="lead">Nomik lets you connect third-party apps — such as Google Workspace, Airtable, Slack, Notion and GitHub — so your agents can act in them on your behalf. Every connection follows the same principles:</p>
+        <ul class="bullets">
+          <li><b>Least privilege</b>: we request only the permissions (scopes) a connector needs for the features you use, and you see and approve them on the provider's own consent screen before anything is granted.</li>
+          <li><b>Encrypted credentials</b>: OAuth tokens and API keys are stored encrypted (AES-256-GCM) in a per-workspace vault, bound to your workspace, and are never written to logs.</li>
+          <li><b>Acts on your instruction</b>: agents read or change data in a connected app only to carry out a task you — or your workspace's rules — asked for, gated by your autonomy and approval settings.</li>
+          <li><b>You stay in control</b>: you can disconnect any app at any time from within Nomik, or revoke access from the provider directly. Disconnecting deletes the stored credential.</li>
+          <li><b>No ads, no model training</b>: we never sell provider data, use it for advertising, or use it to train generalized AI models.</li>
+        </ul>
+
+        <h2 id="google-limited-use">Google user data &amp; Limited Use</h2>
+        <p class="lead">When you connect a Google account or Google Workspace, Nomik accesses Gmail, Google Calendar and Google Drive through Google's APIs — using only the scopes you approve — solely to provide the features you ask your agents to perform. Exactly what we request, and why:</p>
+        <div class="tbl-wrap" style="margin:1.5rem 0">
+          <table class="tbl">
+            <thead><tr><th>Google scope</th><th>What it lets Nomik access</th><th>Why we use it</th><th>Tier</th></tr></thead>
+            <tbody>
+              <tr><td>gmail.modify</td><td>Read, organize and label messages in your mailbox</td><td>Triage your inbox, label and file mail, and prepare replies</td><td>Restricted</td></tr>
+              <tr><td>gmail.send</td><td>Send mail as you</td><td>Send the replies and messages you approve</td><td>Sensitive</td></tr>
+              <tr><td>drive</td><td>Read and write files in your Google Drive</td><td>Open, create and update the documents you direct it to</td><td>Restricted</td></tr>
+              <tr><td>calendar</td><td>Read and write calendar events</td><td>Schedule and update meetings, and check availability</td><td>Sensitive</td></tr>
+              <tr><td>openid, email</td><td>Your account's email address</td><td>Identify which account is connected</td><td>Basic</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="bullets">
+          <li><b>What we access</b>: only the Google data covered by the scopes above. We do not request access we don't use.</li>
+          <li><b>How we store it</b>: Google access and refresh tokens are kept encrypted in the vault. We don't retain copies of your Gmail or Drive content beyond what's needed to perform a requested task and show the result in your workspace; you control that content and can delete it.</li>
+          <li><b>No human access</b>: no one at Nomik reads your Google user data, except where you give consent, where required for security or to comply with the law, or on aggregated/anonymized data for operations.</li>
+          <li><b>Revoke anytime</b>: disconnect in Nomik, or remove access at <a href="https://myaccount.google.com/permissions" style="color:var(--brand-ink);font-weight:600">myaccount.google.com/permissions</a>.</li>
+        </ul>
+        <div class="callout" role="note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>Nomik's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" style="color:var(--brand-ink);font-weight:600">Google API Services User Data Policy</a>, including the Limited Use requirements.</strong></p>
+        </div>
 
         <h2>International transfers</h2>
         <p class="lead">Where data leaves the EEA, we rely on Standard Contractual Clauses and equivalent safeguards. On Enterprise plans you can pin region to EU-only or run on-prem so data never leaves your boundary.</p>

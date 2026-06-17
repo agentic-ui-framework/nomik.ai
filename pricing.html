@@ -65,6 +65,15 @@
     ]
   }
   </script>
+  <!--i18n:alt-->
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/pricing.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/pricing.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/pricing.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/pricing.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <!--/i18n:alt-->
 </head>
 <body>
   <header class="nav">
@@ -108,7 +117,7 @@
         <a href="security.html">Security</a>
         <a href="pricing.html">Pricing</a>
       </nav>
-      <div class="nav-cta"><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
+      <div class="nav-cta"><!--i18n:switch--><div class="lang-switch" role="navigation" aria-label="Language"><a href="/pricing.html" hreflang="en" lang="en" class="is-active" aria-current="page">EN</a><a href="/fr/pricing.html" hreflang="fr" lang="fr">FR</a><a href="/es/pricing.html" hreflang="es" lang="es">ES</a></div><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Log in</a><a class="btn btn-primary" href="index.html#waitlist">Get early access</a></div>
     </div>
   </header>
 
@@ -178,7 +187,7 @@
               <li>Full squads &amp; integrations</li>
               <li>Triggers &amp; automations</li>
               <li>Roles &amp; RBAC</li>
-              <li>Spend caps &amp; model ceiling</li>
+              <li>Spend caps that pause the fleet</li>
               <li>BYO-key or metered usage</li>
               <li>Priority support</li>
             </ul>
@@ -228,8 +237,8 @@
           <h2>Cost is controllable by design.</h2>
           <p class="lead">Pricing only works if cost is visible and bounded. The org's lean design, cheapest capable model per role, just-in-time staffing, idle agents resting, is itself a cost strategy.</p>
           <ul class="bullets">
-            <li><b>Spend caps</b> per task / agent / squad / workspace / time window.</li>
-            <li><b>Model ceiling</b>: never Opus; Sonnet is the cap; cheap or local models for volume.</li>
+            <li><b>Spend caps</b> per workspace, by day, month, or lifetime, that pause the fleet and auto-resume.</li>
+            <li><b>Any model, Sonnet by default</b>: spend caps, not a model gate, bound cost; use cheap or local models for volume.</li>
             <li><b>Cost on every turn</b>: rolled up per agent, squad, and workspace.</li>
             <li><b>Cost scales with work done</b>: not with fleet size sitting idle.</li>
           </ul>

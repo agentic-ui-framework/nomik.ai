@@ -1,0 +1,13 @@
+{
+  "name": "nomik-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "i18n:extract": "node scripts/build-i18n.mjs --extract",
+    "i18n:build": "node scripts/build-i18n.mjs",
+    "i18n:report": "node scripts/build-i18n.mjs --report"
+  },
+  "devDependencies": {
+    "parse5": "^7.2.1"
+  }
+}
