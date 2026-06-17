@@ -4,7 +4,7 @@
     "fr",
     "es"
   ],
-  "count": 1720,
+  "count": 1721,
   "strings": {
     "1052689464": {
       "en": "Dataset",
@@ -99,8 +99,8 @@
         "index.html"
       ]
     },
-    "91f717068e": {
-      "en": "Nomik is AI Labor Infrastructure: the operating system for AI labor. Create, organize, govern, and allocate a workforce of AI workers across your company, with every action, decision, and dollar on the record. Every company will run on AI labor.",
+    "20889fab1e": {
+      "en": "Nomik is an AI-agent workspace for your whole company: AI workers join your team's channels and, connected to your email, calendar, files and 100+ tools, triage inboxes, schedule meetings, update documents, and get real work done alongside your people.",
       "kind": "attr",
       "pages": [
         "index.html"
@@ -1276,8 +1276,8 @@
         "index.html"
       ]
     },
-    "acb0f424e9": {
-      "en": "AI labor is becoming as fundamental as human labor. Nomik is the operating system that creates, organizes, governs, and allocates it across your company, so every function runs on AI workers you can see, direct, and account for, right alongside your people.",
+    "14c96c4884": {
+      "en": "Nomik is an AI-agent workspace for your whole company. Your AI workers join your team's channels and — connected to your email, calendar, files and 100+ other tools — triage inboxes, schedule meetings, update documents, and get real work done alongside your people. It's the operating system for the AI labor every company will run on.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -2099,15 +2099,15 @@
         "recipes.html"
       ]
     },
-    "b2c0083dea": {
-      "en": "AI stopped being software you buy. It's becoming labor you run.",
+    "4fb4c8ba5a": {
+      "en": "For the first time in history, labor is becoming software.",
       "kind": "text",
       "pages": [
         "index.html"
       ]
     },
-    "dc0116846d": {
-      "en": "Every company runs on a handful of resources: capital, people, software. AI labor is the fourth, not automation, not another tool, but labor itself, the first workforce that scales without limit. Nomik is the operating system for it: every function runs on the AI labor it needs, on the same org chart as your people, with every action, decision, and dollar on the record.",
+    "0acb9f96df": {
+      "en": "Every management system ever built assumes labor is scarce: a manager runs ten people, an org chart maps a few hundred, approval chains gate what those people can do. AI makes labor abundant, and none of that scales to five thousand AI workers. Nomik is the operating system for managing labor when it's no longer scarce: today your AI workforce, and as the line blurs, one workforce, human and AI, on the same org chart, with every action, decision, and dollar on the record.",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3156,6 +3156,13 @@
     },
     "9a4cf4e485": {
       "en": "Every other AI tool makes one person faster. Nomik runs the workforce.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "5379d0c13b": {
+      "en": "The labs create intelligence. Nomik allocates it. OpenAI and Anthropic build the models and the workers; Nomik is the system that runs the workforce, with roles, budgets, and a human on every consequential call.",
       "kind": "text",
       "pages": [
         "index.html"
