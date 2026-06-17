@@ -4,7 +4,7 @@
     "fr",
     "es"
   ],
-  "count": 1721,
+  "count": 1722,
   "strings": {
     "1052689464": {
       "en": "Dataset",
@@ -92,8 +92,8 @@
         "security.html"
       ]
     },
-    "b4db28970b": {
-      "en": "Nomik · The operating system for AI labor",
+    "bbb439d6e0": {
+      "en": "Nomik — AI-agent workspace for your company (email, calendar, files &amp; 100+ tools)",
       "kind": "text",
       "pages": [
         "index.html"
@@ -106,15 +106,8 @@
         "index.html"
       ]
     },
-    "f91c965280": {
-      "en": "Nomik · the operating system for AI labor",
-      "kind": "attr",
-      "pages": [
-        "index.html"
-      ]
-    },
-    "3d78007177": {
-      "en": "Every company will run on AI labor. Nomik is the operating system that creates, organizes, governs, and allocates it across your company, alongside your people. AI Labor Infrastructure.",
+    "d475b73a21": {
+      "en": "Nomik — AI-agent workspace for your company",
       "kind": "attr",
       "pages": [
         "index.html"
@@ -1319,6 +1312,20 @@
         "index.html"
       ]
     },
+    "f73c702ab4": {
+      "en": "Revenue scales. Complexity scales. Headcount doesn't have to.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "c97c47784c": {
+      "en": "Every company hits the same wall: more customers, more tickets, more code, more compliance, all needing more people. AI labor is the first workforce that scales independently of hiring. Nomik is the infrastructure that runs it, so you grow output by allocating AI labor, not by growing headcount.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
     "e4115be258": {
       "en": "Coming soon",
       "kind": "text",
@@ -1333,8 +1340,8 @@
         "index.html"
       ]
     },
-    "e6219255ac": {
-      "en": "Watch a workforce of AI employees get hired, get to work, and check in for the calls that matter.",
+    "5932293de8": {
+      "en": "Watch your AI workforce get to work and check in for the calls that matter.",
       "kind": "text",
       "pages": [
         "index.html"

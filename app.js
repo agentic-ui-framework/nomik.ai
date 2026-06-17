@@ -311,7 +311,7 @@ function initCarousel(root) {
 // Operator: replace both constants with values from the deployed function +
 // the Turnstile site key. Until both are wired, submissions log to console
 // so we don't lose signal during a half-deployed state.
-const WAITLIST_ENDPOINT = "https://qerdbjcmheeuwexmfyam.supabase.co/functions/v1/submit-waitlist";
+const WAITLIST_ENDPOINT = "https://accounts.nomik.ai/v1/waitlist";
 const TURNSTILE_SITEKEY = "0x4AAAAAADVjnrrRgwexBYuo";
 
 const endpointWired =
