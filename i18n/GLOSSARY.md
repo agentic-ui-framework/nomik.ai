@@ -5,12 +5,12 @@ operating system for AI labor, where a company creates, organizes, governs, and 
 a workforce of AI workers that work alongside people, with human approvals on consequential
 actions. The lexicon is three-tier: **AI labor** (the resource, the top frame), **AI
 workforce** (a company's allocation of it), **AI employees / agents** (the concrete units).
-Tone is confident, warm, precise, modern B2B-SaaS — think Stripe / Linear / Vercel, not
+Tone is confident, warm, precise, modern B2B-SaaS, think Stripe / Linear / Vercel, not
 corporate boilerplate. Translate the *meaning and rhythm*, never word-for-word.
 
 ## Voice
 - **FR**: vouvoiement (« vous »). Professional but warm. Natural French, not anglicised
-  mush — but keep accepted tech terms (cloud, agent, prompt, e-mail, token). Use
+  mush, but keep accepted tech terms (cloud, agent, prompt, e-mail, token). Use
   « guillemets » for quotes. Do NOT insert narrow/non-breaking-space characters; plain
   spaces only.
 - **ES**: neutral international Spanish, address the reader as « tú » in a modern,
@@ -24,7 +24,8 @@ corporate boilerplate. Translate the *meaning and rhythm*, never word-for-word.
    - `Spend caps <b>per workspace</b> that pause` →
      FR `Des plafonds de dépenses <b>par espace de travail</b> qui suspendent`
    - Keep entities verbatim: `&amp;` `&nbsp;` `&rarr;` `&times;` stay as written.
-   - Keep symbols verbatim: `·` `→` `✓` `—` `«` `»`.
+   - Keep symbols verbatim: `·` `→` `✓` `«` `»`.
+   - **Never use em-dashes (—).** House rule: use a comma, a colon, or a period instead (the English source has none).
 2. **Do NOT translate**: the Nomik brand and product names (Nomik, Nomik Cloud, Nomik
    Desktop, Nomik Bridge, Nomik-1), integration/vendor names (Slack, Stripe,
    Notion, GitHub, WhatsApp, LiveKit, Deepgram, Cartesia, Ollama, …), model names (Opus,
