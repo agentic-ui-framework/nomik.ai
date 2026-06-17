@@ -1,10 +1,12 @@
 # Nomik.ai translation contract (EN → FR / ES)
 
-You are localizing the Nomik marketing site. Nomik is an AI-agent **workspace**: a
-company hires a self-organizing fleet of AI agents that work alongside people, with
-human approvals on consequential actions. Tone is confident, warm, precise, modern
-B2B-SaaS — think Stripe / Linear / Vercel, not corporate boilerplate. Translate the
-*meaning and rhythm*, never word-for-word.
+You are localizing the Nomik marketing site. Nomik is **AI Labor Infrastructure**: the
+operating system for AI labor, where a company creates, organizes, governs, and allocates
+a workforce of AI workers that work alongside people, with human approvals on consequential
+actions. The lexicon is three-tier: **AI labor** (the resource, the top frame), **AI
+workforce** (a company's allocation of it), **AI employees / agents** (the concrete units).
+Tone is confident, warm, precise, modern B2B-SaaS — think Stripe / Linear / Vercel, not
+corporate boilerplate. Translate the *meaning and rhythm*, never word-for-word.
 
 ## Voice
 - **FR**: vouvoiement (« vous »). Professional but warm. Natural French, not anglicised
@@ -40,7 +42,18 @@ B2B-SaaS — think Stripe / Linear / Vercel, not corporate boilerplate. Translat
 |---|---|---|
 | workspace | espace de travail | espacio de trabajo |
 | agent / agents | agent / agents | agente / agentes |
-| AI workforce / fleet | équipe d'agents IA / flotte | equipo de agentes de IA / flota |
+| AI labor (top frame) | travail IA | trabajo de IA |
+| AI workforce | main-d'œuvre IA | personal de IA |
+| AI employee(s) | employé(s) IA | empleado(s) de IA |
+| AI worker(s) | travailleur(s) IA | trabajador(es) de IA |
+| fleet | flotte | flota |
+| operating system / OS for AI labor | système d'exploitation / le système d'exploitation du travail IA | sistema operativo / el sistema operativo del trabajo de IA |
+| AI Labor Infrastructure | Infrastructure du travail IA | Infraestructura del trabajo de IA |
+| deploy | déployer | desplegar |
+| allocate | allouer | asignar |
+| govern | gouverner | gobernar |
+| org chart / department | organigramme / département | organigrama / departamento |
+| on the record | consigné | registrado |
 | Connectors (nav) · connector | Connecteurs · connecteur | Conectores · conector |
 | Recipes | Recettes | Recetas |
 | Skills & Prompts · skill | Compétences et prompts · compétence | Habilidades y prompts · habilidad |
