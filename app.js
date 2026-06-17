@@ -127,7 +127,7 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
   });
 })();
 
-// Stripe-style morphing mega-menu (desktop > 1080px). A single rounded card
+// Stripe-style morphing mega-menu (desktop ≥ 1141px — matches the CSS nav breakpoint). A single rounded card
 // slides AND resizes between the Product / Marketplace / Developers triggers,
 // cross-fading the rich panel inside. It's built by cloning each group's
 // .nav-menu, so the page markup stays simple and the mobile drawer keeps using
@@ -158,7 +158,7 @@ const LOGO_SET = ["stripe","github","notion","shopify","hubspot","zendesk","inte
   }
   if (!panels.size) return;
 
-  const isDesktop = () => window.matchMedia("(min-width: 1081px)").matches;
+  const isDesktop = () => window.matchMedia("(min-width: 1141px)").matches;
   let current = null;
   let closeTimer = null;
   const cancelClose = () => { if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; } };
@@ -569,6 +569,24 @@ if (contactForm && contactMsg) contactForm.addEventListener("submit", async (ev)
       else root.removeAttribute("data-theme");
       try { localStorage.setItem("nomik-theme", next); } catch (e) {}
       setChrome(next);
+    });
+  });
+})();
+
+/* Language menu (<details class="lang-menu">): close on outside-click and Escape.
+   Progressive enhancement — the menu still opens/closes via native <details> without JS. */
+(function langMenu() {
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll("details.lang-menu[open]").forEach((d) => {
+      if (!d.contains(e.target)) d.removeAttribute("open");
+    });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    document.querySelectorAll("details.lang-menu[open]").forEach((d) => {
+      d.removeAttribute("open");
+      const s = d.querySelector("summary");
+      if (s) s.focus();
     });
   });
 })();

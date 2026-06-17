@@ -445,7 +445,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 .nav-row-tx em { color: var(--muted-foreground); font-size: 0.78rem; font-style: normal; line-height: 1.4; }
 .nav-row.active .nav-row-ic { background: var(--brand-ink); color: var(--background); }
 .nav-row.active .nav-row-tx b { color: var(--brand-ink); }
-@media (min-width: 1161px) {
+@media (min-width: 1141px) {
   .nav-flyout { display: block; }
   .nav-group > .nav-menu { display: none; }   /* desktop uses the morphing flyout, not the inline menu */
 }
@@ -457,10 +457,10 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 }
 .nav-toggle { display: none; width: 2.5rem; height: 2.5rem; align-items: center; justify-content: center; border: 1px solid var(--gray-700); border-radius: 0.5rem; background: transparent; color: var(--gray-100); cursor: pointer; flex-shrink: 0; }
 /* Collapse to the hamburger early enough that the bar never overflows.
-   The inline row (6 nav items + EN/FR/ES switcher + theme + login + CTA, at the
-   longer FR/ES label widths) needs ~1100px of content; with the 1200px wrap that
-   is only available above ~1160px viewport, so below this we switch to the menu. */
-@media (max-width: 1160px) {
+   The inline row (6 nav items + globe language menu + theme + login + CTA, at the
+   longer FR/ES label widths) needs ~1080px of content; with the 1200px wrap that
+   is only available above ~1140px viewport, so below this we switch to the menu. */
+@media (max-width: 1140px) {
   .nav-toggle { display: inline-flex; }
   .nav-links {
     display: flex; position: absolute; top: 4rem; left: 0; right: 0; z-index: 100;
