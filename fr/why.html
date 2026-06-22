@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agent SDK · Nomik</title>
-  <meta name="description" content="Le Nomik Agent SDK fait de n'importe quel agent un employé IA à part entière de votre main-d'œuvre. Votre code décide ; Nomik exécute les outils sous validation, détient les identifiants et journalise tout. Cinq lignes pour le brancher, des adaptateurs pour LangGraph et consorts, et le même SDK qui propulse Nomik Desktop. Aperçu." />
-  <meta property="og:title" content="Agent SDK · Nomik" />
-  <meta property="og:description" content="Apportez votre propre agent. Il rejoint la main-d'œuvre gérée. Votre cerveau décide ; Nomik exécute les outils sous validation, les encadre et tient le registre. Cinq lignes pour le brancher. Aperçu." />
+  <title>Pourquoi Nomik · Nomik</title>
+  <meta name="description" content="L'IA est partout, et pourtant la plupart des gens n'en retirent qu'une fraction de la valeur. Bien utiliser l'IA est devenu un travail à plein temps. Nomik comble cet écart : une IA qui s'adapte à vous, travaille de façon transparente et reste la vôtre." />
+  <meta property="og:title" content="Pourquoi Nomik · Nomik" />
+  <meta property="og:description" content="L'IA est partout, et pourtant la plupart des gens n'en retirent qu'une fraction de la valeur. Bien utiliser l'IA est devenu un travail à plein temps. Nomik comble cet écart : une IA qui s'adapte à vous, travaille de façon transparente et reste la vôtre." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.nomik.ai/sdk.html" />
+  <meta property="og:url" content="https://www.nomik.ai/why.html" />
   <meta property="og:image" content="https://www.nomik.ai/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Agent SDK · Nomik" />
-  <meta name="twitter:description" content="Apportez votre propre agent. Il rejoint la main-d'œuvre gérée. Votre cerveau décide ; Nomik exécute les outils sous validation, les encadre et tient le registre. Cinq lignes pour le brancher. Aperçu." />
+  <meta name="twitter:title" content="Pourquoi Nomik · Nomik" />
+  <meta name="twitter:description" content="L'IA est partout, et pourtant la plupart des gens n'en retirent qu'une fraction de la valeur. Bien utiliser l'IA est devenu un travail à plein temps. Nomik comble cet écart : une IA qui s'adapte à vous, travaille de façon transparente et reste la vôtre." />
   <meta name="twitter:image" content="https://www.nomik.ai/og-cover.png" />
-  <link rel="canonical" href="https://www.nomik.ai/fr/sdk.html" />
+  <link rel="canonical" href="https://www.nomik.ai/fr/why.html" />
   <meta name="theme-color" content="#0f0d12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -24,12 +24,22 @@
   <link rel="preload" href="/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
   <script>(function(){try{var t=localStorage.getItem('nomik-theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
   <link rel="stylesheet" href="/styles.css?v=20260606" />
+  <style>
+    /* why.html problem cards (scoped) */
+    .why-list{max-width:860px;margin-inline:auto}
+    .why-prob{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem 1.6rem;margin-bottom:1rem;text-align:left}
+    .why-prob h3{margin:0 0 .7rem;font-size:1.18rem}
+    .why-prob .voice{color:var(--ink-2);font-style:italic;margin:0 0 1rem;padding-left:.9rem;border-left:2px solid var(--border)}
+    .why-prob .bullets{margin:0}
+    .why-prob .ans{margin:1rem 0 0;padding-top:1rem;border-top:1px solid var(--border)}
+    .why-prob .ans b{color:var(--brand-ink)}
+  </style>
   <script defer data-domain="nomik.ai" src="https://plausible.io/js/script.js"></script>
   <!--i18n:alt-->
-  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/sdk.html" />
-  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/sdk.html" />
-  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/sdk.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/sdk.html" />
+  <link rel="alternate" hreflang="en" href="https://www.nomik.ai/why.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.nomik.ai/fr/why.html" />
+  <link rel="alternate" hreflang="es" href="https://www.nomik.ai/es/why.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.nomik.ai/why.html" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="es_ES" />
@@ -38,10 +48,7 @@
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="index.html">
-        <span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>
-        Nomik
-      </a>
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="-62 -62 124 124" role="img" aria-label="Nomik" xmlns="http://www.w3.org/2000/svg"><defs><filter id="grain-nm1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="6" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.32 0" result="na"/><feComposite in="na" in2="SourceGraphic" operator="in" result="gm"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="gm"/></feMerge></filter><linearGradient id="cy-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient><linearGradient id="nv-nm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><g filter="url(#grain-nm1)"><g transform="translate(-33 0) rotate(-3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#cy-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(33 0) rotate(3)"><path d="M -14.0 -50.0 L -8.4 -48.8 L -2.8000000000000007 -51.2 L 2.8000000000000007 -48.8 L 8.399999999999999 -51.2 L 14.0 -48.8 L 14.0 50.0 L 8.399999999999999 51.2 L 2.8000000000000007 48.8 L -2.8000000000000007 51.2 L -8.4 48.8 L -14.0 51.2 Z" fill="url(#nv-nm1)"/><path d="M -14.0 -8.0 L -8.4 -7.0 L -2.8000000000000007 -9.0 L 2.8000000000000007 -7.0 L 8.399999999999999 -9.0 L 14.0 -7.0 L 14.0 8.0 L 8.399999999999999 9.0 L 2.8000000000000007 7.0 L -2.8000000000000007 9.0 L -8.4 7.0 L -14.0 9.0 Z" fill="#fff" opacity=".18" transform="translate(0 -44.0)"/></g><g transform="translate(0.0 0.0) rotate(51.84277341263094) scale(1.1964619843521982)" style="mix-blend-mode:screen" opacity="1.0"><path d="M -50.0 -14.0 L -30.0 -12.8 L -10.0 -15.2 L 10.0 -12.8 L 30.0 -15.2 L 50.0 -12.8 L 50.0 14.0 L 30.0 15.2 L 10.0 12.8 L -10.0 15.2 L -30.0 12.8 L -50.0 15.2 Z" fill="#d61f9c"/></g></g></svg></span>Nomik</a>
       <nav class="nav-links">
         <div class="nav-group" data-menu="product">
           <button class="nav-group-label" type="button" aria-haspopup="true" aria-expanded="false">Produit<svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -81,204 +88,118 @@
         <a href="security.html">Sécurité</a>
         <a href="pricing.html">Tarifs</a>
       </nav>
-      <div class="nav-cta"><!--i18n:switch--><details class="lang-menu"><summary aria-label="Language: Français"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg><span class="cur">FR</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="lang-menu-panel" role="menu"><a href="/sdk.html" hreflang="en" lang="en"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a><a href="/fr/sdk.html" hreflang="fr" lang="fr" aria-current="true"><span>Français</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a><a href="/es/sdk.html" hreflang="es" lang="es"><span>Español</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a></div></details><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Basculer en thème clair ou sombre" title="Changer de thème"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Se connecter</a><a class="btn btn-primary" href="index.html#waitlist">Obtenir un accès anticipé</a></div>
+      <div class="nav-cta"><!--i18n:switch--><details class="lang-menu"><summary aria-label="Language: Français"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg><span class="cur">FR</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="lang-menu-panel" role="menu"><a href="/why.html" hreflang="en" lang="en"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a><a href="/fr/why.html" hreflang="fr" lang="fr" aria-current="true"><span>Français</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a><a href="/es/why.html" hreflang="es" lang="es"><span>Español</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a></div></details><!--/i18n:switch--><button class="theme-toggle" type="button" aria-label="Basculer en thème clair ou sombre" title="Changer de thème"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button><a class="nav-login" href="https://app.nomik.ai">Se connecter</a><a class="btn btn-primary" href="index.html#waitlist">Obtenir un accès anticipé</a></div>
     </div>
   </header>
 
   <main>
-    <!-- Page hero -->
     <section class="page-hero">
       <div class="wrap">
-        <span class="eyebrow">Agent SDK</span>
-        <h1>Apportez votre propre agent. Il rejoint la main-d'œuvre gérée.</h1>
-        <p>Le SDK fait de n'importe quel agent un employé IA à part entière : il reçoit les messages directs et les mentions @, répond de façon durable, appelle les outils de l'espace de travail et passe par la même validation que tout autre travailleur. Votre code décide. Nomik l'exécute, l'encadre et journalise chaque action. Cinq lignes pour le brancher.</p>
-        <div class="status-row" style="justify-content:center; margin-top:1.1rem"><span class="status-pill soon">Aperçu · pas encore publié</span></div>
-        <p style="margin-top:1.1rem"><a class="btn btn-primary" href="index.html#waitlist">Rejoindre l'aperçu développeur</a> <a class="btn btn-ghost" href="docs.html#api" style="margin-left:0.5rem">Consulter la référence de l'API</a></p>
+        <span class="eyebrow">Pourquoi Nomik</span>
+        <h1>C'est à l'IA de s'adapter à vous, pas l'inverse.</h1>
+        <p>L'IA est partout, et la plupart des gens n'en tirent encore qu'une fraction de ce qu'elle promet. Le problème, ce ne sont pas les modèles. C'est que bien les utiliser est devenu un travail à plein temps pour lequel personne n'a signé. Nomik comble cet écart : vous dites ce que vous voulez, votre main-d'œuvre IA s'occupe du reste, de façon transparente et dans un cadre que vous contrôlez.</p>
       </div>
     </section>
 
-    <!-- The model -->
+    <!-- The four problems -->
     <section>
-      <div class="wrap split">
-        <div>
-          <span class="eyebrow">Le modèle</span>
-          <h2>Votre cerveau. Notre couche de gestion et notre infrastructure.</h2>
-          <p class="lead">Un agent externe reste ce qu'il est : le cerveau qui décide quoi dire et quels outils appeler. Tout ce qui porte à conséquence se passe de notre côté de la ligne, dans l'isolement de l'espace de travail, sous sa validation, dans son journal d'audit, aux côtés de tous les autres employés IA de l'organigramme.</p>
-          <ul class="bullets">
-            <li><b>Les identifiants ne sortent jamais</b> : votre endpoint ne voit jamais les secrets des connecteurs, les clés du coffre, ni les données d'un autre membre.</li>
-            <li><b>La validation est automatique</b> : les appels financiers et destructeurs sont mis en attente d'une approbation humaine ; les plafonds de dépenses et l'accès selon les rôles s'appliquent d'office.</li>
-            <li><b>Limité à l'espace de travail</b> : un agent externe n'utilise que les connecteurs partagés de l'espace de travail, jamais les comptes personnels de qui que ce soit.</li>
-            <li><b>Audit transparent inclus</b> : chaque appel d'outil de votre agent atterrit dans le journal d'activité, avec son coût.</li>
-          </ul>
-          <a class="more-link" href="cloud.html">Il se branche sur Nomik Cloud →</a>
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">Ce que les gens ressentent vraiment</span>
+          <h2>Quatre raisons pour lesquelles l'IA ne fonctionne pas encore pour vous.</h2>
+          <p>Pour chacune : ce que vous redoutez, ce que vous subissez aujourd'hui, et ce qui change avec Nomik.</p>
         </div>
-        <div class="code-card reveal">
-          <div class="code-head">La répartition des tâches</div>
-          <pre class="codeblock"><code><span class="c"># your side · the brain</span>
-your code     decides what to say + which tools to call
-any model     hosted, fine-tuned, or fully private
-any framework langgraph · openai-agents · your own loop
-
-<span class="c"># our side · the body</span>
-nomik         executes tools in-sandbox, under the gate
-              holds the credentials, enforces the floor
-              logs every action, with cost</code></pre>
+        <div class="why-list reveal">
+          <article class="why-prob">
+            <h3>« Je n'arrive à rien tirer d'utile de l'IA. »</h3>
+            <p class="voice">Tout le monde semble avoir une longueur d'avance, comme avec une arme secrète. J'ai essayé quelques outils, mais je n'arrive pas à savoir si je m'y prends bien, et tout va beaucoup trop vite.</p>
+            <ul class="bullets">
+              <li><b>La peur</b> : rater le train et prendre un retard définitif.</li>
+              <li><b>La réalité</b> : des outils éparpillés et à moitié configurés, des abonnements qui s'empilent. Beaucoup d'efforts, peu de résultats.</li>
+            </ul>
+            <p class="ans"><b>Avec Nomik</b> : vous dites ce que vous voulez, en langage clair. Nomik constitue l'équipe, applique les bonnes pratiques éprouvées et garde le tout dans un cadre que vous contrôlez. L'outil s'adapte à vous, pas l'inverse.</p>
+          </article>
+          <article class="why-prob">
+            <h3>« Je dois penser à tout, tout le temps. »</h3>
+            <p class="voice">Je finis la journée épuisé, pas par le travail, mais par sa gestion. Je passe plus de temps à briefer l'IA qu'à faire la tâche moi-même.</p>
+            <ul class="bullets">
+              <li><b>La peur</b> : laisser passer quelque chose d'important, une échéance, une opportunité, un détail.</li>
+              <li><b>La réalité</b> : l'IA attend qu'on la sollicite. Elle ajoute une chose à gérer au lieu d'en enlever une.</li>
+            </ul>
+            <p class="ans"><b>Avec Nomik</b> : elle est conçue pour venir à vous. Elle fait remonter ce qui demande votre attention, organise le travail et ne vous sollicite que pour les décisions qui vous reviennent. Moins de choses à garder en tête.</p>
+          </article>
+          <article class="why-prob">
+            <h3>« C'est le fournisseur qui a la main sur tout. »</h3>
+            <p class="voice">C'est lui qui fixe le prix et les modèles auxquels j'ai droit. Et mes données, mes contrats, mes chiffres ? Aucune idée d'où ils finissent.</p>
+            <ul class="bullets">
+              <li><b>La peur</b> : une facture qui s'emballe, l'enfermement chez un seul fournisseur, et des données revendues ou utilisées pour entraîner le modèle d'un autre.</li>
+              <li><b>La réalité</b> : aucun vrai contrôle sur le coût, sur le modèle, ni sur le sort de ce que vous partagez.</li>
+            </ul>
+            <p class="ans"><b>Avec Nomik</b> : vous fixez le budget, et il est tenu. Choisissez le meilleur modèle pour la tâche, y compris en local, sans verrouillage. Vos données restent les vôtres, chiffrées, hébergées en Europe, jamais revendues, et vous pouvez tout faire tourner sur votre propre infrastructure.</p>
+          </article>
+          <article class="why-prob">
+            <h3>« Je dois tout réexpliquer, à chaque fois. »</h3>
+            <p class="voice">C'est toujours « qui êtes-vous, qu'essayez-vous de faire ». Je colle du contexte juste pour obtenir une réponse qui ne soit pas générique.</p>
+            <ul class="bullets">
+              <li><b>La peur</b> : des décisions prises sur la moitié du tableau, l'essentiel caché dans un outil que l'IA ne voit pas.</li>
+              <li><b>La réalité</b> : des angles morts, des réponses génériques, et du copier-coller sans fin entre les applis.</li>
+            </ul>
+            <p class="ans"><b>Avec Nomik</b> : connectez votre stack une fois. Nomik se construit une vision de votre activité et de votre travail, pour que votre IA connaisse le contexte au lieu de le redemander à chaque fois.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Quickstart -->
+    <!-- What changes -->
     <section class="band">
       <div class="wrap">
         <div class="section-head center-head reveal">
-          <span class="eyebrow">Démarrage rapide</span>
-          <h2>Branchez votre agent en cinq lignes.</h2>
-          <p>Écrivez un seul handler, appelez <code>start()</code>, et votre agent figure dans l'effectif. C'est le SDK que nous construisons, présenté d'après la spec. Il n'est pas encore sur npm.</p>
-        </div>
-        <div class="grid-2 reveal">
-          <div class="code-card">
-            <div class="code-head">Installation + le démarrage rapide en cinq lignes</div>
-            <pre class="codeblock"><code><span class="c"># TypeScript</span>
-npm i @nomik/agent-sdk
-
-<span class="k">import</span> { NomikAgent } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
-
-<span class="k">const</span> agent = <span class="k">new</span> NomikAgent({ token: process.env.NOMIK_TOKEN });
-
-agent.<span class="k">onTurn</span>(<span class="k">async</span> (turn, ctx) => {
-  <span class="k">const</span> answer = <span class="k">await</span> myBrain(turn.text, turn.history);  <span class="c">// ← your model</span>
-  <span class="k">return</span> ctx.reply(answer);
-});
-
-<span class="k">await</span> agent.start();  <span class="c">// connects, subscribes, runs forever</span></code></pre>
-          </div>
-          <div class="code-card">
-            <div class="code-head">Appelez les outils de l'espace de travail, validation incluse</div>
-            <pre class="codeblock"><code><span class="c">// Reach the workspace's connectors. Reads run free;</span>
-<span class="c">// money or destructive calls await a human, then resolve.</span>
-<span class="k">const</span> unread = <span class="k">await</span> ctx.tools.gmail.list({ q: <span class="s">'is:unread'</span> });
-
-<span class="k">try</span> {
-  <span class="k">await</span> ctx.tools.stripe.refund({ id });  <span class="c">// parks on approval</span>
-} <span class="k">catch</span> (e) {
-  <span class="k">if</span> (e <span class="k">instanceof</span> GateDenied) { <span class="c">/* a human said no */</span> }
-}
-
-<span class="c">// or ask for a decision explicitly</span>
-<span class="k">const</span> d = <span class="k">await</span> ctx.approval(<span class="s">'Email the whole company?'</span>);</code></pre>
-          </div>
-        </div>
-        <div class="grid-2 reveal" style="margin-top:1.25rem">
-          <div class="code-card">
-            <div class="code-head">Exposez vos propres outils à la flotte</div>
-            <pre class="codeblock"><code><span class="c">// The mirror API: hand a capability back to the workspace.</span>
-<span class="c">// You declare the risk class; Nomik gates it like any tool.</span>
-<span class="k">import</span> { z } <span class="k">from</span> <span class="s">'@nomik/agent-sdk'</span>;
-
-agent.<span class="k">tool</span>(<span class="s">'summarize_url'</span>, {
-  description: <span class="s">'Summarize a web page'</span>,
-  input: z.object({ url: z.string().url() }),
-  risk: <span class="s">'free'</span>,
-}, <span class="k">async</span> ({ url }) => ({ summary: <span class="k">await</span> mySummarizer(url) }));</code></pre>
-          </div>
-          <div class="code-card">
-            <div class="code-head">Même structure en Python</div>
-            <pre class="codeblock"><code><span class="k">from</span> nomik_agent <span class="k">import</span> NomikAgent, z
-
-agent = NomikAgent(token=os.environ[<span class="s">"NOMIK_TOKEN"</span>])
-
-<span class="k">@agent.on_turn</span>
-<span class="k">async def</span> handle(turn, ctx):
-    answer = <span class="k">await</span> my_brain(turn.text, turn.history)
-    <span class="k">await</span> ctx.reply(answer)
-
-agent.run()</code></pre>
-          </div>
-        </div>
-        <div class="grid-2 reveal" style="margin-top:1.25rem">
-          <div class="code-card">
-            <div class="code-head">Une CLI qui itère sur un canal en direct</div>
-            <pre class="codeblock"><code><span class="c"># pick a workspace + scope, write NOMIK_TOKEN</span>
-nomik agent init
-
-<span class="c"># run your handler against a real channel, hot-reload on save</span>
-nomik agent dev
-
-<span class="c"># one-shot: connect and tail the event stream to debug</span>
-nomik agent connect</code></pre>
-          </div>
-          <div class="code-card">
-            <div class="code-head">Apportez le framework que vous utilisez déjà</div>
-            <pre class="codeblock"><code><span class="c">// Thin adapters so an existing agent drops straight in.</span>
-<span class="c">// Even the framework's own tool calls get gated by Nomik.</span>
-<span class="k">import</span> { fromLangGraph } <span class="k">from</span> <span class="s">'@nomik/agent-sdk/adapters/langgraph'</span>;
-
-agent.<span class="k">onTurn</span>(fromLangGraph(myCompiledGraph));
-
-<span class="c">// also: /adapters/openai-agents · /adapters/vercel-ai</span></code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Three profiles -->
-    <section>
-      <div class="wrap">
-        <div class="section-head center-head reveal">
-          <span class="eyebrow">Formats de transport</span>
-          <h2>Trois façons de se connecter, un seul modèle mental.</h2>
-          <p>Quelle que soit la façon dont votre agent est construit, il parle l'un des trois profils. Choisissez le transport ; la validation et le journal d'activité restent les mêmes.</p>
+          <span class="eyebrow">Ce qui change</span>
+          <h2>Une IA qui travaille pour vous, à vos conditions.</h2>
         </div>
         <div class="grid-3 reveal">
-          <article class="feature">
-            <h3>OpenClaw</h3>
-            <p>La passerelle native de votre agent, parlée directement. Un parcours sans réécriture pour les adeptes du local-first.</p>
-          </article>
-          <article class="feature">
-            <h3>Nomik Gateway</h3>
-            <p>Notre protocole WebSocket ouvert et documenté pour les pairs personnalisés : requête, réponse, événement, en flux continu et idempotent.</p>
-          </article>
-          <article class="feature">
-            <h3>Chat HTTP</h3>
-            <p>Le profil synchrone trivial pour un cerveau qui se contente de décider. Un endpoint compatible OpenAI représente la charge d'intégration la plus faible possible.</p>
-          </article>
+          <article class="feature"><h3>Vous le dites, c'est fait</h3><p>Du langage clair en entrée, du vrai travail en sortie. Aucun prompt à maîtriser, aucune tuyauterie à monter.</p></article>
+          <article class="feature"><h3>Elle vient à vous</h3><p>Conçue pour anticiper et organiser, pour que votre attention aille là où elle compte vraiment.</p></article>
+          <article class="feature"><h3>Connectée à votre stack</h3><p>Vos outils, votre contexte, au même endroit. Moins de réexplications, moins d'angles morts.</p></article>
+          <article class="feature"><h3>Vos données, votre périmètre</h3><p>Chiffrées, hébergées en Europe, jamais revendues. Apportez votre propre modèle, ou faites tourner le tout sur votre propre infrastructure.</p></article>
+          <article class="feature"><h3>Des coûts que vous maîtrisez</h3><p>Fixez un budget, il est tenu. Dépenses en temps réel, plafonds stricts et un coupe-circuit.</p></article>
+          <article class="feature"><h3>Tout est consigné</h3><p>Chaque action, chaque outil, chaque euro est visible. Vous approuvez les décisions qui comptent.</p></article>
         </div>
       </div>
     </section>
 
     <!-- Who it's for -->
-    <section class="band">
+    <section>
       <div class="wrap">
         <div class="section-head center-head reveal">
-          <span class="eyebrow">Qui se connecte</span>
-          <h2>Conçu pour les agents que vous avez déjà.</h2>
+          <span class="eyebrow">Pour qui</span>
+          <h2>Pour tous ceux qui veulent que l'IA fonctionne, sans devenir expert en IA.</h2>
         </div>
         <div class="grid-3 reveal">
-          <article class="feature">
-            <h3>Les équipes dotées d'une logique propriétaire</h3>
-            <p>Gardez votre modèle et votre raisonnement privés, sur votre propre matériel. Nomik lui donne des mains, une gouvernance et un journal d'audit que vos clients peuvent accepter.</p>
-          </article>
-          <article class="feature">
-            <h3>Les créateurs de frameworks</h3>
-            <p>Un graphe LangGraph, un OpenAI Assistant, une boucle maison : un seul appel d'adaptateur et le voilà coéquipier doté d'outils soumis à validation.</p>
-          </article>
-          <article class="feature">
-            <h3>Nomik Desktop <span class="pill-tag">Aperçu</span></h3>
-            <p>Notre propre agent local-first utilise ce SDK exact pour rejoindre un espace de travail. Si le SDK ne peut pas le faire, Nomik Desktop non plus, donc il le peut.</p>
-            <a class="more-link" href="desktop.html">Découvrez Nomik Desktop →</a>
-          </article>
+          <article class="feature"><h3>Fondateurs &amp; petites équipes</h3><p>La production d'une équipe entière, sans les embauches.</p></article>
+          <article class="feature"><h3>Agences &amp; opérateurs</h3><p>Plus de livraisons, plus de marge, moins d'outils à surveiller.</p></article>
+          <article class="feature"><h3>Secteurs régulés &amp; priorité UE</h3><p>Une vraie capacité, sans que vos données quittent jamais votre contrôle.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Bridge to the AI-labor frame -->
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head center-head reveal">
+          <span class="eyebrow">La vue d'ensemble</span>
+          <h2>Voilà à quoi le travail IA devrait ressembler.</h2>
+          <p>Pas un chatbot que vous pilotez. Une main-d'œuvre IA qui s'adapte à vous, travaille de façon transparente et reste sous votre contrôle. C'est toute l'idée derrière Nomik.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="wrap">
         <div class="cta-card reveal">
-          <h2>Votre agent. Une vraie place à la table.</h2>
-          <p>Rejoignez l'aperçu pour développeurs et dites-nous ce que vous connectez. Nous vous donnerons un accès anticipé et façonnerons le SDK autour d'usages réels.</p>
-          <a class="btn btn-primary" href="index.html#waitlist">Rejoindre l'aperçu développeur</a>
-          <p class="muted" style="margin-top:1.1rem;font-size:0.85rem">Voir aussi <a href="developers.html" style="color:var(--brand-ink);font-weight:600">la surface d'API</a> · <a href="mcp.html" style="color:var(--brand-ink);font-weight:600">MCP sur Nomik</a>.</p>
+          <h2>Mettez l'IA au travail, à votre façon.</h2>
+          <p>Rejoignez la liste d'attente. On vous installe dans un espace de travail et on vise votre première victoire, vite.</p>
+          <a class="btn btn-primary" href="index.html#waitlist">Obtenir un accès anticipé</a>
         </div>
       </div>
     </section>
@@ -312,6 +233,7 @@ agent.<span class="k">onTurn</span>(fromLangGraph(myCompiledGraph));
       </nav>
       <div class="footer-social" aria-label="Liens sociaux">
         <a href="https://x.com/get_nomik_ai" target="_blank" rel="noopener" aria-label="Nomik sur X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <!-- TODO operator: replace LinkedIn handle when account is created -->
         <a href="https://linkedin.com/company/nomik-ai" target="_blank" rel="noopener" aria-label="Nomik sur LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
         <a href="https://github.com/agentic-ui-framework" target="_blank" rel="noopener" aria-label="Nomik sur GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.93 10.93 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg></a>
       </div>

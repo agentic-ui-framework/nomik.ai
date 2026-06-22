@@ -4,7 +4,7 @@
     "fr",
     "es"
   ],
-  "count": 1722,
+  "count": 1788,
   "strings": {
     "1052689464": {
       "en": "Dataset",
@@ -61,7 +61,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "3011039908": {
@@ -140,7 +141,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "8f112cfd8c": {
@@ -177,7 +179,70 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
+      ]
+    },
+    "eb805bac1d": {
+      "en": "Why Nomik",
+      "kind": "text",
+      "pages": [
+        "index.html",
+        "404.html",
+        "agents.html",
+        "bridge-privacy.html",
+        "cloud.html",
+        "contact.html",
+        "cookies.html",
+        "desktop.html",
+        "developers.html",
+        "docs.html",
+        "dpa.html",
+        "how-it-works.html",
+        "marketplace.html",
+        "mcp.html",
+        "pricing.html",
+        "privacy.html",
+        "product.html",
+        "recipes.html",
+        "research.html",
+        "sdk.html",
+        "security.html",
+        "skills.html",
+        "terms.html",
+        "use-cases.html",
+        "why.html"
+      ]
+    },
+    "44c8c871bd": {
+      "en": "The gap we close, and how",
+      "kind": "text",
+      "pages": [
+        "index.html",
+        "404.html",
+        "agents.html",
+        "bridge-privacy.html",
+        "cloud.html",
+        "contact.html",
+        "cookies.html",
+        "desktop.html",
+        "developers.html",
+        "docs.html",
+        "dpa.html",
+        "how-it-works.html",
+        "marketplace.html",
+        "mcp.html",
+        "pricing.html",
+        "privacy.html",
+        "product.html",
+        "recipes.html",
+        "research.html",
+        "sdk.html",
+        "security.html",
+        "skills.html",
+        "terms.html",
+        "use-cases.html",
+        "why.html"
       ]
     },
     "0efc2e6be4": {
@@ -207,7 +272,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "98c6f409ca": {
@@ -237,7 +303,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "1dd6a17cb4": {
@@ -267,7 +334,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "b42c5d2b2d": {
@@ -297,7 +365,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "64acf7e2a7": {
@@ -327,7 +396,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "ff2817e1c2": {
@@ -357,7 +427,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "14a29ba383": {
@@ -387,7 +458,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "c197f6e038": {
@@ -417,7 +489,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "123a7f2fcc": {
@@ -447,7 +520,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "b50dfbd5b4": {
@@ -477,7 +551,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "36a5a23822": {
@@ -507,7 +582,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "b36369f1bf": {
@@ -537,7 +613,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "63db698016": {
@@ -567,7 +644,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "4938f31031": {
@@ -597,7 +675,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "9f12cdfc54": {
@@ -627,7 +706,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "4b1e9501b9": {
@@ -657,7 +737,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "e82367b56d": {
@@ -687,7 +768,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "9fb1092f32": {
@@ -717,7 +799,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "f751b3c82a": {
@@ -747,7 +830,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "5179f69f79": {
@@ -777,7 +861,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "5c9f29a9d9": {
@@ -807,7 +892,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "71348be514": {
@@ -837,7 +923,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "2a9d090014": {
@@ -867,7 +954,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "809f1ec9ce": {
@@ -897,7 +985,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "534853d9a6": {
@@ -927,7 +1016,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "809139bd4b": {
@@ -957,7 +1047,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "21593b807a": {
@@ -987,7 +1078,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "a15e434603": {
@@ -1017,7 +1109,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "68a4194227": {
@@ -1047,7 +1140,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "7c89f221ce": {
@@ -1077,7 +1171,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "f25ce1b8a3": {
@@ -1107,7 +1202,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "a0d9bbad5f": {
@@ -1137,7 +1233,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "626af3f1fb": {
@@ -1167,7 +1264,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "9a9a20fae1": {
@@ -1197,7 +1295,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "f7c400ed69": {
@@ -1222,7 +1321,8 @@
         "sdk.html",
         "security.html",
         "skills.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "a650e47f68": {
@@ -1252,7 +1352,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "0b2285b037": {
@@ -3154,8 +3255,86 @@
         "index.html"
       ]
     },
-    "eb805bac1d": {
-      "en": "Why Nomik",
+    "a4f1a42f08": {
+      "en": "AI should adapt to you, not the other way around.",
+      "kind": "text",
+      "pages": [
+        "index.html",
+        "why.html"
+      ]
+    },
+    "947a12f0ed": {
+      "en": "AI is everywhere, and most people still get a fraction of what it promises. Four reasons it isn't working for you yet, and how Nomik closes the gap.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "39c723ebfa": {
+      "en": "Hard to use well",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "80e6c65d06": {
+      "en": "You test tools in the dark, and it turns into a mess of half-configured agents.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "f63aa986d1": {
+      "en": "Always reactive",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "eb949813af": {
+      "en": "AI waits to be asked. It adds to your mental load instead of lifting it.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "244680419d": {
+      "en": "Providers hold the controls",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "94651f78e3": {
+      "en": "Cost, model, and what happens to your data are decided for you.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "f249712ce8": {
+      "en": "It doesn't know you",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "fe3e10c296": {
+      "en": "You re-explain everything, every time, and still get generic answers.",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "adc719b20f": {
+      "en": "See why Nomik",
+      "kind": "text",
+      "pages": [
+        "index.html"
+      ]
+    },
+    "8d105cf44d": {
+      "en": "Compare",
       "kind": "text",
       "pages": [
         "index.html"
@@ -3537,7 +3716,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "2078935e2b": {
@@ -3589,7 +3769,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "c6fcb723b3": {
@@ -3619,7 +3800,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "db70e0d32d": {
@@ -3649,7 +3831,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "cf01481f62": {
@@ -3679,7 +3862,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "a55a275aa6": {
@@ -3709,7 +3893,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "524cf50b5d": {
@@ -3739,7 +3924,8 @@
         "security.html",
         "skills.html",
         "terms.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "52e0b0a389": {
@@ -3764,7 +3950,8 @@
         "sdk.html",
         "security.html",
         "skills.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "4a60567777": {
@@ -3789,7 +3976,8 @@
         "sdk.html",
         "security.html",
         "skills.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "41d1fc425c": {
@@ -3814,7 +4002,8 @@
         "sdk.html",
         "security.html",
         "skills.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "ccca5c4ba4": {
@@ -3839,7 +4028,8 @@
         "sdk.html",
         "security.html",
         "skills.html",
-        "use-cases.html"
+        "use-cases.html",
+        "why.html"
       ]
     },
     "75a781b158": {
@@ -13436,6 +13626,377 @@
       "kind": "text",
       "pages": [
         "use-cases.html"
+      ]
+    },
+    "975b7cee88": {
+      "en": "Why Nomik · Nomik",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "3b75378be0": {
+      "en": "AI is everywhere, yet most people get only a fraction of its value. Using AI well has become a full-time job. Nomik closes that gap: AI that adapts to you, works in the open, and stays yours.",
+      "kind": "attr",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "54c0db0fc3": {
+      "en": "AI is everywhere, and most people still get a fraction of what it promises. The problem isn't the models. It's that using them well has become a full-time job nobody signed up for. Nomik closes that gap: you say what you want, your AI workforce does the rest, in the open and in a frame you control.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "1ceba51ce0": {
+      "en": "What people actually feel",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "6955aa117e": {
+      "en": "Four reasons AI isn't working for you yet.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "4e842b6939": {
+      "en": "For each: what you fear, what you're stuck with today, and what changes with Nomik.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "ec50a24523": {
+      "en": "\"I can't get anything useful out of AI.\"",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "95e101f5a8": {
+      "en": "Everyone seems a step ahead, like they have a secret weapon. I've tried a few tools, but I can't tell if I'm doing it right, and it all moves too fast.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "a70c0462eb": {
+      "en": "<b>The fear</b>: missing the wave and falling behind for good.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "743ebaaf05": {
+      "en": "<b>The reality</b>: scattered, half-configured tools and stacked subscriptions. A lot of effort, little payoff.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "eef833ea96": {
+      "en": "<b>With Nomik</b>: you say what you want in plain words. Nomik staffs the work, brings the proven playbook, and keeps it in a frame you control. The tool adapts to you, not the reverse.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "f20164c1fa": {
+      "en": "\"I have to think of everything, all the time.\"",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "678339c5fb": {
+      "en": "I end the day exhausted, not from the work, but from managing it. I spend more time briefing the AI than doing the thing myself.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "83891fbff4": {
+      "en": "<b>The fear</b>: dropping something that mattered, a deadline, an opportunity, a detail.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "6d65d4a8a2": {
+      "en": "<b>The reality</b>: AI waits to be asked. It adds one more thing to manage instead of taking one off your plate.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "0e980d7937": {
+      "en": "<b>With Nomik</b>: it's built to come to you. It surfaces what needs attention, organizes the work, and asks only when a call is yours to make. Less to hold in your head.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "61a5c80a71": {
+      "en": "\"The provider holds all the controls.\"",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "0567bf5acf": {
+      "en": "They set the price and which models I'm allowed to use. And my data, my contracts, my numbers? No idea where they go.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "73de2bd27a": {
+      "en": "<b>The fear</b>: a runaway bill, lock-in to one vendor, and data sold or used to train someone else's model.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "87a83b60f8": {
+      "en": "<b>The reality</b>: no real say over cost, over the model, or over what happens to what you share.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "8090c9dbdc": {
+      "en": "<b>With Nomik</b>: you set the budget and it holds. Pick the best model for the job, including local ones, with no lock-in. Your data stays yours, encrypted, hosted in Europe, never sold, and you can run the whole thing on your own infrastructure.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "ad03c83485": {
+      "en": "\"I have to re-explain everything, every time.\"",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "50a0755487": {
+      "en": "It's always 'who are you, what are you trying to do.' I paste in context just to get an answer that isn't generic.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "d458c3646f": {
+      "en": "<b>The fear</b>: decisions made on half the picture, the important thing hidden in a tool the AI can't see.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "402182261c": {
+      "en": "<b>The reality</b>: blind spots, generic answers, and endless copy-paste between apps.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "e6682e9464": {
+      "en": "<b>With Nomik</b>: connect your stack once. Nomik builds a picture of your business and your work, so your AI knows the context instead of asking for it every time.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "0ccfcd0de4": {
+      "en": "What changes",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "7c415f1379": {
+      "en": "AI that works for you, on your terms.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "06f5edc0ce": {
+      "en": "You say it, it gets done",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "b0c1744066": {
+      "en": "Plain language in, real work out. No prompts to master, no wiring to build.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "f66832451e": {
+      "en": "It comes to you",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "ef36dd7e50": {
+      "en": "Built to anticipate and organize, so your attention goes where it actually matters.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "10d0f73584": {
+      "en": "Connected to your stack",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "6750414abf": {
+      "en": "Your tools, your context, in one place. Less re-explaining, fewer blind spots.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "80e47adc07": {
+      "en": "Your data, your boundary",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "87ac3d9535": {
+      "en": "Encrypted, hosted in Europe, never sold. Bring your own model, or run it on your own infrastructure.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "6056f37a4c": {
+      "en": "Costs you control",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "7f6a3569d5": {
+      "en": "Set a budget and it holds. Real-time spend, hard caps, and a kill switch.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "db538877cf": {
+      "en": "Everything on the record",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "df59fd6bd5": {
+      "en": "Every action, tool, and dollar is visible. You approve the calls that matter.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "380adc200f": {
+      "en": "Who it's for",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "902e14f021": {
+      "en": "For anyone who wants AI to work, without becoming an AI expert.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "c5e4d8144f": {
+      "en": "Founders &amp; small teams",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "af1ec9e673": {
+      "en": "The output of a whole team, without the hiring.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "2e4a84a579": {
+      "en": "Agencies &amp; operators",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "c4fe26033b": {
+      "en": "More shipped, more margin, fewer tools to babysit.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "64e911a1c9": {
+      "en": "Regulated &amp; EU-first",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "24903dbb63": {
+      "en": "Real capability without your data ever leaving your control.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "4ade00accc": {
+      "en": "The bigger picture",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "988ea6cba4": {
+      "en": "This is what AI labor should feel like.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "c8c8faf9da": {
+      "en": "Not a chatbot you operate. A workforce that adapts to you, works in the open, and stays under your control. That is the whole idea behind Nomik.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "09ce5a3b2a": {
+      "en": "Put AI to work, your way.",
+      "kind": "text",
+      "pages": [
+        "why.html"
+      ]
+    },
+    "1a93b6f78e": {
+      "en": "Join the waitlist. We'll get you into a workspace and your first win fast.",
+      "kind": "text",
+      "pages": [
+        "why.html"
       ]
     }
   }
